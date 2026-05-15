@@ -9,7 +9,7 @@ Compiled April 2026. All plans compared across major providers.
 
 ---
 
-## BytePlus ModelArk
+## BytePlus ModelArk [Subscribe](https://www.byteplus.com/en/activity/codingplan)
 
 ByteDance's AI inference platform. Coding Plan = subscription with shared quota across supported tools.
 
@@ -44,7 +44,7 @@ ByteDance's AI inference platform. Coding Plan = subscription with shared quota 
 
 ---
 
-## GitHub Copilot
+## GitHub Copilot [Plans](https://github.com/features/copilot/plans)
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/get-started/plans), [github.blog](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/)
 
@@ -86,7 +86,7 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/get-started/plans),
 
 ---
 
-## GLM / Z.ai
+## GLM / Z.ai [Subscribe](https://z.ai/subscribe)
 
 5h sliding window + weekly cap. Overseas price raised Apr 12 2026.  
 Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
@@ -116,7 +116,7 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
 
 ---
 
-## OpenCode Go Plan
+## OpenCode Go Plan [Subscribe](https://opencode.ai/go)
 
 OpenCode's official low-cost subscription. **$5 first month, then $10/month.**
 Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Zero-retention policy.
@@ -169,7 +169,7 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 
 ---
 
-## Claude Code (Anthropic)
+## Claude Code (Anthropic) [Pricing](https://claude.com/pricing)
 
 Terminal coding agent. All usage shared across claude.ai, Claude Code CLI, and Desktop.
 Source: [claude.com/pricing](https://claude.com/pricing), community instrumentation.
@@ -224,7 +224,7 @@ Source: [claude.com/pricing](https://claude.com/pricing), community instrumentat
 ---
 
 
-## GPT Codex (OpenAI)
+## GPT Codex (OpenAI) [Pricing](https://chatgpt.com/codex/pricing/)
 
 OpenAI's agentic coding tool — CLI, IDE extension, ChatGPT app, and cloud. Codex is **bundled into ChatGPT plans** (no separate subscription).  
 Source: [developers.openai.com/codex/pricing](https://developers.openai.com/codex/pricing)
@@ -279,7 +279,7 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets double
 
 
 
-## Antigravity (Google IDE)
+## Antigravity (Google IDE) [Download](https://antigravity.google/download) - [Pricing](https://antigravity.google/pricing)
 
 Google's agent-first IDE (fork of VS Code). Runs multiple AI agents in parallel.  
 Includes Claude models (Sonnet & Opus) alongside Gemini — all in one IDE.  
@@ -332,7 +332,7 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing)
 ---
 
 
-## Xiaomi MiMo Token Plan
+## Xiaomi MiMo Token Plan [Subscribe](https://platform.xiaomimimo.com/token-plan)
 
 Launched Apr 2 2026. Pure monthly credit pool — NO 5h windows, NO weekly limits.  
 Credits expire month-end, no rollover. Mid-month upgrades OK, downgrades not.
@@ -357,7 +357,7 @@ API rates: Pro $1/$3 per 1M (256K), $2/$6 (1M ctx). 88% off first purchase.
 
 ---
 
-## Kimi / Moonshot AI
+## Kimi / Moonshot AI [Kimi Code](https://www.kimi.com/code)
 
 Two products: Kimi membership (app quotas) and Kimi Code (developer).  
 API billed separately — NOT included in membership.
