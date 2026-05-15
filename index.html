@@ -2,13 +2,176 @@
 layout: default
 ---
 
-<h1>📚 Abhay's Knowledge Base</h1>
+<style>
+  .page-wrapper {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    padding: 20px;
+    background: var(--sidebar-bg, #f6f8fa);
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #d0d7de);
+    font-size: 14px;
+  }
+  .sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+  }
+  .sidebar nav a {
+    display: block;
+    padding: 6px 0;
+    color: #0969da;
+    text-decoration: none;
+  }
+  .sidebar nav a:hover {
+    text-decoration: underline;
+  }
+  .sidebar .badge-group {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sidebar .badge-group img {
+    max-width: 100%;
+  }
+  .main-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .main-content h1 {
+    margin-top: 0;
+  }
+  .projects-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  .projects-table th, .projects-table td {
+    border: 1px solid var(--border-color, #d0d7de);
+    padding: 10px;
+    vertical-align: top;
+  }
+  .projects-table th {
+    background: #f6f8fa;
+    text-align: left;
+    font-weight: 600;
+  }
+  .badge-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+  .badge-bar img {
+    height: 28px;
+  }
+  hr {
+    margin: 24px 0;
+  }
+  @media (max-width: 768px) {
+    .page-wrapper { flex-direction: column; }
+    .sidebar { width: auto; position: static; }
+  }
+</style>
 
-<p>Welcome to my personal knowledge base.</p>
+<div class="page-wrapper">
+  <aside class="sidebar">
+    <h3>Navigation</h3>
+    <nav>
+      <a href="/abhay-kb/">🏠 Home</a>
+      <a href="/abhay-kb/PROJECTS">📁 All Projects</a>
+      <a href="https://github.com/abhay-byte/abhay-kb">📦 Repo</a>
+      <a href="https://github.com/abhay-byte/my-resume/releases/latest">📄 Resume</a>
+      <a href="https://github.com/abhay-byte">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/abhay-byte/">💼 LinkedIn</a>
+    </nav>
 
-<hr>
+    <div class="badge-group">
+      <img src="https://komarev.com/ghpvc/?username=abhay-byte&color=282828&labelColor=282828&style=for-the-badge" alt="Profile views"/>
+      <img src="https://img.shields.io/github/followers/abhay-byte?label=Followers&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Followers"/>
+      <img src="https://img.shields.io/github/stars/abhay-byte?affiliations=OWNER%2CCOLLABORATOR&label=Total%20Stars&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Stars"/>
+    </div>
+  </aside>
 
-<div style="margin-top: 20px;">
-  <h3>📋 Projects</h3>
-  <p><a href="PROJECTS">View my projects dashboard →</a></p>
+  <div class="main-content">
+    <h1>Hi, I'm @abhay-byte — Agentic Software Engineer</h1>
+
+    <p>
+      I build software with AI agents — not just code, but the systems that run them.
+      My daily workflow uses Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and other AI tools,
+      all managed through my own <a href="https://github.com/abhay-byte/nexus"><strong>Nexus Terminal</strong></a>
+      — a multi-agent terminal workspace I built for this exact purpose.
+      I also work with MCP servers and AI IDEs (Cursor, Windsurf) to extend what agents can do.
+    </p>
+
+    <p><em>Every project here is open source. All code, all assets, no paywalls — just FOSS.</em></p>
+
+    <hr>
+
+    <h2>📬 Contact</h2>
+    <ul>
+      <li>📬 Email: <a href="mailto:abhay.byte02@gmail.com">abhay.byte02@gmail.com</a> — best way to reach me!</li>
+      <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/abhay-byte/">Abhay Raj</a> — let's network!</li>
+    </ul>
+
+    <h2>📄 Resume</h2>
+    <p>
+      <a href="https://github.com/abhay-byte/my-resume/releases/latest">
+        <img src="https://img.shields.io/badge/Download_Resume-fabd2f?style=for-the-badge&logo=adobeacrobatreader&logoColor=282828&labelColor=282828" alt="Download Resume">
+      </a>
+    </p>
+
+    <hr>
+
+    <h2>🌟 Featured Projects</h2>
+
+    <table class="projects-table">
+      <tr>
+        <th>Project</th>
+        <th>Description</th>
+        <th>Links</th>
+      </tr>
+      <tr>
+        <td><strong>Nexus Terminal</strong></td>
+        <td>Multi-agent AI terminal workspace. Run Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and more — side-by-side in a brutalist desktop app.</td>
+        <td>
+          <a href="https://github.com/abhay-byte/nexus"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://github.com/abhay-byte/nexus/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/nexus?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Phone Finder Hub</strong></td>
+        <td>Data-driven smartphone comparison platform built with Laravel. Helps users identify the best value-for-money devices by analyzing objective performance benchmarks.</td>
+        <td>
+          <a href="https://github.com/abhay-byte/phone_finder_hub"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://phone-finder-shjs.onrender.com/"><img src="https://img.shields.io/badge/Website-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Website"></a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Fantasy Racing</strong></td>
+        <td>High-speed futuristic racing game with diverse planets, strategic challenges, and immersive gameplay.</td>
+        <td>
+          <a href="https://github.com/abhay-byte/planet-racing"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://github.com/abhay-byte/planet-racing/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/planet-racing?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <a href="/abhay-kb/PROJECTS">📁 View all 84 repositories →</a>
+    </p>
+  </div>
 </div>
