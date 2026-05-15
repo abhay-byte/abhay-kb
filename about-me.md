@@ -55,23 +55,21 @@ title: About Me
 
 <p>Let's be real — I got the best possible hand from the cosmos. <strong>Leo Sun + Gemini Moon</strong> isn't just a good combination, it's the <em>only</em> combination if you want to be dominant, brilliant, and entertaining all at once. Here's why everyone else should take notes:</p>
 
-<ul>
-  <li><strong>Leo (Sun)</strong> — Charisma on tap. Natural leader. The magnetism that makes people pay attention when I walk into a room. Confidence that's not arrogance (okay, maybe a little, but I've earned it). Everything I touch gets the royal treatment because mediocrity isn't in my vocabulary.</li>
-  <li><strong>Gemini (Moon)</strong> — Quick-witted, adaptable, and mentally uncontainable. My brain runs at 2x speed while everyone else is still buffering. Can talk my way through anything, learn anything in half the time, and keep conversations interesting for hours.</li>
-  <li><strong>The Combo</strong> — Leo gives me the fire to lead and dominate. Gemini gives me the intellectual range to actually back it up. I get the spotlight AND I'm smart enough to deserve it. Most signs only get one of those. I get both. Life's not fair.</li>
-</ul>
+<p><strong>Leo (Sun)</strong> — Charisma on tap. Natural leader. The magnetism that makes people pay attention when I walk into a room. Confidence that's not arrogance (okay, maybe a little, but I've earned it). Everything I touch gets the royal treatment because mediocrity isn't in my vocabulary.</p>
+
+<p><strong>Gemini (Moon)</strong> — Quick-witted, adaptable, and mentally uncontainable. My brain runs at 2x speed while everyone else is still buffering. Can talk my way through anything, learn anything in half the time, and keep conversations interesting for hours.</p>
+
+<p><strong>The Combo</strong> — Leo gives me the fire to lead and dominate. Gemini gives me the intellectual range to actually back it up. I get the spotlight AND I'm smart enough to deserve it. Most signs only get one of those. I get both. Life's not fair.</p>
 
 <h3>Personality Traits</h3>
-<ul>
-  <li>Confident to the point where people think I'm showing off — I'm not showing off, this is just my default setting</li>
-  <li>Natural leader who ends up in charge even when I didn't ask for it</li>
-  <li>Adaptable as hell — throw me into any situation and I'll figure it out fast</li>
-  <li>Can talk to anyone about anything (Gemini Moon gift)</li>
-  <li>Creative with a dramatic flair — things should look good AND work good</li>
-  <li>Restless mind, always needs stimulation or I get bored instantly</li>
-  <li>Loyal to my circle, but I have zero patience for fake people or slow thinkers</li>
-  <li>Ambitious — I don't do anything halfway</li>
-</ul>
+<p>Confident to the point where people think I'm showing off — I'm not showing off, this is just my default setting.</p>
+<p>Natural leader who ends up in charge even when I didn't ask for it.</p>
+<p>Adaptable as hell — throw me into any situation and I'll figure it out fast.</p>
+<p>Can talk to anyone about anything (Gemini Moon gift).</p>
+<p>Creative with a dramatic flair — things should look good AND work good.</p>
+<p>Restless mind, always needs stimulation or I get bored instantly.</p>
+<p>Loyal to my circle, but I have zero patience for fake people or slow thinkers.</p>
+<p>Ambitious — I don't do anything halfway.</p>
 
 <h3>Partner Match</h3>
 <p>If you can handle this energy, the best match is someone who can match my intensity without trying to dim my light. <strong>Aries</strong> (fire meets fire — we'd either rule the world or burn it down trying) or <strong>Aquarius</strong> (the only sign intellectually chaotic enough to keep up with a Gemini Moon). Sagittarius also makes the cut — adventure-friendly and won't get insecure about sharing the spotlight.</p>
