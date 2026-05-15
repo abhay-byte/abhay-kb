@@ -250,6 +250,60 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets double
 ---
 
 
+
+## Antigravity (Google IDE)
+
+Google's agent-first IDE (fork of VS Code). Runs multiple AI agents in parallel.  
+Includes Claude models (Sonnet & Opus) alongside Gemini — all in one IDE.  
+Source: [antigravity.google/pricing](https://antigravity.google/pricing)
+
+### Plans
+
+| Plan | Price | Models | Notes |
+|------|-------|--------|-------|
+| Free | $0 | All models (rate-limited) | Access to all 7 models. Quota refreshes ~5h (unreliable) |
+| AI Pro | $20/mo | All models (higher limits) | Built-in credits (amount undisclosed). Best for hobbyists |
+| AI Ultra | $249.99/mo | All models (highest limits) | Most expensive AI coding sub on the market |
+| Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage |
+
+### Available Models
+
+| Model | Provider | Type | Notes |
+|-------|----------|------|-------|
+| Gemini 3.1 Pro | Google | Reasoning (High/Low) | Google's flagship. **Good for frontend work only** |
+| Gemini 3 Flash | Google | Fast | Very capable for frontend. Reliable |
+| Claude Opus 4.6 | Anthropic | Premium | **$200/mo value, available here**. Best for backend |
+| Claude Sonnet 4.6 | Anthropic | Mid-tier | Fast, reliable for backend code |
+| GPT-OSS 120B | OpenAI | Open-weight | Free model |
+
+### Usage Tips
+
+- Use **Claude models for backend** work — they handle complex logic, refactoring, and architecture
+- Use **Gemini models for frontend** — Gemini 3 Flash in particular is excellent for UI work
+- **Never use Gemini for backend** or complex logic tasks — it performs poorly
+- Limits are **separate per provider** — running out on Claude? Switch to Gemini and keep working
+- Multi-agent missions can assign different models to different agents within the same task
+
+### Known Issues
+
+- **Quota cuts:** Free tier quotas cut 92% since Dec 2025 (250 -> 20 requests/day)
+- **Pro lockouts:** Multiple reports of 7-day lockouts even with low usage. Advertised 5-hour refresh unreliable
+- **Credit system opaque:** Credit-to-token conversion rate undisclosed. Per-model credit costs unknown
+- **Ultra lockouts:** Even $250/mo Ultra users report unexpected quota restrictions since Mar 2026
+
+### Community Reviews
+
+> **From aitoolanalysis (Mar 2026):** "The most promising and most frustrating editor I've ever used." Free tier gives access to Claude Opus 4.6 ($200/mo value) for $0. But the rate limit crisis is real -- Pro subscribers hit 7-day lockouts instead of 5-hour refresh.
+
+> **From vibecoding.app:** "One developer documented a single Claude Opus 4.6 session consuming 635 out of 1,000 credits. One or two complex coding sessions can trigger a lockout for the rest of the week."
+
+> **From claude-world.com:** "Google Antigravity users reported multi-day account lockouts, a 92% free-tier quota cut, and pricing that pushes developers toward a $250/month plan."
+
+> **Personal Review (May 2026):** I've used it extensively. The best thing is having Claude models (Sonnet & Opus) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The $250 Ultra plan is absurdly priced. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
+
+---
+
+
 ## Xiaomi MiMo Token Plan
 
 Launched Apr 2 2026. Pure monthly credit pool — NO 5h windows, NO weekly limits.  
