@@ -8,63 +8,92 @@ title: Models Reference
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled April 2026.
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
-  <filter id="glow">
-    <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/>
-  </filter>
+  <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="rgba(250,189,47,0.03)"/>
+    <stop offset="1" stop-color="rgba(0,0,0,0)"/>
+  </linearGradient>
 </defs>
 
-<!-- Title -->
-<text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Verified vs. Input Price (per 1M tokens)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Lower price + higher score = best value · Only models with published scores shown</text>
+<rect x="75" y="55" width="675" height="415" fill="url(#bg)"/>
 
-<!-- Grid + axes -->
-<g stroke="rgba(255,255,255,0.06)" stroke-width="1">
-  <line x1="70" y1="350.0" x2="680" y2="350.0"/>
-  <text x="62" y="354.0" text-anchor="end" fill="#666" font-size="11">60%</text>
-  <line x1="70" y1="290.0" x2="680" y2="290.0"/>
-  <text x="62" y="294.0" text-anchor="end" fill="#666" font-size="11">65%</text>
-  <line x1="70" y1="230.0" x2="680" y2="230.0"/>
-  <text x="62" y="234.0" text-anchor="end" fill="#666" font-size="11">70%</text>
-  <line x1="70" y1="170.0" x2="680" y2="170.0"/>
-  <text x="62" y="174.0" text-anchor="end" fill="#666" font-size="11">75%</text>
-  <line x1="70" y1="110.0" x2="680" y2="110.0"/>
-  <text x="62" y="114.0" text-anchor="end" fill="#666" font-size="11">80%</text>
-  <line x1="70" y1="50.0" x2="680" y2="50.0"/>
-  <text x="62" y="54.0" text-anchor="end" fill="#666" font-size="11">85%</text>
-<text x="18" y="230" text-anchor="middle" fill="#888" font-size="12" transform="rotate(-90,18,230)">SWE-Bench Verified</text>
-  <line x1="206.51448673872375" y1="50" x2="206.51448673872375" y2="410"/>
-  <text x="206.51448673872375" y="428" text-anchor="middle" fill="#666" font-size="10">$0.25</text>
-  <line x1="309.7837093739804" y1="50" x2="309.7837093739804" y2="410"/>
-  <text x="309.7837093739804" y="428" text-anchor="middle" fill="#666" font-size="10">$0.50</text>
-  <line x1="413.05293200923705" y1="50" x2="413.05293200923705" y2="410"/>
-  <text x="413.05293200923705" y="428" text-anchor="middle" fill="#666" font-size="10">$1</text>
-  <line x1="516.3221546444938" y1="50" x2="516.3221546444938" y2="410"/>
-  <text x="516.3221546444938" y="428" text-anchor="middle" fill="#666" font-size="10">$2</text>
-  <line x1="619.5913772797504" y1="50" x2="619.5913772797504" y2="410"/>
-  <text x="619.5913772797504" y="428" text-anchor="middle" fill="#666" font-size="10">$4</text>
-<text x="375" y="472" text-anchor="middle" fill="#888" font-size="12">Input Price per 1M tokens (log₂ scale)</text>
-<rect x="70" y="50" width="610" height="360" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Lower price + higher score = better value</text>
+
+<g stroke="rgba(255,255,255,0.07)" stroke-width="1">
+  <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
+  <text x="65" y="417.91891891891896" text-anchor="end" fill="#555" font-size="11">60%</text>
+  <line x1="75" y1="357.8378378378378" x2="750" y2="357.8378378378378"/>
+  <text x="65" y="361.8378378378378" text-anchor="end" fill="#555" font-size="11">65%</text>
+  <line x1="75" y1="301.7567567567567" x2="750" y2="301.7567567567567"/>
+  <text x="65" y="305.7567567567567" text-anchor="end" fill="#555" font-size="11">70%</text>
+  <line x1="75" y1="245.67567567567568" x2="750" y2="245.67567567567568"/>
+  <text x="65" y="249.67567567567568" text-anchor="end" fill="#555" font-size="11">75%</text>
+  <line x1="75" y1="189.5945945945946" x2="750" y2="189.5945945945946"/>
+  <text x="65" y="193.5945945945946" text-anchor="end" fill="#555" font-size="11">80%</text>
+  <line x1="75" y1="133.5135135135135" x2="750" y2="133.5135135135135"/>
+  <text x="65" y="137.5135135135135" text-anchor="end" fill="#555" font-size="11">85%</text>
+  <line x1="75" y1="77.43243243243244" x2="750" y2="77.43243243243244"/>
+  <text x="65" y="81.43243243243244" text-anchor="end" fill="#555" font-size="11">90%</text>
+  <line x1="226.06111237481724" y1="55" x2="226.06111237481724" y2="470"/>
+  <text x="226.06111237481724" y="488" text-anchor="middle" fill="#555" font-size="10">0.25</text>
+  <line x1="340.3344325039947" y1="55" x2="340.3344325039947" y2="470"/>
+  <text x="340.3344325039947" y="488" text-anchor="middle" fill="#555" font-size="10">0.5</text>
+  <line x1="454.60775263317214" y1="55" x2="454.60775263317214" y2="470"/>
+  <text x="454.60775263317214" y="488" text-anchor="middle" fill="#555" font-size="10">1.0</text>
+  <line x1="568.8810727623497" y1="55" x2="568.8810727623497" y2="470"/>
+  <text x="568.8810727623497" y="488" text-anchor="middle" fill="#555" font-size="10">2.0</text>
+  <line x1="683.1543928915271" y1="55" x2="683.1543928915271" y2="470"/>
+  <text x="683.1543928915271" y="488" text-anchor="middle" fill="#555" font-size="10">4.0</text>
+<rect x="75" y="55" width="675" height="415" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+<text x="18" y="262" text-anchor="middle" fill="#888" font-size="12" transform="rotate(-90,18,262)">SWE-Bench Verified</text>
+<text x="412" y="540" text-anchor="middle" fill="#888" font-size="12">Input Price per 1M tokens (log₂ scale)</text>
 </g>
-<circle cx="120.12965108816996" cy="98.0" r="6" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="120.12965108816996" y="84.0" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">DeepSeek V4 Flash</text>
-<circle cx="130.40862272024955" cy="107.59999999999997" r="6" fill="#7b2d8e" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="130.40862272024955" y="93.59999999999997" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">MiniMax M2.5</text>
-<circle cx="245.60308783054555" cy="124.40000000000003" r="6" fill="#f4a261" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="245.60308783054555" y="110.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">Qwen3.6 Plus</text>
-<circle cx="276.5384452705133" cy="148.40000000000003" r="6" fill="#2a9d8f" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="276.5384452705133" y="166.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">Kimi K2.5</text>
-<circle cx="336.9470679907629" cy="290.0" r="6" fill="#e76f51" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="336.9470679907629" y="308.0" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">GLM-4.7</text>
-<circle cx="413.05293200923705" cy="136.40000000000003" r="6" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="413.05293200923705" y="110.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">GLM-5</text>
-<circle cx="549.5674187479608" cy="110.0" r="6" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="549.5674187479608" y="96.0" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">GPT-5.4</text>
-<circle cx="652.8366413832174" cy="100.40000000000003" r="6" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
-<text x="652.8366413832174" y="86.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">Claude Opus 4.6</text>
-<text x="138.12965108816996" y="94.0" fill="#4ea8de" font-size="9" font-style="italic">← Best value</text>
+<rect x="70" y="485" width="12" height="12" rx="2" fill="#10a040"/>
+<text x="86" y="496" fill="#999" font-size="10">OpenAI</text>
+<rect x="170" y="485" width="12" height="12" rx="2" fill="#d62828"/>
+<text x="186" y="496" fill="#999" font-size="10">Anthropic</text>
+<rect x="300" y="485" width="12" height="12" rx="2" fill="#4285f4"/>
+<text x="316" y="496" fill="#999" font-size="10">Google</text>
+<rect x="400" y="485" width="12" height="12" rx="2" fill="#4ea8de"/>
+<text x="416" y="496" fill="#999" font-size="10">DeepSeek</text>
+<rect x="520" y="485" width="12" height="12" rx="2" fill="#888"/>
+<text x="536" y="496" fill="#999" font-size="10">Others</text>
+<circle cx="130.47133522051595" cy="200.8108108108108" r="6" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="130.47133522051595" y="218.8108108108108" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V4 Flash</text>
+<circle cx="141.84560710847285" cy="187.35135135135133" r="6" fill="#7b2d8e" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="141.84560710847285" y="161.35135135135133" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiniMax M2.5</text>
+<circle cx="244.7446553496934" cy="268.1081081081081" r="6" fill="#48c774" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="244.7446553496934" y="254.10810810810813" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V3.2</text>
+<circle cx="269.3148922715053" cy="203.05405405405412" r="6" fill="#f4a261" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="269.3148922715053" y="221.05405405405412" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Qwen3.6 Plus</text>
+<circle cx="303.54664025835496" cy="225.48648648648648" r="6" fill="#2a9d8f" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="303.54664025835496" y="243.48648648648648" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Kimi K2.5</text>
+<circle cx="370.3922473668278" cy="259.13513513513516" r="6" fill="#e76f51" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="370.3922473668278" y="245.13513513513516" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-4.7</text>
+<circle cx="446.15146050010213" cy="187.35135135135133" r="6" fill="#e9c46a" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="446.15146050010213" y="173.35135135135133" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Kimi K2.6</text>
+<circle cx="454.60775263317214" cy="214.27027027027032" r="6" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="454.60775263317214" y="188.27027027027032" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-5</text>
+<circle cx="454.60775263317214" cy="212.02702702702703" r="6" fill="#00b4d8" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="454.60775263317214" y="198.02702702702703" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiMo-V2-Pro</text>
+<circle cx="546.8668800993278" cy="133.5135135135135" r="8" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="546.8668800993278" y="151.5135135135135" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.3 Codex</text>
+<circle cx="568.8810727623497" cy="182.86486486486496" r="6" fill="#4285f4" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="568.8810727623497" y="200.86486486486496" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Gemini 3.1 Pro</text>
+<circle cx="635.7266798708225" cy="194.08108108108112" r="6" fill="#fa8b02" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="635.7266798708225" y="180.08108108108112" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Sonnet 4.6</text>
+<circle cx="719.9421851371668" cy="180.62162162162167" r="6" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="719.9421851371668" y="154.62162162162167" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.6</text>
+<circle cx="719.9421851371668" cy="104.3513513513514" r="8" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="719.9421851371668" y="78.3513513513514" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7 (87.6% SWE-Bench)</text>
+<circle cx="719.9421851371668" cy="92.0135135135135" r="8" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="719.9421851371668" y="78.0135135135135" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.5</text>
+<text x="723.9421851371668" y="64.0135135135135" fill="#10a040" font-size="9" font-style="italic">#1 GPT-5.5</text>
 </svg>
+
 
 ---
 
@@ -79,7 +108,7 @@ Current as of May 2026. Source: [platform.claude.com](https://platform.claude.co
 | Sonnet 4.6 | $3.00 | $15.00 | ✓ | $3.75/MTok | $0.30/MTok |
 | Haiku 4.5 | $1.00 | $5.00 | ✓ | $1.25/MTok | $0.10/MTok |
 
-Opus 4.7 uses a new tokenizer — may use up to 35% more tokens for the same text.
+Opus 4.7: 87.6% SWE-Bench Verified (#2). Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.
 
 ---
 ## Google Gemini
@@ -113,7 +142,7 @@ Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api
 | Gemini 2.0 Flash | $0.10 | $0.40 | Shutdown Jun 1 2026 |
 
 Gemini 3.1 Pro is a preview model (restrictive rate limits). Free tier available for development and small projects.
-Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Opus 4.6 (80.8%) and DeepSeek V4 (81%).
+Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Opus 4.6 (80.8%) and DeepSeek V4 Flash (79%).
 
 ---
 
@@ -122,7 +151,7 @@ Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Op
 Current as of May 2026. Source: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/)
 
 DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.
-SWE-Bench Verified: 81%. V4 Flash is the default workhorse; V4 Pro is premium (75% off until May 31 2026).
+SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash 79%. V4 Flash is the default workhorse; V4 Pro is premium (75% off until May 31 2026).
 
 | Model | Cache Hit Input /1M | Cache Miss Input /1M | Output /1M | Context | Notes |
 |-------|--------------------|---------------------|-----------|---------|-------|
@@ -141,7 +170,7 @@ New accounts get 5M free tokens.
 | DeepSeek V3.2 (Chat) | $0.28 | $0.42 | $0.028 | 128K | Previous gen, still available |
 | DeepSeek R1 | $0.55 | $2.19 | $0.14 | 128K | Dedicated reasoning model |
 
-DeepSeek V3.2: 69% SWE-Bench Verified. R1: chain-of-thought reasoning, ~96% cheaper than OpenAI o1.
+DeepSeek V3.2: 73.0% SWE-Bench Verified. R1: chain-of-thought reasoning, ~96% cheaper than OpenAI o1.
 DeepSeek web chat at chat.deepseek.com is free for individual users.
 
 ---
@@ -153,12 +182,12 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 
 | Model | Input /1M | Output /1M | Cached Input | Context | Notes |
 |-------|-----------|------------|-------------|---------|-------|
-| GPT-5.5 | $5.00 | $30.00 | $0.50 | 1M | Flagship reasoning + coding. Highest benchmark scores |
+| GPT-5.5 | $5.00 | $30.00 | $0.50 | 1M | **88.7% SWE-Bench** (#1). Flagship reasoning + coding |
 | GPT-5.5 Pro | $30.00 | $180.00 | — | 1M | Premium tier for research-grade problems |
-| GPT-5.4 | $2.50 | $15.00 | $0.25 | 1M | Strong all-rounder, superseded by 5.5 |
+| GPT-5.4 | $2.50 | $15.00 | $0.25 | 1M | ~80% SWE-Bench. Strong all-rounder |
 | GPT-5.4 Mini | $0.75 | $4.50 | $0.075 | 400K | Affordable reasoning. Supports reasoning effort control |
 | GPT-5.4 Nano | $0.20 | $1.25 | — | 400K | Fastest, cheapest 5.4 tier. Ideal for summaries, classification |
-| GPT-5.3 Codex | $1.75 | $14.00 | — | 400K | Coding specialist. Superseded by GPT-5.5 |
+| GPT-5.3 Codex | $1.75 | $14.00 | — | 400K | **85.0% SWE-Bench** (#3). Coding specialist |
 
 ### GPT-4.1 Family (Production Workhorse)
 
@@ -260,7 +289,7 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.
 
 | Model | Context | Input /1M | Output /1M | Cached Input | Notes |
 |-------|---------|-----------|------------|-------------|-------|
-| GLM-4.7 | 128K | $0.60 | $2.20 | $0.11 | Reliable daily driver |
+| GLM-4.7 | 128K | $0.60 | $2.20 | $0.11 | 73.8% SWE-Bench Verified |
 | GLM-4.7-FlashX | 203K | $0.07 | $0.40 | $0.01 | Fast inference variant |
 | GLM-4.6 | 128K | $0.60 | $2.20 | $0.11 | Previous generation |
 | GLM-4.5-X | 128K | $2.20 | $8.90 | $0.45 | Premium tier |
@@ -293,7 +322,7 @@ Current as of May 2026. Launched Mar 18 2026. Source: [mimo-v2.com](https://www.
 
 | Model | Input /1M | Output /1M | Context | Modalities | Notes |
 |-------|-----------|------------|---------|------------|-------|
-| MiMo-V2-Pro (≤256K) | $1.00 | $3.00 | 1M | Text | 1T params, 42B active. Top 3 Claw-Eval |
+| MiMo-V2-Pro (≤256K) | $1.00 | $3.00 | 1M | Text | 78.0% SWE-Bench. 1T params, 42B active |
 | MiMo-V2-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
 | MiMo-V2-Omni | ~$1.00 | ~$3.00 | 256K | Text, Image, Audio, Video | Multimodal flagship |
 | MiMo-V2-Flash | $0.10 | $0.30 | 256K | Text | Open-source foundation model |
