@@ -66,11 +66,6 @@ Compiled April 2026.
 <text x="138.12965108816996" y="94.0" fill="#4ea8de" font-size="9" font-style="italic">← Best value</text>
 </svg>
 
-
----
-
-
-
 ---
 
 ## Anthropic (Claude)
