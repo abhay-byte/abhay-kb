@@ -53,6 +53,49 @@ DeepSeek V3.2: 69% SWE-Bench Verified. R1: chain-of-thought reasoning, ~96% chea
 DeepSeek web chat at chat.deepseek.com is free for individual users.
 
 ---
+## OpenAI (ChatGPT)
+
+Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/pricing/)
+
+| Model | Input /1M | Output /1M | Cached Input /1M | Context |
+|-------|-----------|------------|-----------------|---------|
+| GPT-5.5 | $5.00 | $30.00 | $0.50 | 270K+ |
+| GPT-5.4 | $2.50 | $15.00 | $0.25 | 270K+ |
+| GPT-5.4 Mini | $0.75 | $4.50 | $0.075 | 270K+ |
+
+Batch API saves 50%. Flex processing offers lower costs for slower response times.
+GPT-5.5 is the new frontier for coding and professional work. GPT-5.4 is the affordable alternative.
+
+---
+
+## MiniMax
+
+| Model | Input /1M | Output /1M | Context | SWE-Bench | Notes |
+|-------|-----------|------------|---------|-----------|-------|
+| M2.7 | $0.279 | $1.20 | 196K | — | Released Mar 18 2026. 131K max output |
+| M2.5 Standard | $0.15 | $1.20 | 256K | 80.2% | ~50 TPS. Automatic caching. Near Claude Opus 4.6 |
+| M2.5 Lightning | $0.30 | $2.40 | 256K | 80.2% | ~100 TPS. Same quality, 2x speed |
+
+M2.5 Standard at $0.15/$1.20 is one of the best value coding models. Automatic cache support (no config needed).
+OpenCode Go subscription estimates: M2.5 ~6,300 req/5h, M2.7 ~3,400 req/5h.
+
+---
+
+## Qwen (Alibaba)
+
+Current via DashScope / OpenRouter.
+
+| Model | Input /1M | Output /1M | Context | Max Output | Notes |
+|-------|-----------|------------|---------|-----------|-------|
+| Qwen3.6 Plus | $0.325 | $1.95 | 1M | 65,536 | Hybrid linear attention + MoE |
+| Qwen3.5 Plus | $0.26 | $1.56 | 1M | 65,536 | Previous gen, still available |
+
+Both models support native tool-calling, JSON-mode, and OpenAI-compatible API shapes.
+1M token context window — same scale as Gemini 1.5, far larger than Claude (200K) or GPT.
+
+---
+
+
 
 ## GLM / Z.ai
 
