@@ -156,34 +156,68 @@ GLM-5.1: 754B params, 28% improvement over GLM-5, 8-hour autonomous runs, 1,700 
 
 ## Xiaomi MiMo
 
-| Model | Context | Rate | Input /1M | Output /1M |
-|-------|---------|------|-----------|------------|
-| MiMo-V2-Omni | up to 256K | 1 token = 1 Credit | $0.40 | $2.00 |
-| MiMo-V2-Pro | up to 256K | 1 token = 2 Credits | $1.00 | $3.00 |
-| MiMo-V2-Pro | 256K–1M | 1 token = 4 Credits | $2.00 | $6.00 |
-| MiMo-V2-Flash | — | — | $0.09 | $0.29 |
+Current as of May 2026. Launched Mar 18 2026. Source: [mimo-v2.com](https://www.mimo-v2.com/docs/pricing)
+
+| Model | Input /1M | Output /1M | Context | Modalities | Notes |
+|-------|-----------|------------|---------|------------|-------|
+| MiMo-V2-Pro (≤256K) | $1.00 | $3.00 | 1M | Text | 1T params, 42B active. Top 3 Claw-Eval |
+| MiMo-V2-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
+| MiMo-V2-Omni | ~$1.00 | ~$3.00 | 256K | Text, Image, Audio, Video | Multimodal flagship |
+| MiMo-V2-Flash | $0.10 | $0.30 | 256K | Text | Open-source foundation model |
+| MiMo-V2-TTS | Free | Free | — | Audio | Limited time promo |
+
+API at platform.xiaomimimo.com. OpenAI-compatible. Credit plans available: Lite $6/mo, Standard $16/mo, Pro $50/mo, Max $100/mo.
 
 ---
 
 ## Kimi / Moonshot AI (K2.6)
 
-| Spec | K2.5 | K2.6 (Current) |
-|------|------|----------------|
-| Released | Jan 27 2026 | Apr 18–21 2026 |
-| Params | 1T, 32B active MoE | 1T, 32B active MoE |
-| Experts | 384 | 384 |
-| Context | 256K | 256K |
-| SWE-Bench Verified | 76.8% | — |
-| SWE-Bench Pro | — | 58.6% |
-| Multilingual | — | 76.7% |
-| BrowseComp | 78.4% | 83.2% |
-| Parallel sub-agents | 100 | 300 |
-| Long-horizon | — | 4,000+ calls, 12+ hr |
-| License | MIT | MIT |
+Current as of May 2026. Source: [kimi.com](https://www.kimi.com/resources/kimi-k2-6-pricing), [OpenRouter](https://openrouter.ai/moonshotai/kimi-k2.5)
+
+Both models: 1T params, 32B active MoE, 384 experts, MIT license.
+
+| Model | Cache Hit /1M | Cache Miss /1M | Output /1M | Context | SWE-Bench |
+|-------|--------------|----------------|-----------|---------|-----------|
+| kimi-k2.6 | $0.16 | $0.95 | $4.00 | 262K | Pro 58.6%, BrowseComp 83.2% |
+| kimi-k2.5 | — | $0.40 | $1.90 | 256K | Verified 76.8%, BrowseComp 78.4% |
+
+K2.6: 300 parallel sub-agents, 4,000+ tool calls, 12+ hr continuous execution.
+K2.5: 100 parallel sub-agents.
+
+### Membership Plans
+
+| Plan | Price/mo | Agent Usage |
+|------|----------|-------------|
+| Adagio | Free | 6 |
+| Moderato | $15 | 60 |
+| Allegretto | $31 | 150 |
+| Allegro | $79 | 360 |
+| Vivace | $159 | 720 |
 
 ---
 
-## OpenCode Go (estimates via subscription)
+## OpenCode Go
+
+Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Dollar-value limits ($12/5h, $30/week, $60/month).
+
+### Available Models
+
+| Model Ref | Name |
+|-----------|------|
+| opencode-go/glm-5 | GLM-5 |
+| opencode-go/glm-5.1 | GLM-5.1 |
+| opencode-go/kimi-k2.5 | Kimi K2.5 |
+| opencode-go/kimi-k2.6 | Kimi K2.6 (3x limits) |
+| opencode-go/deepseek-v4-pro | DeepSeek V4 Pro |
+| opencode-go/deepseek-v4-flash | DeepSeek V4 Flash |
+| opencode-go/mimo-v2-omni | MiMo V2 Omni |
+| opencode-go/mimo-v2-pro | MiMo V2 Pro |
+| opencode-go/minimax-m2.5 | MiniMax M2.5 |
+| opencode-go/minimax-m2.7 | MiniMax M2.7 |
+| opencode-go/qwen3.5-plus | Qwen3.5 Plus |
+| opencode-go/qwen3.6-plus | Qwen3.6 Plus |
+
+### Request Estimates (Apr 17 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
