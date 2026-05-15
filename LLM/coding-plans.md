@@ -46,15 +46,43 @@ ByteDance's AI inference platform. Coding Plan = subscription with shared quota 
 
 ## GitHub Copilot
 
-Monthly reset only — no 5h or weekly windows. Extra requests: $0.04 each on Pro/Pro+.
+Source: [docs.github.com](https://docs.github.com/en/copilot/get-started/plans), [github.blog](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/)
 
-| Plan | Price | Premium Req/mo | Completions | Agent | CLI | Review |
-|------|-------|---------------|-------------|-------|-----|--------|
-| Free | $0 | 50 | 2,000/mo | No | No | No |
-| Pro | $10/mo ($100/yr) | 300 | Unlimited | Yes | Yes | Yes |
-| Pro+ | $39/mo ($390/yr) | 1,500 | Unlimited | Yes | Yes | Yes+Spark |
+### Plans (Current — May 2026)
 
-Students, teachers, and OSS maintainers get Pro free.
+| Plan | Price | Premium Req/mo | Completions | Agent/CLI | Status |
+|------|-------|---------------|-------------|-----------|--------|
+| Free | $0 | 50 | 2,000/mo | Limited | Available |
+| Student | Free (verified) | Unlimited | Unlimited | Yes | **Signups paused** since Apr 20 |
+| Pro | $10/mo ($100/yr) | 300 | Unlimited | Yes | **Signups paused** since Apr 20 |
+| Pro+ | $39/mo ($390/yr) | 1,500 | Unlimited | Yes | **Signups paused** since Apr 20 |
+| Business | $19/seat/mo | — | Unlimited | Yes | Available |
+| Enterprise | $39/seat/mo | — | Unlimited | Yes | Available |
+| Max (new) | $100/mo | $200 usage value | Unlimited | Yes | Starts Jun 1, 2026 |
+
+### Key Changes (Apr–May 2026)
+
+- **New signups paused:** Pro, Pro+, and Student plans paused since Apr 20, 2026. No timeline for reopening
+- **Opus removed from Pro:** Claude Opus 4.7 is now exclusive to Pro+ ($39/mo). Pro users lost Opus access
+- **Student plan downgraded:** Claude Opus/Sonnet removed (Mar 14). GPT-5.3-Codex removed from manual picker (Apr 27). Only lower-tier models remain
+- **Max plan announced:** $100/mo with $200 usage value (flex allotment). Usage-based billing starts Jun 1
+- **Moving to usage-based billing:** June 1, 2026. Plans get base credits + flex allotment
+
+### Models Available
+
+- Pro: GPT-5.5 (auto), GPT-5.4-mini, Haiku 4.5, GPT-OSS models. Opus removed
+- Pro+: Same + Claude Opus 4.7 (exclusive), all premium models
+- Student: Limited selection (lower-tier models only after removals)
+
+### Community Reviews
+
+> **From techsifted (Apr 2026):** "Microsoft paused new signups for Copilot Pro, Pro+, and Student plans. Then they removed Opus models from the Pro tier entirely. If you'd built workflows around Opus inside GitHub Copilot at $10/month, those workflows are broken now."
+
+> **From piunikaweb (Mar 2026):** "To manage costs, GitHub has decided to remove access to flagship Claude models such as Opus and Sonnet, on the student plan."
+
+> **From Reddit (r/github):** Users widely criticized the student plan downgrades and Pro signup pause. Many students reported being locked out of models they relied on for coursework.
+
+> **Personal Review (May 2026):** GitHub Copilot was the most reliable and good coding plan I used. A lot of models were available and the IDE integration was seamless. I used it on the Student plan which was fantastic initially. The bad part: they progressively removed all frontier models from the Student plan — Claude Opus/Sonnet went first, then GPT-5.3-Codex was pulled from the model picker. What started as a generous free plan for students got hollowed out over time. Still a solid product, but the value has degraded significantly for free/student users.
 
 ---
 
