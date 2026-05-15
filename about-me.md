@@ -41,6 +41,8 @@ title: About Me
   <figcaption>Track and field medals</figcaption>
 </figure>
 
+<p>I'm a pure vegetarian (not vegan though) — and a notoriously picky eater. I don't like vegetables despite being a vegetarian, which is ironic. My favourite food is <strong>noodles</strong>.</p>
+
 <p>When I'm not coding, I love watching anime — <strong>300+ shows</strong> and counting. My all-time favourite is <strong>One Piece</strong> (currently at episode 956).</p>
 
 <figure>
