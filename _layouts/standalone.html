@@ -34,9 +34,6 @@
       transition: background 0.15s;
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
-    .sidebar .badge-group { display: flex; flex-direction: column; gap: 8px; }
-    .sidebar .badge-group img { max-width: 100%; border-radius: 4px; }
-
     .main-content { flex: 1; min-width: 0; }
     .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
     .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
@@ -91,11 +88,7 @@
         <a href="https://github.com/abhay-byte">🐙 GitHub</a>
         <a href="https://www.linkedin.com/in/abhay-byte/">💼 LinkedIn</a>
       </nav>
-      <div class="badge-group">
-        <img src="https://komarev.com/ghpvc/?username=abhay-byte&color=282828&labelColor=282828&style=for-the-badge" alt="Profile views"/>
-        <img src="https://img.shields.io/github/followers/abhay-byte?label=Followers&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Followers"/>
-        <img src="https://img.shields.io/github/stars/abhay-byte?affiliations=OWNER%2CCOLLABORATOR&label=Total%20Stars&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Stars"/>
-      </div>
+
     </aside>
     <main class="main-content">
       {{ content }}
