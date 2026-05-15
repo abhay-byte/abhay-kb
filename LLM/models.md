@@ -90,14 +90,26 @@ GPT-5.4 scores ~80% SWE-Bench Verified. GPT-4.1 is OpenAI's recommended producti
 
 ## MiniMax
 
-| Model | Input /1M | Output /1M | Context | SWE-Bench | Notes |
-|-------|-----------|------------|---------|-----------|-------|
-| M2.7 | $0.279 | $1.20 | 196K | — | Released Mar 18 2026. 131K max output |
-| M2.5 Standard | $0.15 | $1.20 | 256K | 80.2% | ~50 TPS. Automatic caching. Near Claude Opus 4.6 |
-| M2.5 Lightning | $0.30 | $2.40 | 256K | 80.2% | ~100 TPS. Same quality, 2x speed |
+Current as of May 2026. Source: [platform.minimax.io](https://platform.minimax.io/docs/pricing/overview), [OpenRouter](https://openrouter.ai/minimax/minimax-m2.7)
 
-M2.5 Standard at $0.15/$1.20 is one of the best value coding models. Automatic cache support (no config needed).
-OpenCode Go subscription estimates: M2.5 ~6,300 req/5h, M2.7 ~3,400 req/5h.
+### Coding Models
+
+| Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench | Speed |
+|-------|-----------|------------|---------|-----------|-----------|-------|
+| M2.7 | $0.279 | $1.20 | 196K | 131K | — | Released Mar 18 2026 |
+| M2.5 Standard | $0.15 | $1.20 | 256K | — | 80.2% | ~50 TPS |
+| M2.5 Lightning | $0.30 | $2.40 | 256K | — | 80.2% | ~100 TPS |
+
+M2.5 Standard: One of the best value coding models. Automatic cache (no config needed). Near Claude Opus 4.6 (80.8%).
+OpenCode Go estimates: M2.5 ~6,300 req/5h, M2.7 ~3,400 req/5h.
+
+### Subscription Plans
+
+| Plan | Price | Description |
+|------|-------|-------------|
+| Token Plan | Subscription | Quotas for individual builders and Teams |
+| Credits | Prepaid | Same resource coverage as Token Plan |
+| Pay-as-you-go | Per-token | Standard API endpoint billing |
 
 ---
 
@@ -139,18 +151,47 @@ All Qwen models support native tool-calling, JSON-mode, and OpenAI-compatible AP
 
 ## GLM / Z.ai
 
-| Model | Type | Context | SWE-Bench | Input /1M | Output /1M | Notes |
-|-------|------|---------|-----------|-----------|------------|-------|
-| GLM-5.1 | Flagship agentic | 202K | 68.7 CyberGym | $1.40 | $4.40 | MIT, 754B params |
-| GLM-5-Turbo | Fast inference | 202K | — | $1.20 | $4.00 | Proprietary |
-| GLM-5 | Base flagship | 202K | 77.8% Verified | $1.00 | $3.20 | MIT, 744B/40B MoE |
-| GLM-5-Code | Coding variant | 202K | — | $1.20 | $5.00 | Higher quality coding |
-| GLM-4.7 | Reliable daily | 128K | ~65% | ~$0.50 | ~$1.50 | 1x quota always |
-| GLM-4.5-Air | Lightweight | 128K | — | $0.15 | $0.45 | Haiku-equivalent |
-| GLM-4.7-Flash | Free tier | 203K | — | Free | Free | No subscription needed |
+Current as of May 2026. Source: [docs.z.ai](https://docs.z.ai/guides/overview/pricing)
 
-GLM-5: 744B params, 40B active MoE, 28.5T token pretraining, 202K context.
-GLM-5.1: 754B params, 28% improvement over GLM-5, 8-hour autonomous runs, 1,700 agentic steps.
+### Flagship Models (GLM-5 Series)
+
+| Model | Context | SWE-Bench | Input /1M | Output /1M | Cached Input | License |
+|-------|---------|-----------|-----------|------------|-------------|---------|
+| GLM-5.1 | 202K | Pro 58.4% (best-in-class) | $1.40 | $4.40 | $0.26 | MIT, 754B params |
+| GLM-5 | 202K | Verified 77.8% | $1.00 | $3.20 | $0.20 | MIT, 744B/40B MoE |
+| GLM-5-Turbo | 202K | — | $1.20 | $4.00 | $0.24 | Proprietary |
+
+GLM-5.1 (Apr 7 2026): 8-hour autonomous runs, 1,700 agentic steps. Surpasses GPT-5.4 and Claude Opus 4.6 on SWE-Bench Pro.
+GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.
+
+### Previous Gen (GLM-4 Series)
+
+| Model | Context | Input /1M | Output /1M | Cached Input | Notes |
+|-------|---------|-----------|------------|-------------|-------|
+| GLM-4.7 | 128K | $0.60 | $2.20 | $0.11 | Reliable daily driver |
+| GLM-4.7-FlashX | 203K | $0.07 | $0.40 | $0.01 | Fast inference variant |
+| GLM-4.6 | 128K | $0.60 | $2.20 | $0.11 | Previous generation |
+| GLM-4.5-X | 128K | $2.20 | $8.90 | $0.45 | Premium tier |
+| GLM-4.5 | 128K | $0.60 | $2.20 | $0.11 | Standard tier |
+| GLM-4.5-Air | 128K | $0.20 | $1.10 | $0.03 | Lightweight, Haiku-class |
+| GLM-4.5-AirX | 128K | $1.10 | $4.50 | $0.22 | Fast Air variant |
+| GLM-4-32B-0414-128K | 128K | $0.10 | $0.10 | — | Budget open-weight |
+
+### Free Models
+
+| Model | Context | Input | Output |
+|-------|---------|-------|--------|
+| GLM-4.7-Flash | 203K | Free | Free |
+| GLM-4.5-Flash | — | Free | Free |
+
+### Vision Models
+
+| Model | Input /1M | Output /1M | Cached Input |
+|-------|-----------|------------|-------------|
+| GLM-5V-Turbo | $1.20 | $4.00 | $0.24 |
+| GLM-4.6V | $0.30 | $0.90 | $0.05 |
+| GLM-4.6V-FlashX | $0.04 | $0.40 | $0.004 |
+| GLM-4.6V-Flash | Free | Free | Free |
 
 ---
 
