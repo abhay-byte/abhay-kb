@@ -195,6 +195,61 @@ Source: [claude.com/pricing](https://claude.com/pricing), community instrumentat
 
 ---
 
+
+## GPT Codex (OpenAI)
+
+OpenAI's agentic coding tool — CLI, IDE extension, ChatGPT app, and cloud. Codex is **bundled into ChatGPT plans** (no separate subscription).  
+Source: [developers.openai.com/codex/pricing](https://developers.openai.com/codex/pricing)
+
+### ChatGPT Plans (Codex Included)
+
+| Plan | Price | Best For |
+|------|-------|----------|
+| Free | $0 | Limited Codex Mini access |
+| Plus | $20/mo | Entry point for Codex CLI + IDE + cloud |
+| Pro ($100) | $100/mo | 5x (10x promo until May 31) higher limits. Includes GPT-5.3-Codex-Spark preview |
+| Pro ($200) | $200/mo | 20x higher limits. Heavy daily use |
+| Business | $25/seat/mo | Team workspace + admin controls |
+| API Key | Pay-per-token | CI/CD, automation, programmatic |
+
+### Codex Usage Limits (Plus — 5-hour rolling window)
+
+| Model | Local Msgs/5h | Cloud Tasks/5h | Code Reviews/5h |
+|-------|--------------|----------------|-----------------|
+| GPT-5.5 | 15-80 | — | — |
+| GPT-5.4 | 20-100 | — | — |
+| GPT-5.4-mini | 60-350 | — | — |
+| GPT-5.3-Codex | 30-150 | 10-60 | 20-50 |
+
+Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets double (10x) until May 31, 2026.
+
+### API Pay-per-Token (Codex API)
+
+| Model | Input /1M | Output /1M |
+|-------|-----------|------------|
+| GPT-5.5 | $2.50 | $10.00 |
+| GPT-5.5 mini | $0.40 | $1.60 |
+| GPT-5.5 nano | $0.10 | $0.40 |
+| Codex (specialized) | $5.00 | $15.00 |
+
+### Notes
+
+- Usage shared across all Codex surfaces (CLI, IDE, ChatGPT, cloud)
+- Soft caps slow you down; hard caps cut off until window resets
+- Extra credits can be purchased on Plus/Pro plans
+- Pro $100 2x promo expires May 31 2026
+
+### Community Reviews
+
+> **From aitoolsrecap (2026):** "The April 16, 2026 update added computer use, memory, image generation, and 90+ plugins -- turning it from a coding assistant into a full developer workstation. Included from $20/mo on ChatGPT Plus."
+
+> **From elite-ai-assisted-coding review:** "Codex CLI performed well throughout testing. GPT-5's capabilities were the key differentiator -- the model followed instructions precisely, learned from documentation effectively, and applied knowledge appropriately."
+
+> **Personal Review (May 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus.
+
+---
+
+
 ## Xiaomi MiMo Token Plan
 
 Launched Apr 2 2026. Pure monthly credit pool — NO 5h windows, NO weekly limits.  
