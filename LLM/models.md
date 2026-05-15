@@ -87,6 +87,40 @@ Current as of May 2026. Source: [platform.claude.com](https://platform.claude.co
 Opus 4.7 uses a new tokenizer — may use up to 35% more tokens for the same text.
 
 ---
+## Google Gemini
+
+Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api/docs/pricing), [SWE-Bench](https://www.swebench.com/)
+
+### Current Models
+
+| Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench Verified | Notes |
+|-------|-----------|------------|---------|-----------|-------------------|-------|
+| Gemini 3.1 Pro Preview | $2.00 ($4.00 >200K) | $12.00 ($18.00 >200K) | 2M | 16K | **80.6%** | Preview. Top-tier reasoning. 2M ctx |
+| Gemini 3.1 Flash-Lite Preview | $0.25 | $1.50 | 1M | 64K | — | Fast, high-volume agentic tasks |
+| Gemini 2.5 Pro | $1.25 ($2.50 >200K) | $10.00 ($15.00 >200K) | 2M | 64K | — | Complex reasoning, coding, long docs |
+| Gemini 2.5 Flash | $0.30 | $2.50 | 1M | 64K | — | Balanced cost and capability |
+| Gemini 2.5 Flash-Lite | $0.10 | $0.40 | 1M | 64K | — | Lowest-cost current Gemini route |
+
+### Batch / Flex Pricing (50% off)
+
+| Model | Batch Input /1M | Batch Output /1M |
+|-------|----------------|-----------------|
+| Gemini 3.1 Pro (≤200K) | $1.00 | $6.00 |
+| Gemini 3.1 Flash-Lite | $0.125 | $0.75 |
+| Gemini 2.5 Pro (≤200K) | $0.625 | $5.00 |
+| Gemini 2.5 Flash | $0.15 | $1.25 |
+| Gemini 2.5 Flash-Lite | $0.05 | $0.20 |
+
+### Deprecated
+
+| Model | Input /1M | Output /1M | Note |
+|-------|-----------|------------|------|
+| Gemini 2.0 Flash | $0.10 | $0.40 | Shutdown Jun 1 2026 |
+
+Gemini 3.1 Pro is a preview model (restrictive rate limits). Free tier available for development and small projects.
+Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Opus 4.6 (80.8%) and DeepSeek V4 (81%).
+
+---
 
 ## DeepSeek
 
