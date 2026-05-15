@@ -1,281 +1,163 @@
 ---
-layout: none
+layout: standalone
+title: Home
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhay's Knowledge Base | My personal projects and notes</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #0d0d0d;
-      color: #e0e0e0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      line-height: 1.6;
-    }
-    a { color: #fabd2f; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 32px 0; }
+<h1>Hi, I'm @abhay-byte — Agentic Software Engineer</h1>
 
-    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+<p>
+  I build software with AI agents — not just code, but the systems that run them.
+  My daily workflow uses Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and other AI tools,
+  all managed through my own <a href="https://github.com/abhay-byte/nexus"><strong>Nexus Terminal</strong></a>
+  — a multi-agent terminal workspace I built for this exact purpose.
+  I also work with MCP servers and AI IDEs (Cursor, Windsurf) to extend what agents can do.
+</p>
 
-    /* ─── Sidebar ─── */
-    .sidebar {
-      width: 240px; flex-shrink: 0;
-      position: sticky; top: 40px; align-self: flex-start;
-    }
-    .sidebar h1 {
-      font-size: 22px; font-weight: 700; color: #fff;
-      margin-bottom: 4px;
-    }
-    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
-    .sidebar nav { display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
-    .sidebar nav a {
-      display: block; padding: 8px 12px; border-radius: 6px;
-      color: #ccc; font-size: 15px;
-      transition: background 0.15s;
-    }
-    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
-    .sidebar .badge-group { display: flex; flex-direction: column; gap: 8px; }
-    .sidebar .badge-group img { max-width: 100%; border-radius: 4px; }
+<p><em>Every project here is open source. All code, all assets, no paywalls — just FOSS.</em></p>
 
-    /* ─── Main Content ─── */
-    .main-content { flex: 1; min-width: 0; }
+<hr>
 
-    .main-content h1 {
-      font-size: 32px; font-weight: 700; color: #fff;
-      margin-bottom: 16px;
-    }
-    .main-content h2 {
-      font-size: 22px; font-weight: 600; color: #fff;
-      margin: 32px 0 16px;
-    }
-    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
-    .main-content ul { margin: 0 0 16px 20px; }
-    .main-content li { margin-bottom: 6px; color: #ccc; }
+<h2>📬 Contact</h2>
+<ul>
+  <li>📬 Email: <a href="mailto:abhay.byte02@gmail.com">abhay.byte02@gmail.com</a> — best way to reach me!</li>
+  <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/abhay-byte/">Abhay Raj</a> — let's network!</li>
+</ul>
 
-    .contact-section { margin: 24px 0; }
+<h2>📄 Resume</h2>
+<p>
+  <a href="https://github.com/abhay-byte/my-resume/releases/latest">
+    <img src="https://img.shields.io/badge/Download_Resume-fabd2f?style=for-the-badge&logo=adobeacrobatreader&logoColor=282828&labelColor=282828" alt="Download Resume">
+  </a>
+</p>
 
-    .resume-section { margin: 24px 0; }
+<hr>
 
-    .resume-section img { height: 32px; }
+<h2>🌟 Featured Projects</h2>
 
-    /* ─── Project Cards ─── */
-    .project-card {
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 20px;
-      margin: 16px 0;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .project-card:hover { border-color: rgba(250,189,47,0.25); background: rgba(255,255,255,0.015); }
-    .project-card h3 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
-    .project-card p { font-size: 14px; color: #999; line-height: 1.5; margin-bottom: 12px; }
-    .project-card .links { display: flex; gap: 8px; flex-wrap: wrap; }
-    .project-card .links img { height: 28px; border-radius: 4px; }
-
-    .view-all { margin-top: 24px; font-size: 15px; }
-
-    /* ─── Stats ─── */
-    .stats-section { text-align: center; margin: 32px 0; }
-    .stats-section img { max-width: 100%; margin: 12px 0; border-radius: 6px; }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 800px) {
-      .page-wrapper { flex-direction: column; padding: 24px 16px; gap: 24px; }
-      .sidebar { width: 100%; position: static; }
-      .sidebar h1 { font-size: 20px; }
-      .main-content h1 { font-size: 26px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="page-wrapper">
-    <aside class="sidebar">
-      <h1>Abhay's Knowledge Base</h1>
-      <p class="tagline">My personal projects and notes</p>
-      <nav>
-        <a href="/abhay-kb/">🏠 Home</a>
-        <a href="/abhay-kb/PROJECTS">📁 All Projects</a>
-        <a href="https://github.com/abhay-byte/abhay-kb">📦 Repo</a>
-        <a href="https://github.com/abhay-byte/my-resume/releases/latest">📄 Resume</a>
-        <a href="https://github.com/abhay-byte">🐙 GitHub</a>
-        <a href="https://www.linkedin.com/in/abhay-byte/">💼 LinkedIn</a>
-      </nav>
-      <div class="badge-group">
-        <img src="https://komarev.com/ghpvc/?username=abhay-byte&color=282828&labelColor=282828&style=for-the-badge" alt="Profile views"/>
-        <img src="https://img.shields.io/github/followers/abhay-byte?label=Followers&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Followers"/>
-        <img src="https://img.shields.io/github/stars/abhay-byte?affiliations=OWNER%2CCOLLABORATOR&label=Total%20Stars&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Stars"/>
-      </div>
-    </aside>
-
-    <main class="main-content">
-      <h1>Hi, I'm @abhay-byte — Agentic Software Engineer</h1>
-
-      <p>
-        I build software with AI agents — not just code, but the systems that run them.
-        My daily workflow uses Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and other AI tools,
-        all managed through my own <a href="https://github.com/abhay-byte/nexus"><strong>Nexus Terminal</strong></a>
-        — a multi-agent terminal workspace I built for this exact purpose.
-        I also work with MCP servers and AI IDEs (Cursor, Windsurf) to extend what agents can do.
-      </p>
-
-      <p><em>Every project here is open source. All code, all assets, no paywalls — just FOSS.</em></p>
-
-      <hr>
-
-      <h2>📬 Contact</h2>
-      <ul>
-        <li>📬 Email: <a href="mailto:abhay.byte02@gmail.com">abhay.byte02@gmail.com</a> — best way to reach me!</li>
-        <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/abhay-byte/">Abhay Raj</a> — let's network!</li>
-      </ul>
-
-      <div class="resume-section">
-        <h2>📄 Resume</h2>
-        <a href="https://github.com/abhay-byte/my-resume/releases/latest">
-          <img src="https://img.shields.io/badge/Download_Resume-fabd2f?style=for-the-badge&logo=adobeacrobatreader&logoColor=282828&labelColor=282828" alt="Download Resume">
-        </a>
-      </div>
-
-      <hr>
-
-      <h2>🌟 Featured Projects</h2>
-
-      <div class="project-card">
-        <h3>Nexus Terminal</h3>
-        <p>Multi-agent AI terminal workspace. Run Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and more — side-by-side in a brutalist desktop app.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/nexus"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://github.com/abhay-byte/nexus/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/nexus?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Phone Finder Hub</h3>
-        <p>Data-driven smartphone comparison platform built with Laravel. Helps users identify the best value-for-money devices by analyzing objective performance benchmarks against current market prices.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/phone_finder_hub"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://phone-finder-shjs.onrender.com/"><img src="https://img.shields.io/badge/Website-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Website"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Fantasy Racing</h3>
-        <p>High-speed futuristic racing game with diverse planets, strategic challenges, and immersive gameplay built with Unity.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/planet-racing"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://github.com/abhay-byte/planet-racing/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/planet-racing?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Story of Xirsia</h3>
-        <p>2D RPG set in Medieval age with massive 25km² open world of Xirsia Isle to explore.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://hind-dev.web.app/#/"><img src="https://img.shields.io/badge/Play_Game-FF6B6B?style=for-the-badge&logo=unity&logoColor=white" alt="Play Game"></a>
-          <a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/Saiko-no-senshi-0.1v?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>FluxLinux</h3>
-        <p>Run full Linux desktop environments on Android with GPU acceleration and dev stacks.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/fluxlinux"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://f-droid.org/packages/com.ivarna.fluxlinux"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="F-Droid"></a>
-          <a href="https://github.com/abhay-byte/fluxlinux/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/fluxlinux?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>FinalBenchmark 2</h3>
-        <p>Comprehensive CPU benchmarking app with 10+ tests and thermal management.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/finalbenchmark-platform"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://f-droid.org/packages/com.ivarna.finalbenchmark2"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="F-Droid"></a>
-          <a href="https://github.com/abhay-byte/finalbenchmark-platform/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/finalbenchmark-platform?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Clinico</h3>
-        <p>AI-powered healthcare platform with 24/7 AI companion, telehealth, and hyperlocal clinic discovery.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/minor-project-gtbit"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://clinicofrontend.onrender.com/"><img src="https://img.shields.io/badge/Website-00C7B7?style=for-the-badge&logo=react&logoColor=white" alt="Website"></a>
-          <a href="https://github.com/abhay-byte/minor-project-gtbit/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/minor-project-gtbit?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Adirstat</h3>
-        <p>Android Disk Space Analyzer (WizTree/WinDirStat equivalent).</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/Adirstat"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://play.google.com/store/apps/details?id=com.ivarna.adirstat"><img src="https://img.shields.io/badge/Play_Store-01875F?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Store"></a>
-          <a href="https://github.com/abhay-byte/Adirstat/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/Adirstat?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Warden Protocol</h3>
-        <p>Single-player Android strategy game where you act as bunker intelligence for survivors.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/warden-protocol"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://play.google.com/store/apps/details?id=com.ivarna.wardenprotocol"><img src="https://img.shields.io/badge/Play_Store-01875F?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Store"></a>
-          <a href="https://github.com/abhay-byte/warden-protocol/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/warden-protocol?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>ThreeJS Portfolio</h3>
-        <p>Interactive 3D portfolio website built with Three.js.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/threejs_portfolio"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://abhay-byte.web.app/"><img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Website"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Truvalt</h3>
-        <p>Secure, self-hostable, zero-knowledge password manager for Android and web.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/truvalt"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://github.com/abhay-byte/truvalt/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/truvalt?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>TaskStack</h3>
-        <p>Next-gen daily task management app with a 24-hour visual timeline and life analytics.</p>
-        <div class="links">
-          <a href="https://github.com/abhay-byte/TaskStack"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-          <a href="https://github.com/abhay-byte/TaskStack/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/TaskStack?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
-        </div>
-      </div>
-
-      <div class="view-all">
-        <a href="/abhay-kb/PROJECTS">📁 View all 84 repositories →</a>
-      </div>
-
-      <hr>
-
-      <h2>🏆 GitHub Stats</h2>
-
-      <div class="stats-section">
-        <a href="https://git.io/awesome-stats-card">
-          <img src="https://awesome-github-stats.azurewebsites.net/user-stats/abhay-byte?cardType=github&theme=gruvbox&fontFamily=&preferLogin=false&borderRadius=4" alt="GitHub Stats">
-        </a>
-        <br>
-        <a href="https://github.com/ryo-ma/github-profile-trophy">
-          <img src="https://hacked-github-stat-trophies.vercel.app/?username=abhay-byte&theme=gruvbox&no-frame=true&column=6&margin-w=10&margin-h=10" alt="Trophies">
-        </a>
-      </div>
-    </main>
+<div class="project-card">
+  <h3>Nexus Terminal</h3>
+  <p>Multi-agent AI terminal workspace. Run Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and more — side-by-side in a brutalist desktop app.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/nexus"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://github.com/abhay-byte/nexus/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/nexus?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
   </div>
-</body>
-</html>
+</div>
+
+<div class="project-card">
+  <h3>Phone Finder Hub</h3>
+  <p>Data-driven smartphone comparison platform built with Laravel. Helps users identify the best value-for-money devices by analyzing objective performance benchmarks against current market prices.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/phone_finder_hub"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://phone-finder-shjs.onrender.com/"><img src="https://img.shields.io/badge/Website-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Website"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Fantasy Racing</h3>
+  <p>High-speed futuristic racing game with diverse planets, strategic challenges, and immersive gameplay built with Unity.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/planet-racing"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://github.com/abhay-byte/planet-racing/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/planet-racing?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Story of Xirsia</h3>
+  <p>2D RPG set in Medieval age with massive 25km² open world of Xirsia Isle to explore.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://hind-dev.web.app/#/"><img src="https://img.shields.io/badge/Play_Game-FF6B6B?style=for-the-badge&logo=unity&logoColor=white" alt="Play Game"></a>
+    <a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/Saiko-no-senshi-0.1v?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>FluxLinux</h3>
+  <p>Run full Linux desktop environments on Android with GPU acceleration and dev stacks.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/fluxlinux"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://f-droid.org/packages/com.ivarna.fluxlinux"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="F-Droid"></a>
+    <a href="https://github.com/abhay-byte/fluxlinux/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/fluxlinux?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>FinalBenchmark 2</h3>
+  <p>Comprehensive CPU benchmarking app with 10+ tests and thermal management.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/finalbenchmark-platform"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://f-droid.org/packages/com.ivarna.finalbenchmark2"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="F-Droid"></a>
+    <a href="https://github.com/abhay-byte/finalbenchmark-platform/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/finalbenchmark-platform?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Clinico</h3>
+  <p>AI-powered healthcare platform with 24/7 AI companion, telehealth, and hyperlocal clinic discovery.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/minor-project-gtbit"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://clinicofrontend.onrender.com/"><img src="https://img.shields.io/badge/Website-00C7B7?style=for-the-badge&logo=react&logoColor=white" alt="Website"></a>
+    <a href="https://github.com/abhay-byte/minor-project-gtbit/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/minor-project-gtbit?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Adirstat</h3>
+  <p>Android Disk Space Analyzer (WizTree/WinDirStat equivalent).</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/Adirstat"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.ivarna.adirstat"><img src="https://img.shields.io/badge/Play_Store-01875F?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Store"></a>
+    <a href="https://github.com/abhay-byte/Adirstat/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/Adirstat?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Warden Protocol</h3>
+  <p>Single-player Android strategy game where you act as bunker intelligence for survivors.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/warden-protocol"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.ivarna.wardenprotocol"><img src="https://img.shields.io/badge/Play_Store-01875F?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Store"></a>
+    <a href="https://github.com/abhay-byte/warden-protocol/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/warden-protocol?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>ThreeJS Portfolio</h3>
+  <p>Interactive 3D portfolio website built with Three.js.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/threejs_portfolio"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://abhay-byte.web.app/"><img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Website"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Truvalt</h3>
+  <p>Secure, self-hostable, zero-knowledge password manager for Android and web.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/truvalt"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://github.com/abhay-byte/truvalt/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/truvalt?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>TaskStack</h3>
+  <p>Next-gen daily task management app with a 24-hour visual timeline and life analytics.</p>
+  <div class="links">
+    <a href="https://github.com/abhay-byte/TaskStack"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+    <a href="https://github.com/abhay-byte/TaskStack/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/TaskStack?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+  </div>
+</div>
+
+<hr>
+
+<h2>🏆 GitHub Stats</h2>
+
+<div class="stats-section">
+  <a href="https://git.io/awesome-stats-card">
+    <img src="https://awesome-github-stats.azurewebsites.net/user-stats/abhay-byte?cardType=github&theme=gruvbox&fontFamily=&preferLogin=false&borderRadius=4" alt="GitHub Stats">
+  </a>
+  <br>
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://hacked-github-stat-trophies.vercel.app/?username=abhay-byte&theme=gruvbox&no-frame=true&column=6&margin-w=10&margin-h=10" alt="Trophies">
+  </a>
+</div>

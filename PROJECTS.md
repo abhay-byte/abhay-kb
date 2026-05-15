@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: standalone
+title: Projects Dashboard
 ---
 
 # 🚀 Projects Dashboard

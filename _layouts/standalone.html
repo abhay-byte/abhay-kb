@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }}{% else %}Abhay's Knowledge Base{% endif %} | My personal projects and notes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .sidebar {
+      width: 240px; flex-shrink: 0;
+      position: sticky; top: 40px; align-self: flex-start;
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+    .sidebar .badge-group { display: flex; flex-direction: column; gap: 8px; }
+    .sidebar .badge-group img { max-width: 100%; border-radius: 4px; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+
+    .project-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 16px 0;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .project-card:hover { border-color: rgba(250,189,47,0.25); background: rgba(255,255,255,0.015); }
+    .project-card h3 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .project-card p { font-size: 14px; color: #999; line-height: 1.5; margin-bottom: 12px; }
+    .project-card .links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .project-card .links img { height: 28px; border-radius: 4px; }
+
+    .stats-section { text-align: center; margin: 32px 0; }
+    .stats-section img { max-width: 100%; margin: 12px 0; border-radius: 6px; }
+
+    @media (max-width: 800px) {
+      .page-wrapper { flex-direction: column; padding: 24px 16px; gap: 24px; }
+      .sidebar { width: 100%; position: static; }
+      .sidebar h1 { font-size: 20px; }
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">🏠 Home</a>
+        <a href="https://github.com/abhay-byte/abhay-kb">📦 Repo</a>
+        <a href="https://github.com/abhay-byte/my-resume/releases/latest">📄 Resume</a>
+        <a href="https://github.com/abhay-byte">🐙 GitHub</a>
+        <a href="https://www.linkedin.com/in/abhay-byte/">💼 LinkedIn</a>
+      </nav>
+      <div class="badge-group">
+        <img src="https://komarev.com/ghpvc/?username=abhay-byte&color=282828&labelColor=282828&style=for-the-badge" alt="Profile views"/>
+        <img src="https://img.shields.io/github/followers/abhay-byte?label=Followers&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Followers"/>
+        <img src="https://img.shields.io/github/stars/abhay-byte?affiliations=OWNER%2CCOLLABORATOR&label=Total%20Stars&style=for-the-badge&logo=github&color=fabd2f&labelColor=282828" alt="Stars"/>
+      </div>
+    </aside>
+    <main class="main-content">
+      {{ content }}
+    </main>
+  </div>
+</body>
+</html>
