@@ -52,15 +52,16 @@
 
     /* ─── Sidebar (desktop: sticky, mobile: slides in) ─── */
     .sidebar {
-      width: 260px; flex-shrink: 0;
-      position: sticky; top: 40px; align-self: flex-start;
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
     }
     .sidebar h1 {
       font-size: 22px; font-weight: 700; color: #fff;
       margin-bottom: 4px;
     }
     .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
-    .sidebar nav { display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
     .sidebar nav a {
       display: block; padding: 8px 12px; border-radius: 6px;
       color: #ccc; font-size: 15px;
@@ -157,6 +158,7 @@
         <div class="nav-section-label">LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
       </nav>
     </aside>
     <main class="main-content">
