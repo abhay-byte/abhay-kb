@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }}{% else %}Abhay's Knowledge Base{% endif %} | My personal projects and notes</title>
   <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: #0d0d0d;
@@ -18,9 +24,9 @@
 
     .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
 
-    /* ─── Top Bar (mobile) ─── */
+    /* ─── Top Bar — visible only on mobile (≤800px) ─── */
     .topbar {
-      display: none;
+      display: none;                      /* hidden on desktop */
       position: fixed; top: 0; left: 0; right: 0;
       height: 52px;
       background: #0d0d0d;
@@ -35,7 +41,7 @@
     }
     .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
 
-    /* ─── Sidebar Overlay (mobile) ─── */
+    /* ─── Sidebar Overlay — dark backdrop when sidebar is open on mobile ─── */
     .sidebar-overlay {
       display: none;
       position: fixed; inset: 0;
@@ -44,7 +50,7 @@
     }
     .sidebar-overlay.active { display: block; }
 
-    /* ─── Sidebar ─── */
+    /* ─── Sidebar (desktop: sticky, mobile: slides in) ─── */
     .sidebar {
       width: 260px; flex-shrink: 0;
       position: sticky; top: 40px; align-self: flex-start;
@@ -61,6 +67,8 @@
       transition: background 0.15s;
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    /* Section labels (e.g. "🤖 LLM") + indented sub-items */
     .nav-section-label {
       font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
       color: #666; padding: 12px 12px 4px; margin-top: 4px;
@@ -83,6 +91,7 @@
     .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
     .main-content img { max-width: 100%; border-radius: 6px; }
 
+    /* Project cards (used on index, shared style) */
     .project-card {
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 10px;
@@ -99,7 +108,12 @@
     .stats-section { text-align: center; margin: 32px 0; }
     .stats-section img { max-width: 100%; margin: 12px 0; border-radius: 6px; }
 
-    /* ─── Responsive ─── */
+    /* ─── Responsive: Mobile / Portrait (≤800px) ───
+         - Top bar with hamburger appears
+         - Sidebar slides in from left (hidden by default)
+         - Dark overlay behind sidebar
+         - Tap overlay or hamburger to close
+         ─────────────────────────────────────────── */
     @media (max-width: 800px) {
       .topbar { display: flex; }
       .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
@@ -121,13 +135,13 @@
   </style>
 </head>
 <body>
-  <!-- Mobile top bar -->
+  <!-- Mobile top bar — visible on all pages in portrait mode -->
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
     <span class="topbar-title">Abhay's Knowledge Base</span>
   </div>
 
-  <!-- Sidebar overlay (mobile) -->
+  <!-- Dark overlay behind sidebar (mobile only) -->
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
   <div class="page-wrapper">
@@ -137,6 +151,7 @@
       <nav>
         <a href="/abhay-kb/">🏠 Home</a>
         <a href="/abhay-kb/PROJECTS">📁 All Projects</a>
+        <!-- LLM dropdown section -->
         <div class="nav-section-label">🤖 LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">📋 Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">🧠 Models</a>
@@ -147,6 +162,7 @@
     </main>
   </div>
 
+  <!-- Hamburger toggle — works on every page because this layout is shared -->
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
