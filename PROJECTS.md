@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # 🚀 Projects
 
 My curated list of GitHub repositories.
