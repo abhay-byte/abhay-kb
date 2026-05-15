@@ -25,6 +25,35 @@ Opus 4.7 uses a new tokenizer — may use up to 35% more tokens for the same tex
 
 ---
 
+## DeepSeek
+
+Current as of May 2026. Source: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/)
+
+DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.
+SWE-Bench Verified: 81%. V4 Flash is the default workhorse; V4 Pro is premium (75% off until May 31 2026).
+
+| Model | Cache Hit Input /1M | Cache Miss Input /1M | Output /1M | Context | Notes |
+|-------|--------------------|---------------------|-----------|---------|-------|
+| deepseek-v4-flash | $0.0028 | $0.14 | $0.28 | 1M | Default route. 384K max output |
+| deepseek-v4-pro (promo) | $0.003625 | $0.435 | $0.87 | 1M | 75% off until May 31 2026 15:59 UTC |
+| deepseek-v4-pro (full) | $0.0145 | $1.74 | $3.48 | 1M | Full price after promo ends |
+
+Cache hit prices reduced to 1/10 of launch price from Apr 26 2026.
+Older aliases `deepseek-chat` and `deepseek-reasoner` map to V4 Flash (non-thinking / thinking) and retire after Jul 24 2026.
+New accounts get 5M free tokens.
+
+### Legacy Models
+
+| Model | Input /1M | Output /1M | Cache Hit | Context | Notes |
+|-------|-----------|------------|-----------|---------|-------|
+| DeepSeek V3.2 (Chat) | $0.28 | $0.42 | $0.028 | 128K | Previous gen, still available |
+| DeepSeek R1 | $0.55 | $2.19 | $0.14 | 128K | Dedicated reasoning model |
+
+DeepSeek V3.2: 69% SWE-Bench Verified. R1: chain-of-thought reasoning, ~96% cheaper than OpenAI o1.
+DeepSeek web chat at chat.deepseek.com is free for individual users.
+
+---
+
 ## GLM / Z.ai
 
 | Model | Type | Context | SWE-Bench | Input /1M | Output /1M | Notes |
@@ -37,7 +66,7 @@ Opus 4.7 uses a new tokenizer — may use up to 35% more tokens for the same tex
 | GLM-4.5-Air | Lightweight | 128K | — | $0.15 | $0.45 | Haiku-equivalent |
 | GLM-4.7-Flash | Free tier | 203K | — | Free | Free | No subscription needed |
 
-GLM-5: 744B params, 40B active MoE, 28.5T token pretraining, 202K context.  
+GLM-5: 744B params, 40B active MoE, 28.5T token pretraining, 202K context.
 GLM-5.1: 754B params, 28% improvement over GLM-5, 8-hour autonomous runs, 1,700 agentic steps.
 
 ---
