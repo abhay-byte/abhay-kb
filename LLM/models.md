@@ -5,6 +5,8 @@ title: Models Reference
 
 # Models Reference
 
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-15 | Auto-synced daily</div>
+
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled April 2026.
 
