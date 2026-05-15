@@ -12,11 +12,16 @@ Compiled April 2026.
 
 ## Anthropic (Claude)
 
-| Model | Input /1M | Output /1M | Batch | Cache Read |
-|-------|-----------|------------|-------|------------|
-| Opus 4.6 | $5.00 | $25.00 | 50% off | up to 90% off |
-| Sonnet 4.6 | $3.00 | $15.00 | 50% off | up to 90% off |
-| Haiku 4.5 | $0.25 | $1.25 | 50% off | up to 90% off |
+Current as of May 2026. Source: [platform.claude.com](https://platform.claude.com/docs/en/about-claude/pricing)
+
+| Model | Input /1M | Output /1M | Batch (50% off) | Cache Writes (5m) | Cache Hits |
+|-------|-----------|------------|-----------------|-------------------|------------|
+| Opus 4.7 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
+| Opus 4.6 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
+| Sonnet 4.6 | $3.00 | $15.00 | ✓ | $3.75/MTok | $0.30/MTok |
+| Haiku 4.5 | $1.00 | $5.00 | ✓ | $1.25/MTok | $0.10/MTok |
+
+Opus 4.7 uses a new tokenizer — may use up to 35% more tokens for the same text.
 
 ---
 
