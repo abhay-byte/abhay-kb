@@ -143,29 +143,55 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 
 ## Claude Code (Anthropic)
 
-Terminal coding agent. Exact request counts NOT published — only relative multipliers.  
-All usage shared across claude.ai, Claude Code CLI, and Desktop.
+Terminal coding agent. All usage shared across claude.ai, Claude Code CLI, and Desktop.
+Source: [claude.com/pricing](https://claude.com/pricing), community instrumentation.
 
 ### Individual Plans
 
-| Plan | Price | Multiplier | Est. Req/5h | Context | CLI |
-|------|-------|-----------|-------------|---------|-----|
-| Pro | $20/mo ($17/yr) | 1x | ~10–40 | 200K (1M ext) | Yes |
-| Max 5x | $100/mo | 5x | ~50–200 | 1M | Yes |
-| Max 20x | $200/mo | 20x | ~200–800 | 1M | Yes |
+| Plan | Price | Multiplier | Est. Msgs/5h (Opus) | Context | CLI |
+|------|-------|-----------|---------------------|---------|-----|
+| Pro | $20/mo ($17/yr) | 1x | ~45 | 200K (1M ext) | Yes |
+| Max 5x | $100/mo | 5x | ~225 | 1M | Yes |
+| Max 20x | $200/mo | 20x | ~900 | 1M | Yes |
 
 ### Team Plans
 
 | Plan | Price | Multiplier | Weekly Cap | Min Seats |
 |------|-------|-----------|------------|-----------|
-| Team Standard | $25/seat/mo (annual) | 1.25x Pro | 7-day, 1 cap | 5 |
-| Team Premium | $100/seat/mo (annual) | 6.25x Pro | 7-day, 2 caps | 5–150 |
+| Team Standard | $25/seat/mo ($20 annual) | 1.25x Pro | 7-day, 1 cap | 5 |
+| Team Premium | $125/seat/mo ($100 annual) | 6.25x Pro | 7-day, 2 caps | 5-150 |
 
-- Max 5x: auto-switch Opus→Sonnet at 20% limit. Max 20x: at 50%.
-- Team Premium (6.25x) is higher per-session than Max 5x (5x)
-- Peak hours 5–11 AM PT: tighter limits
-- Less than 5% of subscribers hit weekly cap
-- Bug Apr 2026 v2.1.100: ~20K invisible tokens/request, burned 40% faster (fixed later)
+- Max 5x: ~$0.44/message (Opus). Max 20x: ~$0.22/message -- actual volume discount kicks in here
+- Max 5x: auto-switch Opus->Sonnet at 20% limit. Max 20x: at 50%
+- Peak hours 5-11 AM PT: tighter limits
+- Team Standard added Claude Code access late April 2026 (was Premium-only before)
+- Pro had Claude Code briefly removed (Apr 2026 test on 2% of signups) then restored within hours
+
+### API Pay-per-Token
+
+| Model | Input /1M | Output /1M | Cache Read | Batch (50% off) |
+|-------|-----------|------------|------------|-----------------|
+| Opus 4.7 | $5.00 | $25.00 | $0.50 | Yes |
+| Sonnet 4.6 | $3.00 | $15.00 | $0.30 | Yes |
+| Haiku 4.5 | $1.00 | $5.00 | $0.10 | Yes |
+
+### Known Issues
+
+- **v2.1.100 bug (Apr 2026):** ~20K invisible tokens added per request, burning quota ~40% faster. Root cause: broken prompt caching forcing full re-processing on every turn. Six releases shipped through v2.1.133 (May 8) with features but no public fix. Workaround: downgrade to v2.1.34 or reinstall via npm
+- **Opus 4.7 tokenizer:** New tokenizer can use up to 35% more tokens for equivalent text vs Opus 4.6
+- **5-hour rolling window:** Hit limit at 2pm? Wait until 7pm. Not a daily reset
+
+### Community Reviews
+
+> **From Reddit (r/ClaudeAI):** "The difference of Claude Pro and Max5 plan usage limit are enormous. It is not only 5x" -- users report Max 5x is a dramatically better experience for daily coding, not just numerically 5x better.
+
+> **From dev.to review:** "Pro costs ~$0.44 per Opus message; Max 5x costs the same per message but prevents hitting rate limits sooner. Max 20x cuts per-message cost in half (~$0.22) and is the only plan offering true volume discount."
+
+> **From findskill.ai:** "Pro $20/mo for solo devs, Max 5x $100/mo for full-time on Claude Code, Max 20x $200/mo for pair-programming all day. The v2.1.100 token inflation bug is real -- burns quotas ~40% faster."
+
+> **From felloai review:** "Max 5x at $100/month gives five times the Pro usage and priority access during peak demand. It is the sweet spot for full-time developers who use Claude Code as their default coding partner."
+
+> **Personal Review (May 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. Max 5x ($100/mo) is the minimum for real work. On the plus side, code quality is unmatched -- Opus 4.7 is genuinely the smartest model for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the tokenizer/v2.1.100 bugs silently eating into your limits. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.
 
 ---
 
