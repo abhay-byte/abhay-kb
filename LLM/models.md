@@ -8,6 +8,73 @@ title: Models Reference
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled April 2026.
 
+> **Common Benchmark:** [SWE-Bench Verified](https://www.swebench.com/) measures a model's ability to resolve real GitHub issues from code repositories.  
+> Not all providers publish scores — only models with verified data are plotted below.  
+> Lower price + higher score = better value. DeepSeek V4 Flash leads on value; Claude Opus 4.6 and GPT-5.4 lead on absolute performance.
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
+<defs>
+  <filter id="glow">
+    <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/>
+  </filter>
+</defs>
+
+<!-- Title -->
+<text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Verified vs. Input Price (per 1M tokens)</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Lower price + higher score = best value · Only models with published scores shown</text>
+
+<!-- Grid + axes -->
+<g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+  <line x1="70" y1="350.0" x2="680" y2="350.0"/>
+  <text x="62" y="354.0" text-anchor="end" fill="#666" font-size="11">60%</text>
+  <line x1="70" y1="290.0" x2="680" y2="290.0"/>
+  <text x="62" y="294.0" text-anchor="end" fill="#666" font-size="11">65%</text>
+  <line x1="70" y1="230.0" x2="680" y2="230.0"/>
+  <text x="62" y="234.0" text-anchor="end" fill="#666" font-size="11">70%</text>
+  <line x1="70" y1="170.0" x2="680" y2="170.0"/>
+  <text x="62" y="174.0" text-anchor="end" fill="#666" font-size="11">75%</text>
+  <line x1="70" y1="110.0" x2="680" y2="110.0"/>
+  <text x="62" y="114.0" text-anchor="end" fill="#666" font-size="11">80%</text>
+  <line x1="70" y1="50.0" x2="680" y2="50.0"/>
+  <text x="62" y="54.0" text-anchor="end" fill="#666" font-size="11">85%</text>
+<text x="18" y="230" text-anchor="middle" fill="#888" font-size="12" transform="rotate(-90,18,230)">SWE-Bench Verified</text>
+  <line x1="206.51448673872375" y1="50" x2="206.51448673872375" y2="410"/>
+  <text x="206.51448673872375" y="428" text-anchor="middle" fill="#666" font-size="10">$0.25</text>
+  <line x1="309.7837093739804" y1="50" x2="309.7837093739804" y2="410"/>
+  <text x="309.7837093739804" y="428" text-anchor="middle" fill="#666" font-size="10">$0.50</text>
+  <line x1="413.05293200923705" y1="50" x2="413.05293200923705" y2="410"/>
+  <text x="413.05293200923705" y="428" text-anchor="middle" fill="#666" font-size="10">$1</text>
+  <line x1="516.3221546444938" y1="50" x2="516.3221546444938" y2="410"/>
+  <text x="516.3221546444938" y="428" text-anchor="middle" fill="#666" font-size="10">$2</text>
+  <line x1="619.5913772797504" y1="50" x2="619.5913772797504" y2="410"/>
+  <text x="619.5913772797504" y="428" text-anchor="middle" fill="#666" font-size="10">$4</text>
+<text x="375" y="472" text-anchor="middle" fill="#888" font-size="12">Input Price per 1M tokens (log₂ scale)</text>
+<rect x="70" y="50" width="610" height="360" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+</g>
+<circle cx="120.12965108816996" cy="98.0" r="6" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="120.12965108816996" y="84.0" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">DeepSeek V4 Flash</text>
+<circle cx="130.40862272024955" cy="107.59999999999997" r="6" fill="#7b2d8e" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="130.40862272024955" y="93.59999999999997" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">MiniMax M2.5</text>
+<circle cx="245.60308783054555" cy="124.40000000000003" r="6" fill="#f4a261" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="245.60308783054555" y="110.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">Qwen3.6 Plus</text>
+<circle cx="276.5384452705133" cy="148.40000000000003" r="6" fill="#2a9d8f" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="276.5384452705133" y="166.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">Kimi K2.5</text>
+<circle cx="336.9470679907629" cy="290.0" r="6" fill="#e76f51" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="336.9470679907629" y="308.0" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">GLM-4.7</text>
+<circle cx="413.05293200923705" cy="136.40000000000003" r="6" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="413.05293200923705" y="110.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">GLM-5</text>
+<circle cx="549.5674187479608" cy="110.0" r="6" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="549.5674187479608" y="96.0" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">GPT-5.4</text>
+<circle cx="652.8366413832174" cy="100.40000000000003" r="6" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#glow)"/>
+<text x="652.8366413832174" y="86.40000000000003" text-anchor="middle" fill="#ccc" font-size="10" font-weight="500">Claude Opus 4.6</text>
+<text x="138.12965108816996" y="94.0" fill="#4ea8de" font-size="9" font-style="italic">← Best value</text>
+</svg>
+
+
+---
+
+
+
 ---
 
 ## Anthropic (Claude)
