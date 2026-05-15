@@ -3,28 +3,34 @@ layout: default
 ---
 
 <style>
-  .page-wrapper { display: flex; gap: 30px; max-width: 1100px; margin: 0 auto; }
+  /* Hide the theme's own sidebar — we provide our own */
+  .inner > div:first-child { display: none !important; }
+  .inner > h1:first-child { display: none !important; }
+  #main_content { width: 100% !important; float: none !important; min-width: 0 !important; }
+
+  .page-wrapper { display: flex; gap: 30px; max-width: 100%; }
   .sidebar {
     width: 220px; flex-shrink: 0; position: sticky; top: 20px; align-self: flex-start;
-    padding: 20px; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de; font-size: 14px;
+    padding: 20px; background: rgba(255,255,255,0.04); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 14px;
   }
-  .sidebar h3 { margin-top: 0; margin-bottom: 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #555; }
-  .sidebar nav a { display: block; padding: 6px 0; color: #0969da; text-decoration: none; }
+  .sidebar h3 { margin-top: 0; margin-bottom: 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  .sidebar nav a { display: block; padding: 6px 0; color: #fabd2f; text-decoration: none; }
   .sidebar nav a:hover { text-decoration: underline; }
   .sidebar .badge-group { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
   .sidebar .badge-group img { max-width: 100%; }
   .main-content { flex: 1; min-width: 0; }
   .main-content h1 { margin-top: 0; }
   .project-card {
-    border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 12px 0;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; margin: 12px 0;
     display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px;
   }
+  .project-card:hover { border-color: rgba(250,189,47,0.3); background: rgba(255,255,255,0.02); }
   .project-card .info { flex: 1; min-width: 200px; }
   .project-card .info h3 { margin: 0 0 4px; }
-  .project-card .info p { margin: 0 0 8px; color: #555; font-size: 14px; }
+  .project-card .info p { margin: 0 0 8px; color: #999; font-size: 14px; }
   .project-card .links { display: flex; gap: 6px; flex-wrap: wrap; }
   .project-card .links img { height: 28px; }
-  hr { margin: 24px 0; }
+  hr { margin: 24px 0; border-color: rgba(255,255,255,0.1); }
   .stats-section { text-align: center; margin: 24px 0; }
   .stats-section img { max-width: 100%; margin: 8px 0; }
   @media (max-width: 768px) {
@@ -118,12 +124,105 @@ layout: default
 
     <div class="project-card">
       <div class="info">
+        <h3>Story of Xirsia</h3>
+        <p>2D RPG set in Medieval age with massive 25km² open world of Xirsia Isle to explore.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://hind-dev.web.app/#/"><img src="https://img.shields.io/badge/Play_Game-FF6B6B?style=for-the-badge&logo=unity&logoColor=white" alt="Play Game"></a>
+          <a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/Saiko-no-senshi-0.1v?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
+        <h3>FluxLinux</h3>
+        <p>Run full Linux desktop environments on Android with GPU acceleration and dev stacks.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/fluxlinux"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://f-droid.org/packages/com.ivarna.fluxlinux"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="F-Droid"></a>
+          <a href="https://github.com/abhay-byte/fluxlinux/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/fluxlinux?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
+        <h3>FinalBenchmark 2</h3>
+        <p>Comprehensive CPU benchmarking app with 10+ tests and thermal management.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/finalbenchmark-platform"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://f-droid.org/packages/com.ivarna.finalbenchmark2"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="F-Droid"></a>
+          <a href="https://github.com/abhay-byte/finalbenchmark-platform/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/finalbenchmark-platform?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
+        <h3>Clinico</h3>
+        <p>AI-powered healthcare platform with 24/7 AI companion, telehealth, and hyperlocal clinic discovery.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/minor-project-gtbit"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://clinicofrontend.onrender.com/"><img src="https://img.shields.io/badge/Website-00C7B7?style=for-the-badge&logo=react&logoColor=white" alt="Website"></a>
+          <a href="https://github.com/abhay-byte/minor-project-gtbit/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/minor-project-gtbit?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
         <h3>Adirstat</h3>
-        <p>Adirstat — Android Storage Analyzer (WizTree equivalent). Analyze your device storage with a visual treemap interface.</p>
+        <p>Android Disk Space Analyzer (WizTree/WinDirStat equivalent).</p>
         <div class="links">
           <a href="https://github.com/abhay-byte/Adirstat"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
           <a href="https://play.google.com/store/apps/details?id=com.ivarna.adirstat"><img src="https://img.shields.io/badge/Play_Store-01875F?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Store"></a>
           <a href="https://github.com/abhay-byte/Adirstat/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/Adirstat?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
+        <h3>Warden Protocol</h3>
+        <p>Single-player Android strategy game where you act as bunker intelligence for survivors.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/warden-protocol"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.ivarna.wardenprotocol"><img src="https://img.shields.io/badge/Play_Store-01875F?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Store"></a>
+          <a href="https://github.com/abhay-byte/warden-protocol/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/warden-protocol?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
+        <h3>ThreeJS Portfolio</h3>
+        <p>Interactive 3D portfolio website built with Three.js.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/threejs_portfolio"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://abhay-byte.web.app/"><img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Website"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
+        <h3>Truvalt</h3>
+        <p>Secure, self-hostable, zero-knowledge password manager for Android and web.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/truvalt"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://github.com/abhay-byte/truvalt/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/truvalt?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="info">
+        <h3>TaskStack</h3>
+        <p>Next-gen daily task management app with a 24-hour visual timeline and life analytics.</p>
+        <div class="links">
+          <a href="https://github.com/abhay-byte/TaskStack"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+          <a href="https://github.com/abhay-byte/TaskStack/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/TaskStack?style=for-the-badge&labelColor=282828&color=fabd2f&logo=github" alt="Stars"></a>
         </div>
       </div>
     </div>
