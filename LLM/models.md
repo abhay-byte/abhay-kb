@@ -91,7 +91,67 @@ Compiled April 2026.
 
 
 
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
+<defs>
+  <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
+</defs>
+
+<text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL</text>
+
+<g stroke="rgba(255,255,255,0.07)" stroke-width="1">
+  <line x1="75" y1="400.0" x2="670" y2="400.0"/>
+  <text x="65" y="404.0" text-anchor="end" fill="#555" font-size="11">40%</text>
+  <line x1="75" y1="342.5" x2="670" y2="342.5"/>
+  <text x="65" y="346.5" text-anchor="end" fill="#555" font-size="11">45%</text>
+  <line x1="75" y1="285.0" x2="670" y2="285.0"/>
+  <text x="65" y="289.0" text-anchor="end" fill="#555" font-size="11">50%</text>
+  <line x1="75" y1="227.5" x2="670" y2="227.5"/>
+  <text x="65" y="231.5" text-anchor="end" fill="#555" font-size="11">55%</text>
+  <line x1="75" y1="170.0" x2="670" y2="170.0"/>
+  <text x="65" y="174.0" text-anchor="end" fill="#555" font-size="11">60%</text>
+  <line x1="75" y1="112.49999999999999" x2="670" y2="112.49999999999999"/>
+  <text x="65" y="116.49999999999999" text-anchor="end" fill="#555" font-size="11">65%</text>
+  <line x1="75" y1="55.0" x2="670" y2="55.0"/>
+  <text x="65" y="59.0" text-anchor="end" fill="#555" font-size="11">70%</text>
+  <line x1="223.75" y1="55" x2="223.75" y2="400"/>
+  <text x="223.75" y="418" text-anchor="middle" fill="#555" font-size="10">1.0</text>
+  <line x1="372.5" y1="55" x2="372.5" y2="400"/>
+  <text x="372.5" y="418" text-anchor="middle" fill="#555" font-size="10">2.0</text>
+  <line x1="521.25" y1="55" x2="521.25" y2="400"/>
+  <text x="521.25" y="418" text-anchor="middle" fill="#555" font-size="10">4.0</text>
+<rect x="75" y="55" width="595" height="345" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+<text x="18" y="227" text-anchor="middle" fill="#888" font-size="12" transform="rotate(-90,18,227)">SWE-Bench Pro</text>
+<text x="372" y="470" text-anchor="middle" fill="#888" font-size="12">Input Price per 1M tokens (log₂ scale)</text>
+</g>
+<rect x="70" y="415" width="12" height="12" rx="2" fill="#10a040"/>
+<text x="86" y="426" fill="#999" font-size="10">OpenAI</text>
+<rect x="170" y="415" width="12" height="12" rx="2" fill="#d62828"/>
+<text x="186" y="426" fill="#999" font-size="10">Anthropic</text>
+<rect x="300" y="415" width="12" height="12" rx="2" fill="#4285f4"/>
+<text x="316" y="426" fill="#999" font-size="10">Google</text>
+<rect x="400" y="415" width="12" height="12" rx="2" fill="#264653"/>
+<text x="416" y="426" fill="#999" font-size="10">Z.ai</text>
+<circle cx="372.5" cy="329.84999999999997" r="6" fill="#4285f4" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="372.5" y="347.84999999999997" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Gemini 3.1 Pro</text>
+<circle cx="569.1368041144951" cy="332.15" r="6" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="569.1368041144951" y="350.15" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.5</text>
+<circle cx="569.1368041144951" cy="263.15" r="6" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="569.1368041144951" y="249.14999999999998" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.6</text>
+<circle cx="420.38680411449513" cy="180.34999999999997" r="6" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="420.38680411449513" y="166.34999999999997" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.4</text>
+<circle cx="295.95724054157347" cy="188.4" r="6" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="295.95724054157347" y="174.4" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-5.1</text>
+<circle cx="569.1368041144951" cy="120.55000000000003" r="6" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="569.1368041144951" y="94.55000000000003" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7</text>
+<circle cx="343.8440446560686" cy="206.8" r="6" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="343.8440446560686" y="224.8" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.3 Codex</text>
+</svg>
+
+
 ---
+
 
 ## Anthropic (Claude)
 
