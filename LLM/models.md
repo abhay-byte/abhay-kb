@@ -8,10 +8,6 @@ title: Models Reference
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled April 2026.
 
-> **Common Benchmark:** [SWE-Bench Verified](https://www.swebench.com/) measures a model's ability to resolve real GitHub issues from code repositories.  
-> Not all providers publish scores — only models with verified data are plotted below.  
-> Lower price + higher score = better value. DeepSeek V4 Flash leads on value; Claude Opus 4.6 and GPT-5.4 lead on absolute performance.
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
   <filter id="glow">
@@ -351,3 +347,4 @@ MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).
 - **GLM quota multipliers**: Peak hours drain 3x quota; off-peak 2x; GLM-4.7/4.5-Air always 1x
 - **MiMo**: Pure credit pool, no 5h/windows, credits expire month-end
 - **Kimi**: API billed separately — not included in membership
+> **Benchmark Note:** [SWE-Bench Verified](https://www.swebench.com/) measures a model's ability to resolve real-world GitHub issues from code repositories. Not all providers publish scores — the chart above only includes models with verified data.
