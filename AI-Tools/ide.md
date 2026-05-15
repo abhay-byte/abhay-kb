@@ -1,9 +1,9 @@
 ---
 layout: standalone
-title: AI IDE Comparison
+title: AI IDE
 ---
 
-# AI-Powered IDEs
+# AI IDE Comparison
 
 A comparison of AI-integrated development environments in 2026.
 

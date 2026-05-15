@@ -11,15 +11,15 @@ Researched and compiled from current 2026 sources.
 ## Pages
 
 - [**Tools**](./tools) — AI coding agents, assistants, and platforms compared
-- [**MVP**](./mvp) — Building MVPs fast with AI: tools, workflows, and strategies
-- [**AI IDE**](./ai-ide) — AI-powered IDEs: Cursor, Windsurf, Antigravity, and more
-- [**Skills**](./skills) — Agent skills, MCP, tools, subagents, and hooks explained
+- [**MCP**](./mcp) — Model Context Protocol: connecting agents to external data and tools
+- [**IDE**](./ide) — AI-powered IDEs: Cursor, Windsurf, Antigravity, and more
+- [**Skills**](./skills) — Agent skills explained
 
 ## Quick Links
 
 | Resource | Link |
 |----------|------|
 | AI Coding Tools | [Tools Reference](./tools) |
-| MVP Development | [MVP Guide](./mvp) |
-| AI IDE Comparison | [AI IDE Comparison](./ai-ide) |
-| Agent Skills & MCP | [Skills Guide](./skills) |
+| MCP Guide | [MCP](./mcp) |
+| AI IDE Comparison | [IDE Comparison](./ide) |
+| Agent Skills | [Skills Guide](./skills) |
