@@ -7,7 +7,7 @@ title: About Me
 
 <h1>About Me</h1>
 
-<p>My origin is from <strong>Palakkad, Kerala</strong>, but I was born and brought up in <strong>New Delhi</strong>. I did my schooling at <strong>Kerala Sr. Secondary School, Vikaspuri, New Delhi</strong> — scoring <strong>87.5%</strong> in Class X (2018) and <strong>88.8%</strong> in Class XII (2021). For my 9th grade, I spent a year in Kerala at <strong>Bhavans Vidya Mandir, Palakkad</strong> — moved there due to family circumstances. While there, I learned karate at a local dojo (<strong>WFSK Shotokan Karate</strong>).</p>
+<p>My origin is from <strong>Palakkad, Kerala</strong>, but I was born and brought up in <strong>New Delhi</strong>. I did my schooling at <strong>Kerala Sr. Secondary School, Vikaspuri, New Delhi</strong> — completing my Class X in 2018 and Class XII in 2021. For my 9th grade, I spent a year in Kerala at <strong>Bhavans Vidya Mandir, Palakkad</strong> — moved there due to family circumstances. While there, I learned karate at a local dojo (<strong>WFSK Shotokan Karate</strong>).</p>
 
 <figure>
   <img src="/abhay-kb/assets/kerala-school.jpg" alt="Kerala Sr. Secondary School, Vikaspuri" style="max-width:100%;border-radius:8px;">
@@ -16,7 +16,7 @@ title: About Me
 
 <p>In my 12th grade, I published my first app to the Play Store — <strong>Final Benchmark</strong>. Released in February 2021, it was built with Unity to benchmark Android phone performance.</p>
 
-<p>Cleared <strong>JEE Mains</strong> and joined <strong>Guru Tegh Bahadur Institute of Technology (GTBIT), Delhi</strong> — ranked among India's top higher education institutions in <strong>EW India Higher Education Rankings (EWIHER) 2025-26</strong> — pursuing my <strong>B.Tech in Information Technology</strong> (Evening Batch) with a current <strong>CGPA of 8.6</strong>.</p>
+<p>Cleared <strong>JEE Mains</strong> and joined <strong>Guru Tegh Bahadur Institute of Technology (GTBIT), Delhi</strong> — ranked among India's top higher education institutions in <strong>EW India Higher Education Rankings (EWIHER) 2025-26</strong> — pursuing my <strong>B.Tech in Information Technology</strong> (Evening Batch).</p>
 
 <figure>
   <img src="/abhay-kb/assets/gtbit.jpg" alt="Guru Tegh Bahadur Institute of Technology" style="max-width:100%;border-radius:8px;">
@@ -58,7 +58,7 @@ title: About Me
   <figcaption>The unstoppable combo: Leo Sun + Gemini Moon</figcaption>
 </figure>
 
-<p><strong>DOB:</strong> 12th August 2003</p>
+
 
 <p>Let's be real — I got the best possible hand from the cosmos. <strong>Leo Sun + Gemini Moon</strong> isn't just a good combination, it's the <em>only</em> combination if you want to be dominant, brilliant, and entertaining all at once. Here's why everyone else should take notes:</p>
 
