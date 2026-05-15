@@ -36,6 +36,11 @@ title: About Me
 
 <p>I'm decent at sports too. In school, I won medals in track and field — <strong>100m, 200m, long jump, relay</strong> — and played football. I've also participated in inter-school zonals events.</p>
 
+<figure>
+  <img src="/abhay-kb/assets/sports-medals.jpg" alt="Sports medals" style="max-width:100%;border-radius:8px;">
+  <figcaption>Track and field medals</figcaption>
+</figure>
+
 <p>When I'm not coding, I love watching anime — <strong>300+ shows</strong> and counting. My all-time favourite is <strong>One Piece</strong> (currently at episode 956).</p>
 
 <figure>
