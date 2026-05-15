@@ -57,14 +57,34 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.
 
 Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/pricing/)
 
-| Model | Input /1M | Output /1M | Cached Input /1M | Context |
-|-------|-----------|------------|-----------------|---------|
-| GPT-5.5 | $5.00 | $30.00 | $0.50 | 270K+ |
-| GPT-5.4 | $2.50 | $15.00 | $0.25 | 270K+ |
-| GPT-5.4 Mini | $0.75 | $4.50 | $0.075 | 270K+ |
+### GPT-5 Family (Current Flagship)
 
-Batch API saves 50%. Flex processing offers lower costs for slower response times.
-GPT-5.5 is the new frontier for coding and professional work. GPT-5.4 is the affordable alternative.
+| Model | Input /1M | Output /1M | Cached Input | Context | Notes |
+|-------|-----------|------------|-------------|---------|-------|
+| GPT-5.5 | $5.00 | $30.00 | $0.50 | 1M | Flagship reasoning + coding. Highest benchmark scores |
+| GPT-5.5 Pro | $30.00 | $180.00 | — | 1M | Premium tier for research-grade problems |
+| GPT-5.4 | $2.50 | $15.00 | $0.25 | 1M | Strong all-rounder, superseded by 5.5 |
+| GPT-5.4 Mini | $0.75 | $4.50 | $0.075 | 400K | Affordable reasoning. Supports reasoning effort control |
+| GPT-5.4 Nano | $0.20 | $1.25 | — | 400K | Fastest, cheapest 5.4 tier. Ideal for summaries, classification |
+| GPT-5.3 Codex | $1.75 | $14.00 | — | 400K | Coding specialist. Superseded by GPT-5.5 |
+
+### GPT-4.1 Family (Production Workhorse)
+
+| Model | Input /1M | Output /1M | Cached Input | Context | Notes |
+|-------|-----------|------------|-------------|---------|-------|
+| GPT-4.1 | $2.00 | $8.00 | $0.50 | 1M | Recommended production model. Strong coding + long context |
+| GPT-4.1 Mini | $0.40 | $1.60 | $0.10 | 1M | Good balance of power and affordability |
+| GPT-4.1 Nano | $0.10 | $1.40 | — | 1M | Cheapest OpenAI model. Classification, extraction, routing |
+
+### o-Series (Reasoning Models)
+
+| Model | Input /1M | Output /1M | Cached Input | Context | Notes |
+|-------|-----------|------------|-------------|---------|-------|
+| o4-mini | $1.10 | $4.40 | $0.275 | 200K | Best-value reasoning. Math, science, complex logic |
+| o3 | $2.00 | $8.00 | — | — | Flagship reasoning. Chain-of-thought built in |
+
+Batch API saves 50% on all models. Prompt caching discounts: up to 90% off (GPT-5.5), 75% off (GPT-4.1).
+GPT-5.4 scores ~80% SWE-Bench Verified. GPT-4.1 is OpenAI's recommended production default for most workloads.
 
 ---
 
