@@ -11,18 +11,36 @@ Compiled April 2026. All plans compared across major providers.
 
 ## BytePlus ModelArk
 
-Subscription for frontier models (Claude etc.) via BytePlus infrastructure.  
-**Quotas = request counts.** 5-hour sliding window + weekly reset.  
-Intro discount suspended Mar 17 2026.
+ByteDance's AI inference platform. Coding Plan = subscription with shared quota across supported tools.
+
+### Available Models
+
+| Model | Type | Notes |
+|-------|------|-------|
+| Dola-Seed-2.0-Pro | Coding (flagship) | ByteDance's top-tier coding model |
+| Dola-Seed-2.0-Lite | Coding (budget) | Cheaper, good for routine tasks |
+| Ark-Coding-Pro | Coding | BytePlus proprietary coding model |
+| O-Pro | Coding | BytePlus proprietary |
+| ByteDance-Seed-Code | Coding | Code-specific optimization |
+| GLM-5.1 | Frontier (Z.ai) | 754B MoE, SWE-Bench Pro 58.4%. **Quota drain: ~3x** |
+| GLM-4.7 | General (Z.ai) | Reliable daily driver. 1x quota |
+| Kimi-K2.5 | Frontier (Moonshot) | 1T MoE, 256K ctx. **Quota drain: ~2x** |
+| DeepSeek-V3.2 | General | 73.0% SWE-Bench Verified |
+| GPT-OSS-120B | Open-weight | 117B params, Apache 2.0 |
+
+### Quotas
 
 | Plan | Price | Per 5h | Per Week | Per Month |
 |------|-------|--------|----------|-----------|
-| Lite | ~$10/mo | ~80 | ~320 | ~24,000 |
-| Pro | ~$40/mo | ~400 | ~1,600 | ~120,000 |
+| Lite | ~$10/mo | ~800 | ~3,200 | ~24,000 |
+| Pro | ~$40/mo | ~4,000 | ~16,000 | ~120,000 |
 
 - Quota shared across: Claude Code, Cursor, Cline, Codex CLI, Kilo Code, Roo Code, OpenCode
+- 5-hour sliding window + weekly reset. Monday 00:00 UTC+8
 - No overflow billing — depleted = wait for next cycle
-- Weekly resets every Monday 00:00 UTC+8
+- Free tier: 500K tokens for new users (regular API only, NOT Coding Plan)
+
+> **Personal Review (May 2026):** The BytePlus-provided models like Dola-Seed-2.0-Pro, O-Pro, and Ark-Coding-Pro are **significantly weaker** than alternatives available for free on other platforms — e.g. MiniMax M2.5 (80.2% SWE-Bench, free via OpenRouter) easily outperforms them. The real issue is with **frontier models like GLM-5.1**: despite being listed as available, the quota multiplier (3x drain during peak hours) means you get **only about 10–15 actual requests per 5h window**. The advertised quotas (“800 per 5h”) are based on the cheapest base models at 1x drain — not usable on any capable model. In practice, the plan is misleading for anyone wanting to use frontier models. Not recommended unless you only need the weak ByteDance models for simple completions.
 
 ---
 
