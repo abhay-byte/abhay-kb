@@ -40,16 +40,16 @@ title: About Me
 
 <figure>
   <img src="/abhay-kb/assets/onepiece.gif" alt="One Piece" style="max-width:100%;border-radius:8px;">
-  <figcaption>One Piece 🏴‍☠️</figcaption>
+  <figcaption>One Piece</figcaption>
 </figure>
 
 <hr>
 
-<h2>♌ Astro Flex — Leo Sun + Gemini Moon</h2>
+<h2>Astro Flex — Leo Sun + Gemini Moon</h2>
 
 <figure>
   <img src="/abhay-kb/assets/leo-gemini.jpg" alt="Leo + Gemini" style="max-width:100%;border-radius:8px;">
-  <figcaption>The unstoppable combo: Leo ☀️ + Gemini 🌙</figcaption>
+  <figcaption>The unstoppable combo: Leo Sun + Gemini Moon</figcaption>
 </figure>
 
 <p><strong>DOB:</strong> 12th August 2003</p>
@@ -57,9 +57,9 @@ title: About Me
 <p>Let's be real — I got the best possible hand from the cosmos. <strong>Leo Sun + Gemini Moon</strong> isn't just a good combination, it's the <em>only</em> combination if you want to be dominant, brilliant, and entertaining all at once. Here's why everyone else should take notes:</p>
 
 <ul>
-  <li><strong>🔥 Leo (Sun)</strong> — Charisma on tap. Natural leader. The magnetism that makes people pay attention when I walk into a room. Confidence that's not arrogance (okay, maybe a little, but I've earned it). Everything I touch gets the royal treatment because mediocrity isn't in my vocabulary.</li>
-  <li><strong>💨 Gemini (Moon)</strong> — Quick-witted, adaptable, and mentally uncontainable. My brain runs at 2x speed while everyone else is still buffering. Can talk my way through anything, learn anything in half the time, and keep conversations interesting for hours.</li>
-  <li><strong>👑 The Combo</strong> — Leo gives me the fire to lead and dominate. Gemini gives me the intellectual range to actually back it up. I get the spotlight AND I'm smart enough to deserve it. Most signs only get one of those. I get both. Life's not fair.</li>
+  <li><strong>Leo (Sun)</strong> — Charisma on tap. Natural leader. The magnetism that makes people pay attention when I walk into a room. Confidence that's not arrogance (okay, maybe a little, but I've earned it). Everything I touch gets the royal treatment because mediocrity isn't in my vocabulary.</li>
+  <li><strong>Gemini (Moon)</strong> — Quick-witted, adaptable, and mentally uncontainable. My brain runs at 2x speed while everyone else is still buffering. Can talk my way through anything, learn anything in half the time, and keep conversations interesting for hours.</li>
+  <li><strong>The Combo</strong> — Leo gives me the fire to lead and dominate. Gemini gives me the intellectual range to actually back it up. I get the spotlight AND I'm smart enough to deserve it. Most signs only get one of those. I get both. Life's not fair.</li>
 </ul>
 
 <h3>Personality Traits</h3>
@@ -74,7 +74,7 @@ title: About Me
   <li>Ambitious — I don't do anything halfway</li>
 </ul>
 
-<h3>Partner Match 🔮</h3>
+<h3>Partner Match</h3>
 <p>If you can handle this energy, the best match is someone who can match my intensity without trying to dim my light. <strong>Aries</strong> (fire meets fire — we'd either rule the world or burn it down trying) or <strong>Aquarius</strong> (the only sign intellectually chaotic enough to keep up with a Gemini Moon). Sagittarius also makes the cut — adventure-friendly and won't get insecure about sharing the spotlight.</p>
 <p>Anyone else? You're going to have to bring your A-game. Good luck.</p>
-<p align="right"><em>— this message was written with maximum Leo energy and zero apologies 🦁</em></p>
+<p align="right"><em>— this message was written with maximum Leo energy and zero apologies</em></p>
