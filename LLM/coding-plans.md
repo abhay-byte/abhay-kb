@@ -88,9 +88,10 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
 
 ---
 
-## OpenCode Go Plan (Beta)
+## OpenCode Go Plan
 
-Dollar-value limits (not request counts). Three windows: 5h + weekly + monthly.
+OpenCode's official low-cost subscription. **$5 first month, then $10/month.**
+Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Zero-retention policy.
 
 | Window | Dollar Limit |
 |--------|-------------|
@@ -98,9 +99,45 @@ Dollar-value limits (not request counts). Three windows: 5h + weekly + monthly.
 | Per week | $30 |
 | Per month | $60 |
 
-First month $5, then $10/month. API: opencode.ai/zen/go/v1/. Zero-retention.
+### Available Models (12)
 
-Fallback: free models or Zen balance when limits are hit.
+Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/)
+
+| Model | Provider | Per 5h | Per Week | Per Month | Notes |
+|-------|----------|--------|----------|-----------|-------|
+| DeepSeek V4 Flash | DeepSeek | 31,650 | 79,050 | 158,150 | Cheapest, huge quota |
+| Qwen3.5 Plus | Alibaba | 10,200 | 25,200 | 50,500 | Best raw request count |
+| MiniMax M2.5 | MiniMax | 6,300 | 15,900 | 31,800 | 80.2% SWE-Bench |
+| MiniMax M2.7 | MiniMax | 3,400 | 8,500 | 17,000 | Newer, 196K ctx |
+| Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench |
+| DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
+| MiMo-V2.5-Omni | Xiaomi | 2,150 | 5,450 | 10,900 | Multimodal |
+| MiMo-V2.5-Pro | Xiaomi | 1,290 | 3,225 | 6,450 | Coding focus |
+| Kimi K2.5 | Moonshot | 1,850 | 4,630 | 9,250 | 256K ctx |
+| Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | Updated K2.5 |
+| GLM-5 | Z.ai | 1,150 | 2,880 | 5,750 | 77.8% SWE-Bench |
+| GLM-5.1 | Z.ai | 880 | 2,150 | 4,300 | Best reasoning. 58.4% SWE-Bench Pro |
+
+### Free Model
+
+Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
+
+### Community Reviews
+
+> **From Reddit (Mar 2026):** Described as "genuinely the worst coding plan I have ever used" - 94% upvotes. Criticism centered on quantized models and aggressive rate limits on reasoning models. (r/LocalLLaMA)
+
+> **From APIYI review:** "Getting three flagship open-source models for $10/month ... you're getting 6x the model invocation value. MiniMax M2.5 is the most cost-effective choice - it has the highest limits and the strongest coding ability."
+
+> **From Thomas Wiegold (Apr 2026):** "MiniMax gives you a good number of requests ... up to 31,800 per month with M2.5. These aren't toy models - M2.5 scored 80.2% on SWE-Bench Verified, within spitting distance of Claude Opus 4.6's 80.8%. The catch is that reasoning-heavy models like GLM-5.1 burn through limits fast."
+
+> **Personal Review (May 2026):** Best and cheapest coding plan available. Generous quotas on MiniMax and Qwen models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. MiniMax M2.5 at $10/month is unmatched value. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Strongly recommended.
+
+### Notes
+
+- API endpoint: opencode.ai/zen/go/v1/
+- Cancel anytime. Top-up credit if needed.
+- Optional "Use balance" fallback to Zen credits after limits reached
+- Models are periodically rotated as new ones are tested
 
 ---
 
