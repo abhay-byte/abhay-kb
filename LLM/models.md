@@ -11,16 +11,10 @@ Compiled April 2026.
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
   <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
-  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="rgba(250,189,47,0.03)"/>
-    <stop offset="1" stop-color="rgba(0,0,0,0)"/>
-  </linearGradient>
 </defs>
 
-<rect x="75" y="55" width="675" height="415" fill="url(#bg)"/>
-
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Lower price + higher score = better value</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -61,38 +55,40 @@ Compiled April 2026.
 <text x="416" y="496" fill="#999" font-size="10">DeepSeek</text>
 <rect x="520" y="485" width="12" height="12" rx="2" fill="#888"/>
 <text x="536" y="496" fill="#999" font-size="10">Others</text>
-<circle cx="130.47133522051595" cy="200.8108108108108" r="6" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="130.47133522051595" cy="200.8108108108108" r="5.5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="130.47133522051595" y="218.8108108108108" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V4 Flash</text>
-<circle cx="141.84560710847285" cy="187.35135135135133" r="6" fill="#7b2d8e" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="141.84560710847285" cy="187.35135135135133" r="5.5" fill="#7b2d8e" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="141.84560710847285" y="161.35135135135133" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiniMax M2.5</text>
-<circle cx="244.7446553496934" cy="268.1081081081081" r="6" fill="#48c774" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="244.7446553496934" y="254.10810810810813" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V3.2</text>
-<circle cx="269.3148922715053" cy="203.05405405405412" r="6" fill="#f4a261" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="244.7446553496934" cy="268.1081081081081" r="5.5" fill="#48c774" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="244.7446553496934" y="286.1081081081081" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V3.2</text>
+<circle cx="269.3148922715053" cy="203.05405405405412" r="5.5" fill="#f4a261" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="269.3148922715053" y="221.05405405405412" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Qwen3.6 Plus</text>
-<circle cx="303.54664025835496" cy="225.48648648648648" r="6" fill="#2a9d8f" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="303.54664025835496" cy="225.48648648648648" r="5.5" fill="#2a9d8f" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="303.54664025835496" y="243.48648648648648" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Kimi K2.5</text>
-<circle cx="370.3922473668278" cy="259.13513513513516" r="6" fill="#e76f51" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="370.3922473668278" y="245.13513513513516" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-4.7</text>
-<circle cx="446.15146050010213" cy="187.35135135135133" r="6" fill="#e9c46a" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="370.3922473668278" cy="259.13513513513516" r="5.5" fill="#e76f51" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="370.3922473668278" y="277.13513513513516" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-4.7</text>
+<circle cx="446.15146050010213" cy="187.35135135135133" r="5.5" fill="#e9c46a" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="446.15146050010213" y="173.35135135135133" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Kimi K2.6</text>
-<circle cx="454.60775263317214" cy="214.27027027027032" r="6" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="454.60775263317214" cy="214.27027027027032" r="5.5" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="454.60775263317214" y="188.27027027027032" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-5</text>
-<circle cx="454.60775263317214" cy="212.02702702702703" r="6" fill="#00b4d8" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="454.60775263317214" y="198.02702702702703" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiMo-V2-Pro</text>
-<circle cx="546.8668800993278" cy="133.5135135135135" r="8" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="546.8668800993278" y="151.5135135135135" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.3 Codex</text>
-<circle cx="568.8810727623497" cy="182.86486486486496" r="6" fill="#4285f4" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="454.60775263317214" cy="212.02702702702703" r="5.5" fill="#00b4d8" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="454.60775263317214" y="230.02702702702703" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiMo-V2-Pro</text>
+<circle cx="545.9221121713288" cy="182.86486486486496" r="5.5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="545.9221121713288" y="200.86486486486496" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V4 Pro</text>
+<circle cx="568.8810727623497" cy="182.86486486486496" r="5.5" fill="#4285f4" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="568.8810727623497" y="200.86486486486496" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Gemini 3.1 Pro</text>
-<circle cx="635.7266798708225" cy="194.08108108108112" r="6" fill="#fa8b02" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="635.7266798708225" cy="194.08108108108112" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="635.7266798708225" y="180.08108108108112" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Sonnet 4.6</text>
-<circle cx="719.9421851371668" cy="180.62162162162167" r="6" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="605.6688650079894" cy="189.5945945945946" r="5.5" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="605.6688650079894" y="207.5945945945946" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.4</text>
+<circle cx="719.9421851371668" cy="180.62162162162167" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="719.9421851371668" y="154.62162162162167" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.6</text>
-<circle cx="719.9421851371668" cy="104.3513513513514" r="8" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="719.9421851371668" y="78.3513513513514" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7 (87.6% SWE-Bench)</text>
-<circle cx="719.9421851371668" cy="92.0135135135135" r="8" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<circle cx="719.9421851371668" cy="104.3513513513514" r="7" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="719.9421851371668" y="78.3513513513514" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7</text>
+<circle cx="719.9421851371668" cy="92.0135135135135" r="7" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="719.9421851371668" y="78.0135135135135" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.5</text>
-<text x="723.9421851371668" y="64.0135135135135" fill="#10a040" font-size="9" font-style="italic">#1 GPT-5.5</text>
 </svg>
+
 
 
 ---
