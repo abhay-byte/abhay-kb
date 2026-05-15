@@ -18,8 +18,35 @@
 
     .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
 
+    /* ─── Top Bar (mobile) ─── */
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    /* ─── Sidebar Overlay (mobile) ─── */
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    /* ─── Sidebar ─── */
     .sidebar {
-      width: 240px; flex-shrink: 0;
+      width: 260px; flex-shrink: 0;
       position: sticky; top: 40px; align-self: flex-start;
     }
     .sidebar h1 {
@@ -34,6 +61,12 @@
       transition: background 0.15s;
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
     .main-content { flex: 1; min-width: 0; }
     .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
     .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
@@ -66,10 +99,21 @@
     .stats-section { text-align: center; margin: 32px 0; }
     .stats-section img { max-width: 100%; margin: 12px 0; border-radius: 6px; }
 
+    /* ─── Responsive ─── */
     @media (max-width: 800px) {
-      .page-wrapper { flex-direction: column; padding: 24px 16px; gap: 24px; }
-      .sidebar { width: 100%; position: static; }
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
       .sidebar h1 { font-size: 20px; }
+
       .main-content h1 { font-size: 26px; }
       .main-content table { font-size: 12px; }
       .main-content th, .main-content td { padding: 6px 8px; }
@@ -77,20 +121,37 @@
   </style>
 </head>
 <body>
+  <!-- Mobile top bar -->
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Abhay's Knowledge Base</span>
+  </div>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
   <div class="page-wrapper">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <h1>Abhay's Knowledge Base</h1>
       <p class="tagline">My personal projects and notes</p>
       <nav>
         <a href="/abhay-kb/">🏠 Home</a>
         <a href="/abhay-kb/PROJECTS">📁 All Projects</a>
-        <a href="/abhay-kb/LLM/">🤖 LLM</a>
+        <div class="nav-section-label">🤖 LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">📋 Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">🧠 Models</a>
       </nav>
-
     </aside>
     <main class="main-content">
       {{ content }}
     </main>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
