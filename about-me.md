@@ -43,9 +43,8 @@ title: About Me
   <figcaption>One Piece</figcaption>
 </figure>
 
-<hr>
 
-<h2>Astro Flex — Leo Sun + Gemini Moon</h2>
+<h2>Leo Sun + Gemini Moon</h2>
 
 <figure>
   <img src="/abhay-kb/assets/leo-gemini.jpg" alt="Leo + Gemini" style="max-width:100%;border-radius:8px;">
