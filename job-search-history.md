@@ -39,4 +39,14 @@
 | 30 | Associate Software Engineer | Gallagher | Chandigarh | ~4-5.5 LPA | https://fresheropenings.com/gallagher-off-campus-drive-2026/ |
 | 31 | Junior Developer (System Support Coordinator) | Davies | Pune | ~3-4 LPA | https://fresheropenings.com/davies-off-campus-drive-2026/ |
 | 32 | Engineer - Site Reliability Engineering | LSEG | Bangalore | ~6-10 LPA | https://freshershunt.in/lseg-off-campus-drive-2026/ |
-| 33 | Executive - Software Engineering | KPMG | Pune | ~5-7 LPA | https://freshershunt.in/kpmg-off-campus-drive-2026/ |
+| 33 | Executive - Software Engineering | KPMG | Pune | ~5-7 LPA | https://freshershunt.in/kpmg-off-campus-drive-2026/
+
+### 15-05-2026 (Evening Batch 2)
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 34 | Software Engineer - Land Systems | L&T | Mumbai | — | https://freshershunt.in/l-and-t-software-engineer-mumbai-2026/ |
+| 35 | Software Engineer I (Tech Accelerate) | RELX | Mumbai | — | https://freshershunt.in/relx-off-campus-drive-2026/ |
+| 36 | Software Engineer, University Graduate | Google | Bangalore/Hyderabad | — | https://freshershunt.in/google-software-engineer-university-graduate-2026/ |
+| 37 | Test and Tools Development Engineer | NVIDIA | Pune | — | https://www.fresherstech.com/nvidia-off-campus-hiring/ |
+| 38 | Analyst (Energy & Resources) | Deloitte | Delhi | — | https://www.fresherstech.com/deloitte-off-campus-drive-for-freshers/ |
+| 39 | Associate Software Engineer (Junior) | Iron Mountain | Bangalore | — | https://www.fresherstech.com/iron-mountain-off-campus/ | |
