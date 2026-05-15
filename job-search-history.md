@@ -50,3 +50,14 @@
 | 37 | Test and Tools Development Engineer | NVIDIA | Pune | — | https://www.fresherstech.com/nvidia-off-campus-hiring/ |
 | 38 | Analyst (Energy & Resources) | Deloitte | Delhi | — | https://www.fresherstech.com/deloitte-off-campus-drive-for-freshers/ |
 | 39 | Associate Software Engineer (Junior) | Iron Mountain | Bangalore | — | https://www.fresherstech.com/iron-mountain-off-campus/ | |
+
+### 15-05-2026 (Evening Batch 3 - Cron)
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 40 | Software Engineer | Stadium | Remote (Training in Delhi) | — | https://offcampusjobs4u.com/stadium-off-campus-drive-2026-software-engineer-remote/ |
+| 41 | Associate Software Engineer | Qualcomm | Hyderabad/Bangalore/Chennai/Noida | ~20-30 LPA | https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/ |
+| 42 | Software Engineer | Microsoft | Noida | Not disclosed | https://freshershunt.in/microsoft-off-campus-drive-2026-software-engineer/ |
+| 43 | Associate Software Engineer | CBTS India | Chennai (Hybrid) | — | https://freshershunt.in/cbts-off-campus-drive-2026/ |
+| 44 | Software Engineer | DocuSign | Bengaluru (Hybrid) | — | https://offcampusjobs4u.com/docusign-recruitment-2026-software-engineer-bengaluru/ |
+| 45 | Software Engineer (DX) | Numerator | Remote India | — | https://offcampusjobs4u.com/numerator-recruitment-2026-software-engineer-dx-remote-fresher/ |
+| 46 | Graduate Engineer Trainee / Full Stack Dev | Infosys | Pan India | ~6.25-21 LPA | https://careerforfreshers.com/jobs/infosys-off-campus-hiring-2026-graduate-engineer-trainee-%E2%82%B96-25-lpa-%E2%82%B921-lpa-salary-with-bonus-freshers-eligible-apply-online/ |

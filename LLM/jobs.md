@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-15 (Evening)
+Last updated: 2026-05-15 (Evening Cron)
 
 ---
 
@@ -58,6 +58,13 @@ Last updated: 2026-05-15 (Evening)
 | 38 | Software Engineer | Bottomline (FreshersTech) | India | ~5-6 LPA | May 2026 | [Apply](https://www.fresherstech.com/bottomline-off-campus-hiring/) |
 | 39 | Analyst (Energy & Resources) | Deloitte | Delhi | — | May 2026 | [Apply](https://www.fresherstech.com/deloitte-off-campus-drive-for-freshers/) |
 | 40 | Associate Software Engineer | Iron Mountain | Bangalore | — | May 2026 | [Apply](https://www.fresherstech.com/iron-mountain-off-campus/) |
+| 41 | Software Engineer | Stadium | Remote (Training in Delhi) | — | May 2026 | [Apply](https://offcampusjobs4u.com/stadium-off-campus-drive-2026-software-engineer-remote/) |
+| 42 | Associate Software Engineer | Qualcomm | Hyderabad/Bangalore/Chennai/Noida | ~20-30 LPA | May 2026 | [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/) |
+| 43 | Software Engineer | Microsoft | Noida | Not disclosed | May 2026 | [Apply](https://freshershunt.in/microsoft-off-campus-drive-2026-software-engineer/) |
+| 44 | Associate Software Engineer | CBTS India | Chennai (Hybrid) | — | May 2026 | [Apply](https://freshershunt.in/cbts-off-campus-drive-2026/) |
+| 45 | Software Engineer | DocuSign | Bengaluru (Hybrid) | — | May 2026 | [Apply](https://offcampusjobs4u.com/docusign-recruitment-2026-software-engineer-bengaluru/) |
+| 46 | Software Engineer (DX) | Numerator | Remote India | — | May 2026 | [Apply](https://offcampusjobs4u.com/numerator-recruitment-2026-software-engineer-dx-remote-fresher/) |
+| 47 | Graduate Engineer Trainee / Full Stack Dev | Infosys | Pan India | ~6.25-21 LPA | May 2026 | [Apply](https://careerforfreshers.com/jobs/infosys-off-campus-hiring-2026-graduate-engineer-trainee-%E2%82%B96-25-lpa-%E2%82%B921-lpa-salary-with-bonus-freshers-eligible-apply-online/) |
 
 ### 🎮 Game Development
 
@@ -80,8 +87,8 @@ Last updated: 2026-05-15 (Evening)
 ## ⭐ Top 3 Picks
 
 1. **Amazon SDE I** - ₹30-44 LPA - Multiple Locations - [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/)
-2. **Salesforce AMTS** - ₹15-25 LPA - Bangalore/Hyderabad - [Apply](https://fresheropenings.com/salesforce-recruitment-for-2026-batch/)
-3. **Canonical Graduate SWE** - ~₹31 LPA - Remote (Global) - [Apply](https://freshershunt.in/canonical-graduate-software-engineer-2026/)
+2. **Qualcomm Associate SWE** - ₹20-30 LPA - Hyderabad/Bangalore/Chennai/Noida - [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/)
+3. **Microsoft Software Engineer** - Noida - [Apply](https://freshershunt.in/microsoft-off-campus-drive-2026-software-engineer/)
 
 ---
 
