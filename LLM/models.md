@@ -83,15 +83,35 @@ OpenCode Go subscription estimates: M2.5 ~6,300 req/5h, M2.7 ~3,400 req/5h.
 
 ## Qwen (Alibaba)
 
-Current via DashScope / OpenRouter.
+Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
 
-| Model | Input /1M | Output /1M | Context | Max Output | Notes |
+### Current Gen (Qwen3.6)
+
+| Model | Input /1M | Output /1M | Context | SWE-Bench | Notes |
 |-------|-----------|------------|---------|-----------|-------|
-| Qwen3.6 Plus | $0.325 | $1.95 | 1M | 65,536 | Hybrid linear attention + MoE |
-| Qwen3.5 Plus | $0.26 | $1.56 | 1M | 65,536 | Previous gen, still available |
+| Qwen3.6 Plus | $0.325 | $1.95 | 1M | 78.8% Verified | Apr 2 2026. Hybrid attention + MoE. Reasoning by default |
+| Qwen3.6 Flash | $0.25 | $1.50 | 1M | — | Cost-optimized tier |
+| Qwen3.6 Max Preview | $0.861 | $3.441 | 252K | — | Top reasoning tier (preview) |
 
-Both models support native tool-calling, JSON-mode, and OpenAI-compatible API shapes.
-1M token context window — same scale as Gemini 1.5, far larger than Claude (200K) or GPT.
+Qwen3.6 Plus: within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
+
+### Previous Gen (Qwen3.5)
+
+| Model | Input /1M | Output /1M | Context | Notes |
+|-------|-----------|------------|---------|-------|
+| Qwen3.5 Plus | $0.26 | $1.56 | 1M | Feb 2026 release. 65K max output |
+| Qwen3.5 397B A17B | Free | Free | 262K | Open-weight MoE flagship |
+
+### Qwen-Max (Legacy Flagship)
+
+| Model | Input /1M | Output /1M | Context |
+|-------|-----------|------------|---------|
+| qwen3-max (0-32K) | $1.20 | $6.00 | 252K |
+| qwen3-max (32K-128K) | $2.40 | $12.00 | 252K |
+| qwen3-max (128K-252K) | $3.00 | $15.00 | 252K |
+| qwen-max (older) | $1.60 | $6.40 | — |
+
+All Qwen models support native tool-calling, JSON-mode, and OpenAI-compatible API shapes. Batch calling: 50% off. Context caching discounts available on supported models.
 
 ---
 
