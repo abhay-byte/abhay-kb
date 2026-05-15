@@ -54,4 +54,15 @@ Last updated: 2026-05-15
 
 ---
 
+| 30 | Associate Software Engineer | Gallagher | Chandigarh | ~4-5.5 LPA | [Apply](https://fresheropenings.com/gallagher-off-campus-drive-2026/) |
+| 31 | Junior Developer (System Support Coordinator) | Davies | Pune | ~3-4 LPA | [Apply](https://fresheropenings.com/davies-off-campus-drive-2026/) |
+| 32 | Engineer - Site Reliability Engineering | LSEG | Bangalore | ~6-10 LPA | [Apply](https://freshershunt.in/lseg-off-campus-drive-2026/) |
+| 33 | Executive - Software Engineering | KPMG | Pune | ~5-7 LPA | [Apply](https://freshershunt.in/kpmg-off-campus-drive-2026/) |
+
+### 🎮 Game Development
+
+*No new fresher game dev roles found on 15-05-2026.*
+
+---
+
 *Auto-updated daily by OpenClaw cron job.*

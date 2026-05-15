@@ -32,3 +32,7 @@ Last updated: 15-05-2026
 | Gravitix Tech Solutions | Software Development Engineer | ~3-4 LPA | — |
 | GoTo | Associate Software Engineer | ~12.5 LPA | glassdoor |
 | Bottomline | Software Engineer | ~5-6 LPA | resumegyani.in |
+| Gallagher | Associate Software Engineer | ~4-5.5 LPA | ambitionbox |
+| Davies | Junior Developer/System Support Coord | ~3-4 LPA | glassdoor (avg junior dev fresher) |
+| LSEG | Engineer - Site Reliability Engineering | ~6-10 LPA | glassdoor/ambitionbox (LSEG fresher range) |
+| KPMG | Executive - Software Engineering | ~5-7 LPA | glassdoor (KPMG exec fresher avg) |

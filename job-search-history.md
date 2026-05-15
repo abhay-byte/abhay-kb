@@ -36,3 +36,7 @@
 | 27 | SDE | Gravitix Tech Solutions | Hyderabad | ~3-4 LPA | https://gravitixtechsolutions.zohorecruit.in/jobs/Careers/189023000001031519 |
 | 28 | Associate Software Engineer | GoTo | Remote (India) | ~12.5 LPA | https://www.fresherstech.com/goto-off-campus/ |
 | 29 | Software Engineer | Bottomline | India | ~5-6 LPA | https://www.fresherstech.com/bottomline-off-campus-hiring/ |
+| 30 | Associate Software Engineer | Gallagher | Chandigarh | ~4-5.5 LPA | https://fresheropenings.com/gallagher-off-campus-drive-2026/ |
+| 31 | Junior Developer (System Support Coordinator) | Davies | Pune | ~3-4 LPA | https://fresheropenings.com/davies-off-campus-drive-2026/ |
+| 32 | Engineer - Site Reliability Engineering | LSEG | Bangalore | ~6-10 LPA | https://freshershunt.in/lseg-off-campus-drive-2026/ |
+| 33 | Executive - Software Engineering | KPMG | Pune | ~5-7 LPA | https://freshershunt.in/kpmg-off-campus-drive-2026/ |
