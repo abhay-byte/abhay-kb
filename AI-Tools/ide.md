@@ -57,6 +57,30 @@ AI-native IDE with Cascade agent system.
 
 ---
 
+## GitHub Copilot
+
+Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
+
+| Feature | Details |
+|---------|---------|
+| **Pricing** | Free, Pro $10/mo, Pro+ $39/mo, Business $19/seat |
+| **Models** | GPT-5.5, Claude Opus 4.7 (Pro+), Haiku, GPT-OSS |
+| **Context** | Full codebase indexing + Codebase Awareness |
+| **Key Features** | Tab completion, inline chat, agent mode, code review, Spark, CLI |
+| **Best For** | Teams already on GitHub ecosystem |
+| **Platform** | macOS, Windows, Linux |
+
+### Pros & Cons
+
+| ✅ Pros | ❌ Cons |
+|---------|---------|
+| Deep IDE integration (VS Code, JetBrains, etc.) | Best models locked behind Pro+ ($39/mo) |
+| Spark for interactive coding sessions | CLI agent still maturing |
+| Code review with AI in PRs | GPT-5.5 preview — not available in all regions |
+| Cheapest Pro plan at $10/mo | Lacks dedicated multi-agent flows |
+
+---
+
 ## Google Antigravity
 
 Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3.
@@ -84,17 +108,17 @@ Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3.
 
 ## Feature Comparison
 
-| Feature | Cursor | Windsurf | Antigravity |
-|---------|--------|----------|-------------|
-| **Price (Pro)** | $20/mo | $15/mo | $20/mo |
-| **Free Tier** | Limited | Limited | Yes (rate-limited) |
-| **Multi-Model** | Yes | Yes (auto-routing) | Yes (Gemini + Claude) |
-| **Agent Mode** | Yes | Cascade | 5 parallel agents |
-| **Tab Completion** | ✅ Best-in-class | ✅ Supercomplete | ❌ |
-| **Codebase Index** | ✅ Full | ✅ Full | ✅ |
-| **Browser Built-in** | ❌ | ❌ | ✅ |
-| **Open Source** | ❌ | ❌ | ❌ (VS Code fork) |
-| **Platform** | Mac/Win/Linux | Mac/Win/Linux | Mac/Win/Linux |
+| Feature | Cursor | Windsurf | GitHub Copilot | Antigravity |
+|---------|--------|----------|---------------|-------------|
+| **Price (Pro)** | $20/mo | $15/mo | $10/mo | $20/mo |
+| **Free Tier** | Limited | Limited | Yes | Yes (rate-limited) |
+| **Multi-Model** | Yes | Yes (auto-routing) | GPT + Claude | Yes (Gemini + Claude) |
+| **Agent Mode** | Yes | Cascade | Yes (CLI + IDE) | 5 parallel agents |
+| **Tab Completion** | ✅ Best-in-class | ✅ Supercomplete | ✅ | ❌ |
+| **Codebase Index** | ✅ Full | ✅ Full | ✅ | ✅ |
+| **Browser Built-in** | ❌ | ❌ | ❌ | ✅ |
+| **Open Source** | ❌ | ❌ | ❌ | ❌ (VS Code fork) |
+| **Platform** | Mac/Win/Linux | Mac/Win/Linux | Mac/Win/Linux | Mac/Win/Linux |
 
 ---
 
@@ -104,5 +128,6 @@ Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3.
 |-----------|-----------|
 | Want best tab completion + codebase awareness | **Cursor** ($20/mo) |
 | Want affordable multi-model with agent flows | **Windsurf** ($15/mo) |
+| Cheapest Pro plan on GitHub ecosystem | **GitHub Copilot** ($10/mo) |
 | Want Claude + Gemini in one IDE for free | **Antigravity** (free tier) |
-| Don't want to pay and need basic AI help | **Antigravity Free** or **Cursor Free** |
+| Don't want to pay and need basic AI help | **Antigravity Free**, **Copilot Free**, or **Cursor Free** |
