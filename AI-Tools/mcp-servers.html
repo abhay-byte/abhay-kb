@@ -75,7 +75,29 @@
     .main-content pre code { background: none; padding: 0; color: #fabd2f; }
     .main-content em { color: #999; }
     .main-content strong { color: #fff; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
     hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    /* Tools page specific */
+    .tool-install { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; margin: 16px 0; }
+    .install-tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+    .install-tab {
+      padding: 8px 16px; border-radius: 4px; font-size: 13px;
+      background: rgba(255,255,255,0.06); color: #888; cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.08); transition: all 0.15s;
+    }
+    .install-tab.active { background: rgba(250,189,47,0.15); color: #fabd2f; border-color: rgba(250,189,47,0.3); }
+    .install-body { display: none; }
+    .install-body.active { display: block; }
+    .install-body code { display: block; background: rgba(0,0,0,0.5); padding: 12px; margin: 8px 0; border-radius: 4px; font-size: 13px; color: #ccc; }
+    .install-body .prompt { color: #fabd2f; margin-right: 8px; }
+    .install-body .comment { color: #666; font-style: italic; }
+    .copy-btn {
+      float: right; padding: 4px 12px; border-radius: 4px; font-size: 12px;
+      background: rgba(250,189,47,0.15); color: #fabd2f; border: 1px solid rgba(250,189,47,0.3);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .copy-btn:hover { background: rgba(250,189,47,0.25); }
 
     @media (max-width: 800px) {
       .page-wrapper { padding: 72px 16px 40px; flex-direction: column; }
@@ -120,7 +142,7 @@
       </nav>
     </aside>
 
-    <main class="main-content">
+aria-label="Main content">
 <h1>Popular MCP Servers</h1>
 
 <p>MCP servers expose tools, resources, and data sources to AI agents. Below are installation guides and details for the most popular ones.</p>
@@ -974,6 +996,19 @@ Memory MCP server can work with various backends:
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
       document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+    function showTab(el, targetId, cardId) {
+      const card = document.getElementById(cardId);
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-body').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById(targetId).classList.add('active');
+    }
+    function copyCmd(btn, cmd) {
+      navigator.clipboard.writeText(cmd);
+      const originalText = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = originalText, 1500);
     }
   </script>
 </body>

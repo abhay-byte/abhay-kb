@@ -1,7 +1,148 @@
----
-layout: standalone
-title: AI Coding Tools
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Coding Tools | Abhay's Knowledge Base</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    /* Tools page specific */
+    .tool-install { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; margin: 16px 0; }
+    .install-tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+    .install-tab {
+      padding: 8px 16px; border-radius: 4px; font-size: 13px;
+      background: rgba(255,255,255,0.06); color: #888; cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.08); transition: all 0.15s;
+    }
+    .install-tab.active { background: rgba(250,189,47,0.15); color: #fabd2f; border-color: rgba(250,189,47,0.3); }
+    .install-body { display: none; }
+    .install-body.active { display: block; }
+    .install-body code { display: block; background: rgba(0,0,0,0.5); padding: 12px; margin: 8px 0; border-radius: 4px; font-size: 13px; color: #ccc; }
+    .install-body .prompt { color: #fabd2f; margin-right: 8px; }
+    .install-body .comment { color: #666; font-style: italic; }
+    .copy-btn {
+      float: right; padding: 4px 12px; border-radius: 4px; font-size: 12px;
+      background: rgba(250,189,47,0.15); color: #fabd2f; border: 1px solid rgba(250,189,47,0.3);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .copy-btn:hover { background: rgba(250,189,47,0.25); }
+
+    @media (max-width: 800px) {
+      .page-wrapper { padding: 72px 16px 40px; flex-direction: column; }
+      .sidebar { display: none; position: fixed; left: 0; top: 0; bottom: 0; width: 280px; background: #0d0d0d; z-index: 200; padding: 20px; }
+      .sidebar.open { display: flex; }
+      .topbar { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <div class="topbar-title">AI Coding Tools</div>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's KB</h1>
+      <div class="tagline">My personal projects and notes</div>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+
+        <div class="nav-section-label">🤖 LLM</div>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/mcp-servers.html" class="nav-indent">MCP Servers</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+
+        <div class="nav-section-label">📁 Projects</div>
+        <a href="/abhay-kb/PROJECTS.html" class="nav-indent">Projects</a>
+
+        <div class="nav-section-label">👤 About</div>
+        <a href="/abhay-kb/about-me" class="nav-indent">About Me</a>
+      </nav>
+    </aside>
+
+aria-label="Main content">
 
 <h1>AI Coding Tools</h1>
 
@@ -113,528 +254,27 @@ title: AI Coding Tools
 .install-body .comment { color: #6a9955; font-style: italic; }
 </style>
 
-<script>
-function showTab(el, paneId, cardId) {
-  var card = document.getElementById(cardId);
-  var allTabs = card.getElementsByClassName('install-tab');
-  var allPanes = card.getElementsByClassName('install-body');
-  for (var i = 0; i < allTabs.length; i++) allTabs[i].classList.remove('active');
-  for (var j = 0; j < allPanes.length; j++) allPanes[j].classList.remove('active');
-  el.classList.add('active');
-  document.getElementById(paneId).classList.add('active');
-}
-function copyCmd(el, cmd) {
-  navigator.clipboard.writeText(cmd).then(function() {
-    el.textContent = 'Copied!';
-    setTimeout(function() { el.textContent = 'Copy'; }, 1200);
-  });
-}
-</script>
-
-<div class="tool-install" id="card-oc">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'oc-mac','card-oc')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'oc-linux','card-oc')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'oc-win','card-oc')">Windows</div>
-</div>
-<div class="install-body active" id="oc-mac">
-  <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")'>Copy</button></code>
-  <code><span class="prompt">$</span> brew install anomalyco/tap/opencode <button class="copy-btn" onclick='copyCmd(this,"brew install anomalyco/tap/opencode")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")'>Copy</button></code>
-  <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")'>Copy</button></code>
-</div>
-<div class="install-body" id="oc-linux">
-  <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")'>Copy</button></code>
-  <code><span class="prompt">$</span> sudo pacman -S opencode <button class="copy-btn" onclick='copyCmd(this,"sudo pacman -S opencode")'>Copy</button></code>
-  <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")'>Copy</button></code>
-</div>
-<div class="install-body" id="oc-win">
-  <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")'>Copy</button></code>
-  <code><span class="prompt">$</span> scoop install opencode <button class="copy-btn" onclick='copyCmd(this,"scoop install opencode")'>Copy</button></code>
-  <code><span class="prompt">$</span> choco install opencode <button class="copy-btn" onclick='copyCmd(this,"choco install opencode")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Claude Code (Anthropic)</h3>
-
-<p>Anthropic's terminal coding agent. Fastest-growing AI coding product — $2.5B annualized revenue.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://code.claude.com">code.claude.com</a></li>
-  <li><strong>Pricing:</strong> <a href="https://claude.com/pricing">claude.com/pricing</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Terminal agent (proprietary)</td></tr>
-  <tr><td><strong>Models</strong></td><td>Claude Opus 4.7, Sonnet 4.6, Haiku 4.5</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Pro $20/mo, Max $100/$200/mo, Team $25-125/seat</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Complex reasoning, refactoring, architecture</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Best code quality, Opus 4.7 is top-tier</td></tr>
-</table>
-
-<div class="tool-install" id="card-cc">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'cc-mac','card-cc')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'cc-linux','card-cc')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'cc-win','card-cc')">Windows</div>
-</div>
-<div class="install-body active" id="cc-mac">
-  <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")'>Copy</button></code>
-  <code><span class="prompt">$</span> brew install claude-code <button class="copy-btn" onclick='copyCmd(this,"brew install claude-code")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></code>
-</div>
-<div class="install-body" id="cc-linux">
-  <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></code>
-</div>
-<div class="install-body" id="cc-win">
-  <code><span class="prompt">$</span> winget install Anthropic.ClaudeCode <button class="copy-btn" onclick='copyCmd(this,"winget install Anthropic.ClaudeCode")'>Copy</button></code>
-  <code><span class="prompt">$</span> irm https://claude.ai/install.ps1 | iex <button class="copy-btn" onclick='copyCmd(this,"irm https://claude.ai/install.ps1 | iex")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>GPT Codex (OpenAI)</h3>
-
-<p>OpenAI's coding agent across CLI, IDE, ChatGPT, and iOS.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://developers.openai.com/codex">developers.openai.com/codex</a></li>
-  <li><strong>Pricing:</strong> <a href="https://chatgpt.com/codex/pricing">chatgpt.com/codex/pricing</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Multi-surface agent (CLI + IDE + web)</td></tr>
-  <tr><td><strong>Models</strong></td><td>GPT-5.5, GPT-5.4, GPT-5.4-mini, GPT-5.3-Codex</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Bundled in ChatGPT Plus $20/mo, Pro $100-200/mo</td></tr>
-  <tr><td><strong>Best For</strong></td><td>All-in-one coding + chat + agent workflows</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Deep OpenAI ecosystem integration</td></tr>
-</table>
-
-<div class="tool-install" id="card-cx">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'cx-mac','card-cx')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'cx-linux','card-cx')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'cx-win','card-cx')">Windows</div>
-</div>
-<div class="install-body active" id="cx-mac">
-  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></code>
-  <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")'>Copy</button></code>
-</div>
-<div class="install-body" id="cx-linux">
-  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></code>
-  <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")'>Copy</button></code>
-</div>
-<div class="install-body" id="cx-win">
-  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Gemini CLI (Google)</h3>
-
-<p>Google's open-source AI agent for the terminal. ReAct loop agent with local/remote MCP servers. Unmatched free usage tier with Gemini 2.5 Pro.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://google-gemini.github.io/gemini-cli/">google-gemini.github.io/gemini-cli</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/google-gemini/gemini-cli">github.com/google-gemini/gemini-cli</a></li>
-  <li><strong>Blog:</strong> <a href="https://blog.google/technology/developers/gemini-cli/">Introducing Gemini CLI</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Open-source terminal AI agent (Apache 2.0)</td></tr>
-  <tr><td><strong>Models</strong></td><td>Gemini 2.5 Pro (generous free tier)</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free with personal Google account</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Cost-effective AI coding, content creation</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>ReAct agent, MCP servers, free Gemini access</td></tr>
-</table>
-
-<div class="tool-install" id="card-gc">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'gc-mac','card-gc')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'gc-linux','card-gc')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'gc-win','card-gc')">Windows</div>
-</div>
-<div class="install-body active" id="gc-mac">
-  <code><span class="prompt">$</span> brew install gemini-cli <button class="copy-btn" onclick='copyCmd(this,"brew install gemini-cli")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")'>Copy</button></code>
-</div>
-<div class="install-body" id="gc-linux">
-  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")'>Copy</button></code>
-</div>
-<div class="install-body" id="gc-win">
-  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Aider</h3>
-
-<p>Open-source AI pair programming in your terminal. Git-native commits, multi-file edits, and support for any LLM.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://aider.chat">aider.chat</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/paul-gauthier/aider">github.com/paul-gauthier/aider</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Open-source AI pair programmer</td></tr>
-  <tr><td><strong>Models</strong></td><td>Claude, GPT-4, Gemini, DeepSeek, local Ollama</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free (OSS), BYO API key</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Git-native workflows, pair programming</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Map of repo architecture, auto-commits with messages</td></tr>
-</table>
-
-<div class="tool-install" id="card-ad">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'ad-mac','card-ad')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'ad-linux','card-ad')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'ad-win','card-ad')">Windows</div>
-</div>
-<div class="install-body active" id="ad-mac">
-  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")'>Copy</button></code>
-  <code><span class="prompt">$</span> brew install aider <button class="copy-btn" onclick='copyCmd(this,"brew install aider")'>Copy</button></code>
-</div>
-<div class="install-body" id="ad-linux">
-  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")'>Copy</button></code>
-</div>
-<div class="install-body" id="ad-win">
-  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Qwen Code (Alibaba)</h3>
-
-<p>Alibaba's open-source AI agent for the terminal, optimized for the Qwen3-Coder model. Multi-protocol with support for OpenAI, Anthropic, Gemini APIs.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://qwen.ai/qwencode">qwen.ai/qwencode</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/QwenLM/qwen-code">github.com/QwenLM/qwen-code</a></li>
-  <li><strong>Docs:</strong> <a href="https://qwenlm.github.io/qwen-code-docs/en/">qwenlm.github.io/qwen-code-docs</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Open-source terminal AI agent</td></tr>
-  <tr><td><strong>Models</strong></td><td>Qwen3-Coder (480B-A35B), OpenAI/Anthropic/Gemini compatible</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free (OSS), BYO API key or Alibaba Cloud plan</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Developers using Qwen models or multi-protocol flexibility</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Optimized for Qwen3-Coder, MCP servers, IDE integration</td></tr>
-</table>
-
-<div class="tool-install" id="card-qc">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'qc-mac','card-qc')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'qc-linux','card-qc')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'qc-win','card-qc')">Windows</div>
-</div>
-<div class="install-body active" id="qc-mac">
-  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")'>Copy</button></code>
-  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")'>Copy</button></code>
-</div>
-<div class="install-body" id="qc-linux">
-  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")'>Copy</button></code>
-  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")'>Copy</button></code>
-</div>
-<div class="install-body" id="qc-win">
-  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")'>Copy</button></code>
-  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Junie CLI (JetBrains)</h3>
-
-<p>JetBrains' LLM-agnostic coding agent that runs directly in your terminal. IDE integration with JetBrains IDEs, CI/CD pipeline support.</p>
-
-<ul>
-  <li><strong>GitHub:</strong> <a href="https://github.com/JetBrains/junie">github.com/JetBrains/junie</a></li>
-  <li><strong>Docs:</strong> <a href="https://junie.jetbrains.com/docs/junie-cli.html">junie.jetbrains.com</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>LLM-agnostic terminal coding agent</td></tr>
-  <tr><td><strong>Models</strong></td><td>BYO LLM (any provider)</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free tier, subscription for advanced features</td></tr>
-  <tr><td><strong>Best For</strong></td><td>JetBrains IDE users, CI/CD automation</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>JetBrains integration, code review, PR capabilities</td></tr>
-</table>
-
-<div class="tool-install" id="card-jn">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'jn-mac','card-jn')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'jn-linux','card-jn')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'jn-win','card-jn')">Windows</div>
-</div>
-<div class="install-body active" id="jn-mac">
-  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")'>Copy</button></code>
-</div>
-<div class="install-body" id="jn-linux">
-  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")'>Copy</button></code>
-</div>
-<div class="install-body" id="jn-win">
-  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Kiro (AWS)</h3>
-
-<p>Amazon's agentic IDE and CLI built around spec-driven development — generates requirements docs, technical designs, and implementation task lists before coding.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://kiro.dev">kiro.dev</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/kirodotdev/Kiro">github.com/kirodotdev/Kiro</a></li>
-  <li><strong>AWS Docs:</strong> <a href="https://aws.amazon.com/documentation-overview/kiro/">aws.amazon.com/kiro</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Agentic IDE + CLI (public preview)</td></tr>
-  <tr><td><strong>Models</strong></td><td>Multi-model (frontier LLMs)</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free public preview</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Structured spec-driven development</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Requirements → design → tasks → code pipeline</td></tr>
-</table>
-
-<div class="tool-install" id="card-kr">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'kr-mac','card-kr')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'kr-linux','card-kr')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'kr-win','card-kr')">Windows</div>
-</div>
-<div class="install-body active" id="kr-mac">
-  <code><span class="prompt">$</span> brew install kiro <button class="copy-btn" onclick='copyCmd(this,"brew install kiro")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")'>Copy</button></code>
-</div>
-<div class="install-body" id="kr-linux">
-  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")'>Copy</button></code>
-</div>
-<div class="install-body" id="kr-win">
-  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Kilo Code</h3>
-
-<p>Open-source VS Code AI coding extension with 500+ model support including GPT-5.5, Claude Opus 4.7, and Gemini 3.1 Pro Preview.</p>
-
-<ul>
-  <li><strong>VS Code Marketplace:</strong> <a href="https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code">kilocode.Kilo-Code</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/Kilo-Org/kilocode">github.com/Kilo-Org/kilocode</a></li>
-  <li><strong>Website:</strong> <a href="https://kilo.ai">kilo.ai</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Open-source VS Code extension</td></tr>
-  <tr><td><strong>Models</strong></td><td>500+ (GPT-5.5, Claude Opus 4.7, Sonnet 4.6, Gemini 3.1 Pro)</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free tier, transparent provider-rate pricing</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Developers who want maximum model choice in VS Code</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Superset of Roo Code/Cline, planning + refactoring + orchestration</td></tr>
-</table>
-
-<div class="tool-install" id="card-kl">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'kl-mac','card-kl')">VS Code</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'kl-linux','card-kl')">CLI</div>
-</div>
-<div class="install-body active" id="kl-mac">
-  <code><span class="comment"># Install from VS Code Marketplace</span></code>
-  <code><span class="prompt">$</span> code --install-extension kilocode.Kilo-Code <button class="copy-btn" onclick='copyCmd(this,"code --install-extension kilocode.Kilo-Code")'>Copy</button></code>
-</div>
-<div class="install-body" id="kl-linux">
-  <code><span class="prompt">$</span> npm install -g @kilo-org/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kilo-org/cli")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Cline</h3>
-
-<p>Open-source AI coding assistant for VS Code, JetBrains, and standalone CLI. Human-in-the-loop with full agentic capabilities — files, terminal, browser.</p>
-
-<ul>
-  <li><strong>GitHub:</strong> <a href="https://github.com/cline/cline">github.com/cline/cline</a></li>
-  <li><strong>VS Code:</strong> <a href="https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev">saoudrizwan.claude-dev</a></li>
-  <li><strong>CLI Docs:</strong> <a href="https://docs.cline.bot/cline-cli/getting-started">docs.cline.bot</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Open-source AI assistant (IDE + CLI)</td></tr>
-  <tr><td><strong>Models</strong></td><td>30+ LLM providers</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free (OSS), BYO API key</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Autonomous multi-step coding tasks</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>File editing + terminal + browser, human approval flow</td></tr>
-</table>
-
-<div class="tool-install" id="card-cl">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'cl-mac','card-cl')">VS Code</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'cl-linux','card-cl')">CLI</div>
-</div>
-<div class="install-body active" id="cl-mac">
-  <code><span class="prompt">$</span> code --install-extension saoudrizwan.claude-dev <button class="copy-btn" onclick='copyCmd(this,"code --install-extension saoudrizwan.claude-dev")'>Copy</button></code>
-</div>
-<div class="install-body" id="cl-linux">
-  <code><span class="prompt">$</span> npm install -g @cline/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @cline/cli")'>Copy</button></code>
-  <code><span class="comment"># Also available as JetBrains plugin</span></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Continue</h3>
-
-<p>Open-source AI coding assistant for VS Code and JetBrains. Model-agnostic with support for any LLM including local models via Ollama/LM Studio.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://docs.continue.dev">docs.continue.dev</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/continuedev/continue">github.com/continuedev/continue</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Open-source AI coding assistant (IDE + CLI)</td></tr>
-  <tr><td><strong>Models</strong></td><td>Any LLM (OpenAI, Claude, Gemini, local Ollama/LM Studio)</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free (OSS), BYO API key</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Privacy-focused, local-first AI coding</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Source-controlled AI checks in CI, tab autocomplete, any model</td></tr>
-</table>
-
-<div class="tool-install" id="card-cn">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'cn-mac','card-cn')">VS Code</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'cn-linux','card-cn')">JetBrains</div>
-</div>
-<div class="install-body active" id="cn-mac">
-  <code><span class="prompt">$</span> code --install-extension continuedev.continue <button class="copy-btn" onclick='copyCmd(this,"code --install-extension continuedev.continue")'>Copy</button></code>
-</div>
-<div class="install-body" id="cn-linux">
-  <code><span class="comment"># Install from JetBrains Marketplace</span></code>
-  <code><span class="comment"># Or via Continue CLI:</span></code>
-  <code><span class="prompt">$</span> npm install -g @continuedev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @continuedev/cli")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Goose (Block)</h3>
-
-<p>Block's (formerly Square) open-source general-purpose AI agent. Desktop app, CLI, and API for code, workflows, research, automation, and data analysis.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://goose-docs.ai">goose-docs.ai</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/aaif-goose/goose">github.com/aaif-goose/goose</a></li>
-  <li><strong>Blog:</strong> <a href="https://block.xyz/inside/block-open-source-introduces-codename-goose">Block Open Source</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>General-purpose AI agent (desktop + CLI + API)</td></tr>
-  <tr><td><strong>Models</strong></td><td>BYO LLM (any provider)</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free (OSS, Apache 2.0)</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Beyond-code tasks — research, writing, automation, data</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Native MCP integration, not just for coding</td></tr>
-</table>
-
-<div class="tool-install" id="card-gs">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'gs-mac','card-gs')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'gs-linux','card-gs')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'gs-win','card-gs')">Windows</div>
-</div>
-<div class="install-body active" id="gs-mac">
-  <code><span class="prompt">$</span> brew install goose <button class="copy-btn" onclick='copyCmd(this,"brew install goose")'>Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")'>Copy</button></code>
-</div>
-<div class="install-body" id="gs-linux">
-  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")'>Copy</button></code>
-  <code><span class="prompt">$</span> cargo install goose-cli <button class="copy-btn" onclick='copyCmd(this,"cargo install goose-cli")'>Copy</button></code>
-</div>
-<div class="install-body" id="gs-win">
-  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h3>Amp (Sourcegraph)</h3>
-
-<p>Sourcegraph's enterprise-grade agentic coding agent. Auto-refactors entire codebases, reviews code for bugs/security/performance, and generates tests.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://ampcode.com">ampcode.com</a></li>
-  <li><strong>Manual:</strong> <a href="https://ampcode.com/manual">ampcode.com/manual</a></li>
-  <li><strong>Sourcegraph:</strong> <a href="https://sourcegraph.com/amp">sourcegraph.com/amp</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Agentic coding agent (CLI + VS Code)</td></tr>
-  <tr><td><strong>Models</strong></td><td>Frontier multi-model</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free tier + enterprise plans</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Large codebase refactoring, code review at scale</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Sourcegraph code intelligence, <code>amp review</code>, Neo CLI with plugins</td></tr>
-</table>
-
-<div class="tool-install" id="card-am">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'am-mac','card-am')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'am-linux','card-am')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'am-win','card-am')">VS Code</div>
-</div>
-<div class="install-body active" id="am-mac">
-  <code><span class="prompt">$</span> npm install -g @sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"npm install -g @sourcegraph/amp")'>Copy</button></code>
-  <code><span class="prompt">$</span> brew install sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"brew install sourcegraph/amp")'>Copy</button></code>
-</div>
-<div class="install-body" id="am-linux">
-  <code><span class="prompt">$</span> npm install -g @sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"npm install -g @sourcegraph/amp")'>Copy</button></code>
-</div>
-<div class="install-body" id="am-win">
-  <code><span class="prompt">$</span> code --install-extension sourcegraph.amp <button class="copy-btn" onclick='copyCmd(this,"code --install-extension sourcegraph.amp")'>Copy</button></code>
-</div>
-</div>
-
-<hr>
-
-<h2>Comparison Table</h2>
-
-<table>
-  <tr><th>Tool</th><th>Type</th><th>Starting Price</th><th>Model Access</th><th>Best Use Case</th></tr>
-  <tr><td>OpenCode</td><td>CLI (OSS)</td><td>Free / $10 Go</td><td>75+ providers</td><td>Maximum flexibility</td></tr>
-  <tr><td>Claude Code</td><td>CLI</td><td>$20/mo</td><td>Claude only</td><td>Complex reasoning</td></tr>
-  <tr><td>GPT Codex</td><td>CLI+IDE</td><td>$20/mo</td><td>GPT models</td><td>OpenAI ecosystem</td></tr>
-  <tr><td>Gemini CLI</td><td>CLI (OSS)</td><td>Free</td><td>Gemini only</td><td>Cost-effective coding</td></tr>
-  <tr><td>Aider</td><td>CLI (OSS)</td><td>Free</td><td>Any LLM + local</td><td>Pair programming</td></tr>
-  <tr><td>Qwen Code</td><td>CLI (OSS)</td><td>Free</td><td>Qwen + multi-protocol</td><td>Qwen model users</td></tr>
-  <tr><td>Junie CLI</td><td>CLI</td><td>Free tier</td><td>BYO LLM</td><td>JetBrains integration</td></tr>
-  <tr><td>Kiro</td><td>IDE+CLI</td><td>Free preview</td><td>Multi-model</td><td>Spec-driven dev</td></tr>
-  <tr><td>Kilo Code</td><td>VS Code ext</td><td>Free tier</td><td>500+ models</td><td>Model variety</td></tr>
-  <tr><td>Cline</td><td>IDE+CLI (OSS)</td><td>Free</td><td>30+ providers</td><td>Autonomous tasks</td></tr>
-  <tr><td>Continue</td><td>IDE+CLI (OSS)</td><td>Free</td><td>Any LLM + local</td><td>Local-first, privacy</td></tr>
-  <tr><td>Goose</td><td>Desktop+CLI</td><td>Free (OSS)</td><td>BYO LLM</td><td>Beyond-code + MCP</td></tr>
-  <tr><td>Amp</td><td>CLI+IDE</td><td>Free + Enterprise</td><td>Frontier multi-model</td><td>Enterprise refactoring</td></tr>
-  <tr><td><strong>Nexus Terminal</strong></td><td>Desktop + Web</td><td>Free (OSS/MIT)</td><td>13+ agents</td><td>Multi-agent workspace</td></tr>
-</table>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+    function showTab(el, targetId, cardId) {
+      const card = document.getElementById(cardId);
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-body').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById(targetId).classList.add('active');
+    }
+    function copyCmd(btn, cmd) {
+      navigator.clipboard.writeText(cmd);
+      const originalText = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = originalText, 1500);
+    }
+  </script>
+</body>
+</html>

@@ -1,9 +1,18 @@
+#!/bin/bash
+
+CONTENT_FILE="$1"
+OUTPUT_FILE="$2"
+TITLE="$3"
+PAGE_NAME="$4"
+
+# HTML header
+cat > "$OUTPUT_FILE" << EOF
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCP | Abhay's Knowledge Base</title>
+  <title>$TITLE | Abhay's Knowledge Base</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -110,7 +119,7 @@
 <body>
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <div class="topbar-title">MCP</div>
+    <div class="topbar-title">$PAGE_NAME</div>
   </div>
 
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
@@ -143,205 +152,14 @@
     </aside>
 
 aria-label="Main content">
-<h1>Model Context Protocol (MCP)</h1>
+EOF
 
-<p>MCP is an open standard developed by Anthropic for connecting AI agents to external data sources, tools, and services. It provides a standardized way for agents to interact with the world beyond their training data.</p>
+# Add content
+cat "$CONTENT_FILE" >> "$OUTPUT_FILE"
 
-<hr>
-
-<h2 id="how-mcp-works">How MCP Works</h2>
-
-<p>MCP follows a <strong>3-layer client-server architecture</strong>:</p>
-
-<table>
-<tr>
-<th>Layer</th>
-<th>Component</th>
-<th>Role</th>
-</tr>
-<tr>
-<td><strong>1</strong></td>
-<td><strong>Host</strong> (AI App)</td>
-<td>The AI application you use — Claude Code, OpenCode, Cursor, OpenClaw</td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td><strong>MCP Client</strong> (built into Host)</td>
-<td>Manages connections, routes requests, handles authentication</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td><strong>MCP Servers</strong></td>
-<td>Expose tools, resources, and prompts for the agent</td>
-</tr>
-</table>
-
-<p>The Agent (Layer 1) sends requests through its built-in MCP Client (Layer 2), which communicates with MCP Servers (Layer 3) that connect to real external services — filesystems, APIs, databases.</p>
-
-<hr>
-
-<h2 id="key-concepts">Key Concepts</h2>
-
-<table>
-<tr>
-<th>Concept</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-<tr>
-<td><strong>Tools</strong></td>
-<td>Actions the agent can perform</td>
-<td>Create a GitHub PR, query a database</td>
-</tr>
-<tr>
-<td><strong>Resources</strong></td>
-<td>Data the agent can read</td>
-<td>Read a file, fetch a web page</td>
-</tr>
-<tr>
-<td><strong>Prompts</strong></td>
-<td>Pre-built templates for common tasks</td>
-<td>"Review this PR" template</td>
-</tr>
-<tr>
-<td><strong>Transports</strong></td>
-<td>How client and server communicate</td>
-<td>stdio (local), SSE (remote)</td>
-</tr>
-</table>
-
-<hr>
-
-<h2 id="popular-mcp-servers">Popular MCP Servers</h2>
-
-<p>MCP servers extend your AI agent's capabilities by connecting it to external services. Here are the most popular ones:</p>
-
-<table>
-<tr>
-<th>Server</th>
-<th>What it Does</th>
-<th>Best For</th>
-</tr>
-<tr>
-<td><strong>Filesystem</strong></td>
-<td>Read/write/search files, manage directories</td>
-<td>Codebase navigation</td>
-</tr>
-<tr>
-<td><strong>GitHub</strong></td>
-<td>Create/manage repos, PRs, issues, reviews</td>
-<td>CI/CD, code review</td>
-</tr>
-<tr>
-<td><strong>PostgreSQL</strong></td>
-<td>Query databases, run migrations, schema</td>
-<td>Backend development</td>
-</tr>
-<tr>
-<td><strong>SQLite</strong></td>
-<td>Local database access</td>
-<td>Prototyping, local dev</td>
-</tr>
-<tr>
-<td><strong>Slack</strong></td>
-<td>Send/read messages, manage channels</td>
-<td>Team communication</td>
-</tr>
-<tr>
-<td><strong>Web Search</strong></td>
-<td>Search the internet</td>
-<td>Research, documentation</td>
-</tr>
-<tr>
-<td><strong>Puppeteer</strong></td>
-<td>Headless browser automation</td>
-<td>Web scraping, testing</td>
-</tr>
-<tr>
-<td><strong>Memory</strong></td>
-<td>Persistent memory across sessions</td>
-<td>Long-running agents</td>
-</tr>
-<tr>
-<td><strong>Sequential Thinking</strong></td>
-<td>Structured reasoning</td>
-<td>Complex problem solving</td>
-</tr>
-<tr>
-<td><strong>Brave Search</strong></td>
-<td>Web + local search</td>
-<td>Web research</td>
-</tr>
-</table>
-
-<p>_→ See <a href="./mcp-servers">MCP Servers</a> for detailed installation guides and configuration_</p>
-
-<hr>
-
-<h2 id="tools-supporting-mcp">Tools Supporting MCP</h2>
-
-<table>
-<tr>
-<th>Tool</th>
-<th>MCP Support</th>
-<th>Notes</th>
-</tr>
-<tr>
-<td><strong>Claude Code</strong></td>
-<td>Full</td>
-<td>Native MCP client. Configure in claude.json</td>
-</tr>
-<tr>
-<td><strong>OpenCode</strong></td>
-<td>Full</td>
-<td>MCP server via config file</td>
-</tr>
-<tr>
-<td><strong>Cursor</strong></td>
-<td>Yes</td>
-<td>Cursor MCP server support</td>
-</tr>
-<tr>
-<td><strong>Windsurf</strong></td>
-<td>Yes</td>
-<td>MCP integration</td>
-</tr>
-<tr>
-<td><strong>OpenClaw</strong></td>
-<td>Yes</td>
-<td>MCP tools support</td>
-</tr>
-</table>
-
-<hr>
-
-<h2 id="related">Related</h2>
-
-<ul>
-<li><a href="./mcp-servers"><strong>MCP Servers</strong></a> — Popular MCP servers with detailed installation guides</li>
-<li><a href="../AI-Tools/"><strong>AI Tools Index</strong></a> — Full tools reference including MCP support</li>
-</ul>
-
-<hr>
-
-<h2 id="quick-start-add-an-mcp-server">Quick Start: Add an MCP Server</h2>
-
-<p>To add an MCP server to your agent, add it to your agent's configuration:</p>
-
-<pre><code>{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_TOKEN": "your-token"
-      }
-    }
-  }
-}
-</code></pre>
-
-<p>Then restart your agent and the new tools will be available automatically.</p>    </main>
+# HTML footer
+cat >> "$OUTPUT_FILE" << EOF
+    </main>
   </div>
 
   <script>
@@ -365,3 +183,6 @@ aria-label="Main content">
   </script>
 </body>
 </html>
+EOF
+
+echo "✓ Wrapped $CONTENT_FILE -> $OUTPUT_FILE"
