@@ -233,6 +233,13 @@
         setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
       });
     }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
       document.getElementById('sidebarOverlay').classList.toggle('active');

@@ -26,13 +26,29 @@ Open-source terminal coding agent built in Go by Anomaly (SST team). 142K+ GitHu
 | **Best For** | Terminal-first devs who want model flexibility |
 | **Key Strength** | Multi-model support, no vendor lock-in |
 
-<div class="install-card"><div class="install-card-title">Install</div>
-<div class="install-row"><span class="label">curl</span><code>curl -fsSL https://opencode.ai/install | bash</code><button class="copy-btn" onclick="copyCmd(this,&apos;curl -fsSL https://opencode.ai/install | bash&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">npm</span><code>npm install -g opencode-ai</code><button class="copy-btn" onclick="copyCmd(this,&apos;npm install -g opencode-ai&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">brew</span><code>brew install anomalyco/tap/opencode</code><button class="copy-btn" onclick="copyCmd(this,&apos;brew install anomalyco/tap/opencode&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">docker</span><code>docker run -it --rm ghcr.io/anomalyco/opencode</code><button class="copy-btn" onclick="copyCmd(this,&apos;docker run -it --rm ghcr.io/anomalyco/opencode&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">scoop</span><code>scoop install opencode</code><button class="copy-btn" onclick="copyCmd(this,&apos;scoop install opencode&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">choco</span><code>choco install opencode</code><button class="copy-btn" onclick="copyCmd(this,&apos;choco install opencode&apos;)">Copy</button></div>
+<div class="install-card">
+<div class="install-tabs">
+  <div class="install-tab active" onclick="switchTab(this,'oc-mac')">macOS</div>
+  <div class="install-tab" onclick="switchTab(this,'oc-linux')">Linux</div>
+  <div class="install-tab" onclick="switchTab(this,'oc-win')">Windows</div>
+</div>
+<div class="install-pane oc-mac active">
+  <div class="install-row"><span class="label">curl</span><code>curl -fsSL https://opencode.ai/install | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")'>Copy</button></div>
+  <div class="install-row"><span class="label">brew</span><code>brew install anomalyco/tap/opencode</code><button class="copy-btn" onclick='copyCmd(this,"brew install anomalyco/tap/opencode")'>Copy</button></div>
+  <div class="install-row"><span class="label">npm</span><code>npm install -g opencode-ai</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")'>Copy</button></div>
+  <div class="install-row"><span class="label">docker</span><code>docker run -it --rm ghcr.io/anomalyco/opencode</code><button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")'>Copy</button></div>
+</div>
+<div class="install-pane oc-linux">
+  <div class="install-row"><span class="label">curl</span><code>curl -fsSL https://opencode.ai/install | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")'>Copy</button></div>
+  <div class="install-row"><span class="label">brew</span><code>brew install anomalyco/tap/opencode</code><button class="copy-btn" onclick='copyCmd(this,"brew install anomalyco/tap/opencode")'>Copy</button></div>
+  <div class="install-row"><span class="label">pacman</span><code>sudo pacman -S opencode</code><button class="copy-btn" onclick='copyCmd(this,"sudo pacman -S opencode")'>Copy</button></div>
+  <div class="install-row"><span class="label">docker</span><code>docker run -it --rm ghcr.io/anomalyco/opencode</code><button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")'>Copy</button></div>
+</div>
+<div class="install-pane oc-win">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g opencode-ai</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")'>Copy</button></div>
+  <div class="install-row"><span class="label">scoop</span><code>scoop install opencode</code><button class="copy-btn" onclick='copyCmd(this,"scoop install opencode")'>Copy</button></div>
+  <div class="install-row"><span class="label">choco</span><code>choco install opencode</code><button class="copy-btn" onclick='copyCmd(this,"choco install opencode")'>Copy</button></div>
+</div>
 </div>
 
 ---
@@ -52,12 +68,26 @@ Anthropic's terminal coding agent. Fastest-growing AI coding product — $2.5B a
 | **Best For** | Complex reasoning, refactoring, architecture |
 | **Key Strength** | Best code quality, Opus 4.7 is top-tier |
 
-<div class="install-card"><div class="install-card-title">Install</div>
-<div class="install-row"><span class="label">curl</span><code>curl -fsSL https://claude.ai/install.sh | bash</code><button class="copy-btn" onclick="copyCmd(this,&apos;curl -fsSL https://claude.ai/install.sh | bash&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">brew</span><code>brew install claude-code</code><button class="copy-btn" onclick="copyCmd(this,&apos;brew install claude-code&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">npm</span><code>npm install -g @anthropic-ai/claude-code</code><button class="copy-btn" onclick="copyCmd(this,&apos;npm install -g @anthropic-ai/claude-code&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">winget</span><code>winget install Anthropic.ClaudeCode</code><button class="copy-btn" onclick="copyCmd(this,&apos;winget install Anthropic.ClaudeCode&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">ps</span><code>irm https://claude.ai/install.ps1 | iex</code><button class="copy-btn" onclick="copyCmd(this,&apos;irm https://claude.ai/install.ps1 | iex&apos;)">Copy</button></div>
+<div class="install-card">
+<div class="install-tabs">
+  <div class="install-tab active" onclick="switchTab(this,'cc-mac')">macOS</div>
+  <div class="install-tab" onclick="switchTab(this,'cc-linux')">Linux</div>
+  <div class="install-tab" onclick="switchTab(this,'cc-win')">Windows</div>
+</div>
+<div class="install-pane cc-mac active">
+  <div class="install-row"><span class="label">curl</span><code>curl -fsSL https://claude.ai/install.sh | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")'>Copy</button></div>
+  <div class="install-row"><span class="label">brew</span><code>brew install claude-code</code><button class="copy-btn" onclick='copyCmd(this,"brew install claude-code")'>Copy</button></div>
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @anthropic-ai/claude-code</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></div>
+</div>
+<div class="install-pane cc-linux">
+  <div class="install-row"><span class="label">curl</span><code>curl -fsSL https://claude.ai/install.sh | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")'>Copy</button></div>
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @anthropic-ai/claude-code</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></div>
+</div>
+<div class="install-pane cc-win">
+  <div class="install-row"><span class="label">winget</span><code>winget install Anthropic.ClaudeCode</code><button class="copy-btn" onclick='copyCmd(this,"winget install Anthropic.ClaudeCode")'>Copy</button></div>
+  <div class="install-row"><span class="label">ps</span><code>irm https://claude.ai/install.ps1 | iex</code><button class="copy-btn" onclick='copyCmd(this,"irm https://claude.ai/install.ps1 | iex")'>Copy</button></div>
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @anthropic-ai/claude-code</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></div>
+</div>
 </div>
 
 ---
@@ -77,9 +107,23 @@ OpenAI's coding agent across CLI, IDE, ChatGPT, and iOS.
 | **Best For** | All-in-one coding + chat + agent workflows |
 | **Key Strength** | Deep OpenAI ecosystem integration |
 
-<div class="install-card"><div class="install-card-title">Install</div>
-<div class="install-row"><span class="label">npm</span><code>npm install -g @openai/codex</code><button class="copy-btn" onclick="copyCmd(this,&apos;npm install -g @openai/codex&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">curl</span><code>curl -fsSL https://codex.openai.com/install.sh | bash</code><button class="copy-btn" onclick="copyCmd(this,&apos;curl -fsSL https://codex.openai.com/install.sh | bash&apos;)">Copy</button></div>
+<div class="install-card">
+<div class="install-tabs">
+  <div class="install-tab active" onclick="switchTab(this,'cx-mac')">macOS</div>
+  <div class="install-tab" onclick="switchTab(this,'cx-linux')">Linux</div>
+  <div class="install-tab" onclick="switchTab(this,'cx-win')">Windows</div>
+</div>
+<div class="install-pane cx-mac active">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @openai/codex</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></div>
+  <div class="install-row"><span class="label">curl</span><code>curl -fsSL https://codex.openai.com/install.sh | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")'>Copy</button></div>
+</div>
+<div class="install-pane cx-linux">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @openai/codex</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></div>
+  <div class="install-row"><span class="label">curl</span><code>curl -fsSL https://codex.openai.com/install.sh | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")'>Copy</button></div>
+</div>
+<div class="install-pane cx-win">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @openai/codex</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></div>
+</div>
 </div>
 
 ---
@@ -101,10 +145,23 @@ AI-first code editor (VS Code fork) with deep context understanding. 4M+ develop
 | **Best For** | Developers who want AI embedded in editor |
 | **Key Strength** | Deep codebase context, multi-model, tab completion |
 
-<div class="install-card"><div class="install-card-title">Install</div>
-<div class="install-row"><span class="label">curl</span><code>curl https://cursor.com/install -fsS | bash</code><button class="copy-btn" onclick="copyCmd(this,&apos;curl https://cursor.com/install -fsS | bash&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">brew</span><code>brew install --cask cursor</code><button class="copy-btn" onclick="copyCmd(this,&apos;brew install --cask cursor&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">ps</span><code>irm https://cursor.com/install?win32=true | iex</code><button class="copy-btn" onclick="copyCmd(this,&apos;irm https://cursor.com/install?win32=true | iex&apos;)">Copy</button></div>
+<div class="install-card">
+<div class="install-tabs">
+  <div class="install-tab active" onclick="switchTab(this,'cu-mac')">macOS</div>
+  <div class="install-tab" onclick="switchTab(this,'cu-linux')">Linux</div>
+  <div class="install-tab" onclick="switchTab(this,'cu-win')">Windows</div>
+</div>
+<div class="install-pane cu-mac active">
+  <div class="install-row"><span class="label">brew</span><code>brew install --cask cursor</code><button class="copy-btn" onclick='copyCmd(this,"brew install --cask cursor")'>Copy</button></div>
+  <div class="install-row"><span class="label">curl</span><code>curl https://cursor.com/install -fsS | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl https://cursor.com/install -fsS | bash")'>Copy</button></div>
+</div>
+<div class="install-pane cu-linux">
+  <div class="install-row"><span class="label">curl</span><code>curl https://cursor.com/install -fsS | bash</code><button class="copy-btn" onclick='copyCmd(this,"curl https://cursor.com/install -fsS | bash")'>Copy</button></div>
+</div>
+<div class="install-pane cu-win">
+  <div class="install-row"><span class="label">ps</span><code>irm https://cursor.com/install?win32=true | iex</code><button class="copy-btn" onclick='copyCmd(this,"irm https://cursor.com/install?win32=true | iex")'>Copy</button></div>
+  <div class="install-row"><span class="label">download</span><code>Download from cursor.com/download</code><button class="copy-btn" onclick='copyCmd(this,"https://cursor.com/download")'>Copy</button></div>
+</div>
 </div>
 
 ---
@@ -124,10 +181,21 @@ AI-native IDE by Codeium. Cascade agent system with multi-model routing.
 | **Best For** | End-to-end feature development |
 | **Key Strength** | Cascade agent flows, multi-model routing, Supercomplete |
 
-<div class="install-card"><div class="install-card-title">Install</div>
-<div class="install-row"><span class="label">brew</span><code>brew install --cask windsurf</code><button class="copy-btn" onclick="copyCmd(this,&apos;brew install --cask windsurf&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">npm</span><code>npm install -g windsurf</code><button class="copy-btn" onclick="copyCmd(this,&apos;npm install -g windsurf&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">winget</span><code>winget install Windsurf</code><button class="copy-btn" onclick="copyCmd(this,&apos;winget install Windsurf&apos;)">Copy</button></div>
+<div class="install-card">
+<div class="install-tabs">
+  <div class="install-tab active" onclick="switchTab(this,'ws-mac')">macOS</div>
+  <div class="install-tab" onclick="switchTab(this,'ws-linux')">Linux</div>
+  <div class="install-tab" onclick="switchTab(this,'ws-win')">Windows</div>
+</div>
+<div class="install-pane ws-mac active">
+  <div class="install-row"><span class="label">brew</span><code>brew install --cask windsurf</code><button class="copy-btn" onclick='copyCmd(this,"brew install --cask windsurf")'>Copy</button></div>
+</div>
+<div class="install-pane ws-linux">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g windsurf</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g windsurf")'>Copy</button></div>
+</div>
+<div class="install-pane ws-win">
+  <div class="install-row"><span class="label">winget</span><code>winget install Windsurf</code><button class="copy-btn" onclick='copyCmd(this,"winget install Windsurf")'>Copy</button></div>
+</div>
 </div>
 
 ---
@@ -147,9 +215,22 @@ Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
 | **Best For** | Teams already on GitHub ecosystem |
 | **Key Strength** | IDE integration, code review, Spark |
 
-<div class="install-card"><div class="install-card-title">Install</div>
-<div class="install-row"><span class="label">npm</span><code>npm install -g @github/copilot</code><button class="copy-btn" onclick="copyCmd(this,&apos;npm install -g @github/copilot&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">brew</span><code>brew install gh && gh auth login</code><button class="copy-btn" onclick="copyCmd(this,&apos;brew install gh && gh auth login&apos;)">Copy</button></div>
+<div class="install-card">
+<div class="install-tabs">
+  <div class="install-tab active" onclick="switchTab(this,'gh-mac')">macOS</div>
+  <div class="install-tab" onclick="switchTab(this,'gh-linux')">Linux</div>
+  <div class="install-tab" onclick="switchTab(this,'gh-win')">Windows</div>
+</div>
+<div class="install-pane gh-mac active">
+  <div class="install-row"><span class="label">brew</span><code>brew install gh && gh auth login</code><button class="copy-btn" onclick='copyCmd(this,"brew install gh && gh auth login")'>Copy</button></div>
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @github/copilot</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @github/copilot")'>Copy</button></div>
+</div>
+<div class="install-pane gh-linux">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @github/copilot</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @github/copilot")'>Copy</button></div>
+</div>
+<div class="install-pane gh-win">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g @github/copilot</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g @github/copilot")'>Copy</button></div>
+</div>
 </div>
 
 ---
@@ -169,10 +250,21 @@ Google's agent-first IDE (VS Code fork). Free public preview.
 | **Best For** | Multi-agent workflows, rapid prototyping |
 | **Key Strength** | 5 parallel agents, Gemini + Claude in one IDE |
 
-<div class="install-card"><div class="install-card-title">Install</div>
-<div class="install-row"><span class="label">brew</span><code>brew install --cask antigravity</code><button class="copy-btn" onclick="copyCmd(this,&apos;brew install --cask antigravity&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">npm</span><code>npm install -g antigravity</code><button class="copy-btn" onclick="copyCmd(this,&apos;npm install -g antigravity&apos;)">Copy</button></div>
-<div class="install-row"><span class="label">winget</span><code>winget install Antigravity</code><button class="copy-btn" onclick="copyCmd(this,&apos;winget install Antigravity&apos;)">Copy</button></div>
+<div class="install-card">
+<div class="install-tabs">
+  <div class="install-tab active" onclick="switchTab(this,'ag-mac')">macOS</div>
+  <div class="install-tab" onclick="switchTab(this,'ag-linux')">Linux</div>
+  <div class="install-tab" onclick="switchTab(this,'ag-win')">Windows</div>
+</div>
+<div class="install-pane ag-mac active">
+  <div class="install-row"><span class="label">brew</span><code>brew install --cask antigravity</code><button class="copy-btn" onclick='copyCmd(this,"brew install --cask antigravity")'>Copy</button></div>
+</div>
+<div class="install-pane ag-linux">
+  <div class="install-row"><span class="label">npm</span><code>npm install -g antigravity</code><button class="copy-btn" onclick='copyCmd(this,"npm install -g antigravity")'>Copy</button></div>
+</div>
+<div class="install-pane ag-win">
+  <div class="install-row"><span class="label">winget</span><code>winget install Antigravity</code><button class="copy-btn" onclick='copyCmd(this,"winget install Antigravity")'>Copy</button></div>
+</div>
 </div>
 
 ---
