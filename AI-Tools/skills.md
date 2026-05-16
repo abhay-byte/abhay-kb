@@ -11,53 +11,41 @@ title: Agent Skills
 
 ## How Skills Work
 
-<div align="center">
-<svg viewBox="0 0 900 450" width="100%" height="450" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;border:2px solid #444;border-radius:12px;background:#1a1a1a;padding:10px;">
+<div style="border:2px solid #444;border-radius:12px;background:#1a1a1a;padding:20px;margin:16px 0;">
 
-  <!-- Title -->
-  <text x="450" y="30" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">How Agent Skills Work</text>
+<div style="border:1px solid #555;border-radius:8px;background:#2a2a4a;padding:14px;margin-bottom:12px;">
+<div style="color:#fabd2f;font-weight:bold;font-size:14px;margin-bottom:4px;">✏️ SKILL CREATOR</div>
+<div style="color:#ccc;font-size:13px;">Writes SKILL.md with name, description, and instructions in a skill directory</div>
+<div style="color:#888;font-size:12px;">└── skill-name/SKILL.md  (YAML frontmatter + Markdown instructions)</div>
+</div>
 
-  <!-- Row 1: Creator -->
-  <rect x="50" y="55" width="800" height="70" rx="8" fill="#2a2a4a" stroke="#888" stroke-width="2"/>
-  <text x="450" y="80" text-anchor="middle" fill="#fabd2f" font-size="14" font-weight="bold">✏️ SKILL CREATOR</text>
-  <text x="450" y="100" text-anchor="middle" fill="#ccc" font-size="12">Writes SKILL.md with name, description, and instructions in a skill directory</text>
-  <text x="450" y="115" text-anchor="middle" fill="#888" font-size="11">skill-name/SKILL.md  (YAML frontmatter + Markdown instructions)</text>
+<div style="text-align:center;color:#fabd2f;font-size:18px;margin:4px 0;">↓</div>
 
-  <!-- Arrow 1 -> 2 -->
-  <line x1="450" y1="125" x2="450" y2="145" stroke="#fabd2f" stroke-width="3"/>
-  <polygon points="445,143 450,153 455,143" fill="#fabd2f"/>
+<div style="border:1px solid #555;border-radius:8px;background:#2a4a3a;padding:14px;margin-bottom:12px;">
+<div style="color:#fabd2f;font-weight:bold;font-size:14px;margin-bottom:4px;">🔍 AGENT DISCOVERS &amp; ACTIVATES THE SKILL</div>
+<div style="color:#ccc;font-size:13px;">Agent scans skill directories → reads name + description → loads SKILL.md on match</div>
+<div style="color:#888;font-size:12px;">Progressive disclosure: agent stores 100+ skills, loads only the one that matches</div>
+</div>
 
-  <!-- Row 2: Discovery -->
-  <rect x="50" y="158" width="800" height="70" rx="8" fill="#2a4a3a" stroke="#888" stroke-width="2"/>
-  <text x="450" y="183" text-anchor="middle" fill="#fabd2f" font-size="14" font-weight="bold">🔍 AGENT DISCOVERS &amp; ACTIVATES THE SKILL</text>
-  <text x="450" y="203" text-anchor="middle" fill="#ccc" font-size="12">Agent scans skill directories → reads name + description → loads SKILL.md on match</text>
-  <text x="450" y="218" text-anchor="middle" fill="#888" font-size="11">Progressive disclosure: agent stores 100+ skills, loads only the one that matches</text>
+<div style="text-align:center;color:#fabd2f;font-size:18px;margin:4px 0;">↓</div>
 
-  <!-- Arrow 2 -> 3 -->
-  <line x1="450" y1="228" x2="450" y2="248" stroke="#fabd2f" stroke-width="3"/>
-  <polygon points="445,246 450,256 455,246" fill="#fabd2f"/>
+<div style="border:1px solid #555;border-radius:8px;background:#3a2a4a;padding:14px;margin-bottom:12px;">
+<div style="color:#fabd2f;font-weight:bold;font-size:14px;margin-bottom:4px;">⚡ AGENT EXECUTES THE SKILL</div>
+<div style="color:#ccc;font-size:13px;">Follows instructions → runs tools/commands → produces output</div>
+<div style="color:#888;font-size:12px;">Can reference scripts/, references/, assets/ in the skill directory</div>
+</div>
 
-  <!-- Row 3: Execution -->
-  <rect x="50" y="260" width="800" height="70" rx="8" fill="#3a2a4a" stroke="#888" stroke-width="2"/>
-  <text x="450" y="285" text-anchor="middle" fill="#fabd2f" font-size="14" font-weight="bold">⚡ AGENT EXECUTES THE SKILL</text>
-  <text x="450" y="305" text-anchor="middle" fill="#ccc" font-size="12">Follows instructions → runs tools/commands → produces output</text>
-  <text x="450" y="320" text-anchor="middle" fill="#888" font-size="11">Can reference scripts/, references/, assets/ in the skill directory</text>
+<div style="border:1px solid #444;border-radius:8px;background:#111;padding:12px;margin-top:8px;">
+<div style="color:#fabd2f;font-weight:bold;font-size:13px;margin-bottom:4px;">📁 skill-name/</div>
+<div style="color:#aaa;font-size:12px;font-family:monospace;line-height:1.7;">
+├── SKILL.md<br>
+├── scripts/<br>
+├── references/<br>
+└── assets/
+</div>
+</div>
 
-  <!-- Directory structure box -->
-  <rect x="300" y="345" width="300" height="85" rx="8" fill="#1a1a2e" stroke="#555" stroke-width="1.5"/>
-  <text x="450" y="365" text-anchor="middle" fill="#fabd2f" font-size="12" font-weight="bold">📁 skill-name/</text>
-  <text x="320" y="382" fill="#aaa" font-size="11">  ├── SKILL.md</text>
-  <text x="320" y="398" fill="#aaa" font-size="11">  ├── scripts/</text>
-  <text x="320" y="414" fill="#aaa" font-size="11">  ├── references/</text>
-  <text x="320" y="430" fill="#aaa" font-size="11">  └── assets/</text>
-</svg>
-</div>ayout: standalone
-title: Agent Skills
----
-
-# Agent Skills
-
-> A standardized way to give AI agents new capabilities and expertise. Skills are instruction sets that teach AI agents **how to work** — providing context, guidelines, and step-by-step procedures for specific tasks.
+</div>
 
 ---
 
