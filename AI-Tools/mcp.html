@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP | Abhay's Knowledge Base</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    @media (max-width: 800px) {
+      .page-wrapper { padding: 72px 16px 40px; flex-direction: column; }
+      .sidebar { display: none; position: fixed; left: 0; top: 0; bottom: 0; width: 280px; background: #0d0d0d; z-index: 200; padding: 20px; }
+      .sidebar.open { display: flex; }
+      .topbar { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <div class="topbar-title">MCP</div>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's KB</h1>
+      <div class="tagline">My personal projects and notes</div>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+
+        <div class="nav-section-label">🤖 LLM</div>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/mcp-servers.html" class="nav-indent">MCP Servers</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+
+        <div class="nav-section-label">📁 Projects</div>
+        <a href="/abhay-kb/PROJECTS.html" class="nav-indent">Projects</a>
+
+        <div class="nav-section-label">👤 About</div>
+        <a href="/abhay-kb/about-me" class="nav-indent">About Me</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+<hr>
+layout: standalone
+title: MCP Overview
+<hr>
+
+<h1>Model Context Protocol (MCP)</h1>
+
+<p>MCP is an open standard developed by Anthropic for connecting AI agents to external data sources, tools, and services. It provides a standardized way for agents to interact with the world beyond their training data.</p>
+
+<hr>
+
+<h2 id="how-mcp-works">How MCP Works</h2>
+
+<p>MCP follows a <strong>3-layer client-server architecture</strong>:</p>
+
+<table>
+<tr>
+<td>Layer</td>
+<td>Component</td>
+<td>Role</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Host</strong> (AI App)</td>
+<td>The AI application you use — Claude Code, OpenCode, Cursor, OpenClaw</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>MCP Client</strong> (built into Host)</td>
+<td>Manages connections, routes requests, handles authentication</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>MCP Servers</strong></td>
+<td>Expose tools, resources, and prompts for the agent</td>
+</tr>
+</table>
+
+<p>The Agent (Layer 1) sends requests through its built-in MCP Client (Layer 2), which communicates with MCP Servers (Layer 3) that connect to real external services — filesystems, APIs, databases.</p>
+
+<hr>
+
+<h2 id="key-concepts">Key Concepts</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Description</td>
+<td>Example</td>
+</tr>
+<tr>
+<td><strong>Tools</strong></td>
+<td>Actions the agent can perform</td>
+<td>Create a GitHub PR, query a database</td>
+</tr>
+<tr>
+<td><strong>Resources</strong></td>
+<td>Data the agent can read</td>
+<td>Read a file, fetch a web page</td>
+</tr>
+<tr>
+<td><strong>Prompts</strong></td>
+<td>Pre-built templates for common tasks</td>
+<td>"Review this PR" template</td>
+</tr>
+<tr>
+<td><strong>Transports</strong></td>
+<td>How client and server communicate</td>
+<td>stdio (local), SSE (remote)</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="popular-mcp-servers">Popular MCP Servers</h2>
+
+<p>MCP servers extend your AI agent's capabilities by connecting it to external services. Here are the most popular ones:</p>
+
+<table>
+<tr>
+<td>Server</td>
+<td>What it Does</td>
+<td>Best For</td>
+</tr>
+<tr>
+<td><strong>Filesystem</strong></td>
+<td>Read/write/search files, manage directories</td>
+<td>Codebase navigation</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>Create/manage repos, PRs, issues, reviews</td>
+<td>CI/CD, code review</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>Query databases, run migrations, schema</td>
+<td>Backend development</td>
+</tr>
+<tr>
+<td><strong>SQLite</strong></td>
+<td>Local database access</td>
+<td>Prototyping, local dev</td>
+</tr>
+<tr>
+<td><strong>Slack</strong></td>
+<td>Send/read messages, manage channels</td>
+<td>Team communication</td>
+</tr>
+<tr>
+<td><strong>Web Search</strong></td>
+<td>Search the internet</td>
+<td>Research, documentation</td>
+</tr>
+<tr>
+<td><strong>Puppeteer</strong></td>
+<td>Headless browser automation</td>
+<td>Web scraping, testing</td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>Persistent memory across sessions</td>
+<td>Long-running agents</td>
+</tr>
+<tr>
+<td><strong>Sequential Thinking</strong></td>
+<td>Structured reasoning</td>
+<td>Complex problem solving</td>
+</tr>
+<tr>
+<td><strong>Brave Search</strong></td>
+<td>Web + local search</td>
+<td>Web research</td>
+</tr>
+</table>
+
+<p>_→ See <a href="./mcp-servers">MCP Servers</a> for detailed installation guides and configuration_</p>
+
+<hr>
+
+<h2 id="tools-supporting-mcp">Tools Supporting MCP</h2>
+
+<table>
+<tr>
+<td>Tool</td>
+<td>MCP Support</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>Full</td>
+<td>Native MCP client. Configure in claude.json</td>
+</tr>
+<tr>
+<td><strong>OpenCode</strong></td>
+<td>Full</td>
+<td>MCP server via config file</td>
+</tr>
+<tr>
+<td><strong>Cursor</strong></td>
+<td>Yes</td>
+<td>Cursor MCP server support</td>
+</tr>
+<tr>
+<td><strong>Windsurf</strong></td>
+<td>Yes</td>
+<td>MCP integration</td>
+</tr>
+<tr>
+<td><strong>OpenClaw</strong></td>
+<td>Yes</td>
+<td>MCP tools support</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="related">Related</h2>
+
+<ul>
+<li><a href="./mcp-servers"><strong>MCP Servers</strong></a> — Popular MCP servers with detailed installation guides</li>
+<li><a href="../AI-Tools/"><strong>AI Tools Index</strong></a> — Full tools reference including MCP support</li>
+</ul>
+
+<hr>
+
+<h2 id="quick-start-add-an-mcp-server">Quick Start: Add an MCP Server</h2>
+
+<p>To add an MCP server to your agent, add it to your agent's configuration:</p>
+
+<pre><code>{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "your-token"
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>Then restart your agent and the new tools will be available automatically.</p>    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
