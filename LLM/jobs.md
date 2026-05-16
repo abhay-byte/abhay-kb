@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-15 (Evening Cron)
+Last updated: 2026-05-16 (Midnight Cron)
 
 ---
 
@@ -56,15 +56,26 @@ Last updated: 2026-05-15 (Evening Cron)
 | 36 | Software Engineer, University Graduate | Google | Bangalore/Hyderabad | — | May 2026 | [Apply](https://freshershunt.in/google-software-engineer-university-graduate-2026/) |
 | 37 | Test and Tools Development Engineer | NVIDIA | Pune | — | May 2026 | [Apply](https://www.fresherstech.com/nvidia-off-campus-hiring/) |
 | 38 | Software Engineer | Bottomline (FreshersTech) | India | ~5-6 LPA | May 2026 | [Apply](https://www.fresherstech.com/bottomline-off-campus-hiring/) |
-| 39 | Analyst (Energy & Resources) | Deloitte | Delhi | — | May 2026 | [Apply](https://www.fresherstech.com/deloitte-off-campus-drive-for-freshers/) |
-| 40 | Associate Software Engineer | Iron Mountain | Bangalore | — | May 2026 | [Apply](https://www.fresherstech.com/iron-mountain-off-campus/) |
-| 41 | Software Engineer | Stadium | Remote (Training in Delhi) | — | May 2026 | [Apply](https://offcampusjobs4u.com/stadium-off-campus-drive-2026-software-engineer-remote/) |
-| 42 | Associate Software Engineer | Qualcomm | Hyderabad/Bangalore/Chennai/Noida | ~20-30 LPA | May 2026 | [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/) |
-| 43 | Software Engineer | Microsoft | Noida | Not disclosed | May 2026 | [Apply](https://freshershunt.in/microsoft-off-campus-drive-2026-software-engineer/) |
-| 44 | Associate Software Engineer | CBTS India | Chennai (Hybrid) | — | May 2026 | [Apply](https://freshershunt.in/cbts-off-campus-drive-2026/) |
-| 45 | Software Engineer | DocuSign | Bengaluru (Hybrid) | — | May 2026 | [Apply](https://offcampusjobs4u.com/docusign-recruitment-2026-software-engineer-bengaluru/) |
-| 46 | Software Engineer (DX) | Numerator | Remote India | — | May 2026 | [Apply](https://offcampusjobs4u.com/numerator-recruitment-2026-software-engineer-dx-remote-fresher/) |
-| 47 | Graduate Engineer Trainee / Full Stack Dev | Infosys | Pan India | ~6.25-21 LPA | May 2026 | [Apply](https://careerforfreshers.com/jobs/infosys-off-campus-hiring-2026-graduate-engineer-trainee-%E2%82%B96-25-lpa-%E2%82%B921-lpa-salary-with-bonus-freshers-eligible-apply-online/) |
+| 39 | Software Engineer | Stadium | Remote (Training in Delhi) | — | May 2026 | [Apply](https://offcampusjobs4u.com/stadium-off-campus-drive-2026-software-engineer-remote/) |
+| 40 | Associate Software Engineer | Qualcomm | Hyderabad/Bangalore/Chennai/Noida | ~20-30 LPA | May 2026 | [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/) |
+| 41 | Software Engineer | Microsoft | Noida | Not disclosed | May 2026 | [Apply](https://freshershunt.in/microsoft-off-campus-drive-2026-software-engineer/) |
+| 42 | Associate Software Engineer | CBTS India | Chennai (Hybrid) | — | May 2026 | [Apply](https://freshershunt.in/cbts-off-campus-drive-2026/) |
+| 43 | Software Engineer | DocuSign | Bengaluru (Hybrid) | — | May 2026 | [Apply](https://offcampusjobs4u.com/docusign-recruitment-2026-software-engineer-bengaluru/) |
+| 44 | Software Engineer (DX) | Numerator | Remote India | — | May 2026 | [Apply](https://offcampusjobs4u.com/numerator-recruitment-2026-software-engineer-dx-remote-fresher/) |
+| 45 | Graduate Engineer Trainee / Full Stack Dev | Infosys | Pan India | ~6.25-21 LPA | May 2026 | [Apply](https://careerforfreshers.com/jobs/infosys-off-campus-hiring-2026-graduate-engineer-trainee-%E2%82%B96-25-lpa-%E2%82%B921-lpa-salary-with-bonus-freshers-eligible-apply-online/) |
+| 46 | Graduate Recruitment Program | mthree | Across India | ~9.15 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/mthree-off-campus-drive-2026-graduate-program-9-lpa/) |
+| 47 | Software Automation Trainee (Apprentice) | Cisco | Bangalore | Stipend | May 2026 | [Apply](https://freshershunt.in/cisco-software-automation-trainee-tga-2026/) |
+| 48 | Software Development Engineer | AMD | Hyderabad | Competitive | May 2026 | [Apply](https://freshershunt.in/amd-off-campus-drive-2026/) |
+| 49 | Associate Software Engineer (AI & Python) | Lenovo | Bangalore | Competitive | May 2026 | [Apply](https://www.enggwave.com/lenovo-off-campus-drive-2026/107648) |
+
+### 💼 Internships
+
+| # | Title | Company | Location | Salary | Posted | Apply |
+|---|-------|---------|----------|--------|--------|-------|
+| 1 | Software Engineer Intern | Stripe | Bengaluru | ~₹61.3 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/stripe-internship-2026/) |
+| 2 | Software Engineering Intern (Backend) | Sense | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/sense-internship-2026-software-engineer-intern-backend/) |
+| 3 | Software Engineer Internship | Agoda | Gurgaon | ~₹28-30 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/) |
+| 4 | Intern (Software Engineering) | Wipro | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/) |
 
 ### 🎮 Game Development
 

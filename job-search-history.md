@@ -61,3 +61,15 @@
 | 44 | Software Engineer | DocuSign | Bengaluru (Hybrid) | — | https://offcampusjobs4u.com/docusign-recruitment-2026-software-engineer-bengaluru/ |
 | 45 | Software Engineer (DX) | Numerator | Remote India | — | https://offcampusjobs4u.com/numerator-recruitment-2026-software-engineer-dx-remote-fresher/ |
 | 46 | Graduate Engineer Trainee / Full Stack Dev | Infosys | Pan India | ~6.25-21 LPA | https://careerforfreshers.com/jobs/infosys-off-campus-hiring-2026-graduate-engineer-trainee-%E2%82%B96-25-lpa-%E2%82%B921-lpa-salary-with-bonus-freshers-eligible-apply-online/ |
+
+### 16-05-2026 (Midnight Cron)
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 47 | Graduate Recruitment Program | mthree | Across India | ~9.15 LPA | https://offcampusjobs4u.com/mthree-off-campus-drive-2026-graduate-program-9-lpa/ |
+| 48 | Software Automation Trainee (Apprentice) | Cisco | Bangalore | Stipend | https://freshershunt.in/cisco-software-automation-trainee-tga-2026/ |
+| 49 | Software Development Engineer | AMD | Hyderabad | Competitive | https://freshershunt.in/amd-off-campus-drive-2026/ |
+| 50 | Associate Software Engineer (AI & Python) | Lenovo | Bangalore | Competitive | https://www.enggwave.com/lenovo-off-campus-drive-2026/107648 |
+| 51 | Software Engineer Intern | Stripe | Bengaluru | ~61.3 LPA | https://offcampusjobs4u.com/stripe-internship-2026/ |
+| 52 | SWE Intern (Backend) | Sense | Bangalore | — | https://offcampusjobs4u.com/sense-internship-2026-software-engineer-intern-backend/ |
+| 53 | SWE Internship | Agoda | Gurgaon | ~28-30 LPA | https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/ |
+| 54 | Intern (Software Engineering) | Wipro | Bangalore | — | https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/ |
