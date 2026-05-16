@@ -15,6 +15,9 @@ A comprehensive comparison of AI-powered coding agents and assistants in 2026.
 
 Open-source terminal coding agent built in Go by Anomaly (SST team). 142K+ GitHub stars, 6.5M+ monthly active devs.
 
+- **Website:** [opencode.ai](https://opencode.ai)
+- **GitHub:** [github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
+
 | Feature | Details |
 |---------|---------|
 | **Type** | Open-source CLI agent (MIT) |
@@ -23,9 +26,23 @@ Open-source terminal coding agent built in Go by Anomaly (SST team). 142K+ GitHu
 | **Best For** | Terminal-first devs who want model flexibility |
 | **Key Strength** | Multi-model support, no vendor lock-in |
 
+**Install:**
+```bash
+npm install -g opencode-ai
+# or via Homebrew
+brew install opencode
+# then start
+opencode
+```
+
+---
+
 ### Claude Code (Anthropic)
 
 Anthropic's terminal coding agent. Fastest-growing AI coding product — $2.5B annualized revenue.
+
+- **Website:** [code.claude.com](https://code.claude.com)
+- **Pricing:** [claude.com/pricing](https://claude.com/pricing)
 
 | Feature | Details |
 |---------|---------|
@@ -35,9 +52,24 @@ Anthropic's terminal coding agent. Fastest-growing AI coding product — $2.5B a
 | **Best For** | Complex reasoning, refactoring, architecture |
 | **Key Strength** | Best code quality, Opus 4.7 is top-tier |
 
+**Install:**
+```bash
+npm install -g @anthropic-ai/claude-code
+# or via Homebrew
+brew install claude-code
+# then start
+claude
+# requires Claude subscription (Pro $20/mo+)
+```
+
+---
+
 ### GPT Codex (OpenAI)
 
 OpenAI's coding agent across CLI, IDE, ChatGPT, and iOS.
+
+- **Website:** [developers.openai.com/codex](https://developers.openai.com/codex)
+- **Pricing:** [chatgpt.com/codex/pricing](https://chatgpt.com/codex/pricing/)
 
 | Feature | Details |
 |---------|---------|
@@ -47,6 +79,15 @@ OpenAI's coding agent across CLI, IDE, ChatGPT, and iOS.
 | **Best For** | All-in-one coding + chat + agent workflows |
 | **Key Strength** | Deep OpenAI ecosystem integration |
 
+**Install:**
+```bash
+# Codex CLI (open source)
+npm install -g @openai/codex
+# then start
+codex
+# requires ChatGPT Plus subscription ($20/mo+)
+```
+
 ---
 
 ## Hybrid (IDE + Agent)
@@ -54,6 +95,9 @@ OpenAI's coding agent across CLI, IDE, ChatGPT, and iOS.
 ### Cursor
 
 AI-first code editor (VS Code fork) with deep context understanding. 4M+ developers.
+
+- **Website:** [cursor.com](https://cursor.com)
+- **Download:** [cursor.com/download](https://cursor.com/download)
 
 | Feature | Details |
 |---------|---------|
@@ -63,9 +107,21 @@ AI-first code editor (VS Code fork) with deep context understanding. 4M+ develop
 | **Best For** | Developers who want AI embedded in editor |
 | **Key Strength** | Deep codebase context, multi-model, tab completion |
 
+**Install:**
+```bash
+# Download from website (macOS, Windows, Linux)
+# Or via Homebrew
+brew install --cask cursor
+```
+
+---
+
 ### Windsurf (Codeium)
 
 AI-native IDE by Codeium. Cascade agent system with multi-model routing.
+
+- **Website:** [windsurf.com](https://windsurf.com)
+- **Download:** [windsurf.com/download](https://windsurf.com/download)
 
 | Feature | Details |
 |---------|---------|
@@ -75,9 +131,21 @@ AI-native IDE by Codeium. Cascade agent system with multi-model routing.
 | **Best For** | End-to-end feature development |
 | **Key Strength** | Cascade agent flows, multi-model routing, Supercomplete |
 
+**Install:**
+```bash
+# Download from website (macOS, Windows, Linux)
+# Or via Homebrew
+brew install --cask windsurf
+```
+
+---
+
 ### GitHub Copilot
 
 Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
+
+- **Website:** [github.com/features/copilot](https://github.com/features/copilot)
+- **Plans:** [github.com/features/copilot/plans](https://github.com/features/copilot/plans)
 
 | Feature | Details |
 |---------|---------|
@@ -86,6 +154,39 @@ Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
 | **Pricing** | Free, Pro $10/mo, Pro+ $39/mo, Business $19/seat |
 | **Best For** | Teams already on GitHub ecosystem |
 | **Key Strength** | IDE integration, code review, Spark |
+
+**Install:**
+```bash
+# VS Code: Install "GitHub Copilot" extension from marketplace
+# CLI:
+npm install -g @github/copilot
+# then authenticate with GitHub
+gh auth login
+```
+
+---
+
+### Antigravity (Google)
+
+Google's agent-first IDE (VS Code fork). Free public preview.
+
+- **Website:** [antigravity.google](https://antigravity.google)
+- **Download:** [antigravity.google/download](https://antigravity.google/download)
+
+| Feature | Details |
+|---------|---------|
+| **Type** | Agent-first IDE (VS Code fork) |
+| **Models** | Gemini 3.1 Pro, Gemini 3 Flash, Claude Opus/Sonnet, GPT-OSS |
+| **Pricing** | Free, Pro $20/mo, Ultra $249.99/mo |
+| **Best For** | Multi-agent workflows, rapid prototyping |
+| **Key Strength** | 5 parallel agents, Gemini + Claude in one IDE |
+
+**Install:**
+```bash
+# Download from website (macOS, Windows, Linux)
+# Or via Homebrew
+brew install --cask antigravity
+```
 
 ---
 
