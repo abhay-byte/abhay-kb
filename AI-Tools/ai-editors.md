@@ -1,11 +1,11 @@
 ---
 layout: standalone
-title: AI IDE
+title: AI Editors
 ---
 
-# AI IDE Comparison
+# AI Editor Comparison
 
-A comparison of AI-integrated development environments in 2026.
+A comparison of AI-integrated code editors and development environments in 2026.
 
 ---
 

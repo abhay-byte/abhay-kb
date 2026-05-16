@@ -12,7 +12,7 @@ Researched and compiled from current 2026 sources.
 
 - [**Tools**](./tools) — AI coding agents, assistants, and platforms compared
 - [**MCP**](./mcp) — Model Context Protocol: connecting agents to external data and tools
-- [**IDE**](./ide) — AI-powered IDEs: Cursor, Windsurf, Antigravity, and more
+- [**IDE**](./ai-editors) — AI-powered editors: Cursor, Windsurf, Antigravity, VS Code, TRAE, Kiro, and more
 - [**Skills**](./skills) — Agent skills explained
 
 ## Quick Links
