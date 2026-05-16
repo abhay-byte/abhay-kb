@@ -56,16 +56,14 @@ title: AI Coding Tools
 </style>
 
 <script>
-function switchTab(el, group) {
-  var parent = el.parentNode.parentNode;
-  var tabs = parent.getElementsByClassName('install-tab');
-  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+function showTab(el, paneId, cardId) {
+  var card = document.getElementById(cardId);
+  var allTabs = card.getElementsByClassName('install-tab');
+  var allPanes = card.getElementsByClassName('install-body');
+  for (var i = 0; i < allTabs.length; i++) allTabs[i].classList.remove('active');
+  for (var j = 0; j < allPanes.length; j++) allPanes[j].classList.remove('active');
   el.classList.add('active');
-  var os = el.getAttribute('data-os');
-  var bodies = parent.getElementsByClassName('install-body');
-  for (var i = 0; i < bodies.length; i++) bodies[i].classList.remove('active');
-  var target = parent.getElementsByClassName(group + '-' + os);
-  if (target.length > 0) target[0].classList.add('active');
+  document.getElementById(paneId).classList.add('active');
 }
 function copyCmd(el, cmd) {
   navigator.clipboard.writeText(cmd).then(function() {
@@ -75,24 +73,24 @@ function copyCmd(el, cmd) {
 }
 </script>
 
-<div class="tool-install">
+<div class="tool-install" id="card-oc">
 <div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="switchTab(this,'oc')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="switchTab(this,'oc')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="switchTab(this,'oc')">Windows</div>
+  <div class="install-tab active" data-os="mac" onclick="showTab(this,'oc-mac','card-oc')">macOS</div>
+  <div class="install-tab" data-os="linux" onclick="showTab(this,'oc-linux','card-oc')">Linux</div>
+  <div class="install-tab" data-os="win" onclick="showTab(this,'oc-win','card-oc')">Windows</div>
 </div>
-<div class="install-body oc-mac active">
+<div class="install-body active" id="oc-mac">
   <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> brew install anomalyco/tap/opencode <button class="copy-btn" onclick='copyCmd(this,"brew install anomalyco/tap/opencode")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body oc-linux">
+<div class="install-body" id="oc-linux">
   <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> sudo pacman -S opencode <button class="copy-btn" onclick='copyCmd(this,"sudo pacman -S opencode")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body oc-win">
+<div class="install-body" id="oc-win">
   <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> scoop install opencode <button class="copy-btn" onclick='copyCmd(this,"scoop install opencode")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> choco install opencode <button class="copy-btn" onclick='copyCmd(this,"choco install opencode")' style="float:right">Copy</button></code>
@@ -119,22 +117,22 @@ function copyCmd(el, cmd) {
   <tr><td><strong>Key Strength</strong></td><td>Best code quality, Opus 4.7 is top-tier</td></tr>
 </table>
 
-<div class="tool-install">
+<div class="tool-install" id="card-cc">
 <div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="switchTab(this,'cc')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="switchTab(this,'cc')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="switchTab(this,'cc')">Windows</div>
+  <div class="install-tab active" data-os="mac" onclick="showTab(this,'cc-mac','card-cc')">macOS</div>
+  <div class="install-tab" data-os="linux" onclick="showTab(this,'cc-linux','card-cc')">Linux</div>
+  <div class="install-tab" data-os="win" onclick="showTab(this,'cc-win','card-cc')">Windows</div>
 </div>
-<div class="install-body cc-mac active">
+<div class="install-body active" id="cc-mac">
   <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> brew install claude-code <button class="copy-btn" onclick='copyCmd(this,"brew install claude-code")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body cc-linux">
+<div class="install-body" id="cc-linux">
   <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body cc-win">
+<div class="install-body" id="cc-win">
   <code><span class="prompt">$</span> winget install Anthropic.ClaudeCode <button class="copy-btn" onclick='copyCmd(this,"winget install Anthropic.ClaudeCode")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> irm https://claude.ai/install.ps1 | iex <button class="copy-btn" onclick='copyCmd(this,"irm https://claude.ai/install.ps1 | iex")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")' style="float:right">Copy</button></code>
@@ -161,21 +159,21 @@ function copyCmd(el, cmd) {
   <tr><td><strong>Key Strength</strong></td><td>Deep OpenAI ecosystem integration</td></tr>
 </table>
 
-<div class="tool-install">
+<div class="tool-install" id="card-cx">
 <div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="switchTab(this,'cx')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="switchTab(this,'cx')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="switchTab(this,'cx')">Windows</div>
+  <div class="install-tab active" data-os="mac" onclick="showTab(this,'cx-mac','card-cx')">macOS</div>
+  <div class="install-tab" data-os="linux" onclick="showTab(this,'cx-linux','card-cx')">Linux</div>
+  <div class="install-tab" data-os="win" onclick="showTab(this,'cx-win','card-cx')">Windows</div>
 </div>
-<div class="install-body cx-mac active">
+<div class="install-body active" id="cx-mac">
   <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body cx-linux">
+<div class="install-body" id="cx-linux">
   <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body cx-win">
+<div class="install-body" id="cx-win">
   <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")' style="float:right">Copy</button></code>
 </div>
 </div>
@@ -202,20 +200,20 @@ function copyCmd(el, cmd) {
   <tr><td><strong>Key Strength</strong></td><td>Deep codebase context, multi-model, tab completion</td></tr>
 </table>
 
-<div class="tool-install">
+<div class="tool-install" id="card-cu">
 <div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="switchTab(this,'cu')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="switchTab(this,'cu')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="switchTab(this,'cu')">Windows</div>
+  <div class="install-tab active" data-os="mac" onclick="showTab(this,'cu-mac','card-cu')">macOS</div>
+  <div class="install-tab" data-os="linux" onclick="showTab(this,'cu-linux','card-cu')">Linux</div>
+  <div class="install-tab" data-os="win" onclick="showTab(this,'cu-win','card-cu')">Windows</div>
 </div>
-<div class="install-body cu-mac active">
+<div class="install-body active" id="cu-mac">
   <code><span class="prompt">$</span> brew install --cask cursor <button class="copy-btn" onclick='copyCmd(this,"brew install --cask cursor")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> curl https://cursor.com/install -fsS | bash <button class="copy-btn" onclick='copyCmd(this,"curl https://cursor.com/install -fsS | bash")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body cu-linux">
+<div class="install-body" id="cu-linux">
   <code><span class="prompt">$</span> curl https://cursor.com/install -fsS | bash <button class="copy-btn" onclick='copyCmd(this,"curl https://cursor.com/install -fsS | bash")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body cu-win">
+<div class="install-body" id="cu-win">
   <code><span class="prompt">$</span> irm https://cursor.com/install?win32=true | iex <button class="copy-btn" onclick='copyCmd(this,"irm https://cursor.com/install?win32=true | iex")' style="float:right">Copy</button></code>
 </div>
 </div>
@@ -240,19 +238,19 @@ function copyCmd(el, cmd) {
   <tr><td><strong>Key Strength</strong></td><td>Cascade agent flows, multi-model routing, Supercomplete</td></tr>
 </table>
 
-<div class="tool-install">
+<div class="tool-install" id="card-ws">
 <div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="switchTab(this,'ws')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="switchTab(this,'ws')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="switchTab(this,'ws')">Windows</div>
+  <div class="install-tab active" data-os="mac" onclick="showTab(this,'ws-mac','card-ws')">macOS</div>
+  <div class="install-tab" data-os="linux" onclick="showTab(this,'ws-linux','card-ws')">Linux</div>
+  <div class="install-tab" data-os="win" onclick="showTab(this,'ws-win','card-ws')">Windows</div>
 </div>
-<div class="install-body ws-mac active">
+<div class="install-body active" id="ws-mac">
   <code><span class="prompt">$</span> brew install --cask windsurf <button class="copy-btn" onclick='copyCmd(this,"brew install --cask windsurf")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body ws-linux">
+<div class="install-body" id="ws-linux">
   <code><span class="prompt">$</span> npm install -g windsurf <button class="copy-btn" onclick='copyCmd(this,"npm install -g windsurf")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body ws-win">
+<div class="install-body" id="ws-win">
   <code><span class="prompt">$</span> winget install Windsurf <button class="copy-btn" onclick='copyCmd(this,"winget install Windsurf")' style="float:right">Copy</button></code>
 </div>
 </div>
@@ -277,20 +275,20 @@ function copyCmd(el, cmd) {
   <tr><td><strong>Key Strength</strong></td><td>IDE integration, code review, Spark</td></tr>
 </table>
 
-<div class="tool-install">
+<div class="tool-install" id="card-gh">
 <div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="switchTab(this,'gh')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="switchTab(this,'gh')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="switchTab(this,'gh')">Windows</div>
+  <div class="install-tab active" data-os="mac" onclick="showTab(this,'gh-mac','card-gh')">macOS</div>
+  <div class="install-tab" data-os="linux" onclick="showTab(this,'gh-linux','card-gh')">Linux</div>
+  <div class="install-tab" data-os="win" onclick="showTab(this,'gh-win','card-gh')">Windows</div>
 </div>
-<div class="install-body gh-mac active">
+<div class="install-body active" id="gh-mac">
   <code><span class="prompt">$</span> brew install gh && gh auth login <button class="copy-btn" onclick='copyCmd(this,"brew install gh && gh auth login")' style="float:right">Copy</button></code>
   <code><span class="prompt">$</span> npm install -g @github/copilot <button class="copy-btn" onclick='copyCmd(this,"npm install -g @github/copilot")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body gh-linux">
+<div class="install-body" id="gh-linux">
   <code><span class="prompt">$</span> npm install -g @github/copilot <button class="copy-btn" onclick='copyCmd(this,"npm install -g @github/copilot")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body gh-win">
+<div class="install-body" id="gh-win">
   <code><span class="prompt">$</span> npm install -g @github/copilot <button class="copy-btn" onclick='copyCmd(this,"npm install -g @github/copilot")' style="float:right">Copy</button></code>
 </div>
 </div>
@@ -315,19 +313,19 @@ function copyCmd(el, cmd) {
   <tr><td><strong>Key Strength</strong></td><td>5 parallel agents, Gemini + Claude in one IDE</td></tr>
 </table>
 
-<div class="tool-install">
+<div class="tool-install" id="card-ag">
 <div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="switchTab(this,'ag')">macOS</div>
-  <div class="install-tab" data-os="linux" onclick="switchTab(this,'ag')">Linux</div>
-  <div class="install-tab" data-os="win" onclick="switchTab(this,'ag')">Windows</div>
+  <div class="install-tab active" data-os="mac" onclick="showTab(this,'ag-mac','card-ag')">macOS</div>
+  <div class="install-tab" data-os="linux" onclick="showTab(this,'ag-linux','card-ag')">Linux</div>
+  <div class="install-tab" data-os="win" onclick="showTab(this,'ag-win','card-ag')">Windows</div>
 </div>
-<div class="install-body ag-mac active">
+<div class="install-body active" id="ag-mac">
   <code><span class="prompt">$</span> brew install --cask antigravity <button class="copy-btn" onclick='copyCmd(this,"brew install --cask antigravity")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body ag-linux">
+<div class="install-body" id="ag-linux">
   <code><span class="prompt">$</span> npm install -g antigravity <button class="copy-btn" onclick='copyCmd(this,"npm install -g antigravity")' style="float:right">Copy</button></code>
 </div>
-<div class="install-body ag-win">
+<div class="install-body" id="ag-win">
   <code><span class="prompt">$</span> winget install Antigravity <button class="copy-btn" onclick='copyCmd(this,"winget install Antigravity")' style="float:right">Copy</button></code>
 </div>
 </div>
