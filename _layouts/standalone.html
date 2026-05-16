@@ -226,20 +226,12 @@
 
   <!-- Hamburger toggle — works on every page because this layout is shared -->
   <script>
-    function copyCmd(el) {
-      const text = el.previousElementSibling.textContent.replace('$ ', '');
-      navigator.clipboard.writeText(text).then(() => {
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
         el.textContent = 'Copied!';
         el.classList.add('copied');
         setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
       });
-    }
-    function switchTab(el, os) {
-      const card = el.closest('.install-card');
-      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      card.querySelectorAll('.install-body').forEach(b => b.style.display = 'none');
-      card.querySelectorAll('.install-body.' + os).forEach(b => b.style.display = 'flex');
     }
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
