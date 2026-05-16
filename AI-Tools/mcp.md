@@ -167,18 +167,18 @@ npx -y @modelcontextprotocol/server-filesystem
 Official Git server from Anthropic's MCP repository. Provides tools for reading, searching, and analyzing Git repositories — commit history, branches, diffs, file status.
 
 - **GitHub:** [modelcontextprotocol/servers — src/git](https://github.com/modelcontextprotocol/servers/tree/main/src/git)
-- **npm:** `@modelcontextprotocol/server-git`
+- **Package:** `mcp-server-git` (pip/uvx)
 
 | Aspect | Details |
 |---------|---------|
-| **Install** | `npx -y @modelcontextprotocol/server-git` |
+| **Install** | `uvx mcp-server-git` |
 | **Config** | No extra config needed (runs in current repo) |
 | **Permissions** | Read-only access to Git history |
 | **Best For** | Code review, git log analysis, branch inspection |
 
 **Installation**
 ```bash
-npx -y @modelcontextprotocol/server-git
+uvx mcp-server-git
 ```
 
 **Configuration:**
@@ -186,8 +186,8 @@ npx -y @modelcontextprotocol/server-git
 {
   "mcpServers": {
     "git": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-git"]
+      "command": "uvx",
+      "args": ["mcp-server-git"]
     }
   }
 }
@@ -598,17 +598,17 @@ npx -y @modelcontextprotocol/server-sequential-thinking
 Official Time server from Anthropic's MCP repository. Provides current time and timezone information for agents.
 
 - **GitHub:** [modelcontextprotocol/servers — src/time](https://github.com/modelcontextprotocol/servers/tree/main/src/time)
-- **npm:** `@modelcontextprotocol/server-time`
+- **Package:** `mcp-server-time` (pip/uvx)
 
 | Aspect | Details |
 |---------|---------|
-| **Install** | `npx -y @modelcontextprotocol/server-time` |
+| **Install** | `uvx mcp-server-time` |
 | **Config** | No extra config needed |
 | **Best For** | Timezone-aware agents, scheduling, timestamps |
 
 **Installation**
 ```bash
-npx -y @modelcontextprotocol/server-time
+uvx mcp-server-time
 ```
 
 **Configuration:**
@@ -616,8 +616,8 @@ npx -y @modelcontextprotocol/server-time
 {
   "mcpServers": {
     "time": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-time"]
+      "command": "uvx",
+      "args": ["mcp-server-time"]
     }
   }
 }
@@ -674,13 +674,13 @@ A context-aware MCP server by Upstash that provides relevant context from extern
 
 | Aspect | Details |
 |---------|---------|
-| **Install** | `npx -y @upstash/context7` |
+| **Install** | `npx @upstash/context7-mcp --api-key <key>` |
 | **Config** | Requires Upstash API key |
 | **Best For** | RAG-based context injection, external knowledge retrieval |
 
 **Installation**
 ```bash
-npx -y @upstash/context7
+npx @upstash/context7-mcp --api-key YOUR_API_KEY
 ```
 
 **Configuration:**
@@ -689,10 +689,7 @@ npx -y @upstash/context7
   "mcpServers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7"],
-      "env": {
-        "UPSTASH_API_KEY": "your-api-key-here"
-      }
+      "args": ["@upstash/context7-mcp", "--api-key", "your-api-key-here"]
     }
   }
 }
@@ -710,16 +707,17 @@ npx -y @upstash/context7
 Provides privacy-focused web search capabilities through DuckDuckGo search engine.
 
 - **GitHub:** [nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)
+- **npm:** `duckduckgo-mcp-server`
 
 | Aspect | Details |
 |---------|---------|
-| **Install** | `npx -y @nickclyde/duckduckgo-mcp-server` |
+| **Install** | `npx duckduckgo-mcp-server` |
 | **Config** | No API key required (free, privacy-focused) |
 | **Best For** | Privacy-respecting web search, research |
 
 **Installation**
 ```bash
-npx -y @nickclyde/duckduckgo-mcp-server
+npx duckduckgo-mcp-server
 ```
 
 **Configuration:**
@@ -728,7 +726,7 @@ npx -y @nickclyde/duckduckgo-mcp-server
   "mcpServers": {
     "duckduckgo": {
       "command": "npx",
-      "args": ["-y", "@nickclyde/duckduckgo-mcp-server"]
+      "args": ["duckduckgo-mcp-server"]
     }
   }
 }

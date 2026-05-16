@@ -416,7 +416,7 @@
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/modelcontextprotocol/servers/tree/main/src/git">modelcontextprotocol/servers — src/git</a></li>
-<li><strong>npm:</strong> <code>@modelcontextprotocol/server-git</code></li>
+<li><strong>Package:</strong> <code>mcp-server-git</code> (pip/uvx)</li>
 </ul>
 
 <table>
@@ -426,7 +426,7 @@
 </tr>
 <tr>
 <td><strong>Install</strong></td>
-<td><code>npx -y @modelcontextprotocol/server-git</code></td>
+<td><code>uvx mcp-server-git</code></td>
 </tr>
 <tr>
 <td><strong>Config</strong></td>
@@ -443,15 +443,15 @@
 </table>
 
 <strong>Installation</strong>
-<pre><code>npx -y @modelcontextprotocol/server-git
+<pre><code>uvx mcp-server-git
 </code></pre>
 
 <strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "git": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-git"]
+      "command": "uvx",
+      "args": ["mcp-server-git"]
     }
   }
 }
@@ -1014,7 +1014,7 @@
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/modelcontextprotocol/servers/tree/main/src/time">modelcontextprotocol/servers — src/time</a></li>
-<li><strong>npm:</strong> <code>@modelcontextprotocol/server-time</code></li>
+<li><strong>Package:</strong> <code>mcp-server-time</code> (pip/uvx)</li>
 </ul>
 
 <table>
@@ -1024,7 +1024,7 @@
 </tr>
 <tr>
 <td><strong>Install</strong></td>
-<td><code>npx -y @modelcontextprotocol/server-time</code></td>
+<td><code>uvx mcp-server-time</code></td>
 </tr>
 <tr>
 <td><strong>Config</strong></td>
@@ -1037,15 +1037,15 @@
 </table>
 
 <strong>Installation</strong>
-<pre><code>npx -y @modelcontextprotocol/server-time
+<pre><code>uvx mcp-server-time
 </code></pre>
 
 <strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "time": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-time"]
+      "command": "uvx",
+      "args": ["mcp-server-time"]
     }
   }
 }
@@ -1126,7 +1126,7 @@
 </tr>
 <tr>
 <td><strong>Install</strong></td>
-<td><code>npx -y @upstash/context7</code></td>
+<td><code>npx @upstash/context7-mcp --api-key <key></code></td>
 </tr>
 <tr>
 <td><strong>Config</strong></td>
@@ -1139,7 +1139,7 @@
 </table>
 
 <strong>Installation</strong>
-<pre><code>npx -y @upstash/context7
+<pre><code>npx @upstash/context7-mcp --api-key YOUR_API_KEY
 </code></pre>
 
 <strong>Configuration:</strong>
@@ -1147,10 +1147,7 @@
   "mcpServers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7"],
-      "env": {
-        "UPSTASH_API_KEY": "your-api-key-here"
-      }
+      "args": ["@upstash/context7-mcp", "--api-key", "your-api-key-here"]
     }
   }
 }
@@ -1171,6 +1168,7 @@
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/nickclyde/duckduckgo-mcp-server">nickclyde/duckduckgo-mcp-server</a></li>
+<li><strong>npm:</strong> <code>duckduckgo-mcp-server</code></li>
 </ul>
 
 <table>
@@ -1180,7 +1178,7 @@
 </tr>
 <tr>
 <td><strong>Install</strong></td>
-<td><code>npx -y @nickclyde/duckduckgo-mcp-server</code></td>
+<td><code>npx duckduckgo-mcp-server</code></td>
 </tr>
 <tr>
 <td><strong>Config</strong></td>
@@ -1193,7 +1191,7 @@
 </table>
 
 <strong>Installation</strong>
-<pre><code>npx -y @nickclyde/duckduckgo-mcp-server
+<pre><code>npx duckduckgo-mcp-server
 </code></pre>
 
 <strong>Configuration:</strong>
@@ -1201,7 +1199,7 @@
   "mcpServers": {
     "duckduckgo": {
       "command": "npx",
-      "args": ["-y", "@nickclyde/duckduckgo-mcp-server"]
+      "args": ["duckduckgo-mcp-server"]
     }
   }
 }
