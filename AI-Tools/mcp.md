@@ -16,14 +16,21 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
 - [Quick Start: Add an MCP Server](#quick-start-add-an-mcp-server)
 - [Popular MCP Servers](#popular-mcp-servers)
   - [Filesystem](#filesystem-mcp-server)
+  - [Git](#git-mcp-server)
   - [GitHub](#github-mcp-server)
   - [PostgreSQL](#postgresql-mcp-server)
   - [SQLite](#sqlite-mcp-server)
   - [Slack](#slack-mcp-server)
   - [Web / Brave Search](#web-search--brave-search-mcp-server)
   - [Puppeteer](#puppeteer-mcp-server)
+  - [Playwright](#playwright-mcp-server)
   - [Memory](#memory-mcp-server)
   - [Sequential Thinking](#sequential-thinking-mcp-server)
+  - [Time](#time-mcp-server)
+  - [Context Mode](#context-mode-mcp-server)
+  - [Context7](#context7-mcp-server)
+  - [DuckDuckGo](#duckduckgo-mcp-server)
+  - [Android MCP](#android-mcp-server)
 - [Tools Supporting MCP](#tools-supporting-mcp)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
@@ -89,7 +96,10 @@ Most servers follow a similar pattern:
 
 ### Filesystem MCP Server
 
-Official filesystem server from Anthropic's Model Context Protocol. Provides safe read/write access to local files and directories.
+Official server from Anthropic's MCP repository. Provides safe read/write access to local files and directories.
+
+- **GitHub:** [modelcontextprotocol/servers — src/filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)
+- **npm:** `@modelcontextprotocol/server-filesystem`
 
 | Aspect | Details |
 |---------|---------|
@@ -97,22 +107,13 @@ Official filesystem server from Anthropic's Model Context Protocol. Provides saf
 | **Config** | No extra config needed |
 | **Permissions** | Reads files, creates directories |
 | **Best For** | Codebase navigation, local file operations |
-| **Security** | Requires allowed directory paths (configurable) |
 
 **Installation**
-
-**Using npx (recommended):**
 ```bash
 npx -y @modelcontextprotocol/server-filesystem
 ```
 
-**Using npm globally:**
-```bash
-npm install -g @modelcontextprotocol/server-filesystem
-```
-
-**Configuration:** By default, allows read access to the project directory you run the agent from. For security, you can configure which directories to allow:
-
+**Configuration:**
 ```json
 {
   "mcpServers": {
@@ -127,41 +128,94 @@ npm install -g @modelcontextprotocol/server-filesystem
 }
 ```
 
-**Docker:**
+---
+
+### Git MCP Server
+
+Official Git server from Anthropic's MCP repository. Provides tools for reading, searching, and analyzing Git repositories — commit history, branches, diffs, file status.
+
+- **GitHub:** [modelcontextprotocol/servers — src/git](https://github.com/modelcontextprotocol/servers/tree/main/src/git)
+- **npm:** `@modelcontextprotocol/server-git`
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y @modelcontextprotocol/server-git` |
+| **Config** | No extra config needed (runs in current repo) |
+| **Permissions** | Read-only access to Git history |
+| **Best For** | Code review, git log analysis, branch inspection |
+
+**Installation**
 ```bash
-docker run -v $(pwd):/project:/project -it --rm ghcr.io/modelcontextprotocol/filesystem
+npx -y @modelcontextprotocol/server-git
 ```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "git": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git"]
+    }
+  }
+}
+```
+
+**Features:**
+- **Commit history:** Read commit messages, authors, dates
+- **Branch listing:** List and inspect branches
+- **File diff:** Show diffs between commits
+- **Status check:** Current repo status (modified, staged files)
 
 ---
 
 ### GitHub MCP Server
 
-Provides access to GitHub repositories, issues, PRs, and CI/CD through the GitHub API. Inherits the same access restrictions as your GitHub account.
+Two options available — the official server from GitHub and the Anthropic MCP version.
+
+**Option 1 — Official GitHub MCP Server**
+
+- **GitHub:** [github/github-mcp-server](https://github.com/github/github-mcp-server)
+- **npm:** `@github/github-mcp-server`
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y @github/github-mcp-server` |
+| **Config** | Requires `GITHUB_TOKEN` environment variable |
+| **Best For** | GitHub-native PR review, issues, code management |
+
+**Installation:**
+```bash
+npx -y @github/github-mcp-server
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@github/github-mcp-server"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your-token-here"
+      }
+    }
+  }
+}
+```
+
+**Option 2 — Anthropic's MCP GitHub Server**
+
+- **GitHub:** [modelcontextprotocol/servers — src/github](https://github.com/modelcontextprotocol/servers/tree/main/src/github)
+- **npm:** `@modelcontextprotocol/server-github`
 
 | Aspect | Details |
 |---------|---------|
 | **Install** | `npx -y @modelcontextprotocol/server-github` |
 | **Config** | Requires `GITHUB_TOKEN` environment variable |
-| **Permissions** | Repositories, issues, PRs, code review, CI/CD based on your GitHub access |
-| **Best For** | GitHub workflows, code review automation |
-| **Security** | Personal access tokens scoped to specific repos (recommended) |
+| **Best For** | General GitHub API access |
 
-**Installation**
-
-**Using npx:**
-```bash
-npx -y @modelcontextprotocol/server-github
-```
-
-**Configuration:** Create a GitHub personal access token at https://github.com/settings/tokens
-
-Generate a token with these scopes (minimum):
-- `repo` (full access to private repos)
-- `read:org` (if accessing org repos)
-- `read:user` (if accessing user repos)
-
-**IMPORTANT:** For security, create a **fine-grained token** with only the permissions you need and scoped to specific repositories rather than using a broad-scope token with admin access.
-
+**Configuration:**
 ```json
 {
   "mcpServers": {
@@ -176,8 +230,7 @@ Generate a token with these scopes (minimum):
 }
 ```
 
-**Using Claude's managed endpoint:** If you're using Claude Code, you can skip local setup entirely and use GitHub's managed MCP endpoint directly via Claude's configuration:
-
+**Using Claude's managed endpoint:**
 ```json
 {
   "mcpServers": {
@@ -187,6 +240,8 @@ Generate a token with these scopes (minimum):
   }
 }
 ```
+
+**Token setup:** Create at [github.com/settings/tokens](https://github.com/settings/tokens) — use fine-grained tokens scoped to specific repos.
 
 **Troubleshooting:**
 - **Token not found:** Ensure `GITHUB_TOKEN` is set and valid
@@ -205,11 +260,8 @@ Provides read-only access to PostgreSQL databases. Good for querying schemas, ru
 | **Config** | Requires `DATABASE_URL` environment variable |
 | **Permissions** | Read-only database access |
 | **Best For** | Backend development, database querying, schema analysis |
-| **Security** | Connection string with credentials (keep secret) |
 
 **Installation**
-
-**Using npx:**
 ```bash
 npx -y @modelcontextprotocol/server-postgres
 ```
@@ -229,29 +281,10 @@ npx -y @modelcontextprotocol/server-postgres
 }
 ```
 
-**Connection string format:**
-```
-postgresql://[user[:password]@][host][:port][/database][?params]
-```
-
-**Environment variables (alternative):**
-```bash
-export PGHOST=localhost
-export PGPORT=5432
-export PGUSER=myuser
-export PGPASSWORD=mypassword
-export PGDATABASE=mydb
-```
-
 **Features:**
 - **Schema introspection:** Agent can read table structures, columns, types
 - **Query execution:** Run SELECT queries safely (read-only)
 - **Transaction safety:** No write operations prevent data corruption
-
-**Security notes:**
-- Use environment variables for credentials (never hardcode in files)
-- Consider using a read-only database user for AI agents
-- Restrict which tables the agent can access via database-level permissions
 
 ---
 
@@ -265,11 +298,8 @@ Provides read/write access to SQLite databases. Good for local development, prot
 | **Config** | Requires database file path |
 | **Permissions** | Full read/write database access |
 | **Best For** | Local development, data inspection, quick prototyping |
-| **Security** | Database file should be in agent-accessible directory |
 
 **Installation**
-
-**Using npx:**
 ```bash
 npx -y @modelcontextprotocol/server-sqlite
 ```
@@ -293,19 +323,6 @@ npx -y @modelcontextprotocol/server-sqlite
 - **Full SQL access:** SELECT, INSERT, UPDATE, DELETE
 - **Schema inspection:** Read table structures, indexes, triggers
 - **Transaction support:** BEGIN/COMMIT transactions
-- **Performance optimization:** Agent can analyze query plans
-
-**Docker setup:**
-```bash
-# Mount database directory
-docker run -v $(pwd)/data:/data -it --rm ghcr.io/modelcontextprotocol/sqllite \
-  -e DATABASE_PATH=/data/mydatabase.db
-```
-
-**Security notes:**
-- Database file should not contain sensitive data in production
-- Consider database journaling mode for recovery
-- WAL mode recommended for concurrent access
 
 ---
 
@@ -317,34 +334,15 @@ Provides access to Slack channels, messages, and threads. Good for team communic
 |---------|---------|
 | **Install** | `npx -y @modelcontextprotocol/server-slack` |
 | **Config** | Requires `SLACK_TOKEN` and optionally `SLACK_TEAM_ID` |
-| **Permissions** | Read/write messages, join channels (based on token scopes) |
+| **Permissions** | Read/write messages, join channels |
 | **Best For** | Team communication, message retrieval, channel management |
-| **Security** | Slack user tokens should be kept secret |
 
 **Installation**
-
-**Python setup:**
-```bash
-# Ensure Python 3.10+
-python -m pip install slack-mcp-server
-
-# Start the server
-python -m slack_mcp_server
-```
-
-**npm setup:**
 ```bash
 npx -y @modelcontextprotocol/server-slack
 ```
 
-**Configuration:** Create a Slack app and generate a bot token at https://api.slack.com/apps
-
-**Required scopes for token:**
-- `channels:history`
-- `channels:read`
-- `chat:write`
-- `channels:join`
-- `users:read`
+**Configuration:** Create a Slack app at [api.slack.com/apps](https://api.slack.com/apps) with scopes: `channels:history`, `channels:read`, `chat:write`, `channels:join`, `users:read`.
 
 ```json
 {
@@ -361,39 +359,28 @@ npx -y @modelcontextprotocol/server-slack
 }
 ```
 
-**Features:**
-- **Channel listing:** Agent can browse available channels
-- **Message history:** Read recent messages in threads
-- **Thread support:** Context from conversation threads
-- **User lookup:** Find users by ID or email
-
 **Troubleshooting:**
 - **"not_in_channel" error:** Bot needs to be invited to the channel first
 - **Rate limiting:** Slack has API limits for team workspaces
-- **Bot permissions:** Ensure bot has necessary scopes in Slack app settings
 
 ---
 
 ### Web Search / Brave Search MCP Server
 
-Provides internet search and web page fetching capabilities. Good for research and accessing up-to-date information.
+Provides internet search and web page fetching capabilities.
 
 | Aspect | Details |
 |---------|---------|
 | **Install** | `npx -y @modelcontextprotocol/server-brave-search` |
 | **Config** | No extra config needed for basic usage |
-| **Permissions** | Full web search, page fetching |
 | **Best For** | Research, documentation lookup, current information |
-| **Security** | No credentials required (optional API key) |
 
 **Installation**
-
-**Using npx:**
 ```bash
 npx -y @modelcontextprotocol/server-brave-search
 ```
 
-**Configuration:** Works out of the box with no configuration. Optionally add API key for higher rate limits:
+**Configuration:** Works out of the box. Optionally add API key for higher rate limits:
 
 ```json
 {
@@ -413,25 +400,23 @@ npx -y @modelcontextprotocol/server-brave-search
 - **Web search:** Query Brave Search API
 - **Page fetching:** Extract content from URLs
 - **HTML-to-text:** Convert web pages to readable text
-- **Multiple sources:** Can search across the web
 
 ---
 
 ### Puppeteer MCP Server
 
-Provides headless browser automation capabilities. Good for web scraping, testing, and interacting with web applications.
+Provides headless browser automation capabilities. Supports web scraping, testing, and web interaction.
+
+- **GitHub:** [code-craka/puppeteer-mcp](https://github.com/code-craka/puppeteer-mcp)
+- **MCP Servers listing:** [mcpservers.org/servers/code-craka/puppeteer-mcp](https://mcpservers.org/servers/code-craka/puppeteer-mcp)
 
 | Aspect | Details |
 |---------|---------|
 | **Install** | `npx -y @modelcontextprotocol/server-puppeteer` |
 | **Config** | No extra config needed |
-| **Permissions** | Full browser automation (headless) |
 | **Best For** | Web scraping, automated testing, web interaction |
-| **Security** | Runs in sandboxed browser environment |
 
 **Installation**
-
-**Using npx:**
 ```bash
 npx -y @modelcontextprotocol/server-puppeteer
 ```
@@ -450,21 +435,48 @@ npx -y @modelcontextprotocol/server-puppeteer
 
 **Features:**
 - **Page navigation:** Visit URLs, navigate within pages
-- **Element interaction:** click, type, scroll
 - **Screenshot capture:** Take screenshots as base64
 - **JavaScript execution:** Run custom scripts in browser context
 - **PDF generation:** Save pages as PDF documents
 - **Network monitoring:** Intercept and inspect network requests
 
-**Common use cases:**
-- **Web scraping:** Extract data from websites
-- **Automated testing:** Run tests headlessly
-- **Form submission:** Fill and submit forms
-- **Screenshot testing:** Capture page states
+---
 
-**Performance notes:**
-- Headless browser is resource-intensive
-- For scraping, respect `robots.txt` and rate limits
+### Playwright MCP Server
+
+Microsoft's Playwright-based MCP server for browser automation. More feature-rich than Puppeteer — supports multiple browsers, network mocking, and accessibility snapshots.
+
+- **GitHub:** [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y @playwright/mcp` |
+| **Config** | No extra config needed |
+| **Best For** | Cross-browser testing, modern web automation |
+
+**Installation**
+```bash
+npx -y @playwright/mcp
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"]
+    }
+  }
+}
+```
+
+**Features:**
+- **Multi-browser:** Chromium, Firefox, WebKit support
+- **Accessibility snapshots:** Read page structure via a11y tree
+- **Network mocking:** Intercept and modify network requests
+- **Screenshot & PDF:** Capture page states
+- **Element interaction:** Click, type, navigate — any web action
 
 ---
 
@@ -472,17 +484,16 @@ npx -y @modelcontextprotocol/server-puppeteer
 
 Provides persistent memory storage across agent sessions. Good for long-running agents and context persistence.
 
+- **GitHub:** [modelcontextprotocol/servers — src/memory](https://github.com/modelcontextprotocol/servers/blob/main/src/memory/README.md)
+- **npm:** `@modelcontextprotocol/server-memory`
+
 | Aspect | Details |
 |---------|---------|
 | **Install** | `npx -y @modelcontextprotocol/server-memory` |
 | **Config** | Requires memory backend URL |
-| **Permissions** | Read/write memory storage |
 | **Best For** | Long-running agents, context persistence, cross-session memory |
-| **Security** | Backend authentication required |
 
 **Installation**
-
-**Using npx:**
 ```bash
 npx -y @modelcontextprotocol/server-memory
 ```
@@ -508,11 +519,7 @@ npx -y @modelcontextprotocol/server-memory
 - **Search:** Retrieve memories by key or content
 - **Namespaces:** Organize memories by project or topic
 
-**Backend options:**
-- **Redis:** Fast, in-memory storage
-- **PostgreSQL:** Persistent relational storage
-- **Supabase:** Firebase-like storage
-- **Local filesystem:** JSON file storage
+**Backend options:** Redis, PostgreSQL, Supabase, Local filesystem
 
 ---
 
@@ -520,17 +527,16 @@ npx -y @modelcontextprotocol/server-memory
 
 Enhances agent reasoning with structured thinking chains. Good for complex problem solving and step-by-step analysis.
 
+- **GitHub:** [modelcontextprotocol/servers — src/sequentialthinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking)
+- **npm:** `@modelcontextprotocol/server-sequential-thinking`
+
 | Aspect | Details |
 |---------|---------|
 | **Install** | `npx -y @modelcontextprotocol/server-sequential-thinking` |
 | **Config** | No extra config needed |
-| **Permissions** | Enhanced reasoning capabilities |
 | **Best For** | Complex problems, multi-step reasoning, analysis |
-| **Security** | Runs locally, no external deps |
 
 **Installation**
-
-**Using npx:**
 ```bash
 npx -y @modelcontextprotocol/server-sequential-thinking
 ```
@@ -552,6 +558,196 @@ npx -y @modelcontextprotocol/server-sequential-thinking
 - **Tree visualization:** See decision paths
 - **Context management:** Track what information is considered
 - **Debug mode:** Inspect internal reasoning process
+
+---
+
+### Time MCP Server
+
+Official Time server from Anthropic's MCP repository. Provides current time and timezone information for agents.
+
+- **GitHub:** [modelcontextprotocol/servers — src/time](https://github.com/modelcontextprotocol/servers/tree/main/src/time)
+- **npm:** `@modelcontextprotocol/server-time`
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y @modelcontextprotocol/server-time` |
+| **Config** | No extra config needed |
+| **Best For** | Timezone-aware agents, scheduling, timestamps |
+
+**Installation**
+```bash
+npx -y @modelcontextprotocol/server-time
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "time": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-time"]
+    }
+  }
+}
+```
+
+**Features:**
+- **Current time:** Get current time in specified timezone
+- **Timezone conversion:** Convert between timezones
+- **Date calculations:** Add/subtract time, get day of week
+
+---
+
+### Context Mode MCP Server
+
+An MCP server that enables context-aware agent behaviors with mode switching for different development scenarios.
+
+- **GitHub:** [mksglu/context-mode](https://github.com/mksglu/context-mode)
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y context-mode` |
+| **Config** | No extra config needed |
+| **Best For** | Context-aware prompting, mode-based agent behavior |
+
+**Installation**
+```bash
+npx -y context-mode
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "context-mode": {
+      "command": "npx",
+      "args": ["-y", "context-mode"]
+    }
+  }
+}
+```
+
+**Features:**
+- **Mode switching:** Toggle between development, review, debug modes
+- **Context awareness:** Provides contextual prompts based on mode
+- **Workflow integration:** Adapts agent behavior to current task
+
+---
+
+### Context7 MCP Server
+
+A context-aware MCP server by Upstash that provides relevant context from external sources to AI agents.
+
+- **GitHub:** [upstash/context7](https://github.com/upstash/context7)
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y @upstash/context7` |
+| **Config** | Requires Upstash API key |
+| **Best For** | RAG-based context injection, external knowledge retrieval |
+
+**Installation**
+```bash
+npx -y @upstash/context7
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7"],
+      "env": {
+        "UPSTASH_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+**Features:**
+- **External context:** Fetch relevant context from external sources
+- **RAG integration:** Retrieve-augment-generate pipeline
+- **Knowledge injection:** Provide agents with up-to-date external information
+
+---
+
+### DuckDuckGo MCP Server
+
+Provides privacy-focused web search capabilities through DuckDuckGo search engine.
+
+- **GitHub:** [nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y @nickclyde/duckduckgo-mcp-server` |
+| **Config** | No API key required (free, privacy-focused) |
+| **Best For** | Privacy-respecting web search, research |
+
+**Installation**
+```bash
+npx -y @nickclyde/duckduckgo-mcp-server
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "duckduckgo": {
+      "command": "npx",
+      "args": ["-y", "@nickclyde/duckduckgo-mcp-server"]
+    }
+  }
+}
+```
+
+**Features:**
+- **Web search:** Query DuckDuckGo search engine
+- **Privacy:** No tracking, no API key required
+- **Instant answers:** Get direct answers where available
+
+---
+
+### Android MCP Server
+
+Enables AI agents to interact with Android devices — take screenshots, tap, type, and automate Android UI.
+
+- **GitHub:** [CursorTouch/Android-MCP](https://github.com/CursorTouch/Android-MCP)
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y android-mcp` |
+| **Config** | Requires ADB connection to Android device |
+| **Best For** | Android automation, UI testing, device control |
+
+**Installation**
+```bash
+npx -y android-mcp
+```
+
+**Configuration:** Requires ADB connected to your Android device:
+```bash
+# Connect device via USB/Wi-Fi
+adb devices
+```
+
+```json
+{
+  "mcpServers": {
+    "android": {
+      "command": "npx",
+      "args": ["-y", "android-mcp"]
+    }
+  }
+}
+```
+
+**Features:**
+- **Screen capture:** Read device screen content
+- **UI interaction:** Tap, swipe, type on device
+- **App control:** Launch/kill apps, read notifications
+- **Automation:** Script Android workflows
 
 ---
 

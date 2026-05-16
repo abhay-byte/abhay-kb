@@ -201,8 +201,8 @@ cat > "$OUTPUT_FILE" << HTMLEOF
         <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
         <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
-        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
         <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
         <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
       </nav>
     </aside>
