@@ -29,14 +29,23 @@ Open-source terminal coding agent built in Go by Anomaly (SST team). 142K+ GitHu
 **Install:**
 
 <div class="install-card">
-  <div class="install-card-header">
-    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  <div class="install-tabs">
+    <div class="install-tab active" onclick="switchTab(this,'oc-mac')">macOS</div>
+    <div class="install-tab" onclick="switchTab(this,'oc-linux')">Linux</div>
+    <div class="install-tab" onclick="switchTab(this,'oc-win')">Windows</div>
   </div>
-  <pre><code>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g opencode-ai</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install opencode</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">opencode</span></div>
-  </code></pre>
+  <div class="install-body oc-mac" style="display:flex">
+    <code><span class="prompt">$</span> npm install -g opencode-ai</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body oc-linux" style="display:none">
+    <code><span class="prompt">$</span> npm install -g opencode-ai</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body oc-win" style="display:none">
+    <code><span class="prompt">&gt;</span> npm install -g opencode-ai</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
 </div>
 
 ---
@@ -59,15 +68,23 @@ Anthropic's terminal coding agent. Fastest-growing AI coding product — $2.5B a
 **Install:**
 
 <div class="install-card">
-  <div class="install-card-header">
-    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  <div class="install-tabs">
+    <div class="install-tab active" onclick="switchTab(this,'cc-mac')">macOS</div>
+    <div class="install-tab" onclick="switchTab(this,'cc-linux')">Linux</div>
+    <div class="install-tab" onclick="switchTab(this,'cc-win')">Windows</div>
   </div>
-  <pre><code>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g @anthropic-ai/claude-code</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install claude-code</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">claude</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># requires Claude Pro $20/mo+</span></div>
-  </code></pre>
+  <div class="install-body cc-mac" style="display:flex">
+    <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body cc-linux" style="display:none">
+    <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body cc-win" style="display:none">
+    <code><span class="prompt">&gt;</span> npm install -g @anthropic-ai/claude-code</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
 </div>
 
 ---
@@ -90,14 +107,23 @@ OpenAI's coding agent across CLI, IDE, ChatGPT, and iOS.
 **Install:**
 
 <div class="install-card">
-  <div class="install-card-header">
-    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  <div class="install-tabs">
+    <div class="install-tab active" onclick="switchTab(this,'cx-mac')">macOS</div>
+    <div class="install-tab" onclick="switchTab(this,'cx-linux')">Linux</div>
+    <div class="install-tab" onclick="switchTab(this,'cx-win')">Windows</div>
   </div>
-  <pre><code>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g @openai/codex</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">codex</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># requires ChatGPT Plus $20/mo+</span></div>
-  </code></pre>
+  <div class="install-body cx-mac" style="display:flex">
+    <code><span class="prompt">$</span> npm install -g @openai/codex</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body cx-linux" style="display:none">
+    <code><span class="prompt">$</span> npm install -g @openai/codex</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body cx-win" style="display:none">
+    <code><span class="prompt">&gt;</span> npm install -g @openai/codex</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
 </div>
 
 ---
@@ -122,13 +148,23 @@ AI-first code editor (VS Code fork) with deep context understanding. 4M+ develop
 **Install:**
 
 <div class="install-card">
-  <div class="install-card-header">
-    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  <div class="install-tabs">
+    <div class="install-tab active" onclick="switchTab(this,'cu-mac')">macOS</div>
+    <div class="install-tab" onclick="switchTab(this,'cu-linux')">Linux</div>
+    <div class="install-tab" onclick="switchTab(this,'cu-win')">Windows</div>
   </div>
-  <pre><code>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install --cask cursor</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or download from cursor.com/download</span></div>
-  </code></pre>
+  <div class="install-body cu-mac" style="display:flex">
+    <code><span class="prompt">$</span> brew install --cask cursor</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body cu-linux" style="display:none">
+    <code><span class="prompt">$</span> npm install -g cursor-ide</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body cu-win" style="display:none">
+    <code><span class="prompt">&gt;</span> winget install Cursor</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
 </div>
 
 ---
@@ -151,13 +187,23 @@ AI-native IDE by Codeium. Cascade agent system with multi-model routing.
 **Install:**
 
 <div class="install-card">
-  <div class="install-card-header">
-    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  <div class="install-tabs">
+    <div class="install-tab active" onclick="switchTab(this,'ws-mac')">macOS</div>
+    <div class="install-tab" onclick="switchTab(this,'ws-linux')">Linux</div>
+    <div class="install-tab" onclick="switchTab(this,'ws-win')">Windows</div>
   </div>
-  <pre><code>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install --cask windsurf</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or download from windsurf.com/download</span></div>
-  </code></pre>
+  <div class="install-body ws-mac" style="display:flex">
+    <code><span class="prompt">$</span> brew install --cask windsurf</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body ws-linux" style="display:none">
+    <code><span class="prompt">$</span> npm install -g windsurf</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body ws-win" style="display:none">
+    <code><span class="prompt">&gt;</span> winget install Windsurf</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
 </div>
 
 ---
@@ -180,14 +226,23 @@ Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
 **Install:**
 
 <div class="install-card">
-  <div class="install-card-header">
-    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  <div class="install-tabs">
+    <div class="install-tab active" onclick="switchTab(this,'gh-mac')">macOS</div>
+    <div class="install-tab" onclick="switchTab(this,'gh-linux')">Linux</div>
+    <div class="install-tab" onclick="switchTab(this,'gh-win')">Windows</div>
   </div>
-  <pre><code>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g @github/copilot</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">gh auth login</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or install VS Code extension from marketplace</span></div>
-  </code></pre>
+  <div class="install-body gh-mac" style="display:flex">
+    <code><span class="prompt">$</span> npm install -g @github/copilot</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body gh-linux" style="display:none">
+    <code><span class="prompt">$</span> npm install -g @github/copilot</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body gh-win" style="display:none">
+    <code><span class="prompt">&gt;</span> npm install -g @github/copilot</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
 </div>
 
 ---
@@ -210,13 +265,23 @@ Google's agent-first IDE (VS Code fork). Free public preview.
 **Install:**
 
 <div class="install-card">
-  <div class="install-card-header">
-    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  <div class="install-tabs">
+    <div class="install-tab active" onclick="switchTab(this,'ag-mac')">macOS</div>
+    <div class="install-tab" onclick="switchTab(this,'ag-linux')">Linux</div>
+    <div class="install-tab" onclick="switchTab(this,'ag-win')">Windows</div>
   </div>
-  <pre><code>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install --cask antigravity</span></div>
-      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or download from antigravity.google/download</span></div>
-  </code></pre>
+  <div class="install-body ag-mac" style="display:flex">
+    <code><span class="prompt">$</span> brew install --cask antigravity</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body ag-linux" style="display:none">
+    <code><span class="prompt">$</span> npm install -g antigravity</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
+  <div class="install-body ag-win" style="display:none">
+    <code><span class="prompt">&gt;</span> winget install Antigravity</code>
+    <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+  </div>
 </div>
 
 ---
