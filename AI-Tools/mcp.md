@@ -747,13 +747,13 @@ Enables AI agents to interact with Android devices — take screenshots, tap, ty
 
 | Aspect | Details |
 |---------|---------|
-| **Install** | `npx -y android-mcp` |
+| **Install** | `uvx --python 3.13 android-mcp` |
 | **Config** | Requires ADB connection to Android device |
 | **Best For** | Android automation, UI testing, device control |
 
 **Installation**
 ```bash
-npx -y android-mcp
+uvx --python 3.13 android-mcp
 ```
 
 **Configuration:** Requires ADB connected to your Android device:
@@ -766,8 +766,8 @@ adb devices
 {
   "mcpServers": {
     "android": {
-      "command": "npx",
-      "args": ["-y", "android-mcp"]
+      "command": "uvx",
+      "args": ["--python", "3.13", "android-mcp"]
     }
   }
 }

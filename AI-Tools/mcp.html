@@ -1229,7 +1229,7 @@
 </tr>
 <tr>
 <td><strong>Install</strong></td>
-<td><code>npx -y android-mcp</code></td>
+<td><code>uvx --python 3.13 android-mcp</code></td>
 </tr>
 <tr>
 <td><strong>Config</strong></td>
@@ -1242,7 +1242,7 @@
 </table>
 
 <strong>Installation</strong>
-<pre><code>npx -y android-mcp
+<pre><code>uvx --python 3.13 android-mcp
 </code></pre>
 
 <strong>Configuration:</strong> Requires ADB connected to your Android device:
@@ -1253,8 +1253,8 @@ adb devices
 <pre><code>{
   "mcpServers": {
     "android": {
-      "command": "npx",
-      "args": ["-y", "android-mcp"]
+      "command": "uvx",
+      "args": ["--python", "3.13", "android-mcp"]
     }
   }
 }
