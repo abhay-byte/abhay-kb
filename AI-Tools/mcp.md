@@ -40,88 +40,69 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
 ## How MCP Works
 
 <div align="center">
-<svg viewBox="0 0 800 340" width="800" height="340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;border:1px solid #333;border-radius:12px;background:#111;padding:10px;">
-  <defs>
-    <marker id="mcp-arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#fabd2f"/>
-    </marker>
-    <linearGradient id="mcp-g1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"/>
-    </linearGradient>
-    <linearGradient id="mcp-g2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1b2838;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#1a3a2e;stop-opacity:1"/>
-    </linearGradient>
-    <linearGradient id="mcp-g3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2d1b2e;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#1e282e;stop-opacity:1"/>
-    </linearGradient>
-    <linearGradient id="mcp-g4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a2e1e;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#1e2e2a;stop-opacity:1"/>
-    </linearGradient>
-  </defs>
+<svg viewBox="0 0 900 380" width="100%" height="380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;border:2px solid #444;border-radius:12px;background:#1a1a1a;padding:10px;">
 
   <!-- Title -->
-  <text x="400" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">MCP Architecture — 3-Layer Client-Server Model</text>
+  <text x="450" y="30" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">MCP Architecture — 3-Layer Client-Server Model</text>
 
-  <!-- Layer 1: Host (AI App) -->
-  <rect x="30" y="48" width="740" height="60" rx="10" fill="url(#mcp-g1)" stroke="#777" stroke-width="2"/>
-  <text x="60" y="70" fill="#fabd2f" font-size="13" font-weight="bold">Layer 1:</text>
-  <text x="120" y="70" fill="#fff" font-size="13" font-weight="bold">HOST (AI Application)</text>
-  <text x="60" y="90" fill="#aaa" font-size="11">Claude Code, OpenCode, Cursor, Windsurf, OpenClaw, Gemini CLI, Copilot</text>
+  <!-- Layer 1: Host -->
+  <rect x="40" y="55" width="820" height="65" rx="8" fill="#2a2a4a" stroke="#888" stroke-width="2"/>
+  <text x="60" y="80" fill="#fabd2f" font-size="14" font-weight="bold">Layer 1:</text>
+  <text x="140" y="80" fill="#fff" font-size="14" font-weight="bold">HOST (AI Application)</text>
+  <text x="60" y="102" fill="#ccc" font-size="12">Claude Code, OpenCode, Cursor, Windsurf, OpenClaw, Gemini CLI, Copilot</text>
 
   <!-- Arrow L1 -> L2 -->
-  <line x1="400" y1="108" x2="400" y2="128" stroke="#fabd2f" stroke-width="2" marker-end="url(#mcp-arrow)"/>
-  <text x="420" y="122" fill="#666" font-size="9">MCP Protocol</text>
+  <line x1="450" y1="120" x2="450" y2="140" stroke="#fabd2f" stroke-width="3"/>
+  <polygon points="445,138 450,148 455,138" fill="#fabd2f"/>
+  <text x="470" y="134" fill="#888" font-size="11">MCP Protocol (stdio / SSE)</text>
 
   <!-- Layer 2: MCP Client -->
-  <rect x="30" y="132" width="740" height="55" rx="10" fill="url(#mcp-g2)" stroke="#777" stroke-width="2"/>
-  <text x="60" y="152" fill="#fabd2f" font-size="13" font-weight="bold">Layer 2:</text>
-  <text x="120" y="152" fill="#fff" font-size="13" font-weight="bold">MCP CLIENT (built into Host)</text>
-  <text x="60" y="172" fill="#aaa" font-size="11">Manages connections, routes requests, handles authentication</text>
+  <rect x="40" y="150" width="820" height="55" rx="8" fill="#2a4a3a" stroke="#888" stroke-width="2"/>
+  <text x="60" y="175" fill="#fabd2f" font-size="14" font-weight="bold">Layer 2:</text>
+  <text x="140" y="175" fill="#fff" font-size="14" font-weight="bold">MCP CLIENT (built into Host)</text>
+  <text x="60" y="195" fill="#ccc" font-size="12">Manages connections, routes requests, handles authentication</text>
 
   <!-- Arrow L2 -> L3 -->
-  <line x1="400" y1="187" x2="400" y2="207" stroke="#fabd2f" stroke-width="2" marker-end="url(#mcp-arrow)"/>
-  <text x="420" y="201" fill="#666" font-size="9">Tools / Resources / Prompts</text>
+  <line x1="450" y1="205" x2="450" y2="225" stroke="#fabd2f" stroke-width="3"/>
+  <polygon points="445,223 450,233 455,223" fill="#fabd2f"/>
+  <text x="470" y="220" fill="#888" font-size="11">Tools / Resources / Prompts</text>
 
-  <!-- Layer 3: MCP Servers box -->
-  <rect x="30" y="210" width="740" height="110" rx="10" fill="url(#mcp-g3)" stroke="#777" stroke-width="2"/>
-  <text x="60" y="232" fill="#fabd2f" font-size="13" font-weight="bold">Layer 3:</text>
-  <text x="120" y="232" fill="#fff" font-size="13" font-weight="bold">MCP SERVERS</text>
+  <!-- Layer 3: MCP Servers -->
+  <rect x="40" y="235" width="820" height="125" rx="8" fill="#3a2a4a" stroke="#888" stroke-width="2"/>
+  <text x="60" y="258" fill="#fabd2f" font-size="14" font-weight="bold">Layer 3:</text>
+  <text x="140" y="258" fill="#fff" font-size="14" font-weight="bold">MCP SERVERS</text>
 
-  <!-- Server blocks -->
-  <rect x="50" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
-  <text x="105" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Filesystem</text>
-  <text x="105" y="280" text-anchor="middle" fill="#777" font-size="9">Read/write files</text>
+  <!-- Server blocks - 3 rows x 4 -->
+  <rect x="55" y="270" width="180" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="145" y="292" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">📄 Filesystem</text>
 
-  <rect x="175" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
-  <text x="230" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">GitHub</text>
-  <text x="230" y="280" text-anchor="middle" fill="#777" font-size="9">PRs, issues, code</text>
+  <rect x="250" y="270" width="180" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="340" y="292" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">🐙 GitHub</text>
 
-  <rect x="300" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
-  <text x="355" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Database</text>
-  <text x="355" y="280" text-anchor="middle" fill="#777" font-size="9">Postgres / SQLite</text>
+  <rect x="445" y="270" width="180" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="535" y="292" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">🗄️ Database</text>
 
-  <rect x="425" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
-  <text x="480" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Web Search</text>
-  <text x="480" y="280" text-anchor="middle" fill="#777" font-size="9">Brave / DuckDuckGo</text>
+  <rect x="640" y="270" width="200" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="740" y="292" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">🔍 Web Search</text>
 
-  <rect x="550" y="245" width="100" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
-  <text x="600" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Browser</text>
-  <text x="600" y="280" text-anchor="middle" fill="#777" font-size="9">Puppeteer/Playwright</text>
+  <rect x="55" y="315" width="180" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="145" y="337" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">🌐 Browser</text>
 
-  <rect x="665" y="245" width="90" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
-  <text x="710" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Memory</text>
-  <text x="710" y="280" text-anchor="middle" fill="#777" font-size="9">Persistence</text>
+  <rect x="250" y="315" width="180" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="340" y="337" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">🧠 Memory</text>
 
-  <!-- Box around servers -->
-  
+  <rect x="445" y="315" width="180" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="535" y="337" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">⏰ Time / Git</text>
+
+  <rect x="640" y="315" width="200" height="35" rx="6" fill="#2a3a3a" stroke="#6a8a5a" stroke-width="1.5"/>
+  <text x="740" y="337" text-anchor="middle" fill="#8bc34a" font-size="13" font-weight="bold">🤖 Sequential Thinking</text>
+
+  <!-- Right side label -->
+  <text x="770" y="48" text-anchor="end" fill="#666" font-size="11">MCP Server Examples →</text>
 </svg>
-</div>
-
-MCP follows a **3-layer client-server architecture**:
+</div>ayout: standalone
+title: MCP — Model Context Protocol
+---
 
 | Layer | Component | Role |
 |-------|-----------|------|
