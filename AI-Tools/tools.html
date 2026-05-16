@@ -38,19 +38,19 @@ title: AI Coding Tools
   <div class="install-tab" data-os="headless" onclick="showTab(this,'nx-headless','card-nx')">Headless</div>
 </div>
 <div class="install-body active" id="nx-mac">
-  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus_0.1.8_amd64.deb <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus_0.1.8_amd64.deb")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> sudo dpkg -i Nexus_0.1.8_amd64.deb <button class="copy-btn" onclick='copyCmd(this,"sudo dpkg -i Nexus_0.1.8_amd64.deb")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus_0.1.8_amd64.deb <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus_0.1.8_amd64.deb")'>Copy</button></code>
+  <code><span class="prompt">$</span> sudo dpkg -i Nexus_0.1.8_amd64.deb <button class="copy-btn" onclick='copyCmd(this,"sudo dpkg -i Nexus_0.1.8_amd64.deb")'>Copy</button></code>
 </div>
 <div class="install-body" id="nx-rpm">
-  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus-0.1.8-1.x86_64.rpm <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus-0.1.8-1.x86_64.rpm")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> sudo rpm -i Nexus-0.1.8-1.x86_64.rpm <button class="copy-btn" onclick='copyCmd(this,"sudo rpm -i Nexus-0.1.8-1.x86_64.rpm")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus-0.1.8-1.x86_64.rpm <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus-0.1.8-1.x86_64.rpm")'>Copy</button></code>
+  <code><span class="prompt">$</span> sudo rpm -i Nexus-0.1.8-1.x86_64.rpm <button class="copy-btn" onclick='copyCmd(this,"sudo rpm -i Nexus-0.1.8-1.x86_64.rpm")'>Copy</button></code>
 </div>
 <div class="install-body" id="nx-win">
-  <code><span class="prompt">$</span> Download nexus-windows-x86_64.exe from releases <button class="copy-btn" onclick='copyCmd(this,"https://github.com/abhay-byte/nexus/releases/tag/v0.1.8")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> Download nexus-windows-x86_64.exe from releases <button class="copy-btn" onclick='copyCmd(this,"https://github.com/abhay-byte/nexus/releases/tag/v0.1.8")'>Copy</button></code>
 </div>
 <div class="install-body" id="nx-headless">
-  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/nexus-headless-linux-x86_64 <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/nexus-headless-linux-x86_64")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> chmod +x nexus-headless-linux-x86_64 && ./nexus-headless-linux-x86_64 <button class="copy-btn" onclick='copyCmd(this,"chmod +x nexus-headless-linux-x86_64 && ./nexus-headless-linux-x86_64")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/nexus-headless-linux-x86_64 <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/nexus-headless-linux-x86_64")'>Copy</button></code>
+  <code><span class="prompt">$</span> chmod +x nexus-headless-linux-x86_64 && ./nexus-headless-linux-x86_64 <button class="copy-btn" onclick='copyCmd(this,"chmod +x nexus-headless-linux-x86_64 && ./nexus-headless-linux-x86_64")'>Copy</button></code>
   <code><span class="comment"># Open http://localhost:7878 in your browser</span></code>
 </div>
 </div>
@@ -100,6 +100,16 @@ title: AI Coding Tools
   background: transparent !important; color: #ccc !important;
 }
 .install-body .prompt { color: #6a9955; margin-right: 6px; }
+  .install-body .copy-btn {
+    float: right;
+    margin-top: -20px;
+    padding: 2px 8px;
+    font-size: 11px;
+    background: rgba(250,255,250,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    color: #999;
+  }
 .install-body .comment { color: #6a9955; font-style: italic; }
 </style>
 
@@ -128,20 +138,20 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'oc-win','card-oc')">Windows</div>
 </div>
 <div class="install-body active" id="oc-mac">
-  <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> brew install anomalyco/tap/opencode <button class="copy-btn" onclick='copyCmd(this,"brew install anomalyco/tap/opencode")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")'>Copy</button></code>
+  <code><span class="prompt">$</span> brew install anomalyco/tap/opencode <button class="copy-btn" onclick='copyCmd(this,"brew install anomalyco/tap/opencode")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")'>Copy</button></code>
+  <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")'>Copy</button></code>
 </div>
 <div class="install-body" id="oc-linux">
-  <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> sudo pacman -S opencode <button class="copy-btn" onclick='copyCmd(this,"sudo pacman -S opencode")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> curl -fsSL https://opencode.ai/install | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://opencode.ai/install | bash")'>Copy</button></code>
+  <code><span class="prompt">$</span> sudo pacman -S opencode <button class="copy-btn" onclick='copyCmd(this,"sudo pacman -S opencode")'>Copy</button></code>
+  <code><span class="prompt">$</span> docker run -it --rm ghcr.io/anomalyco/opencode <button class="copy-btn" onclick='copyCmd(this,"docker run -it --rm ghcr.io/anomalyco/opencode")'>Copy</button></code>
 </div>
 <div class="install-body" id="oc-win">
-  <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> scoop install opencode <button class="copy-btn" onclick='copyCmd(this,"scoop install opencode")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> choco install opencode <button class="copy-btn" onclick='copyCmd(this,"choco install opencode")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g opencode-ai <button class="copy-btn" onclick='copyCmd(this,"npm install -g opencode-ai")'>Copy</button></code>
+  <code><span class="prompt">$</span> scoop install opencode <button class="copy-btn" onclick='copyCmd(this,"scoop install opencode")'>Copy</button></code>
+  <code><span class="prompt">$</span> choco install opencode <button class="copy-btn" onclick='copyCmd(this,"choco install opencode")'>Copy</button></code>
 </div>
 </div>
 
@@ -172,18 +182,18 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'cc-win','card-cc')">Windows</div>
 </div>
 <div class="install-body active" id="cc-mac">
-  <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> brew install claude-code <button class="copy-btn" onclick='copyCmd(this,"brew install claude-code")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")'>Copy</button></code>
+  <code><span class="prompt">$</span> brew install claude-code <button class="copy-btn" onclick='copyCmd(this,"brew install claude-code")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></code>
 </div>
 <div class="install-body" id="cc-linux">
-  <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://claude.ai/install.sh | bash")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></code>
 </div>
 <div class="install-body" id="cc-win">
-  <code><span class="prompt">$</span> winget install Anthropic.ClaudeCode <button class="copy-btn" onclick='copyCmd(this,"winget install Anthropic.ClaudeCode")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> irm https://claude.ai/install.ps1 | iex <button class="copy-btn" onclick='copyCmd(this,"irm https://claude.ai/install.ps1 | iex")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> winget install Anthropic.ClaudeCode <button class="copy-btn" onclick='copyCmd(this,"winget install Anthropic.ClaudeCode")'>Copy</button></code>
+  <code><span class="prompt">$</span> irm https://claude.ai/install.ps1 | iex <button class="copy-btn" onclick='copyCmd(this,"irm https://claude.ai/install.ps1 | iex")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @anthropic-ai/claude-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @anthropic-ai/claude-code")'>Copy</button></code>
 </div>
 </div>
 
@@ -214,15 +224,15 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'cx-win','card-cx')">Windows</div>
 </div>
 <div class="install-body active" id="cx-mac">
-  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></code>
+  <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")'>Copy</button></code>
 </div>
 <div class="install-body" id="cx-linux">
-  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></code>
+  <code><span class="prompt">$</span> curl -fsSL https://codex.openai.com/install.sh | bash <button class="copy-btn" onclick='copyCmd(this,"curl -fsSL https://codex.openai.com/install.sh | bash")'>Copy</button></code>
 </div>
 <div class="install-body" id="cx-win">
-  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @openai/codex <button class="copy-btn" onclick='copyCmd(this,"npm install -g @openai/codex")'>Copy</button></code>
 </div>
 </div>
 
@@ -254,14 +264,14 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'gc-win','card-gc')">Windows</div>
 </div>
 <div class="install-body active" id="gc-mac">
-  <code><span class="prompt">$</span> brew install gemini-cli <button class="copy-btn" onclick='copyCmd(this,"brew install gemini-cli")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> brew install gemini-cli <button class="copy-btn" onclick='copyCmd(this,"brew install gemini-cli")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")'>Copy</button></code>
 </div>
 <div class="install-body" id="gc-linux">
-  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")'>Copy</button></code>
 </div>
 <div class="install-body" id="gc-win">
-  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @google/gemini-cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @google/gemini-cli")'>Copy</button></code>
 </div>
 </div>
 
@@ -292,14 +302,14 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'ad-win','card-ad')">Windows</div>
 </div>
 <div class="install-body active" id="ad-mac">
-  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> brew install aider <button class="copy-btn" onclick='copyCmd(this,"brew install aider")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")'>Copy</button></code>
+  <code><span class="prompt">$</span> brew install aider <button class="copy-btn" onclick='copyCmd(this,"brew install aider")'>Copy</button></code>
 </div>
 <div class="install-body" id="ad-linux">
-  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")'>Copy</button></code>
 </div>
 <div class="install-body" id="ad-win">
-  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> pip install aider-chat <button class="copy-btn" onclick='copyCmd(this,"pip install aider-chat")'>Copy</button></code>
 </div>
 </div>
 
@@ -331,16 +341,16 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'qc-win','card-qc')">Windows</div>
 </div>
 <div class="install-body active" id="qc-mac">
-  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")'>Copy</button></code>
+  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")'>Copy</button></code>
 </div>
 <div class="install-body" id="qc-linux">
-  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")'>Copy</button></code>
+  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")'>Copy</button></code>
 </div>
 <div class="install-body" id="qc-win">
-  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @qwen/qwen-code <button class="copy-btn" onclick='copyCmd(this,"npm install -g @qwen/qwen-code")'>Copy</button></code>
+  <code><span class="prompt">$</span> pip install qwen-code <button class="copy-btn" onclick='copyCmd(this,"pip install qwen-code")'>Copy</button></code>
 </div>
 </div>
 
@@ -371,16 +381,16 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'jn-win','card-jn')">Windows</div>
 </div>
 <div class="install-body active" id="jn-mac">
-  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")'>Copy</button></code>
 </div>
 <div class="install-body" id="jn-linux">
-  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")'>Copy</button></code>
 </div>
 <div class="install-body" id="jn-win">
-  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> Via JetBrains Toolbox <button class="copy-btn" onclick='copyCmd(this,"https://www.jetbrains.com/toolbox-app/")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @jetbrains/junie <button class="copy-btn" onclick='copyCmd(this,"npm install -g @jetbrains/junie")'>Copy</button></code>
 </div>
 </div>
 
@@ -412,14 +422,14 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'kr-win','card-kr')">Windows</div>
 </div>
 <div class="install-body active" id="kr-mac">
-  <code><span class="prompt">$</span> brew install kiro <button class="copy-btn" onclick='copyCmd(this,"brew install kiro")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> brew install kiro <button class="copy-btn" onclick='copyCmd(this,"brew install kiro")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")'>Copy</button></code>
 </div>
 <div class="install-body" id="kr-linux">
-  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")'>Copy</button></code>
 </div>
 <div class="install-body" id="kr-win">
-  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @kirodev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kirodev/cli")'>Copy</button></code>
 </div>
 </div>
 
@@ -451,10 +461,10 @@ function copyCmd(el, cmd) {
 </div>
 <div class="install-body active" id="kl-mac">
   <code><span class="comment"># Install from VS Code Marketplace</span></code>
-  <code><span class="prompt">$</span> code --install-extension kilocode.Kilo-Code <button class="copy-btn" onclick='copyCmd(this,"code --install-extension kilocode.Kilo-Code")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> code --install-extension kilocode.Kilo-Code <button class="copy-btn" onclick='copyCmd(this,"code --install-extension kilocode.Kilo-Code")'>Copy</button></code>
 </div>
 <div class="install-body" id="kl-linux">
-  <code><span class="prompt">$</span> npm install -g @kilo-org/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kilo-org/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @kilo-org/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @kilo-org/cli")'>Copy</button></code>
 </div>
 </div>
 
@@ -485,10 +495,10 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="linux" onclick="showTab(this,'cl-linux','card-cl')">CLI</div>
 </div>
 <div class="install-body active" id="cl-mac">
-  <code><span class="prompt">$</span> code --install-extension saoudrizwan.claude-dev <button class="copy-btn" onclick='copyCmd(this,"code --install-extension saoudrizwan.claude-dev")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> code --install-extension saoudrizwan.claude-dev <button class="copy-btn" onclick='copyCmd(this,"code --install-extension saoudrizwan.claude-dev")'>Copy</button></code>
 </div>
 <div class="install-body" id="cl-linux">
-  <code><span class="prompt">$</span> npm install -g @cline/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @cline/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @cline/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @cline/cli")'>Copy</button></code>
   <code><span class="comment"># Also available as JetBrains plugin</span></code>
 </div>
 </div>
@@ -519,12 +529,12 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="linux" onclick="showTab(this,'cn-linux','card-cn')">JetBrains</div>
 </div>
 <div class="install-body active" id="cn-mac">
-  <code><span class="prompt">$</span> code --install-extension continuedev.continue <button class="copy-btn" onclick='copyCmd(this,"code --install-extension continuedev.continue")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> code --install-extension continuedev.continue <button class="copy-btn" onclick='copyCmd(this,"code --install-extension continuedev.continue")'>Copy</button></code>
 </div>
 <div class="install-body" id="cn-linux">
   <code><span class="comment"># Install from JetBrains Marketplace</span></code>
   <code><span class="comment"># Or via Continue CLI:</span></code>
-  <code><span class="prompt">$</span> npm install -g @continuedev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @continuedev/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @continuedev/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @continuedev/cli")'>Copy</button></code>
 </div>
 </div>
 
@@ -556,15 +566,15 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'gs-win','card-gs')">Windows</div>
 </div>
 <div class="install-body active" id="gs-mac">
-  <code><span class="prompt">$</span> brew install goose <button class="copy-btn" onclick='copyCmd(this,"brew install goose")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> brew install goose <button class="copy-btn" onclick='copyCmd(this,"brew install goose")'>Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")'>Copy</button></code>
 </div>
 <div class="install-body" id="gs-linux">
-  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> cargo install goose-cli <button class="copy-btn" onclick='copyCmd(this,"cargo install goose-cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")'>Copy</button></code>
+  <code><span class="prompt">$</span> cargo install goose-cli <button class="copy-btn" onclick='copyCmd(this,"cargo install goose-cli")'>Copy</button></code>
 </div>
 <div class="install-body" id="gs-win">
-  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @goose/cli <button class="copy-btn" onclick='copyCmd(this,"npm install -g @goose/cli")'>Copy</button></code>
 </div>
 </div>
 
@@ -596,14 +606,14 @@ function copyCmd(el, cmd) {
   <div class="install-tab" data-os="win" onclick="showTab(this,'am-win','card-am')">VS Code</div>
 </div>
 <div class="install-body active" id="am-mac">
-  <code><span class="prompt">$</span> npm install -g @sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"npm install -g @sourcegraph/amp")' style="float:right">Copy</button></code>
-  <code><span class="prompt">$</span> brew install sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"brew install sourcegraph/amp")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"npm install -g @sourcegraph/amp")'>Copy</button></code>
+  <code><span class="prompt">$</span> brew install sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"brew install sourcegraph/amp")'>Copy</button></code>
 </div>
 <div class="install-body" id="am-linux">
-  <code><span class="prompt">$</span> npm install -g @sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"npm install -g @sourcegraph/amp")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> npm install -g @sourcegraph/amp <button class="copy-btn" onclick='copyCmd(this,"npm install -g @sourcegraph/amp")'>Copy</button></code>
 </div>
 <div class="install-body" id="am-win">
-  <code><span class="prompt">$</span> code --install-extension sourcegraph.amp <button class="copy-btn" onclick='copyCmd(this,"code --install-extension sourcegraph.amp")' style="float:right">Copy</button></code>
+  <code><span class="prompt">$</span> code --install-extension sourcegraph.amp <button class="copy-btn" onclick='copyCmd(this,"code --install-extension sourcegraph.amp")'>Copy</button></code>
 </div>
 </div>
 
