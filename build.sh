@@ -21,4 +21,10 @@ git show HEAD:AI-Tools/index.html | awk '/<main class="main-content">/{found=1; 
 ./wrap_html.sh /tmp/overview_clean.html AI-Tools/index.html "AI Tools" "AI Tools"
 echo "✓ Built AI-Tools/index.html"
 
+# Build skills page
+echo "Building skills page..."
+python3 md_to_html.py AI-Tools/skills.md /tmp/skills_content.html
+./wrap_html.sh /tmp/skills_content.html AI-Tools/skills.html "Agent Skills" "Agent Skills"
+echo "✓ Built AI-Tools/skills.html"
+
 echo "Done! All HTML files created."

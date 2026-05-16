@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Skills | Abhay's Knowledge Base</title>
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Agent Skills</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/LLM/jobs">Job Listings</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>Agent Skills</h1>
+
+<p>> A standardized way to give AI agents new capabilities and expertise. Skills are instruction sets that teach AI agents <strong>how to work</strong> — providing context, guidelines, and step-by-step procedures for specific tasks.</p>
+
+<hr>
+
+<h2 id="how-skills-work">How Skills Work</h2>
+
+<div align="center">
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:12px;padding:10px;">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fabd2f"/>
+    </marker>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1b2838;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1a3a2e;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1e282e;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+<p><!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">How Agent Skills Work</text></p>
+
+<p><!-- Row 1: Creator -->
+  <rect x="50" y="50" width="700" height="80" rx="10" fill="url(#grad1)" stroke="#333" stroke-width="1"/>
+  <text x="400" y="72" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">SKILL CREATOR</text>
+  <text x="400" y="92" text-anchor="middle" fill="#aaa" font-size="11">Writes SKILL.md with name, description, and instructions in a skill directory</text>
+  <text x="400" y="110" text-anchor="middle" fill="#777" font-size="10">└── skill-name/SKILL.md  (YAML frontmatter + Markdown instructions)</text></p>
+
+<p><!-- Arrow row 1 -> 2 -->
+  <line x1="400" y1="130" x2="400" y2="155" stroke="#fabd2f" stroke-width="2" marker-end="url(#arrow)"/></p>
+
+<p><!-- Row 2: Discovery & Activation -->
+  <rect x="50" y="160" width="700" height="80" rx="10" fill="url(#grad2)" stroke="#333" stroke-width="1"/>
+  <text x="400" y="182" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">AGENT DISCOVERS &amp; ACTIVATES THE SKILL</text>
+  <text x="400" y="202" text-anchor="middle" fill="#aaa" font-size="11">Agent scans skill directories → reads name + description → loads SKILL.md on match</text>
+  <text x="400" y="220" text-anchor="middle" fill="#777" font-size="10">Progressive disclosure: agent stores 100+ skills, loads only the one that matches</text></p>
+
+<p><!-- Arrow row 2 -> 3 -->
+  <line x1="400" y1="240" x2="400" y2="265" stroke="#fabd2f" stroke-width="2" marker-end="url(#arrow)"/></p>
+
+<p><!-- Row 3: Execution -->
+  <rect x="50" y="270" width="700" height="80" rx="10" fill="url(#grad3)" stroke="#333" stroke-width="1"/>
+  <text x="400" y="292" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">AGENT EXECUTES THE SKILL</text>
+  <text x="400" y="312" text-anchor="middle" fill="#aaa" font-size="11">Follows instructions → runs tools/commands → produces output</text>
+  <text x="400" y="330" text-anchor="middle" fill="#777" font-size="10">Can reference scripts/, references/, assets/ in the skill directory</text></p>
+
+<p><!-- Side text -->
+  <text x="780" y="50" text-anchor="end" fill="#666" font-size="10">📁 skill-name/</text>
+  <text x="780" y="65" text-anchor="end" fill="#555" font-size="10">  ├─ SKILL.md</text>
+  <text x="780" y="78" text-anchor="end" fill="#555" font-size="10">  ├─ scripts/</text>
+  <text x="780" y="91" text-anchor="end" fill="#555" font-size="10">  ├─ references/</text>
+  <text x="780" y="104" text-anchor="end" fill="#555" font-size="10">  └─ assets/</text>
+</svg>
+</div></p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+<li><a href="#what-is-an-agent-skill">What is an Agent Skill</a></li>
+<li><a href="#specification">Specification</a></li>
+<li><a href="#skill-directory-structure">Skill Directory Structure</a></li>
+<li><a href="#all-skills-reference">All Skills Reference</a></li>
+<li><a href="#anthropic-skills">Anthropic Skills</a></li>
+<li><a href="#community-skills">Community Skills</a></li>
+<li><a href="#how-to-install--use-skills">How to Install & Use Skills</a></li>
+<li><a href="#creating-your-own-skill">Creating Your Own Skill</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#which-tools-support-skills">Which Tools Support Skills</a></li>
+</ul>
+
+<hr>
+
+<h2 id="what-is-an-agent-skill">What is an Agent Skill</h2>
+
+<p>An <strong>Agent Skill</strong> is a set of instructions that teaches an AI agent how to perform a specific task. Skills are written in Markdown with YAML frontmatter and stored in a standardized directory structure.</p>
+
+<table>
+<tr>
+<th>Aspect</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>What it is</strong></td>
+<td>Instructions that teach an agent how to work</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td><code>SKILL.md</code> with YAML frontmatter + Markdown body</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Task-specific (e.g., "how to process PDFs")</td>
+</tr>
+<tr>
+<td><strong>Discovery</strong></td>
+<td>Agent scans default skill directories on startup</td>
+</tr>
+<tr>
+<td><strong>Activation</strong></td>
+<td>Agent loads skill when user query matches its description</td>
+</tr>
+<tr>
+<td><strong>Execution</strong></td>
+<td>Agent follows instructions, can run scripts/commands</td>
+</tr>
+</table>
+
+<h3>Skill vs Tool vs MCP</h3>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Teaches the agent...</th>
+<th>Analogy</th>
+</tr>
+<tr>
+<td><strong>Skill</strong></td>
+<td>How to do something</td>
+<td>A recipe book</td>
+</tr>
+<tr>
+<td><strong>Tool</strong></td>
+<td>What it can do</td>
+<td>A kitchen appliance</td>
+</tr>
+<tr>
+<td><strong>MCP</strong></td>
+<td>What data it can access</td>
+<td>A pantry</td>
+</tr>
+</table>
+
+<p>Skills are <strong>portable</strong> — the same skill works in VS Code with GitHub Copilot, Claude Code, OpenCode, Gemini CLI, and any other agent that supports the <a href="https://agentskills.io">Agent Skills</a> format.</p>
+
+<hr>
+
+<h2 id="specification">Specification</h2>
+
+<p>The Agent Skills specification defines a standard format for skills that works across all compatible AI agents.</p>
+
+<h3><code>SKILL.md</code> Format</h3>
+
+<p>Each skill lives in its own directory with a <code>SKILL.md</code> file containing YAML frontmatter followed by Markdown content.</p>
+
+<p><strong>Frontmatter fields:</strong></p>
+
+<table>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Constraints</th>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Yes</td>
+<td>Max 64 chars. Lowercase letters, numbers, hyphens only. Must match directory name</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Yes</td>
+<td>Max 1024 chars. Describes what the skill does and when to use it</td>
+</tr>
+<tr>
+<td><code>license</code></td>
+<td>No</td>
+<td>License name or reference to bundled license file</td>
+</tr>
+<tr>
+<td><code>compatibility</code></td>
+<td>No</td>
+<td>Max 500 chars. Environment requirements</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>No</td>
+<td>Arbitrary key-value mapping for additional metadata</td>
+</tr>
+<tr>
+<td><code>allowed-tools</code></td>
+<td>No</td>
+<td>Space-separated string of pre-approved tools (experimental)</td>
+</tr>
+</table>
+
+<p><strong>Example:</strong>
+<pre><code>---
+name: pdf-processing
+description: Extract PDF text, fill forms, merge files. Use when handling PDFs.
+license: Apache-2.0
+metadata:
+  author: example-org
+  version: "1.0"
+<hr></p>
+
+<h1>Instructions</h1>
+
+<p>To process PDFs, use pdfplumber for text extraction...
+</code></pre></p>
+
+<hr>
+
+<h2 id="skill-directory-structure">Skill Directory Structure</h2>
+
+<pre><code>skill-name/
+├── SKILL.md          # Required: metadata + instructions
+├── scripts/          # Optional: executable code (bash, python, etc.)
+├── references/       # Optional: documentation, examples, specs
+├── assets/           # Optional: templates, resources, images
+└── ...
+</code></pre>
+
+<p>The <code>SKILL.md</code> file is the <strong>only required file</strong>. All other directories are optional and provide supporting context the agent can reference.</p>
+
+<hr>
+
+<h2 id="all-skills-reference">All Skills Reference</h2>
+
+<p>All skills below follow the Agent Skills specification and can be installed in any compatible tool.</p>
+
+<h3>Table of Contents</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Skill</th>
+<th>Source</th>
+<th>Category</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><code>algorithmic-art</code></td>
+<td>Anthropic</td>
+<td>Design</td>
+<td>Create algorithmic art with p5.js & seeded randomness</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>brand-guidelines</code></td>
+<td>Anthropic</td>
+<td>Design</td>
+<td>Apply brand colors and typography to artifacts</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>canvas-design</code></td>
+<td>Anthropic</td>
+<td>Design</td>
+<td>Create beautiful visual art in .png/.pdf</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>claude-api</code></td>
+<td>Anthropic</td>
+<td>Development</td>
+<td>Build, debug, optimize Claude API / Anthropic SDK apps</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>doc-coauthoring</code></td>
+<td>Anthropic</td>
+<td>Writing</td>
+<td>Co-author documentation with structured workflow</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>docx</code></td>
+<td>Anthropic</td>
+<td>Document</td>
+<td>Read/write/edit .docx files</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>frontend-design</code></td>
+<td>Anthropic</td>
+<td>Design</td>
+<td>Create production-grade frontend interfaces</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>internal-comms</code></td>
+<td>Anthropic</td>
+<td>Writing</td>
+<td>Write internal communications with company formats</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>mcp-builder</code></td>
+<td>Anthropic</td>
+<td>Development</td>
+<td>Create MCP servers for external API integration</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>pdf</code></td>
+<td>Anthropic</td>
+<td>Document</td>
+<td>Extract PDF text, tables, forms using pdfplumber</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>pptx</code></td>
+<td>Anthropic</td>
+<td>Document</td>
+<td>Create/manipulate .pptx slide decks</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>skill-creator</code></td>
+<td>Anthropic</td>
+<td>Development</td>
+<td>Create, edit, optimize, and evaluate skills</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>slack-gif-creator</code></td>
+<td>Anthropic</td>
+<td>Design</td>
+<td>Create animated GIFs optimized for Slack</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>theme-factory</code></td>
+<td>Anthropic</td>
+<td>Design</td>
+<td>Style artifacts with 10 pre-set themes</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>web-artifacts-builder</code></td>
+<td>Anthropic</td>
+<td>Development</td>
+<td>Build and deploy web artifacts</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>webapp-testing</code></td>
+<td>Anthropic</td>
+<td>Testing</td>
+<td>Test local web apps with Playwright</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>xlsx</code></td>
+<td>Anthropic</td>
+<td>Document</td>
+<td>Read/write/edit .xlsx spreadsheets</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>caveman</code></td>
+<td>Community</td>
+<td>Development</td>
+<td>Agent-centric workflow orchestration</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>spec-kit</code></td>
+<td>Community</td>
+<td>Development</td>
+<td>Specification-driven development tools</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>agency-agents</code></td>
+<td>Community</td>
+<td>Development</td>
+<td>Multi-agent orchestration framework</td>
+</tr>
+</table>
+
+<hr>
+
+<h3>Anthropic Skills</h3>
+
+<p>Official skills from Anthropic's skills repository. These cover common development, design, and document tasks.</p>
+
+<p><details>
+<summary><strong>1. algorithmic-art</strong> — <em>Creating algorithmic art using p5.js with seeded randomness</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/algorithmic-art">anthropics/skills/skills/algorithmic-art</a></li>
+<li><strong>Description:</strong> Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use when users request creating art using code.</li>
+<li><strong>Category:</strong> Design</li>
+<li><strong>Install:</strong> <code>git clone</code> or manual copy to <code>.agents/skills/algorithmic-art/</code></li>
+</ul>
+
+<pre><code>git clone https://github.com/anthropics/skills.git
+cp -r skills/algorithmic-art /your-project/.agents/skills/
+</code></pre>
+</details>
+
+<p><details>
+<summary><strong>2. brand-guidelines</strong> — <em>Applies Anthropic's official brand colors and typography</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/brand-guidelines">anthropics/skills/skills/brand-guidelines</a></li>
+<li><strong>Description:</strong> Applies Anthropic's official brand colors and typography to any sort of artifact. Use when brand colors or style guidelines apply.</li>
+<li><strong>Category:</strong> Design</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>3. canvas-design</strong> — <em>Create beautiful visual art in .png and .pdf documents</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/canvas-design">anthropics/skills/skills/canvas-design</a></li>
+<li><strong>Description:</strong> Create beautiful visual art in .png and .pdf documents using design philosophy. Use when creating posters, pieces, or visual designs.</li>
+<li><strong>Category:</strong> Design</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>4. claude-api</strong> — <em>Build, debug, and optimize Claude API / Anthropic SDK apps</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/claude-api">anthropics/skills/skills/claude-api</a></li>
+<li><strong>Description:</strong> Build, debug, and optimize Claude API / Anthropic SDK apps. Includes prompt caching, model migration, and feature configuration.</li>
+<li><strong>Category:</strong> Development</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>5. doc-coauthoring</strong> — <em>Guide users through a structured workflow for co-authoring documentation</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring">anthropics/skills/skills/doc-coauthoring</a></li>
+<li><strong>Description:</strong> Guide users through a structured workflow for co-authoring documentation, proposals, technical specs, and decision documents.</li>
+<li><strong>Category:</strong> Writing</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>6. docx</strong> — <em>Read, write, and edit .docx files programmatically</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/docx">anthropics/skills/skills/docx</a></li>
+<li><strong>Description:</strong> Handles .docx files as input or output. Creates formatted Word documents, reports, and templates via python-docx.</li>
+<li><strong>Category:</strong> Document</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>7. frontend-design</strong> — <em>Create distinctive, production-grade frontend interfaces</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/frontend-design">anthropics/skills/skills/frontend-design</a></li>
+<li><strong>Description:</strong> Create distinctive, production-grade frontend interfaces with high design quality. Use when building web components, pages, and applications.</li>
+<li><strong>Category:</strong> Design</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>8. internal-comms</strong> — <em>Write all kinds of internal communications</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/internal-comms">anthropics/skills/skills/internal-comms</a></li>
+<li><strong>Description:</strong> A set of resources to write internal communications using company-specific formats. Includes templates for memos, announcements, and updates.</li>
+<li><strong>Category:</strong> Writing</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>9. mcp-builder</strong> — <em>Guide for creating high-quality MCP servers</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/mcp-builder">anthropics/skills/skills/mcp-builder</a></li>
+<li><strong>Description:</strong> Guide for creating high-quality MCP servers that enable LLMs to interact with external services through well-designed tools. Supports Python (FastMCP) and Node/TypeScript (MCP SDK).</li>
+<li><strong>Category:</strong> Development</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>10. pdf</strong> — <em>Extract text and tables from PDFs, fill forms, merge files</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/pdf">anthropics/skills/skills/pdf</a></li>
+<li><strong>Description:</strong> Extract PDF text, tables, and forms using pdfplumber. Handles PDF as input or output, including HTML reports and database pipelines.</li>
+<li><strong>Category:</strong> Document</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>11. pptx</strong> — <em>Create and manipulate .pptx slide decks</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/pptx">anthropics/skills/skills/pptx</a></li>
+<li><strong>Description:</strong> Use any time a .pptx file is involved — creating slide decks, pitch decks, or presentations. Handles both input and output.</li>
+<li><strong>Category:</strong> Document</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>12. skill-creator</strong> — <em>Create, edit, optimize, and evaluate skills</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator">anthropics/skills/skills/skill-creator</a></li>
+<li><strong>Description:</strong> Create new skills, modify existing ones, run evals, benchmark performance with variance analysis, and optimize skill descriptions for better triggering accuracy.</li>
+<li><strong>Category:</strong> Development</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>13. slack-gif-creator</strong> — <em>Create animated GIFs optimized for Slack</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator">anthropics/skills/skills/slack-gif-creator</a></li>
+<li><strong>Description:</strong> Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts.</li>
+<li><strong>Category:</strong> Design</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>14. theme-factory</strong> — <em>Style artifacts with pre-set themes</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/theme-factory">anthropics/skills/skills/theme-factory</a></li>
+<li><strong>Description:</strong> Toolkit for styling artifacts with 10 pre-set themes. Works with slides, docs, reports, HTML landing pages, and more.</li>
+<li><strong>Category:</strong> Design</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>15. web-artifacts-builder</strong> — <em>Build and deploy web artifacts</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder">anthropics/skills/skills/web-artifacts-builder</a></li>
+<li><strong>Description:</strong> Build and deploy web artifacts including HTML pages, interactive components, and web applications.</li>
+<li><strong>Category:</strong> Development</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>16. webapp-testing</strong> — <em>Toolkit for interacting with and testing local web applications</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/webapp-testing">anthropics/skills/skills/webapp-testing</a></li>
+<li><strong>Description:</strong> Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing screenshots, and viewing browser logs.</li>
+<li><strong>Category:</strong> Testing</li>
+</ul>
+</details>
+
+<p><details>
+<summary><strong>17. xlsx</strong> — <em>Read, write, and edit .xlsx spreadsheets</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/xlsx">anthropics/skills/skills/xlsx</a></li>
+<li><strong>Description:</strong> Handles .xlsx files as input or output. Creates formatted spreadsheets, data reports, database pipelines, and Google Sheets API integrations.</li>
+<li><strong>Category:</strong> Document</li>
+</ul>
+</details>
+
+<hr>
+
+<h3>Community Skills</h3>
+
+<p><details>
+<summary><strong>18. caveman</strong> — <em>Agent-centric workflow orchestration by Julius Brussee</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/JuliusBrussee/caveman/tree/main">JuliusBrussee/caveman</a></li>
+<li><strong>Description:</strong> Caveman is a workflow orchestration framework for AI agents. It defines a declarative YAML format for agent workflows with sequential, parallel, and conditional execution steps. Skills in caveman focus on structured agent behavior, repeatable task patterns, and multi-step orchestration.</li>
+<li><strong>Category:</strong> Development / Workflow Orchestration</li>
+<li><strong>Installation:</strong></li>
+</ul>
+<pre><code>git clone https://github.com/JuliusBrussee/caveman.git
+<h1>Place desired patterns in .agents/skills/</h1>
+</code></pre>
+</details>
+
+<p><details>
+<summary><strong>19. spec-kit</strong> — <em>Specification-driven development tools by GitHub</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/github/spec-kit">github/spec-kit</a></li>
+<li><strong>Description:</strong> Spec-kit provides tools and skills for specification-driven development. It enables agents to work from formal specifications, generate code from specs, and validate implementations against requirements. Particularly useful for contract-first development and API design workflows.</li>
+<li><strong>Category:</strong> Development / Specification-Driven</li>
+<li><strong>Installation:</strong></li>
+</ul>
+<pre><code>git clone https://github.com/github/spec-kit.git
+<h1>Install specs and skills into your agent's skill directories</h1>
+</code></pre>
+</details>
+
+<p><details>
+<summary><strong>20. agency-agents</strong> — <em>Multi-agent orchestration framework</em></summary></p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a></li>
+<li><strong>Description:</strong> Agency-agents is a framework for orchestrating multiple AI agents with defined roles, communication patterns, and task delegation. Skills in this framework define agent roles, handoff protocols, and coordination patterns for complex multi-agent workflows.</li>
+<li><strong>Category:</strong> Development / Multi-Agent Orchestration</li>
+<li><strong>Installation:</strong></li>
+</ul>
+<pre><code>git clone https://github.com/msitarzewski/agency-agents.git
+<h1>Reference the agent patterns and role definitions</h1>
+</code></pre>
+</details>
+
+<hr>
+
+<h2 id="how-to-install-&-use-skills">How to Install & Use Skills</h2>
+
+<p>Skills are portable across all compatible agents. The installation process is the same whether you use VS Code, Claude Code, OpenCode, or any other skill-supporting tool.</p>
+
+<h3>Method 1: Manual Installation (Works Everywhere)</h3>
+
+<pre><code># 1. Create the skills directory in your project
+mkdir -p .agents/skills/
+
+<h1>2. Clone the skill you want</h1>
+git clone https://github.com/anthropics/skills.git /tmp/skills
+
+<h1>3. Copy the skill into your project</h1>
+cp -r /tmp/skills/skills/pdf .agents/skills/
+
+<h1>4. (Optional) Remove the clone</h1>
+rm -rf /tmp/skills
+</code></pre>
+
+<h3>Method 2: Quick Install with npx</h3>
+
+<p>Some skills can be installed directly:
+<pre><code>npx -y @anthropic/skills install pdf
+</code></pre></p>
+
+<h3>Method 3: Clone Full Repository</h3>
+
+<pre><code>git clone https://github.com/anthropics/skills.git
+<h1>Then copy individual skills as needed</h1>
+</code></pre>
+
+<h3>Default Skill Directories</h3>
+
+<p>Agents scan these directories for skills:</p>
+
+<table>
+<tr>
+<th>Agent</th>
+<th>Default Directory</th>
+</tr>
+<tr>
+<td><strong>VS Code + Copilot</strong></td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td><code>.claude/skills/</code> or <code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>OpenCode</strong></td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>Gemini CLI</strong></td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>OpenClaw</strong></td>
+<td><code>.openclaw/workspace/skills/</code></td>
+</tr>
+<tr>
+<td><strong>Junie</strong></td>
+<td><code>.agents/skills/</code></td>
+</tr>
+</table>
+
+<h3>Using Skills</h3>
+
+<p>Once installed:
+1. <strong>Restart your agent</strong> or reload the session
+2. Ask a question related to the skill — e.g., "Extract text from this PDF"
+3. The agent automatically detects the matching skill and loads its instructions
+4. The agent follows the skill's steps to complete your task</p>
+
+<p>To <strong>list installed skills</strong>, ask your agent:
+<ul>
+<li>"What skills do you have?"</li>
+<li>"List my available skills"</li>
+<li>In VS Code Copilot Chat Agent mode, type <code>/skills</code></li>
+</ul></p>
+
+<hr>
+
+<h2 id="creating-your-own-skill">Creating Your Own Skill</h2>
+
+<p>Creating a skill is straightforward — one file under 20 lines.</p>
+
+<h3>Quickstart: Roll Dice Skill</h3>
+
+<p>Create <code>.agents/skills/roll-dice/SKILL.md</code>:</p>
+
+<pre><code>---
+name: roll-dice
+description: Roll dice using a random number generator. Use when asked
+  to roll a die (d6, d20, etc.) or generate a random dice roll.
+<hr>
+
+<p>To roll a die, use the following command:</p>
+
+<p><strong>Bash:</strong>
+</code></pre>bash
+echo $((RANDOM % <sides> + 1))
+<pre><code>
+<strong>PowerShell:</strong>
+</code></pre>powershell
+Get-Random -Minimum 1 -Maximum (<sides> + 1)
+<pre><code>
+Replace <code><sides></code> with the number of sides on the die.
+</code></pre></p>
+
+<p>Then in VS Code Copilot Chat Agent mode, ask "Roll a d20" — the agent activates the skill and runs the command.</p>
+
+<h3>Progressive Disclosure</h3>
+
+<p>When an agent starts, it reads only the <code>name</code> and <code>description</code> of each skill. The full <code>SKILL.md</code> body is loaded <strong>only when the skill is activated</strong> by a matching query. This allows agents to carry hundreds of skills without context window bloat.</p>
+
+<hr>
+
+<h2 id="best-practices">Best Practices</h2>
+
+<table>
+<tr>
+<th>Practice</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Start from real expertise</strong></td>
+<td>Base skills on real task execution, not generic instructions</td>
+</tr>
+<tr>
+<td><strong>Refine with real execution</strong></td>
+<td>Run the skill, then iterate based on results</td>
+</tr>
+<tr>
+<td><strong>Spend context wisely</strong></td>
+<td>Add what the agent lacks, omit what it already knows</td>
+</tr>
+<tr>
+<td><strong>Well-scoped descriptions</strong></td>
+<td>Include specific keywords for accurate activation</td>
+</tr>
+<tr>
+<td><strong>Use progressive disclosure</strong></td>
+<td>Keep SKILL.md focused; use scripts/ for dense code</td>
+</tr>
+<tr>
+<td><strong>Test and evaluate</strong></td>
+<td>Run evals to measure skill performance and activation accuracy</td>
+</tr>
+<tr>
+<td><strong>Version your skills</strong></td>
+<td>Use <code>metadata.version</code> field for tracking changes</td>
+</tr>
+</table>
+
+<h3>Description Optimization Tips</h3>
+
+<p>Write descriptions that help the agent decide when to activate:
+<ul>
+<li>Include both what the skill does AND when to use it</li>
+<li>Add specific keywords that trigger on relevant prompts</li>
+<li>Avoid vague descriptions like "Helps with PDFs" — be specific</li>
+</ul></p>
+
+<p><strong>Good:</strong> "Extracts text and tables from PDF files, fills PDF forms, and merges multiple PDFs. Use when working with PDF documents or when the user mentions PDFs, forms, or document extraction."</p>
+
+<p><strong>Poor:</strong> "Helps with PDFs."</p>
+
+<hr>
+
+<h2 id="which-tools-support-skills">Which Tools Support Skills</h2>
+
+<p>The following tools support the Agent Skills format (Source: <a href="https://agentskills.io">agentskills.io</a>):</p>
+
+<table>
+<tr>
+<th>Tool</th>
+<th>Support</th>
+<th>Skills Config</th>
+</tr>
+<tr>
+<td><strong>GitHub Copilot</strong> (VS Code)</td>
+<td>Full</td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>Full</td>
+<td><code>.claude/skills/</code> or <code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>OpenCode</strong></td>
+<td>Full</td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>Gemini CLI</strong></td>
+<td>Full</td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>OpenHands</strong></td>
+<td>Full</td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>Junie</strong> (JetBrains)</td>
+<td>Full</td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>Autohand Code CLI</strong></td>
+<td>Full</td>
+<td><code>.agents/skills/</code></td>
+</tr>
+<tr>
+<td><strong>OpenClaw</strong></td>
+<td>Full</td>
+<td>Via skills.sh / ClawHub</td>
+</tr>
+<tr>
+<td><strong>Mux</strong></td>
+<td>Full</td>
+<td><code>.agents/skills/</code></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="related">Related</h2>
+
+<ul>
+<li><a href="https://agentskills.io/specification"><strong>Agent Skills Specification</strong></a> — The complete format reference</li>
+<li><a href="https://agentskills.io/skill-creation/quickstart"><strong>Skill Creation Quickstart</strong></a> — Create your first skill</li>
+<li><a href="https://agentskills.io/skill-creation/best-practices"><strong>Best Practices</strong></a> — How to write effective skills</li>
+<li><a href="https://github.com/anthropics/skills"><strong>Anthropic Skills Repository</strong></a> — Official skills on GitHub</li>
+<li><a href="https://skills.sh"><strong>skills.sh</strong></a> — Open registry for AI agent skills</li>
+<li><a href="https://clawhub.ai"><strong>ClawHub</strong></a> — OpenClaw's skill marketplace</li>
+<li><a href="../AI-Tools/"><strong>AI Tools Index</strong></a> — Full tools reference</li>
+<li><a href="./mcp"><strong>MCP</strong></a> — Model Context Protocol</li>
+<li><a href="./ai-editors"><strong>AI Editors</strong></a> — AI-powered editors comparison</li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
