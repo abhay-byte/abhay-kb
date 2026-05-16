@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Coding Tools | Abhay's Knowledge Base</title>
   <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: #0d0d0d;
@@ -14,7 +20,10 @@
     }
     a { color: #fabd2f; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
     .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
     .topbar {
       display: none;
       position: fixed; top: 0; left: 0; right: 0;
@@ -30,6 +39,7 @@
       cursor: pointer; padding: 4px 8px; margin-right: 12px;
     }
     .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
     .sidebar-overlay {
       display: none;
       position: fixed; inset: 0;
@@ -37,6 +47,7 @@
       z-index: 150;
     }
     .sidebar-overlay.active { display: block; }
+
     .sidebar {
       width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
       position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
@@ -47,17 +58,20 @@
     }
     .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
     .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
     .sidebar nav a {
       display: block; padding: 8px 12px; border-radius: 6px;
       color: #ccc; font-size: 15px;
       transition: background 0.15s;
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
     .nav-section-label {
       font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
       color: #666; padding: 12px 12px 4px; margin-top: 4px;
     }
     .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
     .main-content { flex: 1; min-width: 0; }
     .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
     .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
@@ -65,6 +79,7 @@
     .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
     .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
     .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
     .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
     .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
@@ -73,207 +88,133 @@
     .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
     .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
     .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
     .main-content em { color: #999; }
     .main-content strong { color: #fff; }
-    .main-content img { max-width: 100%; border-radius: 6px; }
-    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
 
-    /* Tools page specific */
-    .tool-install { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; margin: 16px 0; }
-    .install-tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
     .install-tab {
-      padding: 8px 16px; border-radius: 4px; font-size: 13px;
-      background: rgba(255,255,255,0.06); color: #888; cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.08); transition: all 0.15s;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
     }
-    .install-tab.active { background: rgba(250,189,47,0.15); color: #fabd2f; border-color: rgba(250,189,47,0.3); }
-    .install-body { display: none; }
-    .install-body.active { display: block; }
-    .install-body code { display: block; background: rgba(0,0,0,0.5); padding: 12px; margin: 8px 0; border-radius: 4px; font-size: 13px; color: #ccc; }
-    .install-body .prompt { color: #fabd2f; margin-right: 8px; }
-    .install-body .comment { color: #666; font-style: italic; }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
     .copy-btn {
-      float: right; padding: 4px 12px; border-radius: 4px; font-size: 12px;
-      background: rgba(250,189,47,0.15); color: #fabd2f; border: 1px solid rgba(250,189,47,0.3);
-      cursor: pointer; transition: all 0.15s;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
     }
-    .copy-btn:hover { background: rgba(250,189,47,0.25); }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
 
     @media (max-width: 800px) {
-      .page-wrapper { padding: 72px 16px 40px; flex-direction: column; }
-      .sidebar { display: none; position: fixed; left: 0; top: 0; bottom: 0; width: 280px; background: #0d0d0d; z-index: 200; padding: 20px; }
-      .sidebar.open { display: flex; }
       .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
     }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <div class="topbar-title">AI Coding Tools</div>
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">AI Coding Tools</span>
   </div>
 
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
   <div class="page-wrapper">
     <aside class="sidebar" id="sidebar">
-      <h1>Abhay's KB</h1>
-      <div class="tagline">My personal projects and notes</div>
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
       <nav>
         <a href="/abhay-kb/">Home</a>
-
-        <div class="nav-section-label">🤖 LLM</div>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/LLM/jobs">Job Listings</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
         <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
-
         <div class="nav-section-label">AI Tools</div>
         <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
         <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
-        <a href="/abhay-kb/AI-Tools/mcp-servers.html" class="nav-indent">MCP Servers</a>
-        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
         <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
-
-        <div class="nav-section-label">📁 Projects</div>
-        <a href="/abhay-kb/PROJECTS.html" class="nav-indent">Projects</a>
-
-        <div class="nav-section-label">👤 About</div>
-        <a href="/abhay-kb/about-me" class="nav-indent">About Me</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
       </nav>
     </aside>
-
-aria-label="Main content">
-
-<h1>AI Coding Tools</h1>
-
-<p>A comprehensive comparison of AI-powered coding agents and assistants in 2026.</p>
-
-
-<h2><img src="https://github.com/abhay-byte/nexus/raw/master/src-tauri/icons/icon.png" alt="Nexus" style="width:32px;height:32px;vertical-align:middle;margin-right:8px;border-radius:6px;">Nexus Terminal <span style="font-size:14px;color:#666;font-weight:400;">— by Abhay Raj</span></h2>
-
-<p>Multi-agent AI terminal workspace built by <strong>Abhay Raj</strong>. Run Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and 10+ other AI agents — side-by-side in a <strong>brutalist desktop app</strong>. Built with <strong>Tauri + React</strong>.</p>
-
-<ul>
-  <li><strong>GitHub:</strong> <a href="https://github.com/abhay-byte/nexus">github.com/abhay-byte/nexus</a></li>
-  <li><strong>Latest Release:</strong> <a href="https://github.com/abhay-byte/nexus/releases/tag/v0.1.8">v0.1.8 — Headless Server Mode</a></li>
-  <li><strong>Type:</strong> Desktop app (Tauri) + Headless web server</li>
-  <li><strong>License:</strong> MIT</li>
-</ul>
-
-<table>
-  <tr><td><strong>Agents</strong></td><td>13+ AI coding agents — Claude Code, Codex CLI, Gemini CLI, Aider, OpenCode, Qwen Code, Junie, Kiro, Kilo Code, Cline, Continue, Goose, Amp — auto-detected on PATH</td></tr>
-  <tr><td><strong>Multi-agent</strong></td><td>Run multiple agents side-by-side in the same project with split panes (up to 2×2)</td></tr>
-  <tr><td><strong>Terminal</strong></td><td>True-color PTY (xterm-256color), session persistence across restarts, batched streaming for noisy agents</td></tr>
-  <tr><td><strong>Kanban</strong></td><td>Built-in Kanban board with Todo / In Progress / Done / Blocked — tasks persist across restarts</td></tr>
-  <tr><td><strong>MCP</strong></td><td>Shared MCP registry — configure once in Settings, sync across all projects</td></tr>
-  <tr><td><strong>Headless Mode</strong></td><td>v0.1.8: Run as headless server — access via any browser on local network (HTTP API + WebSocket)</td></tr>
-  <tr><td><strong>Mobile</strong></td><td>v0.1.8: Portrait mode — slide-out sidebar, scrollable kanban, responsive layout</td></tr>
-  <tr><td><strong>UI</strong></td><td>Brutalist design — high-contrast dark mode, Space Grotesk typography, yellow accent (#ffcc00)</td></tr>
-</table>
-
-<div class="tool-install" id="card-nx">
-<div class="install-tabs">
-  <div class="install-tab active" data-os="mac" onclick="showTab(this,'nx-mac','card-nx')">Linux (DEB)</div>
-  <div class="install-tab" data-os="linux" onclick="showTab(this,'nx-rpm','card-nx')">Linux (RPM)</div>
-  <div class="install-tab" data-os="win" onclick="showTab(this,'nx-win','card-nx')">Windows</div>
-  <div class="install-tab" data-os="headless" onclick="showTab(this,'nx-headless','card-nx')">Headless</div>
-</div>
-<div class="install-body active" id="nx-mac">
-  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus_0.1.8_amd64.deb <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus_0.1.8_amd64.deb")'>Copy</button></code>
-  <code><span class="prompt">$</span> sudo dpkg -i Nexus_0.1.8_amd64.deb <button class="copy-btn" onclick='copyCmd(this,"sudo dpkg -i Nexus_0.1.8_amd64.deb")'>Copy</button></code>
-</div>
-<div class="install-body" id="nx-rpm">
-  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus-0.1.8-1.x86_64.rpm <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/Nexus-0.1.8-1.x86_64.rpm")'>Copy</button></code>
-  <code><span class="prompt">$</span> sudo rpm -i Nexus-0.1.8-1.x86_64.rpm <button class="copy-btn" onclick='copyCmd(this,"sudo rpm -i Nexus-0.1.8-1.x86_64.rpm")'>Copy</button></code>
-</div>
-<div class="install-body" id="nx-win">
-  <code><span class="prompt">$</span> Download nexus-windows-x86_64.exe from releases <button class="copy-btn" onclick='copyCmd(this,"https://github.com/abhay-byte/nexus/releases/tag/v0.1.8")'>Copy</button></code>
-</div>
-<div class="install-body" id="nx-headless">
-  <code><span class="prompt">$</span> wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/nexus-headless-linux-x86_64 <button class="copy-btn" onclick='copyCmd(this,"wget https://github.com/abhay-byte/nexus/releases/download/v0.1.8/nexus-headless-linux-x86_64")'>Copy</button></code>
-  <code><span class="prompt">$</span> chmod +x nexus-headless-linux-x86_64 && ./nexus-headless-linux-x86_64 <button class="copy-btn" onclick='copyCmd(this,"chmod +x nexus-headless-linux-x86_64 && ./nexus-headless-linux-x86_64")'>Copy</button></code>
-  <code><span class="comment"># Open http://localhost:7878 in your browser</span></code>
-</div>
-</div>
-
-<hr>
-
-<h2>Terminal-Based Coding Agents</h2>
-
-<h3>OpenCode</h3>
-
-<p>Open-source terminal coding agent built in Go by Anomaly (SST team). 142K+ GitHub stars, 6.5M+ monthly active devs.</p>
-
-<ul>
-  <li><strong>Website:</strong> <a href="https://opencode.ai">opencode.ai</a></li>
-  <li><strong>GitHub:</strong> <a href="https://github.com/anomalyco/opencode">github.com/anomalyco/opencode</a></li>
-</ul>
-
-<table>
-  <tr><th>Feature</th><th>Details</th></tr>
-  <tr><td><strong>Type</strong></td><td>Open-source CLI agent (MIT)</td></tr>
-  <tr><td><strong>Models</strong></td><td>75+ providers (OpenAI, Anthropic, DeepSeek, local)</td></tr>
-  <tr><td><strong>Pricing</strong></td><td>Free (CLI) + Go ($10/mo) + Zen (pay-as-you-go)</td></tr>
-  <tr><td><strong>Best For</strong></td><td>Terminal-first devs who want model flexibility</td></tr>
-  <tr><td><strong>Key Strength</strong></td><td>Multi-model support, no vendor lock-in</td></tr>
-</table>
-
-<style>
-.install-tabs {
-  display: flex; gap: 4px; margin: 12px 0 0;
-}
-.install-tab {
-  padding: 6px 18px; font-size: 13px; color: #888; cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.08); border-bottom: none;
-  border-radius: 6px 6px 0 0; background: rgba(255,255,255,0.02);
-  user-select: none; transition: 0.15s;
-}
-.install-tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
-.install-tab.active { color: #fabd2f; background: rgba(255,255,255,0.06); border-color: rgba(250,189,47,0.2); }
-.install-body {
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 0 6px 6px 6px;
-  padding: 14px 18px; background: #111; display: none;
-  margin-bottom: 16px;
-}
-.install-body.active { display: block; }
-.install-body code {
-  display: block; padding: 3px 0 !important; font-size: 13px;
-  background: transparent !important; color: #ccc !important;
-}
-.install-body .prompt { color: #6a9955; margin-right: 6px; }
-  .install-body .copy-btn {
-    float: right;
-    margin-top: -20px;
-    padding: 2px 8px;
-    font-size: 11px;
-    background: rgba(250,255,250,0.15);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 3px;
-    color: #999;
-  }
-.install-body .comment { color: #6a9955; font-style: italic; }
-</style>
-
+    <main class="main-content">
     </main>
   </div>
 
   <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
       document.getElementById('sidebarOverlay').classList.toggle('active');
-    }
-    function showTab(el, targetId, cardId) {
-      const card = document.getElementById(cardId);
-      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
-      card.querySelectorAll('.install-body').forEach(b => b.classList.remove('active'));
-      el.classList.add('active');
-      document.getElementById(targetId).classList.add('active');
-    }
-    function copyCmd(btn, cmd) {
-      navigator.clipboard.writeText(cmd);
-      const originalText = btn.textContent;
-      btn.textContent = 'Copied!';
-      setTimeout(() => btn.textContent = originalText, 1500);
     }
   </script>
 </body>
