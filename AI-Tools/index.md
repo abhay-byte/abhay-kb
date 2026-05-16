@@ -21,5 +21,5 @@ Researched and compiled from current 2026 sources.
 |----------|------|
 | AI Coding Tools | [Tools Reference](./tools) |
 | MCP Guide | [MCP](./mcp) |
-| AI IDE Comparison | [IDE Comparison](./ide) |
+| AI IDE Comparison | [AI Editors](./ai-editors) |
 | Agent Skills | [Skills Guide](./skills) |
