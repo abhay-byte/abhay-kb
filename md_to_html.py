@@ -4,6 +4,12 @@ import re
 import sys
 
 def markdown_to_html(md_content):
+    # Strip Jekyll frontmatter
+    if md_content.startswith('---'):
+        frontmatter_end = md_content.find('\n---\n', 3)
+        if frontmatter_end != -1:
+            md_content = md_content[frontmatter_end + 4:]
+    
     html = md_content
     
     # Code blocks (fenced)
@@ -37,26 +43,38 @@ def markdown_to_html(md_content):
     # Horizontal rules
     html = re.sub(r'^---+$', '<hr>', html, flags=re.MULTILINE)
     
-    # Tables (simplified)
+    # Tables (simplified) - with header support
     lines = html.split('\n')
     in_table = False
+    header_done = False
     result = []
     for line in lines:
         if '|' in line and line.strip().startswith('|'):
             if not in_table:
                 in_table = True
+                header_done = False
                 result.append('<table>')
             # Remove leading/trailing pipes
             cells = [cell.strip() for cell in line.strip('|').split('|')]
-            if all(cell == '-' * len(cell) for cell in cells):
-                continue  # Skip separator row
+            if all(cell.startswith('-') and cell.endswith('-') and cell.strip('-') == '' for cell in cells):
+                # Skip separator row
+                header_done = True
+                continue
+            # Determine if this is a header row
+            is_header = not header_done and any(cell for cell in cells)
             result.append('<tr>')
             for cell in cells:
-                result.append(f'<td>{cell}</td>')
+                if is_header:
+                    result.append(f'<th>{cell}</th>')
+                else:
+                    result.append(f'<td>{cell}</td>')
             result.append('</tr>')
+            if is_header:
+                header_done = True
         else:
             if in_table:
                 in_table = False
+                header_done = False
                 result.append('</table>')
             result.append(line)
     if in_table:
