@@ -203,7 +203,7 @@
 <h2 id="how-skills-work">How Skills Work</h2>
 
 <div align="center">
-<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:12px;padding:10px;">
+<svg viewBox="0 0 800 380" width="800" height="380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;border:1px solid #333;border-radius:12px;background:#111;padding:10px;">
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#fabd2f"/>
@@ -226,7 +226,7 @@
   <text x="400" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">How Agent Skills Work</text></p>
 
 <p><!-- Row 1: Creator -->
-  <rect x="50" y="50" width="700" height="80" rx="10" fill="url(#grad1)" stroke="#333" stroke-width="1"/>
+  <rect x="50" y="50" width="700" height="80" rx="10" fill="url(#grad1)" stroke="#777" stroke-width="2"/>
   <text x="400" y="72" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">SKILL CREATOR</text>
   <text x="400" y="92" text-anchor="middle" fill="#aaa" font-size="11">Writes SKILL.md with name, description, and instructions in a skill directory</text>
   <text x="400" y="110" text-anchor="middle" fill="#777" font-size="10">└── skill-name/SKILL.md  (YAML frontmatter + Markdown instructions)</text></p>
@@ -235,7 +235,7 @@
   <line x1="400" y1="130" x2="400" y2="155" stroke="#fabd2f" stroke-width="2" marker-end="url(#arrow)"/></p>
 
 <p><!-- Row 2: Discovery & Activation -->
-  <rect x="50" y="160" width="700" height="80" rx="10" fill="url(#grad2)" stroke="#333" stroke-width="1"/>
+  <rect x="50" y="160" width="700" height="80" rx="10" fill="url(#grad2)" stroke="#777" stroke-width="2"/>
   <text x="400" y="182" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">AGENT DISCOVERS &amp; ACTIVATES THE SKILL</text>
   <text x="400" y="202" text-anchor="middle" fill="#aaa" font-size="11">Agent scans skill directories → reads name + description → loads SKILL.md on match</text>
   <text x="400" y="220" text-anchor="middle" fill="#777" font-size="10">Progressive disclosure: agent stores 100+ skills, loads only the one that matches</text></p>
@@ -244,7 +244,7 @@
   <line x1="400" y1="240" x2="400" y2="265" stroke="#fabd2f" stroke-width="2" marker-end="url(#arrow)"/></p>
 
 <p><!-- Row 3: Execution -->
-  <rect x="50" y="270" width="700" height="80" rx="10" fill="url(#grad3)" stroke="#333" stroke-width="1"/>
+  <rect x="50" y="270" width="700" height="80" rx="10" fill="url(#grad3)" stroke="#777" stroke-width="2"/>
   <text x="400" y="292" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">AGENT EXECUTES THE SKILL</text>
   <text x="400" y="312" text-anchor="middle" fill="#aaa" font-size="11">Follows instructions → runs tools/commands → produces output</text>
   <text x="400" y="330" text-anchor="middle" fill="#777" font-size="10">Can reference scripts/, references/, assets/ in the skill directory</text></p>
@@ -349,7 +349,7 @@
 
 <p>Each skill lives in its own directory with a <code>SKILL.md</code> file containing YAML frontmatter followed by Markdown content.</p>
 
-<p><strong>Frontmatter fields:</strong></p>
+<strong>Frontmatter fields:</strong>
 
 <table>
 <tr>
@@ -389,7 +389,7 @@
 </tr>
 </table>
 
-<p><strong>Example:</strong>
+<strong>Example:</strong>
 <pre><code>---
 name: pdf-processing
 description: Extract PDF text, fill forms, merge files. Use when handling PDFs.
@@ -397,7 +397,7 @@ license: Apache-2.0
 metadata:
   author: example-org
   version: "1.0"
-<hr></p>
+<hr>
 
 <h1>Instructions</h1>
 
@@ -582,8 +582,8 @@ metadata:
 
 <p>Official skills from Anthropic's skills repository. These cover common development, design, and document tasks.</p>
 
-<p><details>
-<summary><strong>1. algorithmic-art</strong> — <em>Creating algorithmic art using p5.js with seeded randomness</em></summary></p>
+<details>
+<summary><strong>1. algorithmic-art</strong> — <em>Creating algorithmic art using p5.js with seeded randomness</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/algorithmic-art">anthropics/skills/skills/algorithmic-art</a></li>
@@ -597,8 +597,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </code></pre>
 </details>
 
-<p><details>
-<summary><strong>2. brand-guidelines</strong> — <em>Applies Anthropic's official brand colors and typography</em></summary></p>
+<details>
+<summary><strong>2. brand-guidelines</strong> — <em>Applies Anthropic's official brand colors and typography</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/brand-guidelines">anthropics/skills/skills/brand-guidelines</a></li>
@@ -607,8 +607,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>3. canvas-design</strong> — <em>Create beautiful visual art in .png and .pdf documents</em></summary></p>
+<details>
+<summary><strong>3. canvas-design</strong> — <em>Create beautiful visual art in .png and .pdf documents</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/canvas-design">anthropics/skills/skills/canvas-design</a></li>
@@ -617,8 +617,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>4. claude-api</strong> — <em>Build, debug, and optimize Claude API / Anthropic SDK apps</em></summary></p>
+<details>
+<summary><strong>4. claude-api</strong> — <em>Build, debug, and optimize Claude API / Anthropic SDK apps</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/claude-api">anthropics/skills/skills/claude-api</a></li>
@@ -627,8 +627,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>5. doc-coauthoring</strong> — <em>Guide users through a structured workflow for co-authoring documentation</em></summary></p>
+<details>
+<summary><strong>5. doc-coauthoring</strong> — <em>Guide users through a structured workflow for co-authoring documentation</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring">anthropics/skills/skills/doc-coauthoring</a></li>
@@ -637,8 +637,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>6. docx</strong> — <em>Read, write, and edit .docx files programmatically</em></summary></p>
+<details>
+<summary><strong>6. docx</strong> — <em>Read, write, and edit .docx files programmatically</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/docx">anthropics/skills/skills/docx</a></li>
@@ -647,8 +647,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>7. frontend-design</strong> — <em>Create distinctive, production-grade frontend interfaces</em></summary></p>
+<details>
+<summary><strong>7. frontend-design</strong> — <em>Create distinctive, production-grade frontend interfaces</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/frontend-design">anthropics/skills/skills/frontend-design</a></li>
@@ -657,8 +657,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>8. internal-comms</strong> — <em>Write all kinds of internal communications</em></summary></p>
+<details>
+<summary><strong>8. internal-comms</strong> — <em>Write all kinds of internal communications</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/internal-comms">anthropics/skills/skills/internal-comms</a></li>
@@ -667,8 +667,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>9. mcp-builder</strong> — <em>Guide for creating high-quality MCP servers</em></summary></p>
+<details>
+<summary><strong>9. mcp-builder</strong> — <em>Guide for creating high-quality MCP servers</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/mcp-builder">anthropics/skills/skills/mcp-builder</a></li>
@@ -677,8 +677,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>10. pdf</strong> — <em>Extract text and tables from PDFs, fill forms, merge files</em></summary></p>
+<details>
+<summary><strong>10. pdf</strong> — <em>Extract text and tables from PDFs, fill forms, merge files</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/pdf">anthropics/skills/skills/pdf</a></li>
@@ -687,8 +687,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>11. pptx</strong> — <em>Create and manipulate .pptx slide decks</em></summary></p>
+<details>
+<summary><strong>11. pptx</strong> — <em>Create and manipulate .pptx slide decks</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/pptx">anthropics/skills/skills/pptx</a></li>
@@ -697,8 +697,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>12. skill-creator</strong> — <em>Create, edit, optimize, and evaluate skills</em></summary></p>
+<details>
+<summary><strong>12. skill-creator</strong> — <em>Create, edit, optimize, and evaluate skills</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator">anthropics/skills/skills/skill-creator</a></li>
@@ -707,8 +707,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>13. slack-gif-creator</strong> — <em>Create animated GIFs optimized for Slack</em></summary></p>
+<details>
+<summary><strong>13. slack-gif-creator</strong> — <em>Create animated GIFs optimized for Slack</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator">anthropics/skills/skills/slack-gif-creator</a></li>
@@ -717,8 +717,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>14. theme-factory</strong> — <em>Style artifacts with pre-set themes</em></summary></p>
+<details>
+<summary><strong>14. theme-factory</strong> — <em>Style artifacts with pre-set themes</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/theme-factory">anthropics/skills/skills/theme-factory</a></li>
@@ -727,8 +727,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>15. web-artifacts-builder</strong> — <em>Build and deploy web artifacts</em></summary></p>
+<details>
+<summary><strong>15. web-artifacts-builder</strong> — <em>Build and deploy web artifacts</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder">anthropics/skills/skills/web-artifacts-builder</a></li>
@@ -737,8 +737,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>16. webapp-testing</strong> — <em>Toolkit for interacting with and testing local web applications</em></summary></p>
+<details>
+<summary><strong>16. webapp-testing</strong> — <em>Toolkit for interacting with and testing local web applications</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/webapp-testing">anthropics/skills/skills/webapp-testing</a></li>
@@ -747,8 +747,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </ul>
 </details>
 
-<p><details>
-<summary><strong>17. xlsx</strong> — <em>Read, write, and edit .xlsx spreadsheets</em></summary></p>
+<details>
+<summary><strong>17. xlsx</strong> — <em>Read, write, and edit .xlsx spreadsheets</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/skills/tree/main/skills/xlsx">anthropics/skills/skills/xlsx</a></li>
@@ -761,8 +761,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 
 <h3>Community Skills</h3>
 
-<p><details>
-<summary><strong>18. caveman</strong> — <em>Agent-centric workflow orchestration by Julius Brussee</em></summary></p>
+<details>
+<summary><strong>18. caveman</strong> — <em>Agent-centric workflow orchestration by Julius Brussee</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/JuliusBrussee/caveman/tree/main">JuliusBrussee/caveman</a></li>
@@ -775,8 +775,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </code></pre>
 </details>
 
-<p><details>
-<summary><strong>19. spec-kit</strong> — <em>Specification-driven development tools by GitHub</em></summary></p>
+<details>
+<summary><strong>19. spec-kit</strong> — <em>Specification-driven development tools by GitHub</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/github/spec-kit">github/spec-kit</a></li>
@@ -789,8 +789,8 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 </code></pre>
 </details>
 
-<p><details>
-<summary><strong>20. agency-agents</strong> — <em>Multi-agent orchestration framework</em></summary></p>
+<details>
+<summary><strong>20. agency-agents</strong> — <em>Multi-agent orchestration framework</em></summary>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a></li>
@@ -874,10 +874,12 @@ rm -rf /tmp/skills
 <h3>Using Skills</h3>
 
 <p>Once installed:
-1. <strong>Restart your agent</strong> or reload the session
-2. Ask a question related to the skill — e.g., "Extract text from this PDF"
-3. The agent automatically detects the matching skill and loads its instructions
-4. The agent follows the skill's steps to complete your task</p>
+<ol>
+<li><strong>Restart your agent</strong> or reload the session</li>
+<li>Ask a question related to the skill — e.g., "Extract text from this PDF"</li>
+<li>The agent automatically detects the matching skill and loads its instructions</li>
+<li>The agent follows the skill's steps to complete your task</li>
+</ol></p>
 
 <p>To <strong>list installed skills</strong>, ask your agent:
 <ul>
@@ -904,7 +906,7 @@ description: Roll dice using a random number generator. Use when asked
 
 <p>To roll a die, use the following command:</p>
 
-<p><strong>Bash:</strong>
+<strong>Bash:</strong>
 </code></pre>bash
 echo $((RANDOM % <sides> + 1))
 <pre><code>
@@ -913,7 +915,7 @@ echo $((RANDOM % <sides> + 1))
 Get-Random -Minimum 1 -Maximum (<sides> + 1)
 <pre><code>
 Replace <code><sides></code> with the number of sides on the die.
-</code></pre></p>
+</code></pre>
 
 <p>Then in VS Code Copilot Chat Agent mode, ask "Roll a d20" — the agent activates the skill and runs the command.</p>
 
@@ -969,9 +971,9 @@ Replace <code><sides></code> with the number of sides on the die.
 <li>Avoid vague descriptions like "Helps with PDFs" — be specific</li>
 </ul></p>
 
-<p><strong>Good:</strong> "Extracts text and tables from PDF files, fills PDF forms, and merges multiple PDFs. Use when working with PDF documents or when the user mentions PDFs, forms, or document extraction."</p>
+<strong>Good:</strong> "Extracts text and tables from PDF files, fills PDF forms, and merges multiple PDFs. Use when working with PDF documents or when the user mentions PDFs, forms, or document extraction."
 
-<p><strong>Poor:</strong> "Helps with PDFs."</p>
+<strong>Poor:</strong> "Helps with PDFs."
 
 <hr>
 

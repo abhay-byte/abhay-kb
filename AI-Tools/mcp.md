@@ -40,7 +40,7 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
 ## How MCP Works
 
 <div align="center">
-<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:12px;padding:10px;">
+<svg viewBox="0 0 800 340" width="800" height="340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;border:1px solid #333;border-radius:12px;background:#111;padding:10px;">
   <defs>
     <marker id="mcp-arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#fabd2f"/>
@@ -67,7 +67,7 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
   <text x="400" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">MCP Architecture — 3-Layer Client-Server Model</text>
 
   <!-- Layer 1: Host (AI App) -->
-  <rect x="30" y="48" width="740" height="60" rx="10" fill="url(#mcp-g1)" stroke="#555" stroke-width="1.5"/>
+  <rect x="30" y="48" width="740" height="60" rx="10" fill="url(#mcp-g1)" stroke="#777" stroke-width="2"/>
   <text x="60" y="70" fill="#fabd2f" font-size="13" font-weight="bold">Layer 1:</text>
   <text x="120" y="70" fill="#fff" font-size="13" font-weight="bold">HOST (AI Application)</text>
   <text x="60" y="90" fill="#aaa" font-size="11">Claude Code, OpenCode, Cursor, Windsurf, OpenClaw, Gemini CLI, Copilot</text>
@@ -77,7 +77,7 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
   <text x="420" y="122" fill="#666" font-size="9">MCP Protocol</text>
 
   <!-- Layer 2: MCP Client -->
-  <rect x="30" y="132" width="740" height="55" rx="10" fill="url(#mcp-g2)" stroke="#555" stroke-width="1.5"/>
+  <rect x="30" y="132" width="740" height="55" rx="10" fill="url(#mcp-g2)" stroke="#777" stroke-width="2"/>
   <text x="60" y="152" fill="#fabd2f" font-size="13" font-weight="bold">Layer 2:</text>
   <text x="120" y="152" fill="#fff" font-size="13" font-weight="bold">MCP CLIENT (built into Host)</text>
   <text x="60" y="172" fill="#aaa" font-size="11">Manages connections, routes requests, handles authentication</text>
@@ -87,37 +87,37 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
   <text x="420" y="201" fill="#666" font-size="9">Tools / Resources / Prompts</text>
 
   <!-- Layer 3: MCP Servers box -->
-  <rect x="30" y="210" width="740" height="110" rx="10" fill="url(#mcp-g3)" stroke="#555" stroke-width="1.5"/>
+  <rect x="30" y="210" width="740" height="110" rx="10" fill="url(#mcp-g3)" stroke="#777" stroke-width="2"/>
   <text x="60" y="232" fill="#fabd2f" font-size="13" font-weight="bold">Layer 3:</text>
   <text x="120" y="232" fill="#fff" font-size="13" font-weight="bold">MCP SERVERS</text>
 
   <!-- Server blocks -->
-  <rect x="50" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+  <rect x="50" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="105" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Filesystem</text>
   <text x="105" y="280" text-anchor="middle" fill="#777" font-size="9">Read/write files</text>
 
-  <rect x="175" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+  <rect x="175" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="230" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">GitHub</text>
   <text x="230" y="280" text-anchor="middle" fill="#777" font-size="9">PRs, issues, code</text>
 
-  <rect x="300" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+  <rect x="300" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="355" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Database</text>
   <text x="355" y="280" text-anchor="middle" fill="#777" font-size="9">Postgres / SQLite</text>
 
-  <rect x="425" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+  <rect x="425" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="480" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Web Search</text>
   <text x="480" y="280" text-anchor="middle" fill="#777" font-size="9">Brave / DuckDuckGo</text>
 
-  <rect x="550" y="245" width="100" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+  <rect x="550" y="245" width="100" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="600" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Browser</text>
   <text x="600" y="280" text-anchor="middle" fill="#777" font-size="9">Puppeteer/Playwright</text>
 
-  <rect x="665" y="245" width="90" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+  <rect x="665" y="245" width="90" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="710" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Memory</text>
   <text x="710" y="280" text-anchor="middle" fill="#777" font-size="9">Persistence</text>
 
   <!-- Box around servers -->
-  <text x="60" y="253" fill="#777" font-size="9">┌─</text>
+  
 </svg>
 </div>
 

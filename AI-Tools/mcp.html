@@ -233,7 +233,7 @@
 <h2 id="how-mcp-works">How MCP Works</h2>
 
 <div align="center">
-<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:12px;padding:10px;">
+<svg viewBox="0 0 800 340" width="800" height="340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;border:1px solid #333;border-radius:12px;background:#111;padding:10px;">
   <defs>
     <marker id="mcp-arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#fabd2f"/>
@@ -260,7 +260,7 @@
   <text x="400" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">MCP Architecture — 3-Layer Client-Server Model</text></p>
 
 <p><!-- Layer 1: Host (AI App) -->
-  <rect x="30" y="48" width="740" height="60" rx="10" fill="url(#mcp-g1)" stroke="#555" stroke-width="1.5"/>
+  <rect x="30" y="48" width="740" height="60" rx="10" fill="url(#mcp-g1)" stroke="#777" stroke-width="2"/>
   <text x="60" y="70" fill="#fabd2f" font-size="13" font-weight="bold">Layer 1:</text>
   <text x="120" y="70" fill="#fff" font-size="13" font-weight="bold">HOST (AI Application)</text>
   <text x="60" y="90" fill="#aaa" font-size="11">Claude Code, OpenCode, Cursor, Windsurf, OpenClaw, Gemini CLI, Copilot</text></p>
@@ -270,7 +270,7 @@
   <text x="420" y="122" fill="#666" font-size="9">MCP Protocol</text></p>
 
 <p><!-- Layer 2: MCP Client -->
-  <rect x="30" y="132" width="740" height="55" rx="10" fill="url(#mcp-g2)" stroke="#555" stroke-width="1.5"/>
+  <rect x="30" y="132" width="740" height="55" rx="10" fill="url(#mcp-g2)" stroke="#777" stroke-width="2"/>
   <text x="60" y="152" fill="#fabd2f" font-size="13" font-weight="bold">Layer 2:</text>
   <text x="120" y="152" fill="#fff" font-size="13" font-weight="bold">MCP CLIENT (built into Host)</text>
   <text x="60" y="172" fill="#aaa" font-size="11">Manages connections, routes requests, handles authentication</text></p>
@@ -280,37 +280,37 @@
   <text x="420" y="201" fill="#666" font-size="9">Tools / Resources / Prompts</text></p>
 
 <p><!-- Layer 3: MCP Servers box -->
-  <rect x="30" y="210" width="740" height="110" rx="10" fill="url(#mcp-g3)" stroke="#555" stroke-width="1.5"/>
+  <rect x="30" y="210" width="740" height="110" rx="10" fill="url(#mcp-g3)" stroke="#777" stroke-width="2"/>
   <text x="60" y="232" fill="#fabd2f" font-size="13" font-weight="bold">Layer 3:</text>
   <text x="120" y="232" fill="#fff" font-size="13" font-weight="bold">MCP SERVERS</text></p>
 
 <p><!-- Server blocks -->
-  <rect x="50" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+  <rect x="50" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="105" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Filesystem</text>
   <text x="105" y="280" text-anchor="middle" fill="#777" font-size="9">Read/write files</text></p>
 
-<p><rect x="175" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+<rect x="175" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="230" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">GitHub</text>
-  <text x="230" y="280" text-anchor="middle" fill="#777" font-size="9">PRs, issues, code</text></p>
+  <text x="230" y="280" text-anchor="middle" fill="#777" font-size="9">PRs, issues, code</text>
 
-<p><rect x="300" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+<rect x="300" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="355" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Database</text>
-  <text x="355" y="280" text-anchor="middle" fill="#777" font-size="9">Postgres / SQLite</text></p>
+  <text x="355" y="280" text-anchor="middle" fill="#777" font-size="9">Postgres / SQLite</text>
 
-<p><rect x="425" y="245" width="110" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+<rect x="425" y="245" width="110" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="480" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Web Search</text>
-  <text x="480" y="280" text-anchor="middle" fill="#777" font-size="9">Brave / DuckDuckGo</text></p>
+  <text x="480" y="280" text-anchor="middle" fill="#777" font-size="9">Brave / DuckDuckGo</text>
 
-<p><rect x="550" y="245" width="100" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+<rect x="550" y="245" width="100" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="600" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Browser</text>
-  <text x="600" y="280" text-anchor="middle" fill="#777" font-size="9">Puppeteer/Playwright</text></p>
+  <text x="600" y="280" text-anchor="middle" fill="#777" font-size="9">Puppeteer/Playwright</text>
 
-<p><rect x="665" y="245" width="90" height="55" rx="6" fill="#1a2e1e" stroke="#444" stroke-width="1"/>
+<rect x="665" y="245" width="90" height="55" rx="6" fill="#1a2e2e" stroke="#666" stroke-width="1.5"/>
   <text x="710" y="265" text-anchor="middle" fill="#8bc34a" font-size="10" font-weight="bold">Memory</text>
-  <text x="710" y="280" text-anchor="middle" fill="#777" font-size="9">Persistence</text></p>
+  <text x="710" y="280" text-anchor="middle" fill="#777" font-size="9">Persistence</text>
 
 <p><!-- Box around servers -->
-  <text x="60" y="253" fill="#777" font-size="9">┌─</text>
+  
 </svg>
 </div></p>
 
@@ -400,9 +400,11 @@
 
 <p>Most servers follow a similar pattern:</p>
 
-<p>1. <strong>Install the server</strong> (usually via npm or docker)
-2. <strong>Configure in your agent's mcpServers config</strong>
-3. <strong>Restart your agent</strong> to detect new tools</p>
+<ol>
+<li><strong>Install the server</strong> (usually via npm or docker)</li>
+<li><strong>Configure in your agent's mcpServers config</strong></li>
+<li><strong>Restart your agent</strong> to detect new tools</li>
+</ol>
 
 <hr>
 
@@ -438,11 +440,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-filesystem
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "filesystem": {
@@ -454,7 +456,7 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
 <hr>
 
@@ -490,11 +492,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-git
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "git": {
@@ -503,15 +505,15 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Commit history:</strong> Read commit messages, authors, dates</li>
 <li><strong>Branch listing:</strong> List and inspect branches</li>
 <li><strong>File diff:</strong> Show diffs between commits</li>
 <li><strong>Status check:</strong> Current repo status (modified, staged files)</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -519,7 +521,7 @@
 
 <p>Two options available — the official server from GitHub and the Anthropic MCP version.</p>
 
-<p><strong>Option 1 — Official GitHub MCP Server</strong></p>
+<strong>Option 1 — Official GitHub MCP Server</strong>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a></li>
@@ -545,11 +547,11 @@
 </tr>
 </table>
 
-<p><strong>Installation:</strong>
+<strong>Installation:</strong>
 <pre><code>npx -y @github/github-mcp-server
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "github": {
@@ -561,9 +563,9 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Option 2 — Anthropic's MCP GitHub Server</strong></p>
+<strong>Option 2 — Anthropic's MCP GitHub Server</strong>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/modelcontextprotocol/servers/tree/main/src/github">modelcontextprotocol/servers — src/github</a></li>
@@ -589,7 +591,7 @@
 </tr>
 </table>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "github": {
@@ -601,9 +603,9 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Using Claude's managed endpoint:</strong>
+<strong>Using Claude's managed endpoint:</strong>
 <pre><code>{
   "mcpServers": {
     "github": {
@@ -611,16 +613,16 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Token setup:</strong> Create at <a href="https://github.com/settings/tokens">github.com/settings/tokens</a> — use fine-grained tokens scoped to specific repos.</p>
+<strong>Token setup:</strong> Create at <a href="https://github.com/settings/tokens">github.com/settings/tokens</a> — use fine-grained tokens scoped to specific repos.
 
-<p><strong>Troubleshooting:</strong>
+<strong>Troubleshooting:</strong>
 <ul>
 <li><strong>Token not found:</strong> Ensure <code>GITHUB_TOKEN</code> is set and valid</li>
 <li><strong>403 Forbidden:</strong> Check token scopes (needs <code>repo</code> permission)</li>
 <li><strong>Rate limited:</strong> GitHub has API rate limits (5000 req/hour for authenticated users)</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -651,11 +653,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-postgres
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "postgres": {
@@ -667,14 +669,14 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Schema introspection:</strong> Agent can read table structures, columns, types</li>
 <li><strong>Query execution:</strong> Run SELECT queries safely (read-only)</li>
 <li><strong>Transaction safety:</strong> No write operations prevent data corruption</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -705,11 +707,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-sqlite
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "sqlite": {
@@ -721,14 +723,14 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Full SQL access:</strong> SELECT, INSERT, UPDATE, DELETE</li>
 <li><strong>Schema inspection:</strong> Read table structures, indexes, triggers</li>
 <li><strong>Transaction support:</strong> BEGIN/COMMIT transactions</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -759,11 +761,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-slack
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong> Create a Slack app at <a href="https://api.slack.com/apps">api.slack.com/apps</a> with scopes: <code>channels:history</code>, <code>channels:read</code>, <code>chat:write</code>, <code>channels:join</code>, <code>users:read</code>.</p>
+<strong>Configuration:</strong> Create a Slack app at <a href="https://api.slack.com/apps">api.slack.com/apps</a> with scopes: <code>channels:history</code>, <code>channels:read</code>, <code>chat:write</code>, <code>channels:join</code>, <code>users:read</code>.
 
 <pre><code>{
   "mcpServers": {
@@ -779,11 +781,11 @@
 }
 </code></pre>
 
-<p><strong>Troubleshooting:</strong>
+<strong>Troubleshooting:</strong>
 <ul>
 <li><strong>"not_in_channel" error:</strong> Bot needs to be invited to the channel first</li>
 <li><strong>Rate limiting:</strong> Slack has API limits for team workspaces</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -810,11 +812,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-brave-search
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong> Works out of the box. Optionally add API key for higher rate limits:</p>
+<strong>Configuration:</strong> Works out of the box. Optionally add API key for higher rate limits:
 
 <pre><code>{
   "mcpServers": {
@@ -829,12 +831,12 @@
 }
 </code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Web search:</strong> Query Brave Search API</li>
 <li><strong>Page fetching:</strong> Extract content from URLs</li>
 <li><strong>HTML-to-text:</strong> Convert web pages to readable text</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -866,11 +868,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-puppeteer
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "puppeteer": {
@@ -879,16 +881,16 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Page navigation:</strong> Visit URLs, navigate within pages</li>
 <li><strong>Screenshot capture:</strong> Take screenshots as base64</li>
 <li><strong>JavaScript execution:</strong> Run custom scripts in browser context</li>
 <li><strong>PDF generation:</strong> Save pages as PDF documents</li>
 <li><strong>Network monitoring:</strong> Intercept and inspect network requests</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -919,11 +921,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @playwright/mcp
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "playwright": {
@@ -932,16 +934,16 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Multi-browser:</strong> Chromium, Firefox, WebKit support</li>
 <li><strong>Accessibility snapshots:</strong> Read page structure via a11y tree</li>
 <li><strong>Network mocking:</strong> Intercept and modify network requests</li>
 <li><strong>Screenshot & PDF:</strong> Capture page states</li>
 <li><strong>Element interaction:</strong> Click, type, navigate — any web action</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -973,11 +975,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-memory
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "memory": {
@@ -989,17 +991,17 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Persistent storage:</strong> Memory survives agent restarts</li>
 <li><strong>Session-scoped:</strong> Different agents have separate memory</li>
 <li><strong>Search:</strong> Retrieve memories by key or content</li>
 <li><strong>Namespaces:</strong> Organize memories by project or topic</li>
-</ul></p>
+</ul>
 
-<p><strong>Backend options:</strong> Redis, PostgreSQL, Supabase, Local filesystem</p>
+<strong>Backend options:</strong> Redis, PostgreSQL, Supabase, Local filesystem
 
 <hr>
 
@@ -1031,11 +1033,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-sequential-thinking
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "sequential-thinking": {
@@ -1044,15 +1046,15 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Thinking chains:</strong> Agent shows step-by-step reasoning</li>
 <li><strong>Tree visualization:</strong> See decision paths</li>
 <li><strong>Context management:</strong> Track what information is considered</li>
 <li><strong>Debug mode:</strong> Inspect internal reasoning process</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -1084,11 +1086,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @modelcontextprotocol/server-time
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "time": {
@@ -1097,14 +1099,14 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Current time:</strong> Get current time in specified timezone</li>
 <li><strong>Timezone conversion:</strong> Convert between timezones</li>
 <li><strong>Date calculations:</strong> Add/subtract time, get day of week</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -1135,11 +1137,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y context-mode
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "context-mode": {
@@ -1148,14 +1150,14 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Mode switching:</strong> Toggle between development, review, debug modes</li>
 <li><strong>Context awareness:</strong> Provides contextual prompts based on mode</li>
 <li><strong>Workflow integration:</strong> Adapts agent behavior to current task</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -1186,11 +1188,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @upstash/context7
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "context7": {
@@ -1202,14 +1204,14 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>External context:</strong> Fetch relevant context from external sources</li>
 <li><strong>RAG integration:</strong> Retrieve-augment-generate pipeline</li>
 <li><strong>Knowledge injection:</strong> Provide agents with up-to-date external information</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -1240,11 +1242,11 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y @nickclyde/duckduckgo-mcp-server
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong>
+<strong>Configuration:</strong>
 <pre><code>{
   "mcpServers": {
     "duckduckgo": {
@@ -1253,14 +1255,14 @@
     }
   }
 }
-</code></pre></p>
+</code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Web search:</strong> Query DuckDuckGo search engine</li>
 <li><strong>Privacy:</strong> No tracking, no API key required</li>
 <li><strong>Instant answers:</strong> Get direct answers where available</li>
-</ul></p>
+</ul>
 
 <hr>
 
@@ -1291,14 +1293,14 @@
 </tr>
 </table>
 
-<p><strong>Installation</strong>
+<strong>Installation</strong>
 <pre><code>npx -y android-mcp
-</code></pre></p>
+</code></pre>
 
-<p><strong>Configuration:</strong> Requires ADB connected to your Android device:
+<strong>Configuration:</strong> Requires ADB connected to your Android device:
 <pre><code># Connect device via USB/Wi-Fi
 adb devices
-</code></pre></p>
+</code></pre>
 
 <pre><code>{
   "mcpServers": {
@@ -1310,13 +1312,13 @@ adb devices
 }
 </code></pre>
 
-<p><strong>Features:</strong>
+<strong>Features:</strong>
 <ul>
 <li><strong>Screen capture:</strong> Read device screen content</li>
 <li><strong>UI interaction:</strong> Tap, swipe, type on device</li>
 <li><strong>App control:</strong> Launch/kill apps, read notifications</li>
 <li><strong>Automation:</strong> Script Android workflows</li>
-</ul></p>
+</ul>
 
 <hr>
 

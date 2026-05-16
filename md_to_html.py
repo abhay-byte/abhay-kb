@@ -13,9 +13,6 @@ def markdown_to_html(md_content):
     html = md_content
     
     # Code blocks (fenced)
-    def code_block(m):
-        code = m.group(1)
-        return f'<pre><code>{code}</code></pre>'
     html = re.sub(r'```(\w+)?\n(.*?)```', lambda m: f'<pre><code>{m.group(2)}</code></pre>', html, flags=re.DOTALL)
     
     # Code blocks (simple backticks)
@@ -25,7 +22,7 @@ def markdown_to_html(md_content):
     def h1(m): return f'<h1>{m.group(1)}</h1>'
     def h2(m): 
         text = m.group(1)
-        anchor = text.lower().replace(' ', '-').replace(':', '').replace('(', '').replace(')', '')
+        anchor = text.lower().replace(' ', '-').replace(':', '').replace('(', '').replace(')', '').replace(',', '')
         return f'<h2 id="{anchor}">{text}</h2>'
     def h3(m): return f'<h3>{m.group(1)}</h3>'
     
@@ -43,7 +40,7 @@ def markdown_to_html(md_content):
     # Horizontal rules
     html = re.sub(r'^---+$', '<hr>', html, flags=re.MULTILINE)
     
-    # Tables (simplified) - with header support
+    # Tables (simplified)
     lines = html.split('\n')
     in_table = False
     header_done = False
@@ -54,13 +51,10 @@ def markdown_to_html(md_content):
                 in_table = True
                 header_done = False
                 result.append('<table>')
-            # Remove leading/trailing pipes
             cells = [cell.strip() for cell in line.strip('|').split('|')]
             if all(cell.startswith('-') and cell.endswith('-') and cell.strip('-') == '' for cell in cells):
-                # Skip separator row
                 header_done = True
                 continue
-            # Determine if this is a header row
             is_header = not header_done and any(cell for cell in cells)
             result.append('<tr>')
             for cell in cells:
@@ -84,46 +78,68 @@ def markdown_to_html(md_content):
     # Lists (simple)
     lines = html.split('\n')
     in_list = False
+    list_type = None
     result = []
     for line in lines:
-        if line.strip().startswith('- ') or line.strip().startswith('* '):
+        stripped = line.strip()
+        if stripped.startswith('- ') or stripped.startswith('* '):
             if not in_list:
                 in_list = True
+                list_type = 'ul'
                 result.append('<ul>')
             item = re.sub(r'^[\s]*[-*]\s+', '', line)
             result.append(f'<li>{item}</li>')
-        elif line.strip().startswith(r'\d+. '):
+        elif re.match(r'^\d+\.\s', stripped):
             if not in_list:
                 in_list = True
+                list_type = 'ol'
                 result.append('<ol>')
-            item = re.sub(r'^[\s]*\d+\.\s+', '', line)
-            result.append(f'<li>{item}</li>')
+            item = re.sub(r'^[\s]*\d+\.\s+', '', stripped)
+            # Reconstruct line with original indentation
+            indent = line[:len(line) - len(line.lstrip())]
+            result.append(f'{indent}<li>{item}</li>')
         else:
             if in_list:
                 in_list = False
-                result.append('</ul>' if result[-1] == '<ol>' else '</ul>')
+                result.append('</ul>' if list_type == 'ul' else '</ol>')
             result.append(line)
     if in_list:
-        result.append('</ul>')
+        result.append('</ul>' if list_type == 'ul' else '</ol>')
     html = '\n'.join(result)
     
-    # Paragraphs
+    # Paragraph wrapping - be smarter about what to wrap
     lines = html.split('\n\n')
     result = []
+    # Tags that should NOT be wrapped in <p>
+    block_tags = (
+        'h[1-6]', 'ul', 'ol', 'li', 'table', 'tr', 'th', 'td',
+        'pre', 'hr', 'div', 'details', 'summary',
+        'svg', 'defs', 'rect', 'circle', 'line', 'path', 'polygon',
+        'text', 'g', 'marker', 'linearGradient', 'stop',
+        'figure', 'figcaption', 'blockquote', 'nav', 'aside', 'main',
+        'head', 'body', 'html', 'script', 'style', 'form', 'input',
+        'button', 'select', 'textarea', 'label', 'iframe', 'img',
+        'canvas', 'video', 'audio', 'source', 'track',
+        'dl', 'dt', 'dd', 'section', 'article', 'header', 'footer',
+    )
+    block_pattern = re.compile(r'^</?(' + '|'.join(block_tags) + r')')
+    # Also skip lines that start with anything that looks like an HTML tag
+    any_tag_pattern = re.compile(r'^<\w+')
+
     for paragraph in lines:
         paragraph = paragraph.strip()
         if not paragraph:
             continue
-        # Skip if already HTML block element
-        if re.match(r'^<(h|ul|ol|table|pre|hr|div)', paragraph):
+        # If it starts with a known block tag, don't wrap
+        if block_pattern.match(paragraph):
+            result.append(paragraph)
+        elif any_tag_pattern.match(paragraph):
             result.append(paragraph)
         elif '|' in paragraph and '|' not in ' '.join(paragraph.split()):
-            # Don't wrap table rows
             result.append(paragraph)
         else:
-            # Wrap non-empty text in <p>
-            if paragraph:
-                result.append(f'<p>{paragraph}</p>')
+            result.append(f'<p>{paragraph}</p>')
+    
     html = '\n\n'.join(result)
     
     return html

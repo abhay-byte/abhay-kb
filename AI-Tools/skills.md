@@ -12,7 +12,7 @@ title: Agent Skills
 ## How Skills Work
 
 <div align="center">
-<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:12px;padding:10px;">
+<svg viewBox="0 0 800 380" width="800" height="380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;border:1px solid #333;border-radius:12px;background:#111;padding:10px;">
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#fabd2f"/>
@@ -35,7 +35,7 @@ title: Agent Skills
   <text x="400" y="30" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">How Agent Skills Work</text>
 
   <!-- Row 1: Creator -->
-  <rect x="50" y="50" width="700" height="80" rx="10" fill="url(#grad1)" stroke="#333" stroke-width="1"/>
+  <rect x="50" y="50" width="700" height="80" rx="10" fill="url(#grad1)" stroke="#777" stroke-width="2"/>
   <text x="400" y="72" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">SKILL CREATOR</text>
   <text x="400" y="92" text-anchor="middle" fill="#aaa" font-size="11">Writes SKILL.md with name, description, and instructions in a skill directory</text>
   <text x="400" y="110" text-anchor="middle" fill="#777" font-size="10">└── skill-name/SKILL.md  (YAML frontmatter + Markdown instructions)</text>
@@ -44,7 +44,7 @@ title: Agent Skills
   <line x1="400" y1="130" x2="400" y2="155" stroke="#fabd2f" stroke-width="2" marker-end="url(#arrow)"/>
 
   <!-- Row 2: Discovery & Activation -->
-  <rect x="50" y="160" width="700" height="80" rx="10" fill="url(#grad2)" stroke="#333" stroke-width="1"/>
+  <rect x="50" y="160" width="700" height="80" rx="10" fill="url(#grad2)" stroke="#777" stroke-width="2"/>
   <text x="400" y="182" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">AGENT DISCOVERS &amp; ACTIVATES THE SKILL</text>
   <text x="400" y="202" text-anchor="middle" fill="#aaa" font-size="11">Agent scans skill directories → reads name + description → loads SKILL.md on match</text>
   <text x="400" y="220" text-anchor="middle" fill="#777" font-size="10">Progressive disclosure: agent stores 100+ skills, loads only the one that matches</text>
@@ -53,7 +53,7 @@ title: Agent Skills
   <line x1="400" y1="240" x2="400" y2="265" stroke="#fabd2f" stroke-width="2" marker-end="url(#arrow)"/>
 
   <!-- Row 3: Execution -->
-  <rect x="50" y="270" width="700" height="80" rx="10" fill="url(#grad3)" stroke="#333" stroke-width="1"/>
+  <rect x="50" y="270" width="700" height="80" rx="10" fill="url(#grad3)" stroke="#777" stroke-width="2"/>
   <text x="400" y="292" text-anchor="middle" fill="#fabd2f" font-size="13" font-weight="bold">AGENT EXECUTES THE SKILL</text>
   <text x="400" y="312" text-anchor="middle" fill="#aaa" font-size="11">Follows instructions → runs tools/commands → produces output</text>
   <text x="400" y="330" text-anchor="middle" fill="#777" font-size="10">Can reference scripts/, references/, assets/ in the skill directory</text>
