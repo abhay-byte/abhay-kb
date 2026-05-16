@@ -27,13 +27,17 @@ Open-source terminal coding agent built in Go by Anomaly (SST team). 142K+ GitHu
 | **Key Strength** | Multi-model support, no vendor lock-in |
 
 **Install:**
-```bash
-npm install -g opencode-ai
-# or via Homebrew
-brew install opencode
-# then start
-opencode
-```
+
+<div class="install-card">
+  <div class="install-card-header">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  </div>
+  <pre><code>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g opencode-ai</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install opencode</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">opencode</span></div>
+  </code></pre>
+</div>
 
 ---
 
@@ -53,14 +57,18 @@ Anthropic's terminal coding agent. Fastest-growing AI coding product — $2.5B a
 | **Key Strength** | Best code quality, Opus 4.7 is top-tier |
 
 **Install:**
-```bash
-npm install -g @anthropic-ai/claude-code
-# or via Homebrew
-brew install claude-code
-# then start
-claude
-# requires Claude subscription (Pro $20/mo+)
-```
+
+<div class="install-card">
+  <div class="install-card-header">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  </div>
+  <pre><code>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g @anthropic-ai/claude-code</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install claude-code</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">claude</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># requires Claude Pro $20/mo+</span></div>
+  </code></pre>
+</div>
 
 ---
 
@@ -80,13 +88,17 @@ OpenAI's coding agent across CLI, IDE, ChatGPT, and iOS.
 | **Key Strength** | Deep OpenAI ecosystem integration |
 
 **Install:**
-```bash
-# Codex CLI (open source)
-npm install -g @openai/codex
-# then start
-codex
-# requires ChatGPT Plus subscription ($20/mo+)
-```
+
+<div class="install-card">
+  <div class="install-card-header">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  </div>
+  <pre><code>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g @openai/codex</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">codex</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># requires ChatGPT Plus $20/mo+</span></div>
+  </code></pre>
+</div>
 
 ---
 
@@ -108,11 +120,16 @@ AI-first code editor (VS Code fork) with deep context understanding. 4M+ develop
 | **Key Strength** | Deep codebase context, multi-model, tab completion |
 
 **Install:**
-```bash
-# Download from website (macOS, Windows, Linux)
-# Or via Homebrew
-brew install --cask cursor
-```
+
+<div class="install-card">
+  <div class="install-card-header">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  </div>
+  <pre><code>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install --cask cursor</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or download from cursor.com/download</span></div>
+  </code></pre>
+</div>
 
 ---
 
@@ -132,11 +149,16 @@ AI-native IDE by Codeium. Cascade agent system with multi-model routing.
 | **Key Strength** | Cascade agent flows, multi-model routing, Supercomplete |
 
 **Install:**
-```bash
-# Download from website (macOS, Windows, Linux)
-# Or via Homebrew
-brew install --cask windsurf
-```
+
+<div class="install-card">
+  <div class="install-card-header">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  </div>
+  <pre><code>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install --cask windsurf</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or download from windsurf.com/download</span></div>
+  </code></pre>
+</div>
 
 ---
 
@@ -156,13 +178,17 @@ Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
 | **Key Strength** | IDE integration, code review, Spark |
 
 **Install:**
-```bash
-# VS Code: Install "GitHub Copilot" extension from marketplace
-# CLI:
-npm install -g @github/copilot
-# then authenticate with GitHub
-gh auth login
-```
+
+<div class="install-card">
+  <div class="install-card-header">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  </div>
+  <pre><code>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">npm install -g @github/copilot</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">gh auth login</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or install VS Code extension from marketplace</span></div>
+  </code></pre>
+</div>
 
 ---
 
@@ -182,11 +208,16 @@ Google's agent-first IDE (VS Code fork). Free public preview.
 | **Key Strength** | 5 parallel agents, Gemini + Claude in one IDE |
 
 **Install:**
-```bash
-# Download from website (macOS, Windows, Linux)
-# Or via Homebrew
-brew install --cask antigravity
-```
+
+<div class="install-card">
+  <div class="install-card-header">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg> bash</span>
+  </div>
+  <pre><code>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc">brew install --cask antigravity</span></div>
+      <div><span style="color:#6a9955">$</span> <span style="color:#ccc"># or download from antigravity.google/download</span></div>
+  </code></pre>
+</div>
 
 ---
 
