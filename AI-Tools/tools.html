@@ -56,12 +56,16 @@ title: AI Coding Tools
 </style>
 
 <script>
-function switchTab(btn, group) {
-  var card = btn.closest('.tool-install');
-  card.querySelectorAll('.install-tab').forEach(function(t) { t.classList.remove('active'); });
-  card.querySelectorAll('.install-body').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  card.querySelector('.' + group + '-' + btn.dataset.os).classList.add('active');
+function switchTab(el, group) {
+  var parent = el.parentNode.parentNode;
+  var tabs = parent.getElementsByClassName('install-tab');
+  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+  el.classList.add('active');
+  var os = el.getAttribute('data-os');
+  var bodies = parent.getElementsByClassName('install-body');
+  for (var i = 0; i < bodies.length; i++) bodies[i].classList.remove('active');
+  var target = parent.getElementsByClassName(group + '-' + os);
+  if (target.length > 0) target[0].classList.add('active');
 }
 function copyCmd(el, cmd) {
   navigator.clipboard.writeText(cmd).then(function() {
