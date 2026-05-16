@@ -71,9 +71,7 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
 </div>
 </div>
 
-</div>ayout: standalone
-title: MCP — Model Context Protocol
----
+</div>
 
 | Layer | Component | Role |
 |-------|-----------|------|
