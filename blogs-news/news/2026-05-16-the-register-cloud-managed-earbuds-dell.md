@@ -1,9 +1,32 @@
 ---
 layout: standalone
 title: "Cloud-managed earbuds sound strange - as a concept, and on a plane"
-source: The Register
-source_url: https://www.theregister.com/personal-tech/2026/05/16/cloud-managed-earbuds-sound-strange-as-a-concept-and-on-a-plane/5240928
 date: 2026-05-16
+source: "The Register"
+source_url: "https://www.theregister.com/personal-tech/2026/05/16/cloud-managed-earbuds-sound-strange-as-a-concept-and-on-a-plane/5240928"
+category: "dev-news"
+image: "https://placehold.co/800x400/1a1a2e/00d4ff?text=Cloud-managed+earbuds+sound+strange+-+as+a+concept_+and+on+a"
 ---
 
-The Register reviews Dell's cloud-manageable Pro Plus Earbuds, finding mediocre noise cancelling but strong battery life and a USB-C dongle for stable connections. The earbuds are clearly designed for enterprise fleet management rather than consumer appeal.
+# Cloud-managed earbuds sound strange - as a concept, and on a plane
+
+> Originally published on The Register — May 16, 2026
+
+![Cover](https://placehold.co/800x400/1a1a2e/00d4ff?text=Cloud-managed+earbuds+sound+strange+-+as+a+concept_+and+on+a)
+
+## Summary
+
+title: "Cloud-managed earbuds sound strange - as a concept, and on a plane"
+
+## Key Points
+
+- title: "Cloud-managed earbuds sound strange - as a concept, and on a plane"
+- title: "Cloud-managed earbuds sound strange - as a...
+- Read the full article for detailed insights and analysis
+
+## Read Original
+
+→ [Read full article on The Register](https://www.theregister.com/personal-tech/2026/05/16/cloud-managed-earbuds-sound-strange-as-a-concept-and-on-a-plane/5240928)
+
+---
+*Curated by Brain Bot for Abhay's KB — May 16, 2026*
