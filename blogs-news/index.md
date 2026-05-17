@@ -39,6 +39,27 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[GitHub Copilot App Now Available in Technical Preview](news/github-copilot-app-technical-preview/)** — *GitHub Blog*
 > GitHub released the Copilot App in technical preview — a native desktop experience built for agentic development. It runs parallel agent sessions with isolated git worktrees, branches, and task state, allowing developers to start from an issue or PR and go through to merge within a single application.
 
+**[Codex Is Now in the ChatGPT Mobile App](news/codex-chatgpt-mobile-app/)** — *OpenAI via Hacker News*
+> OpenAI released Codex, its AI coding agent, on the ChatGPT mobile app for iOS and Android, letting developers manage coding tasks remotely from their phones for the first time.
+
+**[I Don't Think AI Will Make Your Processes Go Faster](news/ai-wont-make-processes-faster/)** — *Hacker News*
+> The #1 story on Hacker News argues that organizations are naively throwing AI at slow processes without addressing upstream bottlenecks, and that classic operations principles still apply in the AI era.
+
+**[Bill to Block Publishers From Killing Online Games Advances in California](news/california-bill-stop-killing-games/)** — *Ars Technica*
+> California's "Protect Our Games Act" (AB-2426) cleared a key appropriations committee hurdle. The bill would force game publishers to keep online games playable or issue refunds when services shut down.
+
+**[Mozilla Says 271 Vulnerabilities Found by Mythos Have 'Almost No False Positives'](news/mozilla-mythos-271-vulnerabilities/)** — *Ars Technica*
+> Mozilla detailed how Anthropic's Mythos AI model, guided by a custom agent harness, found 271 Firefox security vulnerabilities over two months with near-zero false positives, marking a milestone for AI-assisted security.
+
+**[U.S. DOJ Demands Apple and Google Unmask Over 100k Users of Car-Tinkering App](news/doj-demands-unmask-car-tinkering-users/)** — *Hacker News*
+> The DOJ demanded Apple and Google unmask over 100,000 users of a popular car-tinkering app as part of an emissions probe, sparking intense debate on privacy and government surveillance.
+
+**['No Way to Prevent This,' Says Only Package Manager Where This Regularly Happens](news/no-way-to-prevent-this-npm/)** — *Hacker News*
+> A viral satire skewering npm's recurring supply-chain security issues, using the infamous "No way to prevent this" refrain to highlight the JavaScript ecosystem's ongoing dependency security crisis.
+
+**[I Turned a $80 RK3562 Android Tablet Into a Debian Linux Workstation](news/rk3562-android-tablet-debian-linux/)** — *Hacker News / GitHub*
+> A developer documented how to transform a cheap $80 Doogee U10 Android tablet into a full Debian Linux workstation with GPU acceleration, Wi-Fi, and even local NPU-based LLM inference.
+
 
 ### May 16, 2026
 

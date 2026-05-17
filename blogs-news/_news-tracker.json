@@ -48,9 +48,16 @@
     "https://news.ycombinator.com/item?id=48153379",
     "https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/",
     "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
-    "https://lwn.net/Articles/1068928/"
+    "https://lwn.net/Articles/1068928/",
+    "https://openai.com/index/work-with-codex-from-anywhere/",
+    "https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/",
+    "https://arstechnica.com/gaming/2026/05/bill-to-keep-online-games-playable-clears-key-hurdle-in-california/",
+    "https://arstechnica.com/information-technology/2026/05/mozilla-says-271-vulnerabilities-found-by-mythos-have-almost-no-false-positives/",
+    "https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/",
+    "https://kevinpatel.xyz/posts/no-way-to-prevent-this/",
+    "https://github.com/tech4bot/rk3562deb"
   ],
-  "last_fetch": "2026-05-17T05:44:00Z",
+  "last_fetch": "2026-05-17T23:34:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -70,7 +77,11 @@
       "https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html",
       "https://www.forbes.com/sites/daveywinder/2026/05/16/holy-grail-google-hackers-discover-pixel-10-zero-click-exploit-chain/",
       "https://news.ycombinator.com/item?id=48150900",
-      "https://news.ycombinator.com/item?id=48153379"
+      "https://news.ycombinator.com/item?id=48153379",
+      "https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/",
+      "https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/",
+      "https://kevinpatel.xyz/posts/no-way-to-prevent-this/",
+      "https://github.com/tech4bot/rk3562deb"
     ],
     "the-register": [
       "https://www.theregister.com/ai-ml/2026/05/16/ai-generated-code-is-pain-waiting-to-happen/5241574",
@@ -114,6 +125,13 @@
       "https://lwn.net/Articles/1072647/",
       "https://lwn.net/Articles/1071949/",
       "https://lwn.net/Articles/1068928/"
+    ],
+    "arstechnica": [
+      "https://arstechnica.com/gaming/2026/05/bill-to-keep-online-games-playable-clears-key-hurdle-in-california/",
+      "https://arstechnica.com/information-technology/2026/05/mozilla-says-271-vulnerabilities-found-by-mythos-have-almost-no-false-positives/"
+    ],
+    "openai": [
+      "https://openai.com/index/work-with-codex-from-anywhere/"
     ]
   },
   "format_version": 1
