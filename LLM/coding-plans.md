@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-16 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-17 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -19,7 +19,7 @@ ByteDance's AI inference platform. Coding Plan = subscription with shared quota 
 
 | Model | Type | Notes |
 |-------|------|-------|
-| Dola-Seed-2.0-Pro | Coding (flagship) | ByteDance's top-tier coding model |
+| Dola-Seed-2.0-Pro | Coding (flagship) | ByteDance's top-tier coding model. 256K context. Multimodal. Officially launched on BytePlus ModelArk May 2026 |
 | Dola-Seed-2.0-Lite | Coding (budget) | Cheaper, good for routine tasks |
 | Ark-Coding-Pro | Coding | BytePlus proprietary coding model |
 | O-Pro | Coding | BytePlus proprietary |
@@ -41,6 +41,7 @@ ByteDance's AI inference platform. Coding Plan = subscription with shared quota 
 - 5-hour sliding window + weekly reset. Monday 00:00 UTC+8
 - No overflow billing — depleted = wait for next cycle
 - Free tier: 500K tokens for new users (regular API only, NOT Coding Plan)
+- New Team plan now available for enterprise: scalability, management controls, digital employee capabilities
 
 > **Personal Review (May 2026):** The BytePlus-provided models like Dola-Seed-2.0-Pro, O-Pro, and Ark-Coding-Pro are **significantly weaker** than alternatives available for free on other platforms — e.g. MiniMax M2.5 (80.2% SWE-Bench, free via OpenRouter) easily outperforms them. The real issue is with **frontier models like GLM-5.1**: despite being listed as available, the quota multiplier (3x drain during peak hours) means you get **only about 10–15 actual requests per 5h window**. The advertised quotas (“800 per 5h”) are based on the cheapest base models at 1x drain — not usable on any capable model. In practice, the plan is misleading for anyone wanting to use frontier models. Not recommended unless you only need the weak ByteDance models for simple completions.
 
@@ -60,14 +61,14 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 | Pro+ | $39/mo ($390/yr) | 1,500 PRU / 3,900 base + 3,100 flex credits | Unlimited | Yes | **Signups paused** since Apr 20 |
 | Business | $19/seat/mo | $19 AI Credits/seat/mo ($30 promo Jun-Aug) | Unlimited | Yes | Available |
 | Enterprise | $39/seat/mo | $39 AI Credits/seat/mo ($70 promo Jun-Aug) | Unlimited | Yes | Available |
-| Max (new) | $100/mo | 10,000 base + 10,000 flex credits | Unlimited | Yes | Starts Jun 1, 2026 |
+| Max (new) | $100/mo | $100 base + $100 flex ($200 total) | Unlimited | Yes | Starts Jun 1, 2026 |
 
 ### Key Changes (Apr–May 2026)
 
 - **Usage-based billing:** All Copilot plans transition to GitHub AI Credits on June 1, 2026. PRUs replaced by token-based metering
 - **New signups paused:** Pro, Pro+, and Student plans paused since Apr 20, 2026. No timeline for reopening
-- **Max plan announced:** $100/mo with 10,000 base + 10,000 flex credits. Heavy daily use tier
-- **Larger pools for Pro/Pro+:** Pro now gets 1,000 base + 500 flex credits ($10/mo). Pro+ gets 3,900 base + 3,100 flex credits ($39/mo)
+- **Max plan confirmed (May 12):** $100/mo with $100 base + $100 flex = $200 total included usage. Heavy daily use tier
+- **Flex allotments for Pro/Pro+:** Pro gets $10 base + $5 flex = $15/mo. Pro+ gets $39 base + $31 flex = $70/mo. Flex allotments may vary over time
 - **Opus removed from Pro:** Claude Opus 4.7 is now exclusive to Pro+ ($39/mo). Pro users lost Opus access
 - **Student plan downgraded:** Claude Opus/Sonnet removed (Mar 14). GPT-5.3-Codex removed from manual picker (Apr 27). Only lower-tier models remain
 - **Code completions remain unlimited** on all paid plans — not billed in AI Credits
@@ -83,9 +84,9 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 
 **GitHub Fine-tuned:** Raptor mini (GPT-5-mini pricing), Goldeneye (GPT-5.1-Codex pricing)
 
-- Pro: $10 in AI Credits/mo (1,000 base + 500 flex)
-- Pro+: $39 in AI Credits/mo (3,900 base + 3,100 flex)
-- Max: $100 in AI Credits/mo (10,000 base + 10,000 flex)
+- Pro: $10/mo — $10 base + $5 flex = $15 total included usage
+- Pro+: $39/mo — $39 base + $31 flex = $70 total included usage
+- Max: $100/mo — $100 base + $100 flex = $200 total included usage
 - Enterprise: Promotional $70/seat/mo (Jun–Aug 2026), then $39/seat/mo
 - Business: Promotional $30/seat/mo (Jun–Aug 2026), then $19/seat/mo
 
@@ -220,9 +221,10 @@ Source: [claude.com/pricing](https://claude.com/pricing), community instrumentat
 
 ### Recent Changes (May 2026)
 
-- **Rate limits doubled** for Pro, Max, Team, and Enterprise plans (SpaceX Colossus 1 deal — 220K+ NVIDIA GPUs, 300+ MW capacity)
+- **Rate limits doubled** for Pro, Max, Team, and Enterprise plans (SpaceX Colossus 1 deal — 220K+ NVIDIA GPUs, 300+ MW capacity). Announced May 6 at Code with Claude event
 - **Peak hours throttling removed** — same rate limits at 3 AM and 3 PM
 - **Opus API rate limits raised** — higher maximums across all API tiers
+- **Managed Agents launched** — Dreaming, Outcomes, multi-agent orchestration now available at claude.ai/code
 
 ### Known Issues
 
@@ -240,7 +242,7 @@ Source: [claude.com/pricing](https://claude.com/pricing), community instrumentat
 
 > **From felloai review:** "Max 5x at $100/month gives five times the Pro usage and priority access during peak demand. It is the sweet spot for full-time developers who use Claude Code as their default coding partner."
 
-> **Personal Review (May 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic just doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 is genuinely the smartest model for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the tokenizer/v2.1.100 bugs silently eating into your limits. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.
+> **Personal Review (May 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic just doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 is genuinely the smartest model for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the tokenizer/v2.1.100 bugs silently eating into your limits. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases. The v2.1.100 bug may have been fixed — keep an eye on releases.
 
 ---
 
@@ -388,7 +390,8 @@ Two products: Kimi membership (app quotas) and Kimi Code (developer).
 API billed separately — NOT included in membership.
 
 Current model: **K2.6** (released Apr 18–21 2026).  
-K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license.
+K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license.  
+**K2 (original) discontinued** — will stop serving on May 25, 2026. Migrate to K2.5 or K2.6.
 
 ### K2.6 Improvements
 
