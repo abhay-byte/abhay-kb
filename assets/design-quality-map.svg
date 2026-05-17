@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 520" width="100%" style="max-width:620px;display:block;margin:16px auto;">
+  <rect width="620" height="520" rx="12" fill="#0d0d20" stroke="#2a2a55" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="310" y="38" text-anchor="middle" fill="#8888cc" font-family="monospace" font-size="14" font-weight="bold">DESIGN QUALITY MAP</text>
+
+  <!-- Y-axis label: Cohesion -->
+  <text x="24" y="170" text-anchor="middle" fill="#6666aa" font-family="monospace" font-size="12" transform="rotate(-90,24,170)">Cohesion</text>
+
+  <!-- High Cohesion arrow up -->
+  <polygon points="40,80 46,68 52,80" fill="#5555aa"/>
+  <text x="46" y="64" text-anchor="middle" fill="#6666aa" font-family="monospace" font-size="11">High</text>
+
+  <!-- Low Cohesion arrow down -->
+  <polygon points="40,460 46,472 52,460" fill="#5555aa"/>
+  <text x="46" y="486" text-anchor="middle" fill="#6666aa" font-family="monospace" font-size="11">Low</text>
+
+  <!-- X-axis label: Coupling -->
+  <text x="310" y="506" text-anchor="middle" fill="#6666aa" font-family="monospace" font-size="12">Coupling</text>
+
+  <!-- Low Coupling arrow left -->
+  <polygon points="90,494 78,488 90,482" fill="#5555aa"/>
+  <text x="78" y="478" text-anchor="end" fill="#6666aa" font-family="monospace" font-size="11">Low</text>
+
+  <!-- High Coupling arrow right -->
+  <polygon points="540,494 552,488 540,482" fill="#5555aa"/>
+  <text x="552" y="478" text-anchor="start" fill="#6666aa" font-family="monospace" font-size="11">High</text>
+
+  <!-- ========== QUADRANT 1: IDEAL (High Cohesion, Low Coupling) ========== -->
+  <rect x="80" y="80" width="220" height="180" rx="10" fill="#0a2a1a" stroke="#2a8a4a" stroke-width="1.5"/>
+  <rect x="80" y="80" width="220" height="180" rx="10" fill="none" stroke="#2a8a4a" stroke-width="1.5" opacity="0.3"/>
+  <text x="190" y="120" text-anchor="middle" fill="#4acc6a" font-family="monospace" font-size="16" font-weight="bold">IDEAL</text>
+  <text x="190" y="148" text-anchor="middle" fill="#88ccaa" font-family="monospace" font-size="11">High Cohesion</text>
+  <text x="190" y="168" text-anchor="middle" fill="#88ccaa" font-family="monospace" font-size="11">Low Coupling</text>
+  <line x1="120" y1="185" x2="260" y2="185" stroke="#2a8a4a" stroke-width="0.5" opacity="0.4"/>
+  <text x="190" y="210" text-anchor="middle" fill="#669988" font-family="monospace" font-size="10">Easy to test</text>
+  <text x="190" y="228" text-anchor="middle" fill="#669988" font-family="monospace" font-size="10">Safe to change</text>
+  <text x="190" y="246" text-anchor="middle" fill="#669988" font-family="monospace" font-size="10">Highly reusable</text>
+
+  <!-- ========== QUADRANT 2: MIXED (High Cohesion, High Coupling) ========== -->
+  <rect x="320" y="80" width="220" height="180" rx="10" fill="#2a2a0a" stroke="#8a8a2a" stroke-width="1.5"/>
+  <rect x="320" y="80" width="220" height="180" rx="10" fill="none" stroke="#8a8a2a" stroke-width="1.5" opacity="0.3"/>
+  <text x="430" y="120" text-anchor="middle" fill="#cccc4a" font-family="monospace" font-size="16" font-weight="bold">MIXED</text>
+  <text x="430" y="148" text-anchor="middle" fill="#aaaa88" font-family="monospace" font-size="11">High Cohesion</text>
+  <text x="430" y="168" text-anchor="middle" fill="#aaaa88" font-family="monospace" font-size="11">High Coupling</text>
+  <line x1="360" y1="185" x2="500" y2="185" stroke="#8a8a2a" stroke-width="0.5" opacity="0.4"/>
+  <text x="430" y="210" text-anchor="middle" fill="#887766" font-family="monospace" font-size="10">Focused internally</text>
+  <text x="430" y="228" text-anchor="middle" fill="#887766" font-family="monospace" font-size="10">But brittle to change</text>
+  <text x="430" y="246" text-anchor="middle" fill="#887766" font-family="monospace" font-size="10">Changes ripple across</text>
+
+  <!-- ========== QUADRANT 3: BAD (Low Cohesion, Low Coupling) ========== -->
+  <rect x="80" y="280" width="220" height="180" rx="10" fill="#2a1a0a" stroke="#8a5a2a" stroke-width="1.5"/>
+  <rect x="80" y="280" width="220" height="180" rx="10" fill="none" stroke="#8a5a2a" stroke-width="1.5" opacity="0.3"/>
+  <text x="190" y="320" text-anchor="middle" fill="#cc8844" font-family="monospace" font-size="16" font-weight="bold">BAD</text>
+  <text x="190" y="348" text-anchor="middle" fill="#aa8866" font-family="monospace" font-size="11">Low Cohesion</text>
+  <text x="190" y="368" text-anchor="middle" fill="#aa8866" font-family="monospace" font-size="11">Low Coupling</text>
+  <line x1="120" y1="385" x2="260" y2="385" stroke="#8a5a2a" stroke-width="0.5" opacity="0.4"/>
+  <text x="190" y="410" text-anchor="middle" fill="#887766" font-family="monospace" font-size="10">Modules are scattered</text>
+  <text x="190" y="428" text-anchor="middle" fill="#887766" font-family="monospace" font-size="10">But at least isolated</text>
+  <text x="190" y="446" text-anchor="middle" fill="#887766" font-family="monospace" font-size="10">Hard to understand</text>
+
+  <!-- ========== QUADRANT 4: WORST (Low Cohesion, High Coupling) ========== -->
+  <rect x="320" y="280" width="220" height="180" rx="10" fill="#2a0a0a" stroke="#8a2a2a" stroke-width="1.5"/>
+  <rect x="320" y="280" width="220" height="180" rx="10" fill="none" stroke="#8a2a2a" stroke-width="1.5" opacity="0.3"/>
+  <text x="430" y="320" text-anchor="middle" fill="#cc4444" font-family="monospace" font-size="16" font-weight="bold">WORST</text>
+  <text x="430" y="348" text-anchor="middle" fill="#aa6666" font-family="monospace" font-size="11">Low Cohesion</text>
+  <text x="430" y="368" text-anchor="middle" fill="#aa6666" font-family="monospace" font-size="11">High Coupling</text>
+  <line x1="360" y1="385" x2="500" y2="385" stroke="#8a2a2a" stroke-width="0.5" opacity="0.4"/>
+  <text x="430" y="410" text-anchor="middle" fill="#886666" font-family="monospace" font-size="10">Everything tangled</text>
+  <text x="430" y="428" text-anchor="middle" fill="#886666" font-family="monospace" font-size="10">Impossible to change</text>
+  <text x="430" y="446" text-anchor="middle" fill="#886666" font-family="monospace" font-size="10">Extreme risk & cost</text>
+</svg>
