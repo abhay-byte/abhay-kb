@@ -3,7 +3,7 @@ layout: standalone
 title: System Design — Design
 ---
 
-# 🏗️ System Design
+# System Design
 
 *Content coming soon.*
 

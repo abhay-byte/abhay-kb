@@ -3,7 +3,7 @@ layout: standalone
 title: System Design
 ---
 
-# 🏗️ System Design
+# System Design
 
 Notes, references, and guides on software architecture, design patterns, and clean coding practices.
 

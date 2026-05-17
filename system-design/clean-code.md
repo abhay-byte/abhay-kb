@@ -3,7 +3,7 @@ layout: standalone
 title: System Design — Clean Code
 ---
 
-# ✨ Clean Code
+# Clean Code
 
 *Content coming soon.*
 

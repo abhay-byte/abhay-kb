@@ -3,7 +3,7 @@ layout: standalone
 title: System Design — Patterns
 ---
 
-# 🧩 Design Patterns
+# Design Patterns
 
 *Content coming soon.*
 
