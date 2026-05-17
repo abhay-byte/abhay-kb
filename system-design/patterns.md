@@ -3,805 +3,307 @@ layout: standalone
 title: Patterns
 ---
 
-# Coding Patterns & Design Patterns
+# Design Patterns
 
-> *"Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy."*
-> — Robert C. Martin
+> *Comprehensive reference on design principles, GoF design patterns, and architecture patterns.*
+> Standards: GoF, SOLID, UML 2.5
 
 ---
 
 ## Table of Contents
 
-1. [What Are Design Patterns?](#1-what-are-design-patterns)
-2. [Creational Patterns](#2-creational-patterns)
-3. [Structural Patterns](#3-structural-patterns)
-4. [Behavioral Patterns](#4-behavioral-patterns)
-5. [Architectural / App-Level Patterns](#5-architectural--app-level-patterns)
-6. [Pattern Selection Guide](#6-pattern-selection-guide)
+1. [Design Principles (SOLID, DRY, KISS, YAGNI)](#1-design-principles-solid-dry-kiss-yagni)
+2. [Modularity, Coupling & Cohesion](#2-modularity-coupling--cohesion)
+3. [Design Patterns: Creational](#3-design-patterns-creational)
+4. [Design Patterns: Structural](#4-design-patterns-structural)
+5. [Design Patterns: Behavioral](#5-design-patterns-behavioral)
+6. [Architecture Patterns](#6-architecture-patterns)
 
 ---
 
-## 1. What Are Design Patterns?
+## 1. Design Principles (SOLID, DRY, KISS, YAGNI)
 
-Design patterns are **reusable, proven solutions to recurring software design problems**. They were formalized by the "Gang of Four" (GoF) — Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides — in their 1994 book *Design Patterns: Elements of Reusable Object-Oriented Software*, introducing 23 canonical patterns.
+### SOLID Principles
 
-Patterns are **not code** — they are blueprints, or templates, that you adapt to your context.
-
-### Three Categories
-
-| Category | Focus | Question Answered |
+| Letter | Principle | Description |
 |---|---|---|
-| **Creational** | Object creation | *How do I create objects flexibly?* |
-| **Structural** | Object composition | *How do I assemble classes into larger structures?* |
-| **Behavioral** | Object communication | *How do objects interact and share responsibilities?* |
+| **S** | Single Responsibility | A class should have only one reason to change |
+| **O** | Open/Closed | Open for extension, closed for modification |
+| **L** | Liskov Substitution | Subtypes must be substitutable for their base types |
+| **I** | Interface Segregation | No client should be forced to depend on methods it does not use |
+| **D** | Dependency Inversion | Depend on abstractions, not concretions |
 
-### Why Use Patterns?
+**Single Responsibility:** Each class, module, or function should have exactly one well-defined responsibility. If a class has more than one reason to change, split it.
 
-- Provide a **shared vocabulary** across engineering teams
-- Encode **battle-tested solutions** from decades of real-world experience
-- Make code **more flexible, reusable, and maintainable**
-- Reduce design time by identifying recurring problems early
-- Enable **communication at a higher level** of abstraction
+**Open/Closed:** Classes should be open for extension (you can add behavior) but closed for modification (you don't change existing code to add behavior). Achieved through abstraction and polymorphism.
+
+**Liskov Substitution:** If a program uses a base class, it should be able to use any derived class without knowing it. Derived classes must not weaken the base class's guarantees.
+
+**Interface Segregation:** Large, general-purpose interfaces should be split into smaller, specific ones. Clients should not implement methods they don't need.
+
+**Dependency Inversion:** High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.
+
+### DRY — Don't Repeat Yourself
+
+Every piece of knowledge should have **a single, unambiguous, authoritative representation** in the system. Duplication creates maintenance hazards — changing logic in one place while forgetting another causes bugs.
+
+### KISS — Keep It Simple
+
+Choose the **simplest solution** that satisfies the requirements. Complexity should only be introduced when the problem genuinely demands it. Simple code is easier to understand, test, and maintain.
+
+### YAGNI — You Aren't Gonna Need It
+
+Do not add functionality until it is **necessary**. Building speculative features increases complexity and wastes time on things that may never be used. YAGNI avoids premature abstraction but requires strong refactoring skills and test coverage.
 
 ---
 
-## 2. Creational Patterns
+## 2. Modularity, Coupling & Cohesion
 
-Creational patterns control **how and when objects are instantiated**, decoupling creation logic from business logic.
+### Modularity
+
+Decompose the system into **cohesive, loosely coupled modules** with well-defined interfaces. Each module encapsulates a distinct concern.
+
+**Benefits:**
+- Independent development and testing
+- Parallel team work
+- Reusable components
+- Isolated failure domains
+
+### Coupling
+
+The degree of **interdependence between modules**.
+
+| Type | Description | Level |
+|---|---|---|
+| **Content Coupling** | Module directly accesses another's internals | Worst |
+| **Common Coupling** | Modules share global state | Very High |
+| **External Coupling** | Modules share external format/protocol | High |
+| **Control Coupling** | One module tells another what to do via flags | Moderate |
+| **Stamp Coupling** | Modules share composite data structure | Moderate |
+| **Data Coupling** | Modules communicate via simple parameters | Low |
+| **No Coupling** | Modules are completely independent | Best |
+
+**Goal:** Minimize coupling. Prefer data coupling for inter-module communication.
+
+### Cohesion
+
+The degree to which elements **within a module** belong together.
+
+| Type | Description | Level |
+|---|---|---|
+| **Coincidental** | Elements grouped arbitrarily | Worst |
+| **Logical** | Similar kind of operations, flag-selected | Low |
+| **Temporal** | Elements related only by timing | Low |
+| **Procedural** | Related by execution order | Moderate |
+| **Communicational** | Operate on same data | Moderate |
+| **Sequential** | Output of one feeds the next | High |
+| **Functional** | All elements contribute to one task | Best |
+
+**Goal:** Maximize cohesion. Prefer functional cohesion.
+
+### The Relationship
+
+- **High cohesion + Low coupling** = ideal design
+- **Low cohesion + High coupling** = worst design
 
 ---
 
-### 2.1 Singleton
+## 3. Design Patterns: Creational
 
-**Intent:** Ensure a class has only **one instance** and provide a global access point to it.
+Creational patterns control **how objects are instantiated**, decoupling creation logic from business logic.
 
-**When to use:**
-- Logging systems, configuration managers, thread pools, database connection pools
-- When exactly one instance must coordinate actions across the system
+### Singleton
+
+Ensures a class has only **one instance** and provides a global access point.
+
+**Use when:** Exactly one instance must coordinate actions (logging, configuration managers, thread pools).
 
 ```python
 class DatabaseConnection:
- _instance = None
-
- def __new__(cls):
- if cls._instance is None:
- cls._instance = super().__new__(cls)
- cls._instance.connect()
- return cls._instance
-
- def connect(self):
- print("Connection established")
-
-# Usage
-db1 = DatabaseConnection()
-db2 = DatabaseConnection()
-assert db1 is db2 # Same instance
+    _instance = None
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.connect()
+        return cls._instance
 ```
 
-**Trade-offs:**
-- Controlled access to shared resource
-- Global state is hard to test; can hide dependencies
-- Violates SRP if overused
+### Factory Method
 
----
+Defines an interface for creating objects, but lets **subclasses decide which class to instantiate**.
 
-### 2.2 Factory Method
-
-**Intent:** Define an interface for creating objects, but let **subclasses decide which class to instantiate**.
-
-**When to use:**
-- When the exact type of object to create isn't known at compile time
-- When subclasses should control what gets created
-- Frameworks and libraries that need to be extended
+**Use when:** The exact type of object to create isn't known at compile time.
 
 ```python
-from abc import ABC, abstractmethod
-
-class Notification(ABC):
- @abstractmethod
- def send(self, message: str): pass
-
-class EmailNotification(Notification):
- def send(self, message): print(f"Email: {message}")
-
-class SMSNotification(Notification):
- def send(self, message): print(f"SMS: {message}")
-
 class NotificationFactory:
- @staticmethod
- def create(channel: str) -> Notification:
- options = {"email": EmailNotification, "sms": SMSNotification}
- if channel not in options:
- raise ValueError(f"Unknown channel: {channel}")
- return options[channel]()
-
-# Usage — no if/else in business code
-notifier = NotificationFactory.create("email")
-notifier.send("Your order shipped!")
+    @staticmethod
+    def create(channel: str) -> Notification:
+        options = {"email": EmailNotification, "sms": SMSNotification}
+        return options[channel]()
 ```
 
-**Trade-offs:**
-- Open/Closed — add new types without changing existing code
-- Decouples creation from usage
-- Can lead to parallel class hierarchies
+### Abstract Factory
+
+Creates **families of related objects** without specifying their concrete classes.
+
+**Use when:** Cross-platform UI components, database drivers, or theme systems.
+
+### Builder
+
+Constructs complex objects **step by step**, allowing different representations.
+
+**Use when:** Objects with many optional parameters; avoiding telescoping constructors.
+
+### Prototype
+
+Creates new objects by **cloning** an existing object.
+
+**Use when:** Object creation is expensive; many similar objects needed.
 
 ---
 
-### 2.3 Abstract Factory
+## 4. Design Patterns: Structural
 
-**Intent:** Create **families of related objects** without specifying their concrete classes.
+Structural patterns deal with **object composition** — assembling classes into larger structures.
 
-**When to use:**
-- Cross-platform UI components (Windows vs macOS vs Web)
-- Database drivers (MySQL vs PostgreSQL vs SQLite)
-- When the system must be independent of how its products are created
+### Adapter
 
-```python
-class Button(ABC):
- @abstractmethod
- def render(self): pass
+Allows incompatible interfaces to work together by acting as a **translator**.
 
-class Checkbox(ABC):
- @abstractmethod
- def render(self): pass
+**Use when:** Integrating third-party libraries, legacy code, or wrapping external APIs.
 
-class WindowsButton(Button):
- def render(self): print("Windows Button")
+### Decorator
 
-class MacOSButton(Button):
- def render(self): print("macOS Button")
+Dynamically **adds responsibilities** to objects without altering their class.
 
-class WindowsCheckbox(Checkbox):
- def render(self): print("Windows Checkbox")
+**Use when:** Adding cross-cutting concerns (logging, caching, auth) without modifying the core class.
 
-class MacOSCheckbox(Checkbox):
- def render(self): print("macOS Checkbox")
+### Facade
 
-class UIFactory(ABC):
- @abstractmethod
- def create_button(self) -> Button: pass
- @abstractmethod
- def create_checkbox(self) -> Checkbox: pass
+Provides a **simplified interface** to a complex subsystem.
 
-class WindowsFactory(UIFactory):
- def create_button(self): return WindowsButton()
- def create_checkbox(self): return WindowsCheckbox()
+**Use when:** Presenting a clean API over a complex library or set of classes.
 
-class MacOSFactory(UIFactory):
- def create_button(self): return MacOSButton()
- def create_checkbox(self): return MacOSCheckbox()
-```
+### Proxy
 
----
+Provides a **placeholder or surrogate** that controls access to another object.
 
-### 2.4 Builder
+**Types:** Virtual (lazy loading), Protection (access control), Remote (distributed object), Caching.
 
-**Intent:** Construct complex objects **step by step**, allowing different representations using the same process.
+### Composite
 
-**When to use:**
-- Objects with many optional parameters (avoid telescoping constructors)
-- Building complex objects like SQL queries, HTTP requests, documents, or test fixtures
+Treats **individual objects and compositions** uniformly using a tree structure.
 
-```python
-class QueryBuilder:
- def __init__(self):
- self._table = ""
- self._conditions = []
- self._limit = None
- self._order_by = None
+**Use when:** File systems, UI component trees, organization hierarchies.
 
- def from_table(self, table: str) -> "QueryBuilder":
- self._table = table
- return self
+### Bridge
 
- def where(self, condition: str) -> "QueryBuilder":
- self._conditions.append(condition)
- return self
+Decouples an **abstraction from its implementation** so both can vary independently.
 
- def order_by(self, column: str) -> "QueryBuilder":
- self._order_by = column
- return self
+**Use when:** Multiple dimensions of variation (e.g., shape + rendering platform).
 
- def limit(self, n: int) -> "QueryBuilder":
- self._limit = n
- return self
+### Flyweight
 
- def build(self) -> str:
- query = f"SELECT * FROM {self._table}"
- if self._conditions:
- query += " WHERE " + " AND ".join(self._conditions)
- if self._order_by:
- query += f" ORDER BY {self._order_by}"
- if self._limit:
- query += f" LIMIT {self._limit}"
- return query
+Shares **fine-grained objects** to reduce memory consumption.
 
-# Usage — fluent, readable, no 8-parameter constructors
-query = (QueryBuilder()
- .from_table("orders")
- .where("status = 'active'")
- .where("total > 100")
- .order_by("created_at")
- .limit(50)
- .build())
-```
+**Use when:** Thousands of similar entities (game objects, text characters).
 
 ---
 
-### 2.5 Prototype
+## 5. Design Patterns: Behavioral
 
-**Intent:** Create new objects by **cloning** an existing object (the prototype).
+Behavioral patterns define **how objects communicate** and distribute responsibilities.
 
-**When to use:**
-- Object creation is expensive (e.g., database queries, complex initialization)
-- You need many similar objects that differ only slightly
-- Game entities, document templates, configuration presets
+### Observer (Pub/Sub)
 
-```python
-import copy
+Defines a one-to-many dependency so that when one object changes state, all dependents are **notified automatically**.
 
-class GameCharacter:
- def __init__(self, name, health, abilities):
- self.name = name
- self.health = health
- self.abilities = abilities # Expensive to recompute
+**Use when:** Event systems, UI event handling, notification services.
 
- def clone(self) -> "GameCharacter":
- return copy.deepcopy(self)
+### Strategy
 
-# Create once, clone many times
-base_warrior = GameCharacter("Warrior", 100, ["slash", "block", "charge"])
-warrior_2 = base_warrior.clone()
-warrior_2.name = "Warrior II"
-warrior_2.health = 120
-```
+Defines a family of algorithms, encapsulates each one, and makes them **interchangeable at runtime**.
 
----
+**Use when:** Multiple algorithms that can be swapped (sorting, payment, compression).
 
-## 3. Structural Patterns
+### Command
 
-Structural patterns deal with **object composition** — how classes and objects are assembled into larger, more functional structures.
+Encapsulates a **request as an object** — enabling parameterization, queuing, logging, and undo.
 
----
+**Use when:** Undo/redo systems, transaction queuing, macro recording.
 
-### 3.1 Adapter
+### Chain of Responsibility
 
-**Intent:** Allow incompatible interfaces to work together by acting as a **translator**.
+Passes a request along a **chain of handlers**, each deciding whether to process or pass on.
 
-**When to use:**
-- Integrating third-party libraries that have incompatible interfaces
-- Legacy code integration
-- Wrapping external APIs
+**Use when:** HTTP middleware, authorization pipelines, event bubbling.
 
-```python
-# Existing interface your code expects
-class JsonDataProcessor:
- def process(self, data: dict): pass
+### State
 
-# Third-party legacy system using XML
-class LegacyXMLSystem:
- def process_xml(self, xml_string: str):
- print(f"Processing XML: {xml_string}")
+Allows an object to **alter its behavior when its internal state changes**.
 
-# Adapter — makes LegacyXMLSystem compatible
-import json
+**Use when:** Order state machines, connection lifecycle, game character states.
 
-class XMLAdapter(JsonDataProcessor):
- def __init__(self, legacy: LegacyXMLSystem):
- self._legacy = legacy
+### Template Method
 
- def process(self, data: dict):
- # Convert JSON dict to XML format
- xml = f"<data>{json.dumps(data)}</data>"
- self._legacy.process_xml(xml)
+Defines the **skeleton of an algorithm** in a base class, deferring specific steps to subclasses.
 
-# Usage
-adapter = XMLAdapter(LegacyXMLSystem())
-adapter.process({"user": "Alice", "order": 42})
-```
+**Use when:** Data processing pipelines with fixed steps but variable implementations.
+
+### Iterator
+
+Provides a way to **sequentially access elements** of a collection without exposing its internal structure.
+
+**Use when:** Custom collections, lazy data loading, paginated results.
+
+### Mediator
+
+Centralizes **communication between components**, preventing direct dependencies.
+
+**Use when:** Chat rooms, complex UI forms, microservice orchestration.
 
 ---
 
-### 3.2 Decorator
+## 6. Architecture Patterns
 
-**Intent:** Dynamically **add responsibilities to objects** without altering their class.
+### MVC — Model-View-Controller
 
-**When to use:**
-- Adding logging, caching, authentication, compression, or retry logic
-- When inheritance would produce too many subclasses
-- HTTP middleware, Python decorators, Java I/O streams
+Separates application into three roles: Model (data/logic), View (presentation), Controller (input/flow).
 
-```python
-class DataService:
- def fetch(self, query: str) -> dict:
- return {"result": "data"}
+**Used in:** Django, Rails, Spring MVC, ASP.NET MVC
 
-class CachingDecorator:
- def __init__(self, service: DataService):
- self._service = service
- self._cache = {}
+### MVVM — Model-View-ViewModel
 
- def fetch(self, query: str) -> dict:
- if query not in self._cache:
- self._cache[query] = self._service.fetch(query)
- print("Cache MISS — fetched from source")
- else:
- print("Cache HIT")
- return self._cache[query]
+Extends MVC for data-binding. ViewModel exposes observable data to the View.
 
-class LoggingDecorator:
- def __init__(self, service):
- self._service = service
+**Used in:** Angular, Vue, WPF, SwiftUI
 
- def fetch(self, query: str) -> dict:
- print(f"[LOG] Fetching: {query}")
- result = self._service.fetch(query)
- print(f"[LOG] Done: {result}")
- return result
+### Repository Pattern
 
-# Stack decorators — compose behaviors
-service = LoggingDecorator(CachingDecorator(DataService()))
-service.fetch("SELECT * FROM users")
-```
+Abstracts data access behind an interface, separating domain logic from persistence.
+
+### CQRS — Command Query Responsibility Segregation
+
+Separates the write model (Commands) from the read model (Queries). Enables independent scaling.
+
+### Event Sourcing
+
+Stores every state-changing event as an immutable log. Current state is derived by replaying events.
+
+### Saga Pattern
+
+Manages long-running distributed transactions across multiple services without two-phase commit.
+
+**Types:** Choreography (event-driven) and Orchestration (central coordinator).
+
+### Strangler Fig
+
+Gradually migrates legacy monolith to microservices by routing traffic to new services.
+
+### Outbox Pattern
+
+Ensures atomic database write + event publish by writing to an outbox table and relaying asynchronously.
 
 ---
 
-### 3.3 Facade
-
-**Intent:** Provide a **simplified interface** to a complex subsystem.
-
-**When to use:**
-- Providing a clean API over a complex library or set of classes
-- Layered architecture — presenting a simple public API while hiding complexity
-- SDK design, microservice clients
-
-```python
-class VideoEncoder:
- def encode(self, path): print(f"Encoding {path}")
-
-class AudioMixer:
- def mix(self, path): print(f"Mixing audio {path}")
-
-class ThumbnailGenerator:
- def generate(self, path): print(f"Generating thumbnail {path}")
-
-class CDNUploader:
- def upload(self, path): print(f"Uploading {path} to CDN")
-
-# Facade — hides all the complexity
-class VideoPublisher:
- def __init__(self):
- self._encoder = VideoEncoder()
- self._mixer = AudioMixer()
- self._thumbnailer = ThumbnailGenerator()
- self._uploader = CDNUploader()
-
- def publish(self, video_path: str):
- self._encoder.encode(video_path)
- self._mixer.mix(video_path)
- self._thumbnailer.generate(video_path)
- self._uploader.upload(video_path)
- print("Video published!")
-
-# Client code is simple
-publisher = VideoPublisher()
-publisher.publish("/videos/intro.mp4")
-```
-
----
-
-### 3.4 Proxy
-
-**Intent:** Provide a **placeholder or surrogate** that controls access to another object.
-
-**Types:**
-- **Virtual Proxy** — lazy initialization of expensive objects
-- **Protection Proxy** — access control / authorization
-- **Remote Proxy** — represents an object in a different process/machine
-- **Caching Proxy** — stores results of expensive operations
-
-```python
-class ImageLoader:
- def __init__(self, filename):
- self._filename = filename
- self._image_data = self._load() # Expensive!
-
- def _load(self):
- print(f"Loading image from disk: {self._filename}")
- return f"<image data: {self._filename}>"
-
- def display(self):
- print(self._image_data)
-
-# Virtual Proxy — defers loading until actually needed
-class LazyImageProxy:
- def __init__(self, filename):
- self._filename = filename
- self._real_image = None
-
- def display(self):
- if self._real_image is None:
- self._real_image = ImageLoader(self._filename)
- self._real_image.display()
-
-# Image is not loaded until display() is called
-img = LazyImageProxy("hero-banner.png")
-# ... code that may or may not call display()
-img.display() # Only NOW does the load happen
-```
-
----
-
-### 3.5 Composite
-
-**Intent:** Treat **individual objects and compositions** of objects uniformly using a tree structure.
-
-**When to use:**
-- File systems (files and folders)
-- UI component trees (widgets containing other widgets)
-- Organizational hierarchies
-- Menu systems, XML/HTML document trees
-
-```python
-class FileSystemItem(ABC):
- @abstractmethod
- def get_size(self) -> int: pass
- @abstractmethod
- def display(self, indent=0): pass
-
-class File(FileSystemItem):
- def __init__(self, name, size):
- self.name = name
- self._size = size
-
- def get_size(self): return self._size
- def display(self, indent=0): print(" " * indent + f"{self.name} ({self._size}B)")
-
-class Directory(FileSystemItem):
- def __init__(self, name):
- self.name = name
- self._children: list[FileSystemItem] = []
-
- def add(self, item: FileSystemItem): self._children.append(item)
- def get_size(self): return sum(c.get_size() for c in self._children)
-
- def display(self, indent=0):
- print(" " * indent + f"{self.name}/")
- for child in self._children:
- child.display(indent + 2)
-
-# Works for both files and directories uniformly
-root = Directory("project")
-src = Directory("src")
-src.add(File("main.py", 1024))
-src.add(File("utils.py", 512))
-root.add(src)
-root.add(File("README.md", 2048))
-root.display()
-print(f"Total: {root.get_size()}B")
-```
-
----
-
-### 3.6 Bridge
-
-**Intent:** Decouple an abstraction from its implementation so both can **vary independently**.
-
-**When to use:**
-- Multiple dimensions of variation (e.g., shape + rendering platform)
-- Switching implementations at runtime
-- Avoiding a combinatorial explosion of subclasses
-
-```python
-class Renderer(ABC):
- @abstractmethod
- def render_circle(self, x, y, radius): pass
-
-class SVGRenderer(Renderer):
- def render_circle(self, x, y, radius):
- print(f"<circle cx='{x}' cy='{y}' r='{radius}'/>")
-
-class CanvasRenderer(Renderer):
- def render_circle(self, x, y, radius):
- print(f"ctx.arc({x}, {y}, {radius}, 0, 2*Math.PI)")
-
-class Shape(ABC):
- def __init__(self, renderer: Renderer):
- self._renderer = renderer
-
-class Circle(Shape):
- def __init__(self, renderer, x, y, radius):
- super().__init__(renderer)
- self.x, self.y, self.radius = x, y, radius
-
- def draw(self):
- self._renderer.render_circle(self.x, self.y, self.radius)
-
-svg_circle = Circle(SVGRenderer(), 50, 50, 30)
-canvas_circle = Circle(CanvasRenderer(), 50, 50, 30)
-```
-
----
-
-### 3.7 Flyweight
-
-**Intent:** Share **fine-grained objects** to reduce memory consumption.
-
-```python
-class TreeType:
- def __init__(self, name, texture):
- self.name = name
- self.texture = texture
-
- def draw(self, x, y):
- print(f"Drawing {self.name} at ({x},{y})")
-
-class TreeTypeFactory:
- _types = {}
-
- @classmethod
- def get(cls, name, texture):
- key = f"{name}_{texture}"
- if key not in cls._types:
- cls._types[key] = TreeType(name, texture)
- return cls._types[key]
-```
-
----
-
-## 4. Behavioral Patterns
-
----
-
-### 4.1 Observer (Pub/Sub)
-
-**Intent:** One-to-many dependency; when one object changes, all dependents are notified.
-
-```python
-class EventBus:
- def __init__(self):
- self._subscribers = {}
-
- def subscribe(self, event, observer):
- self._subscribers.setdefault(event, []).append(observer)
-
- def publish(self, event, data=None):
- for obs in self._subscribers.get(event, []):
- obs.update(event, data)
-
-class EmailAlertService:
- def update(self, event, data):
- print(f"[EMAIL] {event}: {data}")
-
-bus = EventBus()
-bus.subscribe("order_placed", EmailAlertService())
-bus.publish("order_placed", {"order_id": 123})
-```
-
----
-
-### 4.2 Strategy
-
-**Intent:** Define a family of algorithms, encapsulate each one, and make them interchangeable.
-
-```python
-class PaymentStrategy(ABC):
- @abstractmethod
- def pay(self, amount): pass
-
-class CreditCardPayment(PaymentStrategy):
- def pay(self, amount): print(f"Charging ${amount} to card")
-
-class PayPalPayment(PaymentStrategy):
- def pay(self, amount): print(f"Sending ${amount} via PayPal")
-
-class Checkout:
- def __init__(self, strategy):
- self._strategy = strategy
- def complete(self, amount):
- self._strategy.pay(amount)
-
-checkout = Checkout(CreditCardPayment())
-checkout.complete(49.99)
-```
-
----
-
-### 4.3 Command
-
-**Intent:** Encapsulate a request as an object — enables undo/redo, queuing, and logging.
-
-```python
-class Command(ABC):
- @abstractmethod
- def execute(self): pass
- @abstractmethod
- def undo(self): pass
-
-class WriteCommand(Command):
- def __init__(self, editor, text):
- self._editor = editor
- self._text = text
- def execute(self):
- self._editor.text += self._text
- def undo(self):
- self._editor.text = self._editor.text[:-len(self._text)]
-```
-
----
-
-### 4.4 Chain of Responsibility
-
-**Intent:** Pass a request along a chain of handlers.
-
-```python
-class Handler:
- def __init__(self):
- self._next = None
- def set_next(self, handler):
- self._next = handler
- return handler
- def handle(self, request):
- if self._next:
- return self._next.handle(request)
- return "Unhandled"
-
-class AuthHandler(Handler):
- def handle(self, request):
- if not request.get("token"):
- return "401 Unauthorized"
- return super().handle(request)
-```
-
----
-
-### 4.5 State
-
-**Intent:** Object alters its behavior when its internal state changes.
-
-```python
-class OrderState(ABC):
- @abstractmethod
- def next(self, order): pass
-
-class PendingState(OrderState):
- def next(self, order): order.set_state(ProcessingState())
-class ProcessingState(OrderState):
- def next(self, order): order.set_state(ShippedState())
-class ShippedState(OrderState):
- def next(self, order): order.set_state(DeliveredState())
-class DeliveredState(OrderState):
- def next(self, order): print("Already delivered")
-
-class Order:
- def __init__(self):
- self._state = PendingState()
- def advance(self):
- self._state.next(self)
-```
-
----
-
-### 4.6 Template Method
-
-**Intent:** Define skeleton of an algorithm, deferring steps to subclasses.
-
-```python
-class DataReport(ABC):
- def generate(self):
- data = self.fetch_data()
- filtered = self.filter_data(data)
- formatted = self.format_data(filtered)
- self.export(formatted)
-
- @abstractmethod
- def fetch_data(self): pass
- def filter_data(self, data): return data
- @abstractmethod
- def format_data(self, data): pass
- def export(self, data): print(f"Export: {data}")
-```
-
----
-
-### 4.7 Iterator
-
-**Intent:** Sequentially access elements without exposing internal structure.
-
-```python
-class Counter:
- def __init__(self, start=0, step=1):
- self._current = start
- self._step = step
- def __iter__(self): return self
- def __next__(self):
- value = self._current
- self._current += self._step
- return value
-```
-
----
-
-### 4.8 Mediator
-
-**Intent:** Centralize communication between components, reducing direct dependencies.
-
-```python
-class ChatRoom:
- def __init__(self):
- self._participants = {}
- def join(self, user):
- self._participants[user.name] = user
- def send(self, msg, sender):
- for name, user in self._participants.items():
- if name != sender.name:
- user.receive(f"[{sender.name}]: {msg}")
-```
-
----
-
-## 5. Architectural / App-Level Patterns
-
-### 5.1 MVC — Model-View-Controller
-- **Model** — business logic and data
-- **View** — presentation/UI
-- **Controller** — handles input, updates model, selects view
-
-*Used in: Django, Rails, Spring MVC, ASP.NET MVC*
-
-### 5.2 MVVM — Model-View-ViewModel
-Extends MVC for data-binding frameworks (Angular, Vue, WPF, SwiftUI).
-
-### 5.3 Repository Pattern
-Abstracts data access behind an interface, decoupling domain logic from persistence.
-
-```python
-class UserRepository(ABC):
- @abstractmethod
- def find_by_id(self, user_id): pass
- @abstractmethod
- def save(self, user): pass
-```
-
-### 5.4 CQRS — Command Query Responsibility Segregation
-Separate write model (Commands) from read model (Queries). Scales independently.
-
-### 5.5 Event Sourcing
-Store every state-changing event as an immutable log. Current state is derived by replaying events.
-
----
-
-## 6. Pattern Selection Guide
-
-```
-PROBLEM ---> PATTERN
-
-Need exactly one global instance ---> Singleton
-Create objects without knowing type ---> Factory Method
-Create families of related objects ---> Abstract Factory
-Build complex objects step by step ---> Builder
-Clone expensive objects ---> Prototype
-
-Incompatible interfaces ---> Adapter
-Add behaviors dynamically ---> Decorator
-Simplify a complex subsystem ---> Facade
-Control access to an object ---> Proxy
-Part-whole hierarchies (tree) ---> Composite
-Two independent hierarchies ---> Bridge
-
-One-to-many notifications ---> Observer
-Swappable algorithms ---> Strategy
-Undo/Redo, queuing requests ---> Command
-Pipeline of handlers ---> Chain of Responsibility
-Object changes behavior by state ---> State
-Fixed algorithm, variable steps ---> Template Method
-
-Separate presentation from logic ---> MVC / MVVM
-Abstract data access ---> Repository
-Scale reads/writes independently ---> CQRS
-Immutable audit log ---> Event Sourcing
-```
-
----
-
-*References: GoF (1994), microservices.io, Refactoring Guru, DDIA*
+*References: GoF, SOLID Principles, IEEE 1016-1998, microservices.io*

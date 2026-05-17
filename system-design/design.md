@@ -1,410 +1,461 @@
 ---
 layout: standalone
-title: System Design — Design
+title: System Design
 ---
 
 # System Design
 
-> *"Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy."*
-> — Robert C. Martin
+> *Comprehensive reference on software architecture, system design principles, notations, and modeling.*
+> Standards: IEEE 1016-1998 (SDD), UML 2.5, C4 Model
 
 ---
 
 ## Table of Contents
 
 1. [System Design Fundamentals](#1-system-design-fundamentals)
-2. [Scalability](#2-scalability)
-3. [Databases at Scale](#3-databases-at-scale)
-4. [Caching Strategies](#4-caching-strategies)
-5. [Messaging & Event-Driven Architecture](#5-messaging--event-driven-architecture)
-6. [Reliability & Fault Tolerance](#6-reliability--fault-tolerance)
-7. [Security & API Design](#7-security--api-design)
-8. [Advanced System Patterns](#8-advanced-system-patterns)
-9. [System Design Interview Framework](#9-system-design-interview-framework)
-10. [Real-World Architecture Examples](#10-real-world-architecture-examples)
+2. [Software Architecture Styles](#2-software-architecture-styles)
+3. [Design Strategies: Top-Down, Bottom-Up, Hybrid](#3-design-strategies-top-down-bottom-up-hybrid)
+4. [Function-Oriented Design](#4-function-oriented-design)
+5. [Object-Oriented Design](#5-object-oriented-design)
+6. [User Interface Design](#6-user-interface-design)
+7. [Design Notations & Modeling Diagrams](#7-design-notations--modeling-diagrams)
+8. [Data Flow Diagrams (DFD)](#8-data-flow-diagrams-dfd)
+9. [Entity-Relationship Diagrams (ERD)](#9-entity-relationship-diagrams-erd)
+10. [UML Diagrams](#10-uml-diagrams)
+11. [Data Dictionary](#11-data-dictionary)
+12. [Software Design Document (SDD) IEEE 1016](#12-software-design-document-sdd-ieee-1016)
+13. [Design for Non-Functional Requirements](#13-design-for-non-functional-requirements)
+14. [Agentic System Design Considerations](#14-agentic-system-design-considerations)
 
 ---
 
 ## 1. System Design Fundamentals
 
-System design is the process of **defining the architecture, components, modules, interfaces, and data flow** of a system to satisfy specified requirements.
+System design is the process of defining the **architecture, components, modules, interfaces, and interactions** of a software system to satisfy specified requirements. It transforms requirements into a blueprint for construction.
 
-### The Request Flow (Every System)
+**Software Design (IEEE):** The process of defining the architecture, components, interfaces, and other characteristics of a system or component. Also defined as the result of that process.
 
-```
-Client
- |
-DNS Resolution
- |
-Load Balancer
- |
-Application Server(s)
- |
-Cache Check (Redis / Memcached)
- | (cache miss)
-Database Query
- |
-Response to Client
-```
+### Design vs Architecture
 
-### Key Properties to Design For
-
-| Property | Description |
-|---|---|
-| **Scalability** | Handle growing traffic/data |
-| **Availability** | System is up (99.9% = 8.7 hrs/yr downtime) |
-| **Reliability** | Consistently correct results |
-| **Latency** | Time to first byte (p50, p99) |
-| **Throughput** | Requests per second (RPS) |
-| **Consistency** | All nodes see the same data |
-| **Durability** | Data is not lost once written |
-| **Maintainability** | Easy to operate, debug, extend |
-
----
-
-## 2. Scalability
-
-### 2.1 Vertical vs. Horizontal Scaling
-
-| | Vertical Scaling | Horizontal Scaling |
+| Aspect | Architecture | Design |
 |---|---|---|
-| **What** | Bigger machine (more CPU/RAM) | More machines |
-| **Limit** | Hardware ceiling | Practically unlimited |
-| **Cost** | Expensive at high end | Commodity hardware |
-| **Failure** | Single point of failure | Fault tolerant |
-| **Complexity** | Simple | Requires distributed system knowledge |
-| **Use when** | Small to medium scale | Large scale, high availability needed |
+| **Scope** | High-level structure, system-wide decisions | Module-level, component internals |
+| **Concerns** | Quality attributes, constraints, trade-offs | Algorithms, data structures, APIs |
+| **Stakeholders** | Architects, CTO, cross-team | Developers, team leads |
+| **Decisions** | Hard to change (architecturally significant) | Easier to refactor |
 
-### 2.2 Load Balancing
+### Design Quality Attributes
 
-Distributes incoming requests across multiple servers.
+A good design must be:
 
-**Algorithms:**
-- **Round Robin** — requests cycle through servers equally
-- **Least Connections** — routes to server with fewest active connections
-- **IP Hash** — same client always goes to the same server
-- **Weighted** — more capacity = more traffic
-
-**Tools:** Nginx, HAProxy, AWS ELB, GCP Load Balancer
-
-### 2.3 CDN — Content Delivery Network
-
-Caches static assets at **edge servers geographically close to users**.
-- Reduces latency
-- Offloads origin servers
-- DDoS protection
-
-**Tools:** Cloudflare, AWS CloudFront, Akamai, Fastly
+- **Correct & Complete** — Satisfies all functional and non-functional requirements
+- **Understandable** — Clear to developers, testers, and maintainers
+- **Maintainable** — Easy to modify and extend without breaking existing functionality
+- **At the right level** — Appropriate abstraction for the intended audience
+- **Traceable** — Links back to requirements and forward to implementation
 
 ---
 
-## 3. Databases at Scale
+## 2. Software Architecture Styles
 
-### 3.1 SQL vs. NoSQL
+An architecture style defines the **family of systems** in terms of their structure, components, connectors, and constraints. The choice of style impacts scalability, maintainability, and deployment.
 
-| | SQL | NoSQL |
+### Layered (n-Tier) Architecture
+
+Organizes the system into horizontal layers, each with a specific responsibility. Each layer depends only on the layer below it.
+
+| Layer | Responsibility |
+|---|---|
+| **Presentation** | User interface, client-side logic |
+| **Business Logic** | Domain rules, workflows |
+| **Data Access** | Database operations, ORM |
+| **Database** | Data persistence |
+
+- Separation of concerns — each layer has a single responsibility
+- Easy to develop, test, and maintain independently
+- Can suffer from layer leakage and performance overhead
+
+### Microservices Architecture
+
+Decomposes the system into small, independently deployable services. Each service owns its data and communicates via APIs.
+
+- Independent deployment and scaling per service
+- Technology heterogeneity — each service can use different tech stacks
+- Complex inter-service communication and data consistency
+- Requires DevOps maturity, monitoring, and observability
+
+### Event-Driven Architecture
+
+Components communicate through events. Producers emit events; consumers react. Loosely coupled via message broker.
+
+- Highly scalable and responsive
+- Loose coupling between producers and consumers
+- Complex event handling and eventual consistency
+- Tools: Kafka, RabbitMQ, AWS SNS/SQS, Azure Event Grid
+
+### Microkernel (Plugin) Architecture
+
+Core system provides minimal functionality. Extensions/plugins add features.
+
+- Extensible and customizable
+- Well-suited for product families
+- Plugin contract management complexity
+- Examples: Eclipse IDE, VS Code, Jira
+
+### Pipe-and-Filter Architecture
+
+Data flows through a sequence of processing steps (filters) connected by pipes.
+
+- Reusable filters, easy to compose new pipelines
+- Parallel execution possible
+- Overhead from data transformation between filters
+
+### Architecture Style Comparison
+
+| Style | Scalability | Maintainability | Complexity | Use Case |
+|---|---|---|---|---|
+| Layered | Moderate | High | Low | Enterprise apps |
+| Microservices | Very High | Moderate | High | Large-scale distributed systems |
+| Event-Driven | Very High | Moderate | High | Real-time processing |
+| Microkernel | Moderate | Very High | Medium | Extensible products |
+| Pipe-and-Filter | Moderate | High | Low | Data processing |
+
+---
+
+## 3. Design Strategies: Top-Down, Bottom-Up, Hybrid
+
+### Top-Down Design
+
+Start with the **high-level system**, then decompose it into subsystems, modules, and components.
+
+- Clear structure and hierarchy
+- Works well when requirements are well-understood
+- May miss low-level optimization opportunities
+- Requires accurate high-level decomposition
+
+### Bottom-Up Design
+
+Build **primitive components first**, then compose them into larger structures.
+
+- Focuses on reusability from the start
+- Supports parallel development
+- Integration challenges at higher levels
+- Risk of abstraction mismatch
+
+### Hybrid Design
+
+Combine both approaches. Use top-down for architectural decomposition and bottom-up for reusable component libraries.
+
+- Leverages strengths of both approaches
+- Requires careful coordination
+- Common in practice for complex systems
+
+---
+
+## 4. Function-Oriented Design
+
+Focuses on **functions or processes** as the primary decomposition unit. The system is divided into functions that transform inputs to outputs.
+
+### Key Concepts
+
+- **Functional decomposition** — break down complex functions into simpler ones
+- **Data flow** — track how data moves between functions
+- **Data store** — persistent data repositories
+- **Process specification** — detailed logic for each function
+
+### When to Use
+
+- Data processing systems (ETL, compilers)
+- Systems with clear input/output transformations
+- Legacy system modernization
+
+### Limitations
+
+- Data and behavior are separated
+- Changes in data structure propagate across many functions
+- Less suitable for interactive or stateful systems
+
+---
+
+## 5. Object-Oriented Design
+
+Organizes the system as a collection of **objects** that encapsulate data and behavior. Each object is an instance of a class.
+
+### Key Concepts
+
+- **Encapsulation** — bundle data and methods; hide internal state
+- **Inheritance** — derive new classes from existing ones
+- **Polymorphism** — same interface, different implementations
+- **Abstraction** — expose only what is necessary
+
+### Design Process
+
+1. Identify objects and classes from requirements
+2. Define attributes and methods for each class
+3. Establish relationships (inheritance, association, composition)
+4. Design interfaces and abstract classes
+5. Apply design patterns where appropriate
+
+### When to Use
+
+- Complex domain logic with rich relationships
+- Systems requiring extensibility and maintainability
+- Interactive applications with complex state
+
+---
+
+## 6. User Interface Design
+
+UI design focuses on the interaction between users and the system.
+
+### Design Principles
+
+- **Consistency** — similar actions produce similar results
+- **Feedback** — inform users of system state and results
+- **Affordance** — visual cues suggest how elements are used
+- **Error Prevention** — design to minimize mistakes
+- **Recovery** — easy undo and error resolution
+- **User Control** — users control the interaction flow
+
+### UI Design Process
+
+1. **User Research** — understand users, tasks, and context
+2. **Information Architecture** — structure content and navigation
+3. **Wireframing** — low-fidelity layout and flow
+4. **Prototyping** — interactive mockups
+5. **Visual Design** — colors, typography, branding
+6. **Usability Testing** — validate with real users
+
+---
+
+## 7. Design Notations & Modeling Diagrams
+
+### Purpose of Modeling
+
+- Visualize system structure and behavior
+- Communicate design intent across teams
+- Analyze and validate design decisions
+- Document architecture for maintenance
+
+### The C4 Model
+
+A hierarchical approach to visualizing software architecture:
+
+| Level | Diagram | Audience |
 |---|---|---|
-| **Structure** | Tables, rows, columns | Documents, key-value, graph |
-| **Schema** | Fixed, enforced | Flexible, schema-less |
-| **Scaling** | Vertical (primarily) | Horizontal (design goal) |
-| **ACID** | Full ACID | Often eventual consistency |
-| **Use for** | Transactions, relational data | Scale, unstructured data |
-
-### 3.2 Database Replication
-
-```
-Primary (Write) ---> Replica 1 (Read)
- ---> Replica 2 (Read)
-```
-
-### 3.3 Database Sharding
-
-Splits data across multiple independent databases.
-
-**Range-Based:** Partition by value range. Simple but can create hot spots.
-
-**Hash-Based:** `shard = hash(user_id) % N`. Even distribution, hard to rebalance.
-
-**Consistent Hashing:** Maps keys and shards to a hash ring. Adding/removing shards only remaps ~1/N of keys.
-
-### 3.4 CAP Theorem
-
-A distributed system can guarantee **only two of three**:
-- **Consistency** — all nodes see same data
-- **Availability** — every request gets a response
-- **Partition Tolerance** — system works despite network failures
-
-| Combination | Examples |
-|---|---|
-| **CP** (Consistency + Partition) | Zookeeper, HBase |
-| **AP** (Availability + Partition) | Cassandra, DynamoDB |
-| **CA** (Consistency + Availability) | Traditional RDBMS (single node) |
-
-### 3.5 Database Indexing
-
-- **B-Tree Index** — range queries and equality (default)
-- **Hash Index** — O(1) equality lookups only
-- **Composite Index** — multiple columns; order matters
-- **Covering Index** — query answered entirely from index
-- **Full-Text Index** — tokenized text search
+| **Level 1: Context** | System context diagram | Technical and non-technical stakeholders |
+| **Level 2: Containers** | Container diagram | Technical stakeholders, developers |
+| **Level 3: Components** | Component diagram | Developers |
+| **Level 4: Code** | Class/sequence diagram | Developers |
 
 ---
 
-## 4. Caching Strategies
+## 8. Data Flow Diagrams (DFD)
 
-### 4.1 Cache Levels
+DFDs represent the **flow of data** through a system. They show how data enters, is processed, stored, and leaves the system.
 
-| Level | Examples | Latency |
+### DFD Symbols (Yourdon/DeMarco)
+
+| Symbol | Name | Description |
 |---|---|---|
-| CPU L1/L2 | Processor cache | < 1 ns |
-| In-process | App memory | ~ns |
-| Distributed | Redis, Memcached | 0.1-1 ms |
-| CDN | Cloudflare, Fastly | 1-50 ms |
+| Circle/oval | Process | Transforms input data to output |
+| Rectangle | External Entity | External source or destination of data |
+| Open rectangle | Data Store | Repository of data |
+| Arrow | Data Flow | Movement of data between elements |
 
-### 4.2 Caching Patterns
+### DFD Levels
 
-**Cache-Aside (Lazy Loading)** — check cache first; on miss, load from DB.
-```
-Read: App -> Cache (miss) -> DB -> Cache (write) -> App
-```
+- **Level 0 (Context Diagram)** — single process, all external entities
+- **Level 1** — decomposes the main process into major subsystems
+- **Level 2** — further decomposition of each major subsystem
 
-**Write-Through** — write to DB and cache simultaneously.
-**Write-Behind** — write to cache first, sync to DB async.
-**Read-Through** — cache handles loading from DB on miss.
+### Guidelines
 
-### 4.3 Cache Invalidation
-
-- **TTL** — data expires after fixed time
-- **Event-Driven** — invalidate on write events
-- **Versioned Keys** — `user:42:v3`
-
-### 4.4 Cache Stampede Prevention
-
-When a popular key expires, thousands of requests hit the DB at once.
-
-**Solutions:** Mutex/lock, probabilistic early expiration, stale-while-revalidate.
+- All data flows must start or end at a process
+- Data stores must have both incoming and outgoing flows
+- External entities should not connect directly to each other
+- Maintain balance between levels (same inputs/outputs)
 
 ---
 
-## 5. Messaging & Event-Driven Architecture
+## 9. Entity-Relationship Diagrams (ERD)
 
-### 5.1 Message Queues
+ERDs model the **data entities** in a system and the **relationships** between them.
 
-```
-Producer -> [Queue] -> Consumer
-```
+### Components
 
-**Benefits:** Traffic spike absorption, retry, decoupling.
-**Tools:** RabbitMQ, Amazon SQS, ActiveMQ
+| Component | Notation | Description |
+|---|---|---|
+| **Entity** | Rectangle | A real-world object or concept (e.g., Customer, Order) |
+| **Attribute** | Ellipse | Properties of an entity (e.g., name, email) |
+| **Relationship** | Diamond | Association between entities (e.g., places, belongs to) |
 
-### 5.2 Event Streaming (Kafka)
+### Relationship Types
 
-Persistent, replayable logs — not consumed and deleted like queues.
+- **One-to-One (1:1)** — each entity instance relates to exactly one of the other
+- **One-to-Many (1:N)** — one entity instance relates to many of the other
+- **Many-to-Many (M:N)** — many instances relate to many instances
 
-```
-Producers -> Kafka Topic (Partitioned) -> Consumer Groups
-```
+### Cardinality Notation (Chen vs Crow's Foot)
 
-### 5.3 Pub/Sub vs. Message Queues
-
-- **Pub/Sub** — all subscribers get every event
-- **Queue** — competing consumers split the load
-
-### 5.4 Saga Pattern
-
-Manages long-running distributed transactions without two-phase commit.
-
-**Choreography:** Each service emits events; the next service responds.
-**Orchestration:** Central coordinator calls each service and manages compensation.
+| Chen | Crow's Foot | Meaning |
+|---|---|---|
+| 1 | \|\|--\|\| | Exactly one |
+| M | \|\|--< | Many |
+| Optional | o--\|\| | Zero or one |
 
 ---
 
-## 6. Reliability & Fault Tolerance
+## 10. UML Diagrams
 
-### 6.1 Circuit Breaker
+UML (Unified Modeling Language) 2.5 provides a standardized set of diagrams for modeling software systems.
 
-Prevents cascading failures — stops calls to a failing service.
+### Structure Diagrams (Static View)
 
-```
-Closed -> (failures exceed threshold) -> Open -> (timeout) -> Half-Open
-Half-Open -> (success) -> Closed
-Half-Open -> (failure) -> Open
-```
-
-### 6.2 Retry with Exponential Backoff
-```
-Attempt 1: fail -> wait 1s
-Attempt 2: fail -> wait 2s
-Attempt 3: fail -> wait 4s + jitter
-```
-
-**Idempotency required** — same result regardless of how many times called.
-
-### 6.3 Bulkhead Pattern
-
-Isolate resources per service so one failure doesn't starve others.
-
-### 6.4 Rate Limiting
-
-**Algorithms:** Token Bucket, Leaky Bucket, Fixed Window, Sliding Window Log, Sliding Window Counter.
-
-### 6.5 Redundancy
-- **Active-Active** — all instances serve traffic
-- **Active-Passive** — standby promotes on failure
-
----
-
-## 7. Security & API Design
-
-### 7.1 API Gateway
-
-Single entry point for all client requests — auth, rate limiting, routing, transformation.
-
-```
-Mobile ---+
-Web ------+-> API Gateway -> Services
-External -+
-```
-
-**Tools:** Kong, AWS API Gateway, Nginx, Traefik
-
-### 7.2 REST vs. GraphQL vs. gRPC
-
-| | REST | GraphQL | gRPC |
-|---|---|---|---|
-| **Protocol** | HTTP/1.1 | HTTP/1.1 | HTTP/2 |
-| **Format** | JSON/XML | JSON | Protobuf |
-| **Over/Under fetch** | Common | Solved | N/A |
-| **Best for** | Public APIs | Complex data graphs | Internal microservices |
-
-### 7.3 Authentication & Authorization
-- **JWT** — stateless tokens, validated without DB
-- **OAuth 2.0** — delegation framework
-- **API Keys** — machine-to-machine
-- **mTLS** — mutual certificate auth
-
----
-
-## 8. Advanced System Patterns
-
-### 8.1 Strangler Fig Pattern
-Gradually migrate legacy monolith by routing traffic to new services.
-
-### 8.2 Outbox Pattern
-Atomically write to DB + outbox table; separate relay publishes events. Solves the dual-write problem.
-
-### 8.3 Backend for Frontend (BFF)
-Dedicated API per client type (mobile, web, third-party).
-
-### 8.4 Sidecar Pattern
-Helper container alongside the main service (service mesh proxies).
-
-### 8.5 Service Mesh
-Infrastructure layer for service-to-service communication (retries, mTLS, observability).
-
-**Tools:** Istio, Linkerd, Consul Connect
-
----
-
-## 9. System Design Interview Framework
-
-### Step 1: Clarify Requirements (5 min)
-- Functional requirements, non-functional (scale, latency, availability)
-- Read-heavy or write-heavy? Global or regional?
-
-### Step 2: Capacity Estimation (5 min)
-```
-Storage: 500M tweets/day x 200 bytes = 100 GB/day
-Writes: 500M / 86,400s = 6,000 writes/sec
-Reads: 100:1 ratio = 600,000 reads/sec
-```
-
-### Step 3: High-Level Design (10 min)
-Draw major components: clients, load balancers, services, databases, caches.
-
-### Step 4: Deep Dive (15-20 min)
-Database schema, sharding, caching, API design, fault tolerance.
-
-### Step 5: Trade-offs & Bottlenecks (5 min)
-Identify bottlenecks, discuss alternatives — demonstrate engineering judgment.
-
-### Common System Design Questions
-
-| System | Key Decisions |
+| Diagram | Purpose |
 |---|---|
-| **URL Shortener** | Base62 encoding, KV store, bloom filter |
-| **Twitter Feed** | Fan-out on write vs. read, timeline cache |
-| **YouTube** | Object store + CDN, async video processing |
-| **WhatsApp** | WebSocket connections, E2E encryption |
-| **Uber** | Geospatial indexing, real-time matching, surge pricing |
-| **Dropbox** | Block deduplication, delta sync, conflict resolution |
+| **Class Diagram** | Classes, attributes, methods, and relationships |
+| **Component Diagram** | Physical components and their dependencies |
+| **Deployment Diagram** | Hardware nodes and software deployment |
+| **Package Diagram** | Grouping of model elements |
 
----
+### Behavior Diagrams (Dynamic View)
 
-## 10. Real-World Architecture Examples
-
-### Netflix
-- **CDN:** Open Connect serves 95%+ of video traffic
-- **Microservices:** 700+ independently deployable services
-- **Chaos Engineering:** Chaos Monkey injects failures to test resilience
-- **Patterns:** Circuit Breaker (Hystrix), Event Sourcing, CQRS, Bulkhead
-
-### Uber
-- **Kafka:** All real-time pipelines (location, surge pricing)
-- **CQRS:** Separate write-heavy trip creation from read-heavy queries
-- **Saga Pattern:** Trip booking across dispatch, payment, rating
-- **Geospatial:** H3 hexagonal indexing for matching
-
-### Twitter
-- **Fan-out-on-write:** Precompute tweets into follower timelines
-- **Exception:** Celebrities use fan-out-on-read (too many followers)
-- **Redis:** Timeline sorted sets
-- **Kafka:** Event streaming for all activity
-
-### WhatsApp
-- 2B+ users with ~70 engineers at acquisition
-- Erlang/BEAM VM for millions of concurrent connections
-- Sequence numbers for message ordering
-- Signal Protocol for E2E encryption
-
----
-
-## Quick Reference: Key Numbers
-
-| Metric | Value |
+| Diagram | Purpose |
 |---|---|
-| L1 cache reference | ~0.5 ns |
-| Main memory reference | ~100 ns |
-| SSD random read | ~150 us |
-| HDD seek | ~10 ms |
-| Packet: same datacenter | ~0.5 ms |
-| Packet: US -> Europe | ~75 ms |
-| 99% availability | 87.6 hrs/yr downtime |
-| 99.9% availability | 8.76 hrs/yr downtime |
-| 99.99% availability | 52.6 min/yr downtime |
-| 99.999% availability | 5.26 min/yr downtime |
+| **Use Case Diagram** | Actors, use cases, and system boundaries |
+| **Sequence Diagram** | Interactions between objects over time |
+| **Activity Diagram** | Workflow and process flow |
+| **State Machine Diagram** | States and transitions of an object |
+
+### Class Diagram Relationships
+
+| Relationship | Notation | Description |
+|---|---|---|
+| **Association** | Solid line | Structural relationship |
+| **Inheritance** | Hollow triangle | Generalization/specialization |
+| **Aggregation** | Hollow diamond | Part-of (weak ownership) |
+| **Composition** | Filled diamond | Part-of (strong ownership, shared lifetime) |
+| **Dependency** | Dashed arrow | Uses or depends on |
 
 ---
 
-## Summary: Choosing the Right Approach
+## 11. Data Dictionary
 
+A data dictionary is a **centralized repository** of information about data elements in the system.
+
+### Contents
+
+| Element | Description |
+|---|---|
+| **Name** | Unique identifier for the data element |
+| **Alias** | Alternative names |
+| **Type** | Data type (string, integer, date, etc.) |
+| **Length** | Maximum size |
+| **Range** | Valid values or value range |
+| **Nullability** | Whether null values are allowed |
+| **Default Value** | Default if not specified |
+| **Source** | Where the data originates |
+| **Description** | Business meaning and usage |
+
+### Data Dictionary Notation
+
+- `= ` — composed of
+- `+` — and
+- `[|]` — or (choose one)
+- `{}` — iteration (one or more)
+- `()` — optional
+
+**Example:**
 ```
-PROBLEM ---> SOLUTION
-Handle 10x traffic ---> Horizontal scaling + Load balancer
-Reduce DB load ---> Cache (Redis), Read replicas
-DB too large ---> Sharding + Consistent hashing
-Decouple services ---> Message queue (Kafka, RabbitMQ)
-Audit trail ---> Event Sourcing
-Scale reads/writes separately ---> CQRS
-Distributed transactions ---> Saga pattern
-Prevent cascade failures ---> Circuit Breaker + Bulkhead
-Fast content delivery ---> CDN
-Single API entry point ---> API Gateway
-Multiple client types ---> BFF (Backend for Frontend)
-Cross-cutting concerns ---> Service Mesh / Sidecar
-Migrate legacy system ---> Strangler Fig pattern
+Customer Address = Street + City + State + ZipCode
+Customer Name = [First Name | Last Name]
+Order Items = {Item}
 ```
 
 ---
 
-*References: DDIA (Kleppmann), microservices.io, system design handbook, GeeksforGeeks*
+## 12. Software Design Document (SDD) IEEE 1016
+
+The SDD is a **formal document** that describes the architecture and design of a software system.
+
+### IEEE 1016-1998 SDD Structure
+
+| Section | Content |
+|---|---|
+| **1. Introduction** | Purpose, scope, definitions, references |
+| **2. Architectural Design** | Decomposition, component descriptions, connectors |
+| **3. Detailed Design** | Module interfaces, data structures, algorithms |
+| **4. Design Decisions** | Rationale, trade-offs, alternatives considered |
+| **5. Requirements Traceability** | Mapping design elements to requirements |
+| **6. Appendices** | Supporting information, glossaries |
+
+### Design Viewpoints (IEEE 1016)
+
+| Viewpoint | Focus |
+|---|---|
+| **Decomposition Viewpoint** | Module breakdown and hierarchy |
+| **Dependency Viewpoint** | Inter-module dependencies and coupling |
+| **Interface Viewpoint** | Module interfaces and protocols |
+| **Detailed Design Viewpoint** | Internal design of each module |
+
+---
+
+## 13. Design for Non-Functional Requirements
+
+### Performance
+
+- Minimize latency (response time)
+- Maximize throughput (requests per second)
+- Use caching, connection pooling, async processing
+- Profile and benchmark regularly
+
+### Security
+
+- Apply least privilege principle
+- Validate and sanitize all inputs
+- Encrypt data in transit and at rest
+- Implement authentication and authorization
+
+### Scalability
+
+- Design for horizontal scaling (stateless services)
+- Use load balancers and auto-scaling groups
+- Partition/shared data stores
+- Design for eventual consistency where acceptable
+
+### Maintainability
+
+- Apply modular design with clear interfaces
+- Use consistent coding standards
+- Document design decisions (ADRs)
+- Keep modules loosely coupled and highly cohesive
+
+---
+
+## 14. Agentic System Design Considerations
+
+### Design for Autonomous Agents
+
+- **Clear interfaces** — agents need well-defined APIs and contracts
+- **Observability** — agents must expose their state, decisions, and actions
+- **Deterministic outcomes** — where possible, ensure repeatable behavior
+- **Graceful degradation** — agents should handle failures and edge cases
+
+### Multi-Agent Systems
+
+- **Agent communication** — define protocols for inter-agent messaging
+- **Task decomposition** — break complex tasks into agent-assignable units
+- **State management** — shared vs. isolated state per agent
+- **Coordination patterns** — orchestrator, choreography, auction-based
+
+### Safety & Guardrails
+
+- **Validation layers** — validate agent outputs before execution
+- **Circuit breakers** — stop cascading failures between agents
+- **Human-in-the-loop** — critical decisions require human approval
+- **Audit trails** — every agent action must be logged and traceable
+
+---
+
+*References: IEEE 1016-1998, UML 2.5, GoF, C4 Model, SOLID Principles*
