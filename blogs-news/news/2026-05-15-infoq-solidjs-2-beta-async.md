@@ -5,24 +5,18 @@ date: 2026-05-15
 source: "InfoQ"
 source_url: "https://www.infoq.com/news/2026/05/solidjs-2-async/"
 category: "dev-news"
-image: "https://placehold.co/800x400/1a1a2e/00d4ff?text=SolidJS+2.0+Beta_+First-Class+Async_+Reworked+Suspense+and+D"
+image: "https://placehold.co/800x400/1a1a2e/00d4ff?text=SolidJS%202.0%20Beta%3A%20First-Class%20Async%2C%20Reworked%20Suspense%20and%20D"
 ---
 
 # SolidJS 2.0 Beta: First-Class Async, Reworked Suspense and Deterministic Batching
 
 > Originally published on InfoQ — May 15, 2026
 
-![Cover](https://placehold.co/800x400/1a1a2e/00d4ff?text=SolidJS+2.0+Beta_+First-Class+Async_+Reworked+Suspense+and+D)
+![Cover](https://placehold.co/800x400/1a1a2e/00d4ff?text=SolidJS%202.0%20Beta%3A%20First-Class%20Async%2C%20Reworked%20Suspense%20and%20D)
 
 ## Summary
 
-title: "SolidJS 2.0 Beta: First-Class Async, Reworked Suspense and Deterministic Batching"
-
-## Key Points
-
-- title: "SolidJS 2
-- title: "SolidJS 2.0 Beta: First-Class Async, Reworked Suspense...
-- Read the full article for detailed insights and analysis
+SolidJS 2.0 Beta introduces first-class async support with direct Promise usage within the framework, new mutation primitives, altered state handling, and significant breaking changes — all while maintaining fine-grained reactivity without a virtual DOM.
 
 ## Read Original
 
