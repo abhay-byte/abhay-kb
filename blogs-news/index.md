@@ -16,6 +16,12 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 - [The Agent Is 20% of the Work. The Platform Is the Other 80%.](news/2026-05-17-devto-agent-20-percent-platform-80-percent/) — *Dev.to*
 - [AI Agents in the Enterprise: Why Less Can Be More](news/2026-05-17-devto-ai-agents-enterprise-less-more/) — *Dev.to*
 - [I Stayed Up Until 3 AM to Build a Better Claude Code Guide](news/2026-05-17-devto-better-claude-code-guide/) — *Dev.to*
+- [Google Project Zero Discloses Zero-Click Exploit Chain for Pixel 10](./news/pixel-10-zero-click-exploit-chain/) — *Hacker News*
+- [Bun Rust Rewrite: Codebase Fails Miri Checks, Allows UB in Safe Rust](./news/bun-rust-rewrite-miri-ub-safe-rust/) — *Hacker News*
+- [Mitchell Hashimoto: Entire Companies Under 'AI Psychosis'](./news/companies-under-ai-psychosis-hashimoto/) — *Hacker News*
+- [GitHub Copilot App Now Available in Technical Preview](./news/github-copilot-app-technical-preview/) — *GitHub Blog*
+- [GitHub Copilot Moving to Usage-Based Billing on June 1](./news/github-copilot-usage-based-billing-june-2026/) — *GitHub Blog*
+- [Kernel Code Removals Driven by LLM-Created Security Reports](./news/kernel-code-removals-llm-security-reports/) — *LWN.net*
 
 ### May 16, 2026
 
@@ -33,7 +39,11 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 - [SANA-WM: 2.6B open-source world model for 1-minute 720p video](news/2026-05-16-hacker-news-sana-wm-open-source-world-model-video/) — *Hacker News*
 - [Frontier AI has broken the open CTF format](news/2026-05-16-hacker-news-frontier-ai-broken-open-ctf-format/) — *Hacker News*
 
+<<<<<<< HEAD
 ### May 15, 2026
+=======
+
+>>>>>>> c3a133e (news: add digest for 2026-05-17 (6 articles))
 
 - [SolidJS 2.0 Beta: First-Class Async, Reworked Suspense](news/2026-05-15-infoq-solidjs-2-beta-async/) — *InfoQ*
 - [Anthropic Introduces Routines for Claude Code Automation](news/2026-05-15-infoq-anthropic-routines-claude-code/) — *InfoQ*

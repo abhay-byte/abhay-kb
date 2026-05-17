@@ -42,9 +42,15 @@
     "https://www.theregister.com/devops/2026/05/15/git-is-unprepared-for-the-ai-coding-tsunami/5241480",
     "https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381",
     "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/",
-    "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases/"
+    "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases/",
+    "https://www.forbes.com/sites/daveywinder/2026/05/16/holy-grail-google-hackers-discover-pixel-10-zero-click-exploit-chain/",
+    "https://news.ycombinator.com/item?id=48150900",
+    "https://news.ycombinator.com/item?id=48153379",
+    "https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/",
+    "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+    "https://lwn.net/Articles/1068928/"
   ],
-  "last_fetch": "2026-05-17T05:32:00Z",
+  "last_fetch": "2026-05-17T05:44:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -61,7 +67,10 @@
       "https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574",
       "https://parttelescopes.web.app/",
       "https://labs.randomquark.com/alphabet_cards/",
-      "https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html"
+      "https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html",
+      "https://www.forbes.com/sites/daveywinder/2026/05/16/holy-grail-google-hackers-discover-pixel-10-zero-click-exploit-chain/",
+      "https://news.ycombinator.com/item?id=48150900",
+      "https://news.ycombinator.com/item?id=48153379"
     ],
     "the-register": [
       "https://www.theregister.com/ai-ml/2026/05/16/ai-generated-code-is-pain-waiting-to-happen/5241574",
@@ -89,7 +98,9 @@
     ],
     "github-blog": [
       "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/",
-      "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases/"
+      "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases/",
+      "https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/",
+      "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/"
     ],
     "stackoverflow-blog": [
       "https://stackoverflow.blog/2026/05/15/no-dumb-questions-cloud-computing/",
@@ -101,7 +112,8 @@
       "https://lwn.net/Articles/1072538/",
       "https://lwn.net/Articles/1073060/",
       "https://lwn.net/Articles/1072647/",
-      "https://lwn.net/Articles/1071949/"
+      "https://lwn.net/Articles/1071949/",
+      "https://lwn.net/Articles/1068928/"
     ]
   },
   "format_version": 1
