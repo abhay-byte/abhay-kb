@@ -3,3 +3,6 @@ description: My personal projects and notes
 theme: jekyll-theme-minimal
 markdown: kramdown
 permalink: pretty
+include:
+  - .svg
+  - assets/
