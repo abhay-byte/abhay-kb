@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Editors | Abhay's Knowledge Base</title>
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">AI Editors</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/LLM/jobs">Job Listings</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>AI Editor Comparison</h1>
+
+<p>A comparison of AI-integrated code editors and development environments in 2026.</p>
+
+<hr>
+
+<h2 id="cursor">Cursor</h2>
+
+<p>AI-first code editor, VS Code fork. 4M+ developers as of 2026.</p>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Free tier, Pro $20/mo, Business $40/mo</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>Claude Opus/Sonnet, GPT-4.1/5, Gemini, DeepSeek, custom</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Full codebase indexing</td>
+</tr>
+<tr>
+<td><strong>Key Features</strong></td>
+<td>Tab completion, multi-model chat, inline editing, agent mode</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Deep codebase understanding, daily coding</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>macOS, Windows, Linux</td>
+</tr>
+</table>
+
+<h3>Pros & Cons</h3>
+
+<table>
+<tr>
+<th>✅ Pros</th>
+<th>❌ Cons</th>
+</tr>
+<tr>
+<td>Excellent codebase awareness</td>
+<td>Can be slow on large monorepos</td>
+</tr>
+<tr>
+<td>Multi-model support (Claude + GPT)</td>
+<td>Context window limits in chat</td>
+</tr>
+<tr>
+<td>Tab completion is best-in-class</td>
+<td>$20/mo for full features</td>
+</tr>
+<tr>
+<td>Agent mode handles multi-file edits</td>
+<td>Closed-source</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="windsurf-codeium">Windsurf (Codeium)</h2>
+
+<p>AI-native IDE with Cascade agent system.</p>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Free tier, Pro $15/mo, Pro Ultimate $35/mo</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>Claude, GPT, Gemini, DeepSeek, Codeium</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Codebase indexing + multi-file understanding</td>
+</tr>
+<tr>
+<td><strong>Key Features</strong></td>
+<td>Cascade agent, Supercomplete, multi-model routing, Flow AI</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>End-to-end feature development</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>macOS, Windows, Linux</td>
+</tr>
+</table>
+
+<h3>Pros & Cons</h3>
+
+<table>
+<tr>
+<th>✅ Pros</th>
+<th>❌ Cons</th>
+</tr>
+<tr>
+<td>Cascade agent handles complex multi-step tasks</td>
+<td>Free tier has limited credits</td>
+</tr>
+<tr>
+<td>Multi-model routing (chooses best model per task)</td>
+<td>Can be resource-heavy</td>
+</tr>
+<tr>
+<td>Supercomplete predicts entire functions</td>
+<td>Newer than Cursor, smaller community</td>
+</tr>
+<tr>
+<td>Affordable pricing ($15 Pro)</td>
+<td>Some features still in preview</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="visual-studio-code">Visual Studio Code</h2>
+
+<p>Microsoft's code editor with built-in AI features powered by GitHub Copilot. IntelliCode is being phased out in favor of Copilot's integrated cloud agent.</p>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Free (limited) + GitHub Copilot subscription</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>GPT-5.5, Claude Opus 4.7 (Pro+), Haiku via Copilot</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Full codebase indexing with Copilot</td>
+</tr>
+<tr>
+<td><strong>Key Features</strong></td>
+<td>Inline suggestions, Copilot Chat, integrated cloud agent (GitHub Actions), multi-file agents</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Developers already using VS Code and GitHub ecosystem</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>macOS, Windows, Linux</td>
+</tr>
+</table>
+
+<h3>Pros & Cons</h3>
+
+<table>
+<tr>
+<th>✅ Pros</th>
+<th>❌ Cons</th>
+</tr>
+<tr>
+<td>Industry-standard editor, massive extension ecosystem</td>
+<td>IntelliCode deprecated, must use Copilot</td>
+</tr>
+<tr>
+<td>Deep GitHub integration (Copilot, PRs, Actions)</td>
+<td>Best models require Pro+ subscription</td>
+</tr>
+<tr>
+<td>Free tier with basic completions</td>
+<td>Native AI features tied to Microsoft/GitHub ecosystem</td>
+</tr>
+<tr>
+<td>Multi-agent workflows via GitHub Actions</td>
+<td>Limited compared to AI-first IDEs</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="trae-bytedance">TRAE (ByteDance)</h2>
+
+<p>ByteDance's AI-native VS Code fork with SOLO autonomous agent for end-to-end coding automation. Aggressive pricing undercuts competitors.</p>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Free (5K completions), Lite $3/mo, Pro $10/mo, Ultra $100/mo</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>Claude Sonnet 4.5, GPT-4o, DeepSeek R1, Gemini 3.1</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Full codebase understanding with SOLO agent</td>
+</tr>
+<tr>
+<td><strong>Key Features</strong></td>
+<td>SOLO autonomous agent, multi-model backbone, VS Code fork</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>End-to-end feature automation, budget-conscious developers</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>macOS, Windows (Linux coming)</td>
+</tr>
+</table>
+
+<h3>Pros & Cons</h3>
+
+<table>
+<tr>
+<th>✅ Pros</th>
+<th>❌ Cons</th>
+</tr>
+<tr>
+<td>Cheapest Pro plan in AI-IDE space ($10/mo)</td>
+<td>Newer than Cursor/Windsurf, smaller community</td>
+</tr>
+<tr>
+<td>SOLO handles complex multi-file tasks autonomously</td>
+<td>Web-only version available, not native Linux desktop yet</td>
+</tr>
+<tr>
+<td>Multi-model support (Claude + GPT + Gemini)</td>
+<td>Enterprise features still evolving</td>
+</tr>
+<tr>
+<td>Free tier with 5,000 completions</td>
+<td>ByteDance data privacy concerns</td>
+</tr>
+<tr>
+<td>VS Code fork with all extensions</td>
+<td>Limited documentation compared to mature IDEs</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="github-copilot">GitHub Copilot</h2>
+
+<p>Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.</p>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Free, Pro $10/mo, Pro+ $39/mo, Business $19/seat</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>GPT-5.5, Claude Opus 4.7 (Pro+), Haiku, GPT-OSS</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Full codebase indexing + Codebase Awareness</td>
+</tr>
+<tr>
+<td><strong>Key Features</strong></td>
+<td>Tab completion, inline chat, agent mode, code review, Spark, CLI</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Teams already on GitHub ecosystem</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>macOS, Windows, Linux</td>
+</tr>
+</table>
+
+<h3>Pros & Cons</h3>
+
+<table>
+<tr>
+<th>✅ Pros</th>
+<th>❌ Cons</th>
+</tr>
+<tr>
+<td>Deep IDE integration (VS Code, JetBrains, etc.)</td>
+<td>Best models locked behind Pro+ ($39/mo)</td>
+</tr>
+<tr>
+<td>Spark for interactive coding sessions</td>
+<td>CLI agent still maturing</td>
+</tr>
+<tr>
+<td>Code review with AI in PRs</td>
+<td>GPT-5.5 preview — not available in all regions</td>
+</tr>
+<tr>
+<td>Cheapest Pro plan at $10/mo</td>
+<td>Lacks dedicated multi-agent flows</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="google-antigravity">Google Antigravity</h2>
+
+<p>Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3.</p>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Free, Pro $20/mo, Ultra $249.99/mo</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>Gemini 3.1 Pro, Gemini 3 Flash, Claude Opus/Sonnet, GPT-OSS</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Multi-agent missions, 5 parallel agents</td>
+</tr>
+<tr>
+<td><strong>Key Features</strong></td>
+<td>Agent Skills, multi-agent missions, built-in browser, web search</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Multi-agent workflows, rapid prototyping</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>macOS, Windows, Linux</td>
+</tr>
+</table>
+
+<h3>Pros & Cons</h3>
+
+<table>
+<tr>
+<th>✅ Pros</th>
+<th>❌ Cons</th>
+</tr>
+<tr>
+<td>Claude Opus & Gemini in one IDE (separate limits)</td>
+<td>Quota cuts: free tier cut 92% since launch</td>
+</tr>
+<tr>
+<td>5 parallel agents working simultaneously</td>
+<td>Pro lockouts reported (7+ days)</td>
+</tr>
+<tr>
+<td>Agent Skills for custom workflows</td>
+<td>Ultra $250/mo is most expensive</td>
+</tr>
+<tr>
+<td>Built-in browser for web testing</td>
+<td>"Lobotomized" Gemini quality concerns</td>
+</tr>
+<tr>
+<td>Completely free tier (rate-limited)</td>
+<td>Credit system is opaque</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="kiro-aws">Kiro (AWS)</h2>
+
+<p>Amazon's agentic IDE with spec-driven development methodology. Generates requirements docs, design specs, and implementation tasks before coding.</p>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Free public preview</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>Claude Sonnet 4.5, Auto (multi-model routing)</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Executable specs (requirements.md, design.md, tasks.md)</td>
+</tr>
+<tr>
+<td><strong>Key Features</strong></td>
+<td>Spec-driven dev, agent hooks, native MCP, autopilot mode, CLI access</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Teams needing structured development, production-ready output</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>macOS, Windows, Linux, CLI, Web</td>
+</tr>
+</table>
+
+<h3>Pros & Cons</h3>
+
+<table>
+<tr>
+<th>✅ Pros</th>
+<th>❌ Cons</th>
+</tr>
+<tr>
+<td>Specs make development process explicit and trackable</td>
+<td>Still in public preview (evolving features)</td>
+</tr>
+<tr>
+<td>Agent hooks automate tasks on file saves/events</td>
+<td>AWS ecosystem integration required for full power</td>
+</tr>
+<tr>
+<td>Native MCP support for docs, APIs, databases</td>
+<td>Newer than Cursor/Copilot</td>
+</tr>
+<tr>
+<td>CLI and web interface flexibility</td>
+<td>Learning curve for spec-driven workflow</td>
+</tr>
+<tr>
+<td>Designed for large enterprise codebases</td>
+<td></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="feature-comparison">Feature Comparison</h2>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>VS Code</th>
+<th>TRAE</th>
+<th>Kiro</th>
+<th>Cursor</th>
+<th>Windsurf</th>
+<th>GitHub Copilot</th>
+<th>Antigravity</th>
+</tr>
+<tr>
+<td><strong>Price (Pro)</strong></td>
+<td>Copilot $10</td>
+<td>$10</td>
+<td>Free</td>
+<td>$20</td>
+<td>$15</td>
+<td>$10</td>
+<td>$20</td>
+</tr>
+<tr>
+<td><strong>Free Tier</strong></td>
+<td>Limited</td>
+<td>5K completions</td>
+<td>Yes (preview)</td>
+<td>Limited</td>
+<td>Limited</td>
+<td>Yes</td>
+<td>Yes (rate-limited)</td>
+</tr>
+<tr>
+<td><strong>Multi-Model</strong></td>
+<td>GPT + Claude</td>
+<td>Claude + GPT + Gemini</td>
+<td>Auto (Sonnet 4.5)</td>
+<td>Yes</td>
+<td>Yes (auto-routing)</td>
+<td>GPT + Claude</td>
+<td>Yes (Gemini + Claude)</td>
+</tr>
+<tr>
+<td><strong>Agent Mode</strong></td>
+<td>Cloud agent</td>
+<td>SOLO autonomous</td>
+<td>Autopilot</td>
+<td>Yes</td>
+<td>Cascade</td>
+<td>Yes (CLI + IDE)</td>
+<td>5 parallel agents</td>
+</tr>
+<tr>
+<td><strong>Spec-Driven</strong></td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Tab Completion</strong></td>
+<td>IntelliCode (deprec.)</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Codebase Index</strong></td>
+<td>✅ (Copilot)</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Browser Built-in</strong></td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Open Source</strong></td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌ (VS Code fork)</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>Mac/Win/Linux</td>
+<td>Mac/Win (Linux soon)</td>
+<td>Mac/Win/Linux</td>
+<td>Mac/Win/Linux</td>
+<td>Mac/Win/Linux</td>
+<td>Mac/Win/Linux</td>
+<td>Mac/Win/Linux</td>
+</tr>
+</table>
+
+<hr>
+
+<h3>📊 Pricing Summary (Monthly)</h3>
+
+<table>
+<tr>
+<th>Tool</th>
+<th>Free</th>
+<th>Lite</th>
+<th>Pro</th>
+<th>Ultra/Business</th>
+</tr>
+<tr>
+<td><strong>VS Code</strong></td>
+<td>Limited</td>
+<td>—</td>
+<td>Copilot $10</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>TRAE</strong></td>
+<td>5K comps</td>
+<td>$3</td>
+<td>$10</td>
+<td>$100</td>
+</tr>
+<tr>
+<td><strong>Kiro</strong></td>
+<td>Yes (preview)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Cursor</strong></td>
+<td>Limited</td>
+<td>—</td>
+<td>$20</td>
+<td>$40</td>
+</tr>
+<tr>
+<td><strong>Windsurf</strong></td>
+<td>Limited</td>
+<td>—</td>
+<td>$15</td>
+<td>$35</td>
+</tr>
+<tr>
+<td><strong>GitHub Copilot</strong></td>
+<td>Yes</td>
+<td>—</td>
+<td>$10</td>
+<td>$19/seat</td>
+</tr>
+<tr>
+<td><strong>Antigravity</strong></td>
+<td>Yes (rate-limited)</td>
+<td>—</td>
+<td>$20</td>
+<td>$250</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="quick-recommendations">Quick Recommendations</h2>
+
+<table>
+<tr>
+<th>If you...</th>
+<th>Pick this</th>
+</tr>
+<tr>
+<td>Want cheapest pro AI IDE</td>
+<td><strong>TRAE Lite</strong> ($3/mo) or <strong>VS Code Free</strong></td>
+</tr>
+<tr>
+<td>Want end-to-end automation with budget</td>
+<td><strong>TRAE Pro</strong> ($10/mo)</td>
+</tr>
+<tr>
+<td>Want structured, production-ready output</td>
+<td><strong>Kiro</strong> (free preview)</td>
+</tr>
+<tr>
+<td>Want deep codebase understanding</td>
+<td><strong>Cursor</strong> ($20/mo)</td>
+</tr>
+<tr>
+<td>Want affordable multi-model with agent flows</td>
+<td><strong>Windsurf</strong> ($15/mo)</td>
+</tr>
+<tr>
+<td>Cheapest on GitHub ecosystem</td>
+<td><strong>GitHub Copilot</strong> ($10/mo)</td>
+</tr>
+<tr>
+<td>Want Claude + Gemini free</td>
+<td><strong>Antigravity</strong> (free tier)</td>
+</tr>
+<tr>
+<td>Don't want to pay, just basic help</td>
+<td><strong>TRAE Free</strong> (5K completions) or <strong>VS Code Free</strong></td>
+</tr>
+</table>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
