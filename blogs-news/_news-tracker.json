@@ -1,14 +1,99 @@
 {
-  "tracked_entries": [],
-  "last_fetch": null,
+  "tracked_entries": [
+    "https://crates.io/crates/zerostack/1.0.0",
+    "https://nvlabs.github.io/Sana/WM/",
+    "https://arxiv.org/abs/2605.12357",
+    "https://jvns.ca/blog/2026/05/15/moving-away-from-tailwind--and-learning-to-structure-my-css-/",
+    "https://kabir.au/blog/the-ctf-scene-is-dead",
+    "https://www.antipope.org/charlie/blog-static/fiction/accelerando/accelerando.html",
+    "https://futhark-lang.org/examples.html",
+    "https://user8.bearblog.dev/the-world-is-too-complicated/",
+    "https://unstack.io/halt-and-catch-fire",
+    "https://lcamtuf.substack.com/p/a-nicer-voltmeter-clock",
+    "https://openai.com/index/malta-chatgpt-plus-partnership/",
+    "https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574",
+    "https://parttelescopes.web.app/",
+    "https://labs.randomquark.com/alphabet_cards/",
+    "https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html",
+    "https://www.theregister.com/ai-ml/2026/05/16/ai-generated-code-is-pain-waiting-to-happen/5241574",
+    "https://www.theregister.com/personal-tech/2026/05/16/cloud-managed-earbuds-sound-strange-as-a-concept-and-on-a-plane/5240928",
+    "https://www.theregister.com/systems/2026/05/16/europe-built-sovereign-clouds-to-escape-us-control-then-forgot-about-the-processors/5237735",
+    "https://www.infoq.com/news/2026/05/ubuntu-on-device-ai/",
+    "https://www.infoq.com/news/2026/05/cloud-fraud-defense-recaptcha/",
+    "https://www.infoq.com/news/2026/05/aspire-13-3-release/",
+    "https://www.infoq.com/news/2026/05/anthropic-routines-claude/",
+    "https://www.infoq.com/news/2026/05/cloudflare-workflows-v2-release/",
+    "https://www.infoq.com/news/2026/05/discord-circular-dependency/",
+    "https://www.infoq.com/news/2026/05/solidjs-2-async/",
+    "https://www.infoq.com/news/2026/05/ai-agents-kubernetes-rag/",
+    "https://www.infoq.com/news/2026/05/moonrepo-2-release/",
+    "https://dev.to/todd_linnertz_871a076f68e/the-agent-is-20-of-the-work-the-platform-is-the-other-80-4cf8",
+    "https://dev.to/apples_one_cd174284bffb/i-stayed-up-until-3-am-to-build-a-better-claude-code-guide-than-the-one-with-52000-stars-heres-15cg",
+    "https://dev.to/yanoai/ai-agents-in-the-enterprise-why-less-can-be-more-14mj",
+    "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/",
+    "https://stackoverflow.blog/2026/05/15/no-dumb-questions-cloud-computing/",
+    "https://stackoverflow.blog/2026/05/15/observability-and-human-intuition-in-an-ai-world/",
+    "https://stackoverflow.blog/2026/05/13/rethinking-engineering-for-the-agentic-area/",
+    "https://stackoverflow.blog/2026/05/12/you-shipped-it-fast-but-did-you-ship-it-right/",
+    "https://lwn.net/Articles/1072538/",
+    "https://lwn.net/Articles/1073060/",
+    "https://lwn.net/Articles/1072647/",
+    "https://lwn.net/Articles/1071949/"
+  ],
+  "last_fetch": "2026-05-17T05:12:00Z",
   "entries_by_source": {
-    "hacker-news": [],
-    "the-register": [],
-    "infoq": [],
-    "devto": [],
-    "github-blog": [],
-    "stackoverflow-blog": [],
-    "lwn": []
-  },
-  "format_version": 1
+    "hacker-news": [
+      "https://crates.io/crates/zerostack/1.0.0",
+      "https://nvlabs.github.io/Sana/WM/",
+      "https://arxiv.org/abs/2605.12357",
+      "https://jvns.ca/blog/2026/05/15/moving-away-from-tailwind--and-learning-to-structure-my-css-/",
+      "https://kabir.au/blog/the-ctf-scene-is-dead",
+      "https://www.antipope.org/charlie/blog-static/fiction/accelerando/accelerando.html",
+      "https://futhark-lang.org/examples.html",
+      "https://user8.bearblog.dev/the-world-is-too-complicated/",
+      "https://unstack.io/halt-and-catch-fire",
+      "https://lcamtuf.substack.com/p/a-nicer-voltmeter-clock",
+      "https://openai.com/index/malta-chatgpt-plus-partnership/",
+      "https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574",
+      "https://parttelescopes.web.app/",
+      "https://labs.randomquark.com/alphabet_cards/",
+      "https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html"
+    ],
+    "the-register": [
+      "https://www.theregister.com/ai-ml/2026/05/16/ai-generated-code-is-pain-waiting-to-happen/5241574",
+      "https://www.theregister.com/personal-tech/2026/05/16/cloud-managed-earbuds-sound-strange-as-a-concept-and-on-a-plane/5240928",
+      "https://www.theregister.com/systems/2026/05/16/europe-built-sovereign-clouds-to-escape-us-control-then-forgot-about-the-processors/5237735"
+    ],
+    "infoq": [
+      "https://www.infoq.com/news/2026/05/ubuntu-on-device-ai/",
+      "https://www.infoq.com/news/2026/05/cloud-fraud-defense-recaptcha/",
+      "https://www.infoq.com/news/2026/05/aspire-13-3-release/",
+      "https://www.infoq.com/news/2026/05/anthropic-routines-claude/",
+      "https://www.infoq.com/news/2026/05/cloudflare-workflows-v2-release/",
+      "https://www.infoq.com/news/2026/05/discord-circular-dependency/",
+      "https://www.infoq.com/news/2026/05/solidjs-2-async/",
+      "https://www.infoq.com/news/2026/05/ai-agents-kubernetes-rag/",
+      "https://www.infoq.com/news/2026/05/moonrepo-2-release/"
+    ],
+    "devto": [
+      "https://dev.to/todd_linnertz_871a076f68e/the-agent-is-20-of-the-work-the-platform-is-the-other-80-4cf8",
+      "https://dev.to/apples_one_cd174284bffb/i-stayed-up-until-3-am-to-build-a-better-claude-code-guide-than-the-one-with-52000-stars-heres-15cg",
+      "https://dev.to/yanoai/ai-agents-in-the-enterprise-why-less-can-be-more-14mj"
+    ],
+    "github-blog": [
+      "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/"
+    ],
+    "stackoverflow-blog": [
+      "https://stackoverflow.blog/2026/05/15/no-dumb-questions-cloud-computing/",
+      "https://stackoverflow.blog/2026/05/15/observability-and-human-intuition-in-an-ai-world/",
+      "https://stackoverflow.blog/2026/05/13/rethinking-engineering-for-the-agentic-area/",
+      "https://stackoverflow.blog/2026/05/12/you-shipped-it-fast-but-did-you-ship-it-right/"
+    ],
+    "lwn": [
+      "https://lwn.net/Articles/1072538/",
+      "https://lwn.net/Articles/1073060/",
+      "https://lwn.net/Articles/1072647/",
+      "https://lwn.net/Articles/1071949/"
+    ]
+  }
 }
