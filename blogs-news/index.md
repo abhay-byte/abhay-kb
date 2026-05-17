@@ -39,11 +39,7 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 - [SANA-WM: 2.6B open-source world model for 1-minute 720p video](news/2026-05-16-hacker-news-sana-wm-open-source-world-model-video/) — *Hacker News*
 - [Frontier AI has broken the open CTF format](news/2026-05-16-hacker-news-frontier-ai-broken-open-ctf-format/) — *Hacker News*
 
-<<<<<<< HEAD
 ### May 15, 2026
-=======
-
->>>>>>> c3a133e (news: add digest for 2026-05-17 (6 articles))
 
 - [SolidJS 2.0 Beta: First-Class Async, Reworked Suspense](news/2026-05-15-infoq-solidjs-2-beta-async/) — *InfoQ*
 - [Anthropic Introduces Routines for Claude Code Automation](news/2026-05-15-infoq-anthropic-routines-claude-code/) — *InfoQ*
