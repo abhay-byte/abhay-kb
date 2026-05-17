@@ -8,6 +8,13 @@ title: News Archive — Updated May 17, 2026
 *Last updated: May 17, 2026*
 
 <!-- NEWS-LIST -->
+
+- 2026-05-17 — [Git is unprepared for the AI coding tsunami](blogs-news/news/git-unprepared-ai-coding-tsunami) — The Register
+- 2026-05-17 — [Anthropic's Bun Rust rewrite merged at speed of AI](blogs-news/news/anthropic-bun-rust-rewrite-merged) — The Register
+- 2026-05-17 — [Inside Claude Code Auto Mode: Anthropic's Autonomous Coding](blogs-news/news/claude-code-auto-mode-anthropic) — InfoQ
+- 2026-05-17 — [How Braze's CTO is rethinking engineering for the agentic era](blogs-news/news/braze-cto-engineering-agentic-era) — Stack Overflow Blog
+- 2026-05-17 — [GitHub Copilot in Visual Studio Code, April releases](blogs-news/news/github-copilot-vs-code-april-releases) — GitHub Blog
+- 2026-05-17 — [Seven new stable Linux kernels patch CVE-2026-46333](blogs-news/news/seven-new-stable-linux-kernels-patched) — LWN.net
 - 2026-05-17 — [The Agent Is 20% of the Work. The Platform Is the Other 80%.](<https://dev.to/todd_linnertz_871a076f68e/the-agent-is-20-of-the-work-the-platform-is-the-other-80-4cf8>) — *Dev.to*
 - 2026-05-17 — [I Stayed Up Until 3 AM to Build a Better Claude Code Guide](<https://dev.to/apples_one_cd174284bffb/i-stayed-up-until-3-am-to-build-a-better-claude-code-guide-than-the-one-with-52000-stars-heres-15cg>) — *Dev.to*
 - 2026-05-17 — [AI Agents in the Enterprise: Why Less Can Be More](<https://dev.to/yanoai/ai-agents-in-the-enterprise-why-less-can-be-more-14mj>) — *Dev.to*
@@ -37,13 +44,3 @@ title: News Archive — Updated May 17, 2026
 - 2026-05-15 — [SolidJS 2.0 Beta: First-Class Async, Reworked Suspense and Deterministic Batching](<https://www.infoq.com/news/2026/05/solidjs-2-async/>) — *InfoQ*
 - 2026-05-15 — [Benchmarking AI Agents on Kubernetes](<https://www.infoq.com/news/2026/05/ai-agents-kubernetes-rag/>) — *InfoQ*
 - 2026-05-15 — [Building a general-purpose accessibility agent—and what we learned in the process](<https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/>) — *GitHub Blog*
-- 2026-05-15 — [No Dumb Questions: What is cloud computing and why is everyone doing it?](<https://stackoverflow.blog/2026/05/15/no-dumb-questions-cloud-computing/>) — *Stack Overflow Blog*
-- 2026-05-15 — [Observability and human intuition in an AI world](<https://stackoverflow.blog/2026/05/15/observability-and-human-intuition-in-an-ai-world/>) — *Stack Overflow Blog*
-- 2026-05-15 — [Controlling memory-management with BPF](<https://lwn.net/Articles/1072538/>) — *LWN.net*
-- 2026-05-15 — [Seven new stable kernels with patches for CVE-2026-46333](<https://lwn.net/Articles/1073060/>) — *LWN.net*
-- 2026-05-14 — [Moonrepo Releases Moon v2.0 with WASM Plugin Toolchains and Overhauled CLI](<https://www.infoq.com/news/2026/05/moonrepo-2-release/>) — *InfoQ*
-- 2026-05-13 — [How Braze's CTO is rethinking engineering for the agentic era](<https://stackoverflow.blog/2026/05/13/rethinking-engineering-for-the-agentic-area/>) — *Stack Overflow Blog*
-- 2026-05-13 — [Yet another Dirty Frag type vulnerability: Fragnesia](<https://lwn.net/Articles/1072647/>) — *LWN.net*
-- 2026-05-13 — [Friction in Fedora over AI developer desktop initiative](<https://lwn.net/Articles/1071949/>) — *LWN.net*
-- 2026-05-12 — [Nearly 50 Years Later, WKRP in Cincinnati Becomes a Real Radio Station](<https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html>) — *Hacker News*
-- 2026-05-12 — [You Shipped It Fast. But Did You Ship It Right?](<https://stackoverflow.blog/2026/05/12/you-shipped-it-fast-but-did-you-ship-it-right/>) — *Stack Overflow Blog*

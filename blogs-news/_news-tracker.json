@@ -38,9 +38,13 @@
     "https://lwn.net/Articles/1072538/",
     "https://lwn.net/Articles/1073060/",
     "https://lwn.net/Articles/1072647/",
-    "https://lwn.net/Articles/1071949/"
+    "https://lwn.net/Articles/1071949/",
+    "https://www.theregister.com/devops/2026/05/15/git-is-unprepared-for-the-ai-coding-tsunami/5241480",
+    "https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381",
+    "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/",
+    "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases/"
   ],
-  "last_fetch": "2026-05-17T05:12:00Z",
+  "last_fetch": "2026-05-17T05:32:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -62,7 +66,9 @@
     "the-register": [
       "https://www.theregister.com/ai-ml/2026/05/16/ai-generated-code-is-pain-waiting-to-happen/5241574",
       "https://www.theregister.com/personal-tech/2026/05/16/cloud-managed-earbuds-sound-strange-as-a-concept-and-on-a-plane/5240928",
-      "https://www.theregister.com/systems/2026/05/16/europe-built-sovereign-clouds-to-escape-us-control-then-forgot-about-the-processors/5237735"
+      "https://www.theregister.com/systems/2026/05/16/europe-built-sovereign-clouds-to-escape-us-control-then-forgot-about-the-processors/5237735",
+      "https://www.theregister.com/devops/2026/05/15/git-is-unprepared-for-the-ai-coding-tsunami/5241480",
+      "https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381"
     ],
     "infoq": [
       "https://www.infoq.com/news/2026/05/ubuntu-on-device-ai/",
@@ -73,7 +79,8 @@
       "https://www.infoq.com/news/2026/05/discord-circular-dependency/",
       "https://www.infoq.com/news/2026/05/solidjs-2-async/",
       "https://www.infoq.com/news/2026/05/ai-agents-kubernetes-rag/",
-      "https://www.infoq.com/news/2026/05/moonrepo-2-release/"
+      "https://www.infoq.com/news/2026/05/moonrepo-2-release/",
+      "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/"
     ],
     "devto": [
       "https://dev.to/todd_linnertz_871a076f68e/the-agent-is-20-of-the-work-the-platform-is-the-other-80-4cf8",
@@ -81,7 +88,8 @@
       "https://dev.to/yanoai/ai-agents-in-the-enterprise-why-less-can-be-more-14mj"
     ],
     "github-blog": [
-      "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/"
+      "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/",
+      "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases/"
     ],
     "stackoverflow-blog": [
       "https://stackoverflow.blog/2026/05/15/no-dumb-questions-cloud-computing/",
@@ -95,5 +103,6 @@
       "https://lwn.net/Articles/1072647/",
       "https://lwn.net/Articles/1071949/"
     ]
-  }
+  },
+  "format_version": 1
 }
