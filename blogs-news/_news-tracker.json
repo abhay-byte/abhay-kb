@@ -1,0 +1,14 @@
+{
+  "tracked_entries": [],
+  "last_fetch": null,
+  "entries_by_source": {
+    "hacker-news": [],
+    "the-register": [],
+    "infoq": [],
+    "devto": [],
+    "github-blog": [],
+    "stackoverflow-blog": [],
+    "lwn": []
+  },
+  "format_version": 1
+}

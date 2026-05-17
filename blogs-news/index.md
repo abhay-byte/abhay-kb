@@ -5,18 +5,19 @@ title: Blogs & News
 
 # 📰 Blogs & News
 
-A curated feed of AI news, tech updates, and personal blog posts.
+---
 
-This is a living collection — content gets added here regularly:
+## 🤖 Developer News
+
+Fresh developer & software engineering news — auto-fetched **daily at 5 AM IST** from top sources.
+Summarized by the bot so you don't have to wade through the noise.
+
+**Sources:** Hacker News (100+ upvotes), The Register, InfoQ, Dev.to, GitHub Blog, Stack Overflow Blog, LWN.net
+
+👉 **[Browse the News Archive](./news-archive)** — all past news items
+
+---
 
 ## ✍️ Blog
 
 Thoughts, tutorials, deep dives, and project walkthroughs I write over time.
-
-## 🤖 Bot-Posted News
-
-Curated AI and tech news from the industry — automatically fetched and summarized by the bot. Covers Claude, Gemini, GPT, open-source models, coding agents, and everything shaping the dev tools landscape.
-
----
-
-*Content coming as I write and as the bot picks up interesting stories.*
