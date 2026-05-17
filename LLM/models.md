@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-16 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-17 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled May 2026.
@@ -16,7 +16,7 @@ Compiled May 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 16 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 17 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -102,7 +102,7 @@ Compiled May 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 16 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 17 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -151,6 +151,10 @@ Compiled May 2026.
 <text x="569.1368041144951" y="94.55000000000003" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7</text>
 <circle cx="343.8440446560686" cy="206.8" r="6" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="343.8440446560686" y="224.8" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.3 Codex</text>
+<circle cx="569.14" cy="186.1" r="6" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="569.14" y="204.1" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.5</text>
+<circle cx="212.73" cy="186.1" r="6" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="212.73" y="172.1" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Kimi K2.6</text>
 </svg>
 
 
@@ -246,12 +250,14 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 
 | Model | Input /1M | Output /1M | Cached Input | Context | Notes |
 |-------|-----------|------------|-------------|---------|-------|
-| GPT-5.5 | $5.00 | $30.00 | $0.50 | 1M | **88.7% SWE-Bench** (#1). Flagship reasoning + coding |
+| GPT-5.5 (≤272K) | $5.00 | $30.00 | $0.50 | 1M | **88.7% SWE-Bench** (#1). Flagship reasoning + coding |
+| GPT-5.5 (>272K) | $10.00 | $45.00 | $1.00 | 1M | Long context tier >272K tokens |
 | GPT-5.5 Pro | $30.00 | $180.00 | — | 1M | Premium tier for research-grade problems |
-| GPT-5.4 | $2.50 | $15.00 | $0.25 | 1M | ~80% SWE-Bench. Strong all-rounder |
+| GPT-5.4 (≤272K) | $2.50 | $15.00 | $0.25 | 1M | ~80% SWE-Bench Verified. 59.1% SWE-Bench Pro |
+| GPT-5.4 (>272K) | $5.00 | $22.50 | $0.50 | 1M | Long context tier >272K tokens |
 | GPT-5.4 Mini | $0.75 | $4.50 | $0.075 | 400K | Affordable reasoning. Supports reasoning effort control |
 | GPT-5.4 Nano | $0.20 | $1.25 | — | 400K | Fastest, cheapest 5.4 tier. Ideal for summaries, classification |
-| GPT-5.3 Codex | $1.75 | $14.00 | — | 400K | **85.0% SWE-Bench** (#3). Coding specialist |
+| GPT-5.3 Codex | $1.75 | $14.00 | — | 400K | **85.0% SWE-Bench Verified** (#3). 56.8% SWE-Bench Pro. Coding specialist |
 
 ### GPT-4.1 Family (Production Workhorse)
 
@@ -269,7 +275,7 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 | o3 | $2.00 | $8.00 | — | — | Flagship reasoning. Chain-of-thought built in |
 
 Batch API saves 50% on all models. Prompt caching discounts: up to 90% off (GPT-5.5), 75% off (GPT-4.1).
-GPT-5.4 scores ~80% SWE-Bench Verified. GPT-4.1 is OpenAI's recommended production default for most workloads.
+GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro. GPT-4.1 is OpenAI's recommended production default for most workloads.
 
 ---
 
@@ -311,6 +317,7 @@ Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacl
 | Qwen3.6 Max Preview | $0.861 | $3.441 | 252K | — | Top reasoning tier (preview) |
 
 Qwen3.6 Plus: within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
+Qwen3.6-27B (dense, Apache 2.0): 77.2% SWE-Bench Verified — strong self-hosting option.
 
 ### Previous Gen (Qwen3.5)
 
@@ -443,7 +450,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/qwen3.5-plus | Qwen3.5 Plus |
 | opencode-go/qwen3.6-plus | Qwen3.6 Plus |
 
-### Request Estimates (May 16 2026)
+### Request Estimates (May 17 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
