@@ -73,3 +73,10 @@
 | 52 | SWE Intern (Backend) | Sense | Bangalore | — | https://offcampusjobs4u.com/sense-internship-2026-software-engineer-intern-backend/ |
 | 53 | SWE Internship | Agoda | Gurgaon | ~28-30 LPA | https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/ |
 | 54 | Intern (Software Engineering) | Wipro | Bangalore | — | https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/ |
+
+### 17-05-2026 (Daily Cron)
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 55 | IT Associate Trainee | Leidos | Pune | Best in Industry | https://jobsnet.in/leidos-off-campus-drive-it-trainee-freshers/ |
+| 56 | Apprentice - Software Engineer | BetaNXT | Bangalore | Best in Industry | https://jobsnet.in/betanxt-off-campus-drive-apprentice-software-engineer/ |
+| 57 | Software Engineer 1 | Dell Technologies | Bangalore | Best in Industry | https://freshershunt.in/dell-technologies-off-campus-drive-2026/ |
