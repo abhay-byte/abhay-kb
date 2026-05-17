@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-17 (Daily Cron)
+Last updated: 2026-05-17 (Evening Batch)
 
 ---
 
@@ -69,6 +69,11 @@ Last updated: 2026-05-17 (Daily Cron)
 | 49 | IT Associate Trainee | Leidos | Pune | Best in Industry | 16-May-2026 | [Apply](https://jobsnet.in/leidos-off-campus-drive-it-trainee-freshers/) |
 | 50 | Apprentice - Software Engineer | BetaNXT | Bangalore | Best in Industry | 16-May-2026 | [Apply](https://jobsnet.in/betanxt-off-campus-drive-apprentice-software-engineer/) |
 | 51 | Software Engineer 1 | Dell Technologies | Bangalore | Best in Industry | 16-May-2026 | [Apply](https://freshershunt.in/dell-technologies-off-campus-drive-2026/) |
+| 52 | Software Developer 1 | Oracle | Bengaluru/Hyderabad | Not disclosed | May 2026 | [Apply](https://freshershunt.in/oracle-off-campus-drive-2026/) |
+| 53 | Engineer 1 - Software Dev & Eng | Comcast | Chennai | ~6-8 LPA | May 2026 | [Apply](https://freshershunt.in/comcast-off-campus-drive-2026/) |
+| 54 | C++ Apps Dev Programmer Analyst | Citi | Pune | Competitive | May 2026 | [Apply](https://freshershunt.in/citi-off-campus-drive-2026-pune/) |
+| 55 | Software Developer | Zoho | Across India | Best in Industry | May 2026 | [Apply](https://jobsnet.in/zoho-off-campus-drive-hiring-software-developers-freshers/) |
+| 56 | Jr. Associate Software Engineer | Wipro | Bengaluru | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-off-campus-drive-2026-jr-associate-software-engineer-bengaluru/) |
 
 ### 💼 Internships
 
@@ -78,6 +83,7 @@ Last updated: 2026-05-17 (Daily Cron)
 | 2 | Software Engineering Intern (Backend) | Sense | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/sense-internship-2026-software-engineer-intern-backend/) |
 | 3 | Software Engineer Internship | Agoda | Gurgaon | ~₹28-30 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/) |
 | 4 | Intern (Software Engineering) | Wipro | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/) |
+| 5 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | May 2026 | [Apply](https://freshershunt.in/payu-off-campus-drive-2026/) |
 
 ### 🎮 Game Development
 
@@ -101,7 +107,7 @@ Last updated: 2026-05-17 (Daily Cron)
 
 1. **Amazon SDE I** - ₹30-44 LPA - Multiple Locations - [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/)
 2. **Qualcomm Associate SWE** - ₹20-30 LPA - Hyderabad/Bangalore/Chennai/Noida - [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/)
-3. **Microsoft Software Engineer** - Noida - [Apply](https://freshershunt.in/microsoft-off-campus-drive-2026-software-engineer/)
+3. **Oracle Software Developer 1** - Bengaluru/Hyderabad - [Apply](https://freshershunt.in/oracle-off-campus-drive-2026/)
 
 ---
 

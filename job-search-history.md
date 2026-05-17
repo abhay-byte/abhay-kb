@@ -80,3 +80,13 @@
 | 55 | IT Associate Trainee | Leidos | Pune | Best in Industry | https://jobsnet.in/leidos-off-campus-drive-it-trainee-freshers/ |
 | 56 | Apprentice - Software Engineer | BetaNXT | Bangalore | Best in Industry | https://jobsnet.in/betanxt-off-campus-drive-apprentice-software-engineer/ |
 | 57 | Software Engineer 1 | Dell Technologies | Bangalore | Best in Industry | https://freshershunt.in/dell-technologies-off-campus-drive-2026/ |
+
+### 17-05-2026 (Evening Batch)
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 58 | Software Developer 1 | Oracle | Bengaluru/Hyderabad | Not disclosed | https://freshershunt.in/oracle-off-campus-drive-2026/ |
+| 59 | Engineer 1 - Software Dev & Eng | Comcast | Chennai | ~6-8 LPA | https://freshershunt.in/comcast-off-campus-drive-2026/ |
+| 60 | C++ Apps Dev Programmer Analyst | Citi | Pune | Competitive | https://freshershunt.in/citi-off-campus-drive-2026-pune/ |
+| 61 | Software Developer | Zoho | Across India | Best in Industry | https://jobsnet.in/zoho-off-campus-drive-hiring-software-developers-freshers/ |
+| 62 | Jr. Associate Software Engineer | Wipro | Bengaluru | — | https://offcampusjobs4u.com/wipro-off-campus-drive-2026-jr-associate-software-engineer-bengaluru/ |
+| 63 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | https://freshershunt.in/payu-off-campus-drive-2026/ |
