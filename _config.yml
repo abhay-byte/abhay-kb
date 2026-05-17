@@ -1,4 +1,5 @@
 title: Abhay's Knowledge Base
 description: My personal projects and notes
 theme: jekyll-theme-minimal
-markdown: kramdown# Force rebuild
+markdown: kramdown
+permalink: pretty
