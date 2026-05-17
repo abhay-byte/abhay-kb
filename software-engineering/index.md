@@ -5,6 +5,9 @@ title: Software Engineering
 
 # Software Engineering
 
+> *"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."*
+> — Martin Fowler
+
 Software engineering principles, methodologies, and best practices across the entire development lifecycle.
 
 ---
