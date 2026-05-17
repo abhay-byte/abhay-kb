@@ -658,7 +658,7 @@ These two concepts are **inversely related** in healthy code:
 | Modules do one thing well and are independent | Modules do many things and are tangled together |
 | Easy to test, change, and reuse | Brittle, fragile, hard to understand |
 
-![Design Quality Map](../assets/design-quality-map.svg)
+![Design Quality Map](/abhay-kb/assets/design-quality-map.svg)
 
 
 **The golden rule:** A module should be internally cohesive (focused on one thing) and externally loosely coupled (independent of its neighbors).
