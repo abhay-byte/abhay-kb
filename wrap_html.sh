@@ -63,7 +63,11 @@ cat > "$OUTPUT_FILE" << HTMLEOF
 
     .sidebar {
       width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
-      position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
     }
     .sidebar h1 {
       font-size: 22px; font-weight: 700; color: #fff;
@@ -192,7 +196,7 @@ cat > "$OUTPUT_FILE" << HTMLEOF
       <nav>
         <a href="/abhay-kb/">Home</a>
         <a href="/abhay-kb/PROJECTS">All Projects</a>
-        <a href="/abhay-kb/LLM/jobs">Job Listings</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
         <div class="nav-section-label">Software Engineering</div>
         <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
