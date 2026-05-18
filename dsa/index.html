@@ -1,22 +1,9 @@
-#!/bin/bash
-#
-# wrap_html.sh — wraps Markdown-or-HTML content with the ORIGINAL
-# sidebar/layout from _layouts/standalone.html (the home-page sidebar).
-#
-# Usage: wrap_html.sh <content_file> <output_file> <page_title> <topbar_title>
-
-CONTENT_FILE="$1"
-OUTPUT_FILE="$2"
-TITLE="$3"
-TOPBAR_TITLE="$4"
-
-cat > "$OUTPUT_FILE" << HTMLEOF
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$TITLE | Abhay's Knowledge Base</title>
+  <title>DSA — Data Structures & Algorithms | Abhay's Knowledge Base</title>
   <style>
     /* ══════════════════════════════════════════════
        SHARED LAYOUT — matches _layouts/standalone.html
@@ -180,7 +167,7 @@ cat > "$OUTPUT_FILE" << HTMLEOF
 <body>
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
-    <span class="topbar-title">$TOPBAR_TITLE</span>
+    <span class="topbar-title">DSA</span>
   </div>
 
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
@@ -225,14 +212,216 @@ cat > "$OUTPUT_FILE" << HTMLEOF
       </nav>
     </aside>
     <main class="main-content">
-HTMLEOF
+<h1>📐 Data Structures & Algorithms</h1>
 
-# Add content
-cat "$CONTENT_FILE" >> "$OUTPUT_FILE"
+<p>A reference guide for essential DSA concepts. Dummy content to get started.</p>
 
-# HTML footer
-cat >> "$OUTPUT_FILE" << 'HTMLEOF'
-    </main>
+<h2 id="data-structures">Data Structures</h2>
+
+<h3>Arrays</h3>
+<ul>
+<li>Contiguous memory, O(1) random access</li>
+<li>Insert/delete at end: O(1) amortized</li>
+<li>Insert/delete at arbitrary position: O(n)</li>
+</ul>
+
+<h3>Linked Lists</h3>
+<ul>
+<li><strong>Singly Linked</strong>: each node has data + next pointer</li>
+<li><strong>Doubly Linked</strong>: each node has data + next + prev pointers</li>
+<li>Operations: search O(n), insert at head O(1), delete O(n)</li>
+</ul>
+
+<h3>Stacks</h3>
+<ul>
+<li>LIFO (Last In, First Out)</li>
+<li>Operations: push, pop, peek — all O(1)</li>
+<li>Use cases: undo/redo, expression evaluation, DFS</li>
+</ul>
+
+<h3>Queues</h3>
+<ul>
+<li>FIFO (First In, First Out)</li>
+<li>Operations: enqueue, dequeue, front — all O(1)</li>
+<li>Variants: circular queue, deque, priority queue</li>
+</ul>
+
+<h3>Hash Tables</h3>
+<ul>
+<li>Key-value storage, average O(1) operations</li>
+<li>Collision resolution: chaining, open addressing</li>
+<li>Load factor determines resizing threshold</li>
+</ul>
+
+<h3>Trees</h3>
+<table>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Binary Tree</td>
+<td>Each node has ≤2 children</td>
+</tr>
+<tr>
+<td>BST</td>
+<td>Left < root < right; search O(log n) avg</td>
+</tr>
+<tr>
+<td>AVL Tree</td>
+<td>Self-balancing BST (height diff ≤1)</td>
+</tr>
+<tr>
+<td>Red-Black Tree</td>
+<td>Self-balancing with color constraints</td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>Complete binary tree, min/max at root</td>
+</tr>
+<tr>
+<td>Trie</td>
+<td>Prefix tree for strings</td>
+</tr>
+</table>
+
+<h3>Graphs</h3>
+<ul>
+<li><strong>Representation</strong>: adjacency matrix (O(V²) space), adjacency list (O(V+E) space)</li>
+<li><strong>Traversal</strong>: BFS (queue, level-order), DFS (stack/recursion, depth-order)</li>
+<li><strong>Applications</strong>: shortest path, connectivity, topological sort</li>
+</ul>
+
+<h2 id="algorithms">Algorithms</h2>
+
+<h3>Sorting</h3>
+<table>
+<tr>
+<th>Algorithm</th>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th>Space</th>
+</tr>
+<tr>
+<td>Quick Sort</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>O(n²)</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>Merge Sort</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Heap Sort</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Bubble Sort</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Insertion Sort</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+</tr>
+</table>
+
+<h3>Searching</h3>
+<ul>
+<li><strong>Linear Search</strong>: O(n)</li>
+<li><strong>Binary Search</strong>: O(log n) — requires sorted array</li>
+</ul>
+
+<h3>Graph Algorithms</h3>
+<ul>
+<li>BFS / DFS — O(V+E) traversal</li>
+<li>Dijkstra's — shortest path, O((V+E) log V)</li>
+<li>Bellman-Ford — handles negative edges, O(VE)</li>
+<li>Floyd-Warshall — all-pairs shortest path, O(V³)</li>
+<li>Kruskal's / Prim's — MST, O(E log V)</li>
+<li>Topological Sort — DAG ordering, O(V+E)</li>
+</ul>
+
+<h3>Dynamic Programming</h3>
+<ul>
+<li>Optimal substructure + overlapping subproblems</li>
+<li>Top-down (memoization) vs bottom-up (tabulation)</li>
+<li>Classic problems: Fibonacci, Knapsack, LCS, LIS, Edit Distance</li>
+</ul>
+
+<h3>String Algorithms</h3>
+<ul>
+<li>KMP — pattern matching, O(n+m)</li>
+<li>Rabin-Karp — rolling hash, average O(n+m)</li>
+<li>Z-Algorithm — pattern matching, O(n)</li>
+<li>Manacher's — longest palindromic substring, O(n)</li>
+</ul>
+
+<h2 id="complexity-reference">Complexity Reference</h2>
+
+<table>
+<tr>
+<th>Notation</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>O(1)</td>
+<td>Constant</td>
+<td>Direct access</td>
+</tr>
+<tr>
+<td>O(log n)</td>
+<td>Logarithmic</td>
+<td>Binary search, balanced trees</td>
+</tr>
+<tr>
+<td>O(n)</td>
+<td>Linear</td>
+<td>Single pass</td>
+</tr>
+<tr>
+<td>O(n log n)</td>
+<td>Linearithmic</td>
+<td>Efficient sorting</td>
+</tr>
+<tr>
+<td>O(n²)</td>
+<td>Quadratic</td>
+<td>Nested loops</td>
+</tr>
+<tr>
+<td>O(2ⁿ)</td>
+<td>Exponential</td>
+<td>Recursive subsets</td>
+</tr>
+<tr>
+<td>O(n!)</td>
+<td>Factorial</td>
+<td>Permutations</td>
+</tr>
+</table>
+
+<h2 id="pages">Pages</h2>
+
+<ul>
+<li><a href="./algorithms"><strong>Algorithms</strong></a> — Detailed algorithm implementations</li>
+<li><a href="./problems"><strong>Problems</strong></a> — Classic DSA practice problems</li>
+</ul>    </main>
   </div>
 
   <script>
@@ -257,6 +446,3 @@ cat >> "$OUTPUT_FILE" << 'HTMLEOF'
   </script>
 </body>
 </html>
-HTMLEOF
-
-echo "✓ Wrapped $CONTENT_FILE -> $OUTPUT_FILE"

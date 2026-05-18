@@ -27,4 +27,9 @@ python3 md_to_html.py AI-Tools/skills.md /tmp/skills_content.html
 ./wrap_html.sh /tmp/skills_content.html AI-Tools/skills.html "Agent Skills" "Agent Skills"
 echo "✓ Built AI-Tools/skills.html"
 
+# Build DSA page
+python3 md_to_html.py dsa/index.md /tmp/dsa_content.html
+./wrap_html.sh /tmp/dsa_content.html dsa/index.html "DSA — Data Structures & Algorithms" "DSA"
+echo "✓ Built dsa/index.html"
+
 echo "Done! All HTML files created."

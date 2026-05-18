@@ -50,7 +50,7 @@
 
     .sidebar {
       width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
-      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+      position: sticky; top: 40px; align-self: flex-start; min-height: calc(100vh - 80px);
     }
     .sidebar h1 {
       font-size: 22px; font-weight: 700; color: #fff;
@@ -66,10 +66,6 @@
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
 
-
-    .sidebar::-webkit-scrollbar { width: 4px; }
-    .sidebar::-webkit-scrollbar-track { background: transparent; }
-    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
     .nav-section-label {
       font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
       color: #666; padding: 12px 12px 4px; margin-top: 4px;
@@ -90,23 +86,6 @@
     .main-content td { color: #ccc; }
     .main-content tr:hover td { background: rgba(255,255,255,0.02); }
     .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
-    .main-content pre {
-      background: #111122;
-      border: 1px solid #2a2a55;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 16px 0;
-      overflow-x: auto;
-    }
-    .main-content pre code {
-      background: transparent;
-      color: #c8c8e8;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      font-size: 13px;
-      line-height: 1.5;
-    }
     .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
     .main-content pre code { background: none; padding: 0; color: #fabd2f; }
     .main-content img { max-width: 100%; border-radius: 6px; }
@@ -200,7 +179,7 @@
       <nav>
         <a href="/abhay-kb/">Home</a>
         <a href="/abhay-kb/PROJECTS">All Projects</a>
-        <a href="/abhay-kb/jobs">Job Listings</a>
+        <a href="/abhay-kb/LLM/jobs">Job Listings</a>
         <div class="nav-section-label">Software Engineering</div>
         <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
@@ -212,6 +191,10 @@
         <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
         <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
         <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/algorithms" class="nav-indent">Algorithms</a>
+        <a href="/abhay-kb/dsa/problems" class="nav-indent">Problems</a>
         <div class="nav-section-label">LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
