@@ -17,7 +17,7 @@ title: Resume
 
 ## Summary
 
-Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 85 repositories, 254 stars, and 65+ followers.
+Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 85 repositories, 254 stars, and 67 followers.
 
 ---
 
@@ -64,12 +64,6 @@ A Kotlin-based multimedia organization and processing tool for Android, built wi
 ### [nexus](https://github.com/abhay-byte/nexus) — *TypeScript* ⭐ 8
 Multi-agent AI terminal workspace supporting 13+ coding agents side-by-side with shared MCP registry, split-pane PTY terminals, and Kanban task board.
 
-### [nativecode](https://github.com/abhay-byte/nativecode) — *Kotlin, Android*
-Vibe coding workspace for Android bundling AI coding CLIs, desktop editors, and MCP-powered assistants with portable Linux runtimes and GPU acceleration.
-
-### [Clinico](https://github.com/abhay-byte/minor-project-gtbit) — *MERN Stack, Flutter, TensorFlow*
-AI-powered healthcare platform with 24/7 AI companion for preliminary diagnosis, cross-platform mobile/web interfaces, and TensorFlow-based diagnostic models.
-
 ---
 
 ## Education
@@ -82,10 +76,10 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ## Achievements
 
-- **GitHub:** 2.6K+ Commits · 254 Stars · 85 Public Repositories · 65+ Followers
+- **GitHub:** 2.6K+ Commits · 254 Stars · 85 Public Repositories · 67 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-05-18 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
