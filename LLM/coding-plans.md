@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-17 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-18 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -109,9 +109,11 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
 
 | Plan | Domestic | Overseas | Per 5h | Per Week | Monthly Cap |
 |------|----------|----------|--------|----------|-------------|
-| Lite | ¥49/mo | $18/mo | ~80 prompts | ~320 | None published |
-| Pro | ¥149/mo | $72/mo | ~400 prompts | ~2,000 | None published |
-| Max | ¥469/mo | $160/mo | ~1,600 prompts | ~6,400 | None published |
+| Plan | Price (Quarterly) | Monthly Equivalent | Per 5h | Per Week | Notes |
+|------|------------------|--------------------|--------|----------|-------|
+| Lite | $30/quarter ($27 Q2) | ~$10/mo | ~80 prompts | ~320 | GLM-5.1, 5-Turbo, 4.7, 4.6, 4.5-Air |
+| Pro | $90/quarter ($81 Q2) | ~$30/mo | ~400 prompts | ~2,000 | Unlocks GLM-5 flagship. ~5x Lite |
+| Max | $240/quarter ($216 Q2) | ~$80/mo | ~1,600 prompts | ~6,400 | ~4x Pro. Highest throughput |
 
 ### Model Quota Multipliers (Critical)
 
@@ -119,7 +121,7 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
 |-------------|-----------|--------------------------|
 | GLM-5.1 / GLM-5-Turbo at peak (14-18 UTC+8) | 3x drain | ~26 |
 | GLM-5.1 / GLM-5-Turbo off-peak | 2x drain | ~40 |
-| GLM-5.1 / GLM-5-Turbo off-peak (promo to Apr 30) | 1x drain | ~80 |
+| GLM-5.1 / GLM-5-Turbo off-peak (promo ended Apr 30) | 1x drain | ~80 |
 | GLM-5 (base) off-peak | 2x drain | ~40 |
 | GLM-4.7 all times | 1x drain | ~80 |
 | GLM-4.5-Air all times | 1x drain | ~80 |
@@ -127,7 +129,8 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
 - Each prompt invokes the model ~15–20 times internally
 - GLM-5.1 at 44.3 tok/sec is ~6x slower than Grok 4.20
 - MCP quotas: Lite 100/mo, Pro 1,000/mo, Max 4,000/mo
-- Q2 2026 quarterly discounts available
+- Q2 2026 quarterly discounts applied to all tiers
+- **Pricing restructured Feb 2026**: Promotional $3/mo first-purchase pricing removed. Overseas price hikes moderated with switch to quarterly billing. Q2 discount: Lite $27/qtr, Pro $81/qtr, Max $216/qtr
 - Free models (no sub): GLM-4.7-Flash, GLM-4.5-Flash
 
 ---
@@ -157,8 +160,8 @@ Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/)
 | DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
 | MiMo-V2.5-Omni | Xiaomi | 2,150 | 5,450 | 10,900 | Multimodal |
 | MiMo-V2.5-Pro | Xiaomi | 1,290 | 3,225 | 6,450 | Coding focus |
-| Kimi K2.5 | Moonshot | 1,850 | 4,630 | 9,250 | 256K ctx |
-| Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | Updated K2.5 |
+| Kimi K2.5 | Moonshot | 1,850 | 4,630 | 9,250 | 256K ctx, 76.8% SWE-Bench |
+| Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | Updated K2.5, 58.6% SWE-Bench Pro |
 | GLM-5 | Z.ai | 1,150 | 2,880 | 5,750 | 77.8% SWE-Bench |
 | GLM-5.1 | Z.ai | 880 | 2,150 | 4,300 | Best reasoning. 58.4% SWE-Bench Pro |
 
@@ -194,20 +197,20 @@ Source: [claude.com/pricing](https://claude.com/pricing), community instrumentat
 
 | Plan | Price | Multiplier | Est. Msgs/5h (Opus) | Context | CLI |
 |------|-------|-----------|---------------------|---------|-----|
-| Pro | $20/mo ($17/yr) | 1x (doubled) | ~90 | 200K (1M ext) | Yes |
-| Max 5x | $100/mo | 5x (doubled) | ~450 | 1M | Yes |
-| Max 20x | $200/mo | 20x (doubled) | ~1,800 | 1M | Yes |
+| Pro | $20/mo ($17/yr) | 1x (doubled) | ~45-90 | 200K (1M ext) | Yes |
+| Max 5x | $100/mo | 5x (doubled) | ~225-450 | 1M | Yes |
+| Max 20x | $200/mo | 20x (doubled) | ~900-1,800 | 1M | Yes |
 
 ### Team Plans
 
 | Plan | Price | Multiplier | Weekly Cap | Min Seats |
 |------|-------|-----------|------------|-----------|
-| Team Standard | $25/seat/mo ($20 annual) | 1.25x Pro (doubled) | 7-day, 1 cap | 5 |
-| Team Premium | $125/seat/mo ($100 annual) | 6.25x Pro | 7-day, 2 caps | 5-150 |
+| Team Standard | $25/seat/mo ($20 annual) | ~1.25x Pro (doubled) | 7-day, 1 cap | 5 |
+| Team Premium | $125/seat/mo ($100 annual) | ~5x Pro | 7-day, 2 caps | 5-150 |
 
 - Max 5x: ~$0.44/message (Opus). Max 20x: ~$0.22/message -- actual volume discount kicks in here
 - Max 5x: auto-switch Opus->Sonnet at 20% limit. Max 20x: at 50%
-- ~~Peak hours 5-11 AM PT: tighter limits~~ **Peak hours throttling removed** as of May 2026 (SpaceX Colossus 1 deal)
+- **Peak hours throttling removed** as of May 2026 (SpaceX Colossus 1 deal)
 - Team Standard added Claude Code access late April 2026 (was Premium-only before)
 - Pro had Claude Code briefly removed (Apr 2026 test on 2% of signups) then restored within hours
 
@@ -225,6 +228,7 @@ Source: [claude.com/pricing](https://claude.com/pricing), community instrumentat
 - **Peak hours throttling removed** — same rate limits at 3 AM and 3 PM
 - **Opus API rate limits raised** — higher maximums across all API tiers
 - **Managed Agents launched** — Dreaming, Outcomes, multi-agent orchestration now available at claude.ai/code
+- **Claude Cowork** now bundled into Pro (visual canvas-based workspace, GA since Apr 2026)
 
 ### Known Issues
 
@@ -257,6 +261,7 @@ Source: [developers.openai.com/codex/pricing](https://developers.openai.com/code
 | Plan | Price | Best For |
 |------|-------|----------|
 | Free | $0 | Limited Codex Mini access |
+| Go | $20/mo | Budget-friendly Codex Mini (select regions). Reduced limits |
 | Plus | $20/mo | Entry point for Codex CLI + IDE + cloud |
 | Pro ($100) | $100/mo | 5x (10x promo until May 31) higher limits. Includes GPT-5.3-Codex-Spark preview |
 | Pro ($200) | $200/mo | 20x higher limits. Heavy daily use |
@@ -272,7 +277,7 @@ Source: [developers.openai.com/codex/pricing](https://developers.openai.com/code
 | GPT-5.4-mini | 60-350 | — | — |
 | GPT-5.3-Codex | 30-150 | 10-60 | 20-50 |
 
-Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets double (10x) until May 31, 2026.
+Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10x total) until May 31, 2026.
 
 ### API Pay-per-Token (Codex API)
 
@@ -289,6 +294,7 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets double
 - Soft caps slow you down; hard caps cut off until window resets
 - Extra credits can be purchased on Plus/Pro plans
 - Pro $100 2x promo expires May 31 2026
+- **Go plan ($20/mo)**: Budget Codex Mini tier available in select regions. Reduced limits, same models
 
 ### Community Reviews
 
@@ -312,10 +318,10 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing)
 
 | Plan | Price | Models | Notes |
 |------|-------|--------|-------|
-| Free | $0 | All models (rate-limited) | Access to all 7 models. Quota refreshes ~5h (unreliable) |
-| AI Pro | $20/mo | All models (higher limits) | Built-in credits (amount undisclosed). Best for hobbyists |
-| AI Ultra | $249.99/mo | All models (highest limits) | Most expensive AI coding sub on the market |
-| Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage |
+| Free | $0 | All models (rate-limited) | Access to all 7 models. Quota refreshes ~5h (unreliable). 92% quota cut since Dec 2025 |
+| AI Pro | $20/mo | All models (higher limits) | Built-in credits (amount undisclosed). Best for hobbyists. Multi-day lockouts reported |
+| AI Ultra | $249.99/mo | All models (highest limits) | Most expensive AI coding sub on the market. Still not immune to quota issues (Mar 2026+) |
+| Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage. $0.01/credit
 
 ### Available Models
 
