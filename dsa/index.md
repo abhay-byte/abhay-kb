@@ -36,6 +36,19 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 
 ---
 
+## ⚡ Codeforces Progress
+
+### Quick Stats
+
+[![Codeforces](https://img.shields.io/badge/Codeforces-445f9d?style=for-the-badge&logo=Codeforces&logoColor=white)](https://codeforces.com/profile/abhay.byte02)
+[![Rating](https://codeforces-readme-stats.vercel.app/api/badge?username=abhay.byte02&theme=dark)](https://codeforces.com/profile/abhay.byte02)
+
+### Stats Overview
+
+[![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=abhay.byte02&theme=dark)](https://codeforces.com/profile/abhay.byte02)
+
+---
+
 ## Data Structures
 
 ### Arrays
