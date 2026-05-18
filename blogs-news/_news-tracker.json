@@ -55,9 +55,15 @@
     "https://arstechnica.com/information-technology/2026/05/mozilla-says-271-vulnerabilities-found-by-mythos-have-almost-no-false-positives/",
     "https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/",
     "https://kevinpatel.xyz/posts/no-way-to-prevent-this/",
-    "https://github.com/tech4bot/rk3562deb"
+    "https://github.com/tech4bot/rk3562deb",
+    "https://www.theregister.com/security/2026/05/18/linus-torvalds-says-ai-powered-bug-hunters-have-made-linux-security-mailing-list-almost-entirely-unmanageable/5241633",
+    "https://www.theregister.com/cyber-crime/2026/05/18/grafana-labs-admits-attackers-downloaded-its-codebase-from-github/5241686",
+    "https://developers.googleblog.com/get-ready-for-google-io-2026/",
+    "https://www.thestateofbrand.com/news/ai-subscription-time-bomb",
+    "https://news.ycombinator.com/item?id=48150900",
+    "https://news.ycombinator.com/item?id=48153379"
   ],
-  "last_fetch": "2026-05-17T23:34:00Z",
+  "last_fetch": "2026-05-18T23:40:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -74,7 +80,7 @@
       "https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574",
       "https://parttelescopes.web.app/",
       "https://labs.randomquark.com/alphabet_cards/",
-      "https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html",
+      "https://www.openculture.com/2026/05/nearly-50-years-later-wrkp-in-cincinnati-becomes-a-real-radio-station.html",
       "https://www.forbes.com/sites/daveywinder/2026/05/16/holy-grail-google-hackers-discover-pixel-10-zero-click-exploit-chain/",
       "https://news.ycombinator.com/item?id=48150900",
       "https://news.ycombinator.com/item?id=48153379",
@@ -88,7 +94,9 @@
       "https://www.theregister.com/personal-tech/2026/05/16/cloud-managed-earbuds-sound-strange-as-a-concept-and-on-a-plane/5240928",
       "https://www.theregister.com/systems/2026/05/16/europe-built-sovereign-clouds-to-escape-us-control-then-forgot-about-the-processors/5237735",
       "https://www.theregister.com/devops/2026/05/15/git-is-unprepared-for-the-ai-coding-tsunami/5241480",
-      "https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381"
+      "https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381",
+      "https://www.theregister.com/security/2026/05/18/linus-torvalds-says-ai-powered-bug-hunters-have-made-linux-security-mailing-list-almost-entirely-unmanageable/5241633",
+      "https://www.theregister.com/cyber-crime/2026/05/18/grafana-labs-admits-attackers-downloaded-its-codebase-from-github/5241686"
     ],
     "infoq": [
       "https://www.infoq.com/news/2026/05/ubuntu-on-device-ai/",
@@ -132,6 +140,9 @@
     ],
     "openai": [
       "https://openai.com/index/work-with-codex-from-anywhere/"
+    ],
+    "google-developers": [
+      "https://developers.googleblog.com/get-ready-for-google-io-2026/"
     ]
   },
   "format_version": 1

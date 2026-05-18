@@ -10,6 +10,27 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
 
+### May 18, 2026
+
+**[Linus Torvalds: AI bug hunters have made Linux security list 'almost entirely unmanageable'](news/linux-ai-bug-hunters-security-list-unmanageable/)** — *The Register*
+> Linus Torvalds declared the kernel security mailing list "almost entirely unmanageable" due to AI-generated duplicate bug reports. He urged researchers to read docs, create patches, and add real value beyond AI output.
+
+**[Grafana Labs admits attackers downloaded its codebase from GitHub](news/grafana-labs-github-codebase-breach/)** — *The Register*
+> Grafana Labs disclosed an attacker accessed its GitHub repo via a compromised token and stole source code. The company refused to pay ransom, citing no customer data compromise.
+
+**[Google I/O 2026 begins tomorrow with Gemini 3.1 and Android 17 in focus](news/google-io-2026-preview-gemini-android/)** — *Google Developers Blog*
+> Google I/O 2026 kicks off May 19-20 with expected announcements including Gemini 3.1 Ultra, Android 17 developer preview, Project Astra updates, and TPU v7 on Vertex AI.
+
+**[Every AI Subscription Is a Ticking Time Bomb for Enterprise](news/ai-subscription-enterprise-time-bomb/)** — *Hacker News*
+> An analysis argues AI subscriptions are becoming unsustainable as GitHub moves Copilot to usage-based billing, Microsoft raises M365 prices, and OpenAI introduces a $100 Pro tier.
+
+**[We Stopped AI Bot Spam in Our GitHub Repo Using Git's --author Flag](news/git-author-flag-ai-bot-spam/)** — *Hacker News*
+> Open-source maintainers share how they used Git's `--author` flag to detect and block AI-generated bot spam in repos, scoring 287 points on Hacker News.
+
+**[Domo CDO: Enough with AI FOMO, Go Slow-Mo](news/domo-cdo-ai-fomo-slow-down/)** — *Hacker News*
+> Domo's chief design officer Chris Willis calls out AI companies for pushing technology prematurely, arguing AI models are "a product without a spec" and "fear is not a durable strategy for innovating."
+
+
 ### May 17, 2026
 
 **[The Agent Is 20% of the Work. The Platform Is the Other 80%.](news/2026-05-17-devto-agent-20-percent-platform-80-percent/)** — *Dev.to*
