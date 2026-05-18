@@ -41,9 +41,14 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 ### Quick Stats
 
 [![Codeforces](https://img.shields.io/badge/Codeforces-445f9d?style=for-the-badge&logo=Codeforces&logoColor=white)](https://codeforces.com/profile/abhay.byte02)
-[![Rating](https://codeforces-readme-stats.vercel.app/api/badge?username=abhay.byte02&theme=dark)](https://codeforces.com/profile/abhay.byte02)
+[![Rating](https://img.shields.io/badge/dynamic/json?url=https://codeforces.com/api/user.info?handles=abhay.byte02&query=%24.result%5B0%5D.rating&label=Rating&color=808080&style=for-the-badge&cacheSeconds=86400)](https://codeforces.com/profile/abhay.byte02)
+[![Rank](https://img.shields.io/badge/dynamic/json?url=https://codeforces.com/api/user.info?handles=abhay.byte02&query=%24.result%5B0%5D.rank&label=Rank&color=808080&style=for-the-badge&cacheSeconds=86400)](https://codeforces.com/profile/abhay.byte02)
+[![Max Rating](https://img.shields.io/badge/dynamic/json?url=https://codeforces.com/api/user.info?handles=abhay.byte02&query=%24.result%5B0%5D.maxRating&label=Max%20Rating&color=445f9d&style=for-the-badge&cacheSeconds=86400)](https://codeforces.com/profile/abhay.byte02)
+[![Max Rank](https://img.shields.io/badge/dynamic/json?url=https://codeforces.com/api/user.info?handles=abhay.byte02&query=%24.result%5B0%5D.maxRank&label=Max%20Rank&color=445f9d&style=for-the-badge&cacheSeconds=86400)](https://codeforces.com/profile/abhay.byte02)
+[![Solved](https://img.shields.io/badge/Solved-25-445f9d?style=for-the-badge&cacheSeconds=86400)](https://codeforces.com/profile/abhay.byte02)
+[![Contests](https://codeforces-readme-stats.vercel.app/api/badge?username=abhay.byte02&theme=dark)](https://codeforces.com/profile/abhay.byte02)
 
-### Stats Overview
+### Profile Overview
 
 [![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=abhay.byte02&theme=dark)](https://codeforces.com/profile/abhay.byte02)
 
