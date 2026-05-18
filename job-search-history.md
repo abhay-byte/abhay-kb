@@ -90,3 +90,9 @@
 | 61 | Software Developer | Zoho | Across India | Best in Industry | https://jobsnet.in/zoho-off-campus-drive-hiring-software-developers-freshers/ |
 | 62 | Jr. Associate Software Engineer | Wipro | Bengaluru | — | https://offcampusjobs4u.com/wipro-off-campus-drive-2026-jr-associate-software-engineer-bengaluru/ |
 | 63 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | https://freshershunt.in/payu-off-campus-drive-2026/ |
+
+### 18-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 64 | Software Development Engineer | CSG | Remote | — | https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/ |
+| 65 | Associate Software Engineer | Epsilon | Bengaluru | Not disclosed | https://freshershunt.in/epsilon-off-campus-drive-2026/ |

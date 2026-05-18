@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-17 (Evening Batch)
+Last updated: 2026-05-18
 
 ---
 
@@ -74,6 +74,8 @@ Last updated: 2026-05-17 (Evening Batch)
 | 54 | C++ Apps Dev Programmer Analyst | Citi | Pune | Competitive | May 2026 | [Apply](https://freshershunt.in/citi-off-campus-drive-2026-pune/) |
 | 55 | Software Developer | Zoho | Across India | Best in Industry | May 2026 | [Apply](https://jobsnet.in/zoho-off-campus-drive-hiring-software-developers-freshers/) |
 | 56 | Jr. Associate Software Engineer | Wipro | Bengaluru | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-off-campus-drive-2026-jr-associate-software-engineer-bengaluru/) |
+| 57 | Software Development Engineer | CSG | Remote | — | May 2026 | [Apply](https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/) |
+| 58 | Associate Software Engineer | Epsilon | Bengaluru | Not disclosed | May 2026 | [Apply](https://freshershunt.in/epsilon-off-campus-drive-2026/) |
 
 ### 💼 Internships
 
@@ -105,8 +107,8 @@ Last updated: 2026-05-17 (Evening Batch)
 
 ## ⭐ Top 3 Picks
 
-1. **Amazon SDE I** - ₹30-44 LPA - Multiple Locations - [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/)
-2. **Qualcomm Associate SWE** - ₹20-30 LPA - Hyderabad/Bangalore/Chennai/Noida - [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/)
+1. **Qualcomm Associate SWE** - ₹20-30 LPA - Hyderabad/Bangalore/Chennai/Noida - [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/)
+2. **Amazon SDE I** - ₹30-44 LPA - Multiple Locations - [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/)
 3. **Oracle Software Developer 1** - Bengaluru/Hyderabad - [Apply](https://freshershunt.in/oracle-off-campus-drive-2026/)
 
 ---
