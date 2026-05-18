@@ -7,6 +7,14 @@ title: DSA
 
 A reference guide for essential DSA concepts. Dummy content to get started.
 
+## 🏆 LeetCode Progress
+
+[![LeetCode Stats](https://leetcard.jacoblin.cool/Abhay-byte?theme=nord&font=Noto%20Sans)](https://leetcode.com/Abhay-byte)
+
+[![LeetCode Contest](https://leetcard.jacoblin.cool/Abhay-byte?theme=nord&font=Noto%20Sans&ext=contest)](https://leetcode.com/Abhay-byte)
+
+---
+
 ## Data Structures
 
 ### Arrays

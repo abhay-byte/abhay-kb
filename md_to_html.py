@@ -34,7 +34,10 @@ def markdown_to_html(md_content):
     html = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', html)
     html = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', html)
     
-    # Links
+    # Images
+    html = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', r'<img src="\2" alt="\1">', html)
+    
+    # Links (must come after images to avoid matching image syntax)
     html = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', html)
     
     # Horizontal rules
