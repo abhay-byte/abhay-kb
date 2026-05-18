@@ -9,7 +9,28 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 
 ## 🏆 LeetCode Progress
 
+### Quick Stats
+
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black)](https://leetcode.com/Abhay-byte)
+[![Rank](https://img.shields.io/badge/Rank-1,084,364-808080?style=for-the-badge)](https://leetcode.com/Abhay-byte)
+[![Easy](https://img.shields.io/badge/Easy-62-5CB85C?style=for-the-badge)](https://leetcode.com/Abhay-byte)
+[![Medium](https://img.shields.io/badge/Medium-77-F0AD4E?style=for-the-badge)](https://leetcode.com/Abhay-byte)
+[![Hard](https://img.shields.io/badge/Hard-7-D9534F?style=for-the-badge)](https://leetcode.com/Abhay-byte)
+[![Total](https://img.shields.io/badge/Total%20Solved-146-FFA116?style=for-the-badge)](https://leetcode.com/Abhay-byte)
+
+### Stats Overview
+
 [![LeetCode Stats](https://leetcard.jacoblin.cool/Abhay-byte?theme=nord&font=Noto%20Sans)](https://leetcode.com/Abhay-byte)
+
+### Recent Activity
+
+[![LeetCode Activity](https://leetcard.jacoblin.cool/Abhay-byte?theme=nord&font=Noto%20Sans&ext=activity)](https://leetcode.com/Abhay-byte)
+
+### Practice Heatmap
+
+[![LeetCode Heatmap](https://leetcard.jacoblin.cool/Abhay-byte?theme=nord&font=Noto%20Sans&ext=heatmap)](https://leetcode.com/Abhay-byte)
+
+### Contest Performance
 
 [![LeetCode Contest](https://leetcard.jacoblin.cool/Abhay-byte?theme=nord&font=Noto%20Sans&ext=contest)](https://leetcode.com/Abhay-byte)
 
