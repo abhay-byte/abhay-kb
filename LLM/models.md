@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-18 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-19 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled May 2026.
@@ -16,7 +16,7 @@ Compiled May 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 18 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 19 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -102,7 +102,7 @@ Compiled May 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 18 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 19 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -314,7 +314,7 @@ Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacl
 |-------|-----------|------------|---------|-----------|-------|
 | Qwen3.6 Plus | $0.325 | $1.95 | 1M | 78.8% Verified | Apr 2 2026. Hybrid attention + MoE. Reasoning by default |
 | Qwen3.6 Flash | $0.25 | $1.50 | 1M | — | Cost-optimized tier |
-| Qwen3.6 Max Preview | $0.861 | $3.441 | 252K | — | Top reasoning tier (preview) |
+| Qwen3.6 Max Preview | $1.30 | $7.80 | 256K | — | Apr 20 2026. Top coding tier. $0.861/$3.441 via Global deployment. Leads SWE-Bench Pro |
 
 Qwen3.6 Plus: within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
 Qwen3.6-27B (dense, Apache 2.0): 77.2% SWE-Bench Verified — strong self-hosting option.
@@ -395,7 +395,7 @@ Current as of May 2026. V2 launched Mar 18 2026, V2.5 launched Apr 22 2026. Sour
 |-------|-----------|------------|---------|------------|-------|
 | MiMo-V2-Pro (≤256K) | $1.00 | $3.00 | 1M | Text | 78.0% SWE-Bench. 1T params, 42B active |
 | MiMo-V2-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
-| MiMo-V2.5-Pro (≤256K) | $1.00 | $3.00 | 1M | Text | Apr 2026. MIT license. 1T params, same $1/$3 as V2-Pro |
+| MiMo-V2.5-Pro (≤256K) | $1.00 ($0.20 cached) | $3.00 | 1M | Text | Apr 2026. MIT license. 1T params. 57.2% SWE-Bench Pro |
 | MiMo-V2.5-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
 | MiMo-V2-Omni | ~$1.00 | ~$3.00 | 256K | Text, Image, Audio, Video | Multimodal flagship |
 | MiMo-V2-Flash | $0.10 | $0.30 | 256K | Text | Open-source foundation model |
@@ -447,13 +447,14 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/deepseek-v4-flash | DeepSeek V4 Flash |
 | opencode-go/mimo-v2-omni | MiMo V2 Omni |
 | opencode-go/mimo-v2-pro | MiMo V2 Pro |
+| opencode-go/mimo-v2.5 | MiMo V2.5 |
 | opencode-go/mimo-v2.5-pro | MiMo V2.5 Pro |
 | opencode-go/minimax-m2.5 | MiniMax M2.5 |
 | opencode-go/minimax-m2.7 | MiniMax M2.7 |
 | opencode-go/qwen3.5-plus | Qwen3.5 Plus |
 | opencode-go/qwen3.6-plus | Qwen3.6 Plus |
 
-### Request Estimates (May 18 2026)
+### Request Estimates (May 19 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
