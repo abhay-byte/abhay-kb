@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-18 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-19 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -74,21 +74,57 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 - **Code completions remain unlimited** on all paid plans — not billed in AI Credits
 - **Copilot code review** now also consumes GitHub Actions minutes
 
-### Models Available (Jun 2026 — Usage-Based Per-Token)
+### Per-Token Pricing (Jun 2026 — Usage-Based)
 
-**OpenAI:** GPT-5.5 ($5/$30 per 1M), GPT-5.4 ($2.50/$15), GPT-5.4-mini ($0.75/$4.50), GPT-5.4-nano ($0.20/$1.25), GPT-5.3-Codex ($1.75/$14), GPT-5.2 ($1.75/$14), GPT-5.2-Codex ($1.75/$14), GPT-4.1 ($2/$8), GPT-5-mini ($0.25/$2)
+Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). 1 AI credit = $0.01 USD. Over-usage billed at these rates.
 
-**Anthropic:** Claude Opus 4.7 ($5/$25), Opus 4.6/4.5 ($5/$25), Sonnet 4.6/4.5/4 ($3/$15), Haiku 4.5 ($1/$5)
+**OpenAI:**
+| Model | Input /1M | Cached Input | Output /1M |
+|-------|----------:|:------------:|-----------:|
+| GPT-5.5 | $5.00 | $0.50 | $30.00 |
+| GPT-5.4 | $2.50 | $0.25 | $15.00 |
+| GPT-5.4 mini | $0.75 | $0.075 | $4.50 |
+| GPT-5.4 nano | $0.20 | $0.02 | $1.25 |
+| GPT-5.3-Codex | $1.75 | $0.175 | $14.00 |
+| GPT-5.2 | $1.75 | $0.175 | $14.00 |
+| GPT-5.2-Codex | $1.75 | $0.175 | $14.00 |
+| GPT-4.1 | $2.00 | $0.50 | $8.00 |
+| GPT-5 mini | $0.25 | $0.025 | $2.00 |
 
-**Google:** Gemini 3.1 Pro ($2/$12), Gemini 2.5 Pro ($1.25/$10), Gemini 3 Flash ($0.50/$3)
+**Anthropic (includes cache write cost):**
+| Model | Input /1M | Cached Input | Cache Write | Output /1M |
+|-------|----------:|:------------:|:-----------:|-----------:|
+| Claude Opus 4.7 | $5.00 | $0.50 | $6.25 | $25.00 |
+| Claude Opus 4.6 | $5.00 | $0.50 | $6.25 | $25.00 |
+| Claude Opus 4.5 | $5.00 | $0.50 | $6.25 | $25.00 |
+| Claude Sonnet 4.6 | $3.00 | $0.30 | $3.75 | $15.00 |
+| Claude Sonnet 4.5 | $3.00 | $0.30 | $3.75 | $15.00 |
+| Claude Sonnet 4 | $3.00 | $0.30 | $3.75 | $15.00 |
+| Claude Haiku 4.5 | $1.00 | $0.10 | $1.25 | $5.00 |
 
-**GitHub Fine-tuned:** Raptor mini (GPT-5-mini pricing), Goldeneye (GPT-5.1-Codex pricing)
+**Google:**
+| Model | Input /1M | Cached Input | Output /1M |
+|-------|----------:|:------------:|-----------:|
+| Gemini 3.1 Pro | $2.00 | $0.20 | $12.00 |
+| Gemini 2.5 Pro | $1.25 | $0.125 | $10.00 |
+| Gemini 3 Flash | $0.50 | $0.05 | $3.00 |
 
-- Pro: $10/mo — $10 base + $5 flex = $15 total included usage
-- Pro+: $39/mo — $39 base + $31 flex = $70 total included usage
-- Max: $100/mo — $100 base + $100 flex = $200 total included usage
-- Enterprise: Promotional $70/seat/mo (Jun–Aug 2026), then $39/seat/mo
-- Business: Promotional $30/seat/mo (Jun–Aug 2026), then $19/seat/mo
+**Fine-tuned (GitHub):**
+| Model | Input /1M | Cached Input | Output /1M |
+|-------|----------:|:------------:|-----------:|
+| Raptor mini | $0.25 | $0.025 | $2.00 |
+| Goldeneye | $1.25 | $0.125 | $10.00 |
+
+### Plans Summary (Jun 2026)
+
+| Plan | Price | Base | Flex | Total |
+|------|-------|:----:|:----:|:-----:|
+| Free | $0 | — | — | 50 completions/mo + limited chat/agent |
+| Pro | $10/mo | $10 | $5 | $15 total included |
+| Pro+ | $39/mo | $39 | $31 | $70 total included |
+| Max | $100/mo | $100 | $100 | $200 total included |
+| Business | $19/seat/mo | $19 | — | Flex promo Jun-Aug |
+| Enterprise | $39/seat/mo | $39 | — | Flex promo Jun-Aug |
 
 ### Community Reviews
 
@@ -397,7 +433,7 @@ API billed separately — NOT included in membership.
 
 Current model: **K2.6** (released Apr 18–21 2026).  
 K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license.  
-**K2 (original) discontinued** — will stop serving on May 25, 2026. Migrate to K2.5 or K2.6.
+**K2 (original) discontinued** — stops serving May 25, 2026 (6 days from now). Migrate to K2.5 or K2.6.
 
 ### K2.6 Improvements
 
