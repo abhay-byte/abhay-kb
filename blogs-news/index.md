@@ -10,6 +10,27 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
 
+### May 19, 2026
+
+**[Anthropic Acquires Stainless for $300M+ to Strengthen Developer SDK Tooling](news/anthropic-acquires-stainless/)** — *Anthropic Blog / TechCrunch*
+> Anthropic acquired SDK automation startup Stainless (used by OpenAI and Google) for over $300M to strengthen Claude's developer tooling and MCP server capabilities.
+
+**[Google I/O 2026 Kicks Off: Gemini Spark, Antigravity 2.0, and AI-First Everything](news/google-io-2026-gemini-spark-antigravity/)** — *AP News / TechCrunch / Engadget*
+> Google kicked off I/O 2026 with major AI announcements: Gemini Spark (24/7 agentic assistant), Antigravity 2.0 (agentic coding with desktop app + CLI), and Android's AI overhaul.
+
+**[Cursor Introduces Composer 2.5 with Major AI-Powered Coding Upgrade](news/cursor-composer-25-ai-code-editor/)** — *Hacker News / tldl.io*
+> Anysphere released Composer 2.5 for the Cursor AI code editor, a major update to its AI coding capabilities that scored 217 points on Hacker News.
+
+**[Mini Shai-Hulud Strikes Again: 314 npm Packages Compromised in Supply Chain Attack](news/npm-supply-chain-314-packages-compromised/)** — *Hacker News / tldl.io*
+> Security researchers discovered 314 malicious npm packages as part of an ongoing supply chain attack campaign, scoring 231 points on Hacker News.
+
+**[Simon Willison: The Last Six Months in LLMs in Five Minutes (PyCon US 2026)](news/simon-willison-six-months-llms-five-minutes/)** — *Hacker News / Simon Willison*
+> Simon Willison's PyCon US 2026 lightning talk summarizing six months of LLM developments scored 586 points on Hacker News — one of the most-discussed posts of the day.
+
+**[Meta Begins 10% Layoffs as AI Investments Reshape Company Priorities](news/meta-10-percent-layoffs-ai-investments/)** — *Tech Startups / CNBC*
+> Meta is cutting 8,000 jobs (10% of workforce) while raising AI capex to $145B, as an internal tool tracks employees to train AI coding agents.
+
+
 ### May 18, 2026
 
 **[Linus Torvalds: AI bug hunters have made Linux security list 'almost entirely unmanageable'](news/linux-ai-bug-hunters-security-list-unmanageable/)** — *The Register*

@@ -61,9 +61,14 @@
     "https://developers.googleblog.com/get-ready-for-google-io-2026/",
     "https://www.thestateofbrand.com/news/ai-subscription-time-bomb",
     "https://news.ycombinator.com/item?id=48150900",
-    "https://news.ycombinator.com/item?id=48153379"
+    "https://news.ycombinator.com/item?id=48153379",
+    "https://www.anthropic.com/news/anthropic-acquires-stainless",
+    "https://apnews.com/article/google-io-gemini-developers-conference-a984e6756032dc4af260f8fa27e8f4a9",
+    "https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/",
+    "https://www.tldl.io/blog/ai-news-updates-2026",
+    "https://techstartups.com/2026/05/19/top-tech-news-today-may-19-2026/"
   ],
-  "last_fetch": "2026-05-18T23:40:00Z",
+  "last_fetch": "2026-05-19T23:34:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",

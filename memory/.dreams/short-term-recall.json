@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-19T12:35:53.868Z",
+  "entries": {
+    "memory:memory/2026-05-10.md:1:8": {
+      "key": "memory:memory/2026-05-10.md:1:8",
+      "path": "memory/2026-05-10.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "--- date: 2026-05-10 --- ✅ User confirmed role: I am his external brain, his knowledge base. I will remember everything, retain context, keep notes, be his extended memory. This is the primary role. > \"Pls rember u r my brain, my kb\"",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-11T14:59:24.581Z",
+      "lastRecalledAt": "2026-05-11T15:04:50.873Z",
+      "queryHashes": [
+        "e2cd2fea65c0",
+        "5ed7f01d783f"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "date",
+        "confirmed",
+        "role",
+        "his",
+        "external",
+        "brain",
+        "knowledge",
+        "base"
+      ]
+    },
+    "memory:memory/2026-05-18.md:1:29": {
+      "key": "memory:memory/2026-05-18.md:1:29",
+      "path": "memory/2026-05-18.md",
+      "startLine": 1,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "# 2026-05-18 ## Abhay-kb Knowledge Base - Created DSA page (`dsa/index.md` + `dsa/index.html`) with: - Overview of data structures & algorithms - LeetCode stats cards (leetcard.jacoblin.cool, Nord theme) — username: Abhay-byte - Codeforces stats (codeforces-readme-stats API, shields.io dynamic badges) — handle: abhay.byte02 - Shields.io badges for quick stats at top - Fixed sidebar scrollability (overflow-y: auto + max-height) and corrected job link in wrap_html.sh - Rebuilt all pre-built HTML pages to keep sidebar consistent - DSA section sits between System Design and LLM in sidebar nav ## DSA Repos - Cloned `abhay-byte/DSA` → `/repos/DSA/` and `abhay-byte/DSA_Practice` → `/repos",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-19T00:49:45.569Z",
+      "lastRecalledAt": "2026-05-19T12:35:53.868Z",
+      "queryHashes": [
+        "19be910f1b95",
+        "331b5c470bce"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "abhay-kb",
+        "dsa/index.md",
+        "dsa/index.html",
+        "leetcard.jacoblin.cool",
+        "abhay-byte",
+        "codeforces-readme-stats",
+        "shields.io",
+        "abhay.byte02"
+      ]
+    }
+  }
+}
