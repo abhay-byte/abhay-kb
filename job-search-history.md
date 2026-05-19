@@ -96,3 +96,8 @@
 |---|-------|---------|----------|--------|------|
 | 64 | Software Development Engineer | CSG | Remote | — | https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/ |
 | 65 | Associate Software Engineer | Epsilon | Bengaluru | Not disclosed | https://freshershunt.in/epsilon-off-campus-drive-2026/ |
+
+### 19-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 66 | Associate Software Engineer (HPEL) | Smartsheet | Bangalore | ₹13 LPA | https://freshershunt.in/smartsheet-off-campus-drive-2026/ |

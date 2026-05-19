@@ -76,6 +76,7 @@ Last updated: 2026-05-18
 | 56 | Jr. Associate Software Engineer | Wipro | Bengaluru | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-off-campus-drive-2026-jr-associate-software-engineer-bengaluru/) |
 | 57 | Software Development Engineer | CSG | Remote | — | May 2026 | [Apply](https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/) |
 | 58 | Associate Software Engineer | Epsilon | Bengaluru | Not disclosed | May 2026 | [Apply](https://freshershunt.in/epsilon-off-campus-drive-2026/) |
+| 59 | Associate Software Engineer (HPEL) | Smartsheet | Bangalore | ₹13 LPA | May 2026 | [Apply](https://freshershunt.in/smartsheet-off-campus-drive-2026/) |
 
 ### 💼 Internships
 
@@ -113,4 +114,4 @@ Last updated: 2026-05-18
 
 ---
 
-*Auto-updated daily by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 19-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
