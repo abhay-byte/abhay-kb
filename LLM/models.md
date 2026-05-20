@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-19 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-20 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled May 2026.
@@ -16,7 +16,7 @@ Compiled May 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 19 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 20 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -102,7 +102,7 @@ Compiled May 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 19 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 20 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -250,7 +250,7 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 
 | Model | Input /1M | Output /1M | Cached Input | Context | Notes |
 |-------|-----------|------------|-------------|---------|-------|
-| GPT-5.5 (≤272K) | $5.00 | $30.00 | $0.50 | 1M | **88.7% SWE-Bench** (#1). Flagship reasoning + coding |
+| GPT-5.5 (≤272K) | $5.00 | $30.00 | $0.50 | 1M | **88.7% SWE-Bench** (#1), **58.6% SWE-Bench Pro**. Flagship reasoning + coding |
 | GPT-5.5 (>272K) | $10.00 | $45.00 | $1.00 | 1M | Long context tier >272K tokens |
 | GPT-5.5 Pro | $30.00 | $180.00 | — | 1M | Premium tier for research-grade problems |
 | GPT-5.4 (≤272K) | $2.50 | $15.00 | $0.25 | 1M | ~80% SWE-Bench Verified. 59.1% SWE-Bench Pro |
@@ -275,7 +275,7 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 | o3 | $2.00 | $8.00 | — | — | Flagship reasoning. Chain-of-thought built in |
 
 Batch API saves 50% on all models. Prompt caching discounts: up to 90% off (GPT-5.5), 75% off (GPT-4.1).
-GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro. GPT-4.1 is OpenAI's recommended production default for most workloads.
+GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro. GPT-5.5 Pro tier ($30/$180) is available for research-grade problems. GPT-4.1 is OpenAI's recommended production default for most workloads.
 
 ---
 
@@ -287,7 +287,7 @@ Current as of May 2026. Source: [platform.minimax.io](https://platform.minimax.i
 
 | Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench | Speed |
 |-------|-----------|------------|---------|-----------|-----------|-------|
-| M2.7 | $0.279 | $1.20 | 196K | 131K | — | Released Mar 18 2026 |
+| M2.7 | $0.279 | $1.20 | 205K | 131K | — | Released Mar 18 2026 |
 | M2.5 Standard | $0.15 | $1.20 | 256K | — | 80.2% | ~50 TPS |
 | M2.5 Lightning | $0.30 | $2.40 | 256K | — | 80.2% | ~100 TPS |
 
@@ -314,10 +314,11 @@ Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacl
 |-------|-----------|------------|---------|-----------|-------|
 | Qwen3.6 Plus | $0.325 | $1.95 | 1M | 78.8% Verified | Apr 2 2026. Hybrid attention + MoE. Reasoning by default |
 | Qwen3.6 Flash | $0.25 | $1.50 | 1M | — | Cost-optimized tier |
-| Qwen3.6 Max Preview | $1.30 | $7.80 | 256K | — | Apr 20 2026. Top coding tier. $0.861/$3.441 via Global deployment. Leads SWE-Bench Pro |
+| Qwen3.6 Max Preview | $1.30 | $7.80 | 256K | **SWE-Bench Pro #1** | Apr 20 2026. Closed-weights flagship. Leads SWE-Bench Pro, Terminal-Bench 2.0, SkillsBench, SciCode |
 
 Qwen3.6 Plus: within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
 Qwen3.6-27B (dense, Apache 2.0): 77.2% SWE-Bench Verified — strong self-hosting option.
+Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.80 per MTok. 256K context. Tops SWE-Bench Pro + 5 other coding benchmarks at launch.
 
 ### Previous Gen (Qwen3.5)
 
@@ -349,7 +350,7 @@ Current as of May 2026. Source: [docs.z.ai](https://docs.z.ai/guides/overview/pr
 
 | Model | Context | SWE-Bench | Input /1M | Output /1M | Cached Input | License |
 |-------|---------|-----------|-----------|------------|-------------|---------|
-| GLM-5.1 | 202K | Pro 58.4% (best-in-class) | $1.40 | $4.40 | $0.26 | MIT, 754B params |
+| GLM-5.1 | 203K | Pro 58.4% (best-in-class) | $1.40 | $4.40 | $0.26 | MIT, 754B params |
 | GLM-5 | 202K | Verified 77.8% | $1.00 | $3.20 | $0.20 | MIT, 744B/40B MoE |
 | GLM-5-Turbo | 202K | — | $1.20 | $4.00 | $0.24 | Proprietary |
 
@@ -383,6 +384,7 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.
 | GLM-5V-Turbo | $1.20 | $4.00 | $0.24 |
 | GLM-4.6V | $0.30 | $0.90 | $0.05 |
 | GLM-4.6V-FlashX | $0.04 | $0.40 | $0.004 |
+| GLM-OCR | $0.03 | $0.03 | — |
 | GLM-4.6V-Flash | Free | Free | Free |
 
 ---
@@ -395,7 +397,7 @@ Current as of May 2026. V2 launched Mar 18 2026, V2.5 launched Apr 22 2026. Sour
 |-------|-----------|------------|---------|------------|-------|
 | MiMo-V2-Pro (≤256K) | $1.00 | $3.00 | 1M | Text | 78.0% SWE-Bench. 1T params, 42B active |
 | MiMo-V2-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
-| MiMo-V2.5-Pro (≤256K) | $1.00 ($0.20 cached) | $3.00 | 1M | Text | Apr 2026. MIT license. 1T params. 57.2% SWE-Bench Pro |
+| MiMo-V2.5-Pro (≤256K) | $1.00 ($0.20 cached) | $3.00 | 1M | Text | Apr 22 2026. MIT license. 1T params. 57.2% SWE-Bench Pro |
 | MiMo-V2.5-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
 | MiMo-V2-Omni | ~$1.00 | ~$3.00 | 256K | Text, Image, Audio, Video | Multimodal flagship |
 | MiMo-V2-Flash | $0.10 | $0.30 | 256K | Text | Open-source foundation model |
@@ -453,6 +455,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/minimax-m2.7 | MiniMax M2.7 |
 | opencode-go/qwen3.5-plus | Qwen3.5 Plus |
 | opencode-go/qwen3.6-plus | Qwen3.6 Plus |
+| opencode-go/qwen3.6-max-preview | Qwen3.6 Max Preview |
 
 ### Request Estimates (May 19 2026)
 
@@ -465,6 +468,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | MiMo-V2.5-Pro | 1,290 | 3,225 | 6,450 |
 | MiMo-V2-Omni | 2,150 | 5,450 | 10,900 |
 | Qwen3.6 Plus | 3,300 | 8,200 | 16,300 |
+| Qwen3.6 Max Preview | 820 | 2,050 | 4,100 |
 | MiniMax M2.7 | 3,400 | 8,500 | 17,000 |
 | MiniMax M2.5 | 6,300 | 15,900 | 31,800 |
 | Qwen3.5 Plus | 10,200 | 25,200 | 50,500 |
