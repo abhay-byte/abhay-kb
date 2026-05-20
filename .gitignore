@@ -1,0 +1,16 @@
+# Agent workspace files (should not be in KB repo)
+.openclaw/
+.openclaw/*
+abhay-kb/
+repos/
+build-tailored-resume/
+# OS files
+.DS_Store
+Thumbs.db
+# Editor files
+*.swp
+*.swo
+*~
+# Python
+__pycache__/
+*.pyc
