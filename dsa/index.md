@@ -142,7 +142,10 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 | O(2ⁿ) | Exponential | Recursive subsets |
 | O(n!) | Factorial | Permutations |
 
-## Pages
+## Practice Sheets
 
-- [**Algorithms**](./algorithms) — Detailed algorithm implementations
-- [**Problems**](./problems) — Classic DSA practice problems
+- [**LeetCode**](./leetcode) — Solved LeetCode problems
+- [**Codeforces**](./codeforces) — Codeforces problem archive by rating
+- [**CSES**](./cses) — CSES Problem Set (300+ problems)
+- [**CP-31**](./cp31) — TLE Eliminators CP-31 sheet (372 problems)
+- [**NeetCode**](./neetcode) — NeetCode 150 roadmap
