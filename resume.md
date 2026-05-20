@@ -17,7 +17,7 @@ title: Resume
 
 ## Summary
 
-Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 85 repositories, 246 stars, and 68 followers.
+Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 84 repositories, 249 stars, and 70 followers.
 
 ---
 
@@ -52,17 +52,17 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 
 ## Projects
 
-### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 76
+### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 80
 A Kotlin-powered Linux environment manager for Android, providing seamless developer tooling directly on mobile devices with automated setup and shell integration.
 
 ### [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 63
 Comprehensive CPU benchmarking tool for Android with 10+ performance tests, real-time thermal monitoring, and battery-efficient background processing. Widespread adoption on F-Droid.
 
-### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 31
+### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 34
 A Kotlin-based multimedia organization and processing tool for Android, built with modern architecture patterns for efficient media management.
 
-### [nexus](https://github.com/abhay-byte/nexus) — *TypeScript* ⭐ 8
-Multi-agent AI terminal workspace supporting 13+ coding agents side-by-side with shared MCP registry, split-pane PTY terminals, and Kanban task board.
+### [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) — *Compatibility* ⭐ 8
+A community-driven compatibility list tracking Windows game performance on Android via Mali GPU emulation, with device-specific configurations and workarounds.
 
 ---
 
@@ -76,10 +76,10 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ## Achievements
 
-- **GitHub:** 2.6K+ Commits · 246 Stars · 85 Public Repositories · 68 Followers
+- **GitHub:** 2.6K+ Commits · 249 Stars · 84 Public Repositories · 70 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced: 2026-05-19 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-05-20 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
