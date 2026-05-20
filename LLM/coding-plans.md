@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-19 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-20 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -14,6 +14,7 @@ Compiled April 2026. All plans compared across major providers.
 ## BytePlus ModelArk [Subscribe](https://www.byteplus.com/en/activity/codingplan)
 
 ByteDance's AI inference platform. Coding Plan = subscription with shared quota across supported tools.
+Now integrates with OpenClaw and Hermes Agent as supported coding tools.
 
 ### Available Models
 
@@ -37,7 +38,7 @@ ByteDance's AI inference platform. Coding Plan = subscription with shared quota 
 | Lite | ~$10/mo | ~800 | ~3,200 | ~24,000 |
 | Pro | ~$40/mo | ~4,000 | ~16,000 | ~120,000 |
 
-- Quota shared across: Claude Code, Cursor, Cline, Codex CLI, Kilo Code, Roo Code, OpenCode
+- Quota shared across: Claude Code, Cursor, Cline, Codex CLI, Kilo Code, Roo Code, OpenCode, OpenClaw, Hermes Agent
 - 5-hour sliding window + weekly reset. Monday 00:00 UTC+8
 - No overflow billing — depleted = wait for next cycle
 - Free tier: 500K tokens for new users (regular API only, NOT Coding Plan)
