@@ -219,6 +219,7 @@ cat > "$OUTPUT_FILE" << HTMLEOF
         <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
         <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
         <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
         <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
         <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
         <div class="nav-section-label">LLM</div>

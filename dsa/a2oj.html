@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }}{% else %}Abhay's Knowledge Base{% endif %} | My personal projects and notes</title>
+  <title>A2OJ Ladders — Codeforces | Abhay's Knowledge Base</title>
   <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
   <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
   <style>
     /* ══════════════════════════════════════════════
-       SHARED LAYOUT — standalone.html
+       SHARED LAYOUT — matches _layouts/standalone.html
        Used by: index.html, PROJECTS.md, LLM/*.md
        Hamburger sidebar works on ALL pages via this layout.
        ══════════════════════════════════════════════ */
@@ -28,9 +28,8 @@
 
     .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
 
-    /* ─── Top Bar — visible only on mobile (≤800px) ─── */
     .topbar {
-      display: none;                      /* hidden on desktop */
+      display: none;
       position: fixed; top: 0; left: 0; right: 0;
       height: 52px;
       background: #0d0d0d;
@@ -45,7 +44,6 @@
     }
     .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
 
-    /* ─── Sidebar Overlay — dark backdrop when sidebar is open on mobile ─── */
     .sidebar-overlay {
       display: none;
       position: fixed; inset: 0;
@@ -54,7 +52,6 @@
     }
     .sidebar-overlay.active { display: block; }
 
-    /* ─── Sidebar (desktop: sticky, mobile: slides in) ─── */
     .sidebar {
       width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
       position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
@@ -62,6 +59,7 @@
     .sidebar::-webkit-scrollbar { width: 4px; }
     .sidebar::-webkit-scrollbar-track { background: transparent; }
     .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
     .sidebar h1 {
       font-size: 22px; font-weight: 700; color: #fff;
       margin-bottom: 4px;
@@ -76,7 +74,6 @@
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
 
-    /* Section labels (e.g. "🤖 LLM") + indented sub-items */
     .nav-section-label {
       font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
       color: #666; padding: 12px 12px 4px; margin-top: 4px;
@@ -97,57 +94,16 @@
     .main-content td { color: #ccc; }
     .main-content tr:hover td { background: rgba(255,255,255,0.02); }
     .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
-    .main-content pre {
-      background: #111122;
-      border: 1px solid #2a2a55;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 16px 0;
-      overflow-x: auto;
-    }
-    .main-content pre code {
-      background: transparent;
-      color: #c8c8e8;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .main-content pre code .prompt { color: #6a9955; }
-    .main-content .diagram {
-      background: #0a0a1a;
-      border: 1px solid #1a1a3e;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 16px 0;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 12px;
-      line-height: 1.4;
-      color: #8888cc;
-      overflow-x: auto;
-      white-space: pre;
-    }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
     .main-content img { max-width: 100%; border-radius: 6px; }
     .main-content figure { margin-bottom: 24px; }
     .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
 
-    /* Project cards (used on index, shared style) */
-    .project-card {
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 20px;
-      margin: 16px 0;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .project-card:hover { border-color: rgba(250,189,47,0.25); background: rgba(255,255,255,0.015); }
-    .project-card h3 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
-    .project-card p { font-size: 14px; color: #999; line-height: 1.5; margin-bottom: 12px; }
-    .project-card .links { display: flex; gap: 8px; flex-wrap: wrap; }
-    .project-card .links img { height: 28px; border-radius: 4px; }
-
-
-.install-card {
+    /* Install cards */
+    .install-card {
       background: #111;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 8px;
@@ -196,15 +152,6 @@
     .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
     .copy-btn.copied { border-color: #34a853; color: #34a853; }
 
-        .stats-section { text-align: center; margin: 32px 0; }
-    .stats-section img { max-width: 100%; margin: 12px 0; border-radius: 6px; }
-
-    /* ─── Responsive: Mobile / Portrait (≤800px) ───
-         - Top bar with hamburger appears
-         - Sidebar slides in from left (hidden by default)
-         - Dark overlay behind sidebar
-         - Tap overlay or hamburger to close
-         ─────────────────────────────────────────── */
     @media (max-width: 800px) {
       .topbar { display: flex; }
       .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
@@ -212,7 +159,7 @@
       .sidebar {
         position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
         z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
-        padding: 24px 20px; overflow-y: auto; overflow-y: auto;
+        padding: 24px 20px; overflow-y: auto;
         transition: left 0.25s ease;
         align-self: auto; sticky: unset;
       }
@@ -226,13 +173,11 @@
   </style>
 </head>
 <body>
-  <!-- Mobile top bar — visible on all pages in portrait mode -->
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
-    <span class="topbar-title">Abhay's Knowledge Base</span>
+    <span class="topbar-title">A2OJ Ladders</span>
   </div>
 
-  <!-- Dark overlay behind sidebar (mobile only) -->
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
   <div class="page-wrapper">
@@ -264,29 +209,251 @@
         <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
         <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
         <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
-        <!-- LLM dropdown section -->
         <div class="nav-section-label">LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
         <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
         <div class="nav-section-label">AI Tools</div>
         <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
-        <a href="/abhay-kb/AI-Tools/tools" class="nav-indent">Tools</a>
-        <a href="/abhay-kb/AI-Tools/mcp" class="nav-indent">MCP</a>
-        <a href="/abhay-kb/AI-Tools/ai-editors" class="nav-indent">AI Editors</a>
-        <a href="/abhay-kb/AI-Tools/skills" class="nav-indent">Skills</a>
-        <div class="nav-section-label">Blogs & News</div>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
         <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
         <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
         <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
       </nav>
     </aside>
     <main class="main-content">
-      {{ content }}
-    </main>
+<h1>🪜 A2OJ Ladders — Codeforces Practice</h1>
+
+<strong>Source:</strong> <a href="https://earthshakira.github.io/a2oj-clientside/server/Ladders.html">A2OJ Client-side Ladders</a> • <a href="https://codeforces.com/blog/entry/16443">Original Blog</a> by Ahmed Aly
+
+<strong>Total: 2,900 problems</strong> across 29 ladders — 100–200 problems each, organized by division & rating.
+
+<hr>
+
+<h2 id="division-based-ladders">Division-Based Ladders</h2>
+
+<table>
+<tr>
+<th>Ladder</th>
+<th>Target</th>
+<th>Problems</th>
+<th>File</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Div 2, Problem A</td>
+<td>100</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder4.txt">View</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Div 2, Problem B</td>
+<td>100</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder5.txt">View</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Div 2, Problem C</td>
+<td>100</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder6.txt">View</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Div 2, Problem D</td>
+<td>100</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder7.txt">View</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Div 2, Problem E</td>
+<td>100</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder8.txt">View</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Div 1, Problem D</td>
+<td>100</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder9.txt">View</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Div 1, Problem E</td>
+<td>100</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder10.txt">View</a></td>
+</tr>
+</table>
+
+<h2 id="rating-based-ladders-100-problems-each">Rating-Based Ladders (100 problems each)</h2>
+
+<table>
+<tr>
+<th>Ladder</th>
+<th>Rating</th>
+<th>Target Level</th>
+<th>File</th>
+</tr>
+<tr>
+<td>11</td>
+<td>< 1300</td>
+<td>Newbie / Pupil</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder11.txt">View</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>1300–1399</td>
+<td>Pupil</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder12.txt">View</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>1400–1499</td>
+<td>Specialist</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder13.txt">View</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>1500–1599</td>
+<td>Specialist</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder14.txt">View</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>1600–1699</td>
+<td>Expert</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder15.txt">View</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>1700–1799</td>
+<td>Expert</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder16.txt">View</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>1800–1899</td>
+<td>Expert</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder17.txt">View</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>1900–1999</td>
+<td>Candidate Master</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder18.txt">View</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>2000–2099</td>
+<td>Candidate Master</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder19.txt">View</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>2100–2199</td>
+<td>Master</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder20.txt">View</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td>≥ 2200</td>
+<td>Master+</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder21.txt">View</a></td>
+</tr>
+</table>
+
+<h2 id="rating-based-extra-ladders-200-problems-each">Rating-Based Extra Ladders (200 problems each)</h2>
+
+<table>
+<tr>
+<th>Ladder</th>
+<th>Rating</th>
+<th>Target Level</th>
+<th>File</th>
+</tr>
+<tr>
+<td>22</td>
+<td>< 1300 (Extra)</td>
+<td>Newbie / Pupil</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder22.txt">View</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>1300–1399 (Extra)</td>
+<td>Pupil</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder23.txt">View</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>1400–1499 (Extra)</td>
+<td>Specialist</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder24.txt">View</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td>1500–1599 (Extra)</td>
+<td>Specialist</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder25.txt">View</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td>1600–1699 (Extra)</td>
+<td>Expert</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder26.txt">View</a></td>
+</tr>
+<tr>
+<td>27</td>
+<td>1700–1799 (Extra)</td>
+<td>Expert</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder27.txt">View</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td>1800–1899 (Extra)</td>
+<td>Expert</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder28.txt">View</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td>1900–1999 (Extra)</td>
+<td>Candidate Master</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder29.txt">View</a></td>
+</tr>
+<tr>
+<td>30</td>
+<td>2000–2099 (Extra)</td>
+<td>Candidate Master</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder30.txt">View</a></td>
+</tr>
+<tr>
+<td>31</td>
+<td>2100–2199 (Extra)</td>
+<td>Master</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder31.txt">View</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td>≥ 2200 (Extra)</td>
+<td>Master+</td>
+<td><a href="https://github.com/abhay-byte/DSA/blob/main/questions/A2OJ_Ladders/Ladder32.txt">View</a></td>
+</tr>
+</table>
+
+<h2 id="progress-trackers">Progress Trackers</h2>
+
+<ul>
+<li><a href="https://codeforcesladders.firebaseapp.com/">Codeforces Ladders</a></li>
+<li><a href="https://a2oj.online/">A2OJ Refreshed</a></li>
+<li><a href="https://earthshakira.github.io/a2oj-clientside/server/Ladders.html">A2OJ Client-side</a></li>
+</ul>
+
+<hr>
+
+<em>Last updated: May 2026</em>    </main>
   </div>
 
-  <!-- Hamburger toggle — works on every page because this layout is shared -->
   <script>
     function copyCmd(el, cmd) {
       navigator.clipboard.writeText(cmd).then(() => {
