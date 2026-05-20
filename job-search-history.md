@@ -101,3 +101,9 @@
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 66 | Associate Software Engineer (HPEL) | Smartsheet | Bangalore | ₹13 LPA | https://freshershunt.in/smartsheet-off-campus-drive-2026/ |
+
+### 20-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 67 | Technology Analyst Trainee (Apprentice) | Fiserv | Pune | Competitive Stipend | https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/ |
+| 68 | Associate Software Maintenance Engineer Trainee | Red Hat | Pune | High in Industry | https://jobsnet.in/red-hat-off-campus-drive-associate-software-maintenance-engineer-trainee/ |

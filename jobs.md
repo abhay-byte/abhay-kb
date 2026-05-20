@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-18
+Last updated: 2026-05-20
 
 ---
 
@@ -77,6 +77,8 @@ Last updated: 2026-05-18
 | 57 | Software Development Engineer | CSG | Remote | — | May 2026 | [Apply](https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/) |
 | 58 | Associate Software Engineer | Epsilon | Bengaluru | Not disclosed | May 2026 | [Apply](https://freshershunt.in/epsilon-off-campus-drive-2026/) |
 | 59 | Associate Software Engineer (HPEL) | Smartsheet | Bangalore | ₹13 LPA | May 2026 | [Apply](https://freshershunt.in/smartsheet-off-campus-drive-2026/) |
+| 60 | Technology Analyst Trainee (Apprentice) | Fiserv | Pune | Competitive Stipend | 19-May-2026 | [Apply](https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/) |
+| 61 | Associate Software Maintenance Engineer Trainee | Red Hat | Pune | High in Industry | May 2026 | [Apply](https://jobsnet.in/red-hat-off-campus-drive-associate-software-maintenance-engineer-trainee/) |
 
 ### 💼 Internships
 
@@ -114,4 +116,4 @@ Last updated: 2026-05-18
 
 ---
 
-*Auto-updated as of 19-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 20-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
