@@ -214,8 +214,11 @@ cat > "$OUTPUT_FILE" << HTMLEOF
         <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
         <div class="nav-section-label">DSA</div>
         <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
-        <a href="/abhay-kb/dsa/algorithms" class="nav-indent">Algorithms</a>
-        <a href="/abhay-kb/dsa/problems" class="nav-indent">Problems</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
         <div class="nav-section-label">LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
