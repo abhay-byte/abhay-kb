@@ -1,22 +1,9 @@
-#!/bin/bash
-#
-# wrap_html.sh — wraps Markdown-or-HTML content with the ORIGINAL
-# sidebar/layout from _layouts/standalone.html (the home-page sidebar).
-#
-# Usage: wrap_html.sh <content_file> <output_file> <page_title> <topbar_title>
-
-CONTENT_FILE="$1"
-OUTPUT_FILE="$2"
-TITLE="$3"
-TOPBAR_TITLE="$4"
-
-cat > "$OUTPUT_FILE" << HTMLEOF
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$TITLE | Abhay's Knowledge Base</title>
+  <title>DSA Lectures | Abhay's Knowledge Base</title>
   <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
@@ -188,7 +175,7 @@ cat > "$OUTPUT_FILE" << HTMLEOF
 <body>
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
-    <span class="topbar-title">$TOPBAR_TITLE</span>
+    <span class="topbar-title">Lectures</span>
   </div>
 
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
@@ -238,14 +225,90 @@ cat > "$OUTPUT_FILE" << HTMLEOF
       </nav>
     </aside>
     <main class="main-content">
-HTMLEOF
+<h1>📖 DSA Lectures</h1>
 
-# Add content
-cat "$CONTENT_FILE" >> "$OUTPUT_FILE"
+<p>Foundational lectures covering core DSA concepts — from flowcharts to two pointers, bitwise operators to merge algorithms.</p>
 
-# HTML footer
-cat >> "$OUTPUT_FILE" << 'HTMLEOF'
-    </main>
+<h2 id="lecture-list">Lecture List</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Topics</th>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-01">01</a></td>
+<td>Flowcharts</td>
+<td>Flowchart basics, loops, check prime</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-02">02</a></td>
+<td>Pseudo Code</td>
+<td>Pseudo code, star pattern printing</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-03">03</a></td>
+<td>Number System</td>
+<td>Binary/Decimal conversion, bit ranges, signed integers, hexadecimal</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-04">04</a></td>
+<td>Intro to C++</td>
+<td>Program structure, data types, operators, conditionals, loops</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-05">05</a></td>
+<td>C++ Continued</td>
+<td>Sum of digits, variable scope, static vars, Fibonacci, break/continue</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-06">06</a></td>
+<td>C++ Loops & Patterns</td>
+<td>Increment/decrement, for/do-while, star & number patterns, constants</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-07">07</a></td>
+<td>Bitwise Operators</td>
+<td>Bitwise ops, pattern printing, unique number, count set bits</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-08">08</a></td>
+<td>1D Arrays</td>
+<td>Array basics, first/last occurrence, reverse, rotate, K-rotate</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-09">09</a></td>
+<td>Functions</td>
+<td>Declarations, references, pass by value/reference, overloading, namespaces</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-10">10</a></td>
+<td>Sorting & Search</td>
+<td>Bubble, selection, insertion sort, binary search, count occurrences</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-11">11</a></td>
+<td>Subarrays & Kadane</td>
+<td>Generate subarrays, Kadane's algorithm, max circular sum, vectors</td>
+</tr>
+<tr>
+<td><a href="./lectures/lecture-12">12</a></td>
+<td>Two Pointers & Merge</td>
+<td>Subsequences, target sum pairs, container with most water, merge arrays</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="quick-links">Quick Links</h2>
+
+<ul>
+<li><a href="https://github.com/abhay-byte/DSA/tree/main/instructor_code">📁 Source Code — Instructor Code</a></li>
+<li><a href="https://github.com/abhay-byte/DSA/tree/main/questions">📁 Problem Files — Questions Directory</a></li>
+</ul>
+
+<em>Last updated: May 2026</em>    </main>
   </div>
 
   <script>
@@ -270,6 +333,3 @@ cat >> "$OUTPUT_FILE" << 'HTMLEOF'
   </script>
 </body>
 </html>
-HTMLEOF
-
-echo "✓ Wrapped $CONTENT_FILE -> $OUTPUT_FILE"

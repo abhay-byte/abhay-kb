@@ -1,22 +1,9 @@
-#!/bin/bash
-#
-# wrap_html.sh — wraps Markdown-or-HTML content with the ORIGINAL
-# sidebar/layout from _layouts/standalone.html (the home-page sidebar).
-#
-# Usage: wrap_html.sh <content_file> <output_file> <page_title> <topbar_title>
-
-CONTENT_FILE="$1"
-OUTPUT_FILE="$2"
-TITLE="$3"
-TOPBAR_TITLE="$4"
-
-cat > "$OUTPUT_FILE" << HTMLEOF
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$TITLE | Abhay's Knowledge Base</title>
+  <title>VerveCopilot — Top 30 LeetCode | Abhay's Knowledge Base</title>
   <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
@@ -188,7 +175,7 @@ cat > "$OUTPUT_FILE" << HTMLEOF
 <body>
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
-    <span class="topbar-title">$TOPBAR_TITLE</span>
+    <span class="topbar-title">VerveCopilot</span>
   </div>
 
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
@@ -238,14 +225,182 @@ cat > "$OUTPUT_FILE" << HTMLEOF
       </nav>
     </aside>
     <main class="main-content">
-HTMLEOF
+<h1>🎯 VerveCopilot — Top 30 LeetCode Questions</h1>
 
-# Add content
-cat "$CONTENT_FILE" >> "$OUTPUT_FILE"
+<strong>Source:</strong> <a href="https://www.vervecopilot.com/hot-blogs/30-leetcode-questions">VerveCopilot — 30 Most Common LeetCode Questions</a>
 
-# HTML footer
-cat >> "$OUTPUT_FILE" << 'HTMLEOF'
-    </main>
+<p>The 30 most frequently asked LeetCode questions across top tech companies. Master these and you'll have a strong foundation for any coding interview.</p>
+
+<h2 id="question-list">Question List</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Key Concept</th>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Two Sum</strong></td>
+<td>Hash Map</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Valid Parentheses</strong></td>
+<td>Stack</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Merge Two Sorted Lists</strong></td>
+<td>Linked List</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Best Time to Buy and Sell Stock</strong></td>
+<td>Greedy / DP</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Reverse Linked List</strong></td>
+<td>Linked List</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Palindrome Number</strong></td>
+<td>Math</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Valid Anagram</strong></td>
+<td>Hash Map / Sort</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Contains Duplicate</strong></td>
+<td>Hash Set</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Fibonacci Number</strong></td>
+<td>DP / Recursion</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Climbing Stairs</strong></td>
+<td>DP</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Longest Substring Without Repeating Characters</strong></td>
+<td>Sliding Window</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>3Sum</strong></td>
+<td>Two Pointers</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Group Anagrams</strong></td>
+<td>Hash Map</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>Product of Array Except Self</strong></td>
+<td>Prefix/Suffix</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>Number of Islands</strong></td>
+<td>BFS / DFS</td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>Validate Binary Search Tree</strong></td>
+<td>BST / Inorder</td>
+</tr>
+<tr>
+<td>17</td>
+<td><strong>Kth Smallest Element in a BST</strong></td>
+<td>BST / Inorder</td>
+</tr>
+<tr>
+<td>18</td>
+<td><strong>Word Break</strong></td>
+<td>DP</td>
+</tr>
+<tr>
+<td>19</td>
+<td><strong>Jump Game</strong></td>
+<td>Greedy</td>
+</tr>
+<tr>
+<td>20</td>
+<td><strong>Unique Paths</strong></td>
+<td>DP</td>
+</tr>
+<tr>
+<td>21</td>
+<td><strong>Coin Change</strong></td>
+<td>DP</td>
+</tr>
+<tr>
+<td>22</td>
+<td><strong>Spiral Matrix</strong></td>
+<td>Array / Simulation</td>
+</tr>
+<tr>
+<td>23</td>
+<td><strong>Subsets</strong></td>
+<td>Backtracking</td>
+</tr>
+<tr>
+<td>24</td>
+<td><strong>Pacific Atlantic Water Flow</strong></td>
+<td>Graph / DFS/BFS</td>
+</tr>
+<tr>
+<td>25</td>
+<td><strong>Rotting Oranges</strong></td>
+<td>BFS</td>
+</tr>
+<tr>
+<td>26</td>
+<td><strong>Course Schedule</strong></td>
+<td>Graph / Topological Sort</td>
+</tr>
+<tr>
+<td>27</td>
+<td><strong>Design HashMap</strong></td>
+<td>Design</td>
+</tr>
+<tr>
+<td>28</td>
+<td><strong>Merge k Sorted Lists</strong></td>
+<td>Heap / Divide & Conquer</td>
+</tr>
+<tr>
+<td>29</td>
+<td><strong>Binary Tree Maximum Path Sum</strong></td>
+<td>Tree / DFS</td>
+</tr>
+<tr>
+<td>30</td>
+<td><strong>LRU Cache</strong></td>
+<td>Design / Hash Map + DLL</td>
+</tr>
+</table>
+
+<h2 id="📁-solutions">📁 Solutions</h2>
+
+<p>Solutions are available in the repo at:
+<ul>
+<li><a href="https://github.com/abhay-byte/DSA/tree/main/questions/vervecopilot_30"><strong>DSA/questions/vervecopilot_30/</strong></a></li>
+</ul></p>
+
+<hr>
+
+<em>Last updated: May 2026</em>    </main>
   </div>
 
   <script>
@@ -270,6 +425,3 @@ cat >> "$OUTPUT_FILE" << 'HTMLEOF'
   </script>
 </body>
 </html>
-HTMLEOF
-
-echo "✓ Wrapped $CONTENT_FILE -> $OUTPUT_FILE"
