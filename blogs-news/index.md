@@ -9,6 +9,29 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### May 20, 2026
+
+**[OpenAI Co-Founder Andrej Karpathy Joins Anthropic's Pre-Training Team](news/karpathy-joins-anthropic/)** — *TechCrunch / CNBC / Forbes*
+> Andrej Karpathy, a founding OpenAI member and former Tesla AI chief, joined Anthropic's pre-training team in one of the highest-profile AI talent moves of the year.
+
+**[Google AI Studio Now Lets Anyone Build Native Android Apps in Minutes](news/google-ai-studio-android-apps/)** — *TechCrunch / The Verge*
+> Google I/O 2026 brought AI-powered native Android app creation to AI Studio — build, preview, and iterate apps using natural language prompts with Kotlin and Jetpack Compose.
+
+**[Gemini 3.5 Flash Is Now Generally Available on GitHub Copilot](news/github-copilot-gemini-35-flash/)** — *GitHub Blog*
+> Google's latest Flash-tier model is rolling out across all paid Copilot tiers, delivering near-Pro coding quality at Flash-tier speed for agentic coding workflows.
+
+**[Alibaba Launches Qwen3.7-Max: A New Agent Frontier Model](news/alibaba-qwen37-max-agent-model/)** — *Alibaba Cloud / CNTechPost*
+> Alibaba unveiled Qwen3.7-Max at its Cloud Summit, a new frontier model optimized for agentic tasks that topped Chinese AI benchmarks in coding and complex reasoning.
+
+**[Forge: Open-Source Guardrails Take an 8B Model from 53% to 99% on Agentic Tasks](news/forge-guardrails-8b-model-agentic/)** — *Hacker News / tldl.io*
+> A new open-source project showed that structured guardrails can dramatically boost small model agentic performance, earning 583 points on Hacker News.
+
+**[OpenAI Adopts Google's SynthID Watermark for AI-Generated Images](news/openai-synthid-watermark/)** — *Hacker News / tldl.io*
+> OpenAI embraced Google's SynthID watermarking for AI images and released a verification tool, marking rare cross-company collaboration on AI content authenticity.
+
+**[Mistral AI Acquires Emmi AI in European AI Consolidation Push](news/mistral-ai-acquires-emmi/)** — *Hacker News / tldl.io*
+> French AI startup Mistral acquired Emmi AI, continuing European consolidation to better compete with US and Chinese AI giants.
+
 
 ### May 19, 2026
 

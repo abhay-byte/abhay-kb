@@ -66,9 +66,13 @@
     "https://apnews.com/article/google-io-gemini-developers-conference-a984e6756032dc4af260f8fa27e8f4a9",
     "https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/",
     "https://www.tldl.io/blog/ai-news-updates-2026",
-    "https://techstartups.com/2026/05/19/top-tech-news-today-may-19-2026/"
+    "https://techstartups.com/2026/05/19/top-tech-news-today-may-19-2026/",
+    "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/",
+    "https://techcrunch.com/2026/05/19/googles-ai-studio-now-lets-anyone-build-android-apps-in-minutes/",
+    "https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot/",
+    "https://www.alibabacloud.com/blog/alibaba-announces-comprehensive-full-stack-ai-upgrade-for-the-agentic-era_603149"
   ],
-  "last_fetch": "2026-05-19T23:34:00Z",
+  "last_fetch": "2026-05-20T23:30:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -92,7 +96,10 @@
       "https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/",
       "https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/",
       "https://kevinpatel.xyz/posts/no-way-to-prevent-this/",
-      "https://github.com/tech4bot/rk3562deb"
+      "https://github.com/tech4bot/rk3562deb",
+      "https://news.ycombinator.com/item?id=48029268",
+      "https://news.ycombinator.com/item?id=48029632",
+      "https://news.ycombinator.com/item?id=48028932"
     ],
     "the-register": [
       "https://www.theregister.com/ai-ml/2026/05/16/ai-generated-code-is-pain-waiting-to-happen/5241574",
