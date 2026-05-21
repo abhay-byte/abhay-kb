@@ -1,0 +1,13 @@
+{
+  "current_lecture": 8,
+  "start_date": "2026-05-20",
+  "daily": {
+    "questions_given_today": 0,
+    "total_questions_given": 0,
+    "total_questions_completed": 0,
+    "last_given_date": null,
+    "today_questions": []
+  },
+  "completion_log": [],
+  "weekly_progress": []
+}

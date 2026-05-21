@@ -1,0 +1,182 @@
+{
+  "lectures": [
+    {
+      "id": 1,
+      "title": "Flowcharts",
+      "order": 1,
+      "questions": [
+        "Simple Interest flowchart",
+        "Largest of 3 numbers",
+        "Print Series",
+        "Sum of Natural Numbers (loop)",
+        "Sum of N Numbers",
+        "Check Prime"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Pseudo Code",
+      "order": 2,
+      "questions": [
+        "Check Prime (pseudo code)",
+        "Largest of N numbers",
+        "Star pattern — Right-Angled Triangle",
+        "Star pattern — Pyramid",
+        "Star pattern — Matrix"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Number System",
+      "order": 3,
+      "questions": [
+        "Binary to Decimal conversion",
+        "Decimal to Binary conversion",
+        "Find n-bit binary ranges",
+        "Complementary number system conversion",
+        "Signed integer representation"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Intro to C++",
+      "order": 4,
+      "questions": [
+        "Basic C++ program — variables & data types",
+        "Arithmetic operator exercises",
+        "Relational & logical operator exercises",
+        "if-else conditionals",
+        "while loop practice"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "C++ Continued",
+      "order": 5,
+      "questions": [
+        "Sum of Digits of a number",
+        "Reverse a Number",
+        "Fibonacci Numbers (generate series)",
+        "Largest of N numbers (C++)",
+        "Check Prime (C++)",
+        "Square Root of a Number",
+        "Check Fibonacci Number (homework)"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Loops & Patterns",
+      "order": 6,
+      "questions": [
+        "Star pattern — Pattern 1",
+        "Star pattern — Pattern 2",
+        "Star pattern — Pattern 3",
+        "Star pattern — Pattern 4",
+        "Star pattern — Pattern 5",
+        "Number pattern — Pattern 6",
+        "Number pattern — Pattern 7",
+        "Count Types of Characters in a string",
+        "do-while loop review (homework)",
+        "Pattern 7 printing (homework)",
+        "Minimize Path — optimize N,S,E,W path string (homework)"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Bitwise Operators",
+      "order": 7,
+      "questions": [
+        "Pattern 8 (star pattern)",
+        "Pattern 9 (star pattern)",
+        "Pattern 10 (star pattern)",
+        "Pattern 11 (number pattern)",
+        "Pattern 12 (number pattern)",
+        "Unique Number — find single non-repeating element (XOR)",
+        "Check Odd/Even using bitwise",
+        "Set Kth bit",
+        "Clear Kth bit",
+        "Check Kth bit",
+        "Flip Kth bit",
+        "Count Set Bits",
+        "Pattern 10 & 12 with odd N (homework)",
+        "Longest Run of 1s — longest consecutive 1s in binary (homework)",
+        "Hamming Distance — count differing bits (homework)",
+        "Power of 2 — check if N is power of 2 (homework)",
+        "Power of 4 — check if N is power of 4 (homework)"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "1D Arrays",
+      "order": 8,
+      "questions": [
+        "First Occurrence — find first index of target",
+        "Last Occurrence — find last index of target",
+        "All Occurrences — find all indices of target",
+        "Reverse Array — reverse entire array in-place",
+        "Reverse in Range — reverse subarray between indices",
+        "Rotate Array — rotate clockwise by 1",
+        "K-Rotate Array — rotate clockwise by K",
+        "Three Largest Elements — find 3 largest in array (homework)",
+        "Maximum Product of a Triplet — max product of any 3 elements (homework)"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Functions",
+      "order": 9,
+      "questions": [
+        "Function declaration & definition basics",
+        "Pass by value vs reference",
+        "Passing arrays to functions",
+        "Function overloading practice",
+        "Default arguments exercise",
+        "Function Templates review"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Sorting & Search",
+      "order": 10,
+      "questions": [
+        "Bubble Sort implementation",
+        "Selection Sort implementation",
+        "Insertion Sort implementation",
+        "Binary Search (sorted array)",
+        "First Occurrence in Sorted Array (binary search)",
+        "Last Occurrence in Sorted Array (binary search)",
+        "Count Occurrences in Sorted Array",
+        "Last Occurrence in Sorted Array (homework)",
+        "Count Occurrences in Sorted Array (homework)"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Subarrays & Kadane",
+      "order": 11,
+      "questions": [
+        "Generate All Sub-Arrays",
+        "Maximum Subarray Sum (Kadane's Algorithm)",
+        "Maximum Circular Subarray Sum",
+        "Generate Subsequences",
+        "Vectors (STL) basics",
+        "Maximum Product Subarray — LeetCode (homework)"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Two Pointers & Merge",
+      "order": 12,
+      "questions": [
+        "Generate Pairs",
+        "Target Sum Pairs — two pointers",
+        "Sereja and Dima game problem",
+        "Container with Most Water — two pointers",
+        "Merge Two Sorted Arrays",
+        "Counting Smaller Elements",
+        "Counting Smaller Elements (homework)",
+        "Merge Two Sorted Arrays in O(1) space (homework)"
+      ]
+    }
+  ]
+}
