@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-20 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-21 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -106,6 +106,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 **Google:**
 | Model | Input /1M | Cached Input | Output /1M |
 |-------|----------:|:------------:|-----------:|
+| Gemini 3.5 Flash | $1.50 | $0.15 | $9.00 |
 | Gemini 3.1 Pro | $2.00 | $0.20 | $12.00 |
 | Gemini 2.5 Pro | $1.25 | $0.125 | $10.00 |
 | Gemini 3 Flash | $0.50 | $0.05 | $3.00 |
@@ -345,25 +346,37 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 
 
 
-## Antigravity (Google IDE) [Download](https://antigravity.google/download) - [Pricing](https://antigravity.google/pricing)
+## Antigravity 2.0 (Google IDE) [Download](https://antigravity.google/download) - [Pricing](https://antigravity.google/pricing)
 
-Google's agent-first IDE (fork of VS Code). Runs multiple AI agents in parallel.  
+Released **Antigravity 2.0** at **Google I/O 2026 (May 19)** — expanded from a single IDE into a five-surface platform: desktop app, CLI, SDK, Managed Agents API, and Enterprise Agent Platform.  
 Includes Claude models (Sonnet & Opus) alongside Gemini — all in one IDE.  
-Source: [antigravity.google/pricing](https://antigravity.google/pricing)
+Source: [antigravity.google/pricing](https://antigravity.google/pricing), [TechCrunch](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/)
 
-### Plans
+### Plans (Updated May 19, 2026)
 
 | Plan | Price | Models | Notes |
 |------|-------|--------|-------|
-| Free | $0 | All models (rate-limited) | Access to all 7 models. Quota refreshes ~5h (unreliable). 92% quota cut since Dec 2025 |
-| AI Pro | $20/mo | All models (higher limits) | Built-in credits (amount undisclosed). Best for hobbyists. Multi-day lockouts reported |
-| AI Ultra | $249.99/mo | All models (highest limits) | Most expensive AI coding sub on the market. Still not immune to quota issues (Mar 2026+) |
-| Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage. $0.01/credit
+| Preview (Free) | $0 | All models (rate-limited) | Access to all models. 92% quota cut since Dec 2025 |
+| AI Pro | $20/mo | All models (higher limits) | Built-in credits. Multi-day lockouts reported |
+| AI Ultra (NEW) | $100/mo | 5x Pro limits | **New tier** at I/O 2026. 5x higher limits than Pro |
+| AI Ultra Premium (price cut) | **$200/mo** (was $250) | 20x Pro limits | **$50 price drop** at I/O 2026. Limited-time: $100 bonus credits if quota hit, claim by May 25 |
+| Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage. $0.01/credit |
+
+### Antigravity 2.0 New Surfaces
+
+| Surface | What it is |
+|---------|-----------|
+| Desktop App 2.0 | Updated IDE with dynamic subagents, scheduled tasks, native voice commands |
+| Antigravity CLI | Terminal-based agent creation (replaces Gemini CLI) |
+| Antigravity SDK | Programmatic access to Google's agent harness for custom agents |
+| Managed Agents (Gemini API) | API endpoints for hosted agentic workflows |
+| Gemini Enterprise Agent Platform | Enterprise deployment for Google Cloud customers |
 
 ### Available Models
 
 | Model | Provider | Type | Notes |
 |-------|----------|------|-------|
+| Gemini 3.5 Flash | Google | Fast (NEW) | Co-developed using Antigravity. GA since I/O 2026 |
 | Gemini 3.1 Pro | Google | Reasoning (High/Low) | Google's flagship. **Good for frontend work only** |
 | Gemini 3 Flash | Google | Fast | Very capable for frontend. Reliable |
 | Claude Opus 4.6 | Anthropic | Premium | **$200/mo value, available here**. Best for backend |
@@ -373,17 +386,18 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing)
 ### Usage Tips
 
 - Use **Claude models for backend** work — they handle complex logic, refactoring, and architecture
-- Use **Gemini models for frontend** — Gemini 3 Flash in particular is excellent for UI work
+- Use **Gemini models for frontend** — Gemini 3 Flash / 3.5 Flash in particular are excellent for UI work
 - **Never use Gemini for backend** or complex logic tasks — it performs poorly
 - Limits are **separate per provider** — running out on Claude? Switch to Gemini and keep working
 - Multi-agent missions can assign different models to different agents within the same task
+- **New in 2.0:** Dynamic subagents can parallelize work across microservices
 
 ### Known Issues
 
 - **Quota cuts:** Free tier quotas cut 92% since Dec 2025 (250 -> 20 requests/day)
 - **Pro lockouts:** Multiple reports of 7-day lockouts even with low usage. Advertised 5-hour refresh unreliable
 - **Credit system opaque:** Credit-to-token conversion rate undisclosed. Per-model credit costs unknown
-- **Ultra lockouts:** Even $250/mo Ultra users report unexpected quota restrictions since Mar 2026
+- **Ultra lockouts:** Even $200-$250/mo Ultra users report unexpected quota restrictions since Mar 2026
 
 ### Community Reviews
 
@@ -393,7 +407,9 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing)
 
 > **From claude-world.com:** "Google Antigravity users reported multi-day account lockouts, a 92% free-tier quota cut, and pricing that pushes developers toward a $250/month plan."
 
-> **Personal Review (May 2026):** I've used it extensively. The best thing is having Claude models (Sonnet & Opus) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The $250 Ultra plan is absurdly priced. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
+> **From TechCrunch (May 19):** "Google is also reducing the price of its top AI Ultra plan from $250 to $200, which allows for 20x higher limits." Antigravity 2.0 adds CLI, SDK, subagents, scheduled tasks, and voice commands.
+
+> **Personal Review (May 2026):** I've used it extensively. The best thing is having Claude models (Sonnet & Opus) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The new $100 AI Ultra tier is a welcome addition and the $200 Ultra Premium price cut helps, but the rate limit issues remain. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
 
 ---
 
@@ -434,7 +450,7 @@ API billed separately — NOT included in membership.
 
 Current model: **K2.6** (released Apr 18–21 2026).  
 K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license.  
-**K2 (original) discontinued** — stops serving May 25, 2026 (6 days from now). Migrate to K2.5 or K2.6.
+**K2 (original) discontinued** — stops serving **May 25, 2026** (4 days from now). Migrate to K2.5 or K2.6.
 
 ### K2.6 Improvements
 
