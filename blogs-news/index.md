@@ -9,6 +9,29 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### May 21, 2026
+
+**[GitHub Confirms Breach via Malicious Nx Console VS Code Extension](news/github-breach-nx-console-vscode/)** — *The Hacker News*
+> GitHub confirmed its internal repos were breached after an employee's device was compromised through a trojanized version of the Nx Console VS Code extension, with ~3,800 repos exfiltrated by threat group TeamPCP.
+
+**[Flipper One: An Open Linux Cyberdeck for Hackers and Makers](news/flipper-one-linux-cyberdeck/)** — *Flipper Devices Blog*
+> Flipper Devices unveiled Flipper One, an ambitious open Linux cyberdeck with mainline kernel support, PCIe expansion, and zero binary blobs — #1 on Hacker News with 1012 points.
+
+**[Python 3.15: Features That Didn't Make the Headlines](news/python-315-lesser-known-features/)** — *changs.co.uk*
+> A deep dive into Python 3.15's smaller but powerful features: graceful `TaskGroup.cancel()` and ContextDecorator improvements for async functions and generators, scoring 318 points on HN.
+
+**[Waymo Pauses Atlanta Service as Robotaxis Keep Driving into Floods](news/waymo-pauses-atlanta-floods/)** — *TechCrunch*
+> Waymo paused its Atlanta autonomous taxi service after robotaxis repeatedly drove into flooded streets, highlighting AV challenges with adverse weather conditions.
+
+**[Google Unveils Gemini Omni and Gemini 3.5 Flash at I/O 2026](news/google-gemini-omni-io-2026/)** — *The Keyword (Google Blog)*
+> At Google I/O 2026, Google launched Gemini Omni (world understanding from any input) and Gemini 3.5 Flash, alongside Antigravity 2.0 for agentic coding.
+
+**[Java 26: Better Language, Better APIs, Better Runtime](news/java-26-better-language-apis-runtime/)** — *Inside Java (dev.java)*
+> JDK 26 brings primitive patterns, lazy constants, structured concurrency, HTTP/3, and PEM encoding as preview features continuing Java's rapid innovation pace.
+
+**[Designing a Multi-Agent System for Engineering Support at Scale: Grab Case Study](news/infoq-multi-agent-system-grab-case-study/)** — *InfoQ*
+> InfoQ covers how Grab designed and deployed a multi-agent system for engineering support, sharing architecture decisions and lessons from production agentic workflows.
+
 ### May 20, 2026
 
 **[OpenAI Co-Founder Andrej Karpathy Joins Anthropic's Pre-Training Team](news/karpathy-joins-anthropic/)** — *TechCrunch / CNBC / Forbes*

@@ -70,9 +70,16 @@
     "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/",
     "https://techcrunch.com/2026/05/19/googles-ai-studio-now-lets-anyone-build-android-apps-in-minutes/",
     "https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot/",
-    "https://www.alibabacloud.com/blog/alibaba-announces-comprehensive-full-stack-ai-upgrade-for-the-agentic-era_603149"
+    "https://www.alibabacloud.com/blog/alibaba-announces-comprehensive-full-stack-ai-upgrade-for-the-agentic-era_603149",
+    "https://thehackernews.com/2026/05/github-internal-repositories-breached.html",
+    "https://blog.flipper.net/flipper-one-we-need-your-help/",
+    "https://blog.changs.co.uk/python-315-features-that-didnt-make-the-headlines.html",
+    "https://techcrunch.com/2026/05/21/waymo-pauses-atlanta-service-as-its-robotaxis-keep-driving-into-floods/",
+    "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
+    "https://inside.java/2026/05/19/javaone-better-jdk26/",
+    "https://www.infoq.com/architecture-design/"
   ],
-  "last_fetch": "2026-05-20T23:30:00Z",
+  "last_fetch": "2026-05-21T23:30:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -89,7 +96,7 @@
       "https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574",
       "https://parttelescopes.web.app/",
       "https://labs.randomquark.com/alphabet_cards/",
-      "https://www.openculture.com/2026/05/nearly-50-years-later-wrkp-in-cincinnati-becomes-a-real-radio-station.html",
+      "https://www.openculture.com/2026/05/nearly-50-years-later-wkrp-in-cincinnati-becomes-a-real-radio-station.html",
       "https://www.forbes.com/sites/daveywinder/2026/05/16/holy-grail-google-hackers-discover-pixel-10-zero-click-exploit-chain/",
       "https://news.ycombinator.com/item?id=48150900",
       "https://news.ycombinator.com/item?id=48153379",
@@ -120,7 +127,8 @@
       "https://www.infoq.com/news/2026/05/solidjs-2-async/",
       "https://www.infoq.com/news/2026/05/ai-agents-kubernetes-rag/",
       "https://www.infoq.com/news/2026/05/moonrepo-2-release/",
-      "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/"
+      "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/",
+      "https://www.infoq.com/architecture-design/"
     ],
     "devto": [
       "https://dev.to/todd_linnertz_871a076f68e/the-agent-is-20-of-the-work-the-platform-is-the-other-80-4cf8",
@@ -155,6 +163,21 @@
     ],
     "google-developers": [
       "https://developers.googleblog.com/get-ready-for-google-io-2026/"
+    ],
+    "the-hacker-news": [
+      "https://thehackernews.com/2026/05/github-internal-repositories-breached.html"
+    ],
+    "flipper-devices": [
+      "https://blog.flipper.net/flipper-one-we-need-your-help/"
+    ],
+    "techcrunch": [
+      "https://techcrunch.com/2026/05/21/waymo-pauses-atlanta-service-as-its-robotaxis-keep-driving-into-floods/"
+    ],
+    "google-blog": [
+      "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/"
+    ],
+    "inside-java": [
+      "https://inside.java/2026/05/19/javaone-better-jdk26/"
     ]
   },
   "format_version": 1
