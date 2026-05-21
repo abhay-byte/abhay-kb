@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-20 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-21 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled May 2026.
@@ -16,7 +16,7 @@ Compiled May 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 20 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 21 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -102,7 +102,7 @@ Compiled May 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 20 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 21 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -397,6 +397,8 @@ Current as of May 2026. V2 launched Mar 18 2026, V2.5 launched Apr 22 2026. Sour
 |-------|-----------|------------|---------|------------|-------|
 | MiMo-V2-Pro (≤256K) | $1.00 | $3.00 | 1M | Text | 78.0% SWE-Bench. 1T params, 42B active |
 | MiMo-V2-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
+| MiMo-V2.5 (≤256K) | $0.40 ($0.08 cached) | $2.00 | 1M | Text, Image, Audio, Video | Apr 22 2026. Native omnimodal. 1M context. OpenAI-compatible |
+| MiMo-V2.5 (256K–1M) | $0.80 | $4.00 | 1M | Text, Image, Audio, Video | Long-context tier |
 | MiMo-V2.5-Pro (≤256K) | $1.00 ($0.20 cached) | $3.00 | 1M | Text | Apr 22 2026. MIT license. 1T params. 57.2% SWE-Bench Pro |
 | MiMo-V2.5-Pro (256K–1M) | $2.00 | $6.00 | 1M | Text | Long-context tier |
 | MiMo-V2-Omni | ~$1.00 | ~$3.00 | 256K | Text, Image, Audio, Video | Multimodal flagship |
@@ -457,7 +459,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/qwen3.6-plus | Qwen3.6 Plus |
 | opencode-go/qwen3.6-max-preview | Qwen3.6 Max Preview |
 
-### Request Estimates (May 19 2026)
+### Request Estimates (May 21 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
@@ -465,6 +467,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | GLM-5 | 1,150 | 2,880 | 5,750 |
 | Kimi K2.5 | 1,850 | 4,630 | 9,250 |
 | MiMo-V2-Pro | 1,290 | 3,225 | 6,450 |
+| MiMo-V2.5 | 1,290 | 3,225 | 6,450 |
 | MiMo-V2.5-Pro | 1,290 | 3,225 | 6,450 |
 | MiMo-V2-Omni | 2,150 | 5,450 | 10,900 |
 | Qwen3.6 Plus | 3,300 | 8,200 | 16,300 |
