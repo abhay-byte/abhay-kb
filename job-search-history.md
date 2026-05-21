@@ -1,5 +1,24 @@
 ## Job Search History
 
+### 21-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Full Stack Engineer | Optum | Noida | — | https://offcampusjobs4u.com/optum-recruitment-2026-full-stack-engineer-noida/ |
+| 2 | Associate System Engineer | IBM (Fresh) | Across India | — | https://offcampusjobs4u.com/ibm-recruitment-2026-associate-system-engineer-across-india/ |
+| 3 | Associate Software Engineer | Empower | Bangalore | — | https://offcampusjobs4u.com/empower-recruitment-2026-associate-software-engineer-bangalore/ |
+| 4 | Junior Backend Software Engineer | Finominal | Bengaluru | — | https://offcampusjobs4u.com/finominal-recruitment-2026-junior-backend-software-engineer-bengaluru/ |
+| 5 | Software Engineer I | Columbia Sportswear | Bangalore | — | https://offcampusjobs4u.com/columbia-sportswear-recruitment-2026-software-engineer-i-bangalore/ |
+| 6 | Software Engineer | Ameya HQ | Remote | — | https://offcampusjobs4u.com/ameya-hq-recruitment-2026-software-engineer-remote/ |
+| 7 | Software Engineer (Fresher 2026) | Datman | Bengaluru | — | https://in.linkedin.com/jobs/view/software-engineer-at-datman-4416158291 |
+| 8 | Software Engineer (Embedded Platform) | Cisco | Bangalore | — | https://offcampusjobs4u.com/cisco-recruitment-2026-software-engineer-embedded-platform-bangalore/ |
+| 9 | Junior .NET Developer | Unisys | Hyderabad | — | https://offcampusjobs4u.com/unisys-recruitment-2026-junior-dotnet-developer-hyderabad/ |
+| 10 | Associate Software Engineer – UI | Ontic | Pune | — | https://offcampusjobs4u.com/ontic-recruitment-2026-associate-software-engineer-ui-pune/ |
+| 11 | C++ Programmer Analyst | Citigroup | Pune | — | https://offcampusjobs4u.com/citigroup-off-campus-drive-2026-programmer-analyst-pune/ |
+| 12 | Software Engineer I | isolved | Hyderabad | — | https://offcampusjobs4u.com/isolved-recruitment-2026-software-engineer-i-hyderabad/ |
+| 13 | Software Developer Internship | Talview | Bangalore | — | https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/ |
+| 14 | Salesforce Software Developer | Jade Global | Pune | — | https://offcampusjobs4u.com/jade-global-recruitment-2026-salesforce-software-developer-pune/ |
+| 15 | Associate Engineer Software | Empower (Freshershunt) | Bangalore | — | https://freshershunt.in/empower-off-campus-drive-2026-associate-engineer-software-bangalore/ |
+
 ### 15-05-2026
 | # | Title | Company | Location | Link |
 |---|-------|---------|----------|------|

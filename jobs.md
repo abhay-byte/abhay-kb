@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-20
+Last updated: 2026-05-21
 
 ---
 
@@ -79,6 +79,22 @@ Last updated: 2026-05-20
 | 59 | Associate Software Engineer (HPEL) | Smartsheet | Bangalore | ₹13 LPA | May 2026 | [Apply](https://freshershunt.in/smartsheet-off-campus-drive-2026/) |
 | 60 | Technology Analyst Trainee (Apprentice) | Fiserv | Pune | Competitive Stipend | 19-May-2026 | [Apply](https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/) |
 | 61 | Associate Software Maintenance Engineer Trainee | Red Hat | Pune | High in Industry | May 2026 | [Apply](https://jobsnet.in/red-hat-off-campus-drive-associate-software-maintenance-engineer-trainee/) |
+| 62 | Full Stack Engineer | Optum | Noida | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/optum-recruitment-2026-full-stack-engineer-noida/) |
+| 63 | Associate System Engineer | IBM | Across India | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/ibm-recruitment-2026-associate-system-engineer-across-india/) |
+| 64 | Associate Software Engineer | Empower | Bangalore | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/empower-recruitment-2026-associate-software-engineer-bangalore/) |
+| 65 | Junior Backend Software Engineer | Finominal | Bengaluru | — | 19-May-2026 | [Apply](https://offcampusjobs4u.com/finominal-recruitment-2026-junior-backend-software-engineer-bengaluru/) |
+| 66 | Software Engineer I | Columbia Sportswear | Bangalore | — | 19-May-2026 | [Apply](https://offcampusjobs4u.com/columbia-sportswear-recruitment-2026-software-engineer-i-bangalore/) |
+| 67 | Software Engineer | Ameya HQ | Remote | — | 19-May-2026 | [Apply](https://offcampusjobs4u.com/ameya-hq-recruitment-2026-software-engineer-remote/) |
+| 68 | Software Engineer (Fresher 2026) | Datman | Bengaluru | — | 20-May-2026 | [Apply](https://in.linkedin.com/jobs/view/software-engineer-at-datman-4416158291) |
+| 69 | Software Engineer (Embedded Platform) | Cisco | Bangalore | — | 19-May-2026 | [Apply](https://offcampusjobs4u.com/cisco-recruitment-2026-software-engineer-embedded-platform-bangalore/) |
+| 70 | Junior .NET Developer | Unisys | Hyderabad | — | 18-May-2026 | [Apply](https://offcampusjobs4u.com/unisys-recruitment-2026-junior-dotnet-developer-hyderabad/) |
+| 71 | Associate Software Engineer – UI | Ontic | Pune | — | 16-May-2026 | [Apply](https://offcampusjobs4u.com/ontic-recruitment-2026-associate-software-engineer-ui-pune/) |
+| 72 | C++ Programmer Analyst | Citigroup | Pune | — | 16-May-2026 | [Apply](https://offcampusjobs4u.com/citigroup-off-campus-drive-2026-programmer-analyst-pune/) |
+| 73 | Software Engineer I | isolved | Hyderabad | — | 16-May-2026 | [Apply](https://offcampusjobs4u.com/isolved-recruitment-2026-software-engineer-i-hyderabad/) |
+| 74 | Associate Software Engineer – Test Automation | Veeva Systems | Hyderabad | — | 16-May-2026 | [Apply](https://offcampusjobs4u.com/veeva-systems-recruitment-2026-associate-software-engineer-test-automation-hyderabad/) |
+| 75 | Junior Backend Engineer | SixSense | Bengaluru (Hybrid) | — | 16-May-2026 | [Apply](https://offcampusjobs4u.com/sixsense-recruitment-2026-junior-backend-engineer-bengaluru/) |
+| 76 | Salesforce Software Developer | Jade Global | Pune | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/jade-global-recruitment-2026-salesforce-software-developer-pune/) |
+| 77 | Associate Engineer Software | Empower | Bangalore | — | May 2026 | [Apply](https://freshershunt.in/empower-off-campus-drive-2026-associate-engineer-software-bangalore/) |
 
 ### 💼 Internships
 
@@ -89,6 +105,7 @@ Last updated: 2026-05-20
 | 3 | Software Engineer Internship | Agoda | Gurgaon | ~₹28-30 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/) |
 | 4 | Intern (Software Engineering) | Wipro | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/) |
 | 5 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | May 2026 | [Apply](https://freshershunt.in/payu-off-campus-drive-2026/) |
+| 6 | Software Developer Internship | Talview | Bangalore | — | 18-May-2026 | [Apply](https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/) |
 
 ### 🎮 Game Development
 
@@ -110,10 +127,10 @@ Last updated: 2026-05-20
 
 ## ⭐ Top 3 Picks
 
-1. **Qualcomm Associate SWE** - ₹20-30 LPA - Hyderabad/Bangalore/Chennai/Noida - [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/)
-2. **Amazon SDE I** - ₹30-44 LPA - Multiple Locations - [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/)
-3. **Oracle Software Developer 1** - Bengaluru/Hyderabad - [Apply](https://freshershunt.in/oracle-off-campus-drive-2026/)
+1. **Google - Software Engineer, University Graduate 2026** - Bangalore/Hyderabad - [Apply](https://freshershunt.in/google-software-engineer-university-graduate-2026/)
+2. **Qualcomm Associate SWE** - ₹20-30 LPA - Hyderabad/Bangalore/Chennai/Noida - [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/)
+3. **Amazon SDE I** - ₹30-44 LPA - Multiple Locations - [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/)
 
 ---
 
-*Auto-updated as of 20-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 21-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
