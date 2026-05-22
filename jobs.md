@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-21
+Last updated: 2026-05-22
 
 ---
 
@@ -133,4 +133,4 @@ Last updated: 2026-05-21
 
 ---
 
-*Auto-updated as of 21-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 22-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
