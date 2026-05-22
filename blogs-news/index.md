@@ -9,6 +9,26 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### May 22, 2026
+
+**[Anthropic's Project Glasswing Finds 10,000+ Severe Vulnerabilities in Critical Software](news/anthropic-glasswing-ai-security/)** — *Anthropic (via Hacker News)*
+> Anthropic's Mythos Preview AI model helped partners find over 10,000 high/critical-severity vulnerabilities across critical open-source software. Cloudflare found 2,000 bugs with better-than-human false positive rates.
+
+**[yt-dlp Deprecates Bun Support, Citing 'Vibe-Coded' Rust Rewrite](news/yt-dlp-deprecates-bun-support/)** — *GitHub (yt-dlp)*
+> yt-dlp is limiting and deprecating support for Bun, noting its Rust rewrite via Claude is "fully vibe-coded." Only Bun versions 1.2.11–1.3.14 (the last Zig-built) will remain supported.
+
+**[Deno 2.8 Released with Performance Improvements and New Features](news/deno-28-released/)** — *Deno Blog (via Hacker News)*
+> Deno 2.8 hit 285 points on Hacker News as the latest major update to the JavaScript/TypeScript runtime, generating 127 comments from developers.
+
+**[Kanbots: Open-Source Kanban Desktop App That Runs Parallel AI Agents on Every Card](news/kanbots-kanban-ai-agents/)** — *Hacker News (kanbots.dev)*
+> A new open-source Kanban app where each card can run parallel AI agents for task automation, scoring 143 points on Hacker News.
+
+**[Stack Overflow Launches 'The Heap' — A Community Blog for Software Engineers](news/stack-overflow-the-heap-community-blog/)** — *Stack Overflow Blog*
+> Stack Overflow opened The Heap, a community-contributed blog for software engineers with CC BY-SA 4.0 licensing. Currently a manual MVP with plans for direct submissions.
+
+**[OpenSCAD LLM Benchmark: AI Systems Compete to 3D-Print the Pantheon](news/openscad-llm-benchmark-pantheon/)** — *ModelRift (via Hacker News)*
+> A benchmark testing AI coding tools on generating parametric OpenSCAD code for the Pantheon. The test measures LLM capability in spatial geometry and architectural CAD modeling, scoring 333 HN points.
+
 ### May 21, 2026
 
 **[GitHub Confirms Breach via Malicious Nx Console VS Code Extension](news/github-breach-nx-console-vscode/)** — *The Hacker News*

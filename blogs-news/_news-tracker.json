@@ -77,9 +77,15 @@
     "https://techcrunch.com/2026/05/21/waymo-pauses-atlanta-service-as-its-robotaxis-keep-driving-into-floods/",
     "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
     "https://inside.java/2026/05/19/javaone-better-jdk26/",
-    "https://www.infoq.com/architecture-design/"
+    "https://www.infoq.com/architecture-design/",
+    "https://www.anthropic.com/research/glasswing-initial-update",
+    "https://github.com/yt-dlp/yt-dlp/issues/16766",
+    "https://deno.com/blog/v2.8",
+    "https://www.kanbots.dev/",
+    "https://stackoverflow.blog/2026/05/11/introducing-the-heap-the-software-engineering-blog-for-everyone/",
+    "https://modelrift.com/blog/openscad-llm-benchmark/"
   ],
-  "last_fetch": "2026-05-21T23:30:00Z",
+  "last_fetch": "2026-05-22T23:30:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -145,7 +151,8 @@
       "https://stackoverflow.blog/2026/05/15/no-dumb-questions-cloud-computing/",
       "https://stackoverflow.blog/2026/05/15/observability-and-human-intuition-in-an-ai-world/",
       "https://stackoverflow.blog/2026/05/13/rethinking-engineering-for-the-agentic-area/",
-      "https://stackoverflow.blog/2026/05/12/you-shipped-it-fast-but-did-you-ship-it-right/"
+      "https://stackoverflow.blog/2026/05/12/you-shipped-it-fast-but-did-you-ship-it-right/",
+      "https://stackoverflow.blog/2026/05/11/introducing-the-heap-the-software-engineering-blog-for-everyone/"
     ],
     "lwn": [
       "https://lwn.net/Articles/1072538/",
@@ -178,6 +185,21 @@
     ],
     "inside-java": [
       "https://inside.java/2026/05/19/javaone-better-jdk26/"
+    ],
+    "anthropic": [
+      "https://www.anthropic.com/research/glasswing-initial-update"
+    ],
+    "github-ytdlp": [
+      "https://github.com/yt-dlp/yt-dlp/issues/16766"
+    ],
+    "deno": [
+      "https://deno.com/blog/v2.8"
+    ],
+    "kanbots": [
+      "https://www.kanbots.dev/"
+    ],
+    "modelrift": [
+      "https://modelrift.com/blog/openscad-llm-benchmark/"
     ]
   },
   "format_version": 1
