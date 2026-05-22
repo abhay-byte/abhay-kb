@@ -17,7 +17,7 @@ title: Resume
 
 ## Summary
 
-Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 84 repositories, 253 stars, and 70 followers.
+Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 84 repositories, 260 stars, and 71 followers.
 
 ---
 
@@ -58,7 +58,7 @@ A Kotlin-powered Linux environment manager for Android, providing seamless devel
 ### [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 63
 Comprehensive CPU benchmarking tool for Android with 10+ performance tests, real-time thermal monitoring, and battery-efficient background processing. Widespread adoption on F-Droid.
 
-### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 35
+### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 36
 A Kotlin-based multimedia organization and processing tool for Android, built with modern architecture patterns for efficient media management.
 
 ### [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) — *Compatibility* ⭐ 8
@@ -76,10 +76,10 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ## Achievements
 
-- **GitHub:** 2.6K+ Commits · 253 Stars · 84 Public Repositories · 70 Followers
+- **GitHub:** 2.6K+ Commits · 260 Stars · 84 Public Repositories · 71 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced: 2026-05-21 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-05-22 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
