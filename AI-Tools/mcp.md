@@ -545,6 +545,66 @@ npx -y @modelcontextprotocol/server-memory
 
 ---
 
+### AgentMemory MCP Server
+
+> 🏆 **#1 persistent memory for AI coding agents** — 16K+ ⭐ on GitHub, 95.2% retrieval R@5, 92% fewer tokens vs competitors, 53 MCP tools.
+
+AgentMemory provides persistent, cross-session memory for coding agents. Built on the [iii engine](https://github.com/iii-hq/iii), it features confidence scoring, lifecycle management, knowledge graphs, and hybrid semantic + keyword search.
+
+- **GitHub:** [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) — 16K+ ⭐
+- **npm:** `@agentmemory/agentmemory` (server), `@agentmemory/mcp` (MCP shim)
+- **License:** Apache-2.0
+- **Language:** TypeScript
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npm install -g @agentmemory/agentmemory` then run `agentmemory` |
+| **MCP Config** | `npx -y @agentmemory/mcp` |
+| **Config** | Requires running agentmemory server on localhost:3111 |
+| **Best For** | Cross-session memory, context persistence, project awareness |
+
+**Installation:**
+```bash
+# Install the memory server (one-time)
+npm install -g @agentmemory/agentmemory
+
+# Start the memory server in a separate terminal
+agentmemory
+
+# The MCP server is auto-available via the shim package
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "agentmemory": {
+      "command": "npx",
+      "args": ["-y", "@agentmemory/mcp"],
+      "env": {
+        "AGENTMEMORY_URL": "http://localhost:3111"
+      }
+    }
+  }
+}
+```
+
+**Features (53 tools):**
+| Category | Tools |
+|----------|-------|
+| **Core** | `memory_recall`, `memory_save`, `memory_smart_search`, `memory_sessions` |
+| **Analysis** | `memory_patterns`, `memory_timeline`, `memory_profile`, `memory_relations` |
+| **File** | `memory_file_history`, `memory_compress_file` |
+| **Data** | `memory_export`, `memory_audit`, `memory_governance_delete` |
+
+**Supported agents:** Claude Code, Cursor, Gemini CLI, Codex CLI, Hermes, OpenClaw, OpenCode, Cline, Roo Code, Windsurf, Goose, pi, and any MCP-compatible client.
+
+**Real-time viewer:** Auto-starts on `http://localhost:3113` — live observation stream, session explorer, memory browser, knowledge graph visualization.
+
+**OpenClaw integration:** Copy `integrations/openclaw` from the repo to `~/.openclaw/extensions/agentmemory` and enable `plugins.slots.memory = "agentmemory"` for deeper memory-slot integration.
+
+---
+
 ### Sequential Thinking MCP Server
 
 Enhances agent reasoning with structured thinking chains. Good for complex problem solving and step-by-step analysis.
