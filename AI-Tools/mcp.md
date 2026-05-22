@@ -205,41 +205,24 @@ uvx mcp-server-git
 
 Two options available — the official server from GitHub and the Anthropic MCP version.
 
+**⚠️ Note:** The npm package `@github/github-mcp-server` **does not exist** (confirmed 404 on npm registry). Use the options below instead.
+
 **Option 1 — Official GitHub MCP Server**
 
 - **GitHub:** [github/github-mcp-server](https://github.com/github/github-mcp-server)
-- **npm:** `@github/github-mcp-server`
+- **Install:** Clone the repo directly or use Docker
 
 | Aspect | Details |
 |---------|---------|
-| **Install** | `npx -y @github/github-mcp-server` |
+| **Install** | Clone from GitHub and build, or use Docker image |
 | **Config** | Requires `GITHUB_TOKEN` environment variable |
 | **Best For** | GitHub-native PR review, issues, code management |
 
-**Installation:**
-```bash
-npx -y @github/github-mcp-server
-```
-
-**Configuration:**
-```json
-{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@github/github-mcp-server"],
-      "env": {
-        "GITHUB_TOKEN": "ghp_your-token-here"
-      }
-    }
-  }
-}
-```
-
-**Option 2 — Anthropic's MCP GitHub Server**
+**Option 2 — Anthropic's MCP GitHub Server (Recommended)**
 
 - **GitHub:** [modelcontextprotocol/servers — src/github](https://github.com/modelcontextprotocol/servers/tree/main/src/github)
-- **npm:** `@modelcontextprotocol/server-github`
+- **npm:** `@modelcontextprotocol/server-github` ✅ *(exists, v2025.4.8)*
+- **Also available:** `github-mcp-server` (community, v1.8.7), `@fre4x/github` (community, v1.1.0)
 
 | Aspect | Details |
 |---------|---------|
@@ -322,18 +305,28 @@ npx -y @modelcontextprotocol/server-postgres
 
 ### SQLite MCP Server
 
+> ⚠️ **Note:** The npm package `@modelcontextprotocol/server-sqlite` **does not exist** (confirmed 404 — never published on npm). Use one of the community alternatives below.
+
 Provides read/write access to SQLite databases. Good for local development, prototyping, and data inspection.
 
 | Aspect | Details |
 |---------|---------|
-| **Install** | `npx -y @modelcontextprotocol/server-sqlite` |
+| **Install** | `npx -y @easy-mcps/sqlite-mcp-server` or `npx -y sqlite-mcp` |
 | **Config** | Requires database file path |
 | **Permissions** | Full read/write database access |
 | **Best For** | Local development, data inspection, quick prototyping |
 
+**Available packages on npm:**
+| Package | Version | Notes |
+|---------|---------|-------|
+| `@easy-mcps/sqlite-mcp-server` ✅ | 1.0.7 | Stable, actively maintained — recommended |
+| `sqlite-mcp` ✅ | 0.0.1 | Minimal, by egoist |
+| `@mokei/mcp-sqlite` ✅ | 0.6.1 | Feature-rich |
+| `mcp-server-sqlite-npx` ✅ | 0.8.0 | Smithery-compatible |
+
 **Installation**
 ```bash
-npx -y @modelcontextprotocol/server-sqlite
+npx -y @easy-mcps/sqlite-mcp-server
 ```
 
 **Configuration:**
@@ -342,10 +335,7 @@ npx -y @modelcontextprotocol/server-sqlite
   "mcpServers": {
     "sqlite": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sqlite"],
-      "env": {
-        "DATABASE_PATH": "./data/mydatabase.db"
-      }
+      "args": ["-y", "@easy-mcps/sqlite-mcp-server"]
     }
   }
 }
