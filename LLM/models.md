@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-21 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-22 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled May 2026.
@@ -16,7 +16,7 @@ Compiled May 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 21 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 22 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -91,6 +91,10 @@ Compiled May 2026.
 <text x="719.9421851371668" y="78.3513513513514" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7</text>
 <circle cx="719.9421851371668" cy="92.0135135135135" r="7" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="719.9421851371668" y="78.0135135135135" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.5</text>
+<circle cx="521" cy="216" r="5" fill="#d68c45" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="521" y="234" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Mistral 3.5</text>
+<circle cx="491" cy="262" r="5" fill="#888" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="491" y="280" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Grok 4.3</text>
 </svg>
 
 
@@ -102,7 +106,7 @@ Compiled May 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 21 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 22 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -173,7 +177,7 @@ Current as of May 2026. Source: [platform.claude.com](https://platform.claude.co
 | Sonnet 4.6 | $3.00 | $15.00 | ✓ | $3.75/MTok | $0.30/MTok |
 | Haiku 4.5 | $1.00 | $5.00 | ✓ | $1.25/MTok | $0.10/MTok |
 
-Opus 4.7: 87.6% SWE-Bench Verified (#2). Opus 4.5: 80.9%. Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.
+Opus 4.7: 87.6% SWE-Bench Verified (#2), 64.3% SWE-Bench Pro (#1). Opus 4.5: 80.9%. Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.
 
 ---
 ## Google Gemini
@@ -216,7 +220,7 @@ Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Op
 Current as of May 2026. Source: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/)
 
 DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.
-SWE-Bench Verified: V4 Pro Max / V4 Pro 80.6%, V4 Flash 79%. V4 Flash is the default workhorse; V4 Pro is premium (75% off until May 31 2026).
+SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro is premium (75% off until May 31 2026).
 
 ### New: DeepSeek V4 Pro Max
 Released Apr 24 2026. 1.6T params, 49B active MoE, 1M context, open-weight on HuggingFace. 80.6% SWE-Bench Verified. Available at V4 Pro pricing (same API endpoint).
@@ -275,7 +279,7 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 | o3 | $2.00 | $8.00 | — | — | Flagship reasoning. Chain-of-thought built in |
 
 Batch API saves 50% on all models. Prompt caching discounts: up to 90% off (GPT-5.5), 75% off (GPT-4.1).
-GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro. GPT-5.5 Pro tier ($30/$180) is available for research-grade problems. GPT-4.1 is OpenAI's recommended production default for most workloads.
+GPT-5.5 scores 88.7% SWE-Bench Verified (#1) and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro (xHigh). GPT-5.5 Pro tier ($30/$180) is available for research-grade problems. GPT-5.3 Codex scores 85.0% SWE-Bench Verified (#3) and 56.8% SWE-Bench Pro. GPT-4.1 is OpenAI's recommended production default for most workloads.
 
 ---
 
@@ -316,9 +320,9 @@ Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacl
 | Qwen3.6 Flash | $0.25 | $1.50 | 1M | — | Cost-optimized tier |
 | Qwen3.6 Max Preview | $1.30 | $7.80 | 256K | **SWE-Bench Pro #1** | Apr 20 2026. Closed-weights flagship. Leads SWE-Bench Pro, Terminal-Bench 2.0, SkillsBench, SciCode |
 
-Qwen3.6 Plus: within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
+Qwen3.6 Plus: 78.8% SWE-Bench Verified — within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
 Qwen3.6-27B (dense, Apache 2.0): 77.2% SWE-Bench Verified — strong self-hosting option.
-Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.80 per MTok. 256K context. Tops SWE-Bench Pro + 5 other coding benchmarks at launch.
+Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.80 per MTok. 256K context. 57.3% SWE-Bench Pro. Tops SWE-Bench Pro + 5 other coding benchmarks at launch.
 
 ### Previous Gen (Qwen3.5)
 
@@ -435,6 +439,33 @@ K2.5: 100 parallel sub-agents.
 
 ---
 
+## Mistral (Medium 3.5)
+
+Current as of May 2026. Source: [la-plateforme.mistral.ai](https://la-plateforme.mistral.ai/), [tokencost.app](https://tokencost.app/models/mistral-medium-3-5)
+
+| Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench Verified | Notes |
+|-------|-----------|------------|---------|-----------|-------------------|-------|
+| Mistral Medium 3.5 | $1.50 | $7.50 | 256K | 33K | **77.6%** | 128B dense, multimodal. Released Apr 29 2026.
+
+Mistral Medium 3.5 consolidates Medium 3.1 + Magistral + Devstral 2 into one unified model. Modified MIT license with open weights. 77.6% SWE-Bench Verified — competitive with Qwen3.6-27B (77.2%) and ahead of DeepSeek V3.2 (73.0%).
+
+---
+
+## xAI (Grok)
+
+Current as of May 2026. Source: [docs.x.ai](https://docs.x.ai/developers/models), [xAI pricing](https://docs.x.ai/developers/models)
+
+| Model | Input /1M | Output /1M | Cached Input | Context | SWE-Bench | Notes |
+|-------|-----------|------------|-------------|---------|-----------|-------|
+| Grok 4.3 | $1.25 | $2.50 | — | 1M | ~72-75% (self-reported) | Launched Apr 30 2026. Current flagship. 1M context.
+| Grok 4.20 | $2.00 | $6.00 | $0.20 | 256K | — | 90% cached-input discount. 60% cheaper output than GPT-5.4.
+| Grok 4 | $3.00 | $15.00 | — | 256K | 72-75% (self-reported) | Original Grok 4 flagship.
+| Grok 4.1 Fast | $0.20 | $0.50 | — | 128K | — | Cheapest frontier-adjacent tier. Fast inference.
+
+Grok 4 self-reports 72-75% on SWE-Bench Verified (independent testing with SWE-agent scaffold: 58.6%). Aider Polyglot: 79.6%. xAI offers up to $150/month free API credits via data-sharing program. Unique real-time X search grounding.
+
+---
+
 ## OpenCode Go
 
 Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Dollar-value limits ($12/5h, $30/week, $60/month).
@@ -458,8 +489,11 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/qwen3.5-plus | Qwen3.5 Plus |
 | opencode-go/qwen3.6-plus | Qwen3.6 Plus |
 | opencode-go/qwen3.6-max-preview | Qwen3.6 Max Preview |
+| opencode-go/mistral-medium-3.5 | Mistral Medium 3.5 |
+| opencode-go/grok-4.3 | Grok 4.3 |
+| opencode-go/grok-4.20 | Grok 4.20 |
 
-### Request Estimates (May 21 2026)
+### Request Estimates (May 22 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
@@ -474,6 +508,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | Qwen3.6 Max Preview | 820 | 2,050 | 4,100 |
 | MiniMax M2.7 | 3,400 | 8,500 | 17,000 |
 | MiniMax M2.5 | 6,300 | 15,900 | 31,800 |
+| Mistral Medium 3.5 | ~2,500 | ~6,200 | 12,500 |
 | Qwen3.5 Plus | 10,200 | 25,200 | 50,500 |
 
 MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).
