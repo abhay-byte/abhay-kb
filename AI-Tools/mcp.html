@@ -249,6 +249,7 @@
 <li><a href="#puppeteer-mcp-server">Puppeteer</a></li>
 <li><a href="#playwright-mcp-server">Playwright</a></li>
 <li><a href="#memory-mcp-server">Memory</a></li>
+<li><a href="#agentmemory-mcp-server">AgentMemory</a></li>
 <li><a href="#sequential-thinking-mcp-server">Sequential Thinking</a></li>
 <li><a href="#time-mcp-server">Time</a></li>
 <li><a href="#context-mode-mcp-server">Context Mode</a></li>
@@ -259,6 +260,121 @@
 <li><a href="#best-practices">Best Practices</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul>
+
+<hr>
+
+<h2 id="mcp-servers-quick-reference">MCP Servers Quick Reference</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Server</th>
+<th>Package / Install</th>
+<th>Use Case</th>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Filesystem</strong></td>
+<td><code>@modelcontextprotocol/server-filesystem</code></td>
+<td>Read/write local files & directories</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Git</strong></td>
+<td><code>mcp-server-git</code> (uvx)</td>
+<td>Git history, branches, diffs</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>GitHub</strong></td>
+<td><code>@modelcontextprotocol/server-github</code></td>
+<td>PRs, issues, GitHub API</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>PostgreSQL</strong></td>
+<td><code>@modelcontextprotocol/server-postgres</code></td>
+<td>Read-only DB queries, schema inspection</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>SQLite</strong></td>
+<td><code>@easy-mcps/sqlite-mcp-server</code></td>
+<td>Read/write SQLite databases</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Slack</strong></td>
+<td><code>@modelcontextprotocol/server-slack</code></td>
+<td>Channels, messages, threads</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Web / Brave Search</strong></td>
+<td><code>@modelcontextprotocol/server-brave-search</code></td>
+<td>Web search & page fetch</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Puppeteer</strong></td>
+<td><code>@modelcontextprotocol/server-puppeteer</code></td>
+<td>Browser automation (Chrome)</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Playwright</strong></td>
+<td><code>@playwright/mcp</code></td>
+<td>Multi-browser automation</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Memory</strong></td>
+<td><code>@modelcontextprotocol/server-memory</code></td>
+<td>Cross-session persistent memory</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>AgentMemory</strong></td>
+<td><code>@agentmemory/mcp</code></td>
+<td>53-tool memory server</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Sequential Thinking</strong></td>
+<td><code>@modelcontextprotocol/server-sequential-thinking</code></td>
+<td>Structured chain-of-thought</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Time</strong></td>
+<td><code>@modelcontextprotocol/server-time</code></td>
+<td>Date, time, timezone info</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>Context Mode</strong></td>
+<td><code>@modelcontextprotocol/server-context-mode</code></td>
+<td>Toggle agent context modes</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>Context7</strong></td>
+<td><code>npx @context7/server</code></td>
+<td>Context management for teams</td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>DuckDuckGo</strong></td>
+<td><code>@modelcontextprotocol/server-duckduckgo</code></td>
+<td>Privacy-first web search</td>
+</tr>
+<tr>
+<td>17</td>
+<td><strong>Android MCP</strong></td>
+<td><code>android-mcp</code> (uvx)</td>
+<td>Android device control</td>
+</tr>
+</table>
 
 <hr>
 
@@ -503,11 +619,13 @@
 
 <p>Two options available — the official server from GitHub and the Anthropic MCP version.</p>
 
+<strong>⚠️ Note:</strong> The npm package <code>@github/github-mcp-server</code> <strong>does not exist</strong> (confirmed 404 on npm registry). Use the options below instead.
+
 <strong>Option 1 — Official GitHub MCP Server</strong>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a></li>
-<li><strong>npm:</strong> <code>@github/github-mcp-server</code></li>
+<li><strong>Install:</strong> Clone the repo directly or use Docker</li>
 </ul>
 
 <table>
@@ -517,7 +635,7 @@
 </tr>
 <tr>
 <td><strong>Install</strong></td>
-<td><code>npx -y @github/github-mcp-server</code></td>
+<td>Clone from GitHub and build, or use Docker image</td>
 </tr>
 <tr>
 <td><strong>Config</strong></td>
@@ -529,29 +647,12 @@
 </tr>
 </table>
 
-<strong>Installation:</strong>
-<pre><code>npx -y @github/github-mcp-server
-</code></pre>
-
-<strong>Configuration:</strong>
-<pre><code>{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@github/github-mcp-server"],
-      "env": {
-        "GITHUB_TOKEN": "ghp_your-token-here"
-      }
-    }
-  }
-}
-</code></pre>
-
-<strong>Option 2 — Anthropic's MCP GitHub Server</strong>
+<strong>Option 2 — Anthropic's MCP GitHub Server (Recommended)</strong>
 
 <ul>
 <li><strong>GitHub:</strong> <a href="https://github.com/modelcontextprotocol/servers/tree/main/src/github">modelcontextprotocol/servers — src/github</a></li>
-<li><strong>npm:</strong> <code>@modelcontextprotocol/server-github</code></li>
+<li><strong>npm:</strong> <code>@modelcontextprotocol/server-github</code> ✅ <em>(exists, v2025.4.8)</em></li>
+<li><strong>Also available:</strong> <code>github-mcp-server</code> (community, v1.8.7), <code>@fre4x/github</code> (community, v1.1.0)</li>
 </ul>
 
 <table>
@@ -664,6 +765,8 @@
 
 <h3>SQLite MCP Server</h3>
 
+<p>> ⚠️ <strong>Note:</strong> The npm package <code>@modelcontextprotocol/server-sqlite</code> <strong>does not exist</strong> (confirmed 404 — never published on npm). Use one of the community alternatives below.</p>
+
 <p>Provides read/write access to SQLite databases. Good for local development, prototyping, and data inspection.</p>
 
 <table>
@@ -673,7 +776,7 @@
 </tr>
 <tr>
 <td><strong>Install</strong></td>
-<td><code>npx -y @modelcontextprotocol/server-sqlite</code></td>
+<td><code>npx -y @easy-mcps/sqlite-mcp-server</code> or <code>npx -y sqlite-mcp</code></td>
 </tr>
 <tr>
 <td><strong>Config</strong></td>
@@ -689,8 +792,37 @@
 </tr>
 </table>
 
+<strong>Available packages on npm:</strong>
+<table>
+<tr>
+<th>Package</th>
+<th>Version</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td><code>@easy-mcps/sqlite-mcp-server</code> ✅</td>
+<td>1.0.7</td>
+<td>Stable, actively maintained — recommended</td>
+</tr>
+<tr>
+<td><code>sqlite-mcp</code> ✅</td>
+<td>0.0.1</td>
+<td>Minimal, by egoist</td>
+</tr>
+<tr>
+<td><code>@mokei/mcp-sqlite</code> ✅</td>
+<td>0.6.1</td>
+<td>Feature-rich</td>
+</tr>
+<tr>
+<td><code>mcp-server-sqlite-npx</code> ✅</td>
+<td>0.8.0</td>
+<td>Smithery-compatible</td>
+</tr>
+</table>
+
 <strong>Installation</strong>
-<pre><code>npx -y @modelcontextprotocol/server-sqlite
+<pre><code>npx -y @easy-mcps/sqlite-mcp-server
 </code></pre>
 
 <strong>Configuration:</strong>
@@ -698,10 +830,7 @@
   "mcpServers": {
     "sqlite": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sqlite"],
-      "env": {
-        "DATABASE_PATH": "./data/mydatabase.db"
-      }
+      "args": ["-y", "@easy-mcps/sqlite-mcp-server"]
     }
   }
 }
@@ -984,6 +1113,98 @@
 </ul>
 
 <strong>Backend options:</strong> Redis, PostgreSQL, Supabase, Local filesystem
+
+<hr>
+
+<h3>AgentMemory MCP Server</h3>
+
+<p>> 🏆 <strong>#1 persistent memory for AI coding agents</strong> — 95.2% retrieval R@5, 92% fewer tokens vs competitors, 53 MCP tools.</p>
+
+<p>AgentMemory provides persistent, cross-session memory for coding agents. Built on the <a href="https://github.com/iii-hq/iii">iii engine</a>, it features confidence scoring, lifecycle management, knowledge graphs, and hybrid semantic + keyword search.</p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/rohitg00/agentmemory">rohitg00/agentmemory</a></li>
+<li><strong>npm:</strong> <code>@agentmemory/agentmemory</code> (server), <code>@agentmemory/mcp</code> (MCP shim)</li>
+<li><strong>License:</strong> Apache-2.0</li>
+<li><strong>Language:</strong> TypeScript</li>
+</ul>
+
+<table>
+<tr>
+<th>Aspect</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Install</strong></td>
+<td><code>npm install -g @agentmemory/agentmemory</code> then run <code>agentmemory</code></td>
+</tr>
+<tr>
+<td><strong>MCP Config</strong></td>
+<td><code>npx -y @agentmemory/mcp</code></td>
+</tr>
+<tr>
+<td><strong>Config</strong></td>
+<td>Requires running agentmemory server on localhost:3111</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Cross-session memory, context persistence, project awareness</td>
+</tr>
+</table>
+
+<strong>Installation:</strong>
+<pre><code># Install the memory server (one-time)
+npm install -g @agentmemory/agentmemory
+
+<h1>Start the memory server in a separate terminal</h1>
+agentmemory
+
+<h1>The MCP server is auto-available via the shim package</h1>
+</code></pre>
+
+<strong>Configuration:</strong>
+<pre><code>{
+  "mcpServers": {
+    "agentmemory": {
+      "command": "npx",
+      "args": ["-y", "@agentmemory/mcp"],
+      "env": {
+        "AGENTMEMORY_URL": "http://localhost:3111"
+      }
+    }
+  }
+}
+</code></pre>
+
+<strong>Features (53 tools):</strong>
+<table>
+<tr>
+<th>Category</th>
+<th>Tools</th>
+</tr>
+<tr>
+<td><strong>Core</strong></td>
+<td><code>memory_recall</code>, <code>memory_save</code>, <code>memory_smart_search</code>, <code>memory_sessions</code></td>
+</tr>
+<tr>
+<td><strong>Analysis</strong></td>
+<td><code>memory_patterns</code>, <code>memory_timeline</code>, <code>memory_profile</code>, <code>memory_relations</code></td>
+</tr>
+<tr>
+<td><strong>File</strong></td>
+<td><code>memory_file_history</code>, <code>memory_compress_file</code></td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td><code>memory_export</code>, <code>memory_audit</code>, <code>memory_governance_delete</code></td>
+</tr>
+</table>
+
+<strong>Supported agents:</strong> Claude Code, Cursor, Gemini CLI, Codex CLI, Hermes, OpenClaw, OpenCode, Cline, Roo Code, Windsurf, Goose, pi, and any MCP-compatible client.
+
+<strong>Real-time viewer:</strong> Auto-starts on <code>http://localhost:3113</code> — live observation stream, session explorer, memory browser, knowledge graph visualization.
+
+<strong>OpenClaw integration:</strong> Copy <code>integrations/openclaw</code> from the repo to <code>~/.openclaw/extensions/agentmemory</code> and enable <code>plugins.slots.memory = "agentmemory"</code> for deeper memory-slot integration.
 
 <hr>
 
