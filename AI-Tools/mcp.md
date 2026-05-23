@@ -25,6 +25,7 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
   - [Puppeteer](#puppeteer-mcp-server)
   - [Playwright](#playwright-mcp-server)
   - [Memory](#memory-mcp-server)
+  - [AgentMemory](#agentmemory-mcp-server)
   - [Sequential Thinking](#sequential-thinking-mcp-server)
   - [Time](#time-mcp-server)
   - [Context Mode](#context-mode-mcp-server)
@@ -34,6 +35,30 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
 - [Tools Supporting MCP](#tools-supporting-mcp)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
+
+---
+
+## MCP Servers Quick Reference
+
+| # | Server | Package / Install | Use Case |
+|---|--------|-------------------|----------|
+| 1 | **Filesystem** | `@modelcontextprotocol/server-filesystem` | Read/write local files & directories |
+| 2 | **Git** | `mcp-server-git` (uvx) | Git history, branches, diffs |
+| 3 | **GitHub** | `@modelcontextprotocol/server-github` | PRs, issues, GitHub API |
+| 4 | **PostgreSQL** | `@modelcontextprotocol/server-postgres` | Read-only DB queries, schema inspection |
+| 5 | **SQLite** | `@easy-mcps/sqlite-mcp-server` | Read/write SQLite databases |
+| 6 | **Slack** | `@modelcontextprotocol/server-slack` | Channels, messages, threads |
+| 7 | **Web / Brave Search** | `@modelcontextprotocol/server-brave-search` | Web search & page fetch |
+| 8 | **Puppeteer** | `@modelcontextprotocol/server-puppeteer` | Browser automation (Chrome) |
+| 9 | **Playwright** | `@playwright/mcp` | Multi-browser automation |
+| 10 | **Memory** | `@modelcontextprotocol/server-memory` | Cross-session persistent memory |
+| 11 | **AgentMemory** | `@agentmemory/mcp` | 53-tool memory server (16K⭐) |
+| 12 | **Sequential Thinking** | `@modelcontextprotocol/server-sequential-thinking` | Structured chain-of-thought |
+| 13 | **Time** | `@modelcontextprotocol/server-time` | Date, time, timezone info |
+| 14 | **Context Mode** | `@modelcontextprotocol/server-context-mode` | Toggle agent context modes |
+| 15 | **Context7** | `npx @context7/server` | Context management for teams |
+| 16 | **DuckDuckGo** | `@modelcontextprotocol/server-duckduckgo` | Privacy-first web search |
+| 17 | **Android MCP** | `android-mcp` (uvx) | Android device control |
 
 ---
 
