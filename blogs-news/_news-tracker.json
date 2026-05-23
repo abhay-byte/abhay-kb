@@ -83,9 +83,15 @@
     "https://deno.com/blog/v2.8",
     "https://www.kanbots.dev/",
     "https://stackoverflow.blog/2026/05/11/introducing-the-heap-the-software-engineering-blog-for-everyone/",
-    "https://modelrift.com/blog/openscad-llm-benchmark/"
+    "https://modelrift.com/blog/openscad-llm-benchmark/",
+    "https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/",
+    "https://dev.to/hiroki-ii-ai/ai-daily-digest-may-22-2026-agentic-workflows-coding-agents-embodied-ai-i05",
+    "https://www.infoq.com/news/2026/05/google-cross-engine-iceberg/",
+    "https://www.infoq.com/news/2026/05/openai-voice-ai-scale/",
+    "https://www.infoq.com/news/2026/05/uber-eats-ranking-system/",
+    "https://resources.anthropic.com/2026-agentic-coding-trends-report"
   ],
-  "last_fetch": "2026-05-22T23:30:00Z",
+  "last_fetch": "2026-05-23T23:30:00Z",
   "entries_by_source": {
     "hacker-news": [
       "https://crates.io/crates/zerostack/1.0.0",
@@ -134,12 +140,16 @@
       "https://www.infoq.com/news/2026/05/ai-agents-kubernetes-rag/",
       "https://www.infoq.com/news/2026/05/moonrepo-2-release/",
       "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/",
-      "https://www.infoq.com/architecture-design/"
+      "https://www.infoq.com/architecture-design/",
+      "https://www.infoq.com/news/2026/05/google-cross-engine-iceberg/",
+      "https://www.infoq.com/news/2026/05/openai-voice-ai-scale/",
+      "https://www.infoq.com/news/2026/05/uber-eats-ranking-system/"
     ],
     "devto": [
       "https://dev.to/todd_linnertz_871a076f68e/the-agent-is-20-of-the-work-the-platform-is-the-other-80-4cf8",
       "https://dev.to/apples_one_cd174284bffb/i-stayed-up-until-3-am-to-build-a-better-claude-code-guide-than-the-one-with-52000-stars-heres-15cg",
-      "https://dev.to/yanoai/ai-agents-in-the-enterprise-why-less-can-be-more-14mj"
+      "https://dev.to/yanoai/ai-agents-in-the-enterprise-why-less-can-be-more-14mj",
+      "https://dev.to/hiroki-ii-ai/ai-daily-digest-may-22-2026-agentic-workflows-coding-agents-embodied-ai-i05"
     ],
     "github-blog": [
       "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/",
@@ -187,7 +197,8 @@
       "https://inside.java/2026/05/19/javaone-better-jdk26/"
     ],
     "anthropic": [
-      "https://www.anthropic.com/research/glasswing-initial-update"
+      "https://www.anthropic.com/research/glasswing-initial-update",
+      "https://resources.anthropic.com/2026-agentic-coding-trends-report"
     ],
     "github-ytdlp": [
       "https://github.com/yt-dlp/yt-dlp/issues/16766"
@@ -200,6 +211,9 @@
     ],
     "modelrift": [
       "https://modelrift.com/blog/openscad-llm-benchmark/"
+    ],
+    "nvidia-blog": [
+      "https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/"
     ]
   },
   "format_version": 1

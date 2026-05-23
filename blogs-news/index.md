@@ -9,6 +9,26 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### May 23, 2026
+
+**[NVIDIA Wins COMPUTEX 2026 Best Choice Awards for Vera Rubin, Jetson Thor, and Alpamayo](news/nvidia-computex-2026-best-choice-awards/)** — *NVIDIA Blog*
+> NVIDIA won four COMPUTEX 2026 Best Choice Awards spanning AI supercomputing, edge robotics, and autonomous vehicles — marking major advances in physical AI infrastructure for developers.
+
+**[Cursor 3.0 Unlocks 'Agents Window' — Running Parallel AI Agents Across Git Worktrees](news/cursor-30-agents-window-parallel-ai/)** — *Dev.to*
+> Cursor 3.0 replaces Composer with a full-screen Agents Window that runs multiple AI agents in parallel across isolated Git worktrees, SSH remotes, and cloud instances for the first time.
+
+**[Google Cloud Introduces Cross-Engine Iceberg Support in BigQuery](news/google-cloud-cross-engine-iceberg-bigquery/)** — *InfoQ*
+> Google announced a preview of the serverless Iceberg REST catalog in BigQuery, letting teams query the same tables across Spark, Flink, and Trino without duplicating data.
+
+**[OpenAI Outlines WebRTC Architecture for Low-Latency Voice AI at Scale](news/openai-webrtc-architecture-voice-ai/)** — *InfoQ*
+> OpenAI detailed its relay-transceiver WebRTC architecture designed for global-scale low-latency voice AI, replacing conventional media termination with a Kubernetes-friendly design.
+
+**[Uber Improves Restaurant Recommendations with Real-Time Signals and Listwise Ranking](news/uber-eats-real-time-recommendation-ranking/)** — *InfoQ*
+> Uber updated its Eats recommendation system with real-time user signals and a Generative Recommender model, reducing feature freshness from 24 hours to seconds.
+
+**[Anthropic's 2026 Agentic Coding Trends Report: From AI Assistants to Agent Teams](news/anthropic-agentic-coding-trends-2026/)** — *Anthropic*
+> Anthropic's report finds developers use AI in 60% of work but delegate only 20% of tasks, predicting 2026 marks the shift from single assistants to coordinated AI agent teams.
+
 ### May 22, 2026
 
 **[Anthropic's Project Glasswing Finds 10,000+ Severe Vulnerabilities in Critical Software](news/anthropic-glasswing-ai-security/)** — *Anthropic (via Hacker News)*
