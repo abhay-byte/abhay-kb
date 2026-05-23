@@ -32,6 +32,7 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
   - [Context7](#context7-mcp-server)
   - [DuckDuckGo](#duckduckgo-mcp-server)
   - [Android MCP](#android-mcp-server)
+  - [Chrome DevTools](#chrome-devtools-mcp-server)
 - [Tools Supporting MCP](#tools-supporting-mcp)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
@@ -853,6 +854,56 @@ adb devices
 - **UI interaction:** Tap, swipe, type on device
 - **App control:** Launch/kill apps, read notifications
 - **Automation:** Script Android workflows
+
+---
+
+### Chrome DevTools MCP Server
+
+Lets coding agents control and inspect a live Chrome browser — reliable automation, in-depth debugging, and performance analysis via Chrome DevTools.
+
+- **GitHub:** [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+- **npm:** `chrome-devtools-mcp`
+
+| Aspect | Details |
+|---------|---------|
+| **Install** | `npx -y chrome-devtools-mcp@latest` |
+| **Config** | Requires Chrome (stable or newer) installed |
+| **Best For** | Browser automation, debugging, performance tracing, console/network inspection |
+
+**Installation**
+```bash
+npx -y chrome-devtools-mcp@latest
+```
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
+```
+
+**Slim (headless) mode** for simpler browsing tasks:
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--slim", "--headless"]
+    }
+  }
+}
+```
+
+**Features:**
+- **Performance insights:** Record traces, extract actionable performance data (uses Chrome CrUX API for field data)
+- **Advanced debugging:** Analyze network requests, capture screenshots, inspect console with source-mapped stack traces
+- **Reliable automation:** Built on Puppeteer — automatically waits for action results
+- **Usage statistics:** Collected by default; opt-out with `--no-usage-statistics` flag or `CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS` env var
 
 ---
 
