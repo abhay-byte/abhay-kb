@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-22 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-23 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled May 2026.
@@ -16,7 +16,7 @@ Compiled May 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 22 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 23 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -77,6 +77,8 @@ Compiled May 2026.
 <text x="454.60775263317214" y="230.02702702702703" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiMo-V2-Pro</text>
 <circle cx="545.9221121713288" cy="182.86486486486496" r="5.5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="545.9221121713288" y="200.86486486486496" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V4 Pro</text>
+<circle cx="546.0" cy="182.9" r="5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="1.5" filter="url(#g)"/>
+<text x="546.0" y="167.9" text-anchor="middle" fill="#ccc" font-size="8" font-weight="400">V4 Pro Max</text>
 <circle cx="568.8810727623497" cy="182.86486486486496" r="5.5" fill="#4285f4" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="568.8810727623497" y="200.86486486486496" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Gemini 3.1 Pro</text>
 <circle cx="635.7266798708225" cy="194.08108108108112" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
@@ -106,7 +108,7 @@ Compiled May 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 22 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 23 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -186,19 +188,23 @@ Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api
 
 ### Current Models
 
-| Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench Verified | Notes |
-|-------|-----------|------------|---------|-----------|-------------------|-------|
-| Gemini 3.1 Pro Preview | $2.00 ($4.00 >200K) | $12.00 ($18.00 >200K) | 2M | 16K | **80.6%** | Preview. Top-tier reasoning. 2M ctx |
-| Gemini 3.1 Flash-Lite Preview | $0.25 | $1.50 | 1M | 64K | — | Fast, high-volume agentic tasks |
-| Gemini 2.5 Pro | $1.25 ($2.50 >200K) | $10.00 ($15.00 >200K) | 2M | 64K | — | Complex reasoning, coding, long docs |
-| Gemini 2.5 Flash | $0.30 | $2.50 | 1M | 64K | — | Balanced cost and capability |
-| Gemini 2.5 Flash-Lite | $0.10 | $0.40 | 1M | 64K | — | Lowest-cost current Gemini route |
+| Model | Input /1M | Output /1M | Cached Input | Context | Max Output | SWE-Bench Verified | Notes |
+|-------|-----------|------------|-------------|---------|-----------|-------------------|-------|
+| Gemini 3.1 Pro Preview | $2.00 ($4.00 >200K) | $12.00 ($18.00 >200K) | $0.20 ($0.40 >200K) | 2M | 16K | **80.6%** | Preview. Top-tier reasoning. 2M ctx |
+| Gemini 3.5 Flash | $1.50 | $9.00 | $0.15 | 1M | 64K | — | Fast, high-volume agentic tasks. Released May 2026 |
+| Gemini 3 Flash Preview | $0.50 | $3.00 | $0.05 | 1M | 64K | — | Efficient, general-purpose |
+| Gemini 3.1 Flash-Lite Preview | $0.25 | $1.50 | $0.025 | 1M | 64K | — | Fast, high-volume agentic tasks |
+| Gemini 2.5 Pro | $1.25 ($2.50 >200K) | $10.00 ($15.00 >200K) | — | 2M | 64K | — | Complex reasoning, coding, long docs |
+| Gemini 2.5 Flash | $0.30 | $2.50 | — | 1M | 64K | — | Balanced cost and capability |
+| Gemini 2.5 Flash-Lite | $0.10 | $0.40 | — | 1M | 64K | — | Lowest-cost current Gemini route |
 
 ### Batch / Flex Pricing (50% off)
 
 | Model | Batch Input /1M | Batch Output /1M |
 |-------|----------------|-----------------|
 | Gemini 3.1 Pro (≤200K) | $1.00 | $6.00 |
+| Gemini 3.5 Flash | $0.75 | $4.50 |
+| Gemini 3 Flash | $0.25 | $1.50 |
 | Gemini 3.1 Flash-Lite | $0.125 | $0.75 |
 | Gemini 2.5 Pro (≤200K) | $0.625 | $5.00 |
 | Gemini 2.5 Flash | $0.15 | $1.25 |
@@ -211,6 +217,8 @@ Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api
 | Gemini 2.0 Flash | $0.10 | $0.40 | Shutdown Jun 1 2026 |
 
 Gemini 3.1 Pro is a preview model (restrictive rate limits). Free tier available for development and small projects.
+Gemini 3.5 Flash released May 2026 — fast, high-volume tier at 25% less than 3.1 Pro.
+Gemini 3 Flash Preview is a budget-friendly general-purpose model ($0.50/$3.00 per MTok).
 Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Opus 4.6 (80.8%) and DeepSeek V4 Flash (79%).
 
 ---
@@ -493,7 +501,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/grok-4.3 | Grok 4.3 |
 | opencode-go/grok-4.20 | Grok 4.20 |
 
-### Request Estimates (May 22 2026)
+### Request Estimates (May 23 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
