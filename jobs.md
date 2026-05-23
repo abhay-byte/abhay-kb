@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-22
+Last updated: 2026-05-23
 
 ---
 
@@ -95,6 +95,15 @@ Last updated: 2026-05-22
 | 75 | Junior Backend Engineer | SixSense | Bengaluru (Hybrid) | — | 16-May-2026 | [Apply](https://offcampusjobs4u.com/sixsense-recruitment-2026-junior-backend-engineer-bengaluru/) |
 | 76 | Salesforce Software Developer | Jade Global | Pune | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/jade-global-recruitment-2026-salesforce-software-developer-pune/) |
 | 77 | Associate Engineer Software | Empower | Bangalore | — | May 2026 | [Apply](https://freshershunt.in/empower-off-campus-drive-2026-associate-engineer-software-bangalore/) |
+| 78 | Graduate Engineer Trainee | Ingram Micro | Mumbai/Chennai | Best in Industry | 22-May-2026 | [Apply](https://ingrammicro.wd5.myworkdayjobs.com/en-US/IngramMicro/job/Mumbai-India/Graduate-Engineer-Trainee_R-115589) |
+| 79 | Software Developer | Tower Research | Gurgaon | Industry Standard | 21-May-2026 | [Apply](https://job-boards.greenhouse.io/embed/job_app?for=towerresearchcapital&gh_src=be8ebc4b1&source=LinkedIn&token=6656773-bengal-india-siliguri) |
+| 80 | Java Developer (Entry-Level) | Equifax | Pune | As per Standard | 21-May-2026 | [Apply](https://careers.equifax.com/en/jobs/j00176622/software-engineer-entry/?source=Applied_LinkedIn) |
+| 81 | Graduate Engineer Trainee (SDE) | Syensqo | Mumbai | Best in Industry | 20-May-2026 | [Apply](https://jobsnet.in/syensqo-off-campus-drive-hiring-graduate-engineer-trainee-sde/) |
+| 82 | Trainee, Technology Engineer | RXO | Mumbai | Best in Industry | 20-May-2026 | [Apply](https://jobsnet.in/rxo-off-campus-drive-hiring-trainee-technology-engineer/) |
+| 83 | Software Engineer I (Entry-Level) | CME Group | Bangalore | Best in Industry | 19-May-2026 | [Apply](https://jobsnet.in/cme-group-hiring-entry-level-software-development-engineer-1/) |
+| 84 | Software Engineer I | Honeywell | Bengaluru (Hybrid) | Competitive | 22-May-2026 | [Apply](https://freshershunt.in/honeywell-careers-software-engineer-hiring/) |
+| 85 | Associate Software Engineer | ReliaQuest | Pune | Competitive | 22-May-2026 | [Apply](https://freshershunt.in/reliaquest-off-campus-drive-2026/) |
+| 86 | Associate Engineer (AWS DevOps) | Harman | Bangalore | Competitive | 22-May-2026 | [Apply](https://freshershunt.in/harman-off-campus-drive-2026-bangalore/) |
 
 ### 💼 Internships
 
@@ -106,14 +115,14 @@ Last updated: 2026-05-22
 | 4 | Intern (Software Engineering) | Wipro | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/) |
 | 5 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | May 2026 | [Apply](https://freshershunt.in/payu-off-campus-drive-2026/) |
 | 6 | Software Developer Internship | Talview | Bangalore | — | 18-May-2026 | [Apply](https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/) |
+| 7 | Software Intern (Digital Solutions) | Wabtec | Bengaluru (Onsite) | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/wabtec-internship-2026-software-bengaluru/) |
+| 8 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/natwest-group-internship-2026-bangalore/) |
 
 ### 🎮 Game Development
 
 | # | Title | Company | Location | Salary | Posted | Apply |
 |---|-------|---------|----------|--------|--------|-------|
 | 1 | Game Developer - Fresher | Associative | Pune | — | May 2026 | [Apply](https://in.indeed.com/Game-Developer-jobs-in-India) |
-| 2 | Unreal Engine Game Developer (Fresher) | Associative | Pune | — | May 2026 | [Apply](https://in.indeed.com/Game-Developer-jobs-in-India) |
-| 3 | Unity 3D Multiplayer Game Developer (Fresher) | Multiple (Naukri) | India | — | May 2026 | [Apply](https://www.naukri.com/unity-jobs) |
 
 ---
 
@@ -127,10 +136,10 @@ Last updated: 2026-05-22
 
 ## ⭐ Top 3 Picks
 
-1. **Google - Software Engineer, University Graduate 2026** - Bangalore/Hyderabad - [Apply](https://freshershunt.in/google-software-engineer-university-graduate-2026/)
-2. **Qualcomm Associate SWE** - ₹20-30 LPA - Hyderabad/Bangalore/Chennai/Noida - [Apply](https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/)
-3. **Amazon SDE I** - ₹30-44 LPA - Multiple Locations - [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/)
+1. **Honeywell - Software Engineer I** - Bengaluru (Hybrid) - Great company, fresher-friendly - [Apply](https://freshershunt.in/honeywell-careers-software-engineer-hiring/)
+2. **ReliaQuest - Associate Software Engineer** - Pune - AI cybersecurity, great learning - [Apply](https://freshershunt.in/reliaquest-off-campus-drive-2026/)
+3. **CME Group - Software Engineer I** - Bangalore - Fintech, world's leading derivatives marketplace - [Apply](https://jobsnet.in/cme-group-hiring-entry-level-software-development-engineer-1/)
 
 ---
 
-*Auto-updated as of 22-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 23-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*

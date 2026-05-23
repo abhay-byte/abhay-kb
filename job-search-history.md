@@ -1,5 +1,20 @@
 ## Job Search History
 
+### 23-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Graduate Engineer Trainee | Ingram Micro | Mumbai/Chennai | Best in Industry | https://ingrammicro.wd5.myworkdayjobs.com/en-US/IngramMicro/job/Mumbai-India/Graduate-Engineer-Trainee_R-115589 |
+| 2 | Software Developer | Tower Research | Gurgaon | Industry Standard | https://job-boards.greenhouse.io/embed/job_app?for=towerresearchcapital&gh_src=be8ebc4b1&source=LinkedIn&token=6656773-bengal-india-siliguri |
+| 3 | Java Developer (Entry-Level) | Equifax | Pune | As per Standard | https://careers.equifax.com/en/jobs/j00176622/software-engineer-entry/?source=Applied_LinkedIn |
+| 4 | Graduate Engineer Trainee (SDE) | Syensqo | Mumbai | Best in Industry | https://jobsnet.in/syensqo-off-campus-drive-hiring-graduate-engineer-trainee-sde/ |
+| 5 | Trainee, Technology Engineer | RXO | Mumbai | Best in Industry | https://jobsnet.in/rxo-off-campus-drive-hiring-trainee-technology-engineer/ |
+| 6 | Software Engineer I (Entry-Level) | CME Group | Bangalore | Best in Industry | https://jobsnet.in/cme-group-hiring-entry-level-software-development-engineer-1/ |
+| 7 | Software Engineer I | Honeywell | Bengaluru (Hybrid) | Competitive | https://freshershunt.in/honeywell-careers-software-engineer-hiring/ |
+| 8 | Associate Software Engineer | ReliaQuest | Pune | Competitive | https://freshershunt.in/reliaquest-off-campus-drive-2026/ |
+| 9 | Associate Engineer (AWS DevOps) | Harman | Bangalore | Competitive | https://freshershunt.in/harman-off-campus-drive-2026-bangalore/ |
+| 10 | Software Intern (Digital Solutions) | Wabtec | Bengaluru | Competitive Stipend | https://freshershunt.in/wabtec-internship-2026-software-bengaluru/ |
+| 11 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | https://freshershunt.in/natwest-group-internship-2026-bangalore/ |
+
 ### 22-05-2026
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
