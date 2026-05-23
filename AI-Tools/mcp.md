@@ -52,7 +52,7 @@ MCP is an open standard developed by Anthropic for connecting AI agents to exter
 | 8 | **Puppeteer** | `@modelcontextprotocol/server-puppeteer` | Browser automation (Chrome) |
 | 9 | **Playwright** | `@playwright/mcp` | Multi-browser automation |
 | 10 | **Memory** | `@modelcontextprotocol/server-memory` | Cross-session persistent memory |
-| 11 | **AgentMemory** | `@agentmemory/mcp` | 53-tool memory server (16K⭐) |
+| 11 | **AgentMemory** | `@agentmemory/mcp` | 53-tool memory server |
 | 12 | **Sequential Thinking** | `@modelcontextprotocol/server-sequential-thinking` | Structured chain-of-thought |
 | 13 | **Time** | `@modelcontextprotocol/server-time` | Date, time, timezone info |
 | 14 | **Context Mode** | `@modelcontextprotocol/server-context-mode` | Toggle agent context modes |
@@ -572,11 +572,11 @@ npx -y @modelcontextprotocol/server-memory
 
 ### AgentMemory MCP Server
 
-> 🏆 **#1 persistent memory for AI coding agents** — 16K+ ⭐ on GitHub, 95.2% retrieval R@5, 92% fewer tokens vs competitors, 53 MCP tools.
+> 🏆 **#1 persistent memory for AI coding agents** — 95.2% retrieval R@5, 92% fewer tokens vs competitors, 53 MCP tools.
 
 AgentMemory provides persistent, cross-session memory for coding agents. Built on the [iii engine](https://github.com/iii-hq/iii), it features confidence scoring, lifecycle management, knowledge graphs, and hybrid semantic + keyword search.
 
-- **GitHub:** [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) — 16K+ ⭐
+- **GitHub:** [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory)
 - **npm:** `@agentmemory/agentmemory` (server), `@agentmemory/mcp` (MCP shim)
 - **License:** Apache-2.0
 - **Language:** TypeScript
