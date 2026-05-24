@@ -146,3 +146,12 @@
 |---|-------|---------|----------|--------|------|
 | 67 | Technology Analyst Trainee (Apprentice) | Fiserv | Pune | Competitive Stipend | https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/ |
 | 68 | Associate Software Maintenance Engineer Trainee | Red Hat | Pune | High in Industry | https://jobsnet.in/red-hat-off-campus-drive-associate-software-maintenance-engineer-trainee/ |
+
+### 24-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Associate Engineer (AWS DevOps) | Harman | Bangalore | Competitive | https://freshershunt.in/harman-off-campus-drive-2026-bangalore/ |
+| 2 | Software Engineer (New Grad) | Apple | Bengaluru | ₹18-35 LPA | https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177 |
+| 3 | SDE 1 (University Talent) | Amazon | Pan India | Best in Industry | https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition |
+| 4 | Software Engineer | Cisco | Hyderabad/Bangalore | Not disclosed | https://freshershunt.in/cisco-off-campus-drive-2026/ |
+| 5 | Software Engineer (New Grad) | Apple (via Jobsnet) | Hyderabad/Bengaluru | ₹18-35 LPA | https://jobsnet.in/apple-off-campus-drive-hiring-new-grads-as-software-engineer/ |

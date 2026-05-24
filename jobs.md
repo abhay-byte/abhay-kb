@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-23
+Last updated: 2026-05-24
 
 ---
 
@@ -28,25 +28,25 @@ Last updated: 2026-05-23
 | 8 | Graduate Trainee Engineer | Siemens GBS | Bangalore/Chennai | — | Apr 2026 | [Apply](https://jobsnet.in/siemens-gbs-off-campus-drive-graduate-trainee-engineer-freshers/) |
 | 9 | Graduate Engineer Trainee | NEC Corp India | Noida (Hybrid) | — | Apr 2026 | [Apply](https://freshershunt.in/nec-graduate-engineer-trainee-2026/) |
 | 10 | Trainee Software Dev Apprentice | NEC Corp | Chennai (Hybrid) | — | Apr 2026 | [Apply](https://jobsnet.in/nec-corporation-off-campus-drive-software-development-apprentice/) |
-| 11 | Software Engineer I | American Express | Bengaluru (Hybrid) | ~6 LPA | Recent | [Apply](https://freshershunt.in/american-express-off-campus-drive-2026/) |
-| 12 | Software Engineer (Exceller) | Capgemini | Across India | ~4 LPA | Recent | [Apply](https://offcampusjobs4u.com/capgemini-off-campus-drive-2026-software-engineer-exceller/) |
-| 13 | Associate Software Engineer | IBM | Across India | ~4-5 LPA | Recent | [Apply](https://jobs.e-next.in/jobs/ibm-off-campus-drive-2026) |
-| 14 | Associate Software Engineer | EY | Across India | ~4.5 LPA | Recent | [Apply](https://freshershunt.in/ey-freshers-hiring-2026/) |
-| 15 | Associate Software Engineer | Accenture | Across India | ~4.5 LPA | Recent | [Apply](https://onecareerjobs.com/accenture-off-campus-drive-2026-associate-software-engineer-apply-online/) |
-| 16 | Software Engineer | ServiceNow | Across India | ~8-12 LPA | Recent | [Apply](https://freshersrecruitment.co.in/servicenow-off-campus-drive-2026/) |
-| 17 | Software Engineer Trainee | Cisco | Bangalore | ~6-10 LPA | Recent | [Apply](https://freshershunt.in/cisco-software-engineer-trainee-2026/) |
-| 18 | Trainee Software Engineer | Milliman | Gurgaon | ~4-6 LPA | Recent | [Apply](https://freshershunt.in/milliman-freshers-hiring-2026/) |
-| 19 | Graduate Software Engineer | Canonical | Remote (Global) | ~31 LPA | Recent | [Apply](https://freshershunt.in/canonical-graduate-software-engineer-2026/) |
-| 20 | Junior Software Engineer (Trainee) | EPAM | Across India | ~6 LPA | Recent | [Apply](https://freshershunt.in/epam-off-campus-drive-2026/) |
-| 21 | SDE - Trainee | Infrrd | Bangalore | ~6-9 LPA | Recent | [Apply](https://freshershunt.in/infrrd-off-campus-drive-2026/) |
-| 22 | Software Engineering AMTS | Salesforce | Bangalore/Hyderabad | ~15-25 LPA | Recent | [Apply](https://fresheropenings.com/salesforce-recruitment-for-2026-batch/) |
-| 23 | SDE | BrowserStack | Mumbai | ~15-18 LPA | Recent | [Apply](https://fresheropenings.com/browserstack-recruitment-for-2026-batch/) |
-| 24 | Software Engineer | Chevron | Bangalore | ~12-15 LPA | Recent | [Apply](https://fresheropenings.com/chevron-recruitment-drive-for2026-batch/) |
+| 11 | Software Engineer I | American Express | Bengaluru (Hybrid) | ~6 LPA | May 2026 | [Apply](https://freshershunt.in/american-express-off-campus-drive-2026/) |
+| 12 | Software Engineer (Exceller) | Capgemini | Across India | ~4 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/capgemini-off-campus-drive-2026-software-engineer-exceller/) |
+| 13 | Associate Software Engineer | IBM | Across India | ~4-5 LPA | May 2026 | [Apply](https://jobs.e-next.in/jobs/ibm-off-campus-drive-2026) |
+| 14 | Associate Software Engineer | EY | Across India | ~4.5 LPA | May 2026 | [Apply](https://freshershunt.in/ey-freshers-hiring-2026/) |
+| 15 | Associate Software Engineer | Accenture | Across India | ~4.5 LPA | May 2026 | [Apply](https://onecareerjobs.com/accenture-off-campus-drive-2026-associate-software-engineer-apply-online/) |
+| 16 | Software Engineer | ServiceNow | Across India | ~8-12 LPA | May 2026 | [Apply](https://freshersrecruitment.co.in/servicenow-off-campus-drive-2026/) |
+| 17 | Software Engineer Trainee | Cisco (TGA) | Bangalore | ~6-10 LPA | May 2026 | [Apply](https://freshershunt.in/cisco-software-engineer-trainee-2026/) |
+| 18 | Trainee Software Engineer | Milliman | Gurgaon | ~4-6 LPA | May 2026 | [Apply](https://freshershunt.in/milliman-freshers-hiring-2026/) |
+| 19 | Graduate Software Engineer | Canonical | Remote (Global) | ~31 LPA | May 2026 | [Apply](https://freshershunt.in/canonical-graduate-software-engineer-2026/) |
+| 20 | Junior Software Engineer (Trainee) | EPAM | Across India | ~6 LPA | May 2026 | [Apply](https://freshershunt.in/epam-off-campus-drive-2026/) |
+| 21 | SDE - Trainee | Infrrd | Bangalore | ~6-9 LPA | May 2026 | [Apply](https://freshershunt.in/infrrd-off-campus-drive-2026/) |
+| 22 | Software Engineering AMTS | Salesforce | Bangalore/Hyderabad | ~15-25 LPA | May 2026 | [Apply](https://fresheropenings.com/salesforce-recruitment-for-2026-batch/) |
+| 23 | SDE | BrowserStack | Mumbai | ~15-18 LPA | May 2026 | [Apply](https://fresheropenings.com/browserstack-recruitment-for-2026-batch/) |
+| 24 | Software Engineer | Chevron | Bangalore | ~12-15 LPA | May 2026 | [Apply](https://fresheropenings.com/chevron-recruitment-drive-for2026-batch/) |
 | 25 | SDE I | Amazon | Bangalore/Hyderabad/Chennai/Mumbai | ~30-44 LPA | May 2026 | [Apply](https://fresheropenings.com/amazon-off-campus-drive-2026/) |
-| 26 | Software Developer | Propel | Chennai | ~4.5 LPA | Recent | [Apply](https://talent.propelinc.com/jobs/Careers/26698000091922025/Fresher-2026-Batch-Software-Developer) |
-| 27 | SDE | Gravitix Tech Solutions | Hyderabad | ~3-4 LPA | Recent | [Apply](https://gravitixtechsolutions.zohorecruit.in/jobs/Careers/189023000001031519) |
-| 28 | Associate Software Engineer | GoTo | Remote (India) | ~12.5 LPA | Recent | [Apply](https://www.fresherstech.com/goto-off-campus/) |
-| 29 | Software Engineer | Bottomline | India | ~5-6 LPA | Recent | [Apply](https://www.fresherstech.com/bottomline-off-campus-hiring/) |
+| 26 | Software Developer | Propel | Chennai | ~4.5 LPA | May 2026 | [Apply](https://talent.propelinc.com/jobs/Careers/26698000091922025/Fresher-2026-Batch-Software-Developer) |
+| 27 | SDE | Gravitix Tech Solutions | Hyderabad | ~3-4 LPA | May 2026 | [Apply](https://gravitixtechsolutions.zohorecruit.in/jobs/Careers/189023000001031519) |
+| 28 | Associate Software Engineer | GoTo | Remote (India) | ~12.5 LPA | May 2026 | [Apply](https://www.fresherstech.com/goto-off-campus/) |
+| 29 | Software Engineer | Bottomline | India | ~5-6 LPA | May 2026 | [Apply](https://www.fresherstech.com/bottomline-off-campus-hiring/) |
 | 30 | Associate Software Engineer | Gallagher | Chandigarh | ~4-5.5 LPA | 15-May-2026 | [Apply](https://fresheropenings.com/gallagher-off-campus-drive-2026/) |
 | 31 | Junior Developer (System Support) | Davies | Pune | ~3-4 LPA | 15-May-2026 | [Apply](https://fresheropenings.com/davies-off-campus-drive-2026/) |
 | 32 | SRE Engineer | LSEG | Bangalore | ~6-10 LPA | 15-May-2026 | [Apply](https://freshershunt.in/lseg-off-campus-drive-2026/) |
@@ -77,7 +77,7 @@ Last updated: 2026-05-23
 | 57 | Software Development Engineer | CSG | Remote | — | May 2026 | [Apply](https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/) |
 | 58 | Associate Software Engineer | Epsilon | Bengaluru | Not disclosed | May 2026 | [Apply](https://freshershunt.in/epsilon-off-campus-drive-2026/) |
 | 59 | Associate Software Engineer (HPEL) | Smartsheet | Bangalore | ₹13 LPA | May 2026 | [Apply](https://freshershunt.in/smartsheet-off-campus-drive-2026/) |
-| 60 | Technology Analyst Trainee (Apprentice) | Fiserv | Pune | Competitive Stipend | 19-May-2026 | [Apply](https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/) |
+| 60 | Technology Analyst Trainee (Apprentice) | Fiserv | Pune | Competitive | 19-May-2026 | [Apply](https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/) |
 | 61 | Associate Software Maintenance Engineer Trainee | Red Hat | Pune | High in Industry | May 2026 | [Apply](https://jobsnet.in/red-hat-off-campus-drive-associate-software-maintenance-engineer-trainee/) |
 | 62 | Full Stack Engineer | Optum | Noida | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/optum-recruitment-2026-full-stack-engineer-noida/) |
 | 63 | Associate System Engineer | IBM | Across India | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/ibm-recruitment-2026-associate-system-engineer-across-india/) |
@@ -103,7 +103,11 @@ Last updated: 2026-05-23
 | 83 | Software Engineer I (Entry-Level) | CME Group | Bangalore | Best in Industry | 19-May-2026 | [Apply](https://jobsnet.in/cme-group-hiring-entry-level-software-development-engineer-1/) |
 | 84 | Software Engineer I | Honeywell | Bengaluru (Hybrid) | Competitive | 22-May-2026 | [Apply](https://freshershunt.in/honeywell-careers-software-engineer-hiring/) |
 | 85 | Associate Software Engineer | ReliaQuest | Pune | Competitive | 22-May-2026 | [Apply](https://freshershunt.in/reliaquest-off-campus-drive-2026/) |
-| 86 | Associate Engineer (AWS DevOps) | Harman | Bangalore | Competitive | 22-May-2026 | [Apply](https://freshershunt.in/harman-off-campus-drive-2026-bangalore/) |
+| 86 | Associate Engineer (AWS DevOps) | Harman | Bangalore | Competitive | 23-May-2026 | [Apply](https://freshershunt.in/harman-off-campus-drive-2026-bangalore/) |
+| 87 | Software Engineer (New Grad) | Apple | Bengaluru | ₹18-35 LPA | 23-May-2026 | [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177) |
+| 88 | SDE 1 (University Talent) | Amazon | Pan India | Best in Industry | 23-May-2026 | [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition) |
+| 89 | Software Engineer | Cisco | Hyderabad/Bangalore (Hybrid) | Not disclosed | 23-May-2026 | [Apply](https://freshershunt.in/cisco-off-campus-drive-2026/) |
+| 90 | Software Engineer (New Grad) | Apple (via Jobsnet) | Hyderabad/Bengaluru (Hybrid) | ₹18-35 LPA | 23-May-2026 | [Apply](https://jobsnet.in/apple-off-campus-drive-hiring-new-grads-as-software-engineer/) |
 
 ### 💼 Internships
 
@@ -136,10 +140,10 @@ Last updated: 2026-05-23
 
 ## ⭐ Top 3 Picks
 
-1. **Honeywell - Software Engineer I** - Bengaluru (Hybrid) - Great company, fresher-friendly - [Apply](https://freshershunt.in/honeywell-careers-software-engineer-hiring/)
-2. **ReliaQuest - Associate Software Engineer** - Pune - AI cybersecurity, great learning - [Apply](https://freshershunt.in/reliaquest-off-campus-drive-2026/)
-3. **CME Group - Software Engineer I** - Bangalore - Fintech, world's leading derivatives marketplace - [Apply](https://jobsnet.in/cme-group-hiring-entry-level-software-development-engineer-1/)
+1. **Apple - Software Engineer** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
+2. **Amazon - SDE 1 (University Talent)** - Pan India - Huge scale, great career growth - [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition)
+3. **Cisco - Software Engineer** - Hyderabad/Bangalore - Global tech leader, hybrid - [Apply](https://freshershunt.in/cisco-off-campus-drive-2026/)
 
 ---
 
-*Auto-updated as of 23-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 24-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
