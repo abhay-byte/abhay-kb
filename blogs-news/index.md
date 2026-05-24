@@ -9,6 +9,29 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### May 24, 2026
+
+**[State of Web Dev AI 2026: Nearly Half of Developers Fear AI Job Displacement](news/state-of-web-dev-ai-survey-2026-developers-fear-displacement/)** — *The Register*
+> The 2026 Devographics survey of 7,258 developers reveals 63% now use AI for more than half their code, and nearly half fear AI will displace their jobs — a dramatic shift from 2025.
+
+**[OpenTelemetry Graduates at CNCF, Solidifying Observatory Standard](news/opentelemetry-graduates-cncf-observability-standard/)** — *Virtualization Review / CNCF*
+> OpenTelemetry has officially graduated at the Cloud Native Computing Foundation, with all major cloud providers now supporting OTLP ingestion — cementing it as the de facto observability standard.
+
+**[Grab's Multi-Agent AI System Reclaims 40% of Engineering Time](news/grab-multi-agent-ai-engineering-support/)** — *InfoQ*
+> Grab's Analytics Data Warehouse team deployed a LangGraph-based multi-agent system with five specialized agents, reclaiming roughly 40% of engineering time lost to repetitive operational support tasks.
+
+**[Google I/O 2026: Gemini Omni, Antigravity 2.0, and Managed Agents](news/google-io-2026-gemini-omni-antigravity-managed-agents/)** — *Google Blog / TechCrunch*
+> Google unveiled Gemini Omni, Antigravity 2.0 with desktop app and CLI, and Managed Agents in the Gemini API — allowing developers to spin up agentic coding environments with a single API call.
+
+**[GitHub Copilot Moves to Usage-Based Billing with AI Credits](news/github-copilot-usage-based-billing-ai-credits/)** — *GitHub Blog*
+> All Copilot plans transition to token-based AI Credits billing on June 1, replacing premium request units as Copilot evolves from autocomplete to an agentic platform.
+
+**[Microsoft Ports TypeScript Compiler to Go for 10x Speed](news/microsoft-typescript-compiler-go-port-10x-speed/)** — *The New Stack*
+> Anders Hejlsberg announced TypeScript compiler port to Go, chosen over Rust and C# for native compilation and memory control, promising 10x compile speed improvements.
+
+**[GitHub Copilot Pauses Sign-Ups, Removes Opus from Pro Tier](news/github-copilot-pauses-signups-removes-opus-may-2026/)** — *TechSifted*
+> GitHub paused new Copilot Pro/Pro+/Student sign-ups and removed Opus models from the $10/month Pro tier, pushing complex reasoning to higher-priced plans.
+
 ### May 23, 2026
 
 **[NVIDIA Wins COMPUTEX 2026 Best Choice Awards for Vera Rubin, Jetson Thor, and Alpamayo](news/nvidia-computex-2026-best-choice-awards/)** — *NVIDIA Blog*
