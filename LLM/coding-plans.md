@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-23 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-24 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -59,23 +59,24 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 | Plan | Price | AI Credits (Base + Flex) | Completions | Agent/CLI | Status |
 |------|-------|---------------------------|-------------|-----------|--------|
 | Free | $0 | Limited auto model | 2,000/mo | Limited | Available |
-| Student | Free (verified) | Old PRU-based (not migrated) | Unlimited | Yes | **Signups paused** since Apr 20 |
-| Pro | $10/mo ($100/yr) | 1,000 base + 500 flex = 1,500/mo | Unlimited | Yes | Available (monthly auto-migrates Jun 1) |
-| Pro+ | $39/mo ($390/yr) | 3,900 base + 3,100 flex = 7,000/mo | Unlimited | Yes | Available (monthly auto-migrates Jun 1) |
-| Max (new) | $100/mo | 10,000 base + 10,000 flex = 20,000/mo | Unlimited | Yes | Effective Jun 1, 2026 |
+| Student | Free (verified) | Old PRU-based (not migrated) | Unlimited | Yes | **Signups paused since Apr 20**. Not migrating to usage-based billing |
+| Pro | $10/mo | 1,000 base + 500 flex = 1,500/mo | Unlimited | Yes | **Upgrades paused** (rolling out usage-based). Auto-migrates Jun 1 |
+| Pro+ | $39/mo | 3,900 base + 3,100 flex = 7,000/mo | Unlimited | Yes | **Upgrades paused**. Auto-migrates Jun 1 |
+| Max (new) | $100/mo | 10,000 base + 10,000 flex = 20,000/mo | Unlimited | Yes | Effective Jun 1. Launched May 12 |
 | Business | $19/seat/mo | $19 base/seat ($30 promo Jun-Aug) | Unlimited | Yes | Available |
 | Enterprise | $39/seat/mo | $39 base/seat ($70 promo Jun-Aug) | Unlimited | Yes | Available |
 
 ### Key Changes (Apr–May 2026)
 
 - **Usage-based billing:** All Copilot plans transition to GitHub AI Credits on June 1, 2026. PRUs replaced by token-based metering. 1 AI Credit = $0.01 USD
-- **Flex allotments:** Pro gets $10 base + $5 flex = $15/mo. Pro+ gets $39 base + $31 flex = $70/mo. Flex allotments may vary over time
+- **Flex allotments (May 12):** Pro gets $10 base + $5 flex = $15/mo. Pro+ gets $39 base + $31 flex = $70/mo. Flex allotments may vary over time
 - **Max plan (May 12):** $100/mo with 10,000 base + 10,000 flex = 20,000 credits/mo total included usage. Heavy daily use tier
-- **Signups paused (Apr 20–May 12):** Pro, Pro+, and Student plans paused, then partially restored for monthly subs. Annual subs get phased out
-- **Opus removed from Pro:** Claude Opus 4.7 now exclusive to Pro+ ($39/mo). Pro users lost Opus access
-- **Student plan downgraded:** Claude Opus/Sonnet removed (Mar 14). GPT-5.3-Codex removed from manual picker (Apr 27)
+- **Upgrades paused (ongoing):** Pro, Pro+ upgrades paused on github.com while they roll out new billing UI
+- **Signups paused (Apr 20–May 12):** Pro, Pro+, and Student plans paused, then partially restored for monthly subs. Annual subs getting phased out
+- **Student plan:** Not migrating to usage-based billing. Signups remain paused. Claude Opus/Sonnet removed (Mar 14). GPT-5.3-Codex removed from manual picker (Apr 27)
+- **Opus exclusive to Pro+ & Max:** Claude Opus 4.7 removed from Pro tier. Only Pro+ ($39/mo) and Max ($100/mo)
 - **Code completions remain unlimited** on all paid plans — not billed in AI Credits
-- **Copilot code review** now also consumes GitHub Actions minutes
+- **Copilot code review** consumes both AI Credits and GitHub Actions minutes
 
 ### Per-Token Pricing (Jun 2026 — Usage-Based)
 
@@ -123,12 +124,26 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 
 | Plan | Price | Base | Flex | Total Credits | Notes |
 |------|-------|:----:|:----:|:-------------:|-------|
-| Free | $0 | — | — | Limited completions + auto model chat/agent |
-| Pro | $10/mo | 1,000 ($10) | 500 ($5) | 1,500 ($15) | Monthly auto-migrates Jun 1 |
-| Pro+ | $39/mo | 3,900 ($39) | 3,100 ($31) | 7,000 ($70) | Monthly auto-migrates Jun 1 |
-| Max | $100/mo | 10,000 ($100) | 10,000 ($100) | 20,000 ($200) | Effective Jun 1 |
-| Business | $19/seat/mo | 1,900 ($19) | Promo Jun-Aug | — | $30/seat promo Jun-Aug |
-| Enterprise | $39/seat/mo | 3,900 ($39) | Promo Jun-Aug | — | $70/seat promo Jun-Aug |
+| Free | $0 | — | — | 2000 completions/mo + limited AI credits (auto model) |
+| Pro | $10/mo | 1,000 ($10) | 500 ($5) | 1,500 ($15) | Monthly auto-migrates Jun 1. **Upgrades paused** |
+| Pro+ | $39/mo | 3,900 ($39) | 3,100 ($31) | 7,000 ($70) | Monthly auto-migrates Jun 1. **Upgrades paused** |
+| Max | $100/mo | 10,000 ($100) | 10,000 ($100) | 20,000 ($200) | Effective Jun 1, 2026 |
+| Business | $19/seat/mo | 1,900 ($19) | Promo Jun-Aug ($30) | — | $30/seat promo Jun-Aug |
+| Enterprise | $39/seat/mo | 3,900 ($39) | Promo Jun-Aug ($70) | — | $70/seat promo Jun-Aug |
+
+### Individual Plan Feature Highlights (Current UI — pre-June 1)
+
+Per [github.com/features/copilot/plans](https://github.com/features/copilot/plans) as of May 24:
+
+| Feature | Free | Pro ($10/mo) | Pro+ ($39/mo) |
+|---------|:----:|:------------:|:-------------:|
+| Premium requests/mo | 50 | 300 | 1,500 |
+| Agent mode (GPT-5 mini) | 50/mo | Unlimited | Unlimited |
+| Inline suggestions/mo | 2,000 | Unlimited | Unlimited |
+| Claude Opus models | — | — | ✔️ |
+| Delegate to Codex/Claude agents | — | — | ✔️ (Preview) |
+| MCP server integration | — | ✔️ | ✔️ |
+| Purchase additional requests | — | $0.04/request | $0.04/request |
 
 ### Community Reviews
 
@@ -307,7 +322,7 @@ Source: [developers.openai.com/codex/pricing](https://developers.openai.com/code
 | Go | $20/mo | Budget-friendly Codex Mini (select regions). Reduced limits |
 | Plus | $20/mo | Entry point for Codex CLI + IDE + cloud |
 | Pro ($100) | $100/mo | 5x (10x promo until May 31) higher limits. Includes GPT-5.3-Codex-Spark preview |
-| Pro ($200) | $200/mo | 20x higher limits. Heavy daily use |
+| Pro ($200) | $200/mo | 20x higher limits (25x through May 31). Heavy daily use |
 | Business | $25/seat/mo | Team workspace + admin controls |
 | API Key | Pay-per-token | CI/CD, automation, programmatic |
 
@@ -338,7 +353,7 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 - Extra credits can be purchased on Plus/Pro plans
 - Credits now billed per-token (API token-based rates as of Apr 2, 2026). 1 credit = varies by model
 - Pro $100 2x promo expires **May 31, 2026** — double usage to 10x instead of 5x
-- Pro $200 ongoing 20x (was 25x promo through May 31, then 20x)
+- Pro $200 ongoing 20x — 25x promo through May 31, then reverts to 20x standard
 - **Go plan ($20/mo)**: Budget Codex Mini tier available in select regions. Reduced limits, same models
 - **Business/Edu/Enterprise** flexible pricing: credits per token table available in settings
 
@@ -368,7 +383,7 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing), [TechC
 |------|-------|--------|-------|
 | Preview (Free) | $0 | All models (rate-limited) | Access to all models. 92% quota cut since Dec 2025 |
 | AI Pro | $20/mo | All models (higher limits) | Built-in credits. Multi-day lockouts reported |
-| AI Ultra (NEW) | $100/mo | 5x Pro limits | **New tier** at I/O 2026. 5x higher limits than Pro |
+| AI Ultra | $100/mo | 5x Pro limits | **New tier** launched at I/O 2026 (May 19). 5x higher limits than Pro |
 | AI Ultra Premium (price cut) | **$200/mo** (was $250) | 20x Pro limits | **$50 price drop** at I/O 2026. $100 bonus credits offer expired May 25 |
 | Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage. $0.01/credit |
 
@@ -386,10 +401,10 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing), [TechC
 
 | Model | Provider | Type | Notes |
 |-------|----------|------|-------|
-| Gemini 3.5 Flash | Google | Fast (NEW) | Co-developed using Antigravity. GA since I/O 2026 |
+| Gemini 3.5 Flash | Google | Fast | Co-developed using Antigravity. GA since I/O 2026 |
 | Gemini 3.1 Pro | Google | Reasoning (High/Low) | Google's flagship. **Good for frontend work only** |
 | Gemini 3 Flash | Google | Fast | Very capable for frontend. Reliable |
-| Claude Opus 4.6 | Anthropic | Premium | **$200/mo value, available here**. Best for backend |
+| Claude Opus 4.7 | Anthropic | Premium | **$200/mo value, available here**. Best for backend |
 | Claude Sonnet 4.6 | Anthropic | Mid-tier | Fast, reliable for backend code |
 | GPT-OSS 120B | OpenAI | Open-weight | Free model |
 
@@ -419,7 +434,7 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing), [TechC
 
 > **From TechCrunch (May 19):** "Google is also reducing the price of its top AI Ultra plan from $250 to $200, which allows for 20x higher limits." Antigravity 2.0 adds CLI, SDK, subagents, scheduled tasks, and voice commands.
 
-> **Personal Review (May 2026):** I've used it extensively. The best thing is having Claude models (Sonnet & Opus) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues remain. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
+> **Personal Review (May 2026):** I've used it extensively. The best thing is having Claude models (Sonnet & Opus 4.7) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues remain. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
 
 ---
 
