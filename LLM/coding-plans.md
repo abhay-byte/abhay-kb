@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-24 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-25 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -133,7 +133,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 
 ### Individual Plan Feature Highlights (Current UI — pre-June 1)
 
-Per [github.com/features/copilot/plans](https://github.com/features/copilot/plans) as of May 24:
+Per [github.com/features/copilot/plans](https://github.com/features/copilot/plans) as of May 25:
 
 | Feature | Free | Pro ($10/mo) | Pro+ ($39/mo) |
 |---------|:----:|:------------:|:-------------:|
@@ -475,7 +475,7 @@ API billed separately — NOT included in membership.
 
 Current model: **K2.6** (released Apr 18–21 2026).  
 K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license.  
-**K2 (original) discontinued** — stops serving **May 25, 2026** (4 days from now). Migrate to K2.5 or K2.6.
+**K2 (original) discontinued** — stopped serving **May 25, 2026**. Migrated to K2.5 or K2.6.
 
 ### K2.6 Improvements
 
