@@ -17,7 +17,7 @@ title: Resume
 
 ## Summary
 
-Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 84 repositories, 271 stars, and 74 followers.
+Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 84 repositories, 267 stars, and 75 followers.
 
 ---
 
@@ -52,13 +52,13 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 
 ## Projects
 
-### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 89
+### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 90
 A Kotlin-powered Linux environment manager for Android, providing seamless developer tooling directly on mobile devices with automated setup and shell integration.
 
 ### [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 65
 Comprehensive CPU benchmarking tool for Android with 10+ performance tests, real-time thermal monitoring, and battery-efficient background processing. Widespread adoption on F-Droid.
 
-### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 37
+### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 38
 A Kotlin-based multimedia organization and processing tool for Android, built with modern architecture patterns for efficient media management.
 
 ### [nexus](https://github.com/abhay-byte/nexus) — *TypeScript* ⭐ 9
@@ -76,10 +76,10 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ## Achievements
 
-- **GitHub:** 2.6K+ Commits · 271 Stars · 84 Public Repositories · 74 Followers
+- **GitHub:** 2.6K+ Commits · 267 Stars · 84 Public Repositories · 75 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced: 2026-05-24 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-05-25 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
