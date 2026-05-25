@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-24
+Last updated: 2026-05-25
 
 ---
 
@@ -108,6 +108,10 @@ Last updated: 2026-05-24
 | 88 | SDE 1 (University Talent) | Amazon | Pan India | Best in Industry | 23-May-2026 | [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition) |
 | 89 | Software Engineer | Cisco | Hyderabad/Bangalore (Hybrid) | Not disclosed | 23-May-2026 | [Apply](https://freshershunt.in/cisco-off-campus-drive-2026/) |
 | 90 | Software Engineer (New Grad) | Apple (via Jobsnet) | Hyderabad/Bengaluru (Hybrid) | ₹18-35 LPA | 23-May-2026 | [Apply](https://jobsnet.in/apple-off-campus-drive-hiring-new-grads-as-software-engineer/) |
+| 91 | Systems/Software Engineer I (Entry Level) | HPE | Bangalore | Best in Industry | 24-May-2026 | [Apply](https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/) |
+| 92 | Associate Product Developer (Java) | BMC Helix | Pune | Best In Industry | 24-May-2026 | [Apply](https://jobs.bmc.com/Careers/JobDetail/Associate-Product-Developer-India/46767?src=SNS-10001) |
+| 93 | Digital Leadership Dev Program | GE Appliances | Bangalore | Best in Industry | 24-May-2026 | [Apply](https://jobsnet.in/ge-appliances-off-campus-drive-digital-leadership-development-program/) |
+| 94 | Graduate Engineer Trainee (GET) | HCLTech | Pan India | ~4 LPA | May 2026 | [Apply](https://fresherjobinfo.in/hcltech-freshers-hiring-2026/) |
 
 ### 💼 Internships
 
@@ -140,10 +144,10 @@ Last updated: 2026-05-24
 
 ## ⭐ Top 3 Picks
 
-1. **Apple - Software Engineer** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
+1. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
 2. **Amazon - SDE 1 (University Talent)** - Pan India - Huge scale, great career growth - [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition)
-3. **Cisco - Software Engineer** - Hyderabad/Bangalore - Global tech leader, hybrid - [Apply](https://freshershunt.in/cisco-off-campus-drive-2026/)
+3. **HPE - Systems/Software Engineer I (Entry Level)** - Bangalore - Fresh posting May 24, big tech brand - [Apply](https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/)
 
 ---
 
-*Auto-updated as of 24-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 25-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*

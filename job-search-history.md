@@ -155,3 +155,11 @@
 | 3 | SDE 1 (University Talent) | Amazon | Pan India | Best in Industry | https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition |
 | 4 | Software Engineer | Cisco | Hyderabad/Bangalore | Not disclosed | https://freshershunt.in/cisco-off-campus-drive-2026/ |
 | 5 | Software Engineer (New Grad) | Apple (via Jobsnet) | Hyderabad/Bengaluru | ₹18-35 LPA | https://jobsnet.in/apple-off-campus-drive-hiring-new-grads-as-software-engineer/ |
+
+### 25-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Systems/Software Engineer I (Entry Level) | HPE | Bangalore | Best in Industry | https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/ |
+| 2 | Associate Product Developer (Java) | BMC Helix | Pune | Best in Industry | https://jobs.bmc.com/Careers/JobDetail/Associate-Product-Developer-India/46767?src=SNS-10001 |
+| 3 | Digital Leadership Dev Program | GE Appliances | Bangalore | Best in Industry | https://jobsnet.in/ge-appliances-off-campus-drive-digital-leadership-development-program/ |
+| 4 | Graduate Engineer Trainee (GET) | HCLTech | Pan India | ~4 LPA | https://fresherjobinfo.in/hcltech-freshers-hiring-2026/ | |
