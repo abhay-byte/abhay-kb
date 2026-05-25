@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-24 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-25 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled May 2026.
@@ -16,7 +16,7 @@ Compiled May 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 24 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 25 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -93,8 +93,8 @@ Compiled May 2026.
 <text x="719.9421851371668" y="78.3513513513514" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7</text>
 <circle cx="719.9421851371668" cy="92.0135135135135" r="7" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="719.9421851371668" y="78.0135135135135" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.5</text>
-<circle cx="521" cy="216" r="5" fill="#d68c45" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="521" y="234" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Mistral 3.5</text>
+<circle cx="521.3" cy="216.4" r="5" fill="#d68c45" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="521.3" y="234.4" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Mistral Medium 3.5</text>
 <circle cx="491" cy="262" r="5" fill="#888" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="491" y="280" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Grok 4.3</text>
 </svg>
@@ -108,7 +108,7 @@ Compiled May 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 24 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 25 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -161,6 +161,8 @@ Compiled May 2026.
 <text x="569.14" y="204.1" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.5</text>
 <circle cx="212.73" cy="186.1" r="6" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="212.73" y="172.1" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Kimi K2.6</text>
+<circle cx="279.97" cy="201.0" r="6" fill="#888" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="279.97" y="219.0" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Qwen3.6 Max Preview</text>
 </svg>
 
 
@@ -330,7 +332,7 @@ Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacl
 
 Qwen3.6 Plus: 78.8% SWE-Bench Verified — within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
 Qwen3.6-27B (dense, Apache 2.0): 77.2% SWE-Bench Verified — strong self-hosting option.
-Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.80 per MTok. 256K context. 57.3% SWE-Bench Pro. Tops SWE-Bench Pro + 5 other coding benchmarks at launch.
+Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.80 per MTok. 256K context. 57.3% SWE-Bench Pro — surpasses GPT-5.3-Codex (56.8%) and MiMo-V2.5-Pro (57.2%). Tops SWE-Bench Pro + 5 other coding benchmarks (Terminal-Bench 2.0, SkillsBench, QwenClawBench, QwenWebBench, SciCode) at launch.
 
 ### Previous Gen (Qwen3.5)
 
@@ -466,11 +468,11 @@ Current as of May 2026. Source: [docs.x.ai](https://docs.x.ai/developers/models)
 | Model | Input /1M | Output /1M | Cached Input | Context | SWE-Bench | Notes |
 |-------|-----------|------------|-------------|---------|-----------|-------|
 | Grok 4.3 | $1.25 | $2.50 | — | 1M | ~72-75% (self-reported) | Launched Apr 30 2026. Current flagship. 1M context.
-| Grok 4.20 | $2.00 | $6.00 | $0.20 | 256K | — | 90% cached-input discount. 60% cheaper output than GPT-5.4.
-| Grok 4 | $3.00 | $15.00 | — | 256K | 72-75% (self-reported) | Original Grok 4 flagship.
-| Grok 4.1 Fast | $0.20 | $0.50 | — | 128K | — | Cheapest frontier-adjacent tier. Fast inference.
+| Grok 4.20 | $1.25 | $2.50 | $0.20 | 1M | — | 85% cached-input discount. Retired slugs (Grok 4, Grok 4.1 Fast) redirect here.
+| Grok 4 | $3.00 | $15.00 | — | 256K | 72-75% (self-reported) | Original Grok 4 flagship. Deprecated May 15 2026 — now redirects to Grok 4.3.
+| Grok Build 0.1 | $1.00 | $2.00 | — | 256K | — | Coding specialist. 20% cheaper than Grok 4.3.
 
-Grok 4 self-reports 72-75% on SWE-Bench Verified (independent testing with SWE-agent scaffold: 58.6%). Aider Polyglot: 79.6%. xAI offers up to $150/month free API credits via data-sharing program. Unique real-time X search grounding.
+Grok 4.3 self-reports ~72-75% on SWE-Bench Verified (independent testing with SWE-agent scaffold: 58.6%). Aider Polyglot: 79.6%. xAI retired Grok 4, Grok 4.1 Fast, and Grok Code Fast 1 slugs on May 15, 2026 — these now redirect to Grok 4.3 at $1.25/$2.50 pricing. xAI offers up to $150/month free API credits via data-sharing program. Unique real-time X search grounding.
 
 ---
 
