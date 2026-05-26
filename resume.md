@@ -52,7 +52,7 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 
 ## Projects
 
-### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 90
+### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 91
 A Kotlin-powered Linux environment manager for Android, providing seamless developer tooling directly on mobile devices with automated setup and shell integration.
 
 ### [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 65
@@ -82,4 +82,4 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ---
 
-*Last synced: 2026-05-25 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-05-26 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
