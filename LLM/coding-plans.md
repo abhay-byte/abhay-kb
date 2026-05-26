@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-25 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-26 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -133,7 +133,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 
 ### Individual Plan Feature Highlights (Current UI — pre-June 1)
 
-Per [github.com/features/copilot/plans](https://github.com/features/copilot/plans) as of May 25:
+Per [github.com/features/copilot/plans](https://github.com/features/copilot/plans) as of May 26:
 
 | Feature | Free | Pro ($10/mo) | Pro+ ($39/mo) |
 |---------|:----:|:------------:|:-------------:|
@@ -377,14 +377,16 @@ Source: [antigravity.google/pricing](https://antigravity.google/pricing), [TechC
 
 ### Plans (Updated May 19, 2026 — Google I/O)
 
-Source: [antigravity.google/pricing](https://antigravity.google/pricing), [TechCrunch (May 19)](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/)
+Source: [antigravity.google/pricing](https://antigravity.google/pricing), [TechCrunch (May 19)](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/), [Mashable (May 19)](https://mashable.com/article/google-io-2026-gemini-ultra-ai-subscription-tiers), [techmymoney.com (May 21)](https://techmymoney.com/2026/05/21/google-ai-ultra-100-plan/)
+
+Google restructured its AI subscription lineup at I/O 2026. The top plan was restructured into two tiers: a new **AI Ultra at $100/mo** (5x Pro limits) and **AI Ultra Premium at $200/mo** (was $250, 20x Pro limits). Both now include Antigravity access as part of the subscription. Usage is tracked by compute consumption (not message counts), refreshed every 5 hours until a weekly cap.
 
 | Plan | Price | Models | Notes |
 |------|-------|--------|-------|
 | Preview (Free) | $0 | All models (rate-limited) | Access to all models. 92% quota cut since Dec 2025 |
 | AI Pro | $20/mo | All models (higher limits) | Built-in credits. Multi-day lockouts reported |
-| AI Ultra | $100/mo | 5x Pro limits | **New tier** launched at I/O 2026 (May 19). 5x higher limits than Pro |
-| AI Ultra Premium (price cut) | **$200/mo** (was $250) | 20x Pro limits | **$50 price drop** at I/O 2026. $100 bonus credits offer expired May 25 |
+| AI Ultra | **$100/mo** (new) | 5x Pro limits | **New tier** launched at I/O 2026 (May 19). 5x higher limits than Pro. Includes 20TB storage + YouTube Premium |
+| AI Ultra Premium | **$200/mo** (was $250) | 20x Pro limits | **$50 price drop** at I/O 2026. Includes Project Genie access |
 | Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage. $0.01/credit |
 
 ### Antigravity 2.0 New Surfaces
