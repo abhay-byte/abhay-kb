@@ -163,3 +163,9 @@
 | 2 | Associate Product Developer (Java) | BMC Helix | Pune | Best in Industry | https://jobs.bmc.com/Careers/JobDetail/Associate-Product-Developer-India/46767?src=SNS-10001 |
 | 3 | Digital Leadership Dev Program | GE Appliances | Bangalore | Best in Industry | https://jobsnet.in/ge-appliances-off-campus-drive-digital-leadership-development-program/ |
 | 4 | Graduate Engineer Trainee (GET) | HCLTech | Pan India | ~4 LPA | https://fresherjobinfo.in/hcltech-freshers-hiring-2026/ | |
+
+### 26-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Apprentice Software Developer Trainee | Philips | Bangalore | Competitive Stipend | https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/ |
+| 2 | Software Engineering Intern | Microsoft | Across India | Competitive Stipend | https://offcampusjobs4u.com/microsoft-internship-2026-software-engineering-intern-india/ |

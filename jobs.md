@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-25
+Last updated: 2026-05-26
 
 ---
 
@@ -112,6 +112,7 @@ Last updated: 2026-05-25
 | 92 | Associate Product Developer (Java) | BMC Helix | Pune | Best In Industry | 24-May-2026 | [Apply](https://jobs.bmc.com/Careers/JobDetail/Associate-Product-Developer-India/46767?src=SNS-10001) |
 | 93 | Digital Leadership Dev Program | GE Appliances | Bangalore | Best in Industry | 24-May-2026 | [Apply](https://jobsnet.in/ge-appliances-off-campus-drive-digital-leadership-development-program/) |
 | 94 | Graduate Engineer Trainee (GET) | HCLTech | Pan India | ~4 LPA | May 2026 | [Apply](https://fresherjobinfo.in/hcltech-freshers-hiring-2026/) |
+| 95 | Apprentice Software Developer Trainee | Philips | Bangalore | Competitive Stipend | 25-May-2026 | [Apply](https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/) |
 
 ### 💼 Internships
 
@@ -121,6 +122,7 @@ Last updated: 2026-05-25
 | 2 | Software Engineering Intern (Backend) | Sense | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/sense-internship-2026-software-engineer-intern-backend/) |
 | 3 | Software Engineer Internship | Agoda | Gurgaon | ~₹28-30 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/) |
 | 4 | Intern (Software Engineering) | Wipro | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/) |
+| 9 | Software Engineering Intern | Microsoft | Across India | Competitive Stipend | 25-May-2026 | [Apply](https://offcampusjobs4u.com/microsoft-internship-2026-software-engineering-intern-india/) |
 | 5 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | May 2026 | [Apply](https://freshershunt.in/payu-off-campus-drive-2026/) |
 | 6 | Software Developer Internship | Talview | Bangalore | — | 18-May-2026 | [Apply](https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/) |
 | 7 | Software Intern (Digital Solutions) | Wabtec | Bengaluru (Onsite) | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/wabtec-internship-2026-software-bengaluru/) |
@@ -147,6 +149,7 @@ Last updated: 2026-05-25
 1. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
 2. **Amazon - SDE 1 (University Talent)** - Pan India - Huge scale, great career growth - [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition)
 3. **HPE - Systems/Software Engineer I (Entry Level)** - Bangalore - Fresh posting May 24, big tech brand - [Apply](https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/)
+4. **Philips - Apprentice Software Developer Trainee** - Bangalore - New posting May 25, global health-tech leader - [Apply](https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/)
 
 ---
 
