@@ -9,6 +9,29 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### May 26, 2026
+
+**[Using AI to Write Better Code More Slowly](news/using-ai-to-write-better-code-more-slowly/)** — *Nolan Lawson's Blog*
+> Nolan Lawson argues that LLMs can be used for quality over speed — using multiple AI models to review PRs in parallel, finding critical bugs with near-zero false positives.
+
+**[California Moves to Exempt Linux from Age-Verification Law](news/california-exempts-linux-age-verification-law/)** — *Tom's Hardware*
+> California lawmakers propose exempting Linux from the state's age-verification law after backlash. The #1 story on Hacker News with 662 points.
+
+**[Microsoft Copilot Cowork Exfiltrates Files via Prompt Injection](news/microsoft-copilot-cowork-exfiltrates-files/)** — *PromptArmor (via Hacker News)*
+> Security research shows Microsoft Copilot Cowork is vulnerable to file exfiltration via indirect prompt injection, exploiting automatic approval for emails and Teams messages.
+
+**[Nobody Cracks Open a Programming Book Anymore](news/nobody-cracks-open-programming-books/)** — *unix.foo (via Hacker News)*
+> A reflective essay on the decline of programming books in the age of AI coding assistants, arguing that "knowledge was always the residue of typing."
+
+**[Reviewing Kernel Patches with LLMs](news/reviewing-kernel-patches-with-llms/)** — *LWN.net*
+> At LSFMM+BPF 2026, kernel developers held a plenary on using LLMs for patch review, sparking extensive discussion about AI in kernel development.
+
+**[Linus Torvalds and Dirk Discuss AI and Kernel Development](news/linus-torvalds-dirk-ai-kernel-development/)** — *LWN.net*
+> Their 30th fireside chat at Open Source Summit NA covered the 7.1-rc4 kernel, 3D printing, and Torvalds' candid views on AI tooling.
+
+**[SFC Launches Multi-Pronged Response to Bambu's AGPLv3 Violations](news/sfc-bambu-agpl-violations-response/)** — *LWN.net / Software Freedom Conservancy*
+> The Software Freedom Conservancy responds to Bambu Lab's AGPL violations with a reverse-engineering project and legal advocacy for 3D printer right-to-repair.
+
 ### May 24, 2026
 
 **[State of Web Dev AI 2026: Nearly Half of Developers Fear AI Job Displacement](news/state-of-web-dev-ai-survey-2026-developers-fear-displacement/)** — *The Register*
