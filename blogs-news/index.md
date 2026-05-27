@@ -9,6 +9,26 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### May 27, 2026
+
+**[Dropbox CEO Drew Houston Steps Down After 19 Years](news/dropbox-ceo-drew-houston-steps-down/)** — *CNBC / Hacker News*
+> Drew Houston transitions to executive chairman as product chief Ashraf Alkarmi takes over. Dropbox faces flat revenue and AI-driven market shifts.
+
+**[Microsoft Wants Safer C# Without Turning It Into Rust](news/microsoft-wants-safer-csharp/)** — *The Register*
+> Microsoft plans memory safety improvements for C# 16 including a redefined unsafe keyword, method-level unsafe scoping, and NuGet safety badges — all while preserving automatic memory management.
+
+**[AWS MCP Server Reaches GA with Full API Coverage and IAM-Based Governance](news/aws-mcp-server-ga/)** — *InfoQ*
+> AWS's managed MCP server is now GA, giving AI coding agents IAM-governed access to all AWS APIs with CloudWatch, CloudTrail, and sandboxed Python execution.
+
+**[OpenAI Outlines WebRTC Architecture for Low-Latency Voice AI at Scale](news/openai-webrtc-voice-ai-architecture/)** — *InfoQ*
+> OpenAI details its relay-transceiver WebRTC architecture designed for global-scale 1:1 voice AI sessions, keeping session state concentrated while simplifying Kubernetes deployment.
+
+**[Agent Memory: An Anatomy](news/agent-memory-anatomy/)** — *brgsk.xyz / Hacker News*
+> A deep technical deconstruction of AI agent memory systems into extractors, stores, and retrievers, examining how libraries borrow cognitive science terminology.
+
+**[Dirk and Linus Discuss AI and Kernel Development at OSS NA 2026](news/linus-torvalds-ai-kernel-development/)** — *LWN.net*
+> The 30th Torvalds-Hohndel fireside chat covered the 7.1-rc4 kernel release, 3D printing, guitar pedals, and Torvalds' complicated relationship with AI tooling.
+
 ### May 26, 2026
 
 **[Using AI to Write Better Code More Slowly](news/using-ai-to-write-better-code-more-slowly/)** — *Nolan Lawson's Blog*

@@ -102,7 +102,13 @@
     "https://unix.foo/posts/nobody-cracks-open-a-programming-book/",
     "https://lwn.net/Articles/1073583/",
     "https://lwn.net/Articles/1073761/",
-    "https://lwn.net/Articles/1074286/"
+    "https://lwn.net/Articles/1074286/",
+    "https://www.cnbc.com/2026/05/26/dropbox-ceo-drew-houston-ashraf-alkarmi.html",
+    "https://www.theregister.com/devops/2026/05/26/microsoft-wants-safer-c-without-turning-it-into-rust/5246359",
+    "https://www.infoq.com/news/2026/05/aws-mcp-ga/",
+    "https://www.infoq.com/news/2026/05/openai-voice-ai-scale/",
+    "https://brgsk.xyz/agent-memory-anatomy/",
+    "https://lwn.net/Articles/1073761/"
   ],
-  "last_fetch": "2026-05-26T02:11:00Z"
+  "last_fetch": "2026-05-27T00:39:00Z"
 }
