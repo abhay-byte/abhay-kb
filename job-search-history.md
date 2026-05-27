@@ -1,5 +1,13 @@
 ## Job Search History
 
+### 27-05-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Graduate Software Engineer | HPE | Bangalore/Chennai | Best in Industry | https://careers.hpe.com/us/en/job/1207072/Software-Engineer-I?utm_source=linkedin |
+| 2 | Java Support Apprentice | CGI | Bangalore/Hyderabad | Best in Industry | https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-0365&BRID=1302690&SBDID=943&lang=1 |
+| 3 | Java Full Stack Software Engineer (Junior) | CGI | Hyderabad | Competitive | https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-1699&BRID=1302690&SBDID=943&lang=1 |
+| 4 | Graduate Apprentice Trainee | Syniverse | Bangalore | Competitive Stipend | https://freshershunt.in/syniverse-off-campus-drive-2026/ |
+
 ### 23-05-2026
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|

@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-05-26
+Last updated: 2026-05-27
 
 ---
 
@@ -113,6 +113,10 @@ Last updated: 2026-05-26
 | 93 | Digital Leadership Dev Program | GE Appliances | Bangalore | Best in Industry | 24-May-2026 | [Apply](https://jobsnet.in/ge-appliances-off-campus-drive-digital-leadership-development-program/) |
 | 94 | Graduate Engineer Trainee (GET) | HCLTech | Pan India | ~4 LPA | May 2026 | [Apply](https://fresherjobinfo.in/hcltech-freshers-hiring-2026/) |
 | 95 | Apprentice Software Developer Trainee | Philips | Bangalore | Competitive Stipend | 25-May-2026 | [Apply](https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/) |
+| **96 🆕** | **Graduate Software Engineer** | **HPE** | **Bangalore/Chennai** | **Best in Industry** | **26-May-2026** | **[Apply](https://careers.hpe.com/us/en/job/1207072/Software-Engineer-I?utm_source=linkedin)** |
+| **97 🆕** | **Java Support Apprentice** | **CGI** | **Bangalore/Hyderabad** | **Best in Industry** | **26-May-2026** | **[Apply](https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-0365&BRID=1302690&SBDID=943&lang=1)** |
+| **98 🆕** | **Java Full Stack Software Engineer (Junior)** | **CGI** | **Hyderabad** | **Competitive** | **26-May-2026** | **[Apply](https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-1699&BRID=1302690&SBDID=943&lang=1)** |
+| **99 🆕** | **Graduate Apprentice Trainee** | **Syniverse** | **Bangalore** | **Competitive Stipend** | **26-May-2026** | **[Apply](https://freshershunt.in/syniverse-off-campus-drive-2026/)** |
 
 ### 💼 Internships
 
@@ -122,11 +126,11 @@ Last updated: 2026-05-26
 | 2 | Software Engineering Intern (Backend) | Sense | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/sense-internship-2026-software-engineer-intern-backend/) |
 | 3 | Software Engineer Internship | Agoda | Gurgaon | ~₹28-30 LPA | May 2026 | [Apply](https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/) |
 | 4 | Intern (Software Engineering) | Wipro | Bangalore | — | May 2026 | [Apply](https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/) |
-| 9 | Software Engineering Intern | Microsoft | Across India | Competitive Stipend | 25-May-2026 | [Apply](https://offcampusjobs4u.com/microsoft-internship-2026-software-engineering-intern-india/) |
-| 5 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | May 2026 | [Apply](https://freshershunt.in/payu-off-campus-drive-2026/) |
-| 6 | Software Developer Internship | Talview | Bangalore | — | 18-May-2026 | [Apply](https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/) |
-| 7 | Software Intern (Digital Solutions) | Wabtec | Bengaluru (Onsite) | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/wabtec-internship-2026-software-bengaluru/) |
-| 8 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/natwest-group-internship-2026-bangalore/) |
+| 5 | Software Engineering Intern | Microsoft | Across India | Competitive Stipend | 25-May-2026 | [Apply](https://offcampusjobs4u.com/microsoft-internship-2026-software-engineering-intern-india/) |
+| 6 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | May 2026 | [Apply](https://freshershunt.in/payu-off-campus-drive-2026/) |
+| 7 | Software Developer Internship | Talview | Bangalore | — | 18-May-2026 | [Apply](https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/) |
+| 8 | Software Intern (Digital Solutions) | Wabtec | Bengaluru (Onsite) | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/wabtec-internship-2026-software-bengaluru/) |
+| 9 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/natwest-group-internship-2026-bangalore/) |
 
 ### 🎮 Game Development
 
@@ -148,9 +152,9 @@ Last updated: 2026-05-26
 
 1. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
 2. **Amazon - SDE 1 (University Talent)** - Pan India - Huge scale, great career growth - [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition)
-3. **HPE - Systems/Software Engineer I (Entry Level)** - Bangalore - Fresh posting May 24, big tech brand - [Apply](https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/)
-4. **Philips - Apprentice Software Developer Trainee** - Bangalore - New posting May 25, global health-tech leader - [Apply](https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/)
+3. **HPE - Graduate Software Engineer** - Bangalore/Chennai - Fresh posting May 26, brand new listing - [Apply](https://careers.hpe.com/us/en/job/1207072/Software-Engineer-I?utm_source=linkedin)
+4. **CGI - Java Full Stack Software Engineer (Junior)** - Hyderabad - Full-stack role matching your stack - [Apply](https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-1699&BRID=1302690&SBDID=943&lang=1)
 
 ---
 
-*Auto-updated as of 25-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 27-May-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
