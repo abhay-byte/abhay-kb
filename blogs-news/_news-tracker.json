@@ -60,8 +60,6 @@
     "https://www.theregister.com/cyber-crime/2026/05/18/grafana-labs-admits-attackers-downloaded-its-codebase-from-github/5241686",
     "https://developers.googleblog.com/get-ready-for-google-io-2026/",
     "https://www.thestateofbrand.com/news/ai-subscription-time-bomb",
-    "https://news.ycombinator.com/item?id=48150900",
-    "https://news.ycombinator.com/item?id=48153379",
     "https://www.anthropic.com/news/anthropic-acquires-stainless",
     "https://apnews.com/article/google-io-gemini-developers-conference-a984e6756032dc4af260f8fa27e8f4a9",
     "https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/",
@@ -108,7 +106,14 @@
     "https://www.infoq.com/news/2026/05/aws-mcp-ga/",
     "https://www.infoq.com/news/2026/05/openai-voice-ai-scale/",
     "https://brgsk.xyz/agent-memory-anatomy/",
-    "https://lwn.net/Articles/1073761/"
+    "https://lwn.net/Articles/1073761/",
+    "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/",
+    "https://www.pcgamer.com/hardware/duckduckgos-ai-free-search-saw-nearly-28-percent-more-visits-in-the-week-following-googles-insistence-that-people-love-ai-mode/",
+    "https://github.com/golang/go/issues/77273",
+    "https://arps18.github.io/posts/claude-code-mastery/",
+    "https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/",
+    "https://www.githubstatus.com/incidents/xy1tt3hs572m",
+    "https://www.infoq.com/news/2026/05/azure-logic-apps-agents/"
   ],
-  "last_fetch": "2026-05-27T00:39:00Z"
+  "last_fetch": "2026-05-27T23:30:00Z"
 }

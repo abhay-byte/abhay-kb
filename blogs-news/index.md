@@ -29,6 +29,27 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[Dirk and Linus Discuss AI and Kernel Development at OSS NA 2026](news/linus-torvalds-ai-kernel-development/)** — *LWN.net*
 > The 30th Torvalds-Hohndel fireside chat covered the 7.1-rc4 kernel release, 3D printing, guitar pedals, and Torvalds' complicated relationship with AI tooling.
 
+**[YouTube to Automatically Label AI-Generated Videos](news/youtube-auto-label-ai-videos/)** — *YouTube Blog*
+> YouTube announced automatic labeling for AI-generated videos to improve transparency and help viewers distinguish between authentic and synthetic content on the platform.
+
+**[DuckDuckGo Search Saw 28% More Visits After Google Said People Love AI Mode](news/duckduckgo-traffic-surge-google-ai-mode/)** — *PC Gamer / Hacker News*
+> DuckDuckGo saw nearly 28% more visits after Google's push for AI Overviews, suggesting users actively seek AI-free search alternatives.
+
+**[Go: Support for Generic Methods Proposed](news/go-generic-methods-proposal/)** — *GitHub (golang/go) / Hacker News*
+> A new proposal to add generic methods support to Go would let methods have their own type parameters, sparking community debate on the Go issue tracker.
+
+**[Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs](news/claude-code-daily-driver-mastery/)** — *arps18.github.io / Hacker News*
+> A comprehensive guide on using Claude Code as a daily development driver, covering skills, subagents, plugins, and MCP integration — 345 points on HN.
+
+**[Tech CEOs Are Apparently Suffering from AI Psychosis](news/tech-ceos-ai-psychosis/)** — *TechCrunch / Hacker News*
+> TechCrunch reports on a growing phenomenon where CEOs make irrational decisions driven by AI hype, scoring 515 points on Hacker News.
+
+**[GitHub Incident Affects Pull Requests, Issues, and API Requests](news/github-incident-pr-issues-api-may-2026/)** — *GitHub Status / Hacker News*
+> GitHub experienced a significant incident affecting PRs, issues, git operations, and API requests, disrupting developer workflows platform-wide.
+
+**[Azure Logic Apps Adds Sandboxed Code Interpreters to Agent Workflows](news/azure-logic-apps-sandboxed-code-interpreters/)** — *InfoQ*
+> Microsoft added sandboxed code interpreters to Azure Logic Apps, letting agents execute Python, JavaScript, C#, and PowerShell in Hyper-V isolated sessions.
+
 ### May 26, 2026
 
 **[Using AI to Write Better Code More Slowly](news/using-ai-to-write-better-code-more-slowly/)** — *Nolan Lawson's Blog*
