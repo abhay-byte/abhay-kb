@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-26 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-27 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -201,7 +201,7 @@ Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Ze
 | Per week | $30 |
 | Per month | $60 |
 
-### Available Models (12)
+### Available Models (13)
 
 Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/)
 
@@ -217,6 +217,7 @@ Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/)
 | MiMo-V2.5-Pro | Xiaomi | 1,290 | 3,225 | 6,450 | Coding focus |
 | Kimi K2.5 | Moonshot | 1,850 | 4,630 | 9,250 | 256K ctx, 76.8% SWE-Bench |
 | Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | Updated K2.5, 58.6% SWE-Bench Pro |
+| Qwen3.7 Max | Alibaba | 950 | 2,390 | 4,770 | Newest Qwen model, 128K ctx |
 | GLM-5 | Z.ai | 1,150 | 2,880 | 5,750 | 77.8% SWE-Bench |
 | GLM-5.1 | Z.ai | 880 | 2,150 | 4,300 | Best reasoning. 58.4% SWE-Bench Pro |
 
@@ -240,8 +241,10 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 - Cancel anytime. Top-up credit if needed.
 - Optional "Use balance" fallback to Zen credits after limits reached
 - Models are periodically rotated as new ones are tested
+- Qwen3.7 Max added to model lineup (128K context, best available Qwen for coding)
 - MiniMax M2.5 and M2.7 use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
-- Qwen models use Alibaba-compatible endpoint
+- Qwen3.5 Plus and Qwen3.6 Plus use Anthropic-compatible endpoint
+- Qwen3.7 Max uses Anthropic-compatible endpoint
 - Models hosted in US, EU, and Singapore
 
 ---
