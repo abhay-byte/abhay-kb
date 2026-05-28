@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-27 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-28 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -52,7 +52,7 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [winbuzzer.com](https://winbuzzer.com/2026/05/14/github-copilot-individual-plans-introducing-flex-a-xcxwbn/)
 
-### Plans (Current — May 2026 — Transition to Usage-Based Billing June 1)
+### Plans (Current — May 28 2026 — 4 days until Usage-Based Billing June 1)
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog (May 12)](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [github.blog (Apr 27)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)
 
@@ -159,16 +159,14 @@ Per [github.com/features/copilot/plans](https://github.com/features/copilot/plan
 
 ## GLM / Z.ai [Subscribe](https://z.ai/subscribe)
 
-5h sliding window + weekly cap. Overseas price raised Apr 12 2026.  
-Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
+5h sliding window + weekly cap. Pricing restructured May 2026 with higher prices and monthly billing.  
+Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026). GLM-5.1 now open to all tiers.
 
-| Plan | Domestic | Overseas | Per 5h | Per Week | Monthly Cap |
-|------|----------|----------|--------|----------|-------------|
-| Plan | Price (Quarterly) | Monthly Equivalent | Per 5h | Per Week | Notes |
-|------|------------------|--------------------|--------|----------|-------|
-| Lite | $30/quarter ($27 Q2) | ~$10/mo | ~80 prompts | ~320 | GLM-5.1, 5-Turbo, 4.7, 4.6, 4.5-Air |
-| Pro | $90/quarter ($81 Q2) | ~$30/mo | ~400 prompts | ~2,000 | Unlocks GLM-5 flagship. ~5x Lite |
-| Max | $240/quarter ($216 Q2) | ~$80/mo | ~1,600 prompts | ~6,400 | ~4x Pro. Highest throughput |
+| Tier | Price | 5h Limit | Models Included |
+|------|-------|----------|----------------|
+| Lite | **$18/mo** | ~80 prompts | GLM-5.1, 5-Turbo, 4.7, 4.5-Air |
+| Pro | **$72/mo** | ~400 prompts | Same models, higher quota. ~5x Lite |
+| Max | **$160/mo** | ~1,600 prompts | Same models, ~4x Pro |
 
 ### Model Quota Multipliers (Critical)
 
@@ -184,8 +182,7 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026).
 - Each prompt invokes the model ~15–20 times internally
 - GLM-5.1 at 44.3 tok/sec is ~6x slower than Grok 4.20
 - MCP quotas: Lite 100/mo, Pro 1,000/mo, Max 4,000/mo
-- Q2 2026 quarterly discounts applied to all tiers
-- **Pricing restructured Feb 2026**: Promotional $3/mo first-purchase pricing removed. Overseas price hikes moderated with switch to quarterly billing. Q2 discount: Lite $27/qtr, Pro $81/qtr, Max $216/qtr
+- **Pricing restructured May 2026**: Switched from quarterly ($27/$81/$216) to monthly ($18/$72/$160). Previously ~$10/$30/$80 equivalent, now significantly more expensive. GLM-5.1 opened to all tiers.
 - Free models (no sub): GLM-4.7-Flash, GLM-4.5-Flash
 
 ---
@@ -213,8 +210,8 @@ Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/)
 | MiniMax M2.7 | MiniMax | 3,400 | 8,500 | 17,000 | Newer, 196K ctx |
 | Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench |
 | DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
-| MiMo-V2.5-Omni | Xiaomi | 2,150 | 5,450 | 10,900 | Multimodal |
-| MiMo-V2.5-Pro | Xiaomi | 1,290 | 3,225 | 6,450 | Coding focus |
+| MiMo-V2.5 | Xiaomi | 30,100 | 75,200 | 150,400 | V2.5 Omni-class, 1M ctx |
+| MiMo-V2.5-Pro | Xiaomi | 3,250 | 8,150 | 16,300 | Coding focus, 1M ctx |
 | Kimi K2.5 | Moonshot | 1,850 | 4,630 | 9,250 | 256K ctx, 76.8% SWE-Bench |
 | Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | Updated K2.5, 58.6% SWE-Bench Pro |
 | Qwen3.7 Max | Alibaba | 950 | 2,390 | 4,770 | Newest Qwen model, 128K ctx |
@@ -241,10 +238,10 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 - Cancel anytime. Top-up credit if needed.
 - Optional "Use balance" fallback to Zen credits after limits reached
 - Models are periodically rotated as new ones are tested
+- MiMo-V2.5 added to model lineup (updated from V2.5-Omni naming)
 - Qwen3.7 Max added to model lineup (128K context, best available Qwen for coding)
 - MiniMax M2.5 and M2.7 use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
-- Qwen3.5 Plus and Qwen3.6 Plus use Anthropic-compatible endpoint
-- Qwen3.7 Max uses Anthropic-compatible endpoint
+- Qwen3.5 Plus, Qwen3.6 Plus, and Qwen3.7 Max use Anthropic-compatible endpoint
 - Models hosted in US, EU, and Singapore
 
 ---
@@ -355,8 +352,8 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 - Soft caps slow you down; hard caps cut off until window resets
 - Extra credits can be purchased on Plus/Pro plans
 - Credits now billed per-token (API token-based rates as of Apr 2, 2026). 1 credit = varies by model
-- Pro $100 2x promo expires **May 31, 2026** — double usage to 10x instead of 5x
-- Pro $200 ongoing 20x — 25x promo through May 31, then reverts to 20x standard
+- Pro $100 2x promo expires **May 31, 2026** (3 days left) — double usage to 10x instead of 5x
+- Pro $200 ongoing 20x — 25x promo through May 31 (3 days left), then reverts to 20x standard
 - **Go plan ($20/mo)**: Budget Codex Mini tier available in select regions. Reduced limits, same models
 - **Business/Edu/Enterprise** flexible pricing: credits per token table available in settings
 
@@ -451,12 +448,14 @@ Credits expire month-end, no rollover. Mid-month upgrades OK, downgrades not.
 Now supports V2.5 model series — one subscription unlocks all 8 MiMo models.  
 Auto-renewal discounts: up to $144 off annual plans.
 
-| Plan | Price | Credits/Mo | ~Tasks/mo (V2-Omni 1:1) |
-|------|-------|-----------|----------------------|
-| Lite | $6/mo (¥39) | 60,000,000 | ~120 |
-| Standard | $16/mo (¥99) | 200,000,000 | ~400 |
-| Pro | $50/mo (¥329) | 700,000,000 | ~1,400 |
-| Max | $100/mo (¥659) | 1,600,000,000 | ~3,200 |
+**Updated May 26, 2026**: Credits quotas upgraded 5-8x across all tiers with no price increase. Old credits also refunded within validity window. API pricing permanently reduced.
+
+| Plan | Price | Credits/Mo (Old) | Credits/Mo (New, May 26) | ~Tasks/mo (V2.5 1:1) |
+|------|-------|-----------------|--------------------------|----------------------|
+| Lite | $6/mo (¥39) | 60,000,000 | **300,000,000** | ~600 |
+| Standard | $16/mo (¥99) | 200,000,000 | **1,600,000,000** | ~3,200 |
+| Pro | $50/mo (¥329) | 700,000,000 | **5,600,000,000** | ~11,200 |
+| Max | $100/mo (¥659) | 1,600,000,000 | **8,000,000,000** | ~16,000 |
 
 ### Credit Multiplier by Model
 
@@ -469,7 +468,17 @@ Auto-renewal discounts: up to $144 off annual plans.
 | MiMo-V2.5-Pro | up to 256K | 1 token = ~2 Credits |
 | MiMo-V2-TTS | n/a | Free (limited time) |
 
-API rates (V2.5): $0.4/$2.00 per 1M (256K). 88% off first purchase.
+### API Pay-per-Token (Permanent rates since May 27, 2026)
+
+| Model | Input /1M | Output /1M | Cached /1M | Context |
+|-------|----------:|-----------:|-----------:|---------|
+| MiMo V2.5 Pro | **$1.00** | **$3.00** | $0.20 | 1M tokens |
+| MiMo V2 Flash | ~$0.10 | ~$0.40 | $0.02 | 256K tokens |
+
+- **Permanent price reduction** — not promotional. Old long-context multiplier (256K+) eliminated
+- Down from ~$50/MTok effective for long-context to flat $1/$3
+- API old rate for V2.5: $0.4/$2.00 per 1M (≤256K). New flat rate with no surcharge for longer context
+- Token Plan quotas increased 5-8x, existing credits refunded within validity period
 
 ---
 
