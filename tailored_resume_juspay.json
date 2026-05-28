@@ -1,0 +1,89 @@
+{
+  "candidate_level": "entry_level",
+  "target_role": "Software Development Engineer",
+  "target_company": "Juspay",
+  "section_order": ["header", "summary", "skills", "experience", "projects", "education"],
+  "header": {
+    "name": "Abhay Raj",
+    "email": "abhay.byte02@gmail.com",
+    "phone": "8178339741",
+    "location": "New Delhi, IN",
+    "linkedin": "https://linkedin.com/in/abhay-byte",
+    "github": "https://github.com/abhay-byte",
+    "website": ""
+  },
+  "summary": "Full-stack engineer who builds production software end-to-end — from backend APIs and database architecture to cross-platform UI frameworks. Open-source contributor with 84 public repositories and 2.6K+ commits, shipping apps used by 25K+ users on Google Play. Experienced in scaling backend services at national-level deployments and building modular UI systems for real-time applications.",
+  "skills": {
+    "core": ["TypeScript", "Python", "Kotlin", "Java", "React", "Next.js", "Node.js"],
+    "tools": ["Git", "Docker", "AWS", "GCP", "GitHub Actions", "Cron Jobs"],
+    "methods": ["API Design & Integration", "Backend Architecture", "Multi-DC Deployments", "Performance Optimization", "CI/CD"],
+    "domains": ["Full-Stack Engineering", "SDK Development", "Backend Services", "Payment Systems", "Open Source"]
+  },
+  "experience": [
+    {
+      "title": "Backend Developer",
+      "company": "Avalon Information Systems",
+      "location": "New Delhi, IN",
+      "dates": "Jan 2026 – Jun 2026",
+      "bullets": [
+        "Built and optimized scalable backend services in PHP (Laravel & CakePHP) for OpenEMIS — an open-source Education Management System deployed at national scale across multiple countries.",
+        "Designed modular backend architecture handling student data, institutional records, and real-time data processing pipelines serving concurrent users across distributed deployments.",
+        "Collaborated with a global engineering team to improve system reliability and data throughput, contributing to mission-critical infrastructure used by government-level education deployments."
+      ],
+      "links": []
+    },
+    {
+      "title": "Game Developer Intern",
+      "company": "Gamified",
+      "location": "Remote",
+      "dates": "Jul 2023 – Sep 2023",
+      "bullets": [
+        "Built UI frameworks and interactive interfaces for 10+ game scenes using C# and Unity, achieving 100% design-to-implementation accuracy and reducing iteration cycles by 25%.",
+        "Refactored monolithic game logic into modular, reusable component architecture — improving code maintainability and reducing complexity by 20% across the codebase.",
+        "Integrated cross-functional assets from design and art teams into a cohesive runtime system, ensuring alignment across product requirements and gameplay specifications."
+      ],
+      "links": []
+    }
+  ],
+  "projects": [
+    {
+      "name": "fluxlinux",
+      "subtitle": "Open-source Linux environment manager for Android",
+      "location": "",
+      "dates": "2024 – Present",
+      "bullets": [
+        "Built a Kotlin-powered Linux environment manager enabling seamless developer tooling directly on Android devices with automated setup and shell integration.",
+        "Designed modular architecture with automated provisioning, package management, and cross-process communication — 80 GitHub stars."
+      ],
+      "url": "https://github.com/abhay-byte/fluxlinux"
+    },
+    {
+      "name": "finalbenchmark-platform",
+      "subtitle": "Android CPU benchmarking suite",
+      "location": "",
+      "dates": "2021 – Present",
+      "bullets": [
+        "Developed a comprehensive CPU benchmarking Android application with 10+ performance tests, real-time thermal monitoring, and battery-efficient background processing.",
+        "Published on F-Droid with widespread adoption — 63 GitHub stars, 25K+ Play Store installs."
+      ],
+      "url": "https://github.com/abhay-byte/finalbenchmark-platform"
+    }
+  ],
+  "education": [
+    {
+      "school": "Guru Tegh Bahadur Institute of Technology",
+      "location": "New Delhi, IN",
+      "dates": "Nov 2022 – May 2026",
+      "degree": "B.Tech in Information Technology",
+      "details": ["CGPA: 8.6", "JEE Mains qualified", "Member — GDSC (Design Department)"]
+    }
+  ],
+  "certifications": [],
+  "awards": [],
+  "metadata": {
+    "page_target": "one_page",
+    "tone": "technical",
+    "ats_focus": true,
+    "humanization_pass_complete": true
+  }
+}
