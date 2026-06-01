@@ -5,18 +5,18 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-28 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-01 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
-Compiled May 2026.
+Compiled June 2026.
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
   <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
 </defs>
 
-<text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (May 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated May 28 2026</text>
+<text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 1 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -89,6 +89,8 @@ Compiled May 2026.
 <text x="719.9421851371668" y="153.5135135135135" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.5</text>
 <circle cx="719.9421851371668" cy="180.62162162162167" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="719.9421851371668" y="198.62162162162167" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.6</text>
+<circle cx="719.9421851371668" cy="93.14" r="7" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="719.9421851371668" y="79.14" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.8</text>
 <circle cx="719.9421851371668" cy="104.3513513513514" r="7" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="719.9421851371668" y="78.3513513513514" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.7</text>
 <circle cx="719.9421851371668" cy="92.0135135135135" r="7" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
@@ -107,8 +109,8 @@ Compiled May 2026.
   <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
 </defs>
 
-<text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (May 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated May 28 2026</text>
+<text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (June 2026)</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 1 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -175,13 +177,16 @@ Current as of May 2026. Source: [platform.claude.com](https://platform.claude.co
 
 | Model | Input /1M | Output /1M | Batch (50% off) | Cache Writes (5m) | Cache Hits |
 |-------|-----------|------------|-----------------|-------------------|------------|
+| Opus 4.8 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
 | Opus 4.7 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
 | Opus 4.6 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
 | Opus 4.5 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
 | Sonnet 4.6 | $3.00 | $15.00 | ✓ | $3.75/MTok | $0.30/MTok |
 | Haiku 4.5 | $1.00 | $5.00 | ✓ | $1.25/MTok | $0.10/MTok |
+| Mythos Preview | $25.00 | $125.00 | — | — | — |
 
-Opus 4.7: 87.6% SWE-Bench Verified (#2), 64.3% SWE-Bench Pro (#1). Opus 4.5: 80.9%. Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.
+Opus 4.8 (May 28 2026): 88.6% SWE-Bench Verified (#2). Opus 4.7: 87.6%, 64.3% SWE-Bench Pro (#1). Opus 4.5: 80.9%. Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.
+Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Verified (#1) — very expensive, limited API access.
 
 ---
 ## Google Gemini
@@ -216,7 +221,7 @@ Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api
 
 | Model | Input /1M | Output /1M | Note |
 |-------|-----------|------------|------|
-| Gemini 2.0 Flash | $0.10 | $0.40 | Shutdown Jun 1 2026 |
+| Gemini 2.0 Flash | $0.10 | $0.40 | Shutdown June 1 2026 — retired |
 
 Gemini 3.1 Pro is a preview model (restrictive rate limits). Free tier available for development and small projects.
 Gemini 3.5 Flash GA May 19 2026 — fast, high-volume tier at 25% less than 3.1 Pro. 76.2% Terminal-Bench 2.1, 83.6% MCP Atlas, 84.2% CharXiv Reasoning.
@@ -230,7 +235,7 @@ Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Op
 Current as of May 2026. Source: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/)
 
 DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.
-SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro is premium (75% off until May 31 2026).
+SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro pricing adjusted to 1/4 of original after promo ended May 31 2026.
 
 ### New: DeepSeek V4 Pro Max
 Released Apr 24 2026. 1.6T params, 49B active MoE, 1M context, open-weight on HuggingFace. 80.6% SWE-Bench Verified. Available at V4 Pro pricing (same API endpoint).
@@ -238,8 +243,7 @@ Released Apr 24 2026. 1.6T params, 49B active MoE, 1M context, open-weight on Hu
 | Model | Cache Hit Input /1M | Cache Miss Input /1M | Output /1M | Context | Notes |
 |-------|--------------------|---------------------|-----------|---------|-------|
 | deepseek-v4-flash | $0.0028 | $0.14 | $0.28 | 1M | Default route. 384K max output |
-| deepseek-v4-pro (promo) | $0.003625 | $0.435 | $0.87 | 1M | 75% off until May 31 2026 15:59 UTC |
-| deepseek-v4-pro (full) | $0.0145 | $1.74 | $3.48 | 1M | Full price after promo ends |
+| deepseek-v4-pro | $0.0145 | $1.74 | $3.48 | 1M | Full price (promo 75% off ended May 31 2026). 1.6T params |
 
 Cache hit prices reduced to 1/10 of launch price from Apr 26 2026.
 Older aliases `deepseek-chat` and `deepseek-reasoner` map to V4 Flash (non-thinking / thinking) and retire after Jul 24 2026.
@@ -264,7 +268,7 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 
 | Model | Input /1M | Output /1M | Cached Input | Context | Notes |
 |-------|-----------|------------|-------------|---------|-------|
-| GPT-5.5 (≤272K) | $5.00 | $30.00 | $0.50 | 1M | **88.7% SWE-Bench** (#1), **58.6% SWE-Bench Pro**. Flagship reasoning + coding |
+| GPT-5.5 (≤272K) | $5.00 | $30.00 | $0.50 | 1M | **88.7% SWE-Bench Verified** (#1), **58.6% SWE-Bench Pro**. Flagship reasoning + coding |
 | GPT-5.5 (>272K) | $10.00 | $45.00 | $1.00 | 1M | Long context tier >272K tokens |
 | GPT-5.5 Pro | $30.00 | $180.00 | — | 1M | Premium tier for research-grade problems |
 | GPT-5.4 (≤272K) | $2.50 | $15.00 | $0.25 | 1M | ~80% SWE-Bench Verified. 59.1% SWE-Bench Pro |
@@ -289,7 +293,7 @@ Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/
 | o3 | $2.00 | $8.00 | — | — | Flagship reasoning. Chain-of-thought built in |
 
 Batch API saves 50% on all models. Prompt caching discounts: up to 90% off (GPT-5.5), 75% off (GPT-4.1).
-GPT-5.5 scores 88.7% SWE-Bench Verified (#1) and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro (xHigh). GPT-5.5 Pro tier ($30/$180) is available for research-grade problems. GPT-5.3 Codex scores 85.0% SWE-Bench Verified (#3) and 56.8% SWE-Bench Pro. GPT-4.1 is OpenAI's recommended production default for most workloads.
+GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro (xHigh). GPT-5.5 Pro tier ($30/$180) is available for research-grade problems. GPT-5.3 Codex scores 85.0% SWE-Bench Verified and 56.8% SWE-Bench Pro. GPT-4.1 is OpenAI's recommended production default for most workloads.
 
 ---
 
@@ -299,13 +303,15 @@ Current as of May 2026. Source: [platform.minimax.io](https://platform.minimax.i
 
 ### Coding Models
 
-| Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench | Speed |
-|-------|-----------|------------|---------|-----------|-----------|-------|
-| M2.7 | $0.279 | $1.20 | 205K | 131K | — | Released Mar 18 2026 |
-| M2.5 Standard | $0.15 | $1.20 | 256K | — | 80.2% | ~50 TPS |
-| M2.5 Lightning | $0.30 | $2.40 | 256K | — | 80.2% | ~100 TPS |
+| Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench | Speed | Notes |
+|-------|-----------|------------|---------|-----------|-----------|-------|-------|
+| M3 | $0.30 (50% off) → $0.60 | $1.20 (50% off) → $2.40 | 512K+ | — | — | — | Released late May 2026. 7-day 50% off intro promo |
+| M2.7 | $0.30 | $1.20 | 205K | 131K | — | — | Released Mar 18 2026. $0.06/M cached read |
+| M2.5 Standard | $0.15 | $1.20 | 256K | — | 80.2% | ~50 TPS | Automatic cache (no config needed) |
+| M2.5 Lightning | $0.30 | $2.40 | 256K | — | 80.2% | ~100 TPS | Priority scheduling available |
 
-M2.5 Standard: One of the best value coding models. Automatic cache (no config needed). Near Claude Opus 4.6 (80.8%).
+M2.5 Standard: One of the best value coding models. Near Claude Opus 4.6 (80.8%).
+M3: Latest generation. $0.30/$1.20 during 7-day intro (50% off), then $0.60/$2.40 standard. Supports >512K context via Priority tier.
 OpenCode Go estimates: M2.5 ~6,300 req/5h, M2.7 ~3,400 req/5h.
 
 ### Subscription Plans
@@ -328,7 +334,7 @@ Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacl
 
 | Model | Input /1M | Output /1M | Context | Notes |
 |-------|-----------|------------|---------|-------|
-| Qwen3.7 Max | $2.50 | $7.50 | 1M | May 20 2026. Closed-weights text flagship. Intelligence Index v4.0 #5 overall. Lowest hallucination rate among frontier models (22.9%). Anthropic API protocol native. 35h autonomous operation. |
+| Qwen3.7 Max | $2.50 | $7.50 | 1M | May 20 2026. Closed-weights text flagship. 1M context. Intelligence Index v4.0 #5 overall. Lowest hallucination rate among frontier models (22.9%). Anthropic API protocol native. 35h autonomous operation. Also available via Novita at $1.25/$3.75 (third-party). |
 | Qwen3.7 Plus | TBA | TBA | 1M | Multimodal (vision + text) variant. Announced May 21 2026. |
 
 Qwen3.7 Max (May 20-21 2026): Alibaba's newest flagship, announced at Alibaba Cloud Summit. $2.50/$7.50 per MTok — ~6x cheaper than Claude Opus 4.7. 1M context. Terminal-Bench Hard: 50.8%. MCP-Atlas: 76.4. Anthropic API protocol support means it works as a drop-in Claude Code backend. Open-weight variants expected June/July 2026 following Qwen3.6 release pattern.
@@ -507,6 +513,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/mimo-v2.5-pro | MiMo V2.5 Pro |
 | opencode-go/minimax-m2.5 | MiniMax M2.5 |
 | opencode-go/minimax-m2.7 | MiniMax M2.7 |
+| opencode-go/minimax-m3 | MiniMax M3 |
 | opencode-go/qwen3.5-plus | Qwen3.5 Plus |
 | opencode-go/qwen3.6-plus | Qwen3.6 Plus |
 | opencode-go/qwen3.6-max-preview | Qwen3.6 Max Preview |
@@ -514,7 +521,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/grok-4.3 | Grok 4.3 |
 | opencode-go/grok-4.20 | Grok 4.20 |
 
-### Request Estimates (May 27 2026)
+### Request Estimates (June 1 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
@@ -527,12 +534,14 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | MiMo-V2-Omni | 2,150 | 5,450 | 10,900 |
 | Qwen3.6 Plus | 3,300 | 8,200 | 16,300 |
 | Qwen3.6 Max Preview | 820 | 2,050 | 4,100 |
+| MiniMax M3 | ~3,000 | ~7,500 | 15,000 |
 | MiniMax M2.7 | 3,400 | 8,500 | 17,000 |
 | MiniMax M2.5 | 6,300 | 15,900 | 31,800 |
 | Mistral Medium 3.5 | ~2,500 | ~6,200 | 12,500 |
 | Qwen3.5 Plus | 10,200 | 25,200 | 50,500 |
 
 MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).
+DeepSeek V4 Pro: Promotional 75% discount expired May 31 2026. Full pricing now applies ($1.74/$3.48 per MTok). OpenCode Go limits may change accordingly.
 
 ---
 
