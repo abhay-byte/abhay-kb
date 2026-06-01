@@ -177,3 +177,19 @@
 |---|-------|---------|----------|--------|------|
 | 1 | Apprentice Software Developer Trainee | Philips | Bangalore | Competitive Stipend | https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/ |
 | 2 | Software Engineering Intern | Microsoft | Across India | Competitive Stipend | https://offcampusjobs4u.com/microsoft-internship-2026-software-engineering-intern-india/ |
+
+### 01-06-2026
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Associate Software Engineer | S&P Global Mobility | Gurgaon | As per Industry Standard | https://mobility.wd503.myworkdayjobs.com/Mobility/job/Gurugram-Haryana/Associate--Software-Engineer_10?source=LinkedIn |
+| 2 | SDE 1 (Entry-Level) | Keystone | Bengaluru | Best in Industry | https://jobsnet.in/keystone-hiring-entry-level-software-development-engineer-1/ |
+| 3 | Junior Java Full Stack Developer | Zensar | Pune | Best in Industry | https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/145691/ |
+| 4 | Software Engineer 1 | Honeywell Aerospace | Bengaluru | Best in Industry | https://jobsnet.in/honeywell-aerospace-off-campus-drive-software-engineer/ |
+| 5 | IT Apprentice | Swiss Re | Bangalore | As Per Standard | https://jobsnet.in/swiss-re-off-campus-drive-hiring-it-apprentice/ |
+| 6 | SDE in Test (Entry-Level) | Headout | Bangalore | Best in Industry | https://jobsnet.in/headout-hiring-entry-level-software-engineer-in-test/ |
+| 7 | Technology Analyst Program (TAP) | Fiserv | Chennai | Best in Industry | https://jobsnet.in/fiserv-off-campus-drive-technology-analyst-program-freshers/ |
+| 8 | Apprentice - Python Full Stack Developer | CGI | Bangalore/Hyderabad | Best in Industry | https://jobsnet.in/cgi-off-campus-drive-hiring-python-developer-apprentice/ |
+| 9 | Software Consulting Engineer (Entry-Level) | Cisco | Bangalore/Pune/Remote | Best in Industry | https://careers.cisco.com/global/en/job/CISCISGLOBAL2015858EXTERNALENGLOBAL/Software-Consulting-Engineer |
+| 10 | IT Analyst (Freshers) | EY | Mumbai | Best in Industry | https://careers.ey.com/ey/job/Mumbai-Analyst-Tech-Consulting-FS-CNS-TC-TECHNOLOGY-STRATEGY-&-TRANSFORMATION-Mumbai-MH-400028/1366796233/ |
+| 11 | Graduate Engineer Trainee (GET) | Viatris | Bengaluru | ₹5 LPA | https://www.enggwave.com/viatris-off-campus-drive-2026/107757 |
+| 12 | Apprentice - Java/Support | CGI | Hyderabad | Best in Industry | https://www.enggwave.com/cgi-off-campus-drive-2026/107194 |
