@@ -9,6 +9,29 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### June 1, 2026
+
+**[Backpressure Is All You Need](news/backpressure-is-all-you-need/)** — *lucasfcosta.com*
+> Lucas Costa argues that applying backpressure principles from systems engineering (tests, types, CI) makes AI coding agents safer and more autonomous without fully removing humans from the loop.
+
+**[Protestware for Coding Agents](news/protestware-for-coding-agents/)** — *Nesbitt.io / LWN.net*
+> The jqwik Java library added anti-AI prompt injection to its stdout output — hidden from humans via ANSI escape codes but visible to coding agents, marking a new class of supply-chain risk.
+
+**[Rust 1.96.0 Released](news/rust-1-96-0-released/)** — *Rust Blog*
+> New Copy-compatible Range types, assert_matches! macro for pattern matching diagnostics, and WebAssembly targets now error on undefined symbols by default.
+
+**[The Speed of Prototyping in the Age of AI](news/speed-of-prototyping-age-of-ai/)** — *darylcecile.net*
+> A developer reflects on 4x productivity gains from AI agents and how the kind of work he can take on has fundamentally changed — while noting the need to deliberately maintain technical dexterity.
+
+**[Cloudflare Turnstile Requiring Fingerprintable WebGL](news/cloudflare-turnstile-webgl-fingerprinting/)** — *hacktivis.me*
+> Cloudflare's CAPTCHA replacement now requires WebGL fingerprinting, blocking WebKitGTK browsers and raising privacy concerns about tracking disguised as bot detection.
+
+**[Streambed: Stream Postgres to Iceberg on S3](news/streambed-postgres-iceberg-s3/)** — *GitHub*
+> An open-source CDC engine that streams Postgres WAL changes directly to Apache Iceberg on S3 with a built-in query server speaking the Postgres wire protocol — no ETL or Spark needed.
+
+**[Dav2d: A New Fast AV1 Decoder](news/dav2d-fast-av1-decoder/)** — *jbkempf.com*
+> A new fast AV1 video decoder project inspired by dav1d, aiming for further performance optimizations for modern hardware — scored 395 points on Hacker News.
+
 ### May 27, 2026
 
 **[Dropbox CEO Drew Houston Steps Down After 19 Years](news/dropbox-ceo-drew-houston-steps-down/)** — *CNBC / Hacker News*
