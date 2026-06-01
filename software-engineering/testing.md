@@ -398,6 +398,7 @@ Mutation testing evaluates the **quality of test suites** by introducing small c
 1. Create mutants — introduce single syntactically correct changes
 
 - Operators: `<` becomes `<=`, `true` becomes `false`, remove method body
+
 1. Run test suite against each mutant
 2. If tests pass on a mutant — the mutant **survived** (test gap)
 3. If tests fail on a mutant — the mutant was **killed**

@@ -25,17 +25,20 @@ title: System Design — Clean Code
 - 2.8 Consistent Formatting
 - 2.9 Error Handling
 - 2.10 Avoid Magic Numbers & Strings
+
 1. [SOLID Principles](#3-solid-principles)
 2. [Cohesion](#4-cohesion)
 
 - 4.1 What Is Cohesion?
 - 4.2 Types of Cohesion (Worst -> Best)
 - 4.3 How to Achieve High Cohesion
+
 1. [Coupling](#5-coupling)
 
 - 5.1 What Is Coupling?
 - 5.2 Types of Coupling (Worst -> Best)
 - 5.3 How to Achieve Low Coupling
+
 1. [Cohesion vs. Coupling: The Relationship](#6-cohesion-vs-coupling-the-relationship)
 2. [Project Types & Suitability](#7-project-types--suitability)
 3. [Anti-Patterns to Avoid](#8-anti-patterns-to-avoid)
@@ -675,6 +678,7 @@ Modules operate **completely independently** with no direct communication.
 
 - `order.getCustomer().getAddress().getCity()` -> too much knowledge chain
 - Better: `order.getCustomerCity()` — delegate internally
+
 1. **Use events/message queues** for cross-module communication (publish-subscribe)
 2. **Avoid shared mutable state** (global variables, singletons)
 3. **Pass only what's needed** — don't pass entire objects when a single field suffices
