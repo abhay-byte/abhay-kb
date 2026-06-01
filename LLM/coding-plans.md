@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-28 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-01 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -44,7 +44,7 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.
 - Free tier: 500K tokens for new users (regular API only, NOT Coding Plan)
 - New Team plan now available for enterprise: scalability, management controls, digital employee capabilities
 
-> **Personal Review (May 2026):** The BytePlus-provided models like Dola-Seed-2.0-Pro, O-Pro, and Ark-Coding-Pro are **significantly weaker** than alternatives available for free on other platforms — e.g. MiniMax M2.5 (80.2% SWE-Bench, free via OpenRouter) easily outperforms them. The real issue is with **frontier models like GLM-5.1**: despite being listed as available, the quota multiplier (3x drain during peak hours) means you get **only about 10–15 actual requests per 5h window**. The advertised quotas (“800 per 5h”) are based on the cheapest base models at 1x drain — not usable on any capable model. In practice, the plan is misleading for anyone wanting to use frontier models. Not recommended unless you only need the weak ByteDance models for simple completions.
+> **Personal Review (June 2026):** The BytePlus-provided models like Dola-Seed-2.0-Pro, O-Pro, and Ark-Coding-Pro are **significantly weaker** than alternatives available for free on other platforms — e.g. MiniMax M2.5 (80.2% SWE-Bench, free via OpenRouter) easily outperforms them. The real issue is with **frontier models like GLM-5.1**: despite being listed as available, the quota multiplier (3x drain during peak hours) means you get **only about 10–15 actual requests per 5h window**. The advertised quotas (“800 per 5h”) are based on the cheapest base models at 1x drain — not usable on any capable model. In practice, the plan is misleading for anyone wanting to use frontier models. Not recommended unless you only need the weak ByteDance models for simple completions.
 
 ---
 
@@ -98,6 +98,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 **Anthropic (includes cache write cost):**
 | Model | Input /1M | Cached Input | Cache Write | Output /1M |
 |-------|----------:|:------------:|:-----------:|-----------:|
+| Claude Opus 4.8 | $5.00 | $0.50 | $6.25 | $25.00 |
 | Claude Opus 4.7 | $5.00 | $0.50 | $6.25 | $25.00 |
 | Claude Opus 4.6 | $5.00 | $0.50 | $6.25 | $25.00 |
 | Claude Opus 4.5 | $5.00 | $0.50 | $6.25 | $25.00 |
@@ -153,7 +154,7 @@ Per [github.com/features/copilot/plans](https://github.com/features/copilot/plan
 
 > **From Reddit (r/github):** Users widely criticized the student plan downgrades and Pro signup pause. Many students reported being locked out of models they relied on for coursework.
 
-> **Personal Review (May 2026):** GitHub Copilot was the most reliable and good coding plan I used. A lot of models were available and the IDE integration was seamless. I used it on the Student plan which was fantastic initially. The bad part: they progressively removed all frontier models from the Student plan — Claude Opus/Sonnet went first, then GPT-5.3-Codex was pulled from the model picker. What started as a generous free plan for students got hollowed out over time. Now with usage-based billing coming June 1, the value proposition is even more uncertain — your $10 Pro gets you 1,500 AI Credits worth $15, and heavy agent sessions will burn through that fast. The Max plan ($100/mo for 20,000 credits) is the realistic choice for heavy users. Still a solid product for light use, but heavy users will need the $100 Max plan.
+> **Personal Review (June 2026):** GitHub Copilot was the most reliable and good coding plan I used. A lot of models were available and the IDE integration was seamless. I used it on the Student plan which was fantastic initially. The bad part: they progressively removed all frontier models from the Student plan — Claude Opus/Sonnet went first, then GPT-5.3-Codex was pulled from the model picker. What started as a generous free plan for students got hollowed out over time. With usage-based billing now live (June 1), the value proposition is even more uncertain — your $10 Pro gets you 1,500 AI Credits worth $15, and heavy agent sessions will burn through that fast. The Max plan ($100/mo for 20,000 credits) is the realistic choice for heavy users. Claude Opus 4.8 is now available on Pro+/Max plans, which is a nice addition. Still a solid product for light use, but heavy users will need the $100 Max plan.
 
 ---
 
@@ -208,6 +209,7 @@ Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/)
 | Qwen3.5 Plus | Alibaba | 10,200 | 25,200 | 50,500 | Best raw request count |
 | MiniMax M2.5 | MiniMax | 6,300 | 15,900 | 31,800 | 80.2% SWE-Bench |
 | MiniMax M2.7 | MiniMax | 3,400 | 8,500 | 17,000 | Newer, 196K ctx |
+| MiniMax M3 | MiniMax | 1,400 | 3,500 | 7,000 | Newest MiniMax model |
 | Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench |
 | DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
 | MiMo-V2.5 | Xiaomi | 30,100 | 75,200 | 150,400 | V2.5 Omni-class, 1M ctx |
@@ -230,7 +232,7 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 
 > **From Thomas Wiegold (Apr 2026):** "MiniMax gives you a good number of requests ... up to 31,800 per month with M2.5. These aren't toy models - M2.5 scored 80.2% on SWE-Bench Verified, within spitting distance of Claude Opus 4.6's 80.8%. The catch is that reasoning-heavy models like GLM-5.1 burn through limits fast."
 
-> **Personal Review (May 2026):** Best and cheapest coding plan available. Generous quotas on MiniMax and Qwen models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. MiniMax M2.5 at $10/month is unmatched value. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Strongly recommended.
+> **Personal Review (June 2026):** Best and cheapest coding plan available. Generous quotas on MiniMax and Qwen models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. MiniMax M2.5 at $10/month is unmatched value — now also with MiniMax M3 added to the lineup. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Strongly recommended.
 
 ### Notes
 
@@ -240,7 +242,7 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 - Models are periodically rotated as new ones are tested
 - MiMo-V2.5 added to model lineup (updated from V2.5-Omni naming)
 - Qwen3.7 Max added to model lineup (128K context, best available Qwen for coding)
-- MiniMax M2.5 and M2.7 use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
+- MiniMax M3, M2.7, and M2.5 use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
 - Qwen3.5 Plus, Qwen3.6 Plus, and Qwen3.7 Max use Anthropic-compatible endpoint
 - Models hosted in US, EU, and Singapore
 
@@ -259,6 +261,8 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 | Max 5x | $100/mo | 5x (doubled) | ~225-450 | 1M | Yes |
 | Max 20x | $200/mo | 20x (doubled) | ~900-1,800 | 1M | Yes |
 
+**New: Claude Opus 4.8** — Now available on all Claude plans. Latest Opus model with improved reasoning. On GitHub Copilot Pro+/Max as of June 1.
+
 ### Team Plans
 
 | Plan | Price | Multiplier | Weekly Cap | Min Seats |
@@ -276,6 +280,7 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 
 | Model | Input /1M | Output /1M | Cache Read | Batch (50% off) |
 |-------|-----------|------------|------------|-----------------|
+| Opus 4.8 | $5.00 | $25.00 | $0.50 | Yes |
 | Opus 4.7 | $5.00 | $25.00 | $0.50 | Yes |
 | Sonnet 4.6 | $3.00 | $15.00 | $0.30 | Yes |
 | Haiku 4.5 | $1.00 | $5.00 | $0.10 | Yes |
@@ -304,7 +309,7 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 
 > **From felloai review:** "Max 5x at $100/month gives five times the Pro usage and priority access during peak demand. It is the sweet spot for full-time developers who use Claude Code as their default coding partner."
 
-> **Personal Review (May 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic just doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 is genuinely the smartest model for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the tokenizer/v2.1.100 bugs silently eating into your limits. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases. The v2.1.100 bug may have been fixed — keep an eye on releases.
+> **Personal Review (June 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 and now Opus 4.8 are genuinely the smartest models for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the tokenizer/v2.1.100 bugs silently eating into your limits. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.
 
 ---
 
@@ -321,8 +326,8 @@ Source: [developers.openai.com/codex/pricing](https://developers.openai.com/code
 | Free | $0 | Limited Codex Mini access |
 | Go | $20/mo | Budget-friendly Codex Mini (select regions). Reduced limits |
 | Plus | $20/mo | Entry point for Codex CLI + IDE + cloud |
-| Pro ($100) | $100/mo | 5x (10x promo until May 31) higher limits. Includes GPT-5.3-Codex-Spark preview |
-| Pro ($200) | $200/mo | 20x higher limits (25x through May 31). Heavy daily use |
+| Pro ($100) | $100/mo | 5x higher limits. Includes GPT-5.3-Codex-Spark preview |
+| Pro ($200) | $200/mo | 20x higher limits. Heavy daily use |
 | Business | $25/seat/mo | Team workspace + admin controls |
 | API Key | Pay-per-token | CI/CD, automation, programmatic |
 
@@ -352,8 +357,7 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 - Soft caps slow you down; hard caps cut off until window resets
 - Extra credits can be purchased on Plus/Pro plans
 - Credits now billed per-token (API token-based rates as of Apr 2, 2026). 1 credit = varies by model
-- Pro $100 2x promo expires **May 31, 2026** (3 days left) — double usage to 10x instead of 5x
-- Pro $200 ongoing 20x — 25x promo through May 31 (3 days left), then reverts to 20x standard
+- **Pro promos expired May 31, 2026:** Pro $100 2x promo ended — back to standard 5x. Pro $200 25x promo ended — back to standard 20x
 - **Go plan ($20/mo)**: Budget Codex Mini tier available in select regions. Reduced limits, same models
 - **Business/Edu/Enterprise** flexible pricing: credits per token table available in settings
 
@@ -363,7 +367,7 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 
 > **From elite-ai-assisted-coding review:** "Codex CLI performed well throughout testing. GPT-5's capabilities were the key differentiator -- the model followed instructions precisely, learned from documentation effectively, and applied knowledge appropriately."
 
-> **Personal Review (May 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus.
+> **Personal Review (June 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. Note: the 2x Pro $100 and 25x Pro $200 promos both expired May 31.
 
 ---
 
@@ -406,7 +410,8 @@ Google restructured its AI subscription lineup at I/O 2026. The top plan was res
 | Gemini 3.5 Flash | Google | Fast | Co-developed using Antigravity. GA since I/O 2026 |
 | Gemini 3.1 Pro | Google | Reasoning (High/Low) | Google's flagship. **Good for frontend work only** |
 | Gemini 3 Flash | Google | Fast | Very capable for frontend. Reliable |
-| Claude Opus 4.7 | Anthropic | Premium | **$200/mo value, available here**. Best for backend |
+| Claude Opus 4.8 | Anthropic | Premium | **$200/mo value, available here**. Best for backend |
+| Claude Opus 4.7 | Anthropic | Premium | Available here alongside Opus 4.8 |
 | Claude Sonnet 4.6 | Anthropic | Mid-tier | Fast, reliable for backend code |
 | GPT-OSS 120B | OpenAI | Open-weight | Free model |
 
@@ -436,7 +441,7 @@ Google restructured its AI subscription lineup at I/O 2026. The top plan was res
 
 > **From TechCrunch (May 19):** "Google is also reducing the price of its top AI Ultra plan from $250 to $200, which allows for 20x higher limits." Antigravity 2.0 adds CLI, SDK, subagents, scheduled tasks, and voice commands.
 
-> **Personal Review (May 2026):** I've used it extensively. The best thing is having Claude models (Sonnet & Opus 4.7) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues remain. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
+> **Personal Review (June 2026):** I've used it extensively. The best thing is having Claude models (Sonnet, Opus 4.7 & 4.8) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues remain. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
 
 ---
 
