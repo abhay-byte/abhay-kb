@@ -231,6 +231,7 @@ The CSES Problem Set is a collection of algorithmic programming problems maintai
 ## Additional Topics (50+)
 
 The CSES Problem Set also covers:
+
 - **Range Queries** — Segment trees, Fenwick trees, Sparse tables
 - **Geometry** — Convex hull, line intersections, polygon area
 - **Advanced Techniques** — Meet in the middle, Heavy-Light decomposition
@@ -241,6 +242,7 @@ The CSES Problem Set also covers:
 ## 📁 Solutions
 
 Solutions are available in the repo at:
+
 - [**DSA/questions/CSES/**](https://github.com/abhay-byte/DSA/tree/main/questions/CSES)
 
 ---

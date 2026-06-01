@@ -57,31 +57,37 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 ## Data Structures
 
 ### Arrays
+
 - Contiguous memory, O(1) random access
 - Insert/delete at end: O(1) amortized
 - Insert/delete at arbitrary position: O(n)
 
 ### Linked Lists
+
 - **Singly Linked**: each node has data + next pointer
 - **Doubly Linked**: each node has data + next + prev pointers
 - Operations: search O(n), insert at head O(1), delete O(n)
 
 ### Stacks
+
 - LIFO (Last In, First Out)
 - Operations: push, pop, peek — all O(1)
 - Use cases: undo/redo, expression evaluation, DFS
 
 ### Queues
+
 - FIFO (First In, First Out)
 - Operations: enqueue, dequeue, front — all O(1)
 - Variants: circular queue, deque, priority queue
 
 ### Hash Tables
+
 - Key-value storage, average O(1) operations
 - Collision resolution: chaining, open addressing
 - Load factor determines resizing threshold
 
 ### Trees
+
 | Type | Description |
 |------|-------------|
 | Binary Tree | Each node has ≤2 children |
@@ -92,6 +98,7 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 | Trie | Prefix tree for strings |
 
 ### Graphs
+
 - **Representation**: adjacency matrix (O(V²) space), adjacency list (O(V+E) space)
 - **Traversal**: BFS (queue, level-order), DFS (stack/recursion, depth-order)
 - **Applications**: shortest path, connectivity, topological sort
@@ -99,6 +106,7 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 ## Algorithms
 
 ### Sorting
+
 | Algorithm | Best | Average | Worst | Space |
 |-----------|------|---------|-------|-------|
 | Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) |
@@ -108,10 +116,12 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 | Insertion Sort | O(n) | O(n²) | O(n²) | O(1) |
 
 ### Searching
+
 - **Linear Search**: O(n)
 - **Binary Search**: O(log n) — requires sorted array
 
 ### Graph Algorithms
+
 - BFS / DFS — O(V+E) traversal
 - Dijkstra's — shortest path, O((V+E) log V)
 - Bellman-Ford — handles negative edges, O(VE)
@@ -120,11 +130,13 @@ A reference guide for essential DSA concepts. Dummy content to get started.
 - Topological Sort — DAG ordering, O(V+E)
 
 ### Dynamic Programming
+
 - Optimal substructure + overlapping subproblems
 - Top-down (memoization) vs bottom-up (tabulation)
 - Classic problems: Fibonacci, Knapsack, LCS, LIS, Edit Distance
 
 ### String Algorithms
+
 - KMP — pattern matching, O(n+m)
 - Rabin-Karp — rolling hash, average O(n+m)
 - Z-Algorithm — pattern matching, O(n)

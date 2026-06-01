@@ -220,7 +220,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[Mistral AI Acquires Emmi AI in European AI Consolidation Push](news/mistral-ai-acquires-emmi/)** — *Hacker News / tldl.io*
 > French AI startup Mistral acquired Emmi AI, continuing European consolidation to better compete with US and Chinese AI giants.
 
-
 ### May 19, 2026
 
 **[Anthropic Acquires Stainless for $300M+ to Strengthen Developer SDK Tooling](news/anthropic-acquires-stainless/)** — *Anthropic Blog / TechCrunch*
@@ -241,7 +240,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[Meta Begins 10% Layoffs as AI Investments Reshape Company Priorities](news/meta-10-percent-layoffs-ai-investments/)** — *Tech Startups / CNBC*
 > Meta is cutting 8,000 jobs (10% of workforce) while raising AI capex to $145B, as an internal tool tracks employees to train AI coding agents.
 
-
 ### May 18, 2026
 
 **[Linus Torvalds: AI bug hunters have made Linux security list 'almost entirely unmanageable'](news/linux-ai-bug-hunters-security-list-unmanageable/)** — *The Register*
@@ -261,7 +259,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **[Domo CDO: Enough with AI FOMO, Go Slow-Mo](news/domo-cdo-ai-fomo-slow-down/)** — *Hacker News*
 > Domo's chief design officer Chris Willis calls out AI companies for pushing technology prematurely, arguing AI models are "a product without a spec" and "fear is not a durable strategy for innovating."
-
 
 ### May 17, 2026
 
@@ -312,7 +309,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **[I Turned a $80 RK3562 Android Tablet Into a Debian Linux Workstation](news/rk3562-android-tablet-debian-linux/)** — *Hacker News / GitHub*
 > A developer documented how to transform a cheap $80 Doogee U10 Android tablet into a full Debian Linux workstation with GPU acceleration, Wi-Fi, and even local NPU-based LLM inference.
-
 
 ### May 16, 2026
 
@@ -376,7 +372,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[AI-generated code is 'pain waiting to happen'](news/2026-05-16-the-register-ai-generated-code-pain-waiting/)** — *The Register*
 > Lightrun's Moshe Sambol warns that the AI coding boom is piling up technical debt, with managers pushing AI adoption faster than developers can learn to use the tools effectively. He describes incidents where AI agents introduced subtle bugs that took entire afternoons to debug.
 
-
 ### May 15, 2026
 
 **[Observability and human intuition in an AI world](news/2026-05-15-stackoverflow-blog-observability-human-intuition-ai-world/)** — *Stack Overflow Blog*
@@ -415,7 +410,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[No Dumb Questions: What is cloud computing and why is everyone doing it?](news/2026-05-15-stackoverflow-blog-no-dumb-questions-cloud-computing/)** — *Stack Overflow Blog*
 > Stack Overflow's new 'No Dumb Questions' series starts with the basics of cloud computing, joined by infrastructure tech lead Josh Zhang to explain the cloud, compute, and data centers in accessible terms.
 
-
 ### May 14, 2026
 
 **[Anthropic's Bun Rust rewrite merged at speed of AI](news/anthropic-bun-rust-rewrite-merged/)** — *The Register*
@@ -423,7 +417,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **[Moonrepo Releases Moon v2.0 with WASM Plugin Toolchains and Overhauled CLI](news/2026-05-14-infoq-moonrepo-v2-wasm-plugin/)** — *InfoQ*
 > Moonrepo released moon v2.0, its first major update featuring a WASM plugin-based toolchain system, support for JSON and TOML config formats, a restructured CLI, enhanced task inheritance, and improved Docker integration.
-
 
 ### May 13, 2026
 
@@ -439,7 +432,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[How Braze's CTO is rethinking engineering for the agentic era](news/2026-05-13-stackoverflow-blog-braze-cto-rethinking-engineering-agentic/)** — *Stack Overflow Blog*
 > Braze co-founder and CTO Jon Hyman shares how he's led engineering through nearly 15 years of growth and how the organization transformed into an AI-first team in just a few months.
 
-
 ### May 12, 2026
 
 **[You Shipped It Fast. But Did You Ship It Right?](news/2026-05-12-stackoverflow-blog-shipped-fast-shipped-right/)** — *Stack Overflow Blog*
@@ -448,15 +440,12 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[Nearly 50 Years Later, WKRP in Cincinnati Becomes a Real Radio Station](news/2026-05-12-hacker-news-wkrp-real-radio-station/)** — *Hacker News*
 > The fictional radio station from the classic sitcom WKRP in Cincinnati is becoming a real FM radio station, nearly 50 years after the show first aired. A nostalgic cultural milestone for fans of the series.
 
-
 ### May 11, 2026
 
 **[Inside Claude Code Auto Mode: Anthropic's Autonomous Coding](news/claude-code-auto-mode-anthropic/)** — *InfoQ*
 > Anthropic introduced auto mode in Claude Code, enabling multi-step software development workflows with reduced manual intervention. The feature combines automated execution with layered safety mechanisms, allowing developers to delegate complex coding tasks to AI agents while maintaining oversight.
 
-
 ### May 06, 2026
 
 **[GitHub Copilot in Visual Studio Code, April releases](news/github-copilot-vs-code-april-releases/)** — *GitHub Blog*
 > GitHub shipped significant Copilot updates across VS Code releases v1.116 through v1.119. Copilot can now search code by meaning across any workspace and run grep-style queries across GitHub repos and organizations, marking a leap from simple autocomplete to intelligent code understanding.
-

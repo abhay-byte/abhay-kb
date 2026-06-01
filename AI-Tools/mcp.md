@@ -167,11 +167,13 @@ Official server from Anthropic's MCP repository. Provides safe read/write access
 | **Best For** | Codebase navigation, local file operations |
 
 **Installation**
+
 ```bash
 npx -y @modelcontextprotocol/server-filesystem
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -203,11 +205,13 @@ Official Git server from Anthropic's MCP repository. Provides tools for reading,
 | **Best For** | Code review, git log analysis, branch inspection |
 
 **Installation**
+
 ```bash
 uvx mcp-server-git
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -220,6 +224,7 @@ uvx mcp-server-git
 ```
 
 **Features:**
+
 - **Commit history:** Read commit messages, authors, dates
 - **Branch listing:** List and inspect branches
 - **File diff:** Show diffs between commits
@@ -257,6 +262,7 @@ Two options available — the official server from GitHub and the Anthropic MCP 
 | **Best For** | General GitHub API access |
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -272,6 +278,7 @@ Two options available — the official server from GitHub and the Anthropic MCP 
 ```
 
 **Using Claude's managed endpoint:**
+
 ```json
 {
   "mcpServers": {
@@ -285,6 +292,7 @@ Two options available — the official server from GitHub and the Anthropic MCP 
 **Token setup:** Create at [github.com/settings/tokens](https://github.com/settings/tokens) — use fine-grained tokens scoped to specific repos.
 
 **Troubleshooting:**
+
 - **Token not found:** Ensure `GITHUB_TOKEN` is set and valid
 - **403 Forbidden:** Check token scopes (needs `repo` permission)
 - **Rate limited:** GitHub has API rate limits (5000 req/hour for authenticated users)
@@ -303,11 +311,13 @@ Provides read-only access to PostgreSQL databases. Good for querying schemas, ru
 | **Best For** | Backend development, database querying, schema analysis |
 
 **Installation**
+
 ```bash
 npx -y @modelcontextprotocol/server-postgres
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -323,6 +333,7 @@ npx -y @modelcontextprotocol/server-postgres
 ```
 
 **Features:**
+
 - **Schema introspection:** Agent can read table structures, columns, types
 - **Query execution:** Run SELECT queries safely (read-only)
 - **Transaction safety:** No write operations prevent data corruption
@@ -343,6 +354,7 @@ Provides read/write access to SQLite databases. Good for local development, prot
 | **Best For** | Local development, data inspection, quick prototyping |
 
 **Available packages on npm:**
+
 | Package | Version | Notes |
 |---------|---------|-------|
 | `@easy-mcps/sqlite-mcp-server` ✅ | 1.0.7 | Stable, actively maintained — recommended |
@@ -351,11 +363,13 @@ Provides read/write access to SQLite databases. Good for local development, prot
 | `mcp-server-sqlite-npx` ✅ | 0.8.0 | Smithery-compatible |
 
 **Installation**
+
 ```bash
 npx -y @easy-mcps/sqlite-mcp-server
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -368,6 +382,7 @@ npx -y @easy-mcps/sqlite-mcp-server
 ```
 
 **Features:**
+
 - **Full SQL access:** SELECT, INSERT, UPDATE, DELETE
 - **Schema inspection:** Read table structures, indexes, triggers
 - **Transaction support:** BEGIN/COMMIT transactions
@@ -386,6 +401,7 @@ Provides access to Slack channels, messages, and threads. Good for team communic
 | **Best For** | Team communication, message retrieval, channel management |
 
 **Installation**
+
 ```bash
 npx -y @modelcontextprotocol/server-slack
 ```
@@ -408,6 +424,7 @@ npx -y @modelcontextprotocol/server-slack
 ```
 
 **Troubleshooting:**
+
 - **"not_in_channel" error:** Bot needs to be invited to the channel first
 - **Rate limiting:** Slack has API limits for team workspaces
 
@@ -424,6 +441,7 @@ Provides internet search and web page fetching capabilities.
 | **Best For** | Research, documentation lookup, current information |
 
 **Installation**
+
 ```bash
 npx -y @modelcontextprotocol/server-brave-search
 ```
@@ -445,6 +463,7 @@ npx -y @modelcontextprotocol/server-brave-search
 ```
 
 **Features:**
+
 - **Web search:** Query Brave Search API
 - **Page fetching:** Extract content from URLs
 - **HTML-to-text:** Convert web pages to readable text
@@ -465,11 +484,13 @@ Provides headless browser automation capabilities. Supports web scraping, testin
 | **Best For** | Web scraping, automated testing, web interaction |
 
 **Installation**
+
 ```bash
 npx -y @modelcontextprotocol/server-puppeteer
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -482,6 +503,7 @@ npx -y @modelcontextprotocol/server-puppeteer
 ```
 
 **Features:**
+
 - **Page navigation:** Visit URLs, navigate within pages
 - **Screenshot capture:** Take screenshots as base64
 - **JavaScript execution:** Run custom scripts in browser context
@@ -503,11 +525,13 @@ Microsoft's Playwright-based MCP server for browser automation. More feature-ric
 | **Best For** | Cross-browser testing, modern web automation |
 
 **Installation**
+
 ```bash
 npx -y @playwright/mcp
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -520,6 +544,7 @@ npx -y @playwright/mcp
 ```
 
 **Features:**
+
 - **Multi-browser:** Chromium, Firefox, WebKit support
 - **Accessibility snapshots:** Read page structure via a11y tree
 - **Network mocking:** Intercept and modify network requests
@@ -542,11 +567,13 @@ Provides persistent memory storage across agent sessions. Good for long-running 
 | **Best For** | Long-running agents, context persistence, cross-session memory |
 
 **Installation**
+
 ```bash
 npx -y @modelcontextprotocol/server-memory
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -562,6 +589,7 @@ npx -y @modelcontextprotocol/server-memory
 ```
 
 **Features:**
+
 - **Persistent storage:** Memory survives agent restarts
 - **Session-scoped:** Different agents have separate memory
 - **Search:** Retrieve memories by key or content
@@ -590,6 +618,7 @@ AgentMemory provides persistent, cross-session memory for coding agents. Built o
 | **Best For** | Cross-session memory, context persistence, project awareness |
 
 **Installation:**
+
 ```bash
 # Install the memory server (one-time)
 npm install -g @agentmemory/agentmemory
@@ -601,6 +630,7 @@ agentmemory
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -616,6 +646,7 @@ agentmemory
 ```
 
 **Features (53 tools):**
+
 | Category | Tools |
 |----------|-------|
 | **Core** | `memory_recall`, `memory_save`, `memory_smart_search`, `memory_sessions` |
@@ -645,11 +676,13 @@ Enhances agent reasoning with structured thinking chains. Good for complex probl
 | **Best For** | Complex problems, multi-step reasoning, analysis |
 
 **Installation**
+
 ```bash
 npx -y @modelcontextprotocol/server-sequential-thinking
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -662,6 +695,7 @@ npx -y @modelcontextprotocol/server-sequential-thinking
 ```
 
 **Features:**
+
 - **Thinking chains:** Agent shows step-by-step reasoning
 - **Tree visualization:** See decision paths
 - **Context management:** Track what information is considered
@@ -683,11 +717,13 @@ Official Time server from Anthropic's MCP repository. Provides current time and 
 | **Best For** | Timezone-aware agents, scheduling, timestamps |
 
 **Installation**
+
 ```bash
 uvx mcp-server-time
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -700,6 +736,7 @@ uvx mcp-server-time
 ```
 
 **Features:**
+
 - **Current time:** Get current time in specified timezone
 - **Timezone conversion:** Convert between timezones
 - **Date calculations:** Add/subtract time, get day of week
@@ -719,11 +756,13 @@ An MCP server that enables context-aware agent behaviors with mode switching for
 | **Best For** | Context-aware prompting, mode-based agent behavior |
 
 **Installation**
+
 ```bash
 npx -y context-mode
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -736,6 +775,7 @@ npx -y context-mode
 ```
 
 **Features:**
+
 - **Mode switching:** Toggle between development, review, debug modes
 - **Context awareness:** Provides contextual prompts based on mode
 - **Workflow integration:** Adapts agent behavior to current task
@@ -755,11 +795,13 @@ A context-aware MCP server by Upstash that provides relevant context from extern
 | **Best For** | RAG-based context injection, external knowledge retrieval |
 
 **Installation**
+
 ```bash
 npx @upstash/context7-mcp --api-key YOUR_API_KEY
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -772,6 +814,7 @@ npx @upstash/context7-mcp --api-key YOUR_API_KEY
 ```
 
 **Features:**
+
 - **External context:** Fetch relevant context from external sources
 - **RAG integration:** Retrieve-augment-generate pipeline
 - **Knowledge injection:** Provide agents with up-to-date external information
@@ -792,11 +835,13 @@ Provides privacy-focused web search capabilities through DuckDuckGo search engin
 | **Best For** | Privacy-respecting web search, research |
 
 **Installation**
+
 ```bash
 npx duckduckgo-mcp-server
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -809,6 +854,7 @@ npx duckduckgo-mcp-server
 ```
 
 **Features:**
+
 - **Web search:** Query DuckDuckGo search engine
 - **Privacy:** No tracking, no API key required
 - **Instant answers:** Get direct answers where available
@@ -828,11 +874,13 @@ Enables AI agents to interact with Android devices — take screenshots, tap, ty
 | **Best For** | Android automation, UI testing, device control |
 
 **Installation**
+
 ```bash
 uvx --python 3.13 android-mcp
 ```
 
 **Configuration:** Requires ADB connected to your Android device:
+
 ```bash
 # Connect device via USB/Wi-Fi
 adb devices
@@ -850,6 +898,7 @@ adb devices
 ```
 
 **Features:**
+
 - **Screen capture:** Read device screen content
 - **UI interaction:** Tap, swipe, type on device
 - **App control:** Launch/kill apps, read notifications
@@ -871,11 +920,13 @@ Lets coding agents control and inspect a live Chrome browser — reliable automa
 | **Best For** | Browser automation, debugging, performance tracing, console/network inspection |
 
 **Installation**
+
 ```bash
 npx -y chrome-devtools-mcp@latest
 ```
 
 **Configuration:**
+
 ```json
 {
   "mcpServers": {
@@ -888,6 +939,7 @@ npx -y chrome-devtools-mcp@latest
 ```
 
 **Slim (headless) mode** for simpler browsing tasks:
+
 ```json
 {
   "mcpServers": {
@@ -900,6 +952,7 @@ npx -y chrome-devtools-mcp@latest
 ```
 
 **Features:**
+
 - **Performance insights:** Record traces, extract actionable performance data (uses Chrome CrUX API for field data)
 - **Advanced debugging:** Analyze network requests, capture screenshots, inspect console with source-mapped stack traces
 - **Reliable automation:** Built on Puppeteer — automatically waits for action results

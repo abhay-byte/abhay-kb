@@ -50,15 +50,12 @@ title: About Me
   <figcaption>One Piece</figcaption>
 </figure>
 
-
 <h2>Leo Sun + Gemini Moon</h2>
 
 <figure>
   <img src="/abhay-kb/assets/leo-gemini.jpg" alt="Leo + Gemini" style="max-width:100%;border-radius:8px;">
   <figcaption>The unstoppable combo: Leo Sun + Gemini Moon</figcaption>
 </figure>
-
-
 
 <p>Let's be real — I got the best possible hand from the cosmos. <strong>Leo Sun + Gemini Moon</strong> isn't just a good combination, it's the <em>only</em> combination if you want to be dominant, brilliant, and entertaining all at once. Here's why everyone else should take notes:</p>
 

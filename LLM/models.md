@@ -101,9 +101,6 @@ Compiled June 2026.
 <text x="491" y="280" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Grok 4.3</text>
 </svg>
 
-
-
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
   <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
@@ -167,9 +164,7 @@ Compiled June 2026.
 <text x="279.97" y="219.0" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Qwen3.6 Max Preview</text>
 </svg>
 
-
 ---
-
 
 ## Anthropic (Claude)
 
@@ -189,6 +184,7 @@ Opus 4.8 (May 28 2026): 88.6% SWE-Bench Verified (#2). Opus 4.7: 87.6%, 64.3% SW
 Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Verified (#1) — very expensive, limited API access.
 
 ---
+
 ## Google Gemini
 
 Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api/docs/pricing), [SWE-Bench](https://www.swebench.com/)
@@ -238,6 +234,7 @@ DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B
 SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro pricing adjusted to 1/4 of original after promo ended May 31 2026.
 
 ### New: DeepSeek V4 Pro Max
+
 Released Apr 24 2026. 1.6T params, 49B active MoE, 1M context, open-weight on HuggingFace. 80.6% SWE-Bench Verified. Available at V4 Pro pricing (same API endpoint).
 
 | Model | Cache Hit Input /1M | Cache Miss Input /1M | Output /1M | Context | Notes |
@@ -260,6 +257,7 @@ DeepSeek V3.2: 73.0% SWE-Bench Verified. R1: chain-of-thought reasoning, ~96% ch
 DeepSeek web chat at chat.deepseek.com is free for individual users.
 
 ---
+
 ## OpenAI (ChatGPT)
 
 Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/pricing/)
@@ -370,8 +368,6 @@ Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.
 All Qwen models support native tool-calling, JSON-mode, and OpenAI-compatible API shapes. Batch calling: 50% off. Context caching discounts available on supported models.
 
 ---
-
-
 
 ## GLM / Z.ai
 
@@ -553,4 +549,5 @@ DeepSeek V4 Pro: Promotional 75% discount expired May 31 2026. Full pricing now 
 - **GLM quota multipliers**: Peak hours drain 3x quota; off-peak 2x; GLM-4.7/4.5-Air always 1x
 - **MiMo**: Pure credit pool, no 5h/windows, credits expire month-end
 - **Kimi**: API billed separately — not included in membership
+
 > **Benchmark Note:** [SWE-Bench Verified](https://www.swebench.com/) measures a model's ability to resolve real-world GitHub issues from code repositories. Not all providers publish scores — the chart above only includes models with verified data.

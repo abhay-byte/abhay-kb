@@ -145,6 +145,7 @@ ACT measures the fraction of a software product's source instructions that under
 `Annual Maintenance Cost = Development Cost × ACT`
 
 **Typical ACT values:**
+
 - Stable system: 10-20% per year
 - Active development: 30-50% per year
 - Rapidly evolving: 60%+ per year
@@ -156,6 +157,7 @@ Cost increases exponentially with lack of maintenance:
 `Maintenance Cost = C × exp(D × Time Since Last Redesign)`
 
 Where:
+
 - C = initial maintenance cost
 - D = design deterioration factor
 - Time = elapsed since last significant redesign
@@ -275,6 +277,7 @@ Gradually migrate legacy functionality to new services:
 CM tracks and controls changes to software artifacts throughout the lifecycle.
 
 **Key Functions:**
+
 - **Identification** — uniquely identify all configuration items (CI)
 - **Version Control** — track versions of all artifacts
 - **Change Control** — manage changes to baselines

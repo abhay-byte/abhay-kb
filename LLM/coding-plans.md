@@ -83,6 +83,7 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). 1 AI credit = $0.01 USD. Over-usage billed at these rates.
 
 **OpenAI:**
+
 | Model | Input /1M | Cached Input | Output /1M | Release Status |
 |-------|----------:|:------------:|-----------:|----------------|
 | GPT-5.5 | $5.00 | $0.50 | $30.00 | GA |
@@ -96,6 +97,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | GPT-5 mini | $0.25 | $0.025 | $2.00 | GA |
 
 **Anthropic (includes cache write cost):**
+
 | Model | Input /1M | Cached Input | Cache Write | Output /1M |
 |-------|----------:|:------------:|:-----------:|-----------:|
 | Claude Opus 4.8 | $5.00 | $0.50 | $6.25 | $25.00 |
@@ -108,6 +110,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | Claude Haiku 4.5 | $1.00 | $0.10 | $1.25 | $5.00 |
 
 **Google:**
+
 | Model | Input /1M | Cached Input | Output /1M | Release Status |
 |-------|----------:|:------------:|-----------:|----------------|
 | Gemini 3.5 Flash | $1.50 | $0.15 | $9.00 | GA |
@@ -116,6 +119,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | Gemini 3 Flash | $0.50 | $0.05 | $3.00 | Public preview |
 
 **Fine-tuned (GitHub):**
+
 | Model | Input /1M | Cached Input | Output /1M | Release Status |
 |-------|----------:|:------------:|-----------:|----------------|
 | Raptor mini | $0.25 | $0.025 | $2.00 | Public preview |
@@ -313,7 +317,6 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 
 ---
 
-
 ## GPT Codex (OpenAI) [Pricing](https://developers.openai.com/codex/pricing)
 
 OpenAI's agentic coding tool — CLI, IDE extension, ChatGPT app, and cloud. Codex is **bundled into ChatGPT plans** (no separate subscription).  
@@ -370,8 +373,6 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 > **Personal Review (June 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. Note: the 2x Pro $100 and 25x Pro $200 promos both expired May 31.
 
 ---
-
-
 
 ## Antigravity 2.0 (Google IDE) [Download](https://antigravity.google/download) - [Pricing](https://antigravity.google/pricing)
 
@@ -444,7 +445,6 @@ Google restructured its AI subscription lineup at I/O 2026. The top plan was res
 > **Personal Review (June 2026):** I've used it extensively. The best thing is having Claude models (Sonnet, Opus 4.7 & 4.8) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues remain. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
 
 ---
-
 
 ## Xiaomi MiMo Token Plan [Subscribe](https://platform.xiaomimimo.com/token-plan)
 

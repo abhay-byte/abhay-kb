@@ -5,6 +5,7 @@ Webhooks enable real-time, event-driven email processing. When events occur (lik
 ## Event Types
 
 ### message.received
+
 Triggered when a new email arrives. Contains full message and thread data.
 
 **Use case:** Auto-reply to support emails, process attachments, route messages
@@ -36,6 +37,7 @@ Triggered when a new email arrives. Contains full message and thread data.
 ```
 
 ### message.sent
+
 Triggered when you successfully send a message.
 
 ```json
@@ -54,9 +56,11 @@ Triggered when you successfully send a message.
 ```
 
 ### message.delivered
+
 Triggered when your message reaches the recipient's mail server.
 
 ### message.bounced
+
 Triggered when a message fails to deliver.
 
 ```json
@@ -72,6 +76,7 @@ Triggered when a message fails to deliver.
 ```
 
 ### message.complained
+
 Triggered when recipients mark your message as spam.
 
 ## Local Development Setup
@@ -129,6 +134,7 @@ if __name__ == '__main__':
 ### Step 4: Start Services
 
 Terminal 1 - Start ngrok:
+
 ```bash
 ngrok http 3000
 ```
@@ -136,6 +142,7 @@ ngrok http 3000
 Copy the forwarding URL (e.g., `https://abc123.ngrok-free.app`)
 
 Terminal 2 - Start webhook receiver:
+
 ```bash
 python webhook_receiver.py
 ```

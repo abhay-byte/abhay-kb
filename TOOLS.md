@@ -58,6 +58,7 @@ Add whatever helps you do your job. This is your cheat sheet.
 A comprehensive reference of AI-powered terminal/CLI coding agents. Great for understanding the landscape and choosing the right tool for the job.
 
 ### Claude Code
+
 - **By:** Anthropic
 - **Install:** `npm install -g @anthropic-ai/claude-code`
 - **GitHub:** [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code)
@@ -67,6 +68,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Reads full codebase, edits files across project, runs tests, git workflows, natural language commands. First released Feb 2025 (beta with Claude 3.7 Sonnet), GA May 2025. Most popular premium CLI agent.
 
 ### Codex CLI
+
 - **By:** OpenAI
 - **Install:** Via GitHub (Rust binary)
 - **GitHub:** [github.com/openai/codex](https://github.com/openai/codex)
@@ -76,6 +78,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Built in Rust, reads/edits/runs code locally, git workflows, approval modes, MCP server support, multi-agent workflows. Free with ChatGPT plans. VS Code/Cursor/Windsurf IDE extensions available.
 
 ### Gemini CLI
+
 - **By:** Google
 - **Install:** Via GitHub or geminicli.com
 - **GitHub:** [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
@@ -86,6 +89,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** ReAct loop agent, local/remote MCP servers, code analysis, bug fixing, test coverage, content creation. Open-source under Apache 2.0.
 
 ### Aider
+
 - **By:** Paul Gauthier (community)
 - **Install:** `pip install aider-chat`
 - **Site:** [aider.chat](https://aider.chat/)
@@ -95,6 +99,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Git-native commits, multi-file edits, codebase awareness, map of repo architecture, auto-commit with descriptive messages, supports 40K+ GitHub stars, 5.7M+ PyPI installs. One of the most mature open-source options.
 
 ### OpenCode
+
 - **By:** SST / Anomaly team
 - **Install:** `npx opencode` or Go binary
 - **GitHub:** [github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
@@ -104,6 +109,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Rich TUI built with Bubble Tea, vim-like editing, persistent SQLite sessions, LSP integration for 40+ languages, 160K+ GitHub stars, 7.5M+ monthly users. Leading open-source Claude Code alternative. No subscription, bring your own key.
 
 ### Qwen Code
+
 - **By:** Alibaba (QwenLM)
 - **Install:** `npm install -g @qwen/qwen-code` or pip
 - **GitHub:** [github.com/QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)
@@ -114,6 +120,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Optimized for Qwen series models, multi-protocol flexible providers, codebase understanding, MCP servers, IDE integration, workflows, automation. Alibaba Cloud Coding Plan support.
 
 ### Junie CLI
+
 - **By:** JetBrains
 - **Install:** Via JetBrains Toolbox or GitHub
 - **GitHub:** [github.com/JetBrains/junie](https://github.com/JetBrains/junie)
@@ -123,6 +130,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Interactive terminal interface, code review, write/modify code, CI/CD pipeline integration, IDE integration with JetBrains IDEs, PR review capabilities. Built for real-world dev workflows.
 
 ### Kiro
+
 - **By:** Amazon Web Services (AWS)
 - **Install:** Via kiro.dev/cli/
 - **Site:** [kiro.dev](https://kiro.dev/)
@@ -132,6 +140,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Spec-driven development methodology — generates requirements docs, technical designs, implementation task lists before coding. CLI agents for writing/reviewing/modifying code, automating workflows. Released in public preview July 2025.
 
 ### Kilo Code
+
 - **By:** Kilo-Org
 - **Install:** VS Code Marketplace extension
 - **GitHub:** [github.com/Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode)
@@ -141,6 +150,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Superset of Roo Code/Cline — planning, generation, refactoring, debugging, orchestration. Transparent pricing matching provider rates. Free tier available. Also has a standalone Kilo platform.
 
 ### Cline
+
 - **By:** Cline (Saoud Rizwan)
 - **Install:** VS Code Marketplace extension, or standalone CLI via npm
 - **GitHub:** [github.com/cline/cline](https://github.com/cline/cline)
@@ -151,6 +161,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Full agentic capabilities — create/edit files, run terminal commands, browser access, multi-step tasks, human-in-the-loop (approval-based). Reads project structure, understands file relationships. Standalone CLI for headless/CI/CD use.
 
 ### Continue
+
 - **By:** Continue Dev
 - **Install:** VS Code / JetBrains plugin, or CLI
 - **GitHub:** [github.com/continuedev/continue](https://github.com/continuedev/continue)
@@ -160,6 +171,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** IDE integration (VS Code, JetBrains), source-controlled AI checks enforceable in CI, model-agnostic, tab autocomplete, chat, inline editing, custom slash commands, rules files. Focus on developer freedom and local model support.
 
 ### Goose
+
 - **By:** Block (formerly Square)
 - **Install:** Desktop app or CLI via npm/cargo
 - **GitHub:** [github.com/aaif-goose/goose](https://github.com/aaif-goose/goose)
@@ -169,6 +181,7 @@ A comprehensive reference of AI-powered terminal/CLI coding agents. Great for un
 - **Features:** Not just for code — shell commands, file editing, code execution, multi-step workflows, research, writing, automation, data analysis. Native MCP integration for extensibility. Desktop app for macOS/Linux/Windows + CLI. Apache 2.0 license. Launched Jan 2025 by Block's OSPO.
 
 ### Amp
+
 - **By:** Sourcegraph
 - **Install:** CLI or VS Code extension
 - **Site:** [ampcode.com](https://ampcode.com/)

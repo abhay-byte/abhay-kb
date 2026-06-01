@@ -1,6 +1,7 @@
 ## Job Search History
 
 ### 27-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 1 | Graduate Software Engineer | HPE | Bangalore/Chennai | Best in Industry | https://careers.hpe.com/us/en/job/1207072/Software-Engineer-I?utm_source=linkedin |
@@ -9,6 +10,7 @@
 | 4 | Graduate Apprentice Trainee | Syniverse | Bangalore | Competitive Stipend | https://freshershunt.in/syniverse-off-campus-drive-2026/ |
 
 ### 23-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 1 | Graduate Engineer Trainee | Ingram Micro | Mumbai/Chennai | Best in Industry | https://ingrammicro.wd5.myworkdayjobs.com/en-US/IngramMicro/job/Mumbai-India/Graduate-Engineer-Trainee_R-115589 |
@@ -24,11 +26,13 @@
 | 11 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | https://freshershunt.in/natwest-group-internship-2026-bangalore/ |
 
 ### 22-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | — | No new unique job listings found today | — | — | — | — |
 
 ### 21-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 1 | Full Stack Engineer | Optum | Noida | — | https://offcampusjobs4u.com/optum-recruitment-2026-full-stack-engineer-noida/ |
@@ -48,6 +52,7 @@
 | 15 | Associate Engineer Software | Empower (Freshershunt) | Bangalore | — | https://freshershunt.in/empower-off-campus-drive-2026-associate-engineer-software-bangalore/ |
 
 ### 15-05-2026
+
 | # | Title | Company | Location | Link |
 |---|-------|---------|----------|------|
 | 1 | Software System Engineer | HP | Bangalore | https://jobsnet.in/hp-off-campus-drive-hiring-software-system-engineer/ |
@@ -62,6 +67,7 @@
 | 10 | Trainee Software Development Apprentice | NEC Corporation | Chennai (Hybrid) | https://jobsnet.in/nec-corporation-off-campus-drive-software-development-apprentice/ |
 
 ### 15-05-2026 (Evening Batch)
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 11 | Software Engineer I | American Express | Bengaluru (Hybrid) | ~6 LPA | https://freshershunt.in/american-express-off-campus-drive-2026/ |
@@ -89,6 +95,7 @@
 | 33 | Executive - Software Engineering | KPMG | Pune | ~5-7 LPA | https://freshershunt.in/kpmg-off-campus-drive-2026/
 
 ### 15-05-2026 (Evening Batch 2)
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 34 | Software Engineer - Land Systems | L&T | Mumbai | — | https://freshershunt.in/l-and-t-software-engineer-mumbai-2026/ |
@@ -99,6 +106,7 @@
 | 39 | Associate Software Engineer (Junior) | Iron Mountain | Bangalore | — | https://www.fresherstech.com/iron-mountain-off-campus/ | |
 
 ### 15-05-2026 (Evening Batch 3 - Cron)
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 40 | Software Engineer | Stadium | Remote (Training in Delhi) | — | https://offcampusjobs4u.com/stadium-off-campus-drive-2026-software-engineer-remote/ |
@@ -110,6 +118,7 @@
 | 46 | Graduate Engineer Trainee / Full Stack Dev | Infosys | Pan India | ~6.25-21 LPA | https://careerforfreshers.com/jobs/infosys-off-campus-hiring-2026-graduate-engineer-trainee-%E2%82%B96-25-lpa-%E2%82%B921-lpa-salary-with-bonus-freshers-eligible-apply-online/ |
 
 ### 16-05-2026 (Midnight Cron)
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 47 | Graduate Recruitment Program | mthree | Across India | ~9.15 LPA | https://offcampusjobs4u.com/mthree-off-campus-drive-2026-graduate-program-9-lpa/ |
@@ -122,6 +131,7 @@
 | 54 | Intern (Software Engineering) | Wipro | Bangalore | — | https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/ |
 
 ### 17-05-2026 (Daily Cron)
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 55 | IT Associate Trainee | Leidos | Pune | Best in Industry | https://jobsnet.in/leidos-off-campus-drive-it-trainee-freshers/ |
@@ -129,6 +139,7 @@
 | 57 | Software Engineer 1 | Dell Technologies | Bangalore | Best in Industry | https://freshershunt.in/dell-technologies-off-campus-drive-2026/ |
 
 ### 17-05-2026 (Evening Batch)
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 58 | Software Developer 1 | Oracle | Bengaluru/Hyderabad | Not disclosed | https://freshershunt.in/oracle-off-campus-drive-2026/ |
@@ -139,23 +150,27 @@
 | 63 | Engineering Intern | PayU | Bengaluru | Competitive Stipend | https://freshershunt.in/payu-off-campus-drive-2026/ |
 
 ### 18-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 64 | Software Development Engineer | CSG | Remote | — | https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/ |
 | 65 | Associate Software Engineer | Epsilon | Bengaluru | Not disclosed | https://freshershunt.in/epsilon-off-campus-drive-2026/ |
 
 ### 19-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 66 | Associate Software Engineer (HPEL) | Smartsheet | Bangalore | ₹13 LPA | https://freshershunt.in/smartsheet-off-campus-drive-2026/ |
 
 ### 20-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 67 | Technology Analyst Trainee (Apprentice) | Fiserv | Pune | Competitive Stipend | https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/ |
 | 68 | Associate Software Maintenance Engineer Trainee | Red Hat | Pune | High in Industry | https://jobsnet.in/red-hat-off-campus-drive-associate-software-maintenance-engineer-trainee/ |
 
 ### 24-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 1 | Associate Engineer (AWS DevOps) | Harman | Bangalore | Competitive | https://freshershunt.in/harman-off-campus-drive-2026-bangalore/ |
@@ -165,6 +180,7 @@
 | 5 | Software Engineer (New Grad) | Apple (via Jobsnet) | Hyderabad/Bengaluru | ₹18-35 LPA | https://jobsnet.in/apple-off-campus-drive-hiring-new-grads-as-software-engineer/ |
 
 ### 25-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 1 | Systems/Software Engineer I (Entry Level) | HPE | Bangalore | Best in Industry | https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/ |
@@ -173,12 +189,14 @@
 | 4 | Graduate Engineer Trainee (GET) | HCLTech | Pan India | ~4 LPA | https://fresherjobinfo.in/hcltech-freshers-hiring-2026/ | |
 
 ### 26-05-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 1 | Apprentice Software Developer Trainee | Philips | Bangalore | Competitive Stipend | https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/ |
 | 2 | Software Engineering Intern | Microsoft | Across India | Competitive Stipend | https://offcampusjobs4u.com/microsoft-internship-2026-software-engineering-intern-india/ |
 
 ### 01-06-2026
+
 | # | Title | Company | Location | Salary | Link |
 |---|-------|---------|----------|--------|------|
 | 1 | Associate Software Engineer | S&P Global Mobility | Gurgaon | As per Industry Standard | https://mobility.wd503.myworkdayjobs.com/Mobility/job/Gurugram-Haryana/Associate--Software-Engineer_10?source=LinkedIn |

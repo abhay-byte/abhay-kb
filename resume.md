@@ -35,6 +35,7 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 ## Experience
 
 ### Avalon Information Systems — *Backend Developer*
+
 *Jan 2026 – Jun 2026 · New Delhi, IN*
 
 - Contributed to **OpenEMIS**, an open-source Education Management Information System used globally for managing student data and institutional records.
@@ -42,6 +43,7 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 - Collaborated with a global team to enhance system reliability and data processing capabilities for national-level education deployments.
 
 ### Gamified — *Game Developer Intern*
+
 *Jul 2023 – Sep 2023 · Remote*
 
 - Developed and implemented user interfaces for over 10 game scenes with 100% design accuracy using C# and Unity, reducing iteration time by 25%.
@@ -53,15 +55,19 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 ## Projects
 
 ### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 99
+
 A Kotlin-powered Linux environment manager for Android, providing seamless developer tooling directly on mobile devices with automated setup and shell integration.
 
 ### [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 68
+
 Comprehensive CPU benchmarking tool for Android with 10+ performance tests, real-time thermal monitoring, and battery-efficient background processing. Widespread adoption on F-Droid.
 
 ### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 40
+
 A Kotlin-based multimedia organization and processing tool for Android, built with modern architecture patterns for efficient media management.
 
 ### [nexus](https://github.com/abhay-byte/nexus) — *TypeScript* ⭐ 9
+
 A multi-agent AI terminal workspace built with Tauri and React, enabling side-by-side execution of 10+ AI coding agents including Claude Code, Codex, and Gemini CLI.
 
 ---

@@ -360,13 +360,14 @@ A data dictionary is a **centralized repository** of information about data elem
 
 ### Data Dictionary Notation
 
-- `= ` — composed of
+- `=` — composed of
 - `+` — and
 - `[|]` — or (choose one)
 - `{}` — iteration (one or more)
 - `()` — optional
 
 **Example:**
+
 ```
 Customer Address = Street + City + State + ZipCode
 Customer Name = [First Name | Last Name]

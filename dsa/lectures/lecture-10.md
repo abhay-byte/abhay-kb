@@ -5,6 +5,7 @@ title: Lecture 10 — 1D Arrays (Sorting & Search)
 
 
 No LeetCode / Codeforces questions found. Content covers:
+
 - Bubble Sort
 - Selection Sort
 - Insertion Sort
@@ -14,6 +15,7 @@ No LeetCode / Codeforces questions found. Content covers:
 - Count Occurrences in Sorted Array
 
 **Homework problems:**
+
 - Last Occurrence in Sorted Array
 - Count Occurrences in Sorted Array
 

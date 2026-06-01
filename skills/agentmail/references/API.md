@@ -19,6 +19,7 @@ POST /v0/inboxes
 ```
 
 **Request:**
+
 ```json
 {
   "username": "my-agent",           // Optional: custom username
@@ -29,6 +30,7 @@ POST /v0/inboxes
 ```
 
 **Response:**
+
 ```json
 {
   "pod_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
@@ -47,6 +49,7 @@ GET /v0/inboxes?limit=10&page_token=eyJwYWdlIjoxfQ==
 ```
 
 **Response:**
+
 ```json
 {
   "count": 2,
@@ -71,6 +74,7 @@ POST /v0/inboxes/{inbox_id}/messages
 ```
 
 **Request:**
+
 ```json
 {
   "to": ["recipient@example.com"],          // Required: string or array
@@ -93,6 +97,7 @@ POST /v0/inboxes/{inbox_id}/messages
 ```
 
 **Response:**
+
 ```json
 {
   "message_id": "msg_123abc",
@@ -127,6 +132,7 @@ GET /v0/inboxes/{inbox_id}/threads/{thread_id}
 ```
 
 **Response:**
+
 ```json
 {
   "thread_id": "thd_789ghi",
@@ -150,6 +156,7 @@ POST /v0/webhooks
 ```
 
 **Request:**
+
 ```json
 {
   "url": "https://your-domain.com/webhook",
@@ -196,6 +203,7 @@ All errors follow this format:
 ```
 
 Common error codes:
+
 - `400` - Bad Request (validation errors)
 - `401` - Unauthorized (invalid API key)
 - `404` - Not Found (resource doesn't exist)
@@ -205,6 +213,7 @@ Common error codes:
 ## Rate Limits
 
 AgentMail is designed for high-volume use with generous limits:
+
 - API requests: 1000/minute per API key
 - Email sending: 10,000/day (upgradeable)
 - Webhook deliveries: Real-time, no limits

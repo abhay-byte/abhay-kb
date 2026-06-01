@@ -126,6 +126,7 @@ Black-box testing derives tests from **specifications**, not code. The internal 
 Divides input data into partitions (equivalence classes) where tests from the same class uncover the same defects. One representative test per partition suffices.
 
 **Example:** Age field valid range 18-65
+
 - Valid partition: 18-65
 - Invalid partitions: less than 18, greater than 65, non-numeric
 
@@ -134,6 +135,7 @@ Divides input data into partitions (equivalence classes) where tests from the sa
 Tests the boundaries between equivalence partitions. Defects cluster at boundaries.
 
 **Example:** Age field valid range 18-65
+
 - Test values: 17, 18, 19, 64, 65, 66
 - Also: 0, max int for edge extremes
 
@@ -186,6 +188,7 @@ Required for safety-critical systems (DO-178C). Each condition independently aff
 Measures the number of linearly independent paths through code.
 
 `M = E - N + 2P` where:
+
 - E = number of edges in the control flow graph
 - N = number of nodes
 - P = number of connected components
@@ -204,6 +207,7 @@ Measures the number of linearly independent paths through code.
 Combines black-box and white-box approaches. Tests are derived from specifications (like black-box) but enhanced with knowledge of internal data structures, algorithms, and architecture (like white-box).
 
 **Common techniques:**
+
 - Matrix testing — maps functional requirements to code paths
 - Regression testing with architecture awareness — prioritize tests based on code changes
 - Integration pattern testing — test based on known integration patterns and their failure modes
@@ -392,10 +396,11 @@ Mutation testing evaluates the **quality of test suites** by introducing small c
 ### Process
 
 1. Create mutants — introduce single syntactically correct changes
+
 - Operators: `<` becomes `<=`, `true` becomes `false`, remove method body
-2. Run test suite against each mutant
-3. If tests pass on a mutant — the mutant **survived** (test gap)
-4. If tests fail on a mutant — the mutant was **killed**
+1. Run test suite against each mutant
+2. If tests pass on a mutant — the mutant **survived** (test gap)
+3. If tests fail on a mutant — the mutant was **killed**
 
 ### Metrics
 
@@ -475,6 +480,7 @@ Mutation testing evaluates the **quality of test suites** by introducing small c
 Analyzes code **without executing** it. Finds defects early in the lifecycle.
 
 **What it finds:**
+
 - Syntax errors, type mismatches
 - Null pointer dereferences
 - Buffer overflows
@@ -496,6 +502,7 @@ Analyzes code **without executing** it. Finds defects early in the lifecycle.
 Analyzes code **during execution**. Finds runtime defects that static analysis cannot.
 
 **What it finds:**
+
 - Memory leaks
 - Race conditions
 - Runtime crashes
@@ -594,12 +601,14 @@ Prioritizes testing based on the **risk of failure** and **impact of failure**.
 ### Risk Assessment Factors
 
 **Probability Factors:**
+
 - Code complexity (cyclomatic complexity)
 - Change frequency and recency
 - Defect history of the module
 - Developer experience with the technology
 
 **Impact Factors:**
+
 - Business criticality of the feature
 - Number of affected users
 - Regulatory/compliance exposure

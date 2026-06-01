@@ -1,4 +1,5 @@
 # Job Salary Cache
+
 Last updated: 15-05-2026
 
 | Company | Role | Salary (LPA) | Source |

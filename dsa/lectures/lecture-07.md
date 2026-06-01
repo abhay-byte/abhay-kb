@@ -5,6 +5,7 @@ title: Lecture 7 — Bitwise Operators
 
 
 No LeetCode / Codeforces questions found. Content covers:
+
 - Pattern printing (Pattern 8–12)
 - Bitwise operators: &, |, ^, ~, <<, >>
 - Unique Number (find single non-repeating element using XOR)
@@ -14,6 +15,7 @@ No LeetCode / Codeforces questions found. Content covers:
 - Compound assignment operators
 
 **Homework problems:**
+
 - Pattern 10 & 12 (pattern printing with odd N)
 - Longest Run of 1s — find longest consecutive 1s in binary
 - Hamming Distance — count differing bits between two ints

@@ -64,6 +64,7 @@ Do not add functionality until it is **necessary**. Building speculative feature
 Decompose the system into **cohesive, loosely coupled modules** with well-defined interfaces. Each module encapsulates a distinct concern.
 
 **Benefits:**
+
 - Independent development and testing
 - Parallel team work
 - Reusable components

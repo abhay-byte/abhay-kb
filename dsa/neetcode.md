@@ -36,6 +36,7 @@ The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern
 ## Solved Categories
 
 ### Arrays & Hashing
+
 *Solutions: [HashmapsAndArrays](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays)*
 
 | Problem | Difficulty | Solution |
@@ -51,6 +52,7 @@ The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern
 | Longest Consecutive Sequence | Medium | [View](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays) |
 
 ### Two Pointers
+
 *Solutions: [Two Pointer](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer)*
 
 | Problem | Difficulty | Solution |
@@ -62,6 +64,7 @@ The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern
 | Trapping Rain Water | Hard | [View](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer) |
 
 ### Stack
+
 *Solutions: [Stack](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack)*
 
 | Problem | Difficulty | Solution |
@@ -75,6 +78,7 @@ The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern
 | Largest Rectangle in Histogram | Hard | [View](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack) |
 
 ### Binary Search
+
 *Solutions: [BinarySearch](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch)*
 
 | Problem | Difficulty | Solution |
@@ -88,6 +92,7 @@ The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern
 | Median of Two Sorted Arrays | Hard | [View](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch) |
 
 ### Sliding Window
+
 *Solutions: [SlidingWindow](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow)*
 
 | Problem | Difficulty | Solution |
@@ -100,6 +105,7 @@ The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern
 | Sliding Window Maximum | Hard | [View](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow) |
 
 ### Linked List
+
 *Solutions: [LinkedList](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList)*
 
 | Problem | Difficulty | Solution |
@@ -121,6 +127,7 @@ The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern
 ## 📁 Solutions
 
 All solutions are in the practice repo:
+
 - [**NeetCode solutions**](https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode)
 
 ---

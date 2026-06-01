@@ -256,6 +256,7 @@
 <li><a href="#context7-mcp-server">Context7</a></li>
 <li><a href="#duckduckgo-mcp-server">DuckDuckGo</a></li>
 <li><a href="#android-mcp-server">Android MCP</a></li>
+<li><a href="#chrome-devtools-mcp-server">Chrome DevTools</a></li>
 <li><a href="#tools-supporting-mcp">Tools Supporting MCP</a></li>
 <li><a href="#best-practices">Best Practices</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
@@ -539,10 +540,12 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @modelcontextprotocol/server-filesystem
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "filesystem": {
@@ -591,10 +594,12 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>uvx mcp-server-git
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "git": {
@@ -606,6 +611,7 @@
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Commit history:</strong> Read commit messages, authors, dates</li>
 <li><strong>Branch listing:</strong> List and inspect branches</li>
@@ -675,6 +681,7 @@
 </table>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "github": {
@@ -689,6 +696,7 @@
 </code></pre>
 
 <strong>Using Claude's managed endpoint:</strong>
+
 <pre><code>{
   "mcpServers": {
     "github": {
@@ -701,6 +709,7 @@
 <strong>Token setup:</strong> Create at <a href="https://github.com/settings/tokens">github.com/settings/tokens</a> — use fine-grained tokens scoped to specific repos.
 
 <strong>Troubleshooting:</strong>
+
 <ul>
 <li><strong>Token not found:</strong> Ensure <code>GITHUB_TOKEN</code> is set and valid</li>
 <li><strong>403 Forbidden:</strong> Check token scopes (needs <code>repo</code> permission)</li>
@@ -737,10 +746,12 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @modelcontextprotocol/server-postgres
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "postgres": {
@@ -755,6 +766,7 @@
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Schema introspection:</strong> Agent can read table structures, columns, types</li>
 <li><strong>Query execution:</strong> Run SELECT queries safely (read-only)</li>
@@ -793,6 +805,7 @@
 </table>
 
 <strong>Available packages on npm:</strong>
+
 <table>
 <tr>
 <th>Package</th>
@@ -822,10 +835,12 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @easy-mcps/sqlite-mcp-server
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "sqlite": {
@@ -837,6 +852,7 @@
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Full SQL access:</strong> SELECT, INSERT, UPDATE, DELETE</li>
 <li><strong>Schema inspection:</strong> Read table structures, indexes, triggers</li>
@@ -873,6 +889,7 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @modelcontextprotocol/server-slack
 </code></pre>
 
@@ -893,6 +910,7 @@
 </code></pre>
 
 <strong>Troubleshooting:</strong>
+
 <ul>
 <li><strong>"not_in_channel" error:</strong> Bot needs to be invited to the channel first</li>
 <li><strong>Rate limiting:</strong> Slack has API limits for team workspaces</li>
@@ -924,6 +942,7 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @modelcontextprotocol/server-brave-search
 </code></pre>
 
@@ -943,6 +962,7 @@
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Web search:</strong> Query Brave Search API</li>
 <li><strong>Page fetching:</strong> Extract content from URLs</li>
@@ -980,10 +1000,12 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @modelcontextprotocol/server-puppeteer
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "puppeteer": {
@@ -995,6 +1017,7 @@
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Page navigation:</strong> Visit URLs, navigate within pages</li>
 <li><strong>Screenshot capture:</strong> Take screenshots as base64</li>
@@ -1033,10 +1056,12 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @playwright/mcp
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "playwright": {
@@ -1048,6 +1073,7 @@
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Multi-browser:</strong> Chromium, Firefox, WebKit support</li>
 <li><strong>Accessibility snapshots:</strong> Read page structure via a11y tree</li>
@@ -1087,10 +1113,12 @@
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @modelcontextprotocol/server-memory
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "memory": {
@@ -1105,6 +1133,7 @@
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Persistent storage:</strong> Memory survives agent restarts</li>
 <li><strong>Session-scoped:</strong> Different agents have separate memory</li>
@@ -1153,6 +1182,7 @@
 </table>
 
 <strong>Installation:</strong>
+
 <pre><code># Install the memory server (one-time)
 npm install -g @agentmemory/agentmemory
 
@@ -1163,6 +1193,7 @@ agentmemory
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "agentmemory": {
@@ -1177,6 +1208,7 @@ agentmemory
 </code></pre>
 
 <strong>Features (53 tools):</strong>
+
 <table>
 <tr>
 <th>Category</th>
@@ -1237,10 +1269,12 @@ agentmemory
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y @modelcontextprotocol/server-sequential-thinking
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "sequential-thinking": {
@@ -1252,6 +1286,7 @@ agentmemory
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Thinking chains:</strong> Agent shows step-by-step reasoning</li>
 <li><strong>Tree visualization:</strong> See decision paths</li>
@@ -1290,10 +1325,12 @@ agentmemory
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>uvx mcp-server-time
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "time": {
@@ -1305,6 +1342,7 @@ agentmemory
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Current time:</strong> Get current time in specified timezone</li>
 <li><strong>Timezone conversion:</strong> Convert between timezones</li>
@@ -1341,10 +1379,12 @@ agentmemory
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx -y context-mode
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "context-mode": {
@@ -1356,6 +1396,7 @@ agentmemory
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Mode switching:</strong> Toggle between development, review, debug modes</li>
 <li><strong>Context awareness:</strong> Provides contextual prompts based on mode</li>
@@ -1392,10 +1433,12 @@ agentmemory
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx @upstash/context7-mcp --api-key YOUR_API_KEY
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "context7": {
@@ -1407,6 +1450,7 @@ agentmemory
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>External context:</strong> Fetch relevant context from external sources</li>
 <li><strong>RAG integration:</strong> Retrieve-augment-generate pipeline</li>
@@ -1444,10 +1488,12 @@ agentmemory
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>npx duckduckgo-mcp-server
 </code></pre>
 
 <strong>Configuration:</strong>
+
 <pre><code>{
   "mcpServers": {
     "duckduckgo": {
@@ -1459,6 +1505,7 @@ agentmemory
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Web search:</strong> Query DuckDuckGo search engine</li>
 <li><strong>Privacy:</strong> No tracking, no API key required</li>
@@ -1495,10 +1542,12 @@ agentmemory
 </table>
 
 <strong>Installation</strong>
+
 <pre><code>uvx --python 3.13 android-mcp
 </code></pre>
 
 <strong>Configuration:</strong> Requires ADB connected to your Android device:
+
 <pre><code># Connect device via USB/Wi-Fi
 adb devices
 </code></pre>
@@ -1514,11 +1563,80 @@ adb devices
 </code></pre>
 
 <strong>Features:</strong>
+
 <ul>
 <li><strong>Screen capture:</strong> Read device screen content</li>
 <li><strong>UI interaction:</strong> Tap, swipe, type on device</li>
 <li><strong>App control:</strong> Launch/kill apps, read notifications</li>
 <li><strong>Automation:</strong> Script Android workflows</li>
+</ul>
+
+<hr>
+
+<h3>Chrome DevTools MCP Server</h3>
+
+<p>Lets coding agents control and inspect a live Chrome browser — reliable automation, in-depth debugging, and performance analysis via Chrome DevTools.</p>
+
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a></li>
+<li><strong>npm:</strong> <code>chrome-devtools-mcp</code></li>
+</ul>
+
+<table>
+<tr>
+<th>Aspect</th>
+<th>Details</th>
+</tr>
+<tr>
+<td><strong>Install</strong></td>
+<td><code>npx -y chrome-devtools-mcp@latest</code></td>
+</tr>
+<tr>
+<td><strong>Config</strong></td>
+<td>Requires Chrome (stable or newer) installed</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Browser automation, debugging, performance tracing, console/network inspection</td>
+</tr>
+</table>
+
+<strong>Installation</strong>
+
+<pre><code>npx -y chrome-devtools-mcp@latest
+</code></pre>
+
+<strong>Configuration:</strong>
+
+<pre><code>{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
+</code></pre>
+
+<strong>Slim (headless) mode</strong> for simpler browsing tasks:
+
+<pre><code>{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--slim", "--headless"]
+    }
+  }
+}
+</code></pre>
+
+<strong>Features:</strong>
+
+<ul>
+<li><strong>Performance insights:</strong> Record traces, extract actionable performance data (uses Chrome CrUX API for field data)</li>
+<li><strong>Advanced debugging:</strong> Analyze network requests, capture screenshots, inspect console with source-mapped stack traces</li>
+<li><strong>Reliable automation:</strong> Built on Puppeteer — automatically waits for action results</li>
+<li><strong>Usage statistics:</strong> Collected by default; opt-out with <code>--no-usage-statistics</code> flag or <code>CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS</code> env var</li>
 </ul>
 
 <hr>

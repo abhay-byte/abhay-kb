@@ -109,6 +109,7 @@ Each skill lives in its own directory with a `SKILL.md` file containing YAML fro
 | `allowed-tools` | No | Space-separated string of pre-approved tools (experimental) |
 
 **Example:**
+
 ```markdown
 ---
 name: pdf-processing
@@ -188,6 +189,7 @@ Official skills from Anthropic's skills repository. These cover common developme
 git clone https://github.com/anthropics/skills.git
 cp -r skills/algorithmic-art /your-project/.agents/skills/
 ```
+
 </details>
 
 <details>
@@ -196,6 +198,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/brand-guidelines](https://github.com/anthropics/skills/tree/main/skills/brand-guidelines)
 - **Description:** Applies Anthropic's official brand colors and typography to any sort of artifact. Use when brand colors or style guidelines apply.
 - **Category:** Design
+
 </details>
 
 <details>
@@ -204,6 +207,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/canvas-design](https://github.com/anthropics/skills/tree/main/skills/canvas-design)
 - **Description:** Create beautiful visual art in .png and .pdf documents using design philosophy. Use when creating posters, pieces, or visual designs.
 - **Category:** Design
+
 </details>
 
 <details>
@@ -212,6 +216,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/claude-api](https://github.com/anthropics/skills/tree/main/skills/claude-api)
 - **Description:** Build, debug, and optimize Claude API / Anthropic SDK apps. Includes prompt caching, model migration, and feature configuration.
 - **Category:** Development
+
 </details>
 
 <details>
@@ -220,6 +225,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/doc-coauthoring](https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring)
 - **Description:** Guide users through a structured workflow for co-authoring documentation, proposals, technical specs, and decision documents.
 - **Category:** Writing
+
 </details>
 
 <details>
@@ -228,6 +234,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/docx](https://github.com/anthropics/skills/tree/main/skills/docx)
 - **Description:** Handles .docx files as input or output. Creates formatted Word documents, reports, and templates via python-docx.
 - **Category:** Document
+
 </details>
 
 <details>
@@ -236,6 +243,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design)
 - **Description:** Create distinctive, production-grade frontend interfaces with high design quality. Use when building web components, pages, and applications.
 - **Category:** Design
+
 </details>
 
 <details>
@@ -244,6 +252,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/internal-comms](https://github.com/anthropics/skills/tree/main/skills/internal-comms)
 - **Description:** A set of resources to write internal communications using company-specific formats. Includes templates for memos, announcements, and updates.
 - **Category:** Writing
+
 </details>
 
 <details>
@@ -252,6 +261,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/mcp-builder](https://github.com/anthropics/skills/tree/main/skills/mcp-builder)
 - **Description:** Guide for creating high-quality MCP servers that enable LLMs to interact with external services through well-designed tools. Supports Python (FastMCP) and Node/TypeScript (MCP SDK).
 - **Category:** Development
+
 </details>
 
 <details>
@@ -260,6 +270,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/pdf](https://github.com/anthropics/skills/tree/main/skills/pdf)
 - **Description:** Extract PDF text, tables, and forms using pdfplumber. Handles PDF as input or output, including HTML reports and database pipelines.
 - **Category:** Document
+
 </details>
 
 <details>
@@ -268,6 +279,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/pptx](https://github.com/anthropics/skills/tree/main/skills/pptx)
 - **Description:** Use any time a .pptx file is involved — creating slide decks, pitch decks, or presentations. Handles both input and output.
 - **Category:** Document
+
 </details>
 
 <details>
@@ -276,6 +288,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator)
 - **Description:** Create new skills, modify existing ones, run evals, benchmark performance with variance analysis, and optimize skill descriptions for better triggering accuracy.
 - **Category:** Development
+
 </details>
 
 <details>
@@ -284,6 +297,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/slack-gif-creator](https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator)
 - **Description:** Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts.
 - **Category:** Design
+
 </details>
 
 <details>
@@ -292,6 +306,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/theme-factory](https://github.com/anthropics/skills/tree/main/skills/theme-factory)
 - **Description:** Toolkit for styling artifacts with 10 pre-set themes. Works with slides, docs, reports, HTML landing pages, and more.
 - **Category:** Design
+
 </details>
 
 <details>
@@ -300,6 +315,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/web-artifacts-builder](https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder)
 - **Description:** Build and deploy web artifacts including HTML pages, interactive components, and web applications.
 - **Category:** Development
+
 </details>
 
 <details>
@@ -308,6 +324,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/webapp-testing](https://github.com/anthropics/skills/tree/main/skills/webapp-testing)
 - **Description:** Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing screenshots, and viewing browser logs.
 - **Category:** Testing
+
 </details>
 
 <details>
@@ -316,6 +333,7 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **GitHub:** [anthropics/skills/skills/xlsx](https://github.com/anthropics/skills/tree/main/skills/xlsx)
 - **Description:** Handles .xlsx files as input or output. Creates formatted spreadsheets, data reports, database pipelines, and Google Sheets API integrations.
 - **Category:** Document
+
 </details>
 
 ---
@@ -329,10 +347,12 @@ cp -r skills/algorithmic-art /your-project/.agents/skills/
 - **Description:** Caveman is a workflow orchestration framework for AI agents. It defines a declarative YAML format for agent workflows with sequential, parallel, and conditional execution steps. Skills in caveman focus on structured agent behavior, repeatable task patterns, and multi-step orchestration.
 - **Category:** Development / Workflow Orchestration
 - **Installation:**
+
 ```bash
 git clone https://github.com/JuliusBrussee/caveman.git
 # Place desired patterns in .agents/skills/
 ```
+
 </details>
 
 <details>
@@ -342,10 +362,12 @@ git clone https://github.com/JuliusBrussee/caveman.git
 - **Description:** Spec-kit provides tools and skills for specification-driven development. It enables agents to work from formal specifications, generate code from specs, and validate implementations against requirements. Particularly useful for contract-first development and API design workflows.
 - **Category:** Development / Specification-Driven
 - **Installation:**
+
 ```bash
 git clone https://github.com/github/spec-kit.git
 # Install specs and skills into your agent's skill directories
 ```
+
 </details>
 
 <details>
@@ -355,10 +377,12 @@ git clone https://github.com/github/spec-kit.git
 - **Description:** Agency-agents is a framework for orchestrating multiple AI agents with defined roles, communication patterns, and task delegation. Skills in this framework define agent roles, handoff protocols, and coordination patterns for complex multi-agent workflows.
 - **Category:** Development / Multi-Agent Orchestration
 - **Installation:**
+
 ```bash
 git clone https://github.com/msitarzewski/agency-agents.git
 # Reference the agent patterns and role definitions
 ```
+
 </details>
 
 ---
@@ -386,6 +410,7 @@ rm -rf /tmp/skills
 ### Method 2: Quick Install with npx
 
 Some skills can be installed directly:
+
 ```bash
 npx -y @anthropic/skills install pdf
 ```
@@ -413,12 +438,14 @@ Agents scan these directories for skills:
 ### Using Skills
 
 Once installed:
+
 1. **Restart your agent** or reload the session
 2. Ask a question related to the skill — e.g., "Extract text from this PDF"
 3. The agent automatically detects the matching skill and loads its instructions
 4. The agent follows the skill's steps to complete your task
 
 To **list installed skills**, ask your agent:
+
 - "What skills do you have?"
 - "List my available skills"
 - In VS Code Copilot Chat Agent mode, type `/skills`
@@ -448,11 +475,13 @@ echo $((RANDOM % <sides> + 1))
 ```
 
 **PowerShell:**
+
 ```powershell
 Get-Random -Minimum 1 -Maximum (<sides> + 1)
 ```
 
 Replace `<sides>` with the number of sides on the die.
+
 ```
 
 Then in VS Code Copilot Chat Agent mode, ask "Roll a d20" — the agent activates the skill and runs the command.

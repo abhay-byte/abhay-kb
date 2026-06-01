@@ -14,30 +14,33 @@ title: System Design — Clean Code
 
 1. [What Is Clean Code?](#1-what-is-clean-code)
 2. [Core Clean Code Principles](#2-core-clean-code-principles)
- - 2.1 Meaningful Names
- - 2.2 Single Responsibility Principle (SRP)
- - 2.3 DRY — Don't Repeat Yourself
- - 2.4 KISS — Keep It Simple, Stupid
- - 2.5 YAGNI — You Aren't Gonna Need It
- - 2.6 Small, Focused Functions
- - 2.7 Comments & Documentation
- - 2.8 Consistent Formatting
- - 2.9 Error Handling
- - 2.10 Avoid Magic Numbers & Strings
-3. [SOLID Principles](#3-solid-principles)
-4. [Cohesion](#4-cohesion)
- - 4.1 What Is Cohesion?
- - 4.2 Types of Cohesion (Worst -> Best)
- - 4.3 How to Achieve High Cohesion
-5. [Coupling](#5-coupling)
- - 5.1 What Is Coupling?
- - 5.2 Types of Coupling (Worst -> Best)
- - 5.3 How to Achieve Low Coupling
-6. [Cohesion vs. Coupling: The Relationship](#6-cohesion-vs-coupling-the-relationship)
-7. [Project Types & Suitability](#7-project-types--suitability)
-8. [Anti-Patterns to Avoid](#8-anti-patterns-to-avoid)
-9. [Clean Code Metrics & Tools](#9-clean-code-metrics--tools)
-10. [Quick Reference Cheat Sheet](#10-quick-reference-cheat-sheet)
+
+- 2.1 Meaningful Names
+- 2.2 Single Responsibility Principle (SRP)
+- 2.3 DRY — Don't Repeat Yourself
+- 2.4 KISS — Keep It Simple, Stupid
+- 2.5 YAGNI — You Aren't Gonna Need It
+- 2.6 Small, Focused Functions
+- 2.7 Comments & Documentation
+- 2.8 Consistent Formatting
+- 2.9 Error Handling
+- 2.10 Avoid Magic Numbers & Strings
+1. [SOLID Principles](#3-solid-principles)
+2. [Cohesion](#4-cohesion)
+
+- 4.1 What Is Cohesion?
+- 4.2 Types of Cohesion (Worst -> Best)
+- 4.3 How to Achieve High Cohesion
+1. [Coupling](#5-coupling)
+
+- 5.1 What Is Coupling?
+- 5.2 Types of Coupling (Worst -> Best)
+- 5.3 How to Achieve Low Coupling
+1. [Cohesion vs. Coupling: The Relationship](#6-cohesion-vs-coupling-the-relationship)
+2. [Project Types & Suitability](#7-project-types--suitability)
+3. [Anti-Patterns to Avoid](#8-anti-patterns-to-avoid)
+4. [Clean Code Metrics & Tools](#9-clean-code-metrics--tools)
+5. [Quick Reference Cheat Sheet](#10-quick-reference-cheat-sheet)
 
 ---
 
@@ -84,6 +87,7 @@ def calculate_total_price(unit_price, quantity):
 ```
 
 **Rules for naming:**
+
 - Use pronounceable names (`customerRecord`, not `cstmrRcd`)
 - Use searchable names (avoid single letters except loop counters)
 - Classes -> Nouns (`OrderService`, `UserRepository`)
@@ -226,12 +230,14 @@ for row in csv_rows[1:]:
 ```
 
 **When comments are appropriate:**
+
 - Explaining non-obvious business rules or edge cases
 - Warning about side effects or performance implications
 - Public API documentation (docstrings)
 - Legal or license notices
 
 **Avoid:**
+
 - Commented-out dead code (use version control instead)
 - TODO comments that never get resolved
 - Misleading or outdated comments
@@ -315,6 +321,7 @@ SOLID is an acronym coined by Robert C. Martin for five object-oriented design p
 | **D** | Dependency Inversion | Depend on abstractions, not concretions |
 
 ### S — Single Responsibility Principle
+
 *(Covered in section 2.2 above)*
 
 ### O — Open/Closed Principle
@@ -426,6 +433,7 @@ A highly cohesive module is like a well-organized toolbox where every tool serve
 ### 4.2 Types of Cohesion (Worst -> Best)
 
 #### Level 1: Coincidental Cohesion (Worst)
+
 Elements are grouped **arbitrarily** — there is no meaningful relationship between them.
 
 ```python
@@ -436,11 +444,13 @@ class Utils:
  def calculate_tax(self, amount): ...
  def resize_image(self, img, width): ...
 ```
+
 **Problem:** Impossible to understand the purpose of the module. Changes are unpredictable.
 
 ---
 
 #### Level 2: Logical Cohesion
+
 Elements perform **similar kinds of operations** but are unrelated in execution. A flag or parameter determines which operation runs.
 
 ```python
@@ -450,11 +460,13 @@ class FileHandler:
  elif mode == 'write': ...
  elif mode == 'delete': ...
 ```
+
 **Problem:** Adding a new mode requires modifying the class. Violates Open/Closed.
 
 ---
 
 #### Level 3: Temporal Cohesion
+
 Elements are grouped because they happen **at the same time**, not because they are logically related.
 
 ```python
@@ -465,11 +477,13 @@ class AppStartup:
  self.start_scheduler()
  self.warm_cache()
 ```
+
 **Problem:** Changes to startup sequence affect many unrelated behaviors at once.
 
 ---
 
 #### Level 4: Procedural Cohesion
+
 Elements are related because they **follow a specific execution order**.
 
 ```python
@@ -481,11 +495,13 @@ class DataPipeline:
  self.transform()
  self.write_output()
 ```
+
 **Problem:** Steps are interdependent by position; hard to reuse individual steps.
 
 ---
 
 #### Level 5: Communicational/Informational Cohesion
+
 Elements operate on the **same data** or data structure.
 
 ```python
@@ -494,11 +510,13 @@ class UserProfile:
  def update_email(self): ...
  def change_password(self): ...
 ```
+
 **Note:** Better — all operations share the same data object (user profile).
 
 ---
 
 #### Level 6: Sequential Cohesion
+
 Output of one element **feeds directly into** the next.
 
 ```python
@@ -509,11 +527,13 @@ class OrderProcessor:
  confirmed = self.confirm(priced)
  return confirmed
 ```
+
 **Note:** Good, but still somewhat rigid to reordering or reusing steps independently.
 
 ---
 
 #### Level 7: Functional Cohesion (Best)
+
 Every element contributes to **one single, well-defined task**. Nothing is extraneous.
 
 ```python
@@ -521,6 +541,7 @@ class PasswordHasher:
  def hash(self, plain_text_password) -> str: ...
  def verify(self, plain_text, hashed) -> bool: ...
 ```
+
 **Why it's best:** The class has a crystal-clear purpose. Easy to test, reuse, and reason about.
 
 ---
@@ -553,6 +574,7 @@ Low coupling is essential for parallel development, independent testing, and saf
 ### 5.2 Types of Coupling (Worst -> Best)
 
 #### Level 1: Content Coupling (Worst)
+
 Module A **directly accesses or modifies** the internal data or code of Module B.
 
 ```python
@@ -561,11 +583,13 @@ class OrderService:
  def process(self, user):
  user._credit_limit -= 100 # Directly modifies private state!
 ```
+
 **Problem:** A is completely dependent on B's internals. Any refactoring of B breaks A.
 
 ---
 
 #### Level 2: Common Coupling
+
 Multiple modules **share global state**.
 
 ```python
@@ -580,11 +604,13 @@ class InvoiceService:
  def generate(self):
  currency = GLOBAL_CONFIG['currency'] # Same shared state
 ```
+
 **Problem:** Changes to global state have unpredictable ripple effects everywhere.
 
 ---
 
 #### Level 3: External Coupling
+
 Modules depend on an **external interface or format** (e.g., a specific file format, third-party API shape, or OS feature).
 
 **Problem:** If the external dependency changes, all dependent modules must change.
@@ -592,6 +618,7 @@ Modules depend on an **external interface or format** (e.g., a specific file for
 ---
 
 #### Level 4: Control Coupling
+
 Module A passes a **flag or control parameter** to Module B telling it what to do.
 
 ```python
@@ -601,33 +628,39 @@ def notify_user(user, method):
  elif method == 'sms':
  send_sms(user)
 ```
+
 **Problem:** A knows too much about B's internal logic. Violates Open/Closed.
 
 ---
 
 #### Level 5: Stamp/Data-Structure Coupling
+
 Modules share a **complex data structure**, but only use part of it.
 
 ```python
 def get_user_display_name(user_object):
  return user_object.first_name # Needs only first_name, but gets the whole object
 ```
+
 **Problem:** The module depends on more than it needs, creating hidden dependencies.
 
 ---
 
 #### Level 6: Data Coupling
+
 Modules communicate by passing **only the data they need** as simple parameters.
 
 ```python
 def calculate_area(width: float, height: float) -> float:
  return width * height
 ```
+
 **Why it's good:** The function is independent, testable, and can be reused anywhere.
 
 ---
 
 #### Level 7: No Coupling (Best)
+
 Modules operate **completely independently** with no direct communication.
 
 **Note:** Rarely achievable in practice for an entire system, but the goal for leaf-level modules.
@@ -639,12 +672,13 @@ Modules operate **completely independently** with no direct communication.
 1. **Program to interfaces**, not implementations (Dependency Inversion)
 2. **Use Dependency Injection** — inject dependencies, don't instantiate them
 3. **Apply the Law of Demeter** — "talk to your friends, not strangers"
- - `order.getCustomer().getAddress().getCity()` -> too much knowledge chain
- - Better: `order.getCustomerCity()` — delegate internally
-4. **Use events/message queues** for cross-module communication (publish-subscribe)
-5. **Avoid shared mutable state** (global variables, singletons)
-6. **Pass only what's needed** — don't pass entire objects when a single field suffices
-7. **Use facades or adapters** to isolate external dependencies
+
+- `order.getCustomer().getAddress().getCity()` -> too much knowledge chain
+- Better: `order.getCustomerCity()` — delegate internally
+1. **Use events/message queues** for cross-module communication (publish-subscribe)
+2. **Avoid shared mutable state** (global variables, singletons)
+3. **Pass only what's needed** — don't pass entire objects when a single field suffices
+4. **Use facades or adapters** to isolate external dependencies
 
 ---
 
@@ -659,7 +693,6 @@ These two concepts are **inversely related** in healthy code:
 | Easy to test, change, and reuse | Brittle, fragile, hard to understand |
 
 ![Design Quality Map](/abhay-kb/assets/design-quality-map.svg)
-
 
 **The golden rule:** A module should be internally cohesive (focused on one thing) and externally loosely coupled (independent of its neighbors).
 
@@ -676,12 +709,14 @@ Clean code principles, cohesion, and coupling apply everywhere — but the *emph
 **Best fit for:** SOLID principles, layered architecture, high cohesion, strict low coupling
 
 **Why:**
+
 - Large teams of 10-100+ developers work simultaneously on the same codebase
 - Code lives for 10-20+ years; requirements change constantly
 - Regulatory compliance requires clear audit trails and isolated business logic
 - Testing coverage is mandatory; cohesive modules are individually testable
 
 **Key practices:**
+
 - Domain-Driven Design (DDD) with clearly bounded contexts
 - Clean/Hexagonal Architecture separating business rules from infrastructure
 - Dependency Injection frameworks (Spring, .NET DI)
@@ -696,12 +731,14 @@ Clean code principles, cohesion, and coupling apply everywhere — but the *emph
 **Best fit for:** Loose coupling (between services), high cohesion (within services), DIP, SRP
 
 **Why:**
+
 - Each service must be independently deployable — tight coupling between services defeats the purpose
 - Teams own individual services; internal code quality matters for maintainability
 - Services communicate through APIs/events — natural enforcement of low coupling
 - Clean Architecture within each microservice keeps business logic portable
 
 **Key practices:**
+
 - Each service has a single business capability (high cohesion at service level)
 - Services communicate via REST, gRPC, or message brokers (no shared databases)
 - Anti-Corruption Layers (ACL) isolate services from each other's data models
@@ -716,12 +753,14 @@ Clean code principles, cohesion, and coupling apply everywhere — but the *emph
 **Best fit for:** KISS, DRY, Interface Segregation, Liskov Substitution, immaculate naming
 
 **Why:**
+
 - Thousands of users depend on a stable public API
 - Breaking changes have enormous downstream impact
 - Developers who didn't write the code must be able to use it intuitively
 - Documentation and naming **are** the user experience
 
 **Key practices:**
+
 - Small, composable interfaces (ISP — don't force users to implement what they don't need)
 - Backward compatibility as a first-class concern
 - Every public function/class is a contract — apply Liskov carefully
@@ -736,12 +775,14 @@ Clean code principles, cohesion, and coupling apply everywhere — but the *emph
 **Best fit for:** YAGNI, KISS, DRY, minimal over-engineering
 
 **Why:**
+
 - Speed to market is the primary constraint
 - Requirements are highly uncertain and will change
 - Small teams (2-5 engineers) mean less need for strict module boundaries
 - Over-engineering burns runway before product-market fit is found
 
 **Key practices:**
+
 - YAGNI heavily — build only what the current user story needs
 - Keep it simple — resist architectural patterns until complexity demands them
 - Write clean names and small functions even without full SOLID
@@ -757,11 +798,13 @@ Clean code principles, cohesion, and coupling apply everywhere — but the *emph
 **Best fit for:** Functional cohesion, SRP, DRY, meaningful naming
 
 **Why:**
+
 - Notebooks encourage procedural sprawl — cohesion prevents spaghetti pipelines
 - Reproducibility requires isolation of each pipeline step
 - Experiments change frequently — low coupling between data loading, feature engineering, and modeling enables safe iteration
 
 **Key practices:**
+
 - Separate concerns: ingestion, preprocessing, feature engineering, model training, evaluation
 - Wrap each step in a pure function (no global state)
 - Use configuration files instead of hard-coded paths and hyperparameters
@@ -776,12 +819,14 @@ Clean code principles, cohesion, and coupling apply everywhere — but the *emph
 **Best fit for:** KISS, minimal coupling, careful use of abstraction
 
 **Why:**
+
 - Memory and CPU constraints require lean code
 - Overhead from abstraction layers can violate real-time constraints
 - Hardware interfaces change (different MCUs, sensor revisions) — abstraction isolates this
 - Safety-critical systems require deterministic, auditable behavior
 
 **Key practices:**
+
 - Hardware Abstraction Layer (HAL) to isolate hardware-specific code
 - Minimize dynamic memory allocation
 - Simple, direct logic over clever abstractions
@@ -796,11 +841,13 @@ Clean code principles, cohesion, and coupling apply everywhere — but the *emph
 **Best fit for:** Component cohesion, SRP, DRY, composability
 
 **Why:**
+
 - UI components are naturally modular — cohesion maps to component boundaries
 - State management is a coupling challenge (avoid prop-drilling, global state misuse)
 - Reusable components reduce duplication
 
 **Key practices:**
+
 - Single-purpose components (`UserAvatar`, `PriceTag`, not `UserDashboardEverything`)
 - Keep business logic out of UI components (cohesion)
 - Use custom hooks (React) or composables (Vue) to separate concerns
