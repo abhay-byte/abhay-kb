@@ -47,6 +47,27 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[Alibaba Gets Android 16 Running on RISC-V](news/alibaba-android-16-risc-v/)** — *The Register*
 > Alibaba successfully ported Android 16 to RISC-V, advancing open-source ISA adoption and Beijing's sovereign tech stack ambitions.
 
+**[Anthropic Confidentially Submits Draft S-1 to the SEC for IPO](news/anthropic-files-draft-s1-ipo/)** — *Anthropic / Hacker News*
+> Anthropic filed plans for an IPO with the SEC, setting up a share sale that could value the company in the trillion-dollar range as it races against rival OpenAI.
+
+**[Malicious npm Packages Detected Across Red Hat Cloud Services](news/red-hat-npm-supply-chain-attack/)** — *Hacker News / GitHub*
+> A major supply chain attack compromised dozens of npm packages under the @redhat-cloud-services/ scope, affecting frontend and backend infrastructure packages (712 HN points).
+
+**[NVIDIA Unveils RTX Spark Superchip — Arm CPU, Blackwell GPU, 128GB Memory](news/nvidia-rtx-spark-superchip/)** — *NVIDIA / Computex 2026*
+> NVIDIA's RTX Spark Superchip fuses a 20-core Arm CPU with a Blackwell RTX GPU and up to 128GB unified memory, delivering 1 petaflop FP4 AI performance in slim laptops.
+
+**[Microsoft Surface Laptop Ultra: MacBook Pro Rival with NVIDIA RTX Spark](news/microsoft-surface-laptop-ultra-rtx-spark/)** — *Windows Latest*
+> Microsoft announced the Surface Laptop Ultra at Computex 2026, powered by NVIDIA's RTX Spark Superchip — a direct answer to Apple's MacBook Pro lineup with Windows on Arm.
+
+**[Instagram AI Support Exploit Enables Zero-Auth Account Takeover, Bypasses 2FA](news/instagram-ai-account-takeover-exploit/)** — *0xsid / Hacker News*
+> A researcher documented a trivial Instagram account takeover that requires only the target's username — Meta's AI support blindly sends password resets to attacker-controlled emails without verifying ownership (1,200 HN points).
+
+**[Florida Sues OpenAI and Sam Altman Over AI Risks](news/florida-sues-openai-ai-risks/)** — *Politico / Hacker News*
+> The state of Florida filed a lawsuit against OpenAI and Sam Altman over alleged AI risks, marking a significant escalation in state-level AI regulation.
+
+**[Claude Opus 4.8 Now Available for GitHub Copilot](news/claude-opus-4-8-github-copilot/)** — *GitHub Blog*
+> Anthropic's latest Opus model is GA for Copilot, showing clear improvements in code understanding and generation across real-world coding tasks.
+
 ### May 27, 2026
 
 **[Dropbox CEO Drew Houston Steps Down After 19 Years](news/dropbox-ceo-drew-houston-steps-down/)** — *CNBC / Hacker News*
