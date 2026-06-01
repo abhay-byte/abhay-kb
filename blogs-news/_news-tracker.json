@@ -120,7 +120,12 @@
     "https://darylcecile.net/notes/speed-of-prototyping-age-of-ai",
     "https://hacktivis.me/articles/cloudflare-turnstile-webgl-fingerprinting",
     "https://github.com/viggy28/streambed",
-    "https://jbkempf.com/blog/2026/dav2d/"
+    "https://jbkempf.com/blog/2026/dav2d/",
+    "https://www.theregister.com/systems/2026/06/01/intel-launches-288-core-clearwater-forest-xeon-6-on-18a-process/5248150",
+    "https://www.theregister.com/systems/2026/06/01/intels-next-gen-xeons-to-pack-192-cores-abandon-smt/5248940",
+    "https://prismml.com/news/bonsai-image-4b",
+    "https://www.promptarmor.com/resources/gpt-for-google-sheets-data-exfiltration",
+    "https://www.theregister.com/systems/2026/05/27/alibaba-gets-android-16-running-on-risc-v/5246710"
   ],
-  "last_fetch": "2026-06-01T02:07:00Z"
+  "last_fetch": "2026-06-01T09:47:00Z"
 }

@@ -11,6 +11,12 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 ### June 1, 2026
 
+**[Intel Launches 288-Core Clearwater Forest Xeon 6 on 18A Process](news/intel-clearwater-288-core-xeon-6/)** — *The Register*
+> Intel unveiled the first 2nm-class Xeon with 288 Darkmont E-cores designed for agentic AI workloads, packing 200 more cores per socket than Nvidia's Vera CPUs.
+
+**[Intel Diamond Rapids to Boost Core Counts to 192, Abandon SMT](news/intel-diamond-rapids-192-cores-drop-smt/)** — *The Register*
+> Intel kills Hyperthreading on next-gen Xeons (Diamond Rapids, 2027) boosting to 192 cores but cutting thread counts, though the next-next Coral Rapids will bring SMT back.
+
 **[Backpressure Is All You Need](news/backpressure-is-all-you-need/)** — *lucasfcosta.com*
 > Lucas Costa argues that applying backpressure principles from systems engineering (tests, types, CI) makes AI coding agents safer and more autonomous without fully removing humans from the loop.
 
@@ -20,17 +26,26 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[Rust 1.96.0 Released](news/rust-1-96-0-released/)** — *Rust Blog*
 > New Copy-compatible Range types, assert_matches! macro for pattern matching diagnostics, and WebAssembly targets now error on undefined symbols by default.
 
+**[Cloudflare Turnstile Now Requires Fingerprintable WebGL, Blocking Privacy Browsers](news/cloudflare-turnstile-webgl-fingerprinting/)** — *Hacker News*
+> Cloudflare's Turnstile CAPTCHA alternative now requires WebGL fingerprinting — blocking privacy-focused browsers like WebKitGTK and sparking a 672-point HN discussion.
+
+**[Bonsai Image 4B: 1-Bit and Ternary Image Generation Runs on iPhones](news/bonsai-image-4b-local-image-generation/)** — *Hacker News*
+> New compact image-generation models shrink FLUX.2 Klein 4B from 7.75 GB to 0.93 GB using binary weights, enabling diffusion inference on iPhones in 9.4 seconds.
+
+**[dav2d: VideoLAN Launches Fast AV2 Video Decoder](news/dav2d-av2-video-decoder-announced/)** — *Hacker News*
+> The VideoLAN community announces dav2d, a fast portable decoder for AV2 — the successor to AV1 with ~25% better compression but 5x decoding complexity.
+
+**[ChatGPT for Google Sheets Vulnerable to Data Exfiltration via Prompt Injection](news/chatgpt-google-sheets-exfiltration-prompt-injection/)** — *PromptArmor / Hacker News*
+> Security researchers found ChatGPT for Google Sheets (185K+ downloads) can exfiltrate workbooks via indirect prompt injection without user approval, prompting OpenAI to remove Apps Script generation.
+
 **[The Speed of Prototyping in the Age of AI](news/speed-of-prototyping-age-of-ai/)** — *darylcecile.net*
 > A developer reflects on 4x productivity gains from AI agents and how the kind of work he can take on has fundamentally changed — while noting the need to deliberately maintain technical dexterity.
-
-**[Cloudflare Turnstile Requiring Fingerprintable WebGL](news/cloudflare-turnstile-webgl-fingerprinting/)** — *hacktivis.me*
-> Cloudflare's CAPTCHA replacement now requires WebGL fingerprinting, blocking WebKitGTK browsers and raising privacy concerns about tracking disguised as bot detection.
 
 **[Streambed: Stream Postgres to Iceberg on S3](news/streambed-postgres-iceberg-s3/)** — *GitHub*
 > An open-source CDC engine that streams Postgres WAL changes directly to Apache Iceberg on S3 with a built-in query server speaking the Postgres wire protocol — no ETL or Spark needed.
 
-**[Dav2d: A New Fast AV1 Decoder](news/dav2d-fast-av1-decoder/)** — *jbkempf.com*
-> A new fast AV1 video decoder project inspired by dav1d, aiming for further performance optimizations for modern hardware — scored 395 points on Hacker News.
+**[Alibaba Gets Android 16 Running on RISC-V](news/alibaba-android-16-risc-v/)** — *The Register*
+> Alibaba successfully ported Android 16 to RISC-V, advancing open-source ISA adoption and Beijing's sovereign tech stack ambitions.
 
 ### May 27, 2026
 
