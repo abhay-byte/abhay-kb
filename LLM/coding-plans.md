@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-01 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-02 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -52,7 +52,7 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [winbuzzer.com](https://winbuzzer.com/2026/05/14/github-copilot-individual-plans-introducing-flex-a-xcxwbn/)
 
-### Plans (Current — May 28 2026 — 4 days until Usage-Based Billing June 1)
+### Plans (Current — June 2 2026 — Usage-Based Billing LIVE)
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog (May 12)](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [github.blog (Apr 27)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)
 
@@ -66,9 +66,9 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 | Business | $19/seat/mo | $19 base/seat ($30 promo Jun-Aug) | Unlimited | Yes | Available |
 | Enterprise | $39/seat/mo | $39 base/seat ($70 promo Jun-Aug) | Unlimited | Yes | Available |
 
-### Key Changes (Apr–May 2026)
+### Key Changes (Apr–Jun 2026)
 
-- **Usage-based billing:** All Copilot plans transition to GitHub AI Credits on June 1, 2026. PRUs replaced by token-based metering. 1 AI Credit = $0.01 USD
+- **Usage-based billing LIVE:** All Copilot plans transitioned to GitHub AI Credits on June 1, 2026. PRUs replaced by token-based metering. 1 AI Credit = $0.01 USD
 - **Flex allotments (May 12):** Pro gets $10 base + $5 flex = $15/mo. Pro+ gets $39 base + $31 flex = $70/mo. Flex allotments may vary over time
 - **Max plan (May 12):** $100/mo with 10,000 base + 10,000 flex = 20,000 credits/mo total included usage. Heavy daily use tier
 - **Upgrades paused (ongoing):** Pro, Pro+ upgrades paused on github.com while they roll out new billing UI
@@ -125,16 +125,16 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | Raptor mini | $0.25 | $0.025 | $2.00 | Public preview |
 | Goldeneye | $1.25 | $0.125 | $10.00 | Public preview |
 
-### Plans Summary (Jun 2026 — Usage-Based Billing)
+### Plans Summary (Jun 2026 — Usage-Based Billing LIVE)
 
 | Plan | Price | Base | Flex | Total Credits | Notes |
 |------|-------|:----:|:----:|:-------------:|-------|
 | Free | $0 | — | — | 2000 completions/mo + limited AI credits (auto model) |
-| Pro | $10/mo | 1,000 ($10) | 500 ($5) | 1,500 ($15) | Monthly auto-migrates Jun 1. **Upgrades paused** |
-| Pro+ | $39/mo | 3,900 ($39) | 3,100 ($31) | 7,000 ($70) | Monthly auto-migrates Jun 1. **Upgrades paused** |
-| Max | $100/mo | 10,000 ($100) | 10,000 ($100) | 20,000 ($200) | Effective Jun 1, 2026 |
-| Business | $19/seat/mo | 1,900 ($19) | Promo Jun-Aug ($30) | — | $30/seat promo Jun-Aug |
-| Enterprise | $39/seat/mo | 3,900 ($39) | Promo Jun-Aug ($70) | — | $70/seat promo Jun-Aug |
+| Pro | $10/mo | 1,000 ($10) | 500 ($5) | 1,500 ($15) | Auto-migrated Jun 1. **Upgrades paused** |
+| Pro+ | $39/mo | 3,900 ($39) | 3,100 ($31) | 7,000 ($70) | Auto-migrated Jun 1. **Upgrades paused** |
+| Max | $100/mo | 10,000 ($100) | 10,000 ($100) | 20,000 ($200) | Effective Jun 1 |
+| Business | $19/seat/mo | 1,900 ($19) | Promo Jun-Aug ($30) | — | $30/seat promo active Jun-Aug |
+| Enterprise | $39/seat/mo | 3,900 ($39) | Promo Jun-Aug ($70) | — | $70/seat promo active Jun-Aug |
 
 ### Individual Plan Feature Highlights (Current UI — pre-June 1)
 
@@ -205,16 +205,15 @@ Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Ze
 
 ### Available Models (13)
 
-Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/)
+Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/) (verified June 2, 2026)
 
 | Model | Provider | Per 5h | Per Week | Per Month | Notes |
 |-------|----------|--------|----------|-----------|-------|
 | DeepSeek V4 Flash | DeepSeek | 31,650 | 79,050 | 158,150 | Cheapest, huge quota |
-| Qwen3.5 Plus | Alibaba | 10,200 | 25,200 | 50,500 | Best raw request count |
+| Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench (Qwen3.5 Plus removed) |
 | MiniMax M2.5 | MiniMax | 6,300 | 15,900 | 31,800 | 80.2% SWE-Bench |
 | MiniMax M2.7 | MiniMax | 3,400 | 8,500 | 17,000 | Newer, 196K ctx |
 | MiniMax M3 | MiniMax | 1,400 | 3,500 | 7,000 | Newest MiniMax model |
-| Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench |
 | DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
 | MiMo-V2.5 | Xiaomi | 30,100 | 75,200 | 150,400 | V2.5 Omni-class, 1M ctx |
 | MiMo-V2.5-Pro | Xiaomi | 3,250 | 8,150 | 16,300 | Coding focus, 1M ctx |
@@ -236,7 +235,7 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 
 > **From Thomas Wiegold (Apr 2026):** "MiniMax gives you a good number of requests ... up to 31,800 per month with M2.5. These aren't toy models - M2.5 scored 80.2% on SWE-Bench Verified, within spitting distance of Claude Opus 4.6's 80.8%. The catch is that reasoning-heavy models like GLM-5.1 burn through limits fast."
 
-> **Personal Review (June 2026):** Best and cheapest coding plan available. Generous quotas on MiniMax and Qwen models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. MiniMax M2.5 at $10/month is unmatched value — now also with MiniMax M3 added to the lineup. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Strongly recommended.
+> **Personal Review (June 2026):** Best and cheapest coding plan available. Generous quotas on MiniMax and Xiaomi models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. MiniMax M2.5 at $10/month is unmatched value — now also with MiniMax M3 added to the lineup. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Qwen3.5 Plus has been removed from the model lineup, replaced by Qwen3.6 Plus and Qwen3.7 Max. Strongly recommended.
 
 ### Notes
 
@@ -247,7 +246,7 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 - MiMo-V2.5 added to model lineup (updated from V2.5-Omni naming)
 - Qwen3.7 Max added to model lineup (128K context, best available Qwen for coding)
 - MiniMax M3, M2.7, and M2.5 use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
-- Qwen3.5 Plus, Qwen3.6 Plus, and Qwen3.7 Max use Anthropic-compatible endpoint
+- Qwen3.6 Plus and Qwen3.7 Max use Anthropic-compatible endpoint
 - Models hosted in US, EU, and Singapore
 
 ---
@@ -299,8 +298,8 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 
 ### Known Issues
 
-- **v2.1.100 bug (Apr 2026):** ~20K invisible tokens added per request, burning quota ~40% faster. Root cause: broken prompt caching forcing full re-processing on every turn. Six releases shipped through v2.1.133 (May 8) with features but no public fix. Workaround: downgrade to v2.1.34 or reinstall via npm
-- **Opus 4.7 tokenizer:** New tokenizer can use up to 35% more tokens for equivalent text vs Opus 4.6
+- **v2.1.100 bug (Apr 2026 — still ongoing):** ~20K invisible tokens added per request, burning quota ~40% faster. Root cause: broken prompt caching forcing full re-processing on every turn. Three independent bugs break Anthropic's prefix-based prompt caching (cache_creation charges instead of cache_read). Six releases shipped through v2.1.133 (May 8) with features but no public fix. Workaround: downgrade to v2.1.34 or reinstall via npm
+- **Opus 4.7/4.8 tokenizer:** 4.7 tokenizer uses up to 35% more tokens for equivalent text vs Opus 4.6. Opus 4.8 may have similar behavior
 - **5-hour rolling window:** Hit limit at 2pm? Wait until 7pm. Not a daily reset
 
 ### Community Reviews
@@ -313,7 +312,7 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 
 > **From felloai review:** "Max 5x at $100/month gives five times the Pro usage and priority access during peak demand. It is the sweet spot for full-time developers who use Claude Code as their default coding partner."
 
-> **Personal Review (June 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 and now Opus 4.8 are genuinely the smartest models for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the tokenizer/v2.1.100 bugs silently eating into your limits. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.
+> **Personal Review (June 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 and now Opus 4.8 are genuinely the smartest models for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the ongoing v2.1.100 prompt caching bug (still unfixed as of June) silently eating into your limits by ~40%. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.
 
 ---
 
@@ -343,7 +342,7 @@ Source: [developers.openai.com/codex/pricing](https://developers.openai.com/code
 | GPT-5.4-mini | 60-350 | — | — |
 | GPT-5.3-Codex | 30-150 | 10-60 | 20-50 |
 
-Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10x total) until May 31, 2026.
+Pro tiers: 5x to 20x these limits depending on tier. **Promos expired May 31** — previous $100 2x promo and $200 25x promo both ended.
 
 ### API Pay-per-Token (Codex API)
 
@@ -360,7 +359,7 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 - Soft caps slow you down; hard caps cut off until window resets
 - Extra credits can be purchased on Plus/Pro plans
 - Credits now billed per-token (API token-based rates as of Apr 2, 2026). 1 credit = varies by model
-- **Pro promos expired May 31, 2026:** Pro $100 2x promo ended — back to standard 5x. Pro $200 25x promo ended — back to standard 20x
+- **Pro promos expired May 31, 2026:** Pro $100 2x promo ended — back to standard 5x. Pro $200 25x promo ended — back to standard 20x. Both promos confirmed expired.
 - **Go plan ($20/mo)**: Budget Codex Mini tier available in select regions. Reduced limits, same models
 - **Business/Edu/Enterprise** flexible pricing: credits per token table available in settings
 
@@ -370,7 +369,7 @@ Pro tiers: 5x to 20x these limits depending on tier. Promo: Pro $100 gets 2x (10
 
 > **From elite-ai-assisted-coding review:** "Codex CLI performed well throughout testing. GPT-5's capabilities were the key differentiator -- the model followed instructions precisely, learned from documentation effectively, and applied knowledge appropriately."
 
-> **Personal Review (June 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. Note: the 2x Pro $100 and 25x Pro $200 promos both expired May 31.
+> **Personal Review (June 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. The 2x Pro $100 and 25x Pro $200 promos both expired May 31 — standard limits are now in effect.
 
 ---
 
@@ -389,10 +388,10 @@ Google restructured its AI subscription lineup at I/O 2026. The top plan was res
 | Plan | Price | Models | Notes |
 |------|-------|--------|-------|
 | Preview (Free) | $0 | All models (rate-limited) | Access to all models. 92% quota cut since Dec 2025 |
-| AI Pro | $20/mo | All models (higher limits) | Built-in credits. Multi-day lockouts reported |
-| AI Ultra | **$100/mo** (new) | 5x Pro limits | **New tier** launched at I/O 2026 (May 19). 5x higher limits than Pro. Includes 20TB storage + YouTube Premium |
-| AI Ultra Premium | **$200/mo** (was $250) | 20x Pro limits | **$50 price drop** at I/O 2026. Includes Project Genie access |
-| Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage. $0.01/credit |
+| AI Pro | $20/mo | All models (higher limits) | Built-in credits. Multi-day lockouts reported. Now includes YouTube Premium Lite |
+| AI Ultra | **$100/mo** (new) | 5x Pro limits | **New tier** launched at I/O 2026 (May 19). 5x higher limits than Pro. Includes 20TB storage + YouTube Premium + Antigravity access |
+| AI Ultra Premium | **$200/mo** (was $250) | 20x Pro limits | **$50 price drop** at I/O 2026. Includes Project Genie access. Antigravity access |
+| Pay-as-you-go | $25/2,500 credits | Full access | Overflow / burst usage. $0.01/credit. Opaque credit-to-token conversion |
 
 ### Antigravity 2.0 New Surfaces
 
@@ -423,7 +422,7 @@ Google restructured its AI subscription lineup at I/O 2026. The top plan was res
 - **Never use Gemini for backend** or complex logic tasks — it performs poorly
 - Limits are **separate per provider** — running out on Claude? Switch to Gemini and keep working
 - Multi-agent missions can assign different models to different agents within the same task
-- **New in 2.0:** Dynamic subagents can parallelize work across microservices. Native voice commands. Scheduled tasks. Antigravity export tool to AI Studio
+- **New in 2.0:** Dynamic subagents can parallelize work across microservices. Native voice commands. Scheduled tasks. Antigravity export tool to AI Studio. Five surfaces: Desktop App, CLI, SDK, Managed Agents API, Enterprise Agent Platform
 
 ### Known Issues
 
@@ -442,7 +441,7 @@ Google restructured its AI subscription lineup at I/O 2026. The top plan was res
 
 > **From TechCrunch (May 19):** "Google is also reducing the price of its top AI Ultra plan from $250 to $200, which allows for 20x higher limits." Antigravity 2.0 adds CLI, SDK, subagents, scheduled tasks, and voice commands.
 
-> **Personal Review (June 2026):** I've used it extensively. The best thing is having Claude models (Sonnet, Opus 4.7 & 4.8) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3 Flash is genuinely capable for frontend work. The downside: limits are terrible. It was generous at the start but degraded badly -- on some days I'd get only 5-10 requests with Claude models before hitting the wall. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues remain. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work.
+> **Personal Review (June 2026):** I've used it extensively. The best thing is having Claude models (Sonnet, Opus 4.7 & 4.8) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3.5 Flash (co-developed using Antigravity) is genuinely capable for frontend work. The downside: limits remain terrible — 92% free tier quota cut, multi-day lockouts reported even on paid plans. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues persist. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work. The 5-hour compute window (replacing daily caps) is a structural change that aligns with Anthropic's and OpenAI's approach.
 
 ---
 
@@ -453,7 +452,7 @@ Credits expire month-end, no rollover. Mid-month upgrades OK, downgrades not.
 Now supports V2.5 model series — one subscription unlocks all 8 MiMo models.  
 Auto-renewal discounts: up to $144 off annual plans.
 
-**Updated May 26, 2026**: Credits quotas upgraded 5-8x across all tiers with no price increase. Old credits also refunded within validity window. API pricing permanently reduced.
+**Updated May 26/27, 2026**: Credits quotas upgraded 5-8x across all tiers with no price increase. Old credits refunded within validity window. API pricing permanently reduced. Now standard.
 
 | Plan | Price | Credits/Mo (Old) | Credits/Mo (New, May 26) | ~Tasks/mo (V2.5 1:1) |
 |------|-------|-----------------|--------------------------|----------------------|
@@ -483,7 +482,8 @@ Auto-renewal discounts: up to $144 off annual plans.
 - **Permanent price reduction** — not promotional. Old long-context multiplier (256K+) eliminated
 - Down from ~$50/MTok effective for long-context to flat $1/$3
 - API old rate for V2.5: $0.4/$2.00 per 1M (≤256K). New flat rate with no surcharge for longer context
-- Token Plan quotas increased 5-8x, existing credits refunded within validity period
+- Token Plan quotas increased 5-8x (now standard), existing credits refunded within validity period
+- **V2 series models (MiMo-V2-Omni, MiMo-V2-Pro) slated for deprecation** — V2.5 models are the current focus
 
 ---
 
@@ -516,13 +516,24 @@ Context window: 262,144 tokens.
 
 ### Membership Plans (Kimi App + Kimi Code)
 
-| Tier | Price (annual/mo) | Agent Usage/mo |
-|------|------------------|----------------|
-| Adagio | Free | 6 |
-| Moderato | $15/mo | 60 |
-| Allegretto | $31/mo | 150 |
-| Allegro | $79/mo | 360 |
-| Vivace | $159/mo | 720 |
+| Tier | Price (annual/mo) | Agent Usage/mo | Concurrent Tasks | Kimi Code Credits | Agent Swarm |
+|------|------------------|----------------|-----------------|-------------------|-------------|
+| Adagio | Free | 6 | 1 task | — | — |
+| Moderato | $15/mo | 60 | 2 tasks | 1× credits | — |
+| Allegretto | $31/mo | 150 | 2 tasks | 5× credits | 50 uses included |
+| Allegro | $79/mo | 360 | 4 tasks | 15× credits | 120 uses included |
+| Vivace | $159/mo | 720 | 4 tasks | 30× credits | 240 uses included |
+
+### Additional Membership Features
+
+| Feature | Adagio | Moderato | Allegretto | Allegro | Vivace |
+|---------|--------|----------|------------|---------|--------|
+| Kimi Claw | — | — | ✔️ | ✔️ | ✔️ |
+| Deploy Website w/ DB | — | ✔️ | ✔️ | ✔️ | ✔️ |
+| Professional Data Requests | 200 | 2,000 | 5,000 | 12,000 | 24,000 |
+| Priority Queue | — | 4× speed | 4× speed | 4× speed | 4× speed |
+| Concurrent Subagents | — | — | 4 | 4 | 8 |
+| Group Chat w/ Claw | — | — | 10 chats | 10 chats | 10 chats |
 
 Kimi Code available via: `curl -L code.kimi.com/install.sh | bash`. Powered by Kimi K2.6.
 
