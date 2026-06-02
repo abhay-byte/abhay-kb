@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-01 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-02 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled June 2026.
@@ -16,7 +16,7 @@ Compiled June 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 1 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 2 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -107,7 +107,7 @@ Compiled June 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (June 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 1 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 2 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -168,7 +168,7 @@ Compiled June 2026.
 
 ## Anthropic (Claude)
 
-Current as of May 2026. Source: [platform.claude.com](https://platform.claude.com/docs/en/about-claude/pricing)
+Current as of June 2026. Source: [platform.claude.com](https://platform.claude.com/docs/en/about-claude/pricing)
 
 | Model | Input /1M | Output /1M | Batch (50% off) | Cache Writes (5m) | Cache Hits |
 |-------|-----------|------------|-----------------|-------------------|------------|
@@ -187,7 +187,7 @@ Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Veri
 
 ## Google Gemini
 
-Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api/docs/pricing), [SWE-Bench](https://www.swebench.com/)
+Current as of June 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api/docs/pricing), [SWE-Bench](https://www.swebench.com/)
 
 ### Current Models
 
@@ -217,7 +217,7 @@ Current as of May 2026. Source: [ai.google.dev](https://ai.google.dev/gemini-api
 
 | Model | Input /1M | Output /1M | Note |
 |-------|-----------|------------|------|
-| Gemini 2.0 Flash | $0.10 | $0.40 | Shutdown June 1 2026 — retired |
+| Gemini 2.0 Flash | $0.10 | $0.40 | Retired June 1 2026 — shutdown complete |
 
 Gemini 3.1 Pro is a preview model (restrictive rate limits). Free tier available for development and small projects.
 Gemini 3.5 Flash GA May 19 2026 — fast, high-volume tier at 25% less than 3.1 Pro. 76.2% Terminal-Bench 2.1, 83.6% MCP Atlas, 84.2% CharXiv Reasoning.
@@ -228,7 +228,7 @@ Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Op
 
 ## DeepSeek
 
-Current as of May 2026. Source: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/)
+Current as of June 2026. Source: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/)
 
 DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.
 SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro pricing adjusted to 1/4 of original after promo ended May 31 2026.
@@ -260,7 +260,7 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.
 
 ## OpenAI (ChatGPT)
 
-Current as of May 2026. Source: [openai.com/api/pricing](https://openai.com/api/pricing/)
+Current as of June 2026. Source: [openai.com/api/pricing](https://openai.com/api/pricing/)
 
 ### GPT-5 Family (Current Flagship)
 
@@ -297,20 +297,21 @@ GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores 
 
 ## MiniMax
 
-Current as of May 2026. Source: [platform.minimax.io](https://platform.minimax.io/docs/pricing/overview), [OpenRouter](https://openrouter.ai/minimax/minimax-m2.7)
+Current as of June 2026. Source: [platform.minimax.io](https://platform.minimax.io/docs/pricing/overview), [OpenRouter](https://openrouter.ai/minimax/minimax-m2.7)
 
 ### Coding Models
 
 | Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench | Speed | Notes |
 |-------|-----------|------------|---------|-----------|-----------|-------|-------|
-| M3 | $0.30 (50% off) → $0.60 | $1.20 (50% off) → $2.40 | 512K+ | — | — | — | Released late May 2026. 7-day 50% off intro promo |
-| M2.7 | $0.30 | $1.20 | 205K | 131K | — | — | Released Mar 18 2026. $0.06/M cached read |
-| M2.5 Standard | $0.15 | $1.20 | 256K | — | 80.2% | ~50 TPS | Automatic cache (no config needed) |
-| M2.5 Lightning | $0.30 | $2.40 | 256K | — | 80.2% | ~100 TPS | Priority scheduling available |
+| M3 (≤512K) | $0.30 (intro) → $0.60 | $1.20 (intro) → $2.40 | 512K+ | — | — | ~50 TPS | 7-day 50% off intro promo. $0.06/M cached read |
+| M3 (>512K) | $1.20 | $4.80 | 512K+ | — | — | — | Long-context tier. Limited availability |
+| M2.7 | $0.30 | $1.20 | 205K | 131K | — | ~80 TPS | Released Mar 18 2026. $0.06/M cached read |
+| M2.5 Standard | $0.30 | $1.20 | 256K | — | 80.2% | ~50 TPS | Legacy. Automatic cache (no config) |
+| M2.5 Lightning | $0.60 | $2.40 | 256K | — | 80.2% | ~100 TPS | Legacy. Priority scheduling |
 
-M2.5 Standard: One of the best value coding models. Near Claude Opus 4.6 (80.8%).
+M2.5 Standard: Still one of the best value coding models at $0.30/$1.20. Near Claude Opus 4.6 (80.8%).
 M3: Latest generation. $0.30/$1.20 during 7-day intro (50% off), then $0.60/$2.40 standard. Supports >512K context via Priority tier.
-OpenCode Go estimates: M2.5 ~6,300 req/5h, M2.7 ~3,400 req/5h.
+OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3 ~3,000 req/5h.
 
 ### Subscription Plans
 
@@ -324,7 +325,7 @@ OpenCode Go estimates: M2.5 ~6,300 req/5h, M2.7 ~3,400 req/5h.
 
 ## Qwen (Alibaba)
 
-Current as of May 2026. Source: [DashScope direct pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
+Current as of June 2026. Source: [DashScope direct pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
 
 ### Current Gen (Qwen3.7 & Qwen3.6)
 
@@ -371,7 +372,7 @@ All Qwen models support native tool-calling, JSON-mode, and OpenAI-compatible AP
 
 ## GLM / Z.ai
 
-Current as of May 2026. Source: [docs.z.ai](https://docs.z.ai/guides/overview/pricing)
+Current as of June 2026. Source: [docs.z.ai](https://docs.z.ai/guides/overview/pricing)
 
 ### Flagship Models (GLM-5 Series)
 
@@ -418,7 +419,7 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.
 
 ## Xiaomi MiMo
 
-Current as of May 2026. V2 launched Mar 18 2026, V2.5 launched Apr 22 2026. Source: [mimo-v2.com](https://www.mimo-v2.com/docs/pricing)
+Current as of June 2026. V2 launched Mar 18 2026, V2.5 launched Apr 22 2026. Source: [mimo-v2.com](https://www.mimo-v2.com/docs/pricing)
 
 | Model | Input /1M | Output /1M | Context | Modalities | Notes |
 |-------|-----------|------------|---------|------------|-------|
@@ -438,7 +439,7 @@ API at platform.xiaomimimo.com. OpenAI-compatible. Credit plans available: Lite 
 
 ## Kimi / Moonshot AI (K2.6)
 
-Current as of May 2026. Source: [kimi.com](https://www.kimi.com/resources/kimi-k2-6-pricing), [OpenRouter](https://openrouter.ai/moonshotai/kimi-k2.5)
+Current as of June 2026. Source: [kimi.com](https://www.kimi.com/resources/kimi-k2-6-pricing), [OpenRouter](https://openrouter.ai/moonshotai/kimi-k2.5)
 
 Both models: 1T params, 32B active MoE, 384 experts, MIT license.
 
@@ -464,7 +465,7 @@ K2.5: 100 parallel sub-agents.
 
 ## Mistral (Medium 3.5)
 
-Current as of May 2026. Source: [la-plateforme.mistral.ai](https://la-plateforme.mistral.ai/), [tokencost.app](https://tokencost.app/models/mistral-medium-3-5)
+Current as of June 2026. Source: [la-plateforme.mistral.ai](https://la-plateforme.mistral.ai/), [tokencost.app](https://tokencost.app/models/mistral-medium-3-5)
 
 | Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench Verified | Notes |
 |-------|-----------|------------|---------|-----------|-------------------|-------|
@@ -476,7 +477,7 @@ Mistral Medium 3.5 consolidates Medium 3.1 + Magistral + Devstral 2 into one uni
 
 ## xAI (Grok)
 
-Current as of May 2026. Source: [docs.x.ai](https://docs.x.ai/developers/models), [xAI pricing](https://docs.x.ai/developers/models)
+Current as of June 2026. Source: [docs.x.ai](https://docs.x.ai/developers/models), [xAI pricing](https://docs.x.ai/developers/models)
 
 | Model | Input /1M | Output /1M | Cached Input | Context | SWE-Bench | Notes |
 |-------|-----------|------------|-------------|---------|-----------|-------|
@@ -517,7 +518,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | opencode-go/grok-4.3 | Grok 4.3 |
 | opencode-go/grok-4.20 | Grok 4.20 |
 
-### Request Estimates (June 1 2026)
+### Request Estimates (June 2 2026)
 
 | Model | Per 5h | Per Week | Per Month |
 |-------|--------|----------|-----------|
@@ -532,7 +533,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | Qwen3.6 Max Preview | 820 | 2,050 | 4,100 |
 | MiniMax M3 | ~3,000 | ~7,500 | 15,000 |
 | MiniMax M2.7 | 3,400 | 8,500 | 17,000 |
-| MiniMax M2.5 | 6,300 | 15,900 | 31,800 |
+| MiniMax M2.5 | 3,150 | 7,950 | 15,900 |
 | Mistral Medium 3.5 | ~2,500 | ~6,200 | 12,500 |
 | Qwen3.5 Plus | 10,200 | 25,200 | 50,500 |
 
