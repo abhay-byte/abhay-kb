@@ -9,6 +9,32 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### June 2, 2026
+
+**[OpenAI Frontier Models and Codex Now Available on AWS](news/openai-codex-frontier-models-aws/)** — *OpenAI / Hacker News*
+> OpenAI made its frontier models and Codex AI coding agent generally available on Amazon Bedrock, letting enterprises access them within existing AWS security and governance workflows.
+
+**[Claude Code Adds Dynamic Workflows for Parallel Agent Coordination](news/claude-code-dynamic-workflows-parallel-agents/)** — *InfoQ*
+> Anthropic introduced Dynamic Workflows for Claude Code, enabling coordinated multi-agent execution of complex engineering tasks with dynamic subtask planning and parallel validation.
+
+**[Shopify Reports 15x Faster GraphQL Execution with Breadth-First Engine](news/shopify-graphql-cardinal-bfs-15x/)** — *InfoQ*
+> Shopify's GraphQL Cardinal engine replaces depth-first traversal with breadth-first execution, achieving 15x faster field execution and 6x less GC overhead in production.
+
+**[Microsoft Launches MAI-Code-1-Flash: A New Coding Model for Copilot](news/microsoft-mai-code-1-flash/)** — *Microsoft AI / Hacker News*
+> Microsoft's new coding model, trained on GitHub Copilot production harnesses, outperforms Claude Haiku 4.5 while using up to 60% fewer tokens through adaptive solution length control.
+
+**[Google Workspace CLI: Unified Tool for Humans and AI Agents](news/google-workspace-cli-gws/)** — *InfoQ*
+> Google released an open-source, Rust-based CLI for Workspace with 100+ agent skills and dynamic command generation that reads Google's Discovery Service at runtime.
+
+**[BadHost Vulnerability in Starlette Exposes AI Agents and LLM Gateways](news/badhost-starlette-vulnerability/)** — *InfoQ*
+> A high-severity authentication bypass in Starlette (CVE-2026-48710) lets attackers use malformed HTTP Host headers to bypass path access controls on AI infrastructure.
+
+**[Microsoft Coreutils for Windows: UNIX Utilities Go Native](news/microsoft-coreutils-windows/)** — *Hacker News / GitHub*
+> Microsoft released a native Windows port of coreutils with `ls`, `cat`, `cp`, `grep`, and more — installable via WinGet, scoring 192 points on Hacker News.
+
+**[Anthropic Expands Project Glasswing to 200+ Organizations](news/anthropic-expanding-project-glasswing/)** — *Anthropic / Hacker News*
+> Anthropic added 150 new partners to Project Glasswing across critical infrastructure sectors, having already found 10,000+ vulnerabilities using Claude Mythos Preview.
+
 ### June 1, 2026
 
 **[Intel Launches 288-Core Clearwater Forest Xeon 6 on 18A Process](news/intel-clearwater-288-core-xeon-6/)** — *The Register*
