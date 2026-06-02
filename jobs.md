@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-06-01
+Last updated: 2026-06-02
 
 ---
 
@@ -119,6 +119,10 @@ Last updated: 2026-06-01
 | 99 🆕 | Associate Software Engineer | S&P Global Mobility | Gurgaon | As per Industry Standard | 31-May-2026 | [Apply](https://mobility.wd503.myworkdayjobs.com/Mobility/job/Gurugram-Haryana/Associate--Software-Engineer_10?source=LinkedIn) |
 | 100 🆕 | Apprentice - Java/Support | CGI | Hyderabad | Best in Industry | May 2026 | [Apply](https://www.enggwave.com/cgi-off-campus-drive-2026/107194) |
 | 101 🆕 | Graduate Engineer Trainee (GET) | Viatris | Bengaluru | ₹5 LPA | May 2026 | [Apply](https://www.enggwave.com/viatris-off-campus-drive-2026/107757) |
+| 102 🆕 | IT Technology Associate | SAP Labs | Bangalore | ~10-20 LPA | 01-Jun-2026 | [Apply](https://jobs.sap.com/job/Bangalore-IT-Technology-Consultant-Academy-for-Cloud-Delivery-Hybrid-KA-560066/1376957033/) |
+| 103 🆕 | Graduate Engineer Trainee (SAP) | Johnson Controls | Pune | Competitive | 01-Jun-2026 | [Apply](https://jobsnet.in/johnson-controls-off-campus-drive-hiring-graduate-engineer-trainee/) |
+| 104 🆕 | Java Full Stack Developer (Entry-Level) | Capco | Bangalore | As per Industry | 01-Jun-2026 | [Apply](https://job-boards.greenhouse.io/capco/jobs/7439258?gh_src=jklmi9n71us) |
+| 105 🆕 | Software Engineer Apprentice | Vonage | Bangalore (Hybrid) | ~6 LPA | 28-May-2026 | [Apply](https://www.vonage.com/careers/job-details/8549501002/) |
 
 ### 💼 Internships
 
@@ -158,4 +162,4 @@ Last updated: 2026-06-01
 
 ---
 
-*Auto-updated as of 01-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 02-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*

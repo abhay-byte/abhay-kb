@@ -211,3 +211,12 @@
 | 10 | IT Analyst (Freshers) | EY | Mumbai | Best in Industry | https://careers.ey.com/ey/job/Mumbai-Analyst-Tech-Consulting-FS-CNS-TC-TECHNOLOGY-STRATEGY-&-TRANSFORMATION-Mumbai-MH-400028/1366796233/ |
 | 11 | Graduate Engineer Trainee (GET) | Viatris | Bengaluru | ₹5 LPA | https://www.enggwave.com/viatris-off-campus-drive-2026/107757 |
 | 12 | Apprentice - Java/Support | CGI | Hyderabad | Best in Industry | https://www.enggwave.com/cgi-off-campus-drive-2026/107194 |
+
+### 02-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | IT Technology Associate | SAP Labs | Bangalore | ~10-20 LPA | https://jobs.sap.com/job/Bangalore-IT-Technology-Consultant-Academy-for-Cloud-Delivery-Hybrid-KA-560066/1376957033/ |
+| 2 | Graduate Engineer Trainee (SAP) | Johnson Controls | Pune | Competitive | https://jobsnet.in/johnson-controls-off-campus-drive-hiring-graduate-engineer-trainee/ |
+| 3 | Java Full Stack Developer (Entry-Level) | Capco | Bangalore | As per Industry | https://job-boards.greenhouse.io/capco/jobs/7439258?gh_src=jklmi9n71us |
+| 4 | Software Engineer Apprentice | Vonage | Bangalore (Hybrid) | ~6 LPA | https://www.vonage.com/careers/job-details/8549501002/ |
