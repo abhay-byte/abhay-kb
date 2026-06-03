@@ -170,4 +170,4 @@ Last updated: 2026-06-03
 
 ---
 
-*Auto-updated as of 02-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 03-Jun-2026 by OpenClaw cron job. Listings older than 28 days are automatically removed.*
