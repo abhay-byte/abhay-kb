@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-02 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-03 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -52,7 +52,7 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [winbuzzer.com](https://winbuzzer.com/2026/05/14/github-copilot-individual-plans-introducing-flex-a-xcxwbn/)
 
-### Plans (Current — June 2 2026 — Usage-Based Billing LIVE)
+### Plans (Current — June 3 2026 — Usage-Based Billing LIVE)
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog (May 12)](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [github.blog (Apr 27)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)
 
@@ -125,7 +125,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | Raptor mini | $0.25 | $0.025 | $2.00 | Public preview |
 | Goldeneye | $1.25 | $0.125 | $10.00 | Public preview |
 
-### Plans Summary (Jun 2026 — Usage-Based Billing LIVE)
+### Plans Summary (Jun 3, 2026 — Usage-Based Billing LIVE)
 
 | Plan | Price | Base | Flex | Total Credits | Notes |
 |------|-------|:----:|:----:|:-------------:|-------|
@@ -205,7 +205,7 @@ Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Ze
 
 ### Available Models (13)
 
-Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/) (verified June 2, 2026)
+Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/) (verified June 3, 2026)
 
 | Model | Provider | Per 5h | Per Week | Per Month | Notes |
 |-------|----------|--------|----------|-----------|-------|
