@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-06-02
+Last updated: 2026-06-03
 
 ---
 
@@ -123,6 +123,11 @@ Last updated: 2026-06-02
 | 103 🆕 | Graduate Engineer Trainee (SAP) | Johnson Controls | Pune | Competitive | 01-Jun-2026 | [Apply](https://jobsnet.in/johnson-controls-off-campus-drive-hiring-graduate-engineer-trainee/) |
 | 104 🆕 | Java Full Stack Developer (Entry-Level) | Capco | Bangalore | As per Industry | 01-Jun-2026 | [Apply](https://job-boards.greenhouse.io/capco/jobs/7439258?gh_src=jklmi9n71us) |
 | 105 🆕 | Software Engineer Apprentice | Vonage | Bangalore (Hybrid) | ~6 LPA | 28-May-2026 | [Apply](https://www.vonage.com/careers/job-details/8549501002/) |
+| 106 🆕 | Graduate Engineer Trainee (.NET/C#) | Emerson | Pune (Hybrid) | Competitive | 02-Jun-2026 | [Apply](https://freshershunt.in/emerson-off-campus-drive-2026/) |
+| 107 🆕 | Trainee Software Engineer & QA Engineer | United Techno | Chennai | Competitive | 02-Jun-2026 | [Apply](https://freshershunt.in/united-techno-off-campus-drive-2026/) |
+| 108 🆕 | Junior React.js Developer | Algoshack | Bangalore | Competitive | May 2026 | [Apply](https://freshershunt.in/algoshack-off-campus-drive-2026/) |
+| 109 🆕 | Software Engineer (RPA) | Principal Global Services | Pune | Competitive | 29-May-2026 | [Apply](https://freshershunt.in/principal-off-campus-drive-2026/) |
+| 110 🆕 | Security Consulting Engineer | Cisco | Pan India | Best in Industry | 02-Jun-2026 | [Apply](https://jobsnet.in/cisco-off-campus-drive-security-consulting-engineer-freshers-pan-india/) |
 
 ### 💼 Internships
 
@@ -137,12 +142,15 @@ Last updated: 2026-06-02
 | 7 | Software Developer Internship | Talview | Bangalore | — | 18-May-2026 | [Apply](https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/) |
 | 8 | Software Intern (Digital Solutions) | Wabtec | Bengaluru (Onsite) | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/wabtec-internship-2026-software-bengaluru/) |
 | 9 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/natwest-group-internship-2026-bangalore/) |
+| 10 🆕 | Software Engineer Intern (6 months) | AiDASH | Bengaluru | Competitive Stipend | May 2026 | [Apply](https://offcampusjobs4u.com/aidash-recruitment-2026-software-engineer-intern-bengaluru/) |
+| 11 🆕 | Technology Summer Intern | Fiserv | Noida | Competitive Stipend | 02-Jun-2026 | [Apply](https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/) |
 
 ### 🎮 Game Development
 
 | # | Title | Company | Location | Salary | Posted | Apply |
 |---|-------|---------|----------|--------|--------|-------|
 | 1 | Game Developer - Fresher | Associative | Pune | — | May 2026 | [Apply](https://in.indeed.com/Game-Developer-jobs-in-India) |
+| 2 🆕 | Trainee Test Engineer | Side | Hyderabad | Competitive | 25-May-2026 | [Apply](https://freshershunt.in/side-off-campus-drive-2026/) |
 
 ---
 
@@ -158,7 +166,7 @@ Last updated: 2026-06-02
 
 1. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
 2. **Amazon - SDE 1 (University Talent)** - Pan India - Huge scale, great career growth - [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition)
-3. **Cisco - Software Consulting Engineer** - Bangalore/Pune - Entry-level at Cisco, strong brand - [Apply](https://careers.cisco.com/global/en/job/CISCISGLOBAL2015858EXTERNALENGLOBAL/Software-Consulting-Engineer)
+3. **Cisco - Security Consulting Engineer** - Pan India - New Cisco entry-level role - [Apply](https://jobsnet.in/cisco-off-campus-drive-security-consulting-engineer-freshers-pan-india/)
 
 ---
 

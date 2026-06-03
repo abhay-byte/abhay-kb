@@ -220,3 +220,16 @@
 | 2 | Graduate Engineer Trainee (SAP) | Johnson Controls | Pune | Competitive | https://jobsnet.in/johnson-controls-off-campus-drive-hiring-graduate-engineer-trainee/ |
 | 3 | Java Full Stack Developer (Entry-Level) | Capco | Bangalore | As per Industry | https://job-boards.greenhouse.io/capco/jobs/7439258?gh_src=jklmi9n71us |
 | 4 | Software Engineer Apprentice | Vonage | Bangalore (Hybrid) | ~6 LPA | https://www.vonage.com/careers/job-details/8549501002/ |
+
+### 03-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Graduate Engineer Trainee (.NET/C#) | Emerson | Pune (Hybrid) | Competitive | https://freshershunt.in/emerson-off-campus-drive-2026/ |
+| 2 | Trainee Software Engineer & QA Engineer | United Techno | Chennai | Competitive | https://freshershunt.in/united-techno-off-campus-drive-2026/ |
+| 3 | Junior React.js Developer | Algoshack | Bangalore | Competitive | https://freshershunt.in/algoshack-off-campus-drive-2026/ |
+| 4 | Software Engineer (RPA) | Principal Global Services | Pune | Competitive | https://freshershunt.in/principal-off-campus-drive-2026/ |
+| 5 | Security Consulting Engineer | Cisco | Pan India | Best in Industry | https://jobsnet.in/cisco-off-campus-drive-security-consulting-engineer-freshers-pan-india/ |
+| 6 | Trainee Test Engineer | Side | Hyderabad | Competitive | https://freshershunt.in/side-off-campus-drive-2026/ |
+| 7 | Software Engineer Intern | AiDASH | Bengaluru | Competitive Stipend | https://offcampusjobs4u.com/aidash-recruitment-2026-software-engineer-intern-bengaluru/ |
+| 8 | Technology Summer Intern | Fiserv | Noida | Competitive Stipend | https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/ |
