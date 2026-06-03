@@ -9,6 +9,29 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### June 3, 2026
+
+**[1-Click GitHub Token Stealing via a VSCode Bug](news/vscode-github-token-theft/)** — *Ammar Askar's Blog / Hacker News*
+> A security researcher discovered a VSCode webview sandbox bypass in github.dev allowing attackers to steal full-access GitHub OAuth tokens with a single malicious link click. 1,280 HN points.
+
+**[A 10-Year-Old Xeon Is All You Need: Running Gemma 4 on Ancient Hardware](news/gemma-4-on-10-year-xeon/)** — *point.free / Hacker News*
+> A developer ran Google's Gemma 4 on a 2016 Intel Xeon with DDR3 RAM and no GPU by pulling every optimization lever in llama.cpp — speculative decoding, multi-token prediction, and CPU quantization.
+
+**[Can the Stock Market Swallow Anthropic, SpaceX and OpenAI?](news/stockmarket-anthropic-spacex-openai/)** — *The Economist / Hacker News*
+> The Economist examines whether public markets have enough appetite for the trillion-dollar IPO wave of AI giants, with 1,200+ HN comments debating AI valuations and index fund implications.
+
+**[DuckDuckGo Launches 'No-AI' Search Extensions as Traffic Booms](news/duckduckgo-no-ai-search-extensions/)** — *TechCrunch / Hacker News*
+> DuckDuckGo released Chrome and Firefox extensions for its AI-free search engine as traffic surges — U.S. iOS app installs grew 69.9% week-over-week after Google's AI-first search overhaul.
+
+**[AI Outperforms Law Professors in Stanford Law Study](news/ai-outperforms-law-professors-stanford/)** — *Stanford Law School / Hacker News*
+> In a blind study of ~3,000 evaluations across 16 law schools, AI answers won 75% of head-to-head matchups against professor-written responses, with only 3.5% flagged as pedagogically harmful.
+
+**[Trump Signs Downsized AI Order After Weeks of Reversals](news/trump-downsized-ai-order/)** — *Politico / Hacker News*
+> President Trump signed a scaled-back executive order on AI following internal policy debates, with 196 HN points discussing regulatory implications for the AI industry.
+
+**[Adafruit Receives Demand Letter from Fenwick Legal Counsel on Behalf of Flux.ai](news/adafruit-fluxai-demand-letter/)** — *Adafruit Blog / Hacker News*
+> OSHW pioneer Adafruit received a legal demand letter from Flux.ai's law firm Fenwick & West, sparking debate on IP claims in the open-source hardware ecosystem. 645 HN points.
+
 ### June 2, 2026
 
 **[OpenAI Frontier Models and Codex Now Available on AWS](news/openai-codex-frontier-models-aws/)** — *OpenAI / Hacker News*
