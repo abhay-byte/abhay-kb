@@ -11,6 +11,18 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 ### June 3, 2026
 
+**[Elixir v1.20 Released: Now a Gradually Typed Language](news/elixir-v1-20-gradually-typed/)** — *Elixir Lang Blog / Hacker News*
+> After years of research, Elixir v1.20 ships a gradual type system with set-theoretic types that finds dead code and verified bugs without requiring any type annotations.
+
+**[Uber Caps AI Tool Usage at $1,500/Month per Developer](news/uber-ai-tool-cost-caps/)** — *Simon Willison's Blog / Bloomberg / Hacker News*
+> After burning through its 2026 AI budget in four months, Uber capped each employee at $1,500/month per AI coding tool — roughly 11% of median SWE compensation.
+
+**[A Post-Quantum Future for Let's Encrypt](news/post-quantum-lets-encrypt/)** — *Let's Encrypt / Hacker News*
+> Let's Encrypt unveils plans for Merkle Tree Certificates to bring post-quantum-safe authentication to the web without the massive TLS handshake bloat of standard PQ schemes.
+
+**[Node.js Moves to One Major Release Per Year, Starting with Node 27](news/nodejs-one-major-release-yearly/)** — *InfoQ*
+> Node.js fundamentally changes its release schedule — one major per year instead of two, eliminating odd/even versioning, with every release now becoming LTS.
+
 **[1-Click GitHub Token Stealing via a VSCode Bug](news/vscode-github-token-theft/)** — *Ammar Askar's Blog / Hacker News*
 > A security researcher discovered a VSCode webview sandbox bypass in github.dev allowing attackers to steal full-access GitHub OAuth tokens with a single malicious link click. 1,280 HN points.
 
