@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-02 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-03 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled June 2026.
@@ -16,7 +16,7 @@ Compiled June 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 2 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 3 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -75,10 +75,10 @@ Compiled June 2026.
 <text x="454.60775263317214" y="188.27027027027032" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-5</text>
 <circle cx="454.60775263317214" cy="212.02702702702703" r="5.5" fill="#00b4d8" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="454.60775263317214" y="230.02702702702703" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiMo-V2-Pro</text>
-<circle cx="545.9221121713288" cy="182.86486486486496" r="5.5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="545.9221121713288" y="200.86486486486496" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V4 Pro</text>
-<circle cx="546.0" cy="182.9" r="5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="1.5" filter="url(#g)"/>
-<text x="546.0" y="167.9" text-anchor="middle" fill="#ccc" font-size="8" font-weight="400">V4 Pro Max</text>
+<circle cx="317.36" cy="182.86" r="5.5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="317.36" y="168.86" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V4 Pro</text>
+<circle cx="545.92" cy="182.86" r="5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="1.5" filter="url(#g)"/>
+<text x="545.92" y="167.86" text-anchor="middle" fill="#ccc" font-size="8" font-weight="400">V4 Pro Max</text>
 <circle cx="568.8810727623497" cy="182.86486486486496" r="5.5" fill="#4285f4" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="568.8810727623497" y="200.86486486486496" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Gemini 3.1 Pro</text>
 <circle cx="635.7266798708225" cy="194.08108108108112" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
@@ -107,7 +107,7 @@ Compiled June 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (June 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 2 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 3 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -231,7 +231,7 @@ Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Op
 Current as of June 2026. Source: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/)
 
 DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.
-SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro pricing adjusted to 1/4 of original after promo ended May 31 2026.
+SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro standard pricing at $0.435/$0.87 per MTok.
 
 ### New: DeepSeek V4 Pro Max
 
@@ -240,7 +240,7 @@ Released Apr 24 2026. 1.6T params, 49B active MoE, 1M context, open-weight on Hu
 | Model | Cache Hit Input /1M | Cache Miss Input /1M | Output /1M | Context | Notes |
 |-------|--------------------|---------------------|-----------|---------|-------|
 | deepseek-v4-flash | $0.0028 | $0.14 | $0.28 | 1M | Default route. 384K max output |
-| deepseek-v4-pro | $0.0145 | $1.74 | $3.48 | 1M | Full price (promo 75% off ended May 31 2026). 1.6T params |
+| deepseek-v4-pro | $0.003625 | $0.435 | $0.87 | 1M | Standard pricing. 1.6T params. 80.6% SWE-Bench Verified |
 
 Cache hit prices reduced to 1/10 of launch price from Apr 26 2026.
 Older aliases `deepseek-chat` and `deepseek-reasoner` map to V4 Flash (non-thinking / thinking) and retire after Jul 24 2026.
@@ -538,7 +538,7 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 | Qwen3.5 Plus | 10,200 | 25,200 | 50,500 |
 
 MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).
-DeepSeek V4 Pro: Promotional 75% discount expired May 31 2026. Full pricing now applies ($1.74/$3.48 per MTok). OpenCode Go limits may change accordingly.
+DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.
 
 ---
 
