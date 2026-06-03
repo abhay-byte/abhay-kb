@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-06-03
+Last updated: 2026-06-04
 
 ---
 
@@ -77,6 +77,9 @@ Last updated: 2026-06-03
 | 57 | Graduate Engineer Trainee (.NET/C#) | Emerson | Pune (Hybrid) | Competitive | 02-Jun-2026 | [Apply](https://freshershunt.in/emerson-off-campus-drive-2026/) |
 | 58 | Trainee Software Engineer & QA Engineer | United Techno | Chennai | Competitive | 02-Jun-2026 | [Apply](https://freshershunt.in/united-techno-off-campus-drive-2026/) |
 | 59 | Security Consulting Engineer | Cisco | Pan India | Best in Industry | 02-Jun-2026 | [Apply](https://jobsnet.in/cisco-off-campus-drive-security-consulting-engineer-freshers-pan-india/) |
+| 60 | Technical Apprentice | Dell Technologies | Bangalore | As per Industry | 03-Jun-2026 | [Apply](https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/careers/job/R272585/) |
+| 61 | Associate Software Engineer | TransUnion | Chennai/Pune | Best in Industry | 03-Jun-2026 | [Apply](https://transunion.wd5.myworkdayjobs.com/en-US/transunion/job/Chennai/Associate-Engineer_19039194) |
+| 62 | Associate Software Engineer | IBM | Multiple Cities | As per Industry | 02-Jun-2026 | [Apply](https://jobsnet.in/ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer/) |
 
 ### 💼 Internships
 

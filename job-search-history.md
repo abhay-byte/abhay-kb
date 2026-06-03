@@ -233,3 +233,8 @@
 | 6 | Trainee Test Engineer | Side | Hyderabad | Competitive | https://freshershunt.in/side-off-campus-drive-2026/ |
 | 7 | Software Engineer Intern | AiDASH | Bengaluru | Competitive Stipend | https://offcampusjobs4u.com/aidash-recruitment-2026-software-engineer-intern-bengaluru/ |
 | 8 | Technology Summer Intern | Fiserv | Noida | Competitive Stipend | https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/ |
+| 9 | Technical Apprentice | Dell Technologies | Bangalore | As per Industry | https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/careers/job/R272585/ |
+| 10 | Associate Software Engineer | TransUnion | Chennai/Pune | Best in Industry | https://transunion.wd5.myworkdayjobs.com/en-US/transunion/job/Chennai/Associate-Engineer_19039194 |
+| 11 | Associate Software Engineer | IBM | Multiple Cities | As per Industry | https://jobsnet.in/ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer/ |
+| 12 | Graduate Engineer Trainee (Software) | Emerson | Pune | ₹10 LPA | https://jobsnet.in/emerson-off-campus-drive-graduate-engineer-trainee-software-freshers-pune-2/ |
+| 13 | Engineer | Johnson Controls | Hyderabad | Best in Industry | https://www.linkedin.com/jobs/view/4417995011/ |
