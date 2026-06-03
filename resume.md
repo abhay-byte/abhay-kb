@@ -6,18 +6,18 @@ title: Resume
 # Abhay Raj
 
 <div class="contact-bar" style="text-align:center;margin-bottom:24px;">
+  <span>+91-8178339741</span> ·
   <a href="mailto:abhay.byte02@gmail.com">abhay.byte02@gmail.com</a> ·
-  <span>8178339741</span> ·
   <a href="https://linkedin.com/in/abhay-byte">LinkedIn</a> ·
   <a href="https://github.com/abhay-byte">GitHub</a> ·
-  <a href="https://abhay-byte.web.app/">Portfolio</a>
+  <span>New Delhi, IN</span>
 </div>
 
 ---
 
 ## Summary
 
-Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ specialized agents in parallel — spinning them up fast, equipping each with complete context, and letting them autonomously close the loop on complex issues end-to-end. I design MCP-native developer tools, architect multi-agent workflows, and ship production systems where LLMs operate as real coworkers, not toys. Passionate about open-source ecosystem — with 2.6K+ commits across 84 repositories, 290 stars, and 83 followers.
+**B.Tech IT** fresher (**CGPA 8.6**, **GTBIT**) with **6 months** of **PHP/Laravel** backend experience at **Avalon Information Systems** and **5+ published Android apps** with **25K+ installs**. Proficient in **SDLC**, **Agile**, **system design**, and **clean code** principles; seeking full stack or backend roles.
 
 ---
 
@@ -25,22 +25,27 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 
 | Category | Skills |
 |----------|--------|
-| **AI & Agentic Engineering** | LLM Orchestration, Multi-Agent Systems, MCP, Prompt Engineering, RAG, AI Workflows, Vibe Coding, TensorFlow, OpenAI API, Gemini API |
-| **Languages** | Python, Rust, TypeScript, JavaScript, Java, Kotlin, C++, PHP, Shell, SQL |
-| **Frameworks & Frontend** | React, Next.js, Tauri, Node.js, Express, Django, Flask, Laravel, TailwindCSS, Material-UI |
-| **Cloud & DevOps** | AWS, GCP, Docker, Git, Vercel, Linux Administration, GitHub Actions, Cron Jobs |
+| **Languages** | Kotlin, TypeScript, PHP, Python, Rust, JavaScript, C++, Java, Dart, Shell Scripting, SQL |
+| **Android & Mobile** | Android SDK, Jetpack Compose, Material Design 3, MVVM / Clean Architecture, Room DB, Coroutines / Flow, Flutter, Google Play Publishing, F-Droid |
+| **Backend & Frameworks** | Laravel 12, CakePHP 5, Django, Flask, Node.js, Express.js, RESTful APIs |
+| **Frontend** | React, Tauri v2, Next.js, TailwindCSS, HTML / CSS |
+| **AI, Agentic Engineering & Tools** | LLM Orchestration, Multi-Agent Systems, Model Context Protocol (MCP) |
+| **DevOps & Tools** | Git / GitHub, Linux Administration, Docker, GitHub Actions, AWS, GCP, Vercel, Cron Jobs |
+| **Engineering Practices** | SDLC, Agile / Scrum, System Design, Clean Code (SOLID, DRY, KISS), Software Testing (Unit, Integration), CI/CD, Design Patterns |
 
 ---
 
 ## Experience
 
-### Avalon Information Systems — *Backend Developer*
+### Avalon Information Systems — *PHP Developer*
 
 *Jan 2026 – Jun 2026 · New Delhi, IN*
 
-- Contributed to **OpenEMIS**, an open-source Education Management Information System used globally for managing student data and institutional records.
-- Utilized **PHP (Laravel & CakePHP)** to build and optimize scalable backend services for OpenEMIS Core and School modules, ensuring high performance.
-- Collaborated with a global team to enhance system reliability and data processing capabilities for national-level education deployments.
+- Engineered **20+ REST API endpoints** across OpenEMIS Core and School modules using **Laravel and CakePHP**, supporting **national-level student data management** for a **UNESCO-backed** platform deployed globally.
+- Implemented **RBAC** and **authentication** for **multi-tenant security** across user roles.
+- Built an **event-driven alerts and webhooks** system to enable **real-time notifications** for institutional record changes.
+- Resolved **4 production bugs** across multiple modules, applying the **Boy Scout Rule** — leaving each touched file cleaner than found.
+- Authored **database migrations** and **query optimizations** for scalable high-volume multi-country deployments.
 
 ### Gamified — *Game Developer Intern*
 
@@ -54,21 +59,29 @@ Agentic AI Engineer and Full-Stack Product Builder who orchestrates 10+ speciali
 
 ## Projects
 
-### [fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 100
+### [Fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 100+
 
-A Kotlin-powered Linux environment manager for Android, providing seamless developer tooling directly on mobile devices with automated setup and shell integration.
+A Kotlin-powered Linux environment manager for Android, providing seamless developer tooling directly on mobile devices with automated setup and shell integration. Strong community adoption in the Android/Linux development ecosystem.
 
-### [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 69
+- [Google Play Store](https://play.google.com/store/apps/details?id=com.zenithblue.fluxlinux) · [F-Droid](https://f-droid.org/en/packages/com.ivarna.fluxlinux/) · [GitHub](https://github.com/abhay-byte/fluxlinux)
 
-Comprehensive CPU benchmarking tool for Android with 10+ performance tests, real-time thermal monitoring, and battery-efficient background processing. Widespread adoption on F-Droid.
+### [Finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 70+
 
-### [mkm](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 40
+A comprehensive CPU benchmarking tool for Android with 10+ customized performance tests for single-core and multi-core assessment. Implements real-time thermal management and monitoring to prevent throttling during intensive stress tests.
 
-A Kotlin-based multimedia organization and processing tool for Android, built with modern architecture patterns for efficient media management.
+- [F-Droid](https://f-droid.org/packages/com.ivarna.finalbenchmark2) · [GitHub](https://github.com/abhay-byte/finalbenchmark-platform)
 
-### [nexus](https://github.com/abhay-byte/nexus) — *TypeScript* ⭐ 9
+### [MKM (Minimal Kernel Manager)](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 40+
 
-A multi-agent AI terminal workspace built with Tauri and React, enabling side-by-side execution of 10+ AI coding agents including Claude Code, Codex, and Gemini CLI.
+Android kernel management and system monitoring application with real-time customizable performance overlay. Features persistent swap file management with boot persistence, supporting Shizuku (non-root) and Root access methods. CPU/GPU frequency and governor control with real-time thermal and memory monitoring.
+
+- [F-Droid](https://f-droid.org/packages/com.ivarna.mkm) · [GitHub](https://github.com/abhay-byte/mkm)
+
+### [Nexus](https://github.com/abhay-byte/nexus) — *TypeScript* ⭐ 9+
+
+A multi-agent AI terminal workspace built with Tauri and React, enabling side-by-side execution of 10+ AI coding agents including Claude Code, Codex, and Gemini CLI. Features agent orchestration, isolated session management, and real-time output streaming for parallel AI-assisted development workflows.
+
+- [Releases](https://github.com/abhay-byte/nexus/releases) · [GitHub](https://github.com/abhay-byte/nexus)
 
 ---
 
@@ -84,8 +97,9 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 - **GitHub:** 2.6K+ Commits · 290 Stars · 84 Public Repositories · 83 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
+- **F-Droid:** 3+ open-source Android apps with 210+ stars and active community adoption
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced: 2026-06-03 03:30 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-06-03 11:30 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
