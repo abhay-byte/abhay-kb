@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-03 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-04 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -52,27 +52,28 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.
 
 Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [winbuzzer.com](https://winbuzzer.com/2026/05/14/github-copilot-individual-plans-introducing-flex-a-xcxwbn/)
 
-### Plans (Current — June 3 2026 — Usage-Based Billing LIVE)
+### Plans (Current — June 4 2026 — Usage-Based Billing LIVE)
 
-Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog (May 12)](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [github.blog (Apr 27)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)
+Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog (May 12)](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [github.blog (Apr 27)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [github.blog changelog (Jun 1)](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/)
 
 | Plan | Price | AI Credits (Base + Flex) | Completions | Agent/CLI | Status |
 |------|-------|---------------------------|-------------|-----------|--------|
-| Free | $0 | Limited auto model | 2,000/mo | Limited | Available |
+| Free | $0 | Limited AI credits (auto model) | 2,000/mo | Limited | Available |
 | Student | Free (verified) | Old PRU-based (not migrated) | Unlimited | Yes | **Signups paused since Apr 20**. Not migrating to usage-based billing |
-| Pro | $10/mo | 1,000 base + 500 flex = 1,500/mo | Unlimited | Yes | **Upgrades paused** (rolling out usage-based). Auto-migrates Jun 1 |
-| Pro+ | $39/mo | 3,900 base + 3,100 flex = 7,000/mo | Unlimited | Yes | **Upgrades paused**. Auto-migrates Jun 1 |
-| Max (new) | $100/mo | 10,000 base + 10,000 flex = 20,000/mo | Unlimited | Yes | Effective Jun 1. Launched May 12 |
+| Pro | $10/mo | 1,000 base + 500 flex = 1,500/mo | Unlimited | Yes | **New sign-ups paused**. Auto-migrated Jun 1 |
+| Pro+ | $39/mo | 3,900 base + 3,100 flex = 7,000/mo | Unlimited | Yes | **New sign-ups paused**. Auto-migrated Jun 1 |
+| Max (new) | $100/mo | 10,000 base + 10,000 flex = 20,000/mo | Unlimited | Yes | Available as upgrade for existing users. **New sign-ups paused**, reopening in coming weeks |
 | Business | $19/seat/mo | $19 base/seat ($30 promo Jun-Aug) | Unlimited | Yes | Available |
 | Enterprise | $39/seat/mo | $39 base/seat ($70 promo Jun-Aug) | Unlimited | Yes | Available |
 
 ### Key Changes (Apr–Jun 2026)
 
-- **Usage-based billing LIVE:** All Copilot plans transitioned to GitHub AI Credits on June 1, 2026. PRUs replaced by token-based metering. 1 AI Credit = $0.01 USD
+- **Usage-based billing LIVE (Jun 1):** All Copilot plans transitioned to GitHub AI Credits on June 1, 2026. PRUs replaced by token-based metering. 1 AI Credit = $0.01 USD. Code completions remain unlimited and not billed in AI Credits
 - **Flex allotments (May 12):** Pro gets $10 base + $5 flex = $15/mo. Pro+ gets $39 base + $31 flex = $70/mo. Flex allotments may vary over time
-- **Max plan (May 12):** $100/mo with 10,000 base + 10,000 flex = 20,000 credits/mo total included usage. Heavy daily use tier
-- **Upgrades paused (ongoing):** Pro, Pro+ upgrades paused on github.com while they roll out new billing UI
-- **Signups paused (Apr 20–May 12):** Pro, Pro+, and Student plans paused, then partially restored for monthly subs. Annual subs getting phased out
+- **Max plan (May 12, upgrades live Jun 1):** $100/mo with 10,000 base + 10,000 flex = 20,000 credits/mo total included usage. Available as upgrade for existing Student/Pro/Pro+ subscribers
+- **Copilot code review now consumes Actions minutes** in addition to AI Credits. Default runner is standard GitHub-hosted; org admins can set default runners
+- **User-level budgets** now GA for organizations and enterprises — granular spend controls with email notifications
+- **Signups paused (ongoing):** Pro, Pro+, Student, and Max new sign-ups remain paused as of Jun 1. Reopening in coming weeks
 - **Student plan:** Not migrating to usage-based billing. Signups remain paused. Claude Opus/Sonnet removed (Mar 14). GPT-5.3-Codex removed from manual picker (Apr 27)
 - **Opus exclusive to Pro+ & Max:** Claude Opus 4.7 removed from Pro tier. Only Pro+ ($39/mo) and Max ($100/mo)
 - **Code completions remain unlimited** on all paid plans — not billed in AI Credits
@@ -93,7 +94,6 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | GPT-5.3-Codex | $1.75 | $0.175 | $14.00 | GA |
 | GPT-5.2 | $1.75 | $0.175 | $14.00 | GA |
 | GPT-5.2-Codex | $1.75 | $0.175 | $14.00 | GA |
-| GPT-4.1 | $2.00 | $0.50 | $8.00 | GA |
 | GPT-5 mini | $0.25 | $0.025 | $2.00 | GA |
 
 **Anthropic (includes cache write cost):**
@@ -123,7 +123,12 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | Model | Input /1M | Cached Input | Output /1M | Release Status |
 |-------|----------:|:------------:|-----------:|----------------|
 | Raptor mini | $0.25 | $0.025 | $2.00 | Public preview |
-| Goldeneye | $1.25 | $0.125 | $10.00 | Public preview |
+
+**Microsoft:**
+
+| Model | Input /1M | Cached Input | Output /1M | Release Status |
+|-------|----------:|:------------:|-----------:|----------------|
+| MAI-Code-1-Flash | $0.75 | $0.075 | $4.50 | GA |
 
 ### Plans Summary (Jun 3, 2026 — Usage-Based Billing LIVE)
 
@@ -132,7 +137,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | Free | $0 | — | — | 2000 completions/mo + limited AI credits (auto model) |
 | Pro | $10/mo | 1,000 ($10) | 500 ($5) | 1,500 ($15) | Auto-migrated Jun 1. **Upgrades paused** |
 | Pro+ | $39/mo | 3,900 ($39) | 3,100 ($31) | 7,000 ($70) | Auto-migrated Jun 1. **Upgrades paused** |
-| Max | $100/mo | 10,000 ($100) | 10,000 ($100) | 20,000 ($200) | Effective Jun 1 |
+| Max | $100/mo | 10,000 ($100) | 10,000 ($100) | 20,000 ($200) | Effective Jun 1. Upgrade available for existing users. **New sign-ups paused** |
 | Business | $19/seat/mo | 1,900 ($19) | Promo Jun-Aug ($30) | — | $30/seat promo active Jun-Aug |
 | Enterprise | $39/seat/mo | 3,900 ($39) | Promo Jun-Aug ($70) | — | $70/seat promo active Jun-Aug |
 
@@ -158,7 +163,7 @@ Per [github.com/features/copilot/plans](https://github.com/features/copilot/plan
 
 > **From Reddit (r/github):** Users widely criticized the student plan downgrades and Pro signup pause. Many students reported being locked out of models they relied on for coursework.
 
-> **Personal Review (June 2026):** GitHub Copilot was the most reliable and good coding plan I used. A lot of models were available and the IDE integration was seamless. I used it on the Student plan which was fantastic initially. The bad part: they progressively removed all frontier models from the Student plan — Claude Opus/Sonnet went first, then GPT-5.3-Codex was pulled from the model picker. What started as a generous free plan for students got hollowed out over time. With usage-based billing now live (June 1), the value proposition is even more uncertain — your $10 Pro gets you 1,500 AI Credits worth $15, and heavy agent sessions will burn through that fast. The Max plan ($100/mo for 20,000 credits) is the realistic choice for heavy users. Claude Opus 4.8 is now available on Pro+/Max plans, which is a nice addition. Still a solid product for light use, but heavy users will need the $100 Max plan.
+> **Personal Review (June 2026):** GitHub Copilot was the most reliable and good coding plan I used. A lot of models were available and the IDE integration was seamless. I used it on the Student plan which was fantastic initially. The bad part: they progressively removed all frontier models from the Student plan — Claude Opus/Sonnet went first, then GPT-5.3-Codex was pulled from the model picker. What started as a generous free plan for students got hollowed out over time. With usage-based billing now live (June 1), the value proposition is even more uncertain — your $10 Pro gets you 1,500 AI Credits worth $15, and heavy agent sessions will burn through that fast. The Max plan ($100/mo for 20,000 credits) is the realistic choice for heavy users. Claude Opus 4.8 is now available on Pro+/Max plans, which is a nice addition. Still a solid product for light use, but heavy users will need the $100 Max plan. New sign-ups remain paused across all paid individual plans (Pro, Pro+, Student, Max) as of June 1 — you can only upgrade if already subscribed. Copilot code review now burns both AI Credits and GitHub Actions minutes. Goldeneye model removed from the model lineup; new Microsoft MAI-Code-1-Flash model added at lightweight pricing ($0.75/$4.50 per 1M tokens).
 
 ---
 
@@ -210,18 +215,19 @@ Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/) (verified June 3, 20
 | Model | Provider | Per 5h | Per Week | Per Month | Notes |
 |-------|----------|--------|----------|-----------|-------|
 | DeepSeek V4 Flash | DeepSeek | 31,650 | 79,050 | 158,150 | Cheapest, huge quota |
-| Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench (Qwen3.5 Plus removed) |
-| MiniMax M2.5 | MiniMax | 6,300 | 15,900 | 31,800 | 80.2% SWE-Bench |
-| MiniMax M2.7 | MiniMax | 3,400 | 8,500 | 17,000 | Newer, 196K ctx |
-| MiniMax M3 | MiniMax | 1,400 | 3,500 | 7,000 | Newest MiniMax model |
-| DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
 | MiMo-V2.5 | Xiaomi | 30,100 | 75,200 | 150,400 | V2.5 Omni-class, 1M ctx |
+| MiniMax M2.5 | MiniMax | 6,300 | 15,900 | 31,800 | 80.2% SWE-Bench |
+| Qwen3.7 Plus | Alibaba | 4,300 | 10,800 | 21,600 | New addition, mid-tier Qwen |
+| MiniMax M2.7 | MiniMax | 3,400 | 8,500 | 17,000 | 196K ctx |
+| DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
 | MiMo-V2.5-Pro | Xiaomi | 3,250 | 8,150 | 16,300 | Coding focus, 1M ctx |
+| Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench |
 | Kimi K2.5 | Moonshot | 1,850 | 4,630 | 9,250 | 256K ctx, 76.8% SWE-Bench |
-| Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | Updated K2.5, 58.6% SWE-Bench Pro |
-| Qwen3.7 Max | Alibaba | 950 | 2,390 | 4,770 | Newest Qwen model, 128K ctx |
+| MiniMax M3 | MiniMax | 1,400 | 3,500 | 7,000 | Newest MiniMax model |
+| Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | 58.6% SWE-Bench Pro |
 | GLM-5 | Z.ai | 1,150 | 2,880 | 5,750 | 77.8% SWE-Bench |
 | GLM-5.1 | Z.ai | 880 | 2,150 | 4,300 | Best reasoning. 58.4% SWE-Bench Pro |
+| Qwen3.7 Max | Alibaba | 950 | 2,390 | 4,770 | Newest Qwen, 128K ctx |
 
 ### Free Model
 
@@ -235,7 +241,7 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 
 > **From Thomas Wiegold (Apr 2026):** "MiniMax gives you a good number of requests ... up to 31,800 per month with M2.5. These aren't toy models - M2.5 scored 80.2% on SWE-Bench Verified, within spitting distance of Claude Opus 4.6's 80.8%. The catch is that reasoning-heavy models like GLM-5.1 burn through limits fast."
 
-> **Personal Review (June 2026):** Best and cheapest coding plan available. Generous quotas on MiniMax and Xiaomi models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. MiniMax M2.5 at $10/month is unmatched value — now also with MiniMax M3 added to the lineup. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Qwen3.5 Plus has been removed from the model lineup, replaced by Qwen3.6 Plus and Qwen3.7 Max. Strongly recommended.
+> **Personal Review (June 2026):** Best and cheapest coding plan available. Generous quotas on MiniMax and Xiaomi models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. MiniMax M2.5 at $10/month is unmatched value — now also with MiniMax M3 added to the lineup. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Qwen3.5 Plus has been removed from the model lineup, replaced by Qwen3.6 Plus and Qwen3.7 Max. Qwen3.7 Plus is a new addition filling the mid-tier Qwen slot between Qwen3.6 Plus and Qwen3.7 Max. Strongly recommended.
 
 ### Notes
 
@@ -246,7 +252,7 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 - MiMo-V2.5 added to model lineup (updated from V2.5-Omni naming)
 - Qwen3.7 Max added to model lineup (128K context, best available Qwen for coding)
 - MiniMax M3, M2.7, and M2.5 use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
-- Qwen3.6 Plus and Qwen3.7 Max use Anthropic-compatible endpoint
+- Qwen3.6 Plus, Qwen3.7 Plus, and Qwen3.7 Max use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
 - Models hosted in US, EU, and Singapore
 
 ---
