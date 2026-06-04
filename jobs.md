@@ -37,10 +37,10 @@ Last updated: 2026-06-04
 | 17 | Full Stack Engineer | Optum | Noida | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/optum-recruitment-2026-full-stack-engineer-noida/) |
 | 18 | Associate System Engineer | IBM | Across India | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/ibm-recruitment-2026-associate-system-engineer-across-india/) |
 | 19 | Associate Software Engineer | Empower | Bangalore | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/empower-recruitment-2026-associate-software-engineer-bangalore/) |
-| 20 | Software Engineer (Fresher 2026) | Datman | Bengaluru | — | 20-May-2026 | [Apply](https://in.linkedin.com/jobs/view/software-engineer-at-datman-4416158291) |
-| 21 | Salesforce Software Developer | Jade Global | Pune | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/jade-global-recruitment-2026-salesforce-software-developer-pune/) |
-| 22 | Graduate Engineer Trainee (SDE) | Syensqo | Mumbai | Best in Industry | 20-May-2026 | [Apply](https://jobsnet.in/syensqo-off-campus-drive-hiring-graduate-engineer-trainee-sde/) |
-| 23 | Trainee, Technology Engineer | RXO | Mumbai | Best in Industry | 20-May-2026 | [Apply](https://jobsnet.in/rxo-off-campus-drive-hiring-trainee-technology-engineer/) |
+| 20 | Salesforce Software Developer | Jade Global | Pune | — | 20-May-2026 | [Apply](https://offcampusjobs4u.com/jade-global-recruitment-2026-salesforce-software-developer-pune/) |
+| 21 | Graduate Engineer Trainee (SDE) | Syensqo | Mumbai | Best in Industry | 20-May-2026 | [Apply](https://jobsnet.in/syensqo-off-campus-drive-hiring-graduate-engineer-trainee-sde/) |
+| 22 | Trainee, Technology Engineer | RXO | Mumbai | Best in Industry | 20-May-2026 | [Apply](https://jobsnet.in/rxo-off-campus-drive-hiring-trainee-technology-engineer/) |
+| 23 | Software Engineer (Fresher 2026) | Datman | Bengaluru | — | 20-May-2026 | [Apply](https://in.linkedin.com/jobs/view/software-engineer-at-datman-4416158291) |
 | 24 | Software Developer | Tower Research | Gurgaon | Industry Standard | 21-May-2026 | [Apply](https://job-boards.greenhouse.io/embed/job_app?for=towerresearchcapital&gh_src=be8ebc4b1&source=LinkedIn&token=6656773-bengal-india-siliguri) |
 | 25 | Java Developer (Entry-Level) | Equifax | Pune | As per Standard | 21-May-2026 | [Apply](https://careers.equifax.com/en/jobs/j00176622/software-engineer-entry/?source=Applied_LinkedIn) |
 | 26 | Graduate Engineer Trainee | Ingram Micro | Mumbai/Chennai | Best in Industry | 22-May-2026 | [Apply](https://ingrammicro.wd5.myworkdayjobs.com/en-US/IngramMicro/job/Mumbai-India/Graduate-Engineer-Trainee_R-115589) |
@@ -80,6 +80,10 @@ Last updated: 2026-06-04
 | 60 | Technical Apprentice | Dell Technologies | Bangalore | As per Industry | 03-Jun-2026 | [Apply](https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/careers/job/R272585/) |
 | 61 | Associate Software Engineer | TransUnion | Chennai/Pune | Best in Industry | 03-Jun-2026 | [Apply](https://transunion.wd5.myworkdayjobs.com/en-US/transunion/job/Chennai/Associate-Engineer_19039194) |
 | 62 | Associate Software Engineer | IBM | Multiple Cities | As per Industry | 02-Jun-2026 | [Apply](https://jobsnet.in/ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer/) |
+| 63 | Software Engineer (Cloud DevOps) | Cisco | Bangalore | Not disclosed | 02-Jun-2026 | [Apply](https://freshershunt.in/cisco-off-campus-drive-2026/) |
+| 64 | Graduate Software Engineer | Canonical | Remote India | Not disclosed | 02-Jun-2026 | [Apply](https://fresheropenings.com/canonical-off-campus-drive-2026/) |
+| 65 | Software Engineer | Sutherland | Bangalore | Not disclosed | 16-May-2026 | [Apply](https://fresheropenings.com/sutherland-off-campus-drive-2026/) |
+| 66 | Software Engineer | Zebra | Bangalore | Best in industry | 04-Jun-2026 | [Apply](https://fresheropenings.com/zebra-off-campus-drive-2026/) |
 
 ### 💼 Internships
 
@@ -90,6 +94,7 @@ Last updated: 2026-06-04
 | 3 | Software Intern (Digital Solutions) | Wabtec | Bengaluru (Onsite) | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/wabtec-internship-2026-software-bengaluru/) |
 | 4 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/natwest-group-internship-2026-bangalore/) |
 | 5 | Technology Summer Intern | Fiserv | Noida | Competitive Stipend | 02-Jun-2026 | [Apply](https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/) |
+| 6 | Software Development Engineer Intern | Philips | Bangalore | Not disclosed | 03-Jun-2026 | [Apply](https://fresheropenings.com/philips-internship-2026/) |
 
 ### 🎮 Game Development
 
@@ -111,7 +116,7 @@ Last updated: 2026-06-04
 
 1. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
 2. **Amazon - SDE 1 (University Talent)** - Pan India - Huge scale, great career growth - [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition)
-3. **Cisco - Security Consulting Engineer** - Pan India - New Cisco entry-level role - [Apply](https://jobsnet.in/cisco-off-campus-drive-security-consulting-engineer-freshers-pan-india/)
+3. **Zebra - Software Engineer** - Bangalore - Fresh posting today - [Apply](https://fresheropenings.com/zebra-off-campus-drive-2026/)
 
 ---
 

@@ -238,3 +238,13 @@
 | 11 | Associate Software Engineer | IBM | Multiple Cities | As per Industry | https://jobsnet.in/ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer/ |
 | 12 | Graduate Engineer Trainee (Software) | Emerson | Pune | ₹10 LPA | https://jobsnet.in/emerson-off-campus-drive-graduate-engineer-trainee-software-freshers-pune-2/ |
 | 13 | Engineer | Johnson Controls | Hyderabad | Best in Industry | https://www.linkedin.com/jobs/view/4417995011/ |
+
+### 04-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Software Engineer (Cloud DevOps) | Cisco | Bangalore | Not disclosed | https://freshershunt.in/cisco-off-campus-drive-2026/ |
+| 2 | Graduate Software Engineer | Canonical | Remote India | Not disclosed | https://fresheropenings.com/canonical-off-campus-drive-2026/ |
+| 3 | Software Engineer | Sutherland | Bangalore | Not disclosed | https://fresheropenings.com/sutherland-off-campus-drive-2026/ |
+| 4 | Software Engineer | Zebra | Bangalore | Best in industry | https://fresheropenings.com/zebra-off-campus-drive-2026/ |
+| 5 | Software Development Engineer Intern | Philips | Bangalore | Not disclosed | https://fresheropenings.com/philips-internship-2026/ |
