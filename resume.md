@@ -65,7 +65,7 @@ A Kotlin-powered Linux environment manager for Android, providing seamless devel
 
 - [Google Play Store](https://play.google.com/store/apps/details?id=com.zenithblue.fluxlinux) · [F-Droid](https://f-droid.org/en/packages/com.ivarna.fluxlinux/) · [GitHub](https://github.com/abhay-byte/fluxlinux)
 
-### [Finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 70+
+### [Finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 71+
 
 A comprehensive CPU benchmarking tool for Android with 10+ customized performance tests for single-core and multi-core assessment. Implements real-time thermal management and monitoring to prevent throttling during intensive stress tests.
 
@@ -95,11 +95,11 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ## Achievements
 
-- **GitHub:** 2.6K+ Commits · 290 Stars · 84 Public Repositories · 83 Followers
+- **GitHub:** 2.6K+ Commits · 286 Stars · 84 Public Repositories · 83 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
 - **F-Droid:** 3+ open-source Android apps with 210+ stars and active community adoption
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced: 2026-06-03 11:30 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-06-04 06:27 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
