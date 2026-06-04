@@ -9,6 +9,26 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### June 4, 2026
+
+**[VoidZero Joins Cloudflare — Vite Stays Open Source, Vendor-Agnostic](news/voidzero-joins-cloudflare-vite/)** — *Cloudflare Blog / Hacker News*
+> Evan You's VoidZero (Vite, Vitest, Rolldown, Oxc) joins Cloudflare — all projects stay MIT-licensed and vendor-neutral with $1M committed to an independent Vite ecosystem fund.
+
+**[Anthropic Open-Sources Framework for AI-Powered Vulnerability Discovery](news/anthropic-defending-code-reference-harness/)** — *GitHub / Anthropic / Hacker News*
+> Anthropic released a reference implementation for autonomous vulnerability discovery with Claude, including threat modeling, scanning, triage, and patching skills built from Project Glasswing learnings.
+
+**[When AI Builds Itself: Anthropic on Recursive Self-Improvement](news/anthropic-recursive-self-improvement/)** — *Anthropic Institute / Hacker News*
+> Anthropic engineers now ship 8x more code per quarter than 2021-2025. The Institute charts progress toward AI systems capable of autonomously designing their own successors, with task durations doubling every ~4 months.
+
+**[Branchless Quicksort 30% Faster than std::sort and pdqsort](news/branchless-quicksort-blqsort-benchmark/)** — *tiki.li / Hacker News*
+> A new branchless Quicksort library (blqsort) beats std::sort by 27% on M1 and pdqsort by 27% on AMD Ryzen, using sorting networks for small sets and branchless partitioning for large ones.
+
+**[Ashby Engineering: >50% AI-Generated Code in Production, Zero Regressions](news/ashby-engineering-ai-generated-code-production/)** — *Ashby Engineering Blog / Hacker News*
+> Since August 2025, over half of Ashby's new production code is AI-generated with no quality regressions. Their thesis: the cost of code heads to zero, making engineer judgment and customer empathy the real differentiators.
+
+**[FFmpeg WebCLI: Full FFmpeg in Browser via WASM, Offline PWA, No Uploads](news/ffmpeg-webcli-wasm-offline-pwa/)** — *GitHub (Show HN)*
+> An open-source project brings the full FFmpeg binary to the browser as an offline PWA via WebAssembly — no server uploads needed, complete CLI in your browser.
+
 ### June 3, 2026
 
 **[Elixir v1.20 Released: Now a Gradually Typed Language](news/elixir-v1-20-gradually-typed/)** — *Elixir Lang Blog / Hacker News*

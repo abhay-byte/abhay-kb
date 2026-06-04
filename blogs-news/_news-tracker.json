@@ -151,7 +151,13 @@
     "https://elixir-lang.org/blog/2026/06/03/elixir-v1-20-0-released/",
     "https://simonwillison.net/2026/Jun/3/uber-caps-usage/",
     "https://letsencrypt.org/2026/06/03/pq-certs",
-    "https://www.infoq.com/news/2026/06/nodejs-release-changes/"
+    "https://www.infoq.com/news/2026/06/nodejs-release-changes/",
+    "https://blog.cloudflare.com/voidzero-joins-cloudflare/",
+    "https://github.com/anthropics/defending-code-reference-harness",
+    "https://www.anthropic.com/institute/recursive-self-improvement",
+    "https://tiki.li/blog/blqsort",
+    "https://www.ashbyhq.com/blog/engineering/ai-ashby-engineering-and-the-future",
+    "https://github.com/tejaswigowda/ffmpeg-webCLI"
   ],
-  "last_fetch": "2026-06-03T23:36:00Z"
+  "last_fetch": "2026-06-04T23:30:00Z"
 }
