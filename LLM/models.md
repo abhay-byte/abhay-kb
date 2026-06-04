@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-03 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-04 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled June 2026.
@@ -16,7 +16,7 @@ Compiled June 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 3 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 4 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -107,7 +107,7 @@ Compiled June 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (June 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 3 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 4 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
