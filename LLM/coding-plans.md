@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-04 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-05 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -78,6 +78,7 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 - **Opus exclusive to Pro+ & Max:** Claude Opus 4.7 removed from Pro tier. Only Pro+ ($39/mo) and Max ($100/mo)
 - **Code completions remain unlimited** on all paid plans — not billed in AI Credits
 - **Copilot code review** consumes both AI Credits and GitHub Actions minutes
+- **GPT-5.2 closing down (Jun 1):** GPT-5.2 marked as closing down effective June 1, 2026 on the supported models page. GPT-5.2-Codex remains GA. Users should migrate to GPT-5.3-Codex or GPT-5.4
 
 ### Per-Token Pricing (Jun 2026 — Usage-Based)
 
@@ -92,7 +93,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | GPT-5.4 mini | $0.75 | $0.075 | $4.50 | GA |
 | GPT-5.4 nano | $0.20 | $0.02 | $1.25 | GA |
 | GPT-5.3-Codex | $1.75 | $0.175 | $14.00 | GA |
-| GPT-5.2 | $1.75 | $0.175 | $14.00 | GA |
+| GPT-5.2 | $1.75 | $0.175 | $14.00 | Closing down (Jun 1) |
 | GPT-5.2-Codex | $1.75 | $0.175 | $14.00 | GA |
 | GPT-5 mini | $0.25 | $0.025 | $2.00 | GA |
 
