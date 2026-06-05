@@ -248,3 +248,12 @@
 | 3 | Software Engineer | Sutherland | Bangalore | Not disclosed | https://fresheropenings.com/sutherland-off-campus-drive-2026/ |
 | 4 | Software Engineer | Zebra | Bangalore | Best in industry | https://fresheropenings.com/zebra-off-campus-drive-2026/ |
 | 5 | Software Development Engineer Intern | Philips | Bangalore | Not disclosed | https://fresheropenings.com/philips-internship-2026/ |
+
+### 05-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Junior Software Engineer | Zensar (Jobsnet) | Pune/Bangalore/Hyderabad | As per Industry | https://jobsnet.in/zensar-off-campus-drive-hiring-freshers-as-junior-software-engineer/ |
+| 2 | Graduate Apprentice Trainee (SDE) | Volvo Group | Bangalore | ₹22K/mo Stipend | https://jobs.volvogroup.com/job/Bangalore-Graduate-Apprentice-Trainee-%28BEBTech-CS-&-IT-graduates%29-562122/1354287355/ |
+| 3 | Associate Software Engineer | Lowe's | Bengaluru | Not disclosed | https://freshershunt.in/lowes-off-campus-drive-2026-2/ |
+| 4 | TCS NQT 2026 Registration | TCS | Pan India | Competitive | https://freshershunt.in/tcs-nqt-2026/ |

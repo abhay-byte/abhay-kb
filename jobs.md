@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-06-04
+Last updated: 2026-06-05
 
 ---
 
@@ -82,8 +82,12 @@ Last updated: 2026-06-04
 | 62 | Associate Software Engineer | IBM | Multiple Cities | As per Industry | 02-Jun-2026 | [Apply](https://jobsnet.in/ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer/) |
 | 63 | Software Engineer (Cloud DevOps) | Cisco | Bangalore | Not disclosed | 02-Jun-2026 | [Apply](https://freshershunt.in/cisco-off-campus-drive-2026/) |
 | 64 | Graduate Software Engineer | Canonical | Remote India | Not disclosed | 02-Jun-2026 | [Apply](https://fresheropenings.com/canonical-off-campus-drive-2026/) |
-| 65 | Software Engineer | Sutherland | Bangalore | Not disclosed | 16-May-2026 | [Apply](https://fresheropenings.com/sutherland-off-campus-drive-2026/) |
+| 65 | Software Engineer | Sutherland | Bangalore | Not disclosed | 04-Jun-2026 | [Apply](https://fresheropenings.com/sutherland-off-campus-drive-2026/) |
 | 66 | Software Engineer | Zebra | Bangalore | Best in industry | 04-Jun-2026 | [Apply](https://fresheropenings.com/zebra-off-campus-drive-2026/) |
+| 67 | Junior Software Engineer | Zensar (Jobsnet) | Pune/Bangalore/Hyderabad | As per Industry | 04-Jun-2026 | [Apply](https://jobsnet.in/zensar-off-campus-drive-hiring-freshers-as-junior-software-engineer/) |
+| 68 | Graduate Apprentice Trainee (SDE) | Volvo Group | Bangalore | ₹22K/mo Stipend | 04-Jun-2026 | [Apply](https://jobs.volvogroup.com/job/Bangalore-Graduate-Apprentice-Trainee-%28BEBTech-CS-&-IT-graduates%29-562122/1354287355/) |
+| 69 | Associate Software Engineer | Lowe's | Bengaluru | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/lowes-off-campus-drive-2026-2/) |
+| 70 | TCS NQT 2026 Registration | TCS | Pan India | Competitive | 04-Jun-2026 | [Apply](https://freshershunt.in/tcs-nqt-2026/) |
 
 ### 💼 Internships
 
@@ -106,7 +110,7 @@ Last updated: 2026-06-04
 
 ## 📌 How to Apply
 
-1. **Click the Apply link** next to any job
+1. Click the Apply link next to any job
 2. Search the company name + job title on LinkedIn/Naukri if the link doesn't work
 3. Keep your resume updated with your GTBIT, B.Tech IT, Avalon, and Gamified experience
 
@@ -114,10 +118,10 @@ Last updated: 2026-06-04
 
 ## ⭐ Top 3 Picks
 
-1. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
-2. **Amazon - SDE 1 (University Talent)** - Pan India - Huge scale, great career growth - [Apply](https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition)
-3. **Zebra - Software Engineer** - Bangalore - Fresh posting today - [Apply](https://fresheropenings.com/zebra-off-campus-drive-2026/)
+1. **Lowe's - Associate Software Engineer** - Bengaluru - FORTUNE 50 company, good entry-level role - [Apply](https://freshershunt.in/lowes-off-campus-drive-2026-2/)
+2. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
+3. **TCS NQT 2026 Registration** - Pan India - Gateway to TCS + 60+ companies - Last date 14 June - [Apply](https://freshershunt.in/tcs-nqt-2026/)
 
 ---
 
-*Auto-updated as of 04-Jun-2026 by OpenClaw cron job. Listings older than 28 days are automatically removed.*
+*Auto-updated as of 05-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
