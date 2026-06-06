@@ -257,3 +257,16 @@
 | 2 | Graduate Apprentice Trainee (SDE) | Volvo Group | Bangalore | ₹22K/mo Stipend | https://jobs.volvogroup.com/job/Bangalore-Graduate-Apprentice-Trainee-%28BEBTech-CS-&-IT-graduates%29-562122/1354287355/ |
 | 3 | Associate Software Engineer | Lowe's | Bengaluru | Not disclosed | https://freshershunt.in/lowes-off-campus-drive-2026-2/ |
 | 4 | TCS NQT 2026 Registration | TCS | Pan India | Competitive | https://freshershunt.in/tcs-nqt-2026/ |
+
+### 06-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Associate Software Engineer | GlobalLogic | Gurgaon | Not disclosed | https://freshershunt.in/globallogic-off-campus-drive-2026-2/ |
+| 2 | Apps Dev Programmer Analyst 2 | Citi | Pune | Not disclosed | https://freshershunt.in/citi-off-campus-drive-2026-2/ |
+| 3 | Software Engineer (Cloud & Production Engineering) | DocuSign | Bangalore | Not disclosed | https://freshershunt.in/docusign-off-campus-drive-2026-2/ |
+| 4 | Entry Level Software Engineer (Junior) | Medpace | Navi Mumbai | Not disclosed | https://freshershunt.in/medpace-off-campus-drive-2026-2/ |
+| 5 | Associate Software Engineer | Accuris | Bengaluru/Hybrid | Best in Industry | https://jobsnet.in/accuris-off-campus-drive-associate-software-engineer-freshers/ |
+| 6 | Software Engineer I (Entry-Level) | JLL | Bengaluru | Best in Industry | https://jobsnet.in/jll-off-campus-drive-hiring-entry-level-software-engineer/ |
+| 7 | Engineering Intern (Class of 2026) | Eightfold AI | Bangalore | Not disclosed | https://freshershunt.in/eightfold-internship-2026/ |
+| 8 | Student Intern (Digital Technology) | SLB | Pune | Competitive Stipend | https://freshershunt.in/slb-internship-2026/ |

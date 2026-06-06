@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-06-05
+Last updated: 2026-06-06
 
 ---
 
@@ -88,6 +88,12 @@ Last updated: 2026-06-05
 | 68 | Graduate Apprentice Trainee (SDE) | Volvo Group | Bangalore | ₹22K/mo Stipend | 04-Jun-2026 | [Apply](https://jobs.volvogroup.com/job/Bangalore-Graduate-Apprentice-Trainee-%28BEBTech-CS-&-IT-graduates%29-562122/1354287355/) |
 | 69 | Associate Software Engineer | Lowe's | Bengaluru | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/lowes-off-campus-drive-2026-2/) |
 | 70 | TCS NQT 2026 Registration | TCS | Pan India | Competitive | 04-Jun-2026 | [Apply](https://freshershunt.in/tcs-nqt-2026/) |
+| 71 | Associate Software Engineer | GlobalLogic | Gurgaon (On-site) | Not disclosed | 06-Jun-2026 | [Apply](https://freshershunt.in/globallogic-off-campus-drive-2026-2/) |
+| 72 | Apps Dev Programmer Analyst 2 | Citi | Pune | Not disclosed | 06-Jun-2026 | [Apply](https://freshershunt.in/citi-off-campus-drive-2026-2/) |
+| 73 | Software Engineer (Cloud & Production Engineering) | DocuSign | Bangalore (Hybrid) | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/docusign-off-campus-drive-2026-2/) |
+| 74 | Entry Level Software Engineer (Junior) | Medpace | Navi Mumbai | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/medpace-off-campus-drive-2026-2/) |
+| 75 | Associate Software Engineer | Accuris | Bengaluru/Hybrid | Best in Industry | 05-Jun-2026 | [Apply](https://jobsnet.in/accuris-off-campus-drive-associate-software-engineer-freshers/) |
+| 76 | Software Engineer I (Entry-Level) | JLL | Bengaluru | Best in Industry | 05-Jun-2026 | [Apply](https://jobsnet.in/jll-off-campus-drive-hiring-entry-level-software-engineer/) |
 
 ### 💼 Internships
 
@@ -99,6 +105,8 @@ Last updated: 2026-06-05
 | 4 | Software Engineer Intern | NatWest Group | Bangalore | Competitive Stipend | 22-May-2026 | [Apply](https://freshershunt.in/natwest-group-internship-2026-bangalore/) |
 | 5 | Technology Summer Intern | Fiserv | Noida | Competitive Stipend | 02-Jun-2026 | [Apply](https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/) |
 | 6 | Software Development Engineer Intern | Philips | Bangalore | Not disclosed | 03-Jun-2026 | [Apply](https://fresheropenings.com/philips-internship-2026/) |
+| 7 | Engineering Intern (Class of 2026) | Eightfold AI | Bangalore (Hybrid) | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/eightfold-internship-2026/) |
+| 8 | Student Intern (Digital Technology) | SLB | Pune | Competitive Stipend | 05-Jun-2026 | [Apply](https://freshershunt.in/slb-internship-2026/) |
 
 ### 🎮 Game Development
 
@@ -118,10 +126,10 @@ Last updated: 2026-06-05
 
 ## ⭐ Top 3 Picks
 
-1. **Lowe's - Associate Software Engineer** - Bengaluru - FORTUNE 50 company, good entry-level role - [Apply](https://freshershunt.in/lowes-off-campus-drive-2026-2/)
-2. **Apple - Software Engineer (New Grad)** - Bengaluru - ₹18-35 LPA - World-class company, great pay - [Apply](https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177)
-3. **TCS NQT 2026 Registration** - Pan India - Gateway to TCS + 60+ companies - Last date 14 June - [Apply](https://freshershunt.in/tcs-nqt-2026/)
+1. **GlobalLogic - Associate Software Engineer** - Gurgaon - Hitachi Group Company, good entry-level - [Apply](https://freshershunt.in/globallogic-off-campus-drive-2026-2/)
+2. **JLL - Software Engineer I** - Bengaluru - Good full stack role with GenAI exposure - [Apply](https://jobsnet.in/jll-off-campus-drive-hiring-entry-level-software-engineer/)
+3. **DocuSign - Software Engineer** - Bangalore - Global SaaS company, cloud engineering - [Apply](https://freshershunt.in/docusign-off-campus-drive-2026-2/)
 
 ---
 
-*Auto-updated as of 05-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 06-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
