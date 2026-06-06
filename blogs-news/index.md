@@ -32,6 +32,21 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 **[Microsoft's Scout AI Assistant: Internal Strategy Aims to 'Make People Addicted'](news/microsoft-scout-ai-addiction-strategy/)** — *404 Media / disassociated.com*
 > An internal Microsoft document reveals a three-phase plan to make users "addicted" to the Scout AI assistant before rolling out agentic platform features.
 
+**[Moving Beyond fork() + exec() — Linux Kernel Process Evolution](news/moving-beyond-fork-exec-linux-kernel/)** — *LWN.net / Hacker News*
+> A proposal to add spawn templates to the Linux kernel would reduce the overhead of copying entire process state, signaling a path toward modernizing one of Unix's oldest patterns. 224 HN points.
+
+**[Zeroserve: A Zero-Config Web Server Scriptable with eBPF](news/zeroserve-ebpf-web-server/)** — *su3.io / Hacker News*
+> A new open-source HTTPS server replaces nginx-style config files with sandboxed eBPF programs as middleware — beating nginx on throughput with TLS 1.3, HTTP/2, and io_uring baked in.
+
+**[Running Python Code in a Sandbox with MicroPython and WASM](news/micropython-wasm-sandbox-python/)** — *Simon Willison's Blog / Hacker News*
+> Simon Willison released micropython-wasm, compiling MicroPython to WebAssembly for secure sandboxed Python execution — with a Datasette Agent plugin as a practical use case.
+
+**[GPT-5.2 and GPT-5.2-Codex Deprecated in GitHub Copilot](news/gpt-52-codex-deprecated-copilot/)** — *GitHub Blog*
+> As of June 5, GitHub deprecated GPT-5.2 across most Copilot experiences, migrating users to GPT-5.5. Enterprise admins may need to manually enable replacement models.
+
+**[Meta Confirms Thousands of Instagram Accounts Hacked by Abusing AI Chatbot](news/meta-instagram-ai-chatbot-hack/)** — *Ars Technica / Hacker News*
+> Attackers exploited Meta's AI support chatbot to reset passwords and hijack high-profile Instagram accounts — 340 HN points on the security implications of AI-driven account recovery.
+
 ### June 4, 2026
 
 **[VoidZero Joins Cloudflare — Vite Stays Open Source, Vendor-Agnostic](news/voidzero-joins-cloudflare-vite/)** — *Cloudflare Blog / Hacker News*
