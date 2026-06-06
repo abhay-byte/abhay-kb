@@ -9,6 +9,29 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### June 6, 2026
+
+**[Microsoft Open-Sources pg_durable: In-Database Durable Execution for PostgreSQL](news/microsoft-pg-durable-durable-execution-postgresql/)** — *Microsoft / GitHub / Hacker News*
+> Microsoft open-sourced pg_durable, an in-database durable execution engine for PostgreSQL that checkpoints workflow steps and resumes after crashes — no more stitching cron jobs, workers, and status tables together.
+
+**[Google Releases Gemma 4 QAT Models for Mobile and Laptop Efficiency](news/gemma-4-qat-models-mobile-efficiency/)** — *Google AI Blog / Hacker News*
+> Google released Gemma 4 checkpoints with Quantization-Aware Training, reducing the memory footprint of Gemma 4 E2B to just 1GB for local AI inference on smartphones and laptops.
+
+**[Gov.uk Replaces Stripe with Dutch Provider Adyen for Payments](news/govuk-replaces-stripe-adyen-payments/)** — *The Register / Hacker News*
+> The UK's GDS replaced Stripe with Adyen for GOV.UK Pay, migrating ~1,000 services under a £25.3M contract, and enabling open-banking "pay by bank" options.
+
+**[Did Claude Increase Bugs in rsync? A Statistical Data Analysis](news/did-claude-increase-bugs-rsync-analysis/)** — *Alexis Purslane / Hacker News*
+> A rigorous permutation test on rsync releases asks whether Claude-assisted releases are unusually buggy, sparking 259 comments on Hacker News about AI code quality.
+
+**[Stop Using Conventional Commits — A Developer's Critique](news/stop-using-conventional-commits-critique/)** — *Sumner Evans / Hacker News*
+> A detailed critique argues Conventional Commits prioritizes change type over scope — the wrong thing — and fails on its promises. 249 HN points, 198 comments.
+
+**[Mouseless: Keyboard-Driven Control of macOS, Linux, and Windows](news/mouseless-keyboard-driven-control/)** — *Hacker News*
+> A new cross-platform tool for full keyboard-only desktop navigation hit #1 on HN with 430 points, reflecting strong developer demand for mouse-free workflows.
+
+**[Microsoft's Scout AI Assistant: Internal Strategy Aims to 'Make People Addicted'](news/microsoft-scout-ai-addiction-strategy/)** — *404 Media / disassociated.com*
+> An internal Microsoft document reveals a three-phase plan to make users "addicted" to the Scout AI assistant before rolling out agentic platform features.
+
 ### June 4, 2026
 
 **[VoidZero Joins Cloudflare — Vite Stays Open Source, Vendor-Agnostic](news/voidzero-joins-cloudflare-vite/)** — *Cloudflare Blog / Hacker News*

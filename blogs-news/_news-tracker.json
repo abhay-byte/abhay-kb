@@ -157,7 +157,15 @@
     "https://www.anthropic.com/institute/recursive-self-improvement",
     "https://tiki.li/blog/blqsort",
     "https://www.ashbyhq.com/blog/engineering/ai-ashby-engineering-and-the-future",
-    "https://github.com/tejaswigowda/ffmpeg-webCLI"
+    "https://github.com/tejaswigowda/ffmpeg-webCLI",
+    "https://github.com/microsoft/pg_durable",
+    "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
+    "https://www.theregister.com/public-sector/2026/06/04/govuk-goes-dutch-on-payments-as-it-dumps-stripe/5250763",
+    "https://alexispurslane.github.io/rsync-analysis/",
+    "https://sumnerevans.com/posts/software-engineering/stop-using-conventional-commits/",
+    "https://mouseless.click",
+    "https://disassociated.com/microsoft-users-addicted-ai-personal-assistant/",
+    "https://github.blog/changelog/2026-06-04-github-copilot-in-visual-studio-may-update/"
   ],
-  "last_fetch": "2026-06-04T23:30:00Z"
+  "last_fetch": "2026-06-06T00:00:00Z"
 }
