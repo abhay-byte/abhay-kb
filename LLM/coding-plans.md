@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-05 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-06 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -302,6 +302,22 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 - **Opus API rate limits raised** — higher maximums across all API tiers
 - **Managed Agents launched** — Dreaming, Outcomes, multi-agent orchestration now available at claude.ai/code
 - **Claude Cowork** now bundled into Pro (visual canvas-based workspace, GA since Apr 2026)
+
+### Upcoming: Programmatic Usage Billing Split (June 15, 2026)
+
+Source: [buildthisnow.com](https://www.buildthisnow.com/blog/guide/mechanics/claude-billing-change-june-2026), [codersera.com](https://codersera.com/blog/anthropic-june-2026-billing-change-claude-code/)
+
+Anthropic announced on May 13 that **effective June 15, 2026**, programmatic Claude Code usage will be moved onto a separate monthly credit pool billed at full API rates.
+
+| Plan | Separate Credit Pool | What Triggers It |
+|------|---------------------|------------------|
+| Pro | $20/mo | Agent SDK, `claude -p`, CI pipelines |
+| Max 5x | $100/mo | Agent SDK, `claude -p`, CI pipelines |
+| Max 20x | $200/mo | Agent SDK, `claude -p`, CI pipelines |
+
+**What this means:** Interactive Claude Code sessions in the terminal and IDE keep using your existing subscription limits (5-hour rolling window). But programmatic usage through the Claude Agent SDK, the `claude -p` command, and CI/CD pipelines will draw from this separate credit pool. A single Opus 4.7 review pass on a 500-line PR can consume 50,000–100,000 tokens, costing $0.25–$2.75 depending on output length at API rates.
+
+**Impact:** Teams running Claude Code in multi-agent setups alongside Codex CLI will need to budget separately for programmatic usage after June 15. Previously, a Max 20x subscription's generous token allowance could absorb heavy programmatic usage — now that same workload costs real dollars.
 
 ### Known Issues
 
