@@ -8,7 +8,7 @@ title: Job Listings
 Daily tracked software engineering and game development opportunities for Abhay Raj.
 Auto-updated daily at 6:30 AM IST.
 
-Last updated: 2026-06-06
+Last updated: 2026-06-07
 
 ---
 
@@ -52,7 +52,7 @@ Last updated: 2026-06-06
 | 32 | Software Engineer | Cisco | Hyderabad/Bangalore (Hybrid) | Not disclosed | 23-May-2026 | [Apply](https://freshershunt.in/cisco-off-campus-drive-2026/) |
 | 33 | Software Engineer (New Grad) | Apple (via Jobsnet) | Hyderabad/Bengaluru (Hybrid) | ₹18-35 LPA | 23-May-2026 | [Apply](https://jobsnet.in/apple-off-campus-drive-hiring-new-grads-as-software-engineer/) |
 | 34 | Systems/Software Engineer I (Entry Level) | HPE | Bangalore | Best in Industry | 24-May-2026 | [Apply](https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/) |
-| 35 | Associate Product Developer (Java) | BMC Helix | Pune | Best In Industry | 24-May-2026 | [Apply](https://jobs.bmc.com/Careers/JobDetail/Associate-Product-Developer-India/46767?src=SNS-10001) |
+| 35 | Associate Product Developer (Java) | BMC Helix | Pune | Best in Industry | 24-May-2026 | [Apply](https://jobs.bmc.com/Careers/JobDetail/Associate-Product-Developer-India/46767?src=SNS-10001) |
 | 36 | Digital Leadership Dev Program | GE Appliances | Bangalore | Best in Industry | 24-May-2026 | [Apply](https://jobsnet.in/ge-appliances-off-campus-drive-digital-leadership-development-program/) |
 | 37 | Apprentice Software Developer Trainee | Philips | Bangalore | Competitive Stipend | 25-May-2026 | [Apply](https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/) |
 | 38 | Graduate Software Engineer | HPE | Bangalore/Chennai | Best in Industry | 26-May-2026 | [Apply](https://careers.hpe.com/us/en/job/1207072/Software-Engineer-I?utm_source=linkedin) |
@@ -94,6 +94,12 @@ Last updated: 2026-06-06
 | 74 | Entry Level Software Engineer (Junior) | Medpace | Navi Mumbai | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/medpace-off-campus-drive-2026-2/) |
 | 75 | Associate Software Engineer | Accuris | Bengaluru/Hybrid | Best in Industry | 05-Jun-2026 | [Apply](https://jobsnet.in/accuris-off-campus-drive-associate-software-engineer-freshers/) |
 | 76 | Software Engineer I (Entry-Level) | JLL | Bengaluru | Best in Industry | 05-Jun-2026 | [Apply](https://jobsnet.in/jll-off-campus-drive-hiring-entry-level-software-engineer/) |
+| 77 | Associate Software Engineer | Empower | Bengaluru (Hybrid) | Not disclosed | 06-Jun-2026 | [Apply](https://freshershunt.in/empower-off-campus-drive-2026/) |
+| 78 | Product Solutions Engineer | Google | Gurgaon | Best in Industry | 06-Jun-2026 | [Apply](https://www.google.com/about/careers/applications/jobs/results/98686752104817350-product-solutions-engineer/) |
+| 79 | Software Engineer | Verint | Bangalore | Best in Industry | 06-Jun-2026 | [Apply](https://fa-epcb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/3561/) |
+| 80 | Jr Talent Hiring (Jr. Software Engineer) | Zensar (Freshershunt) | Bengaluru | Not disclosed | 06-Jun-2026 | [Apply](https://freshershunt.in/zensar-off-campus-drive-2026/) |
+| 81 | Associate Application Support Engineer | Lighthouse | Bangalore | Best in Industry | 06-Jun-2026 | [Apply](https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=7f4d718d-fbb0-4f5f-87f5-c2c0598c7277&ccId=19000101_000001&lang=en_US&jobId=594833) |
+| 82 | Test Automation Developer | Siemens | Pune | Best in Industry | 06-Jun-2026 | [Apply](https://jobs.siemens.com/en_US/externaljobs/JobDetail/507820) |
 
 ### 💼 Internships
 
@@ -111,7 +117,7 @@ Last updated: 2026-06-06
 ### 🎮 Game Development
 
 | # | Title | Company | Location | Salary | Posted | Apply |
-|---|-------|---------|----------|--------|--------|-------|
+|---|-------|---------|----------|--------|-------|-------|
 | 1 | Trainee Test Engineer | Side | Hyderabad | Competitive | 25-May-2026 | [Apply](https://freshershunt.in/side-off-campus-drive-2026/) |
 
 ---
@@ -126,10 +132,10 @@ Last updated: 2026-06-06
 
 ## ⭐ Top 3 Picks
 
-1. **GlobalLogic - Associate Software Engineer** - Gurgaon - Hitachi Group Company, good entry-level - [Apply](https://freshershunt.in/globallogic-off-campus-drive-2026-2/)
-2. **JLL - Software Engineer I** - Bengaluru - Good full stack role with GenAI exposure - [Apply](https://jobsnet.in/jll-off-campus-drive-hiring-entry-level-software-engineer/)
-3. **DocuSign - Software Engineer** - Bangalore - Global SaaS company, cloud engineering - [Apply](https://freshershunt.in/docusign-off-campus-drive-2026-2/)
+1. **Google - Product Solutions Engineer** - Gurgaon - Google, freshers, best in industry - [Apply](https://www.google.com/about/careers/applications/jobs/results/98686752104817350-product-solutions-engineer/)
+2. **DocuSign - Software Engineer** - Bangalore - Global SaaS company, cloud engineering - [Apply](https://careers.docusign.com/careers-home/jobs/29539)
+3. **Verint - Software Engineer** - Bangalore - Global CX software company, fresher friendly - [Apply](https://fa-epcb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/3561/)
 
 ---
 
-*Auto-updated as of 06-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 07-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*

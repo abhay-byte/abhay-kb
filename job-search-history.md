@@ -270,3 +270,14 @@
 | 6 | Software Engineer I (Entry-Level) | JLL | Bengaluru | Best in Industry | https://jobsnet.in/jll-off-campus-drive-hiring-entry-level-software-engineer/ |
 | 7 | Engineering Intern (Class of 2026) | Eightfold AI | Bangalore | Not disclosed | https://freshershunt.in/eightfold-internship-2026/ |
 | 8 | Student Intern (Digital Technology) | SLB | Pune | Competitive Stipend | https://freshershunt.in/slb-internship-2026/ |
+
+### 07-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Associate Software Engineer | Empower | Bengaluru (Hybrid) | Not disclosed | https://freshershunt.in/empower-off-campus-drive-2026/ |
+| 2 | Product Solutions Engineer | Google | Gurgaon | Best in Industry | https://www.google.com/about/careers/applications/jobs/results/98686752104817350-product-solutions-engineer/ |
+| 3 | Software Engineer | Verint | Bangalore | Best in Industry | https://fa-epcb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/3561/ |
+| 4 | Jr Talent Hiring (Jr. Software Engineer) | Zensar (Freshershunt) | Bengaluru | Best in Industry | https://freshershunt.in/zensar-off-campus-drive-2026/ |
+| 5 | Associate Application Support Engineer | Lighthouse | Bangalore | Best in Industry | https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=7f4d718d-fbb0-4f5f-87f5-c2c0598c7277&ccId=19000101_000001&lang=en_US&jobId=594833 |
+| 6 | Test Automation Developer | Siemens | Pune | Best in Industry | https://jobs.siemens.com/en_US/externaljobs/JobDetail/507820 |
