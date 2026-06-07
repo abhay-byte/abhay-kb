@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-06 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-07 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -86,10 +86,14 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 
 **OpenAI:**
 
-| Model | Input /1M | Cached Input | Output /1M | Release Status |
-|-------|----------:|:------------:|-----------:|----------------|
-| GPT-5.5 | $5.00 | $0.50 | $30.00 | GA |
-| GPT-5.4 | $2.50 | $0.25 | $15.00 | GA |
+Long context pricing: GPT-5.5 and GPT-5.4 have **Long context** tiers for input > 272K tokens on Copilot.
+
+| Model | Input /1M (≤272K) | Input /1M (>272K) | Cached Input | Output /1M (≤272K) | Output /1M (>272K) | Release Status |
+|-------|------------------:|------------------:|:------------:|------------------:|-------------------:|----------------|
+| GPT-5.5 | $5.00 | $10.00 | $0.50 | $30.00 | $45.00 | GA |
+| GPT-5.4 | $2.50 | $5.00 | $0.25 | $15.00 | $22.50 | GA |
+| GPT-5.4 mini | $0.75 | — | $0.075 | $4.50 | — | GA |
+| GPT-5.4 nano | $0.20 | — | $0.02 | $1.25 | — | GA |
 | GPT-5.4 mini | $0.75 | $0.075 | $4.50 | GA |
 | GPT-5.4 nano | $0.20 | $0.02 | $1.25 | GA |
 | GPT-5.3-Codex | $1.75 | $0.175 | $14.00 | GA |
@@ -112,12 +116,14 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 
 **Google:**
 
-| Model | Input /1M | Cached Input | Output /1M | Release Status |
-|-------|----------:|:------------:|-----------:|----------------|
-| Gemini 3.5 Flash | $1.50 | $0.15 | $9.00 | GA |
-| Gemini 3.1 Pro | $2.00 | $0.20 | $12.00 | Public preview |
-| Gemini 2.5 Pro | $1.25 | $0.125 | $10.00 | GA |
-| Gemini 3 Flash | $0.50 | $0.05 | $3.00 | Public preview |
+Long context pricing: Gemini 3.1 Pro has a **Long context** tier for input > 200K tokens on Copilot.
+
+| Model | Input /1M (≤200K) | Input /1M (>200K) | Cached Input | Output /1M (≤200K) | Output /1M (>200K) | Release Status |
+|-------|------------------:|------------------:|:------------:|------------------:|-------------------:|----------------|
+| Gemini 3.5 Flash | $1.50 | — | $0.15 | $9.00 | — | GA |
+| Gemini 3.1 Pro | $2.00 | $4.00 | $0.20 | $12.00 | $18.00 | Public preview |
+| Gemini 2.5 Pro | $1.25 | — | $0.125 | $10.00 | — | GA |
+| Gemini 3 Flash | $0.50 | — | $0.05 | $3.00 | — | Public preview |
 
 **Fine-tuned (GitHub):**
 
@@ -131,7 +137,7 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 |-------|----------:|:------------:|-----------:|----------------|
 | MAI-Code-1-Flash | $0.75 | $0.075 | $4.50 | GA |
 
-### Plans Summary (Jun 3, 2026 — Usage-Based Billing LIVE)
+### Plans Summary (Jun 7, 2026 — Usage-Based Billing LIVE)
 
 | Plan | Price | Base | Flex | Total Credits | Notes |
 |------|-------|:----:|:----:|:-------------:|-------|
@@ -141,6 +147,8 @@ Per-token rates from [docs.github.com](https://docs.github.com/en/copilot/refere
 | Max | $100/mo | 10,000 ($100) | 10,000 ($100) | 20,000 ($200) | Effective Jun 1. Upgrade available for existing users. **New sign-ups paused** |
 | Business | $19/seat/mo | 1,900 ($19) | Promo Jun-Aug ($30) | — | $30/seat promo active Jun-Aug |
 | Enterprise | $39/seat/mo | 3,900 ($39) | Promo Jun-Aug ($70) | — | $70/seat promo active Jun-Aug |
+
+**Note:** Paid Copilot plans qualify for a **10% discount** on model costs when using auto model selection in Copilot Chat, Copilot CLI, or Copilot cloud agent.
 
 ### Individual Plan Feature Highlights (Current UI — pre-June 1)
 
