@@ -100,6 +100,24 @@ Last updated: 2026-06-10
 | 80 | Jr Talent Hiring (Jr. Software Engineer) | Zensar (Freshershunt) | Bengaluru | Not disclosed | 06-Jun-2026 | [Apply](https://freshershunt.in/zensar-off-campus-drive-2026/) |
 | 81 | Associate Application Support Engineer | Lighthouse | Bangalore | Best in Industry | 06-Jun-2026 | [Apply](https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=7f4d718d-fbb0-4f5f-87f5-c2c0598c7277&ccId=19000101_000001&lang=en_US&jobId=594833) |
 | 82 | Test Automation Developer | Siemens | Pune | Best in Industry | 06-Jun-2026 | [Apply](https://jobs.siemens.com/en_US/externaljobs/JobDetail/507820) |
+| 83 | Software Engineer 1 (Fresher) | Qualifacts | Vadodara | Best in Industry | 08-Jun-2026 | [Apply](https://qualifacts.wd5.myworkdayjobs.com/en-US/Qualifacts_External_Careers/job/Vadodara/Software-Engineer-I_R-102550-1?source=LinkedIn) |
+| 84 | Software System Engineer (0-2 Yrs) | HP | Bangalore | Best in Industry | 08-Jun-2026 | [Apply](https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/Bengaluru-Karnataka-India/Software-System-Engineer_3151545?source=Socialmedia-LinkedIn&src=Linkedin+Full+Feed) |
+| 85 | Full Stack Developer (Python) (2-3 Yrs Exp) | Deloitte | Bangalore/Hyderabad/Pune/Chennai/Kolkata | As per Industry | 08-Jun-2026 | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Consulting-C-M-AM-C-Full-stack-engineering-Python-Software-Engineer-I/353711) |
+| 86 | Associate Software Developer (Fresher) | Empower (Jobsnet) | Bangalore | Not disclosed | 07-Jun-2026 | [Apply](https://jobs.empower.com/job/bengaluru/assoc-engineer-software/42743/96022914848) |
+| 87 | Software Engineer - Cloud DevOps (Fresher) | Cisco (Jobsnet) | Bangalore/Hyderabad | Not disclosed | 07-Jun-2026 | [Apply](https://careers.cisco.com/global/en/job/CISCISGLOBAL2015541EXTERNALENGLOBAL/Software-Engineer) |
+| 88 | Associate Software Engineer | GlobalLogic (Jobsnet) | Gurgaon | ~8 LPA | 06-Jun-2026 | [Apply](https://www.globallogic.com/careers/associate-software-engineer-irc295840/) |
+| 89 | Software QA Engineer (1-3 Yrs) | Cisco (Fresheropenings) | Bangalore | Best in Industry | 09-Jun-2026 | [Apply](http://careers.cisco.com/global/en/job/CISCISGLOBAL2015350EXTERNALENGLOBAL/Software-QA-Engineer?utm_source=linkedin&utm_medium=phenom-feeds) |
+| 90 | Graduate Programme 2026 | Shell | Bangalore/Gurgaon/Chennai/Mumbai | Best in Industry | 09-Jun-2026 | [Apply](https://shell.wd3.myworkdayjobs.com/ShellCareers/job/Bangalore-RMZ-ECO-WORLD/Shell-Graduate-Programme-2026---India_R182105-1?source=APPLICANT_SOURCE) |
+| 91 | Project Engineer (Elite Program) | Wipro | Bangalore/Chennai/Hyderabad | Best in Industry | 08-Jun-2026 | [Apply](https://offcampusjobs4u.com/wipro-off-campus-drive-2026-project-engineer-elite/) |
+| 92 | Software Engineer (Java) | Blackhawk Network | Kozhikode | Best in Industry | 08-Jun-2026 | [Apply](https://apac-blackhawknetwork.icims.com/jobs/26580/software-engineer/job?mobile=false&width=1120&height=500&bga=true&needsRedirect=false&jan1offset=330&jun1offset=330) |
+| 93 | SDET-1 | Zinier | Bangalore | Best in Industry | 09-Jun-2026 | [Apply](https://zinier.breezy.hr/p/f48bac57162c-sdet-1?src=LinkedIn) |
+| 94 | IT Apprentice | NEC Corporation | Noida | Best in Industry | 09-Jun-2026 | [Apply](https://jobs.smartrecruiters.com/NECSWS/744000122914113-software-engineer-data-science) |
+| 95 | Technical Apprentice (Fresher) | Dell (Fresheropenings) | Bangalore | Best in Industry | 09-Jun-2026 | [Apply](https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/careers/job/R272585) |
+| 96 | Graduate Engineer Trainee (C++/Embedded) | Hitachi (Internship) | Noida | Competitive | 09-Jun-2026 | [Apply](https://fresheropenings.com/hitachi-internship-2026/) |
+| 97 | Graduate Engineer Trainee | HCLTech | Pan India | Competitive | 09-Jun-2026 | [Apply](https://offcampusjobs4u.com/hcltech-hiring-job-opportunity-for-post-graduate-engineer-trainee/) |
+| 98 | Software Developer (Java/Azure/AWS/.Net) | Infosys | Bengaluru | Best in Industry | 09-Jun-2026 | [Apply](https://offcampusjobs4u.com/infosys-recruitment-2026-software-developer-bengaluru/) |
+| 99 | Associate Software Engineer | Accuris (Fresheropenings) | Bangalore | Best in Industry | 07-Jun-2026 | [Apply](https://fresheropenings.com/accuris-off-campus-drive-2026/) |
+| 100 | Apps Dev Programmer Analyst | Citigroup (Fresheropenings) | Pune | Best in Industry | 07-Jun-2026 | [Apply](https://fresheropenings.com/citigroup-off-campus-drive-2026/) |
 
 ### 💼 Internships
 
@@ -113,6 +131,7 @@ Last updated: 2026-06-10
 | 6 | Software Development Engineer Intern | Philips | Bangalore | Not disclosed | 03-Jun-2026 | [Apply](https://fresheropenings.com/philips-internship-2026/) |
 | 7 | Engineering Intern (Class of 2026) | Eightfold AI | Bangalore (Hybrid) | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/eightfold-internship-2026/) |
 | 8 | Student Intern (Digital Technology) | SLB | Pune | Competitive Stipend | 05-Jun-2026 | [Apply](https://freshershunt.in/slb-internship-2026/) |
+| 9 | Engineering Graduate Intern (SCION Platform) | IQVIA | Bengaluru (WFO) | Competitive Stipend | 09-Jun-2026 | [Apply](https://freshershunt.in/iqvia-internship-2026/) |
 
 ### 🎮 Game Development
 
@@ -133,9 +152,9 @@ Last updated: 2026-06-10
 ## ⭐ Top 3 Picks
 
 1. **Google - Product Solutions Engineer** - Gurgaon - Google, freshers, best in industry - [Apply](https://www.google.com/about/careers/applications/jobs/results/98686752104817350-product-solutions-engineer/)
-2. **DocuSign - Software Engineer** - Bangalore - Global SaaS company, cloud engineering - [Apply](https://careers.docusign.com/careers-home/jobs/29539)
-3. **Verint - Software Engineer** - Bangalore - Global CX software company, fresher friendly - [Apply](https://fa-epcb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/3561/)
+2. **Deloitte - Full Stack Developer (Python)** - Multiple Cities - Global leader, full stack - [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Consulting-C-M-AM-C-Full-stack-engineering-Python-Software-Engineer-I/353711)
+3. **HP - Software System Engineer** - Bangalore - HP, freshers, 0-2 yrs - [Apply](https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/Bengaluru-Karnataka-India/Software-System-Engineer_3151545?source=Socialmedia-LinkedIn&src=Linkedin+Full+Feed)
 
 ---
 
-*Auto-updated as of 07-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*
+*Auto-updated as of 10-Jun-2026 by OpenClaw cron job. Listings older than 30 days are automatically removed.*

@@ -281,3 +281,27 @@
 | 4 | Jr Talent Hiring (Jr. Software Engineer) | Zensar (Freshershunt) | Bengaluru | Best in Industry | https://freshershunt.in/zensar-off-campus-drive-2026/ |
 | 5 | Associate Application Support Engineer | Lighthouse | Bangalore | Best in Industry | https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=7f4d718d-fbb0-4f5f-87f5-c2c0598c7277&ccId=19000101_000001&lang=en_US&jobId=594833 |
 | 6 | Test Automation Developer | Siemens | Pune | Best in Industry | https://jobs.siemens.com/en_US/externaljobs/JobDetail/507820 |
+
+### 10-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Software Engineer 1 (Fresher) | Qualifacts | Vadodara | Best in Industry | https://qualifacts.wd5.myworkdayjobs.com/en-US/Qualifacts_External_Careers/job/Vadodara/Software-Engineer-I_R-102550-1?source=LinkedIn |
+| 2 | Software System Engineer (0-2 Yrs) | HP | Bangalore | Best in Industry | https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/Bengaluru-Karnataka-India/Software-System-Engineer_3151545?source=Socialmedia-LinkedIn&src=Linkedin+Full+Feed |
+| 3 | Full Stack Developer (Python) (2-3 Yrs Exp) | Deloitte | Bangalore/Hyderabad/Pune/Chennai/Kolkata | As per Industry | https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Consulting-C-M-AM-C-Full-stack-engineering-Python-Software-Engineer-I/353711 |
+| 4 | Associate Software Developer (Fresher) | Empower (Jobsnet) | Bangalore | Not disclosed | https://jobs.empower.com/job/bengaluru/assoc-engineer-software/42743/96022914848 |
+| 5 | Software Engineer - Cloud DevOps (Fresher) | Cisco (Jobsnet) | Bangalore/Hyderabad | Not disclosed | https://careers.cisco.com/global/en/job/CISCISGLOBAL2015541EXTERNALENGLOBAL/Software-Engineer |
+| 6 | Associate Software Engineer | GlobalLogic (Jobsnet) | Gurgaon | ~8 LPA | https://www.globallogic.com/careers/associate-software-engineer-irc295840/ |
+| 7 | Software QA Engineer (1-3 Yrs) | Cisco (Fresheropenings) | Bangalore | Best in Industry | http://careers.cisco.com/global/en/job/CISCISGLOBAL2015350EXTERNALENGLOBAL/Software-QA-Engineer |
+| 8 | Graduate Programme 2026 | Shell | Bangalore/Gurgaon/Chennai/Mumbai | Best in Industry | https://shell.wd3.myworkdayjobs.com/ShellCareers/job/Bangalore-RMZ-ECO-WORLD/Shell-Graduate-Programme-2026---India_R182105-1 |
+| 9 | Project Engineer (Elite Program) | Wipro | Bangalore/Chennai/Hyderabad | Best in Industry | https://offcampusjobs4u.com/wipro-off-campus-drive-2026-project-engineer-elite/ |
+| 10 | Software Engineer (Java) | Blackhawk Network | Kozhikode | Best in Industry | https://apac-blackhawknetwork.icims.com/jobs/26580/software-engineer/job |
+| 11 | SDET-1 | Zinier | Bangalore | Best in Industry | https://zinier.breezy.hr/p/f48bac57162c-sdet-1?src=LinkedIn |
+| 12 | IT Apprentice | NEC Corporation | Noida | Best in Industry | https://jobs.smartrecruiters.com/NECSWS/744000122914113-software-engineer-data-science |
+| 13 | Technical Apprentice (Fresher) | Dell (Fresheropenings) | Bangalore | Best in Industry | https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/careers/job/R272585 |
+| 14 | Graduate Engineer Trainee (C++/Embedded) | Hitachi (Internship) | Noida | Competitive | https://fresheropenings.com/hitachi-internship-2026/ |
+| 15 | Graduate Engineer Trainee | HCLTech | Pan India | Competitive | https://offcampusjobs4u.com/hcltech-hiring-job-opportunity-for-post-graduate-engineer-trainee/ |
+| 16 | Software Developer (Java/Azure/AWS/.Net) | Infosys | Bengaluru | Best in Industry | https://offcampusjobs4u.com/infosys-recruitment-2026-software-developer-bengaluru/ |
+| 17 | Associate Software Engineer | Accuris (Fresheropenings) | Bangalore | Best in Industry | https://fresheropenings.com/accuris-off-campus-drive-2026/ |
+| 18 | Apps Dev Programmer Analyst | Citigroup (Fresheropenings) | Pune | Best in Industry | https://fresheropenings.com/citigroup-off-campus-drive-2026/ |
+| 19 | Engineering Graduate Intern (SCION) | IQVIA | Bengaluru | Competitive Stipend | https://freshershunt.in/iqvia-internship-2026/ |
