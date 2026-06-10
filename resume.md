@@ -102,4 +102,4 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ---
 
-*Last synced: 2026-06-10 02:17 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-06-10 03:51 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*

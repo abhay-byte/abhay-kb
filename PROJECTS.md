@@ -5,24 +5,24 @@ title: Projects Dashboard
 
 # 🚀 Projects Dashboard
 
-> **Last synced:** June 07, 2026
+> **Last synced:** June 10, 2026
 
 ## 📊 Overview
 
 | Metric | Value |
 |-|-|
-| Total Repositories | 80 |
-| Total Stars | 305 |
-| Total Forks | 22 |
+| Total Repositories | 84 |
+| Total Stars | 313 |
+| Total Forks | 25 |
 | Languages Used | 19 |
 
 ## ⭐ Top Projects by Stars
 
 | # | Name | Stars | Forks | Language | Description |
 |-|-|-|-|-|-|
-| 1 | [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 107 | 3 | Kotlin | FluxLinux is an advanced orchestrator application that transforms your Android d... |
+| 1 | [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 110 | 5 | Kotlin | FluxLinux is an advanced orchestrator application that transforms your Android d...
 | 2 | [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 71 | 8 | Kotlin | A comprehensive Android CPU benchmarking application with detailed scoring and v... |
-| 3 | [mkm](https://github.com/abhay-byte/mkm) | 49 | 6 | Kotlin | Minimal Android kernel management and system monitoring application |
+| 3 | [mkm](https://github.com/abhay-byte/mkm) | 54 | 7 | Kotlin | Minimal Android kernel management and system monitoring application |
 | 4 | [nexus](https://github.com/abhay-byte/nexus) | 11 | 1 | TypeScript | Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini CLI, and 10+ ... |
 | 5 | [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | 8 | 0 | Shell | This repository provides shell scripts to automate the setup for:      Arch Linu... |
 | 6 | [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | 8 | 1 | — | A community-driven compatibility list for running Windows games on Android devic... |
@@ -35,18 +35,18 @@ title: Projects Dashboard
 
 | Name | Stars | Forks | Language | Updated |
 |-|-|-|-|-|
-| [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 107 | 3 | Kotlin | 2026-06-06 |
-| [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 71 | 8 | Kotlin | 2026-06-03 |
-| [mkm](https://github.com/abhay-byte/mkm) | 49 | 6 | Kotlin | 2026-06-07 |
+| [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 110 | 5 | Kotlin | 2026-06-10 |
+| [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 71 | 8 | Kotlin | 2026-06-10 |
+| [mkm](https://github.com/abhay-byte/mkm) | 54 | 7 | Kotlin | 2026-06-10 |
 | [nexus](https://github.com/abhay-byte/nexus) | 11 | 1 | TypeScript | 2026-06-04 |
 | [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | 8 | 0 | Shell | 2026-05-28 |
 | [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | 8 | 1 | — | 2026-05-04 |
 | [poco-x6-pro-custom-roms](https://github.com/abhay-byte/poco-x6-pro-custom-roms) | 8 | 0 | — | 2026-05-04 |
-| [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 | 1 | — | 2026-06-06 |
-| [nativecode](https://github.com/abhay-byte/nativecode) | 4 | 0 | Kotlin | 2026-06-07 |
+| [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 | 1 | — | 2026-06-10 |
+| [nativecode](https://github.com/abhay-byte/nativecode) | 4 | 0 | Kotlin | 2026-06-10 |
 | [AI_WRAPPER_PROJECTS](https://github.com/abhay-byte/AI_WRAPPER_PROJECTS) | 3 | 2 | Python | 2025-07-23 |
 | [apm](https://github.com/abhay-byte/apm) | 3 | 0 | Python | 2026-04-30 |
-| [my-resume](https://github.com/abhay-byte/my-resume) | 3 | 0 | TeX | 2026-06-06 |
+| [my-resume](https://github.com/abhay-byte/my-resume) | 3 | 0 | TeX | 2026-06-10 |
 | [Saiko-no-senshi-0.1v](https://github.com/abhay-byte/Saiko-no-senshi-0.1v) | 3 | 0 | C# | 2025-12-09 |
 | [Adirstat](https://github.com/abhay-byte/Adirstat) | 2 | 0 | Kotlin | 2026-04-19 |
 | [DeviceInsight](https://github.com/abhay-byte/DeviceInsight) | 2 | 0 | Kotlin | 2026-05-04 |
@@ -72,7 +72,7 @@ title: Projects Dashboard
 | [Wispers-In-The-Mist](https://github.com/abhay-byte/Wispers-In-The-Mist) | 1 | 0 | — | 2025-06-30 |
 | [agent-project-template](https://github.com/abhay-byte/agent-project-template) | 0 | 0 | — | 2026-03-07 |
 | [allwidgets](https://github.com/abhay-byte/allwidgets) | 0 | 0 | Kotlin | 2026-04-30 |
-| [abhay-kb](https://github.com/abhay-byte/abhay-kb) | 0 | 0 | HTML | 2026-06-06 |
+| [abhay-kb](https://github.com/abhay-byte/abhay-kb) | 0 | 0 | HTML | 2026-06-10 |
 | [ADV_JAVA](https://github.com/abhay-byte/ADV_JAVA) | 0 | 0 | Java | 2025-06-30 |
 | [ai-tf-models](https://github.com/abhay-byte/ai-tf-models) | 0 | 0 | Python | 2025-12-26 |
 | [AI_FILE](https://github.com/abhay-byte/AI_FILE) | 0 | 0 | Prolog | 2025-06-30 |
