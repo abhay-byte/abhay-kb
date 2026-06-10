@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-07 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-10 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled June 2026.
@@ -16,7 +16,7 @@ Compiled June 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 7 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 10 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.91891891891896" x2="750" y2="413.91891891891896"/>
@@ -107,7 +107,7 @@ Compiled June 2026.
 </defs>
 
 <text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (June 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 7 2026</text>
+<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 10 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400.0" x2="670" y2="400.0"/>
@@ -170,16 +170,20 @@ Compiled June 2026.
 
 Current as of June 2026. Source: [platform.claude.com](https://platform.claude.com/docs/en/about-claude/pricing)
 
-| Model | Input /1M | Output /1M | Batch (50% off) | Cache Writes (5m) | Cache Hits |
-|-------|-----------|------------|-----------------|-------------------|------------|
-| Opus 4.8 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
-| Opus 4.7 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
-| Opus 4.6 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
-| Opus 4.5 | $5.00 | $25.00 | ✓ | $6.25/MTok | $0.50/MTok |
-| Sonnet 4.6 | $3.00 | $15.00 | ✓ | $3.75/MTok | $0.30/MTok |
-| Haiku 4.5 | $1.00 | $5.00 | ✓ | $1.25/MTok | $0.10/MTok |
-| Mythos Preview | $25.00 | $125.00 | — | — | — |
+| Model | Input /1M | Output /1M | Batch (50% off) | Cache Writes (5m) | 1h Cache Writes | Cache Hits |
+|-------|-----------|------------|-----------------|-------------------|-----------------|------------|
+| Fable 5 | $10.00 | $50.00 | ✓ | $12.50/MTok | $20.00/MTok | $1.00/MTok |
+| Mythos 5 | $10.00 | $50.00 | ✓ | $12.50/MTok | $20.00/MTok | $1.00/MTok |
+| Opus 4.8 | $5.00 | $25.00 | ✓ | $6.25/MTok | $10.00/MTok | $0.50/MTok |
+| Opus 4.7 | $5.00 | $25.00 | ✓ | $6.25/MTok | $10.00/MTok | $0.50/MTok |
+| Opus 4.6 | $5.00 | $25.00 | ✓ | $6.25/MTok | $10.00/MTok | $0.50/MTok |
+| Opus 4.5 | $5.00 | $25.00 | ✓ | $6.25/MTok | $10.00/MTok | $0.50/MTok |
+| Sonnet 4.6 | $3.00 | $15.00 | ✓ | $3.75/MTok | $6.00/MTok | $0.30/MTok |
+| Haiku 4.5 | $1.00 | $5.00 | ✓ | $1.25/MTok | $2.00/MTok | $0.10/MTok |
+| Mythos Preview | $25.00 | $125.00 | — | — | — | — |
 
+Fable 5 (Jun 2026): Next-gen Anthropic flagship, $10/$50 per MTok. Limited availability.
+Mythos 5 (Jun 2026): Premium reasoning tier at $10/$50 per MTok. Also limited availability.
 Opus 4.8 (May 28 2026): 88.6% SWE-Bench Verified (#2). Opus 4.7: 87.6%, 64.3% SWE-Bench Pro (#1). Opus 4.5: 80.9%. Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.
 Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Verified (#1) — very expensive, limited API access.
 
@@ -303,14 +307,14 @@ Current as of June 2026. Source: [platform.minimax.io](https://platform.minimax.
 
 | Model | Input /1M | Output /1M | Context | Max Output | SWE-Bench | Speed | Notes |
 |-------|-----------|------------|---------|-----------|-----------|-------|-------|
-| M3 (≤512K) | $0.30 (intro) → $0.60 | $1.20 (intro) → $2.40 | 512K+ | — | — | ~50 TPS | 7-day 50% off intro promo. $0.06/M cached read |
-| M3 (>512K) | $1.20 | $4.80 | 512K+ | — | — | — | Long-context tier. Limited availability |
+| M3 (≤512K) | $0.30 (permanent 50% off, was $0.60) | $1.20 (permanent 50% off, was $2.40) | 512K+ | — | — | ~50 TPS | Permanent 50% off. $0.06/M cached read |
+| M3 (>512K) | $0.60 (permanent 50% off, was $1.20) | $2.40 (permanent 50% off, was $4.80) | 512K+ | — | — | — | Long-context tier. Permanent 50% off |
 | M2.7 | $0.30 | $1.20 | 205K | 131K | — | ~80 TPS | Released Mar 18 2026. $0.06/M cached read |
 | M2.5 Standard | $0.30 | $1.20 | 256K | — | 80.2% | ~50 TPS | Legacy. Automatic cache (no config) |
 | M2.5 Lightning | $0.60 | $2.40 | 256K | — | 80.2% | ~100 TPS | Legacy. Priority scheduling |
 
 M2.5 Standard: Still one of the best value coding models at $0.30/$1.20. Near Claude Opus 4.6 (80.8%).
-M3: Latest generation. $0.30/$1.20 during 7-day intro (50% off), then $0.60/$2.40 standard. Supports >512K context via Priority tier.
+M3: Latest generation. $0.30/$1.20 (≤512K, permanent 50% off list $0.60/$2.40). $0.60/$2.40 (>512K, also permanent 50% off list $1.20/$4.80). Supports >512K context via Priority tier.
 OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3 ~3,000 req/5h.
 
 ### Subscription Plans
@@ -354,7 +358,7 @@ Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.
 
 | Model | Input /1M | Output /1M | Context | Notes |
 |-------|-----------|------------|---------|-------|
-| Qwen3.5 Plus | $0.26 | $1.56 | 1M | Feb 2026 release. 65K max output |
+| Qwen3.5 Plus | $0.40 ($0.115 Global) | $2.40 ($0.688 Global) | 1M | Feb 2026 release. 65K max output. Thinking mode: output at same price |
 | Qwen3.5 397B A17B | Free | Free | 262K | Open-weight MoE flagship |
 
 ### Qwen-Max (Legacy Flagship)
