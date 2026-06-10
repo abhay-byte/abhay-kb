@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-07 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-10 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -50,11 +50,11 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.
 
 ## GitHub Copilot [Plans](https://github.com/features/copilot/plans)
 
-Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [winbuzzer.com](https://winbuzzer.com/2026/05/14/github-copilot-individual-plans-introducing-flex-a-xcxwbn/)
+Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [docs.github.com/plans](https://docs.github.com/en/copilot/get-started/plans), [github.blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)
 
-### Plans (Current — June 4 2026 — Usage-Based Billing LIVE)
+### Plans (Current — June 10 2026 — Usage-Based Billing LIVE)
 
-Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [github.blog (May 12)](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [github.blog (Apr 27)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [github.blog changelog (Jun 1)](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/)
+Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), [docs.github.com/billing-individuals](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals), [github.blog (May 12)](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [github.blog (Apr 27)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), [github.blog changelog (Jun 1)](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/)
 
 | Plan | Price | AI Credits (Base + Flex) | Completions | Agent/CLI | Status |
 |------|-------|---------------------------|-------------|-----------|--------|
@@ -78,6 +78,7 @@ Source: [docs.github.com](https://docs.github.com/en/copilot/reference/copilot-b
 - **Opus exclusive to Pro+ & Max:** Claude Opus 4.7 removed from Pro tier. Only Pro+ ($39/mo) and Max ($100/mo)
 - **Code completions remain unlimited** on all paid plans — not billed in AI Credits
 - **Copilot code review** consumes both AI Credits and GitHub Actions minutes
+- **Claude Fable 5 available (Jun 9):** First Mythos-class model from Anthropic, designed for long-horizon autonomous coding. Available on Pro+, Max, Business, Enterprise. Priced at $10/$50 per 1M tokens. Requires 30-day data retention for safety classifiers (not used for training)
 - **GPT-5.2 closing down (Jun 1):** GPT-5.2 marked as closing down effective June 1, 2026 on the supported models page. GPT-5.2-Codex remains GA. Users should migrate to GPT-5.3-Codex or GPT-5.4
 
 ### Per-Token Pricing (Jun 2026 — Usage-Based)
@@ -105,6 +106,7 @@ Long context pricing: GPT-5.5 and GPT-5.4 have **Long context** tiers for input 
 
 | Model | Input /1M | Cached Input | Cache Write | Output /1M |
 |-------|----------:|:------------:|:-----------:|-----------:|
+| Claude Fable 5 ★ | $10.00 | $1.00 | $12.50 | $50.00 |
 | Claude Opus 4.8 | $5.00 | $0.50 | $6.25 | $25.00 |
 | Claude Opus 4.7 | $5.00 | $0.50 | $6.25 | $25.00 |
 | Claude Opus 4.6 | $5.00 | $0.50 | $6.25 | $25.00 |
@@ -113,6 +115,8 @@ Long context pricing: GPT-5.5 and GPT-5.4 have **Long context** tiers for input 
 | Claude Sonnet 4.5 | $3.00 | $0.30 | $3.75 | $15.00 |
 | Claude Sonnet 4 | $3.00 | $0.30 | $3.75 | $15.00 |
 | Claude Haiku 4.5 | $1.00 | $0.10 | $1.25 | $5.00 |
+
+★ Claude Fable 5 — Released June 9, 2026. First Anthropic Mythos-class model. Available on Copilot Pro+, Max, Business, Enterprise. Requires data retention (30-day retention for safety classifiers; not used for training).
 
 **Google:**
 
@@ -217,26 +221,47 @@ Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Ze
 | Per week | $30 |
 | Per month | $60 |
 
-### Available Models (13)
+### Available Models (14)
 
-Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/) (verified June 3, 2026)
+Source: [opencode.ai/docs/go](https://opencode.ai/docs/go/) (verified June 10, 2026)
 
 | Model | Provider | Per 5h | Per Week | Per Month | Notes |
 |-------|----------|--------|----------|-----------|-------|
 | DeepSeek V4 Flash | DeepSeek | 31,650 | 79,050 | 158,150 | Cheapest, huge quota |
 | MiMo-V2.5 | Xiaomi | 30,100 | 75,200 | 150,400 | V2.5 Omni-class, 1M ctx |
 | MiniMax M2.5 | MiniMax | 6,300 | 15,900 | 31,800 | 80.2% SWE-Bench |
-| Qwen3.7 Plus | Alibaba | 4,300 | 10,800 | 21,600 | New addition, mid-tier Qwen |
+| Qwen3.7 Plus | Alibaba | 4,300 | 10,800 | 21,600 | Mid-tier Qwen |
 | MiniMax M2.7 | MiniMax | 3,400 | 8,500 | 17,000 | 196K ctx |
 | DeepSeek V4 Pro | DeepSeek | 3,450 | 8,550 | 17,150 | 80.6% SWE-Bench |
 | MiMo-V2.5-Pro | Xiaomi | 3,250 | 8,150 | 16,300 | Coding focus, 1M ctx |
 | Qwen3.6 Plus | Alibaba | 3,300 | 8,200 | 16,300 | 78.8% SWE-Bench |
+| MiniMax M3 | MiniMax | 3,200 | 8,000 | 16,000 | Newest MiniMax model |
 | Kimi K2.5 | Moonshot | 1,850 | 4,630 | 9,250 | 256K ctx, 76.8% SWE-Bench |
-| MiniMax M3 | MiniMax | 1,400 | 3,500 | 7,000 | Newest MiniMax model |
-| Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | 58.6% SWE-Bench Pro |
 | GLM-5 | Z.ai | 1,150 | 2,880 | 5,750 | 77.8% SWE-Bench |
-| GLM-5.1 | Z.ai | 880 | 2,150 | 4,300 | Best reasoning. 58.4% SWE-Bench Pro |
+| Kimi K2.6 | Moonshot | 1,150 | 2,880 | 5,750 | 58.6% SWE-Bench Pro |
 | Qwen3.7 Max | Alibaba | 950 | 2,390 | 4,770 | Newest Qwen, 128K ctx |
+| GLM-5.1 | Z.ai | 880 | 2,150 | 4,300 | Best reasoning. 58.4% SWE-Bench Pro |
+
+### Go API Pricing (per 1M tokens)
+
+| Model | Input | Output | Cached Read | Cached Write |
+|-------|------:|-------:|:-----------:|:------------:|
+| GLM-5.1 | $1.40 | $4.40 | $0.26 | — |
+| GLM-5 | $1.00 | $3.20 | $0.20 | — |
+| Kimi K2.6 | $0.95 | $4.00 | $0.16 | — |
+| Kimi K2.5 | $0.60 | $3.00 | $0.10 | — |
+| MiMo V2.5 | $0.14 | $0.28 | $0.0028 | — |
+| MiMo V2.5 Pro | $1.74 | $3.48 | $0.0145 | — |
+| MiniMax M3 | $0.30 | $1.20 | $0.06 | — |
+| MiniMax M2.7 | $0.30 | $1.20 | $0.06 | $0.375 |
+| MiniMax M2.5 | $0.30 | $1.20 | $0.06 | $0.375 |
+| Qwen3.7 Max | $2.50 | $7.50 | $0.50 | $3.125 |
+| Qwen3.7 Plus (≤256K) | $0.40 | $1.60 | $0.04 | $0.50 |
+| Qwen3.7 Plus (>256K) | $1.20 | $4.80 | $0.12 | $1.50 |
+| Qwen3.6 Plus (≤256K) | $0.50 | $3.00 | $0.05 | $0.625 |
+| Qwen3.6 Plus (>256K) | $2.00 | $6.00 | $0.20 | $2.50 |
+| DeepSeek V4 Pro | $1.74 | $3.48 | $0.0145 | — |
+| DeepSeek V4 Flash | $0.14 | $0.28 | $0.0028 | — |
 
 ### Free Model
 
@@ -254,14 +279,11 @@ Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.
 
 ### Notes
 
-- API endpoint: opencode.ai/zen/go/v1/chat/completions
 - Cancel anytime. Top-up credit if needed.
 - Optional "Use balance" fallback to Zen credits after limits reached
 - Models are periodically rotated as new ones are tested
-- MiMo-V2.5 added to model lineup (updated from V2.5-Omni naming)
-- Qwen3.7 Max added to model lineup (128K context, best available Qwen for coding)
-- MiniMax M3, M2.7, and M2.5 use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
-- Qwen3.6 Plus, Qwen3.7 Plus, and Qwen3.7 Max use Anthropic-compatible endpoint: opencode.ai/zen/go/v1/messages
+- **OpenAI-compatible endpoint** (GPT/DeepSeek/Qwen-style): opencode.ai/zen/go/v1/chat/completions — used by GLM-5.1, GLM-5, Kimi K2.5, Kimi K2.6, DeepSeek V4 Pro, DeepSeek V4 Flash, MiMo-V2.5, MiMo-V2.5-Pro
+- **Anthropic-compatible endpoint** (Claude-style): opencode.ai/zen/go/v1/messages — used by MiniMax M3, M2.7, M2.5, Qwen3.7 Max, Qwen3.7 Plus, Qwen3.6 Plus
 - Models hosted in US, EU, and Singapore
 
 ---
@@ -281,6 +303,8 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 
 **New: Claude Opus 4.8** — Now available on all Claude plans. Latest Opus model with improved reasoning. On GitHub Copilot Pro+/Max as of June 1.
 
+**New: Claude Fable 5 (Mythos class)** — Released June 9, 2026. Available on all Claude surfaces (claude.ai, Claude Code CLI, Claude Cowork) through June 22 on subscription plans; billed extra after that. On GitHub Copilot Pro+/Max/Business/Enterprise. First model in Anthropic's Mythos class — designed for long-horizon autonomous coding. Requires 30-day data retention for safety classifiers.
+
 ### Team Plans
 
 | Plan | Price | Multiplier | Weekly Cap | Min Seats |
@@ -298,6 +322,7 @@ Source: [claude.com/pricing](https://claude.com/pricing), [Anthropic blog](https
 
 | Model | Input /1M | Output /1M | Cache Read | Batch (50% off) |
 |-------|-----------|------------|------------|-----------------|
+| Fable 5 | $10.00 | $50.00 | $2.00 | TBD |
 | Opus 4.8 | $5.00 | $25.00 | $0.50 | Yes |
 | Opus 4.7 | $5.00 | $25.00 | $0.50 | Yes |
 | Sonnet 4.6 | $3.00 | $15.00 | $0.30 | Yes |
@@ -343,7 +368,7 @@ Anthropic announced on May 13 that **effective June 15, 2026**, programmatic Cla
 
 > **From felloai review:** "Max 5x at $100/month gives five times the Pro usage and priority access during peak demand. It is the sweet spot for full-time developers who use Claude Code as their default coding partner."
 
-> **Personal Review (June 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 and now Opus 4.8 are genuinely the smartest models for complex refactoring and architecture decisions. The main frustration is Anthropic's opaque quota system and the ongoing v2.1.100 prompt caching bug (still unfixed as of June) silently eating into your limits by ~40%. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.
+> **Personal Review (June 2026):** Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 and now Opus 4.8 are genuinely the smartest models for complex refactoring and architecture decisions. Claude Fable 5 (June 9) is the new frontier — Mythos-class model designed for long-horizon autonomous coding, available through June 22 on subscription plans. The main frustration is Anthropic's opaque quota system and the ongoing v2.1.100 prompt caching bug (still unfixed as of June) silently eating into your limits by ~40%. Compared to OpenCode Go ($10/mo with MiniMax M2.5), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.
 
 ---
 
