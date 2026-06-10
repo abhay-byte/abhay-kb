@@ -9,7 +9,6 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
-
 ### June 10, 2026
 
 **[Claude Fable 5 and Claude Mythos 5: Anthropic's New Frontier Models](news/claude-fable-5-mythos-5-anthropic/)** — *Anthropic / Hacker News*
