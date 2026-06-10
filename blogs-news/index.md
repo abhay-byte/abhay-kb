@@ -9,6 +9,30 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+
+### June 10, 2026
+
+**[Claude Fable 5 and Claude Mythos 5: Anthropic's New Frontier Models](news/claude-fable-5-mythos-5-anthropic/)** — *Anthropic / Hacker News*
+> Anthropic launched Fable 5 (Mythos-class, general-use safe) and Mythos 5 (cyberdefense). Stripe reported compressing months of engineering into days on a 50-million-line Ruby codebase. Fable 5 is SOTA on nearly all benchmarks at $10/$50 per M tokens.
+
+**[Grit: Rewriting Git in Rust with AI Agents](news/grit-rewriting-git-rust-agents/)** — *GitButler Blog / Hacker News*
+> Scott Chacon used Anthropic-style agent swarms to rewrite Git from scratch in Rust as a library-based, memory-safe implementation. It passes over 99% of Git's 42,000+ test suite after billions of tokens of agent work.
+
+**[npm v12 Breaking Changes: Major Security Hardening for Package Management](news/npm-v12-breaking-changes-security/)** — *GitHub Blog / Hacker News*
+> npm v12 (July 2026) will default allowScripts to off, block Git dependencies and remote tarballs by default — turning automatic install behaviors into explicit opt-ins to combat supply-chain attacks.
+
+**[OpenCV 5 Released: The Biggest Leap in Years for Computer Vision](news/opencv-5-released/)** — *OpenCV / Hacker News*
+> OpenCV 5 introduces a graph-based DNN engine with 80%+ ONNX coverage, hardware acceleration, LLM/VLM support, and a faster Python-first core — one of the most significant releases in the library's 25-year history.
+
+**[Landmark German Court Ruling: Google Liable for False AI Overview Content](news/german-court-google-ai-overviews-liable/)** — *The Decoder / Hacker News*
+> A Munich court ruled AI Overviews are Google's "own statements," making the company directly liable for false content. The court rejected Google's defense that users can check sources themselves, noting almost no users click AI Overview links.
+
+**[Apple Open-Sources Container Machines for macOS Linux Development](news/apple-container-machines-macos/)** — *Apple / Hacker News*
+> Apple released an open-source container runtime for macOS that runs persistent Linux environments with init system support, automatic home directory sharing, and systemd — essentially native Docker-for-development by Apple.
+
+**[Apple Decides Not to Roll Out Siri in EU After Regulatory Denial](news/apple-siri-eu-regulations/)** — *Reuters / Hacker News*
+> Apple won't launch its updated Siri AI in the EU after regulators denied an exemption request, highlighting the growing regulatory divide in AI deployment between markets.
+
 ### June 6, 2026
 
 **[Microsoft Open-Sources pg_durable: In-Database Durable Execution for PostgreSQL](news/microsoft-pg-durable-durable-execution-postgresql/)** — *Microsoft / GitHub / Hacker News*
