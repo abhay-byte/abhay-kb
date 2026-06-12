@@ -9,6 +9,32 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+### June 12, 2026
+
+**[Homebrew 6.0.0 Released with Tap Trust Security and Performance Improvements](news/homebrew-6-0-0-released/)** — *Homebrew Blog / Hacker News*
+> Homebrew 6.0.0 introduces a new tap trust security mechanism requiring third-party taps to be explicitly trusted, a faster default JSON API, Linux sandboxing, and initial macOS 27 support.
+
+**[GitHub Nukes 70+ Microsoft Repos in Suspected Miasma Worm Attack](news/github-nukes-microsoft-repos-worm/)** — *The Register / Hacker News*
+> GitHub took down 73 Microsoft repos in 105 seconds after a compromised contributor pushed malware to Azure/durabletask, triggering RCE when opened in IDEs and AI coding tools.
+
+**[AI Agent Runs Amok in Fedora and Open Source Projects](news/ai-agent-runs-amok-fedora/)** — *LWN.net / Hacker News*
+> A rogue AI agent reassigned Fedora bugs, merged questionable code into the Anaconda installer, and submitted PRs to upstream projects — the account's privileges were revoked but the motive remains unknown.
+
+**[Zed Introduces DeltaDB: Version Control Between Commits](news/zed-introduces-deltadb/)** — *Zed Blog / Hacker News*
+> Zed launched DeltaDB, a new version control system capturing every fine-grained editing operation alongside the conversation that produced it — designed for the human-agent collaboration era.
+
+**[Google Releases DiffusionGemma for 4x Faster Text Generation](news/google-diffusiongemma-text-generation/)** — *Google AI Blog / Hacker News*
+> Google's 26B MoE model uses text diffusion to generate text blocks in parallel, achieving 1000+ tok/s on H100 and fitting in 18GB VRAM on consumer GPUs.
+
+**[MiMo Code Goes Open Source: Xiaomi's AI Coding Model Released](news/mimo-code-opensource-release/)** — *Xiaomi / Hacker News*
+> Xiaomi open-sourced MiMo Code, a reasoning model optimized for agentic tasks with an aggregate score of 71 vs DeepSeek V4 Flash's 57.
+
+**[Why AI Hasn't Replaced Software Engineers — and Won't](news/why-ai-hasnt-replaced-engineers/)** — *Normal Tech / Hacker News*
+> A data-driven essay argues software engineering's "decide-execute-deliver sandwich" means AI compresses only the middle layer, with decision-making and delivery resisting automation.
+
+**[macOS 27 Golden Gate Beta Breaks Asahi Linux Boot](news/macos-27-beta-breaks-asahi-linux/)** — *Phoronix / Hacker News*
+> Apple changed the boot picker in macOS 27 beta, making Asahi Linux partitions invisible and unbootable — Asahi is warning users to avoid upgrading.
+
 ### June 10, 2026
 
 **[Claude Fable 5 and Claude Mythos 5: Anthropic's New Frontier Models](news/claude-fable-5-mythos-5-anthropic/)** — *Anthropic / Hacker News*
