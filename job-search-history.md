@@ -305,3 +305,20 @@
 | 17 | Associate Software Engineer | Accuris (Fresheropenings) | Bangalore | Best in Industry | https://fresheropenings.com/accuris-off-campus-drive-2026/ |
 | 18 | Apps Dev Programmer Analyst | Citigroup (Fresheropenings) | Pune | Best in Industry | https://fresheropenings.com/citigroup-off-campus-drive-2026/ |
 | 19 | Engineering Graduate Intern (SCION) | IQVIA | Bengaluru | Competitive Stipend | https://freshershunt.in/iqvia-internship-2026/ |
+
+### 12-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Java Backend Developer (Entry-Level) | CGI | Bangalore | As Per Industry Standard | https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-2378&BRID=1307433&SBDID=943&lang=1 |
+| 2 | Software Developer (9 LPA) | Hummingbird Web Solutions | Baner, Pune | 9 LPA | https://docs.google.com/forms/d/e/1FAIpQLSdCeuQegnpKf0PE_6fDkewAfZQ1vjBlq7N4BlnigKiMuwKf2w/viewform |
+| 3 | Software Engineer | TraceLink | Pune | Best in Industry | https://www.tracelink.com/about/culture-and-careers/jobs?gh_jid=5158548007 |
+| 4 | Entry-Level Software Engineer | NIKE ITC | Bangalore | High in Industry | https://careers.nike.com/software-engineer-i-itc/job/R-85669?source=BY_LinkedIn_JobSlots&utm_source=BY_LinkedIn_JobSlots |
+| 5 | Apprentice Software Engineer | Alcon | Bangalore | Best in Industry | https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Bangalore-India/Apprentice---Software-Engineer_R-2026-47611?source=LinkedIn |
+| 6 | Wipro Elite Hiring (Project Engineer) | Wipro (Jobsnet) | PAN India | ₹3.5-5 LPA | https://careers.wipro.com/job/WE_ELITE/151957-en_US |
+| 7 | Junior Java Full Stack Developer | Zensar (Jobsnet) | Pune | Best in Industry | https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/145691_5?utm_medium=jobboard&utm_source=linkedIn |
+| 8 | Apprentice IT Analyst (Remote) | Fortrea | Bangalore/Remote | Best in Industry | https://fortrea.wd1.myworkdayjobs.com/en-US/Fortrea/job/Bangalore/Apprentice---IT-analyst_261969 |
+| 9 | Graduate Trainee Engineer (IT) | Rockwell Automation | Pune | Best in Industry | https://rockwellautomation.wd1.myworkdayjobs.com/External_Rockwell_Automation/job/Pune-India/Graduate-Engineer-Trainee_R25-8341-2?source=LinkedIn |
+| 10 | Trainee Engineer | NTT DATA | Chennai | Best in Industry | https://careers.services.global.ntt/global/en/job/NTT1GLOBALR146012EXTERNALENGLOBAL/Trainee-Enginee |
+| 11 | Cloud Developer | HPE | Bengaluru (Hybrid) | Competitive | https://freshershunt.in/hpe-off-campus-drive-2026-4/ |
+| 12 | Graduate Engineer Trainee (BA) | Johnson Controls | Bangalore | Competitive | https://freshershunt.in/johnson-controls-off-campus-drive-2026-2/ |
