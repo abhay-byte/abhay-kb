@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-10 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-12 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -419,13 +419,17 @@ Pro tiers: 5x to 20x these limits depending on tier. **Promos expired May 31** �
 - **Go plan ($20/mo)**: Budget Codex Mini tier available in select regions. Reduced limits, same models
 - **Business/Edu/Enterprise** flexible pricing: credits per token table available in settings
 
+### Referral Program (June 11–24, 2026)
+
+From June 11 through June 24, 2026, eligible Plus and Pro users can invite up to three friends. When an eligible recipient sends their first Codex message, both people receive a banked rate-limit reset (usable for 30 days).
+
 ### Community Reviews
 
 > **From aitoolsrecap (2026):** "The April 16, 2026 update added computer use, memory, image generation, and 90+ plugins -- turning it from a coding assistant into a full developer workstation. Included from $20/mo on ChatGPT Plus."
 
 > **From elite-ai-assisted-coding review:** "Codex CLI performed well throughout testing. GPT-5's capabilities were the key differentiator -- the model followed instructions precisely, learned from documentation effectively, and applied knowledge appropriately."
 
-> **Personal Review (June 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. The 2x Pro $100 and 25x Pro $200 promos both expired May 31 — standard limits are now in effect.
+> **Personal Review (June 2026):** Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. The 2x Pro $100 and 25x Pro $200 promos both expired May 31 — standard limits are now in effect. New referral program active June 11-24: invite up to 3 friends, both get a banked rate-limit reset.
 
 ---
 
