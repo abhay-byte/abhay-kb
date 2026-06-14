@@ -322,3 +322,14 @@
 | 10 | Trainee Engineer | NTT DATA | Chennai | Best in Industry | https://careers.services.global.ntt/global/en/job/NTT1GLOBALR146012EXTERNALENGLOBAL/Trainee-Enginee |
 | 11 | Cloud Developer | HPE | Bengaluru (Hybrid) | Competitive | https://freshershunt.in/hpe-off-campus-drive-2026-4/ |
 | 12 | Graduate Engineer Trainee (BA) | Johnson Controls | Bangalore | Competitive | https://freshershunt.in/johnson-controls-off-campus-drive-2026-2/ |
+
+### 14-06-2026
+
+| # | Title | Company | Location | Salary | Link |
+|---|-------|---------|----------|--------|------|
+| 1 | Software Development Engineer | CSG | Remote | Best in Industry | https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/ |
+| 2 | Graduate Engineer Trainee (Technology) | Invesco | Hyderabad | ~10 LPA | https://jobsnet.in/invesco-off-campus-drive-hiring-graduate-engineer-trainee-technology/ |
+| 3 | Software Engineer I (SDET) | Tower Research Capital | Gurgaon | Competitive | https://freshershunt.in/tower-research-capital-off-campus-drive-2026/ |
+| 4 | Software Engineer (Developer Platform) | DocuSign | Bengaluru | Competitive | https://freshershunt.in/docusign-off-campus-drive-2026-3/ |
+| 5 | Entry Level Software Developer | Born West | Remote (India) | Competitive | https://freshershunt.in/born-west-off-campus-drive-2026/ |
+| 6 | Software System Engineer | HP | Bengaluru | Competitive | https://freshershunt.in/hp-off-campus-drive-2026/ |
