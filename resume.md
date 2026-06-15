@@ -59,19 +59,19 @@ title: Resume
 
 ## Projects
 
-### [Fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 110+
+### [Fluxlinux](https://github.com/abhay-byte/fluxlinux) — *Kotlin* ⭐ 117+
 
 A Kotlin-powered Linux environment manager for Android, providing seamless developer tooling directly on mobile devices with automated setup and shell integration. Strong community adoption in the Android/Linux development ecosystem.
 
 - [Google Play Store](https://play.google.com/store/apps/details?id=com.zenithblue.fluxlinux) · [F-Droid](https://f-droid.org/en/packages/com.ivarna.fluxlinux/) · [GitHub](https://github.com/abhay-byte/fluxlinux)
 
-### [Finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 71+
+### [Finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) — *Kotlin* ⭐ 72+
 
 A comprehensive CPU benchmarking tool for Android with 10+ customized performance tests for single-core and multi-core assessment. Implements real-time thermal management and monitoring to prevent throttling during intensive stress tests.
 
 - [F-Droid](https://f-droid.org/packages/com.ivarna.finalbenchmark2) · [GitHub](https://github.com/abhay-byte/finalbenchmark-platform)
 
-### [MKM (Minimal Kernel Manager)](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 54+
+### [MKM (Minimal Kernel Manager)](https://github.com/abhay-byte/mkm) — *Kotlin* ⭐ 56+
 
 Android kernel management and system monitoring application with real-time customizable performance overlay. Features persistent swap file management with boot persistence, supporting Shizuku (non-root) and Root access methods. CPU/GPU frequency and governor control with real-time thermal and memory monitoring.
 
@@ -95,11 +95,11 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ## Achievements
 
-- **GitHub:** 2.6K+ Commits · 313 Stars · 84 Public Repositories · 92 Followers
+- **GitHub:** 2.6K+ Commits · 324 Stars · 85 Public Repositories · 94 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
 - **F-Droid:** 3+ open-source Android apps with 210+ stars and active community adoption
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced: 2026-06-12 13:52 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-06-15 04:14 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
