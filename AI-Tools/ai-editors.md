@@ -9,9 +9,9 @@ A comparison of AI-integrated code editors and development environments in 2026.
 
 ---
 
-## Cursor
+## [Cursor](https://cursor.com)
 
-AI-first code editor, VS Code fork. 4M+ developers as of 2026.
+AI-first code editor, VS Code fork. 4M+ developers as of 2026. [Pricing](https://cursor.com/pricing) · [Docs](https://cursor.com/docs)
 
 | Feature | Details |
 |---------|---------|
@@ -33,9 +33,9 @@ AI-first code editor, VS Code fork. 4M+ developers as of 2026.
 
 ---
 
-## Windsurf (Codeium)
+## [Windsurf](https://codeium.com/windsurf) (Codeium)
 
-AI-native IDE with Cascade agent system.
+AI-native IDE with Cascade agent system. [Pricing](https://codeium.com/windsurf/pricing) · [Docs](https://docs.codeium.com/windsurf/getting-started)
 
 | Feature | Details |
 |---------|---------|
@@ -57,9 +57,9 @@ AI-native IDE with Cascade agent system.
 
 ---
 
-## Visual Studio Code
+## [Visual Studio Code](https://code.visualstudio.com)
 
-Microsoft's code editor with built-in AI features powered by GitHub Copilot. IntelliCode is being phased out in favor of Copilot's integrated cloud agent.
+Microsoft's code editor with built-in AI features powered by [GitHub Copilot](https://github.com/features/copilot). IntelliCode is being phased out in favor of Copilot's integrated cloud agent.
 
 | Feature | Details |
 |---------|---------|
@@ -81,9 +81,9 @@ Microsoft's code editor with built-in AI features powered by GitHub Copilot. Int
 
 ---
 
-## TRAE (ByteDance)
+## [TRAE](https://www.trae.ai) (ByteDance)
 
-ByteDance's AI-native VS Code fork with SOLO autonomous agent for end-to-end coding automation. Aggressive pricing undercuts competitors.
+ByteDance's AI-native VS Code fork with SOLO autonomous agent for end-to-end coding automation. Aggressive pricing undercuts competitors. [Docs](https://docs.trae.ai)
 
 | Feature | Details |
 |---------|---------|
@@ -106,9 +106,9 @@ ByteDance's AI-native VS Code fork with SOLO autonomous agent for end-to-end cod
 
 ---
 
-## GitHub Copilot
+## [GitHub Copilot](https://github.com/features/copilot)
 
-Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
+Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool. [Pricing](https://github.com/features/copilot/plans) · [Docs](https://docs.github.com/en/copilot)
 
 | Feature | Details |
 |---------|---------|
@@ -130,9 +130,9 @@ Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.
 
 ---
 
-## Google Antigravity
+## [Google Antigravity](https://antigravity.google)
 
-Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3.
+Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3. [Pricing](https://antigravity.google/pricing) · [Docs](https://antigravity.google/docs)
 
 | Feature | Details |
 |---------|---------|
@@ -155,9 +155,9 @@ Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3.
 
 ---
 
-## Kiro (AWS)
+## [Kiro](https://kiro.dev) (AWS)
 
-Amazon's agentic IDE with spec-driven development methodology. Generates requirements docs, design specs, and implementation tasks before coding.
+Amazon's agentic IDE with spec-driven development methodology. Generates requirements docs, design specs, and implementation tasks before coding. [Docs](https://kiro.dev/docs)
 
 | Feature | Details |
 |---------|---------|

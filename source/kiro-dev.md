@@ -1,13 +1,15 @@
-# kiro.dev/
+# Kiro (AWS)
 
 **Source:** <https://kiro.dev>
-**Domain:** kiro.dev
-**Slug:** `source/kiro-dev.md`
+**Pricing:** <https://kiro.dev/pricing>
+**Docs:** <https://kiro.dev/docs>
+**Type:** Vendor product page
 **Last synced:** 2026-06-21
 
-## Used in
+## Description
 
-### HTML mirrors (1)
+Amazon's agentic IDE with spec-driven dev (requirements.md, design.md, tasks.md). Free public preview.
 
-- `AI-Tools/tools.html`
+## Used in (1)
 
+- `AI-Tools/ai-editors.md`
