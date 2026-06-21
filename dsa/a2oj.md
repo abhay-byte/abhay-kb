@@ -64,3 +64,12 @@ title: A2OJ Ladders — Codeforces
 ---
 
 *Last updated: May 2026*
+
+---
+
+## Sources
+
+- [a2oj-online](source/a2oj-online.md)
+- [codeforces-com-blog-entry-16443](source/codeforces-com-blog-entry-16443.md)
+- [codeforcesladders-firebaseapp-com](source/codeforcesladders-firebaseapp-com.md)
+- [earthshakira-github-io-a2oj-clientside-server-ladders-html](source/earthshakira-github-io-a2oj-clientside-server-ladders-html.md)

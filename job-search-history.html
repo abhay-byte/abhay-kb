@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zinier-breezy-hr-p-f48bac57162c-sdet-1.md)
+ | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Job-search-history</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h2 id="job-search-history">Job Search History</h2>
+
+<h3>27-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Graduate Software Engineer</td>
+<td>HPE</td>
+<td>Bangalore/Chennai</td>
+<td>Best in Industry</td>
+<td>https://careers.hpe.com/us/en/job/1207072/Software-Engineer-I?utm_source=linkedin</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Java Support Apprentice</td>
+<td>CGI</td>
+<td>Bangalore/Hyderabad</td>
+<td>Best in Industry</td>
+<td>https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-0365&BRID=1302690&SBDID=943&lang=1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Java Full Stack Software Engineer (Junior)</td>
+<td>CGI</td>
+<td>Hyderabad</td>
+<td>Competitive</td>
+<td>https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-1699&BRID=1302690&SBDID=943&lang=1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Graduate Apprentice Trainee</td>
+<td>Syniverse</td>
+<td>Bangalore</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/syniverse-off-campus-drive-2026/</td>
+</tr>
+</table>
+
+<h3>23-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Graduate Engineer Trainee</td>
+<td>Ingram Micro</td>
+<td>Mumbai/Chennai</td>
+<td>Best in Industry</td>
+<td>https://ingrammicro.wd5.myworkdayjobs.com/en-US/IngramMicro/job/Mumbai-India/Graduate-Engineer-Trainee_R-115589</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Software Developer</td>
+<td>Tower Research</td>
+<td>Gurgaon</td>
+<td>Industry Standard</td>
+<td>https://job-boards.greenhouse.io/embed/job_app?for=towerresearchcapital&gh_src=be8ebc4b1&source=LinkedIn&token=6656773-bengal-india-siliguri</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Java Developer (Entry-Level)</td>
+<td>Equifax</td>
+<td>Pune</td>
+<td>As per Standard</td>
+<td>https://careers.equifax.com/en/jobs/j00176622/software-engineer-entry/?source=Applied_LinkedIn</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Graduate Engineer Trainee (SDE)</td>
+<td>Syensqo</td>
+<td>Mumbai</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/syensqo-off-campus-drive-hiring-graduate-engineer-trainee-sde/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Trainee, Technology Engineer</td>
+<td>RXO</td>
+<td>Mumbai</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/rxo-off-campus-drive-hiring-trainee-technology-engineer/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Software Engineer I (Entry-Level)</td>
+<td>CME Group</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/cme-group-hiring-entry-level-software-development-engineer-1/</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Software Engineer I</td>
+<td>Honeywell</td>
+<td>Bengaluru (Hybrid)</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/honeywell-careers-software-engineer-hiring/</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Associate Software Engineer</td>
+<td>ReliaQuest</td>
+<td>Pune</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/reliaquest-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Associate Engineer (AWS DevOps)</td>
+<td>Harman</td>
+<td>Bangalore</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/harman-off-campus-drive-2026-bangalore/</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Software Intern (Digital Solutions)</td>
+<td>Wabtec</td>
+<td>Bengaluru</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/wabtec-internship-2026-software-bengaluru/</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Software Engineer Intern</td>
+<td>NatWest Group</td>
+<td>Bangalore</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/natwest-group-internship-2026-bangalore/</td>
+</tr>
+</table>
+
+<h3>22-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>—</td>
+<td>No new unique job listings found today</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</table>
+
+<h3>21-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Full Stack Engineer</td>
+<td>Optum</td>
+<td>Noida</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/optum-recruitment-2026-full-stack-engineer-noida/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Associate System Engineer</td>
+<td>IBM (Fresh)</td>
+<td>Across India</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/ibm-recruitment-2026-associate-system-engineer-across-india/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Associate Software Engineer</td>
+<td>Empower</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/empower-recruitment-2026-associate-software-engineer-bangalore/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Junior Backend Software Engineer</td>
+<td>Finominal</td>
+<td>Bengaluru</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/finominal-recruitment-2026-junior-backend-software-engineer-bengaluru/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Software Engineer I</td>
+<td>Columbia Sportswear</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/columbia-sportswear-recruitment-2026-software-engineer-i-bangalore/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Software Engineer</td>
+<td>Ameya HQ</td>
+<td>Remote</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/ameya-hq-recruitment-2026-software-engineer-remote/</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Software Engineer (Fresher 2026)</td>
+<td>Datman</td>
+<td>Bengaluru</td>
+<td>—</td>
+<td>https://in.linkedin.com/jobs/view/software-engineer-at-datman-4416158291</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Software Engineer (Embedded Platform)</td>
+<td>Cisco</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/cisco-recruitment-2026-software-engineer-embedded-platform-bangalore/</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Junior .NET Developer</td>
+<td>Unisys</td>
+<td>Hyderabad</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/unisys-recruitment-2026-junior-dotnet-developer-hyderabad/</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Associate Software Engineer – UI</td>
+<td>Ontic</td>
+<td>Pune</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/ontic-recruitment-2026-associate-software-engineer-ui-pune/</td>
+</tr>
+<tr>
+<td>11</td>
+<td>C++ Programmer Analyst</td>
+<td>Citigroup</td>
+<td>Pune</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/citigroup-off-campus-drive-2026-programmer-analyst-pune/</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Software Engineer I</td>
+<td>isolved</td>
+<td>Hyderabad</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/isolved-recruitment-2026-software-engineer-i-hyderabad/</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Software Developer Internship</td>
+<td>Talview</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/talview-recruitment-2026-software-developer-internship-bangalore/</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Salesforce Software Developer</td>
+<td>Jade Global</td>
+<td>Pune</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/jade-global-recruitment-2026-salesforce-software-developer-pune/</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Associate Engineer Software</td>
+<td>Empower (Freshershunt)</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://freshershunt.in/empower-off-campus-drive-2026-associate-engineer-software-bangalore/</td>
+</tr>
+</table>
+
+<h3>15-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Software System Engineer</td>
+<td>HP</td>
+<td>Bangalore</td>
+<td>https://jobsnet.in/hp-off-campus-drive-hiring-software-system-engineer/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Software Development Engineer</td>
+<td>Akamai</td>
+<td>Remote / Bangalore</td>
+<td>https://jobsnet.in/akamai-off-campus-drive-hiring-software-engineer-0-2-years-remote/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Associate Software Engineer</td>
+<td>FirstAdvantage</td>
+<td>Bangalore / Remote</td>
+<td>https://jobsnet.in/firstadvantage-off-campus-drive-associate-software-engineer-freshers/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Associate Software Engineer (Frontend)</td>
+<td>Ontic</td>
+<td>Pune</td>
+<td>https://jobsnet.in/ontic-hiring-entry-level-associate-software-engineer-frontend/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Graduate Engineer Trainee - SDE</td>
+<td>Kenvue</td>
+<td>Bangalore</td>
+<td>https://jobsnet.in/kenvue-off-campus-drive-graduate-engineer-trainee-sde/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Software Development Engineer</td>
+<td>Byteridge</td>
+<td>Remote</td>
+<td>https://offcampusjobs4u.com/byteridge-off-campus-drive-2026-software-development-engineer-remote/</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Graduate Engineer Trainee</td>
+<td>Reliance Jio</td>
+<td>Mumbai</td>
+<td>https://www.enggwave.com/reliance-jio-off-campus-drive-2026/106884</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Graduate Trainee Engineer</td>
+<td>Siemens GBS</td>
+<td>Bangalore / Chennai</td>
+<td>https://jobsnet.in/siemens-gbs-off-campus-drive-graduate-trainee-engineer-freshers/</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Graduate Engineer Trainee</td>
+<td>NEC Corporation India</td>
+<td>Noida (Hybrid)</td>
+<td>https://freshershunt.in/nec-graduate-engineer-trainee-2026/</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Trainee Software Development Apprentice</td>
+<td>NEC Corporation</td>
+<td>Chennai (Hybrid)</td>
+<td>https://jobsnet.in/nec-corporation-off-campus-drive-software-development-apprentice/</td>
+</tr>
+</table>
+
+<h3>15-05-2026 (Evening Batch)</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>11</td>
+<td>Software Engineer I</td>
+<td>American Express</td>
+<td>Bengaluru (Hybrid)</td>
+<td>~6 LPA</td>
+<td>https://freshershunt.in/american-express-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Software Engineer (Exceller)</td>
+<td>Capgemini</td>
+<td>Across India</td>
+<td>~4 LPA</td>
+<td>https://offcampusjobs4u.com/capgemini-off-campus-drive-2026-software-engineer-exceller/</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Associate Software Engineer</td>
+<td>IBM</td>
+<td>Across India</td>
+<td>~4-5 LPA</td>
+<td>https://jobs.e-next.in/jobs/ibm-off-campus-drive-2026</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Associate Software Engineer</td>
+<td>EY</td>
+<td>Across India</td>
+<td>~4.5 LPA</td>
+<td>https://freshershunt.in/ey-freshers-hiring-2026/</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Associate Software Engineer</td>
+<td>Accenture</td>
+<td>Across India</td>
+<td>~4.5 LPA</td>
+<td>https://onecareerjobs.com/accenture-off-campus-drive-2026-associate-software-engineer-apply-online/</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Software Engineer</td>
+<td>ServiceNow</td>
+<td>Across India</td>
+<td>~8-12 LPA</td>
+<td>https://freshersrecruitment.co.in/servicenow-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Software Engineer Trainee</td>
+<td>Cisco</td>
+<td>Bangalore</td>
+<td>~6-10 LPA</td>
+<td>https://freshershunt.in/cisco-software-engineer-trainee-2026/</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Trainee Software Engineer</td>
+<td>Milliman</td>
+<td>Gurgaon</td>
+<td>~4-6 LPA</td>
+<td>https://freshershunt.in/milliman-freshers-hiring-2026/</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Graduate Software Engineer</td>
+<td>Canonical</td>
+<td>Remote (Global)</td>
+<td>~31 LPA</td>
+<td>https://freshershunt.in/canonical-graduate-software-engineer-2026/</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Junior Software Engineer (Trainee)</td>
+<td>EPAM</td>
+<td>Across India</td>
+<td>~6 LPA</td>
+<td>https://freshershunt.in/epam-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>21</td>
+<td>SDE - Trainee</td>
+<td>Infrrd</td>
+<td>Bangalore</td>
+<td>~6-9 LPA</td>
+<td>https://freshershunt.in/infrrd-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Software Engineering AMTS</td>
+<td>Salesforce</td>
+<td>Bangalore/Hyderabad</td>
+<td>~15-25 LPA</td>
+<td>https://fresheropenings.com/salesforce-recruitment-for-2026-batch/</td>
+</tr>
+<tr>
+<td>23</td>
+<td>SDE</td>
+<td>BrowserStack</td>
+<td>Mumbai</td>
+<td>~15-18 LPA</td>
+<td>https://fresheropenings.com/browserstack-recruitment-for-2026-batch/</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Software Engineer</td>
+<td>Chevron</td>
+<td>Bangalore</td>
+<td>~12-15 LPA</td>
+<td>https://fresheropenings.com/chevron-recruitment-drive-for2026-batch/</td>
+</tr>
+<tr>
+<td>25</td>
+<td>SDE I</td>
+<td>Amazon</td>
+<td>Bangalore/Hyderabad/Chennai/Mumbai</td>
+<td>~30-44 LPA</td>
+<td>https://fresheropenings.com/amazon-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Software Developer</td>
+<td>Propel</td>
+<td>Chennai</td>
+<td>~4.5 LPA</td>
+<td>https://talent.propelinc.com/jobs/Careers/26698000091922025/Fresher-2026-Batch-Software-Developer</td>
+</tr>
+<tr>
+<td>27</td>
+<td>SDE</td>
+<td>Gravitix Tech Solutions</td>
+<td>Hyderabad</td>
+<td>~3-4 LPA</td>
+<td>https://gravitixtechsolutions.zohorecruit.in/jobs/Careers/189023000001031519</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Associate Software Engineer</td>
+<td>GoTo</td>
+<td>Remote (India)</td>
+<td>~12.5 LPA</td>
+<td>https://www.fresherstech.com/goto-off-campus/</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Software Engineer</td>
+<td>Bottomline</td>
+<td>India</td>
+<td>~5-6 LPA</td>
+<td>https://www.fresherstech.com/bottomline-off-campus-hiring/</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Associate Software Engineer</td>
+<td>Gallagher</td>
+<td>Chandigarh</td>
+<td>~4-5.5 LPA</td>
+<td>https://fresheropenings.com/gallagher-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Junior Developer (System Support Coordinator)</td>
+<td>Davies</td>
+<td>Pune</td>
+<td>~3-4 LPA</td>
+<td>https://fresheropenings.com/davies-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Engineer - Site Reliability Engineering</td>
+<td>LSEG</td>
+<td>Bangalore</td>
+<td>~6-10 LPA</td>
+<td>https://freshershunt.in/lseg-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Executive - Software Engineering</td>
+<td>KPMG</td>
+<td>Pune</td>
+<td>~5-7 LPA</td>
+<td>https://freshershunt.in/kpmg-off-campus-drive-2026/</td>
+</tr>
+</table>
+
+<h3>15-05-2026 (Evening Batch 2)</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>34</td>
+<td>Software Engineer - Land Systems</td>
+<td>L&T</td>
+<td>Mumbai</td>
+<td>—</td>
+<td>https://freshershunt.in/l-and-t-software-engineer-mumbai-2026/</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Software Engineer I (Tech Accelerate)</td>
+<td>RELX</td>
+<td>Mumbai</td>
+<td>—</td>
+<td>https://freshershunt.in/relx-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Software Engineer, University Graduate</td>
+<td>Google</td>
+<td>Bangalore/Hyderabad</td>
+<td>—</td>
+<td>https://freshershunt.in/google-software-engineer-university-graduate-2026/</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Test and Tools Development Engineer</td>
+<td>NVIDIA</td>
+<td>Pune</td>
+<td>—</td>
+<td>https://www.fresherstech.com/nvidia-off-campus-hiring/</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Analyst (Energy & Resources)</td>
+<td>Deloitte</td>
+<td>Delhi</td>
+<td>—</td>
+<td>https://www.fresherstech.com/deloitte-off-campus-drive-for-freshers/</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Associate Software Engineer (Junior)</td>
+<td>Iron Mountain</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://www.fresherstech.com/iron-mountain-off-campus/</td>
+<td></td>
+</tr>
+</table>
+
+<h3>15-05-2026 (Evening Batch 3 - Cron)</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>40</td>
+<td>Software Engineer</td>
+<td>Stadium</td>
+<td>Remote (Training in Delhi)</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/stadium-off-campus-drive-2026-software-engineer-remote/</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Associate Software Engineer</td>
+<td>Qualcomm</td>
+<td>Hyderabad/Bangalore/Chennai/Noida</td>
+<td>~20-30 LPA</td>
+<td>https://jobsnet.in/qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india/</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Software Engineer</td>
+<td>Microsoft</td>
+<td>Noida</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/microsoft-off-campus-drive-2026-software-engineer/</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Associate Software Engineer</td>
+<td>CBTS India</td>
+<td>Chennai (Hybrid)</td>
+<td>—</td>
+<td>https://freshershunt.in/cbts-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Software Engineer</td>
+<td>DocuSign</td>
+<td>Bengaluru (Hybrid)</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/docusign-recruitment-2026-software-engineer-bengaluru/</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Software Engineer (DX)</td>
+<td>Numerator</td>
+<td>Remote India</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/numerator-recruitment-2026-software-engineer-dx-remote-fresher/</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Graduate Engineer Trainee / Full Stack Dev</td>
+<td>Infosys</td>
+<td>Pan India</td>
+<td>~6.25-21 LPA</td>
+<td>https://careerforfreshers.com/jobs/infosys-off-campus-hiring-2026-graduate-engineer-trainee-%E2%82%B96-25-lpa-%E2%82%B921-lpa-salary-with-bonus-freshers-eligible-apply-online/</td>
+</tr>
+</table>
+
+<h3>16-05-2026 (Midnight Cron)</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>47</td>
+<td>Graduate Recruitment Program</td>
+<td>mthree</td>
+<td>Across India</td>
+<td>~9.15 LPA</td>
+<td>https://offcampusjobs4u.com/mthree-off-campus-drive-2026-graduate-program-9-lpa/</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Software Automation Trainee (Apprentice)</td>
+<td>Cisco</td>
+<td>Bangalore</td>
+<td>Stipend</td>
+<td>https://freshershunt.in/cisco-software-automation-trainee-tga-2026/</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Software Development Engineer</td>
+<td>AMD</td>
+<td>Hyderabad</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/amd-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Associate Software Engineer (AI & Python)</td>
+<td>Lenovo</td>
+<td>Bangalore</td>
+<td>Competitive</td>
+<td>https://www.enggwave.com/lenovo-off-campus-drive-2026/107648</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Software Engineer Intern</td>
+<td>Stripe</td>
+<td>Bengaluru</td>
+<td>~61.3 LPA</td>
+<td>https://offcampusjobs4u.com/stripe-internship-2026/</td>
+</tr>
+<tr>
+<td>52</td>
+<td>SWE Intern (Backend)</td>
+<td>Sense</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/sense-internship-2026-software-engineer-intern-backend/</td>
+</tr>
+<tr>
+<td>53</td>
+<td>SWE Internship</td>
+<td>Agoda</td>
+<td>Gurgaon</td>
+<td>~28-30 LPA</td>
+<td>https://offcampusjobs4u.com/agoda-software-engineer-internship-2026/</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Intern (Software Engineering)</td>
+<td>Wipro</td>
+<td>Bangalore</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/wipro-internship-2026-intern-software-engineering-bangalore/</td>
+</tr>
+</table>
+
+<h3>17-05-2026 (Daily Cron)</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>55</td>
+<td>IT Associate Trainee</td>
+<td>Leidos</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/leidos-off-campus-drive-it-trainee-freshers/</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Apprentice - Software Engineer</td>
+<td>BetaNXT</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/betanxt-off-campus-drive-apprentice-software-engineer/</td>
+</tr>
+<tr>
+<td>57</td>
+<td>Software Engineer 1</td>
+<td>Dell Technologies</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://freshershunt.in/dell-technologies-off-campus-drive-2026/</td>
+</tr>
+</table>
+
+<h3>17-05-2026 (Evening Batch)</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>58</td>
+<td>Software Developer 1</td>
+<td>Oracle</td>
+<td>Bengaluru/Hyderabad</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/oracle-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Engineer 1 - Software Dev & Eng</td>
+<td>Comcast</td>
+<td>Chennai</td>
+<td>~6-8 LPA</td>
+<td>https://freshershunt.in/comcast-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>60</td>
+<td>C++ Apps Dev Programmer Analyst</td>
+<td>Citi</td>
+<td>Pune</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/citi-off-campus-drive-2026-pune/</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Software Developer</td>
+<td>Zoho</td>
+<td>Across India</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/zoho-off-campus-drive-hiring-software-developers-freshers/</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Jr. Associate Software Engineer</td>
+<td>Wipro</td>
+<td>Bengaluru</td>
+<td>—</td>
+<td>https://offcampusjobs4u.com/wipro-off-campus-drive-2026-jr-associate-software-engineer-bengaluru/</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Engineering Intern</td>
+<td>PayU</td>
+<td>Bengaluru</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/payu-off-campus-drive-2026/</td>
+</tr>
+</table>
+
+<h3>18-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>64</td>
+<td>Software Development Engineer</td>
+<td>CSG</td>
+<td>Remote</td>
+<td>—</td>
+<td>https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Associate Software Engineer</td>
+<td>Epsilon</td>
+<td>Bengaluru</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/epsilon-off-campus-drive-2026/</td>
+</tr>
+</table>
+
+<h3>19-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>66</td>
+<td>Associate Software Engineer (HPEL)</td>
+<td>Smartsheet</td>
+<td>Bangalore</td>
+<td>₹13 LPA</td>
+<td>https://freshershunt.in/smartsheet-off-campus-drive-2026/</td>
+</tr>
+</table>
+
+<h3>20-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>67</td>
+<td>Technology Analyst Trainee (Apprentice)</td>
+<td>Fiserv</td>
+<td>Pune</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/fiserv-off-campus-drive-2026-technology-analyst-trainee/</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Associate Software Maintenance Engineer Trainee</td>
+<td>Red Hat</td>
+<td>Pune</td>
+<td>High in Industry</td>
+<td>https://jobsnet.in/red-hat-off-campus-drive-associate-software-maintenance-engineer-trainee/</td>
+</tr>
+</table>
+
+<h3>24-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Associate Engineer (AWS DevOps)</td>
+<td>Harman</td>
+<td>Bangalore</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/harman-off-campus-drive-2026-bangalore/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Software Engineer (New Grad)</td>
+<td>Apple</td>
+<td>Bengaluru</td>
+<td>₹18-35 LPA</td>
+<td>https://jobs.apple.com/en-us/details/200664879-0321/software-engineer-apple-service-engineering-storage-infrastructure-and-reliability?board=JB177</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SDE 1 (University Talent)</td>
+<td>Amazon</td>
+<td>Pan India</td>
+<td>Best in Industry</td>
+<td>https://www.amazon.jobs/en/jobs/10406482/software-dev-engineer-i-amazon-university-talent-acquisition</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Software Engineer</td>
+<td>Cisco</td>
+<td>Hyderabad/Bangalore</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/cisco-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Software Engineer (New Grad)</td>
+<td>Apple (via Jobsnet)</td>
+<td>Hyderabad/Bengaluru</td>
+<td>₹18-35 LPA</td>
+<td>https://jobsnet.in/apple-off-campus-drive-hiring-new-grads-as-software-engineer/</td>
+</tr>
+</table>
+
+<h3>25-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Systems/Software Engineer I (Entry Level)</td>
+<td>HPE</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/hpe-off-campus-drive-systems-software-engineer-i-entry-level/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Associate Product Developer (Java)</td>
+<td>BMC Helix</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://jobs.bmc.com/Careers/JobDetail/Associate-Product-Developer-India/46767?src=SNS-10001</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Digital Leadership Dev Program</td>
+<td>GE Appliances</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/ge-appliances-off-campus-drive-digital-leadership-development-program/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Graduate Engineer Trainee (GET)</td>
+<td>HCLTech</td>
+<td>Pan India</td>
+<td>~4 LPA</td>
+<td>https://fresherjobinfo.in/hcltech-freshers-hiring-2026/</td>
+<td></td>
+</tr>
+</table>
+
+<h3>26-05-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Apprentice Software Developer Trainee</td>
+<td>Philips</td>
+<td>Bangalore</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/philips-off-campus-drive-2026-apprentice-bangalore/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Software Engineering Intern</td>
+<td>Microsoft</td>
+<td>Across India</td>
+<td>Competitive Stipend</td>
+<td>https://offcampusjobs4u.com/microsoft-internship-2026-software-engineering-intern-india/</td>
+</tr>
+</table>
+
+<h3>01-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Associate Software Engineer</td>
+<td>S&P Global Mobility</td>
+<td>Gurgaon</td>
+<td>As per Industry Standard</td>
+<td>https://mobility.wd503.myworkdayjobs.com/Mobility/job/Gurugram-Haryana/Associate--Software-Engineer_10?source=LinkedIn</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SDE 1 (Entry-Level)</td>
+<td>Keystone</td>
+<td>Bengaluru</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/keystone-hiring-entry-level-software-development-engineer-1/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Junior Java Full Stack Developer</td>
+<td>Zensar</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/145691/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Software Engineer 1</td>
+<td>Honeywell Aerospace</td>
+<td>Bengaluru</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/honeywell-aerospace-off-campus-drive-software-engineer/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>IT Apprentice</td>
+<td>Swiss Re</td>
+<td>Bangalore</td>
+<td>As Per Standard</td>
+<td>https://jobsnet.in/swiss-re-off-campus-drive-hiring-it-apprentice/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>SDE in Test (Entry-Level)</td>
+<td>Headout</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/headout-hiring-entry-level-software-engineer-in-test/</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Technology Analyst Program (TAP)</td>
+<td>Fiserv</td>
+<td>Chennai</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/fiserv-off-campus-drive-technology-analyst-program-freshers/</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Apprentice - Python Full Stack Developer</td>
+<td>CGI</td>
+<td>Bangalore/Hyderabad</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/cgi-off-campus-drive-hiring-python-developer-apprentice/</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Software Consulting Engineer (Entry-Level)</td>
+<td>Cisco</td>
+<td>Bangalore/Pune/Remote</td>
+<td>Best in Industry</td>
+<td>https://careers.cisco.com/global/en/job/CISCISGLOBAL2015858EXTERNALENGLOBAL/Software-Consulting-Engineer</td>
+</tr>
+<tr>
+<td>10</td>
+<td>IT Analyst (Freshers)</td>
+<td>EY</td>
+<td>Mumbai</td>
+<td>Best in Industry</td>
+<td>https://careers.ey.com/ey/job/Mumbai-Analyst-Tech-Consulting-FS-CNS-TC-TECHNOLOGY-STRATEGY-&-TRANSFORMATION-Mumbai-MH-400028/1366796233/</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Graduate Engineer Trainee (GET)</td>
+<td>Viatris</td>
+<td>Bengaluru</td>
+<td>₹5 LPA</td>
+<td>https://www.enggwave.com/viatris-off-campus-drive-2026/107757</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Apprentice - Java/Support</td>
+<td>CGI</td>
+<td>Hyderabad</td>
+<td>Best in Industry</td>
+<td>https://www.enggwave.com/cgi-off-campus-drive-2026/107194</td>
+</tr>
+</table>
+
+<h3>02-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>IT Technology Associate</td>
+<td>SAP Labs</td>
+<td>Bangalore</td>
+<td>~10-20 LPA</td>
+<td>https://jobs.sap.com/job/Bangalore-IT-Technology-Consultant-Academy-for-Cloud-Delivery-Hybrid-KA-560066/1376957033/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Graduate Engineer Trainee (SAP)</td>
+<td>Johnson Controls</td>
+<td>Pune</td>
+<td>Competitive</td>
+<td>https://jobsnet.in/johnson-controls-off-campus-drive-hiring-graduate-engineer-trainee/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Java Full Stack Developer (Entry-Level)</td>
+<td>Capco</td>
+<td>Bangalore</td>
+<td>As per Industry</td>
+<td>https://job-boards.greenhouse.io/capco/jobs/7439258?gh_src=jklmi9n71us</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Software Engineer Apprentice</td>
+<td>Vonage</td>
+<td>Bangalore (Hybrid)</td>
+<td>~6 LPA</td>
+<td>https://www.vonage.com/careers/job-details/8549501002/</td>
+</tr>
+</table>
+
+<h3>03-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Graduate Engineer Trainee (.NET/C#)</td>
+<td>Emerson</td>
+<td>Pune (Hybrid)</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/emerson-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Trainee Software Engineer & QA Engineer</td>
+<td>United Techno</td>
+<td>Chennai</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/united-techno-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Junior React.js Developer</td>
+<td>Algoshack</td>
+<td>Bangalore</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/algoshack-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Software Engineer (RPA)</td>
+<td>Principal Global Services</td>
+<td>Pune</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/principal-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Security Consulting Engineer</td>
+<td>Cisco</td>
+<td>Pan India</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/cisco-off-campus-drive-security-consulting-engineer-freshers-pan-india/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Trainee Test Engineer</td>
+<td>Side</td>
+<td>Hyderabad</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/side-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Software Engineer Intern</td>
+<td>AiDASH</td>
+<td>Bengaluru</td>
+<td>Competitive Stipend</td>
+<td>https://offcampusjobs4u.com/aidash-recruitment-2026-software-engineer-intern-bengaluru/</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Technology Summer Intern</td>
+<td>Fiserv</td>
+<td>Noida</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Technical Apprentice</td>
+<td>Dell Technologies</td>
+<td>Bangalore</td>
+<td>As per Industry</td>
+<td>https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/careers/job/R272585/</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Associate Software Engineer</td>
+<td>TransUnion</td>
+<td>Chennai/Pune</td>
+<td>Best in Industry</td>
+<td>https://transunion.wd5.myworkdayjobs.com/en-US/transunion/job/Chennai/Associate-Engineer_19039194</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Associate Software Engineer</td>
+<td>IBM</td>
+<td>Multiple Cities</td>
+<td>As per Industry</td>
+<td>https://jobsnet.in/ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer/</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Graduate Engineer Trainee (Software)</td>
+<td>Emerson</td>
+<td>Pune</td>
+<td>₹10 LPA</td>
+<td>https://jobsnet.in/emerson-off-campus-drive-graduate-engineer-trainee-software-freshers-pune-2/</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Engineer</td>
+<td>Johnson Controls</td>
+<td>Hyderabad</td>
+<td>Best in Industry</td>
+<td>https://www.linkedin.com/jobs/view/4417995011/</td>
+</tr>
+</table>
+
+<h3>04-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Software Engineer (Cloud DevOps)</td>
+<td>Cisco</td>
+<td>Bangalore</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/cisco-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Graduate Software Engineer</td>
+<td>Canonical</td>
+<td>Remote India</td>
+<td>Not disclosed</td>
+<td>https://fresheropenings.com/canonical-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Software Engineer</td>
+<td>Sutherland</td>
+<td>Bangalore</td>
+<td>Not disclosed</td>
+<td>https://fresheropenings.com/sutherland-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Software Engineer</td>
+<td>Zebra</td>
+<td>Bangalore</td>
+<td>Best in industry</td>
+<td>https://fresheropenings.com/zebra-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Software Development Engineer Intern</td>
+<td>Philips</td>
+<td>Bangalore</td>
+<td>Not disclosed</td>
+<td>https://fresheropenings.com/philips-internship-2026/</td>
+</tr>
+</table>
+
+<h3>05-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Junior Software Engineer</td>
+<td>Zensar (Jobsnet)</td>
+<td>Pune/Bangalore/Hyderabad</td>
+<td>As per Industry</td>
+<td>https://jobsnet.in/zensar-off-campus-drive-hiring-freshers-as-junior-software-engineer/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Graduate Apprentice Trainee (SDE)</td>
+<td>Volvo Group</td>
+<td>Bangalore</td>
+<td>₹22K/mo Stipend</td>
+<td>https://jobs.volvogroup.com/job/Bangalore-Graduate-Apprentice-Trainee-%28BEBTech-CS-&-IT-graduates%29-562122/1354287355/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Associate Software Engineer</td>
+<td>Lowe's</td>
+<td>Bengaluru</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/lowes-off-campus-drive-2026-2/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TCS NQT 2026 Registration</td>
+<td>TCS</td>
+<td>Pan India</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/tcs-nqt-2026/</td>
+</tr>
+</table>
+
+<h3>06-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Associate Software Engineer</td>
+<td>GlobalLogic</td>
+<td>Gurgaon</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/globallogic-off-campus-drive-2026-2/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Apps Dev Programmer Analyst 2</td>
+<td>Citi</td>
+<td>Pune</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/citi-off-campus-drive-2026-2/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Software Engineer (Cloud & Production Engineering)</td>
+<td>DocuSign</td>
+<td>Bangalore</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/docusign-off-campus-drive-2026-2/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Entry Level Software Engineer (Junior)</td>
+<td>Medpace</td>
+<td>Navi Mumbai</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/medpace-off-campus-drive-2026-2/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Associate Software Engineer</td>
+<td>Accuris</td>
+<td>Bengaluru/Hybrid</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/accuris-off-campus-drive-associate-software-engineer-freshers/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Software Engineer I (Entry-Level)</td>
+<td>JLL</td>
+<td>Bengaluru</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/jll-off-campus-drive-hiring-entry-level-software-engineer/</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Engineering Intern (Class of 2026)</td>
+<td>Eightfold AI</td>
+<td>Bangalore</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/eightfold-internship-2026/</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Student Intern (Digital Technology)</td>
+<td>SLB</td>
+<td>Pune</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/slb-internship-2026/</td>
+</tr>
+</table>
+
+<h3>07-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Associate Software Engineer</td>
+<td>Empower</td>
+<td>Bengaluru (Hybrid)</td>
+<td>Not disclosed</td>
+<td>https://freshershunt.in/empower-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Product Solutions Engineer</td>
+<td>Google</td>
+<td>Gurgaon</td>
+<td>Best in Industry</td>
+<td>https://www.google.com/about/careers/applications/jobs/results/98686752104817350-product-solutions-engineer/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Software Engineer</td>
+<td>Verint</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://fa-epcb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/3561/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Jr Talent Hiring (Jr. Software Engineer)</td>
+<td>Zensar (Freshershunt)</td>
+<td>Bengaluru</td>
+<td>Best in Industry</td>
+<td>https://freshershunt.in/zensar-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Associate Application Support Engineer</td>
+<td>Lighthouse</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=7f4d718d-fbb0-4f5f-87f5-c2c0598c7277&ccId=19000101_000001&lang=en_US&jobId=594833</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Test Automation Developer</td>
+<td>Siemens</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://jobs.siemens.com/en_US/externaljobs/JobDetail/507820</td>
+</tr>
+</table>
+
+<h3>10-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Software Engineer 1 (Fresher)</td>
+<td>Qualifacts</td>
+<td>Vadodara</td>
+<td>Best in Industry</td>
+<td>https://qualifacts.wd5.myworkdayjobs.com/en-US/Qualifacts_External_Careers/job/Vadodara/Software-Engineer-I_R-102550-1?source=LinkedIn</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Software System Engineer (0-2 Yrs)</td>
+<td>HP</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/Bengaluru-Karnataka-India/Software-System-Engineer_3151545?source=Socialmedia-LinkedIn&src=Linkedin+Full+Feed</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Full Stack Developer (Python) (2-3 Yrs Exp)</td>
+<td>Deloitte</td>
+<td>Bangalore/Hyderabad/Pune/Chennai/Kolkata</td>
+<td>As per Industry</td>
+<td>https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Consulting-C-M-AM-C-Full-stack-engineering-Python-Software-Engineer-I/353711</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Associate Software Developer (Fresher)</td>
+<td>Empower (Jobsnet)</td>
+<td>Bangalore</td>
+<td>Not disclosed</td>
+<td>https://jobs.empower.com/job/bengaluru/assoc-engineer-software/42743/96022914848</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Software Engineer - Cloud DevOps (Fresher)</td>
+<td>Cisco (Jobsnet)</td>
+<td>Bangalore/Hyderabad</td>
+<td>Not disclosed</td>
+<td>https://careers.cisco.com/global/en/job/CISCISGLOBAL2015541EXTERNALENGLOBAL/Software-Engineer</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Associate Software Engineer</td>
+<td>GlobalLogic (Jobsnet)</td>
+<td>Gurgaon</td>
+<td>~8 LPA</td>
+<td>https://www.globallogic.com/careers/associate-software-engineer-irc295840/</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Software QA Engineer (1-3 Yrs)</td>
+<td>Cisco (Fresheropenings)</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>http://careers.cisco.com/global/en/job/CISCISGLOBAL2015350EXTERNALENGLOBAL/Software-QA-Engineer</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Graduate Programme 2026</td>
+<td>Shell</td>
+<td>Bangalore/Gurgaon/Chennai/Mumbai</td>
+<td>Best in Industry</td>
+<td>https://shell.wd3.myworkdayjobs.com/ShellCareers/job/Bangalore-RMZ-ECO-WORLD/Shell-Graduate-Programme-2026---India_R182105-1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Project Engineer (Elite Program)</td>
+<td>Wipro</td>
+<td>Bangalore/Chennai/Hyderabad</td>
+<td>Best in Industry</td>
+<td>https://offcampusjobs4u.com/wipro-off-campus-drive-2026-project-engineer-elite/</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Software Engineer (Java)</td>
+<td>Blackhawk Network</td>
+<td>Kozhikode</td>
+<td>Best in Industry</td>
+<td>https://apac-blackhawknetwork.icims.com/jobs/26580/software-engineer/job</td>
+</tr>
+<tr>
+<td>11</td>
+<td>SDET-1</td>
+<td>Zinier</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://zinier.breezy.hr/p/f48bac57162c-sdet-1?src=LinkedIn</td>
+</tr>
+<tr>
+<td>12</td>
+<td>IT Apprentice</td>
+<td>NEC Corporation</td>
+<td>Noida</td>
+<td>Best in Industry</td>
+<td>https://jobs.smartrecruiters.com/NECSWS/744000122914113-software-engineer-data-science</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Technical Apprentice (Fresher)</td>
+<td>Dell (Fresheropenings)</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/careers/job/R272585</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Graduate Engineer Trainee (C++/Embedded)</td>
+<td>Hitachi (Internship)</td>
+<td>Noida</td>
+<td>Competitive</td>
+<td>https://fresheropenings.com/hitachi-internship-2026/</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Graduate Engineer Trainee</td>
+<td>HCLTech</td>
+<td>Pan India</td>
+<td>Competitive</td>
+<td>https://offcampusjobs4u.com/hcltech-hiring-job-opportunity-for-post-graduate-engineer-trainee/</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Software Developer (Java/Azure/AWS/.Net)</td>
+<td>Infosys</td>
+<td>Bengaluru</td>
+<td>Best in Industry</td>
+<td>https://offcampusjobs4u.com/infosys-recruitment-2026-software-developer-bengaluru/</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Associate Software Engineer</td>
+<td>Accuris (Fresheropenings)</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://fresheropenings.com/accuris-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Apps Dev Programmer Analyst</td>
+<td>Citigroup (Fresheropenings)</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://fresheropenings.com/citigroup-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Engineering Graduate Intern (SCION)</td>
+<td>IQVIA</td>
+<td>Bengaluru</td>
+<td>Competitive Stipend</td>
+<td>https://freshershunt.in/iqvia-internship-2026/</td>
+</tr>
+</table>
+
+<h3>12-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Java Backend Developer (Entry-Level)</td>
+<td>CGI</td>
+<td>Bangalore</td>
+<td>As Per Industry Standard</td>
+<td>https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-2378&BRID=1307433&SBDID=943&lang=1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Software Developer (9 LPA)</td>
+<td>Hummingbird Web Solutions</td>
+<td>Baner, Pune</td>
+<td>9 LPA</td>
+<td>https://docs.google.com/forms/d/e/1FAIpQLSdCeuQegnpKf0PE_6fDkewAfZQ1vjBlq7N4BlnigKiMuwKf2w/viewform</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Software Engineer</td>
+<td>TraceLink</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://www.tracelink.com/about/culture-and-careers/jobs?gh_jid=5158548007</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Entry-Level Software Engineer</td>
+<td>NIKE ITC</td>
+<td>Bangalore</td>
+<td>High in Industry</td>
+<td>https://careers.nike.com/software-engineer-i-itc/job/R-85669?source=BY_LinkedIn_JobSlots&utm_source=BY_LinkedIn_JobSlots</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Apprentice Software Engineer</td>
+<td>Alcon</td>
+<td>Bangalore</td>
+<td>Best in Industry</td>
+<td>https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Bangalore-India/Apprentice---Software-Engineer_R-2026-47611?source=LinkedIn</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Wipro Elite Hiring (Project Engineer)</td>
+<td>Wipro (Jobsnet)</td>
+<td>PAN India</td>
+<td>₹3.5-5 LPA</td>
+<td>https://careers.wipro.com/job/WE_ELITE/151957-en_US</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Junior Java Full Stack Developer</td>
+<td>Zensar (Jobsnet)</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/145691_5?utm_medium=jobboard&utm_source=linkedIn</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Apprentice IT Analyst (Remote)</td>
+<td>Fortrea</td>
+<td>Bangalore/Remote</td>
+<td>Best in Industry</td>
+<td>https://fortrea.wd1.myworkdayjobs.com/en-US/Fortrea/job/Bangalore/Apprentice---IT-analyst_261969</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Graduate Trainee Engineer (IT)</td>
+<td>Rockwell Automation</td>
+<td>Pune</td>
+<td>Best in Industry</td>
+<td>https://rockwellautomation.wd1.myworkdayjobs.com/External_Rockwell_Automation/job/Pune-India/Graduate-Engineer-Trainee_R25-8341-2?source=LinkedIn</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Trainee Engineer</td>
+<td>NTT DATA</td>
+<td>Chennai</td>
+<td>Best in Industry</td>
+<td>https://careers.services.global.ntt/global/en/job/NTT1GLOBALR146012EXTERNALENGLOBAL/Trainee-Enginee</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Cloud Developer</td>
+<td>HPE</td>
+<td>Bengaluru (Hybrid)</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/hpe-off-campus-drive-2026-4/</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Graduate Engineer Trainee (BA)</td>
+<td>Johnson Controls</td>
+<td>Bangalore</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/johnson-controls-off-campus-drive-2026-2/</td>
+</tr>
+</table>
+
+<h3>14-06-2026</h3>
+
+<table>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Company</th>
+<th>Location</th>
+<th>Salary</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Software Development Engineer</td>
+<td>CSG</td>
+<td>Remote</td>
+<td>Best in Industry</td>
+<td>https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Graduate Engineer Trainee (Technology)</td>
+<td>Invesco</td>
+<td>Hyderabad</td>
+<td>~10 LPA</td>
+<td>https://jobsnet.in/invesco-off-campus-drive-hiring-graduate-engineer-trainee-technology/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Software Engineer I (SDET)</td>
+<td>Tower Research Capital</td>
+<td>Gurgaon</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/tower-research-capital-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Software Engineer (Developer Platform)</td>
+<td>DocuSign</td>
+<td>Bengaluru</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/docusign-off-campus-drive-2026-3/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Entry Level Software Developer</td>
+<td>Born West</td>
+<td>Remote (India)</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/born-west-off-campus-drive-2026/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Software System Engineer</td>
+<td>HP</td>
+<td>Bengaluru</td>
+<td>Competitive</td>
+<td>https://freshershunt.in/hp-off-campus-drive-2026/</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/alcon-wd5-myworkdayjobs-com-careers-alcon-job-bangalore-india-apprentice-softwar.md">alcon-wd5-myworkdayjobs-com-careers-alcon-job-bangalore-india-apprentice-softwar</a></li>
+<li><a href="source/amazon-jobs-en-jobs-10406482-software-dev-engineer-i-amazon-university-talent-ac.md">amazon-jobs-en-jobs-10406482-software-dev-engineer-i-amazon-university-talent-ac</a></li>
+<li><a href="source/apac-blackhawknetwork-icims-com-jobs-26580-software-engineer-job.md">apac-blackhawknetwork-icims-com-jobs-26580-software-engineer-job</a></li>
+<li><a href="source/careerforfreshers-com-jobs-infosys-off-campus-hiring-2026-graduate-engineer-trai.md">careerforfreshers-com-jobs-infosys-off-campus-hiring-2026-graduate-engineer-trai</a></li>
+<li><a href="source/careers-cisco-com-global-en-job-ciscisglobal2015350externalenglobal-software-qa-.md">careers-cisco-com-global-en-job-ciscisglobal2015350externalenglobal-software-qa-</a></li>
+<li><a href="source/careers-cisco-com-global-en-job-ciscisglobal2015541externalenglobal-software-eng.md">careers-cisco-com-global-en-job-ciscisglobal2015541externalenglobal-software-eng</a></li>
+<li><a href="source/careers-cisco-com-global-en-job-ciscisglobal2015858externalenglobal-software-con.md">careers-cisco-com-global-en-job-ciscisglobal2015858externalenglobal-software-con</a></li>
+<li><a href="source/careers-equifax-com-en-jobs-j00176622-software-engineer-entry.md">careers-equifax-com-en-jobs-j00176622-software-engineer-entry</a></li>
+<li><a href="source/careers-ey-com-ey-job-mumbai-analyst-tech-consulting-fs-cns-tc-technology-strate.md">careers-ey-com-ey-job-mumbai-analyst-tech-consulting-fs-cns-tc-technology-strate</a></li>
+<li><a href="source/careers-hpe-com-us-en-job-1207072-software-engineer-i.md">careers-hpe-com-us-en-job-1207072-software-engineer-i</a></li>
+<li><a href="source/careers-nike-com-software-engineer-i-itc-job-r-85669.md">careers-nike-com-software-engineer-i-itc-job-r-85669</a></li>
+<li><a href="source/careers-services-global-ntt-global-en-job-ntt1globalr146012externalenglobal-trai.md">careers-services-global-ntt-global-en-job-ntt1globalr146012externalenglobal-trai</a></li>
+<li><a href="source/careers-wipro-com-job-we-elite-151957-en-us.md">careers-wipro-com-job-we-elite-151957-en-us</a></li>
+<li><a href="source/cgi-njoyn-com-corp-xweb-xweb-asp-2.md">cgi-njoyn-com-corp-xweb-xweb-asp-2</a></li>
+<li><a href="source/cgi-njoyn-com-corp-xweb-xweb-asp-3.md">cgi-njoyn-com-corp-xweb-xweb-asp-3</a></li>
+<li><a href="source/cgi-njoyn-com-corp-xweb-xweb-asp.md">cgi-njoyn-com-corp-xweb-xweb-asp</a></li>
+<li><a href="source/docs-google-com-forms-d-e-1faipqlsdceuqegnpkf0pe-6fdkewafzq1vjblq7n4blnigkimuwkf.md">docs-google-com-forms-d-e-1faipqlsdceuqegnpkf0pe-6fdkewafzq1vjblq7n4blnigkimuwkf</a></li>
+<li><a href="source/enggwave-com-cgi-off-campus-drive-2026-107194.md">enggwave-com-cgi-off-campus-drive-2026-107194</a></li>
+<li><a href="source/enggwave-com-lenovo-off-campus-drive-2026-107648.md">enggwave-com-lenovo-off-campus-drive-2026-107648</a></li>
+<li><a href="source/enggwave-com-reliance-jio-off-campus-drive-2026-106884.md">enggwave-com-reliance-jio-off-campus-drive-2026-106884</a></li>
+<li><a href="source/enggwave-com-viatris-off-campus-drive-2026-107757.md">enggwave-com-viatris-off-campus-drive-2026-107757</a></li>
+<li><a href="source/fa-epcb-saasfaprod1-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-cx.md">fa-epcb-saasfaprod1-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-cx</a></li>
+<li><a href="source/fa-etvl-saasfaprod1-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-cx-2.md">fa-etvl-saasfaprod1-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-cx-2</a></li>
+<li><a href="source/fa-etvl-saasfaprod1-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-cx.md">fa-etvl-saasfaprod1-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-cx</a></li>
+<li><a href="source/fortrea-wd1-myworkdayjobs-com-en-us-fortrea-job-bangalore-apprentice-it-analyst-.md">fortrea-wd1-myworkdayjobs-com-en-us-fortrea-job-bangalore-apprentice-it-analyst-</a></li>
+<li><a href="source/fresherjobinfo-in-hcltech-freshers-hiring-2026.md">fresherjobinfo-in-hcltech-freshers-hiring-2026</a></li>
+<li><a href="source/fresheropenings-com-accuris-off-campus-drive-2026.md">fresheropenings-com-accuris-off-campus-drive-2026</a></li>
+<li><a href="source/fresheropenings-com-amazon-off-campus-drive-2026.md">fresheropenings-com-amazon-off-campus-drive-2026</a></li>
+<li><a href="source/fresheropenings-com-browserstack-recruitment-for-2026-batch.md">fresheropenings-com-browserstack-recruitment-for-2026-batch</a></li>
+<li><a href="source/fresheropenings-com-canonical-off-campus-drive-2026.md">fresheropenings-com-canonical-off-campus-drive-2026</a></li>
+<li><a href="source/fresheropenings-com-chevron-recruitment-drive-for2026-batch.md">fresheropenings-com-chevron-recruitment-drive-for2026-batch</a></li>
+<li><a href="source/fresheropenings-com-citigroup-off-campus-drive-2026.md">fresheropenings-com-citigroup-off-campus-drive-2026</a></li>
+<li><a href="source/fresheropenings-com-davies-off-campus-drive-2026.md">fresheropenings-com-davies-off-campus-drive-2026</a></li>
+<li><a href="source/fresheropenings-com-gallagher-off-campus-drive-2026.md">fresheropenings-com-gallagher-off-campus-drive-2026</a></li>
+<li><a href="source/fresheropenings-com-hitachi-internship-2026.md">fresheropenings-com-hitachi-internship-2026</a></li>
+<li><a href="source/fresheropenings-com-philips-internship-2026.md">fresheropenings-com-philips-internship-2026</a></li>
+<li><a href="source/fresheropenings-com-salesforce-recruitment-for-2026-batch.md">fresheropenings-com-salesforce-recruitment-for-2026-batch</a></li>
+<li><a href="source/fresheropenings-com-sutherland-off-campus-drive-2026.md">fresheropenings-com-sutherland-off-campus-drive-2026</a></li>
+<li><a href="source/fresheropenings-com-zebra-off-campus-drive-2026.md">fresheropenings-com-zebra-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-algoshack-off-campus-drive-2026.md">freshershunt-in-algoshack-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-amd-off-campus-drive-2026.md">freshershunt-in-amd-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-american-express-off-campus-drive-2026.md">freshershunt-in-american-express-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-born-west-off-campus-drive-2026.md">freshershunt-in-born-west-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-canonical-graduate-software-engineer-2026.md">freshershunt-in-canonical-graduate-software-engineer-2026</a></li>
+<li><a href="source/freshershunt-in-cbts-off-campus-drive-2026.md">freshershunt-in-cbts-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-cisco-off-campus-drive-2026.md">freshershunt-in-cisco-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-cisco-software-automation-trainee-tga-2026.md">freshershunt-in-cisco-software-automation-trainee-tga-2026</a></li>
+<li><a href="source/freshershunt-in-cisco-software-engineer-trainee-2026.md">freshershunt-in-cisco-software-engineer-trainee-2026</a></li>
+<li><a href="source/freshershunt-in-citi-off-campus-drive-2026-2.md">freshershunt-in-citi-off-campus-drive-2026-2</a></li>
+<li><a href="source/freshershunt-in-citi-off-campus-drive-2026-pune.md">freshershunt-in-citi-off-campus-drive-2026-pune</a></li>
+<li><a href="source/freshershunt-in-comcast-off-campus-drive-2026.md">freshershunt-in-comcast-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-dell-technologies-off-campus-drive-2026.md">freshershunt-in-dell-technologies-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-docusign-off-campus-drive-2026-2.md">freshershunt-in-docusign-off-campus-drive-2026-2</a></li>
+<li><a href="source/freshershunt-in-docusign-off-campus-drive-2026-3.md">freshershunt-in-docusign-off-campus-drive-2026-3</a></li>
+<li><a href="source/freshershunt-in-eightfold-internship-2026.md">freshershunt-in-eightfold-internship-2026</a></li>
+<li><a href="source/freshershunt-in-emerson-off-campus-drive-2026.md">freshershunt-in-emerson-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-empower-off-campus-drive-2026-associate-engineer-software-bangal.md">freshershunt-in-empower-off-campus-drive-2026-associate-engineer-software-bangal</a></li>
+<li><a href="source/freshershunt-in-empower-off-campus-drive-2026.md">freshershunt-in-empower-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-epam-off-campus-drive-2026.md">freshershunt-in-epam-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-epsilon-off-campus-drive-2026.md">freshershunt-in-epsilon-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-ey-freshers-hiring-2026.md">freshershunt-in-ey-freshers-hiring-2026</a></li>
+<li><a href="source/freshershunt-in-fiserv-internship-2026-technology-summer-intern.md">freshershunt-in-fiserv-internship-2026-technology-summer-intern</a></li>
+<li><a href="source/freshershunt-in-fiserv-off-campus-drive-2026-technology-analyst-trainee.md">freshershunt-in-fiserv-off-campus-drive-2026-technology-analyst-trainee</a></li>
+<li><a href="source/freshershunt-in-globallogic-off-campus-drive-2026-2.md">freshershunt-in-globallogic-off-campus-drive-2026-2</a></li>
+<li><a href="source/freshershunt-in-google-software-engineer-university-graduate-2026.md">freshershunt-in-google-software-engineer-university-graduate-2026</a></li>
+<li><a href="source/freshershunt-in-harman-off-campus-drive-2026-bangalore.md">freshershunt-in-harman-off-campus-drive-2026-bangalore</a></li>
+<li><a href="source/freshershunt-in-honeywell-careers-software-engineer-hiring.md">freshershunt-in-honeywell-careers-software-engineer-hiring</a></li>
+<li><a href="source/freshershunt-in-hp-off-campus-drive-2026.md">freshershunt-in-hp-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-hpe-off-campus-drive-2026-4.md">freshershunt-in-hpe-off-campus-drive-2026-4</a></li>
+<li><a href="source/freshershunt-in-infrrd-off-campus-drive-2026.md">freshershunt-in-infrrd-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-iqvia-internship-2026.md">freshershunt-in-iqvia-internship-2026</a></li>
+<li><a href="source/freshershunt-in-johnson-controls-off-campus-drive-2026-2.md">freshershunt-in-johnson-controls-off-campus-drive-2026-2</a></li>
+<li><a href="source/freshershunt-in-kpmg-off-campus-drive-2026.md">freshershunt-in-kpmg-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-l-and-t-software-engineer-mumbai-2026.md">freshershunt-in-l-and-t-software-engineer-mumbai-2026</a></li>
+<li><a href="source/freshershunt-in-lowes-off-campus-drive-2026-2.md">freshershunt-in-lowes-off-campus-drive-2026-2</a></li>
+<li><a href="source/freshershunt-in-lseg-off-campus-drive-2026.md">freshershunt-in-lseg-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-medpace-off-campus-drive-2026-2.md">freshershunt-in-medpace-off-campus-drive-2026-2</a></li>
+<li><a href="source/freshershunt-in-microsoft-off-campus-drive-2026-software-engineer.md">freshershunt-in-microsoft-off-campus-drive-2026-software-engineer</a></li>
+<li><a href="source/freshershunt-in-milliman-freshers-hiring-2026.md">freshershunt-in-milliman-freshers-hiring-2026</a></li>
+<li><a href="source/freshershunt-in-natwest-group-internship-2026-bangalore.md">freshershunt-in-natwest-group-internship-2026-bangalore</a></li>
+<li><a href="source/freshershunt-in-nec-graduate-engineer-trainee-2026.md">freshershunt-in-nec-graduate-engineer-trainee-2026</a></li>
+<li><a href="source/freshershunt-in-oracle-off-campus-drive-2026.md">freshershunt-in-oracle-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-payu-off-campus-drive-2026.md">freshershunt-in-payu-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-philips-off-campus-drive-2026-apprentice-bangalore.md">freshershunt-in-philips-off-campus-drive-2026-apprentice-bangalore</a></li>
+<li><a href="source/freshershunt-in-principal-off-campus-drive-2026.md">freshershunt-in-principal-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-reliaquest-off-campus-drive-2026.md">freshershunt-in-reliaquest-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-relx-off-campus-drive-2026.md">freshershunt-in-relx-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-side-off-campus-drive-2026.md">freshershunt-in-side-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-slb-internship-2026.md">freshershunt-in-slb-internship-2026</a></li>
+<li><a href="source/freshershunt-in-smartsheet-off-campus-drive-2026.md">freshershunt-in-smartsheet-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-syniverse-off-campus-drive-2026.md">freshershunt-in-syniverse-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-tcs-nqt-2026.md">freshershunt-in-tcs-nqt-2026</a></li>
+<li><a href="source/freshershunt-in-tower-research-capital-off-campus-drive-2026.md">freshershunt-in-tower-research-capital-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-united-techno-off-campus-drive-2026.md">freshershunt-in-united-techno-off-campus-drive-2026</a></li>
+<li><a href="source/freshershunt-in-wabtec-internship-2026-software-bengaluru.md">freshershunt-in-wabtec-internship-2026-software-bengaluru</a></li>
+<li><a href="source/freshershunt-in-zensar-off-campus-drive-2026.md">freshershunt-in-zensar-off-campus-drive-2026</a></li>
+<li><a href="source/freshersrecruitment-co-in-servicenow-off-campus-drive-2026.md">freshersrecruitment-co-in-servicenow-off-campus-drive-2026</a></li>
+<li><a href="source/fresherstech-com-bottomline-off-campus-hiring.md">fresherstech-com-bottomline-off-campus-hiring</a></li>
+<li><a href="source/fresherstech-com-deloitte-off-campus-drive-for-freshers.md">fresherstech-com-deloitte-off-campus-drive-for-freshers</a></li>
+<li><a href="source/fresherstech-com-goto-off-campus.md">fresherstech-com-goto-off-campus</a></li>
+<li><a href="source/fresherstech-com-iron-mountain-off-campus.md">fresherstech-com-iron-mountain-off-campus</a></li>
+<li><a href="source/fresherstech-com-nvidia-off-campus-hiring.md">fresherstech-com-nvidia-off-campus-hiring</a></li>
+<li><a href="source/globallogic-com-careers-associate-software-engineer-irc295840.md">globallogic-com-careers-associate-software-engineer-irc295840</a></li>
+<li><a href="source/google-com-about-careers-applications-jobs-results-98686752104817350-product-sol.md">google-com-about-careers-applications-jobs-results-98686752104817350-product-sol</a></li>
+<li><a href="source/gravitixtechsolutions-zohorecruit-in-jobs-careers-189023000001031519.md">gravitixtechsolutions-zohorecruit-in-jobs-careers-189023000001031519</a></li>
+<li><a href="source/hp-wd5-myworkdayjobs-com-externalcareersite-job-bengaluru-karnataka-india-softwa.md">hp-wd5-myworkdayjobs-com-externalcareersite-job-bengaluru-karnataka-india-softwa</a></li>
+<li><a href="source/iawmqy-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-careers-job-r27-2.md">iawmqy-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-careers-job-r27-2</a></li>
+<li><a href="source/iawmqy-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-careers-job-r27.md">iawmqy-fa-ocs-oraclecloud-com-hcmui-candidateexperience-en-sites-careers-job-r27</a></li>
+<li><a href="source/in-linkedin-com-jobs-view-software-engineer-at-datman-4416158291.md">in-linkedin-com-jobs-view-software-engineer-at-datman-4416158291</a></li>
+<li><a href="source/ingrammicro-wd5-myworkdayjobs-com-en-us-ingrammicro-job-mumbai-india-graduate-en.md">ingrammicro-wd5-myworkdayjobs-com-en-us-ingrammicro-job-mumbai-india-graduate-en</a></li>
+<li><a href="source/job-boards-greenhouse-io-capco-jobs-7439258.md">job-boards-greenhouse-io-capco-jobs-7439258</a></li>
+<li><a href="source/job-boards-greenhouse-io-embed-job-app.md">job-boards-greenhouse-io-embed-job-app</a></li>
+<li><a href="source/jobs-apple-com-en-us-details-200664879-0321-software-engineer-apple-service-engi.md">jobs-apple-com-en-us-details-200664879-0321-software-engineer-apple-service-engi</a></li>
+<li><a href="source/jobs-bmc-com-careers-jobdetail-associate-product-developer-india-46767.md">jobs-bmc-com-careers-jobdetail-associate-product-developer-india-46767</a></li>
+<li><a href="source/jobs-e-next-in-jobs-ibm-off-campus-drive-2026.md">jobs-e-next-in-jobs-ibm-off-campus-drive-2026</a></li>
+<li><a href="source/jobs-empower-com-job-bengaluru-assoc-engineer-software-42743-96022914848.md">jobs-empower-com-job-bengaluru-assoc-engineer-software-42743-96022914848</a></li>
+<li><a href="source/jobs-sap-com-job-bangalore-it-technology-consultant-academy-for-cloud-delivery-h.md">jobs-sap-com-job-bangalore-it-technology-consultant-academy-for-cloud-delivery-h</a></li>
+<li><a href="source/jobs-siemens-com-en-us-externaljobs-jobdetail-507820.md">jobs-siemens-com-en-us-externaljobs-jobdetail-507820</a></li>
+<li><a href="source/jobs-smartrecruiters-com-necsws-744000122914113-software-engineer-data-science.md">jobs-smartrecruiters-com-necsws-744000122914113-software-engineer-data-science</a></li>
+<li><a href="source/jobs-volvogroup-com-job-bangalore-graduate-apprentice-trainee-28bebtech-cs-it-gr.md">jobs-volvogroup-com-job-bangalore-graduate-apprentice-trainee-28bebtech-cs-it-gr</a></li>
+<li><a href="source/jobsnet-in-accuris-off-campus-drive-associate-software-engineer-freshers.md">jobsnet-in-accuris-off-campus-drive-associate-software-engineer-freshers</a></li>
+<li><a href="source/jobsnet-in-akamai-off-campus-drive-hiring-software-engineer-0-2-years-remote.md">jobsnet-in-akamai-off-campus-drive-hiring-software-engineer-0-2-years-remote</a></li>
+<li><a href="source/jobsnet-in-apple-off-campus-drive-hiring-new-grads-as-software-engineer.md">jobsnet-in-apple-off-campus-drive-hiring-new-grads-as-software-engineer</a></li>
+<li><a href="source/jobsnet-in-betanxt-off-campus-drive-apprentice-software-engineer.md">jobsnet-in-betanxt-off-campus-drive-apprentice-software-engineer</a></li>
+<li><a href="source/jobsnet-in-cgi-off-campus-drive-hiring-python-developer-apprentice.md">jobsnet-in-cgi-off-campus-drive-hiring-python-developer-apprentice</a></li>
+<li><a href="source/jobsnet-in-cisco-off-campus-drive-security-consulting-engineer-freshers-pan-indi.md">jobsnet-in-cisco-off-campus-drive-security-consulting-engineer-freshers-pan-indi</a></li>
+<li><a href="source/jobsnet-in-cme-group-hiring-entry-level-software-development-engineer-1.md">jobsnet-in-cme-group-hiring-entry-level-software-development-engineer-1</a></li>
+<li><a href="source/jobsnet-in-csg-hiring-entry-level-software-development-engineer-remote.md">jobsnet-in-csg-hiring-entry-level-software-development-engineer-remote</a></li>
+<li><a href="source/jobsnet-in-emerson-off-campus-drive-graduate-engineer-trainee-software-freshers-.md">jobsnet-in-emerson-off-campus-drive-graduate-engineer-trainee-software-freshers-</a></li>
+<li><a href="source/jobsnet-in-firstadvantage-off-campus-drive-associate-software-engineer-freshers.md">jobsnet-in-firstadvantage-off-campus-drive-associate-software-engineer-freshers</a></li>
+<li><a href="source/jobsnet-in-fiserv-off-campus-drive-technology-analyst-program-freshers.md">jobsnet-in-fiserv-off-campus-drive-technology-analyst-program-freshers</a></li>
+<li><a href="source/jobsnet-in-ge-appliances-off-campus-drive-digital-leadership-development-program.md">jobsnet-in-ge-appliances-off-campus-drive-digital-leadership-development-program</a></li>
+<li><a href="source/jobsnet-in-headout-hiring-entry-level-software-engineer-in-test.md">jobsnet-in-headout-hiring-entry-level-software-engineer-in-test</a></li>
+<li><a href="source/jobsnet-in-honeywell-aerospace-off-campus-drive-software-engineer.md">jobsnet-in-honeywell-aerospace-off-campus-drive-software-engineer</a></li>
+<li><a href="source/jobsnet-in-hp-off-campus-drive-hiring-software-system-engineer.md">jobsnet-in-hp-off-campus-drive-hiring-software-system-engineer</a></li>
+<li><a href="source/jobsnet-in-hpe-off-campus-drive-systems-software-engineer-i-entry-level.md">jobsnet-in-hpe-off-campus-drive-systems-software-engineer-i-entry-level</a></li>
+<li><a href="source/jobsnet-in-ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer.md">jobsnet-in-ibm-off-campus-drive-hiring-freshers-as-associate-system-engineer</a></li>
+<li><a href="source/jobsnet-in-invesco-off-campus-drive-hiring-graduate-engineer-trainee-technology.md">jobsnet-in-invesco-off-campus-drive-hiring-graduate-engineer-trainee-technology</a></li>
+<li><a href="source/jobsnet-in-jll-off-campus-drive-hiring-entry-level-software-engineer.md">jobsnet-in-jll-off-campus-drive-hiring-entry-level-software-engineer</a></li>
+<li><a href="source/jobsnet-in-johnson-controls-off-campus-drive-hiring-graduate-engineer-trainee.md">jobsnet-in-johnson-controls-off-campus-drive-hiring-graduate-engineer-trainee</a></li>
+<li><a href="source/jobsnet-in-kenvue-off-campus-drive-graduate-engineer-trainee-sde.md">jobsnet-in-kenvue-off-campus-drive-graduate-engineer-trainee-sde</a></li>
+<li><a href="source/jobsnet-in-keystone-hiring-entry-level-software-development-engineer-1.md">jobsnet-in-keystone-hiring-entry-level-software-development-engineer-1</a></li>
+<li><a href="source/jobsnet-in-leidos-off-campus-drive-it-trainee-freshers.md">jobsnet-in-leidos-off-campus-drive-it-trainee-freshers</a></li>
+<li><a href="source/jobsnet-in-nec-corporation-off-campus-drive-software-development-apprentice.md">jobsnet-in-nec-corporation-off-campus-drive-software-development-apprentice</a></li>
+<li><a href="source/jobsnet-in-ontic-hiring-entry-level-associate-software-engineer-frontend.md">jobsnet-in-ontic-hiring-entry-level-associate-software-engineer-frontend</a></li>
+<li><a href="source/jobsnet-in-qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india.md">jobsnet-in-qualcomm-off-campus-drive-2026-associate-software-engineer-pan-india</a></li>
+<li><a href="source/jobsnet-in-red-hat-off-campus-drive-associate-software-maintenance-engineer-trai.md">jobsnet-in-red-hat-off-campus-drive-associate-software-maintenance-engineer-trai</a></li>
+<li><a href="source/jobsnet-in-rxo-off-campus-drive-hiring-trainee-technology-engineer.md">jobsnet-in-rxo-off-campus-drive-hiring-trainee-technology-engineer</a></li>
+<li><a href="source/jobsnet-in-siemens-gbs-off-campus-drive-graduate-trainee-engineer-freshers.md">jobsnet-in-siemens-gbs-off-campus-drive-graduate-trainee-engineer-freshers</a></li>
+<li><a href="source/jobsnet-in-swiss-re-off-campus-drive-hiring-it-apprentice.md">jobsnet-in-swiss-re-off-campus-drive-hiring-it-apprentice</a></li>
+<li><a href="source/jobsnet-in-syensqo-off-campus-drive-hiring-graduate-engineer-trainee-sde.md">jobsnet-in-syensqo-off-campus-drive-hiring-graduate-engineer-trainee-sde</a></li>
+<li><a href="source/jobsnet-in-zensar-off-campus-drive-hiring-freshers-as-junior-software-engineer.md">jobsnet-in-zensar-off-campus-drive-hiring-freshers-as-junior-software-engineer</a></li>
+<li><a href="source/jobsnet-in-zoho-off-campus-drive-hiring-software-developers-freshers.md">jobsnet-in-zoho-off-campus-drive-hiring-software-developers-freshers</a></li>
+<li><a href="source/linkedin-com-jobs-view-4417995011.md">linkedin-com-jobs-view-4417995011</a></li>
+<li><a href="source/mobility-wd503-myworkdayjobs-com-mobility-job-gurugram-haryana-associate-softwar.md">mobility-wd503-myworkdayjobs-com-mobility-job-gurugram-haryana-associate-softwar</a></li>
+<li><a href="source/offcampusjobs4u-com-agoda-software-engineer-internship-2026.md">offcampusjobs4u-com-agoda-software-engineer-internship-2026</a></li>
+<li><a href="source/offcampusjobs4u-com-aidash-recruitment-2026-software-engineer-intern-bengaluru.md">offcampusjobs4u-com-aidash-recruitment-2026-software-engineer-intern-bengaluru</a></li>
+<li><a href="source/offcampusjobs4u-com-ameya-hq-recruitment-2026-software-engineer-remote.md">offcampusjobs4u-com-ameya-hq-recruitment-2026-software-engineer-remote</a></li>
+<li><a href="source/offcampusjobs4u-com-byteridge-off-campus-drive-2026-software-development-enginee.md">offcampusjobs4u-com-byteridge-off-campus-drive-2026-software-development-enginee</a></li>
+<li><a href="source/offcampusjobs4u-com-capgemini-off-campus-drive-2026-software-engineer-exceller.md">offcampusjobs4u-com-capgemini-off-campus-drive-2026-software-engineer-exceller</a></li>
+<li><a href="source/offcampusjobs4u-com-cisco-recruitment-2026-software-engineer-embedded-platform-b.md">offcampusjobs4u-com-cisco-recruitment-2026-software-engineer-embedded-platform-b</a></li>
+<li><a href="source/offcampusjobs4u-com-citigroup-off-campus-drive-2026-programmer-analyst-pune.md">offcampusjobs4u-com-citigroup-off-campus-drive-2026-programmer-analyst-pune</a></li>
+<li><a href="source/offcampusjobs4u-com-columbia-sportswear-recruitment-2026-software-engineer-i-ban.md">offcampusjobs4u-com-columbia-sportswear-recruitment-2026-software-engineer-i-ban</a></li>
+<li><a href="source/offcampusjobs4u-com-docusign-recruitment-2026-software-engineer-bengaluru.md">offcampusjobs4u-com-docusign-recruitment-2026-software-engineer-bengaluru</a></li>
+<li><a href="source/offcampusjobs4u-com-empower-recruitment-2026-associate-software-engineer-bangalo.md">offcampusjobs4u-com-empower-recruitment-2026-associate-software-engineer-bangalo</a></li>
+<li><a href="source/offcampusjobs4u-com-finominal-recruitment-2026-junior-backend-software-engineer-.md">offcampusjobs4u-com-finominal-recruitment-2026-junior-backend-software-engineer-</a></li>
+<li><a href="source/offcampusjobs4u-com-hcltech-hiring-job-opportunity-for-post-graduate-engineer-tr.md">offcampusjobs4u-com-hcltech-hiring-job-opportunity-for-post-graduate-engineer-tr</a></li>
+<li><a href="source/offcampusjobs4u-com-ibm-recruitment-2026-associate-system-engineer-across-india.md">offcampusjobs4u-com-ibm-recruitment-2026-associate-system-engineer-across-india</a></li>
+<li><a href="source/offcampusjobs4u-com-infosys-recruitment-2026-software-developer-bengaluru.md">offcampusjobs4u-com-infosys-recruitment-2026-software-developer-bengaluru</a></li>
+<li><a href="source/offcampusjobs4u-com-isolved-recruitment-2026-software-engineer-i-hyderabad.md">offcampusjobs4u-com-isolved-recruitment-2026-software-engineer-i-hyderabad</a></li>
+<li><a href="source/offcampusjobs4u-com-jade-global-recruitment-2026-salesforce-software-developer-p.md">offcampusjobs4u-com-jade-global-recruitment-2026-salesforce-software-developer-p</a></li>
+<li><a href="source/offcampusjobs4u-com-microsoft-internship-2026-software-engineering-intern-india.md">offcampusjobs4u-com-microsoft-internship-2026-software-engineering-intern-india</a></li>
+<li><a href="source/offcampusjobs4u-com-mthree-off-campus-drive-2026-graduate-program-9-lpa.md">offcampusjobs4u-com-mthree-off-campus-drive-2026-graduate-program-9-lpa</a></li>
+<li><a href="source/offcampusjobs4u-com-numerator-recruitment-2026-software-engineer-dx-remote-fresh.md">offcampusjobs4u-com-numerator-recruitment-2026-software-engineer-dx-remote-fresh</a></li>
+<li><a href="source/offcampusjobs4u-com-ontic-recruitment-2026-associate-software-engineer-ui-pune.md">offcampusjobs4u-com-ontic-recruitment-2026-associate-software-engineer-ui-pune</a></li>
+<li><a href="source/offcampusjobs4u-com-optum-recruitment-2026-full-stack-engineer-noida.md">offcampusjobs4u-com-optum-recruitment-2026-full-stack-engineer-noida</a></li>
+<li><a href="source/offcampusjobs4u-com-sense-internship-2026-software-engineer-intern-backend.md">offcampusjobs4u-com-sense-internship-2026-software-engineer-intern-backend</a></li>
+<li><a href="source/offcampusjobs4u-com-stadium-off-campus-drive-2026-software-engineer-remote.md">offcampusjobs4u-com-stadium-off-campus-drive-2026-software-engineer-remote</a></li>
+<li><a href="source/offcampusjobs4u-com-stripe-internship-2026.md">offcampusjobs4u-com-stripe-internship-2026</a></li>
+<li><a href="source/offcampusjobs4u-com-talview-recruitment-2026-software-developer-internship-banga.md">offcampusjobs4u-com-talview-recruitment-2026-software-developer-internship-banga</a></li>
+<li><a href="source/offcampusjobs4u-com-unisys-recruitment-2026-junior-dotnet-developer-hyderabad.md">offcampusjobs4u-com-unisys-recruitment-2026-junior-dotnet-developer-hyderabad</a></li>
+<li><a href="source/offcampusjobs4u-com-wipro-internship-2026-intern-software-engineering-bangalore.md">offcampusjobs4u-com-wipro-internship-2026-intern-software-engineering-bangalore</a></li>
+<li><a href="source/offcampusjobs4u-com-wipro-off-campus-drive-2026-jr-associate-software-engineer-b.md">offcampusjobs4u-com-wipro-off-campus-drive-2026-jr-associate-software-engineer-b</a></li>
+<li><a href="source/offcampusjobs4u-com-wipro-off-campus-drive-2026-project-engineer-elite.md">offcampusjobs4u-com-wipro-off-campus-drive-2026-project-engineer-elite</a></li>
+<li><a href="source/onecareerjobs-com-accenture-off-campus-drive-2026-associate-software-engineer-ap.md">onecareerjobs-com-accenture-off-campus-drive-2026-associate-software-engineer-ap</a></li>
+<li><a href="source/qualifacts-wd5-myworkdayjobs-com-en-us-qualifacts-external-careers-job-vadodara-.md">qualifacts-wd5-myworkdayjobs-com-en-us-qualifacts-external-careers-job-vadodara-</a></li>
+<li><a href="source/rockwellautomation-wd1-myworkdayjobs-com-external-rockwell-automation-job-pune-i.md">rockwellautomation-wd1-myworkdayjobs-com-external-rockwell-automation-job-pune-i</a></li>
+<li><a href="source/shell-wd3-myworkdayjobs-com-shellcareers-job-bangalore-rmz-eco-world-shell-gradu.md">shell-wd3-myworkdayjobs-com-shellcareers-job-bangalore-rmz-eco-world-shell-gradu</a></li>
+<li><a href="source/talent-propelinc-com-jobs-careers-26698000091922025-fresher-2026-batch-software-.md">talent-propelinc-com-jobs-careers-26698000091922025-fresher-2026-batch-software-</a></li>
+<li><a href="source/tracelink-com-about-culture-and-careers-jobs.md">tracelink-com-about-culture-and-careers-jobs</a></li>
+<li><a href="source/transunion-wd5-myworkdayjobs-com-en-us-transunion-job-chennai-associate-engineer.md">transunion-wd5-myworkdayjobs-com-en-us-transunion-job-chennai-associate-engineer</a></li>
+<li><a href="source/usijobs-deloitte-com-en-us-careersusi-jobdetail-usi-eh27-consulting-c-m-am-c-ful.md">usijobs-deloitte-com-en-us-careersusi-jobdetail-usi-eh27-consulting-c-m-am-c-ful</a></li>
+<li><a href="source/vonage-com-careers-job-details-8549501002.md">vonage-com-careers-job-details-8549501002</a></li>
+<li><a href="source/workforcenow-adp-com-mascsr-default-mdf-recruitment-recruitment-html.md">workforcenow-adp-com-mascsr-default-mdf-recruitment-recruitment-html</a></li>
+<li><a href="source/zinier-breezy-hr-p-f48bac57162c-sdet-1.md">zinier-breezy-hr-p-f48bac57162c-sdet-1</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

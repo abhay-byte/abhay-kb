@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Editors | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
   <style>
     /* ══════════════════════════════════════════════
        SHARED LAYOUT — matches _layouts/standalone.html
@@ -52,6 +56,10 @@
       width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
       position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
     }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
     .sidebar h1 {
       font-size: 22px; font-weight: 700; color: #fff;
       margin-bottom: 4px;
@@ -66,10 +74,6 @@
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
 
-
-    .sidebar::-webkit-scrollbar { width: 4px; }
-    .sidebar::-webkit-scrollbar-track { background: transparent; }
-    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
     .nav-section-label {
       font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
       color: #666; padding: 12px 12px 4px; margin-top: 4px;
@@ -90,23 +94,6 @@
     .main-content td { color: #ccc; }
     .main-content tr:hover td { background: rgba(255,255,255,0.02); }
     .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
-    .main-content pre {
-      background: #111122;
-      border: 1px solid #2a2a55;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 16px 0;
-      overflow-x: auto;
-    }
-    .main-content pre code {
-      background: transparent;
-      color: #c8c8e8;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      font-size: 13px;
-      line-height: 1.5;
-    }
     .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
     .main-content pre code { background: none; padding: 0; color: #fabd2f; }
     .main-content img { max-width: 100%; border-radius: 6px; }
@@ -188,7 +175,7 @@
 <body>
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
-    <span class="topbar-title">AI Editors</span>
+    <span class="topbar-title">Ai-editors</span>
   </div>
 
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
@@ -212,6 +199,16 @@
         <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
         <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
         <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
         <div class="nav-section-label">LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
@@ -235,9 +232,9 @@
 
 <hr>
 
-<h2 id="cursor">Cursor</h2>
+<h2 id="[cursor]https//cursor.com"><a href="https://cursor.com">Cursor</a></h2>
 
-<p>AI-first code editor, VS Code fork. 4M+ developers as of 2026.</p>
+<p>AI-first code editor, VS Code fork. 4M+ developers as of 2026. <a href="https://cursor.com/pricing">Pricing</a> · <a href="https://cursor.com/docs">Docs</a></p>
 
 <table>
 <tr>
@@ -297,9 +294,9 @@
 
 <hr>
 
-<h2 id="windsurf-codeium">Windsurf (Codeium)</h2>
+<h2 id="[windsurf]https//codeium.com/windsurf-codeium"><a href="https://codeium.com/windsurf">Windsurf</a> (Codeium)</h2>
 
-<p>AI-native IDE with Cascade agent system.</p>
+<p>AI-native IDE with Cascade agent system. <a href="https://codeium.com/windsurf/pricing">Pricing</a> · <a href="https://docs.codeium.com/windsurf/getting-started">Docs</a></p>
 
 <table>
 <tr>
@@ -359,9 +356,9 @@
 
 <hr>
 
-<h2 id="visual-studio-code">Visual Studio Code</h2>
+<h2 id="[visual-studio-code]https//code.visualstudio.com"><a href="https://code.visualstudio.com">Visual Studio Code</a></h2>
 
-<p>Microsoft's code editor with built-in AI features powered by GitHub Copilot. IntelliCode is being phased out in favor of Copilot's integrated cloud agent.</p>
+<p>Microsoft's code editor with built-in AI features powered by <a href="https://github.com/features/copilot">GitHub Copilot</a>. IntelliCode is being phased out in favor of Copilot's integrated cloud agent.</p>
 
 <table>
 <tr>
@@ -421,9 +418,9 @@
 
 <hr>
 
-<h2 id="trae-bytedance">TRAE (ByteDance)</h2>
+<h2 id="[trae]https//www.trae.ai-bytedance"><a href="https://www.trae.ai">TRAE</a> (ByteDance)</h2>
 
-<p>ByteDance's AI-native VS Code fork with SOLO autonomous agent for end-to-end coding automation. Aggressive pricing undercuts competitors.</p>
+<p>ByteDance's AI-native VS Code fork with SOLO autonomous agent for end-to-end coding automation. Aggressive pricing undercuts competitors. <a href="https://docs.trae.ai">Docs</a></p>
 
 <table>
 <tr>
@@ -487,9 +484,9 @@
 
 <hr>
 
-<h2 id="github-copilot">GitHub Copilot</h2>
+<h2 id="[github-copilot]https//github.com/features/copilot"><a href="https://github.com/features/copilot">GitHub Copilot</a></h2>
 
-<p>Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool.</p>
+<p>Microsoft/GitHub's AI pair programmer. Most widely adopted AI coding tool. <a href="https://github.com/features/copilot/plans">Pricing</a> · <a href="https://docs.github.com/en/copilot">Docs</a></p>
 
 <table>
 <tr>
@@ -549,9 +546,9 @@
 
 <hr>
 
-<h2 id="google-antigravity">Google Antigravity</h2>
+<h2 id="[google-antigravity]https//antigravity.google"><a href="https://antigravity.google">Google Antigravity</a></h2>
 
-<p>Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3.</p>
+<p>Google's agent-first IDE (VS Code fork). Released Nov 2025 alongside Gemini 3. <a href="https://antigravity.google/pricing">Pricing</a> · <a href="https://antigravity.google/docs">Docs</a></p>
 
 <table>
 <tr>
@@ -615,9 +612,9 @@
 
 <hr>
 
-<h2 id="kiro-aws">Kiro (AWS)</h2>
+<h2 id="[kiro]https//kiro.dev-aws"><a href="https://kiro.dev">Kiro</a> (AWS)</h2>
 
-<p>Amazon's agentic IDE with spec-driven development methodology. Generates requirements docs, design specs, and implementation tasks before coding.</p>
+<p>Amazon's agentic IDE with spec-driven development methodology. Generates requirements docs, design specs, and implementation tasks before coding. <a href="https://kiro.dev/docs">Docs</a></p>
 
 <table>
 <tr>
@@ -899,7 +896,21 @@
 <td>Don't want to pay, just basic help</td>
 <td><strong>TRAE Free</strong> (5K completions) or <strong>VS Code Free</strong></td>
 </tr>
-</table>    </main>
+</table>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/antigravity-google.md">antigravity-google</a></li>
+<li><a href="source/code-visualstudio-com.md">code-visualstudio-com</a></li>
+<li><a href="source/codeium-com-windsurf.md">codeium-com-windsurf</a></li>
+<li><a href="source/cursor-com.md">cursor-com</a></li>
+<li><a href="source/github-com-features-copilot.md">github-com-features-copilot</a></li>
+<li><a href="source/kiro-dev.md">kiro-dev</a></li>
+<li><a href="source/trae-ai.md">trae-ai</a></li>
+</ul>    </main>
   </div>
 
   <script>

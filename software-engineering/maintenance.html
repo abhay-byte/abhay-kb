@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineering — Maintenance | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Maintenance</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>Maintenance</h1>
+
+<p>> <em>Comprehensive reference on software maintenance models, evolution, reverse engineering, and legacy system modernization.</em>
+> Models: Boehm ACT, Belady-Lehman, CMM Level 5</p>
+
+<hr>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+<li><a href="#1-software-maintenance-fundamentals">Software Maintenance Fundamentals</a></li>
+<li><a href="#2-categories-of-maintenance">Categories of Maintenance</a></li>
+<li><a href="#3-maintenance-process--activities">Maintenance Process & Activities</a></li>
+<li><a href="#4-maintenance-cost-models">Maintenance Cost Models</a></li>
+<li><a href="#5-software-evolution-lehmans-laws">Software Evolution (Lehman's Laws)</a></li>
+<li><a href="#6-reverse-engineering">Reverse Engineering</a></li>
+<li><a href="#7-software-re-engineering--legacy-modernization">Software Re-engineering & Legacy Modernization</a></li>
+<li><a href="#8-configuration-management--version-control">Configuration Management & Version Control</a></li>
+<li><a href="#9-software-documentation">Software Documentation</a></li>
+<li><a href="#10-retirement--decommissioning">Retirement & Decommissioning</a></li>
+</ol>
+
+<hr>
+
+<h2 id="1.-software-maintenance-fundamentals">1. Software Maintenance Fundamentals</h2>
+
+<p>Software maintenance is the process of <strong>modifying a software system after delivery</strong> to correct faults, improve performance, adapt to changing environments, and prevent future issues. It is the longest and most expensive phase of the SDLC — often consuming 60-90% of total lifecycle costs.</p>
+
+<h3>Key Maintenance Objectives</h3>
+
+<ul>
+<li>Ensure continued operational effectiveness</li>
+<li>Adapt to evolving environments (OS, hardware, regulations)</li>
+<li>Fix defects discovered post-release</li>
+<li>Enhance functionality to meet emerging needs</li>
+<li>Improve system performance, security, and usability</li>
+<li>Preserve institutional knowledge through documentation</li>
+</ul>
+
+<h3>Maintenance Challenges</h3>
+
+<table>
+<tr>
+<th>Challenge</th>
+<th>Impact</th>
+</tr>
+<tr>
+<td><strong>Code Entropy</strong></td>
+<td>Code quality degrades over time without active management</td>
+</tr>
+<tr>
+<td><strong>Knowledge Loss</strong></td>
+<td>Original developers may no longer be available</td>
+</tr>
+<tr>
+<td><strong>Legacy Dependencies</strong></td>
+<td>Outdated libraries, frameworks, and platforms</td>
+</tr>
+<tr>
+<td><strong>Documentation Gap</strong></td>
+<td>Documentation diverges from actual implementation</td>
+</tr>
+<tr>
+<td><strong>Team Turnover</strong></td>
+<td>New team members lack historical context</td>
+</tr>
+<tr>
+<td><strong>Technical Debt</strong></td>
+<td>Shortcuts accumulate, making changes increasingly expensive</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="2.-categories-of-maintenance">2. Categories of Maintenance</h2>
+
+<table>
+<tr>
+<th>Category</th>
+<th>Description</th>
+<th>Example</th>
+<th>Effort %</th>
+</tr>
+<tr>
+<td><strong>Corrective</strong></td>
+<td>Fixing bugs and defects discovered post-release</td>
+<td>Fixing a null pointer exception in production</td>
+<td>~20%</td>
+</tr>
+<tr>
+<td><strong>Adaptive</strong></td>
+<td>Adapting to environmental changes</td>
+<td>Upgrading to a new OS version, new database driver</td>
+<td>~25%</td>
+</tr>
+<tr>
+<td><strong>Perfective</strong></td>
+<td>Adding new features, improving performance</td>
+<td>Adding a new report, optimizing query speed</td>
+<td>~50%</td>
+</tr>
+<tr>
+<td><strong>Preventive</strong></td>
+<td>Preventing future issues before they occur</td>
+<td>Refactoring, code cleanup, documentation updates</td>
+<td>~5%</td>
+</tr>
+</table>
+
+<h3>Corrective Maintenance</h3>
+
+<p>Fixes defects found after the software is in use. Includes:</p>
+
+<ul>
+<li>Emergency fixes (critical production bugs)</li>
+<li>Routine bug fixes (non-critical defects from backlog)</li>
+<li>Patch releases for reported issues</li>
+</ul>
+
+<h3>Adaptive Maintenance</h3>
+
+<p>Modifications required when the software's external environment changes:</p>
+
+<ul>
+<li>Operating system upgrades</li>
+<li>Database platform migrations</li>
+<li>Hardware changes</li>
+<li>Regulatory and compliance updates</li>
+<li>Third-party API deprecations</li>
+</ul>
+
+<h3>Perfective Maintenance</h3>
+
+<p>The largest category — enhancements to improve the software:</p>
+
+<ul>
+<li>New features and functionality</li>
+<li>Performance optimization</li>
+<li>Usability improvements</li>
+<li>UI/UX refinements</li>
+<li>Code restructuring for better maintainability</li>
+</ul>
+
+<h3>Preventive Maintenance</h3>
+
+<p>Proactive measures to reduce future maintenance costs:</p>
+
+<ul>
+<li>Refactoring (improve structure without changing behavior)</li>
+<li>Code reviews and quality improvements</li>
+<li>Test coverage expansion</li>
+<li>Documentation updates</li>
+<li>Dependency upgrades (before they become critical)</li>
+</ul>
+
+<hr>
+
+<h2 id="3.-maintenance-process-&-activities">3. Maintenance Process & Activities</h2>
+
+<h3>Maintenance Process Flow</h3>
+
+<pre><code>Change Request -> Impact Analysis -> Planning -> Implementation
+    -> Review -> Testing -> Deployment -> Verification
+</code></pre>
+
+<h3>Key Activities</h3>
+
+<table>
+<tr>
+<th>Activity</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Change Request Management</strong></td>
+<td>Log, categorize, and prioritize incoming requests</td>
+</tr>
+<tr>
+<td><strong>Impact Analysis</strong></td>
+<td>Assess scope, cost, risk, and affected components</td>
+</tr>
+<tr>
+<td><strong>Planning</strong></td>
+<td>Schedule changes, assign resources, define acceptance criteria</td>
+</tr>
+<tr>
+<td><strong>Implementation</strong></td>
+<td>Code changes following standards and guidelines</td>
+</tr>
+<tr>
+<td><strong>Code Review</strong></td>
+<td>Peer review for quality, correctness, consistency</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>Unit, integration, regression, and acceptance testing</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>Release changes to production using deployment strategies</td>
+</tr>
+<tr>
+<td><strong>Verification</strong></td>
+<td>Post-deployment validation and monitoring</td>
+</tr>
+</table>
+
+<h3>Maintenance Priority Levels</h3>
+
+<table>
+<tr>
+<th>Priority</th>
+<th>Description</th>
+<th>Response Time</th>
+</tr>
+<tr>
+<td><strong>Critical</strong></td>
+<td>System down, data loss</td>
+<td>Within 1 hour</td>
+</tr>
+<tr>
+<td><strong>High</strong></td>
+<td>Major feature broken, no workaround</td>
+<td>Within 4 hours</td>
+</tr>
+<tr>
+<td><strong>Medium</strong></td>
+<td>Feature partially broken, workaround available</td>
+<td>Within 24 hours</td>
+</tr>
+<tr>
+<td><strong>Low</strong></td>
+<td>Cosmetic issue, minor enhancement</td>
+<td>Next release cycle</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="4.-maintenance-cost-models">4. Maintenance Cost Models</h2>
+
+<h3>Boehm's ACT (Annual Change Traffic)</h3>
+
+<p>ACT measures the fraction of a software product's source instructions that undergo change during a year.</p>
+
+<code>ACT = (Total Lines Changed + Added + Deleted) / Total Lines</code>
+
+<strong>Cost Estimation:</strong>
+<code>Annual Maintenance Cost = Development Cost × ACT</code>
+
+<strong>Typical ACT values:</strong>
+
+<ul>
+<li>Stable system: 10-20% per year</li>
+<li>Active development: 30-50% per year</li>
+<li>Rapidly evolving: 60%+ per year</li>
+</ul>
+
+<h3>Belady-Lehman Model</h3>
+
+<p>Cost increases exponentially with lack of maintenance:</p>
+
+<code>Maintenance Cost = C × exp(D × Time Since Last Redesign)</code>
+
+<p>Where:</p>
+
+<ul>
+<li>C = initial maintenance cost</li>
+<li>D = design deterioration factor</li>
+<li>Time = elapsed since last significant redesign</li>
+</ul>
+
+<p>This model suggests that periodic major redesigns are more economical than continuous small patches in the long run.</p>
+
+<h3>Cost Factors</h3>
+
+<table>
+<tr>
+<th>Factor</th>
+<th>Impact on Cost</th>
+</tr>
+<tr>
+<td><strong>Code Complexity</strong></td>
+<td>Higher complexity = higher cost</td>
+</tr>
+<tr>
+<td><strong>Documentation Quality</strong></td>
+<td>Poor documentation = higher cost</td>
+</tr>
+<tr>
+<td><strong>Staff Experience</strong></td>
+<td>Less experienced = higher cost</td>
+</tr>
+<tr>
+<td><strong>Module Age</strong></td>
+<td>Older modules = higher cost</td>
+</tr>
+<tr>
+<td><strong>Test Coverage</strong></td>
+<td>Low coverage = higher risk, higher cost</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="5.-software-evolution-lehman's-laws">5. Software Evolution (Lehman's Laws)</h2>
+
+<p>Lehman formulated eight laws describing the inevitable evolution of software systems over time:</p>
+
+<table>
+<tr>
+<th>Law</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>1. Continuing Change</strong></td>
+<td>A system must be continually adapted or it becomes progressively less satisfactory</td>
+</tr>
+<tr>
+<td><strong>2. Increasing Complexity</strong></td>
+<td>As a system evolves, its complexity increases unless work is done to maintain or reduce it</td>
+</tr>
+<tr>
+<td><strong>3. Self-Regulation</strong></td>
+<td>System evolution processes are self-regulating with statistically invariant distributions</td>
+</tr>
+<tr>
+<td><strong>4. Conservation of Organizational Stability</strong></td>
+<td>The average effective global activity rate in an evolving system is invariant over the product lifetime</td>
+</tr>
+<tr>
+<td><strong>5. Conservation of Familiarity</strong></td>
+<td>The incremental growth (satisfaction/decline) of a system is regulated by familiarity constraints</td>
+</tr>
+<tr>
+<td><strong>6. Continuing Growth</strong></td>
+<td>The functional capability of a system must be continually increased to maintain user satisfaction</td>
+</tr>
+<tr>
+<td><strong>7. Declining Quality</strong></td>
+<td>The quality of a system will appear to decline unless it is rigorously maintained and adapted</td>
+</tr>
+<tr>
+<td><strong>8. Feedback System</strong></td>
+<td>Evolution processes are multi-level, multi-loop feedback systems</td>
+</tr>
+</table>
+
+<h3>Practical Implications</h3>
+
+<ul>
+<li><strong>Plan for change</strong> — architecture must accommodate evolution</li>
+<li><strong>Combat complexity</strong> — active refactoring is mandatory, not optional</li>
+<li><strong>Invest in quality</strong> — without maintenance, quality inevitably declines</li>
+<li><strong>Accept continuous growth</strong> — systems naturally expand; plan capacity accordingly</li>
+</ul>
+
+<hr>
+
+<h2 id="6.-reverse-engineering">6. Reverse Engineering</h2>
+
+<p>Reverse engineering is the process of <strong>analyzing a system to identify its components and their relationships</strong> without modifying it. It recovers design information from existing code or binaries.</p>
+
+<h3>Goals</h3>
+
+<ul>
+<li>Understand how a system works when documentation is missing</li>
+<li>Discover hidden dependencies and side effects</li>
+<li>Extract business rules embedded in legacy code</li>
+<li>Prepare for re-engineering or migration</li>
+<li>Identify security vulnerabilities</li>
+</ul>
+
+<h3>Techniques</h3>
+
+<table>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+<th>Tools</th>
+</tr>
+<tr>
+<td><strong>Static Analysis</strong></td>
+<td>Analyze code without execution</td>
+<td>SonarQube, IDA Pro</td>
+</tr>
+<tr>
+<td><strong>Dynamic Analysis</strong></td>
+<td>Analyze code during execution</td>
+<td>strace, ltrace, Wireshark</td>
+</tr>
+<tr>
+<td><strong>Decompilation</strong></td>
+<td>Convert binary to high-level code</td>
+<td>Ghidra, IDA Pro</td>
+</tr>
+<tr>
+<td><strong>Disassembly</strong></td>
+<td>Convert binary to assembly</td>
+<td>objdump, radare2</td>
+</tr>
+<tr>
+<td><strong>Call Graph Analysis</strong></td>
+<td>Map function call relationships</td>
+<td>Doxygen, CodeViz</td>
+</tr>
+<tr>
+<td><strong>Dependency Analysis</strong></td>
+<td>Identify module dependencies</td>
+<td>JDepend, NDepend</td>
+</tr>
+</table>
+
+<h3>Reverse Engineering Process</h3>
+
+<ol>
+<li><strong>Information Extraction</strong> — gather all available data (source, binaries, docs)</li>
+<li><strong>Abstraction Generation</strong> — create models at higher abstraction levels</li>
+<li><strong>Design Recovery</strong> — reconstruct design decisions and rationale</li>
+</ol>
+
+<hr>
+
+<h2 id="7.-software-re-engineering-&-legacy-modernization">7. Software Re-engineering & Legacy Modernization</h2>
+
+<p>Re-engineering is the <strong>examination and alteration of a system to reconstitute it in a new form</strong> with improved quality, maintainability, or performance.</p>
+
+<h3>Re-engineering Process</h3>
+
+<pre><code>Reverse Engineering (understand current system)
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+       v
+Restructuring (improve structure without changing function)
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+       v
+Forward Engineering (create improved version)
+</code></pre>
+
+<h3>Legacy Modernization Strategies</h3>
+
+<table>
+<tr>
+<th>Strategy</th>
+<th>Description</th>
+<th>Risk</th>
+<th>Cost</th>
+</tr>
+<tr>
+<td><strong>Wrap</strong></td>
+<td>Add an API layer around legacy system</td>
+<td>Low</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Rehost (Lift & Shift)</strong></td>
+<td>Move to new infrastructure without changes</td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Replatform</strong></td>
+<td>Move to managed platform (e.g., VMs to containers)</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Refactor</strong></td>
+<td>Restructure code without changing external behavior</td>
+<td>Medium</td>
+<td>Medium-High</td>
+</tr>
+<tr>
+<td><strong>Rearchitect</strong></td>
+<td>Redesign architecture while preserving functionality</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Rebuild</strong></td>
+<td>Rewrite from scratch</td>
+<td>Very High</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td><strong>Replace</strong></td>
+<td>Replace with COTS or SaaS solution</td>
+<td>Low-Medium</td>
+<td>Medium</td>
+</tr>
+</table>
+
+<h3>Strangler Fig Pattern</h3>
+
+<p>Gradually migrate legacy functionality to new services:</p>
+
+<ol>
+<li>Route specific features to new service</li>
+<li>Keep remaining traffic on legacy system</li>
+<li>Remove migrated code from legacy system</li>
+<li>Repeat until legacy system is empty</li>
+</ol>
+
+<hr>
+
+<h2 id="8.-configuration-management-&-version-control">8. Configuration Management & Version Control</h2>
+
+<h3>Configuration Management (CM)</h3>
+
+<p>CM tracks and controls changes to software artifacts throughout the lifecycle.</p>
+
+<strong>Key Functions:</strong>
+
+<ul>
+<li><strong>Identification</strong> — uniquely identify all configuration items (CI)</li>
+<li><strong>Version Control</strong> — track versions of all artifacts</li>
+<li><strong>Change Control</strong> — manage changes to baselines</li>
+<li><strong>Auditing</strong> — verify that what's documented matches reality</li>
+<li><strong>Status Accounting</strong> — report on the status of CIs</li>
+</ul>
+
+<h3>Version Control Best Practices</h3>
+
+<table>
+<tr>
+<th>Practice</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Commit often</strong></td>
+<td>Small, atomic commits with descriptive messages</td>
+</tr>
+<tr>
+<td><strong>Branch strategy</strong></td>
+<td>GitFlow, GitHub Flow, or Trunk-based development</td>
+</tr>
+<tr>
+<td><strong>Tag releases</strong></td>
+<td>Semantic versioning (v1.2.3)</td>
+</tr>
+<tr>
+<td><strong>Code reviews</strong></td>
+<td>All changes reviewed before merging</td>
+</tr>
+<tr>
+<td><strong>Signed commits</strong></td>
+<td>GPG-sign commits for authenticity</td>
+</tr>
+<tr>
+<td><strong>git bisect</strong></td>
+<td>Binary search to find the commit that introduced a bug</td>
+</tr>
+</table>
+
+<h3>Semantic Versioning</h3>
+
+<code>MAJOR.MINOR.PATCH</code> (e.g., v2.5.1)
+
+<table>
+<tr>
+<th>Increment</th>
+<th>When</th>
+</tr>
+<tr>
+<td><strong>MAJOR</strong></td>
+<td>Breaking API changes</td>
+</tr>
+<tr>
+<td><strong>MINOR</strong></td>
+<td>New features, backward compatible</td>
+</tr>
+<tr>
+<td><strong>PATCH</strong></td>
+<td>Bug fixes, backward compatible</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="9.-software-documentation">9. Software Documentation</h2>
+
+<h3>Documentation Types</h3>
+
+<table>
+<tr>
+<th>Type</th>
+<th>Purpose</th>
+<th>Audience</th>
+</tr>
+<tr>
+<td><strong>User Documentation</strong></td>
+<td>How to install, configure, and use the software</td>
+<td>End users</td>
+</tr>
+<tr>
+<td><strong>System Documentation</strong></td>
+<td>Architecture, design, and internals</td>
+<td>Developers, maintainers</td>
+</tr>
+<tr>
+<td><strong>Operations Documentation</strong></td>
+<td>Deployment, monitoring, runbooks</td>
+<td>DevOps, SREs</td>
+</tr>
+<tr>
+<td><strong>API Documentation</strong></td>
+<td>Interface specifications</td>
+<td>Integrators, developers</td>
+</tr>
+</table>
+
+<h3>Documentation Best Practices</h3>
+
+<ul>
+<li><strong>Treat docs like code</strong> — version-controlled, reviewed, tested</li>
+<li><strong>Keep docs close to code</strong> — README files, docstrings, ADRs</li>
+<li><strong>Automate generation</strong> — API docs from annotations, changelogs from commits</li>
+<li><strong>Document why, not what</strong> — code expresses what; docs explain why</li>
+<li><strong>Living documentation</strong> — update alongside code changes</li>
+<li><strong>Architecture Decision Records (ADR)</strong> — document design decisions and context</li>
+</ul>
+
+<hr>
+
+<h2 id="10.-retirement-&-decommissioning">10. Retirement & Decommissioning</h2>
+
+<h3>When to Retire a System</h3>
+
+<ul>
+<li>No longer meets business needs</li>
+<li>Maintenance costs exceed replacement cost</li>
+<li>Technology is obsolete and unsupported</li>
+<li>Regulatory or compliance requirements change</li>
+<li>A replacement system is operational</li>
+</ul>
+
+<h3>Decommissioning Process</h3>
+
+<ol>
+<li><strong>Assessment</strong> — evaluate data, dependencies, and usage</li>
+<li><strong>Data Migration</strong> — archive or migrate business data</li>
+<li><strong>User Communication</strong> — notify users of timeline and transition plan</li>
+<li><strong>System Shutdown</strong> — gracefully terminate services</li>
+<li><strong>Verification</strong> — confirm no remaining dependencies or active users</li>
+<li><strong>Cleanup</strong> — de-provision infrastructure, remove credentials</li>
+</ol>
+
+<h3>Decommissioning Checklist</h3>
+
+<ul>
+<li>[ ] All data archived or migrated</li>
+<li>[ ] Dependencies documented and redirected</li>
+<li>[ ] Users notified and transitioned</li>
+<li>[ ] Infrastructure de-provisioned</li>
+<li>[ ] Code archived in version control</li>
+<li>[ ] Documentation preserved</li>
+<li>[ ] DNS and load balancer entries removed</li>
+<li>[ ] Secrets and credentials rotated</li>
+</ul>
+
+<hr>
+
+<em>References: Boehm ACT, Belady-Lehman, Lehman's Laws, CMM Level 5, IEEE Standard for Software Maintenance</em>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/college-prep-se-notes-all.md">college-prep-se-notes-all</a></li>
+<li><a href="source/college-prep-se-root.md">college-prep-se-root</a></li>
+<li><a href="source/college-prep-se-textbook-aggarwal.md">college-prep-se-textbook-aggarwal</a></li>
+<li><a href="source/college-prep-se-textbook-pressman.md">college-prep-se-textbook-pressman</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

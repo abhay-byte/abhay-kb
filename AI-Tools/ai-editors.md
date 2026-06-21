@@ -223,3 +223,15 @@ Amazon's agentic IDE with spec-driven development methodology. Generates require
 | Cheapest on GitHub ecosystem | **GitHub Copilot** ($10/mo) |
 | Want Claude + Gemini free | **Antigravity** (free tier) |
 | Don't want to pay, just basic help | **TRAE Free** (5K completions) or **VS Code Free** |
+
+---
+
+## Sources
+
+- [antigravity-google](source/antigravity-google.md)
+- [code-visualstudio-com](source/code-visualstudio-com.md)
+- [codeium-com-windsurf](source/codeium-com-windsurf.md)
+- [cursor-com](source/cursor-com.md)
+- [github-com-features-copilot](source/github-com-features-copilot.md)
+- [kiro-dev](source/kiro-dev.md)
+- [trae-ai](source/trae-ai.md)

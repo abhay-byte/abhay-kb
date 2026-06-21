@@ -174,13 +174,6 @@ Then manually review via `/sessions` or a dedicated command.
 - **`scripts/send_email.py`** - Send emails with rich content and attachments
 - **`scripts/check_inbox.py`** - Poll inbox for new messages
 - **`scripts/setup_webhook.py`** - Configure webhook endpoints for real-time processing
-
-## References
-
-- **[API.md](references/API.md)** - Complete API reference and endpoints
-- **[WEBHOOKS.md](references/WEBHOOKS.md)** - Webhook setup and event handling
-- **[EXAMPLES.md](references/EXAMPLES.md)** - Common patterns and use cases
-
 ## When to Use AgentMail
 
 - **Replace Gmail for agents** - No OAuth complexity, designed for programmatic use
@@ -188,3 +181,9 @@ Then manually review via `/sessions` or a dedicated command.
 - **Agent identity** - Give agents their own email addresses for external services
 - **High-volume sending** - No restrictive rate limits like consumer email providers
 - **Real-time processing** - Webhook-driven workflows for immediate email responses
+
+---
+
+## Sources
+
+- [console-agentmail-to](source/console-agentmail-to.md)

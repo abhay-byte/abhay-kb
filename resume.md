@@ -103,3 +103,12 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 ---
 
 *Last synced: 2026-06-15 04:14 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+
+---
+
+## Sources
+
+- [f-droid-org-en-packages-com-ivarna-fluxlinux](source/f-droid-org-en-packages-com-ivarna-fluxlinux.md)
+- [f-droid-org-packages-com-ivarna-finalbenchmark2](source/f-droid-org-packages-com-ivarna-finalbenchmark2.md)
+- [f-droid-org-packages-com-ivarna-mkm](source/f-droid-org-packages-com-ivarna-mkm.md)
+- [play-google-com-store-apps-details](source/play-google-com-store-apps-details.md)

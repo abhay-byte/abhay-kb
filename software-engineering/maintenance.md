@@ -362,3 +362,12 @@ CM tracks and controls changes to software artifacts throughout the lifecycle.
 ---
 
 *References: Boehm ACT, Belady-Lehman, Lehman's Laws, CMM Level 5, IEEE Standard for Software Maintenance*
+
+---
+
+## Sources
+
+- [college-prep-se-notes-all](source/college-prep-se-notes-all.md)
+- [college-prep-se-root](source/college-prep-se-root.md)
+- [college-prep-se-textbook-aggarwal](source/college-prep-se-textbook-aggarwal.md)
+- [college-prep-se-textbook-pressman](source/college-prep-se-textbook-pressman.md)

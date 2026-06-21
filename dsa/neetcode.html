@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeetCode 150 | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Neetcode</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>NeetCode 150 Roadmap</h1>
+
+<strong>Source:</strong> <a href="https://neetcode.io/">neetcode.io</a>
+<strong>Practice Repo:</strong> <a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode">DSA_Practice/neetcode</a>
+
+<p>The NeetCode 150 is a curated list of 150 LeetCode problems organized by pattern, designed to cover the most common interview question types.</p>
+
+<h2 id="📊-progress">📊 Progress</h2>
+
+<table>
+<tr>
+<th>Category</th>
+<th>Problems</th>
+<th>Solved</th>
+<th>Status</th>
+</tr>
+<tr>
+<td>Arrays & Hashing</td>
+<td>✓</td>
+<td>✓</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>Two Pointers</td>
+<td>✓</td>
+<td>✓</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>✓</td>
+<td>✓</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>Binary Search</td>
+<td>✓</td>
+<td>✓</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>Sliding Window</td>
+<td>✓</td>
+<td>✓</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>Linked List</td>
+<td>✓</td>
+<td>✓</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>Trees</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Tries</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Heap / Priority Queue</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Backtracking</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Graphs</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Dynamic Programming</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Greedy</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Intervals</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Math & Geometry</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+<tr>
+<td>Bit Manipulation</td>
+<td>—</td>
+<td>—</td>
+<td>🔲</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="solved-categories">Solved Categories</h2>
+
+<h3>Arrays & Hashing</h3>
+
+<em>Solutions: <a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">HashmapsAndArrays</a></em>
+
+<table>
+<tr>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Solution</th>
+</tr>
+<tr>
+<td>Contains Duplicate</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Valid Anagram</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Two Sum</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Group Anagrams</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Top K Frequent Elements</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Product of Array Except Self</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Valid Sudoku</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Encode and Decode Strings</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+<tr>
+<td>Longest Consecutive Sequence</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/HashmapsAndArrays">View</a></td>
+</tr>
+</table>
+
+<h3>Two Pointers</h3>
+
+<em>Solutions: <a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer">Two Pointer</a></em>
+
+<table>
+<tr>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Solution</th>
+</tr>
+<tr>
+<td>Valid Palindrome</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer">View</a></td>
+</tr>
+<tr>
+<td>Two Sum II</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer">View</a></td>
+</tr>
+<tr>
+<td>3Sum</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer">View</a></td>
+</tr>
+<tr>
+<td>Container With Most Water</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer">View</a></td>
+</tr>
+<tr>
+<td>Trapping Rain Water</td>
+<td>Hard</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Two%20Pointer">View</a></td>
+</tr>
+</table>
+
+<h3>Stack</h3>
+
+<em>Solutions: <a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">Stack</a></em>
+
+<table>
+<tr>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Solution</th>
+</tr>
+<tr>
+<td>Valid Parentheses</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">View</a></td>
+</tr>
+<tr>
+<td>Min Stack</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">View</a></td>
+</tr>
+<tr>
+<td>Evaluate Reverse Polish Notation</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">View</a></td>
+</tr>
+<tr>
+<td>Generate Parentheses</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">View</a></td>
+</tr>
+<tr>
+<td>Daily Temperatures</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">View</a></td>
+</tr>
+<tr>
+<td>Car Fleet</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">View</a></td>
+</tr>
+<tr>
+<td>Largest Rectangle in Histogram</td>
+<td>Hard</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/Stack">View</a></td>
+</tr>
+</table>
+
+<h3>Binary Search</h3>
+
+<em>Solutions: <a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">BinarySearch</a></em>
+
+<table>
+<tr>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Solution</th>
+</tr>
+<tr>
+<td>Binary Search</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">View</a></td>
+</tr>
+<tr>
+<td>Search a 2D Matrix</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">View</a></td>
+</tr>
+<tr>
+<td>Koko Eating Bananas</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">View</a></td>
+</tr>
+<tr>
+<td>Find Minimum in Rotated Sorted Array</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">View</a></td>
+</tr>
+<tr>
+<td>Search in Rotated Sorted Array</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">View</a></td>
+</tr>
+<tr>
+<td>Time Based Key-Value Store</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">View</a></td>
+</tr>
+<tr>
+<td>Median of Two Sorted Arrays</td>
+<td>Hard</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/BinarySearch">View</a></td>
+</tr>
+</table>
+
+<h3>Sliding Window</h3>
+
+<em>Solutions: <a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow">SlidingWindow</a></em>
+
+<table>
+<tr>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Solution</th>
+</tr>
+<tr>
+<td>Best Time to Buy & Sell Stock</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow">View</a></td>
+</tr>
+<tr>
+<td>Longest Substring Without Repeating Characters</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow">View</a></td>
+</tr>
+<tr>
+<td>Longest Repeating Character Replacement</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow">View</a></td>
+</tr>
+<tr>
+<td>Permutation in String</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow">View</a></td>
+</tr>
+<tr>
+<td>Minimum Window Substring</td>
+<td>Hard</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow">View</a></td>
+</tr>
+<tr>
+<td>Sliding Window Maximum</td>
+<td>Hard</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/SlidingWindow">View</a></td>
+</tr>
+</table>
+
+<h3>Linked List</h3>
+
+<em>Solutions: <a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">LinkedList</a></em>
+
+<table>
+<tr>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Solution</th>
+</tr>
+<tr>
+<td>Reverse Linked List</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Merge Two Sorted Lists</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Reorder List</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Remove Nth Node From End of List</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Copy List with Random Pointer</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Add Two Numbers</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Linked List Cycle</td>
+<td>Easy</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Find the Duplicate Number</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>LRU Cache</td>
+<td>Medium</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Merge k Sorted Lists</td>
+<td>Hard</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+<tr>
+<td>Reverse Nodes in k-Group</td>
+<td>Hard</td>
+<td><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode/LinkedList">View</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="📁-solutions">📁 Solutions</h2>
+
+<p>All solutions are in the practice repo:</p>
+
+<ul>
+<li><a href="https://github.com/abhay-byte/DSA_Practice/tree/main/neetcode"><strong>NeetCode solutions</strong></a></li>
+</ul>
+
+<hr>
+
+<em>Last updated: May 2026</em>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/neetcode-io.md">neetcode-io</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

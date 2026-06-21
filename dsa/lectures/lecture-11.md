@@ -22,3 +22,9 @@ title: Lecture 11 — 1D Arrays (Subarrays & Kadane)
 ---
 
 [← Back to Lectures](../lectures)
+
+---
+
+## Sources
+
+- [leetcode-com-problems-maximum-product-subarray-description](source/leetcode-com-problems-maximum-product-subarray-description.md)

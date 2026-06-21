@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patterns | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Patterns</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>Design Patterns</h1>
+
+<p>> <em>Comprehensive reference on design principles, GoF design patterns, and architecture patterns.</em>
+> Standards: GoF, SOLID, UML 2.5</p>
+
+<hr>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+<li><a href="#1-design-principles-solid-dry-kiss-yagni">Design Principles (SOLID, DRY, KISS, YAGNI)</a></li>
+<li><a href="#2-modularity-coupling--cohesion">Modularity, Coupling & Cohesion</a></li>
+<li><a href="#3-design-patterns-creational">Design Patterns: Creational</a></li>
+<li><a href="#4-design-patterns-structural">Design Patterns: Structural</a></li>
+<li><a href="#5-design-patterns-behavioral">Design Patterns: Behavioral</a></li>
+<li><a href="#6-architecture-patterns">Architecture Patterns</a></li>
+</ol>
+
+<hr>
+
+<h2 id="1.-design-principles-solid-dry-kiss-yagni">1. Design Principles (SOLID, DRY, KISS, YAGNI)</h2>
+
+<h3>SOLID Principles</h3>
+
+<table>
+<tr>
+<th>Letter</th>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>Single Responsibility</td>
+<td>A class should have only one reason to change</td>
+</tr>
+<tr>
+<td><strong>O</strong></td>
+<td>Open/Closed</td>
+<td>Open for extension, closed for modification</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>Liskov Substitution</td>
+<td>Subtypes must be substitutable for their base types</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>Interface Segregation</td>
+<td>No client should be forced to depend on methods it does not use</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Dependency Inversion</td>
+<td>Depend on abstractions, not concretions</td>
+</tr>
+</table>
+
+<strong>Single Responsibility:</strong> Each class, module, or function should have exactly one well-defined responsibility. If a class has more than one reason to change, split it.
+
+<strong>Open/Closed:</strong> Classes should be open for extension (you can add behavior) but closed for modification (you don't change existing code to add behavior). Achieved through abstraction and polymorphism.
+
+<strong>Liskov Substitution:</strong> If a program uses a base class, it should be able to use any derived class without knowing it. Derived classes must not weaken the base class's guarantees.
+
+<strong>Interface Segregation:</strong> Large, general-purpose interfaces should be split into smaller, specific ones. Clients should not implement methods they don't need.
+
+<strong>Dependency Inversion:</strong> High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.
+
+<h3>DRY — Don't Repeat Yourself</h3>
+
+<p>Every piece of knowledge should have <strong>a single, unambiguous, authoritative representation</strong> in the system. Duplication creates maintenance hazards — changing logic in one place while forgetting another causes bugs.</p>
+
+<h3>KISS — Keep It Simple</h3>
+
+<p>Choose the <strong>simplest solution</strong> that satisfies the requirements. Complexity should only be introduced when the problem genuinely demands it. Simple code is easier to understand, test, and maintain.</p>
+
+<h3>YAGNI — You Aren't Gonna Need It</h3>
+
+<p>Do not add functionality until it is <strong>necessary</strong>. Building speculative features increases complexity and wastes time on things that may never be used. YAGNI avoids premature abstraction but requires strong refactoring skills and test coverage.</p>
+
+<hr>
+
+<h2 id="2.-modularity-coupling-&-cohesion">2. Modularity, Coupling & Cohesion</h2>
+
+<h3>Modularity</h3>
+
+<p>Decompose the system into <strong>cohesive, loosely coupled modules</strong> with well-defined interfaces. Each module encapsulates a distinct concern.</p>
+
+<strong>Benefits:</strong>
+
+<ul>
+<li>Independent development and testing</li>
+<li>Parallel team work</li>
+<li>Reusable components</li>
+<li>Isolated failure domains</li>
+</ul>
+
+<h3>Coupling</h3>
+
+<p>The degree of <strong>interdependence between modules</strong>.</p>
+
+<table>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Level</th>
+</tr>
+<tr>
+<td><strong>Content Coupling</strong></td>
+<td>Module directly accesses another's internals</td>
+<td>Worst</td>
+</tr>
+<tr>
+<td><strong>Common Coupling</strong></td>
+<td>Modules share global state</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td><strong>External Coupling</strong></td>
+<td>Modules share external format/protocol</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Control Coupling</strong></td>
+<td>One module tells another what to do via flags</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Stamp Coupling</strong></td>
+<td>Modules share composite data structure</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Data Coupling</strong></td>
+<td>Modules communicate via simple parameters</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>No Coupling</strong></td>
+<td>Modules are completely independent</td>
+<td>Best</td>
+</tr>
+</table>
+
+<strong>Goal:</strong> Minimize coupling. Prefer data coupling for inter-module communication.
+
+<h3>Cohesion</h3>
+
+<p>The degree to which elements <strong>within a module</strong> belong together.</p>
+
+<table>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Level</th>
+</tr>
+<tr>
+<td><strong>Coincidental</strong></td>
+<td>Elements grouped arbitrarily</td>
+<td>Worst</td>
+</tr>
+<tr>
+<td><strong>Logical</strong></td>
+<td>Similar kind of operations, flag-selected</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Temporal</strong></td>
+<td>Elements related only by timing</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Procedural</strong></td>
+<td>Related by execution order</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Communicational</strong></td>
+<td>Operate on same data</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Sequential</strong></td>
+<td>Output of one feeds the next</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Functional</strong></td>
+<td>All elements contribute to one task</td>
+<td>Best</td>
+</tr>
+</table>
+
+<strong>Goal:</strong> Maximize cohesion. Prefer functional cohesion.
+
+<h3>The Relationship</h3>
+
+<ul>
+<li><strong>High cohesion + Low coupling</strong> = ideal design</li>
+<li><strong>Low cohesion + High coupling</strong> = worst design</li>
+</ul>
+
+<hr>
+
+<h2 id="3.-design-patterns-creational">3. Design Patterns: Creational</h2>
+
+<p>Creational patterns control <strong>how objects are instantiated</strong>, decoupling creation logic from business logic.</p>
+
+<h3>Singleton</h3>
+
+<p>Ensures a class has only <strong>one instance</strong> and provides a global access point.</p>
+
+<strong>Use when:</strong> Exactly one instance must coordinate actions (logging, configuration managers, thread pools).
+
+<pre><code>class DatabaseConnection:
+    _instance = None
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.connect()
+        return cls._instance
+</code></pre>
+
+<h3>Factory Method</h3>
+
+<p>Defines an interface for creating objects, but lets <strong>subclasses decide which class to instantiate</strong>.</p>
+
+<strong>Use when:</strong> The exact type of object to create isn't known at compile time.
+
+<pre><code>class NotificationFactory:
+    @staticmethod
+    def create(channel: str) -> Notification:
+        options = {"email": EmailNotification, "sms": SMSNotification}
+        return options[channel]()
+</code></pre>
+
+<h3>Abstract Factory</h3>
+
+<p>Creates <strong>families of related objects</strong> without specifying their concrete classes.</p>
+
+<strong>Use when:</strong> Cross-platform UI components, database drivers, or theme systems.
+
+<h3>Builder</h3>
+
+<p>Constructs complex objects <strong>step by step</strong>, allowing different representations.</p>
+
+<strong>Use when:</strong> Objects with many optional parameters; avoiding telescoping constructors.
+
+<h3>Prototype</h3>
+
+<p>Creates new objects by <strong>cloning</strong> an existing object.</p>
+
+<strong>Use when:</strong> Object creation is expensive; many similar objects needed.
+
+<hr>
+
+<h2 id="4.-design-patterns-structural">4. Design Patterns: Structural</h2>
+
+<p>Structural patterns deal with <strong>object composition</strong> — assembling classes into larger structures.</p>
+
+<h3>Adapter</h3>
+
+<p>Allows incompatible interfaces to work together by acting as a <strong>translator</strong>.</p>
+
+<strong>Use when:</strong> Integrating third-party libraries, legacy code, or wrapping external APIs.
+
+<h3>Decorator</h3>
+
+<p>Dynamically <strong>adds responsibilities</strong> to objects without altering their class.</p>
+
+<strong>Use when:</strong> Adding cross-cutting concerns (logging, caching, auth) without modifying the core class.
+
+<h3>Facade</h3>
+
+<p>Provides a <strong>simplified interface</strong> to a complex subsystem.</p>
+
+<strong>Use when:</strong> Presenting a clean API over a complex library or set of classes.
+
+<h3>Proxy</h3>
+
+<p>Provides a <strong>placeholder or surrogate</strong> that controls access to another object.</p>
+
+<strong>Types:</strong> Virtual (lazy loading), Protection (access control), Remote (distributed object), Caching.
+
+<h3>Composite</h3>
+
+<p>Treats <strong>individual objects and compositions</strong> uniformly using a tree structure.</p>
+
+<strong>Use when:</strong> File systems, UI component trees, organization hierarchies.
+
+<h3>Bridge</h3>
+
+<p>Decouples an <strong>abstraction from its implementation</strong> so both can vary independently.</p>
+
+<strong>Use when:</strong> Multiple dimensions of variation (e.g., shape + rendering platform).
+
+<h3>Flyweight</h3>
+
+<p>Shares <strong>fine-grained objects</strong> to reduce memory consumption.</p>
+
+<strong>Use when:</strong> Thousands of similar entities (game objects, text characters).
+
+<hr>
+
+<h2 id="5.-design-patterns-behavioral">5. Design Patterns: Behavioral</h2>
+
+<p>Behavioral patterns define <strong>how objects communicate</strong> and distribute responsibilities.</p>
+
+<h3>Observer (Pub/Sub)</h3>
+
+<p>Defines a one-to-many dependency so that when one object changes state, all dependents are <strong>notified automatically</strong>.</p>
+
+<strong>Use when:</strong> Event systems, UI event handling, notification services.
+
+<h3>Strategy</h3>
+
+<p>Defines a family of algorithms, encapsulates each one, and makes them <strong>interchangeable at runtime</strong>.</p>
+
+<strong>Use when:</strong> Multiple algorithms that can be swapped (sorting, payment, compression).
+
+<h3>Command</h3>
+
+<p>Encapsulates a <strong>request as an object</strong> — enabling parameterization, queuing, logging, and undo.</p>
+
+<strong>Use when:</strong> Undo/redo systems, transaction queuing, macro recording.
+
+<h3>Chain of Responsibility</h3>
+
+<p>Passes a request along a <strong>chain of handlers</strong>, each deciding whether to process or pass on.</p>
+
+<strong>Use when:</strong> HTTP middleware, authorization pipelines, event bubbling.
+
+<h3>State</h3>
+
+<p>Allows an object to <strong>alter its behavior when its internal state changes</strong>.</p>
+
+<strong>Use when:</strong> Order state machines, connection lifecycle, game character states.
+
+<h3>Template Method</h3>
+
+<p>Defines the <strong>skeleton of an algorithm</strong> in a base class, deferring specific steps to subclasses.</p>
+
+<strong>Use when:</strong> Data processing pipelines with fixed steps but variable implementations.
+
+<h3>Iterator</h3>
+
+<p>Provides a way to <strong>sequentially access elements</strong> of a collection without exposing its internal structure.</p>
+
+<strong>Use when:</strong> Custom collections, lazy data loading, paginated results.
+
+<h3>Mediator</h3>
+
+<p>Centralizes <strong>communication between components</strong>, preventing direct dependencies.</p>
+
+<strong>Use when:</strong> Chat rooms, complex UI forms, microservice orchestration.
+
+<hr>
+
+<h2 id="6.-architecture-patterns">6. Architecture Patterns</h2>
+
+<h3>MVC — Model-View-Controller</h3>
+
+<p>Separates application into three roles: Model (data/logic), View (presentation), Controller (input/flow).</p>
+
+<strong>Used in:</strong> Django, Rails, Spring MVC, ASP.NET MVC
+
+<h3>MVVM — Model-View-ViewModel</h3>
+
+<p>Extends MVC for data-binding. ViewModel exposes observable data to the View.</p>
+
+<strong>Used in:</strong> Angular, Vue, WPF, SwiftUI
+
+<h3>Repository Pattern</h3>
+
+<p>Abstracts data access behind an interface, separating domain logic from persistence.</p>
+
+<h3>CQRS — Command Query Responsibility Segregation</h3>
+
+<p>Separates the write model (Commands) from the read model (Queries). Enables independent scaling.</p>
+
+<h3>Event Sourcing</h3>
+
+<p>Stores every state-changing event as an immutable log. Current state is derived by replaying events.</p>
+
+<h3>Saga Pattern</h3>
+
+<p>Manages long-running distributed transactions across multiple services without two-phase commit.</p>
+
+<strong>Types:</strong> Choreography (event-driven) and Orchestration (central coordinator).
+
+<h3>Strangler Fig</h3>
+
+<p>Gradually migrates legacy monolith to microservices by routing traffic to new services.</p>
+
+<h3>Outbox Pattern</h3>
+
+<p>Ensures atomic database write + event publish by writing to an outbox table and relaying asynchronously.</p>
+
+<hr>
+
+<em>References: GoF, SOLID Principles, IEEE 1016-1998, microservices.io</em>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/college-prep-se-allquestions.md">college-prep-se-allquestions</a></li>
+<li><a href="source/college-prep-se-notes-units.md">college-prep-se-notes-units</a></li>
+<li><a href="source/college-prep-se-root.md">college-prep-se-root</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

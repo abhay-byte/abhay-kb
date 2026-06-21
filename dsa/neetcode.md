@@ -133,3 +133,9 @@ All solutions are in the practice repo:
 ---
 
 *Last updated: May 2026*
+
+---
+
+## Sources
+
+- [neetcode-io](source/neetcode-io.md)

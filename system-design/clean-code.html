@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Design — Clean Code | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Clean-code</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>Clean Code, Cohesion & Coupling: A Developer's Complete Reference</h1>
+
+<p>> <em>"Clean code is not written by following a set of rules. You don't become a software craftsman by learning a list of heuristics. Professionalism and craftsmanship come from values that drive disciplines."</em>
+> — Robert C. Martin (Uncle Bob)</p>
+
+<hr>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+<li><a href="#1-what-is-clean-code">What Is Clean Code?</a></li>
+<li><a href="#2-core-clean-code-principles">Core Clean Code Principles</a></li>
+</ol>
+
+<ul>
+<li>2.1 Meaningful Names</li>
+<li>2.2 Single Responsibility Principle (SRP)</li>
+<li>2.3 DRY — Don't Repeat Yourself</li>
+<li>2.4 KISS — Keep It Simple, Stupid</li>
+<li>2.5 YAGNI — You Aren't Gonna Need It</li>
+<li>2.6 Small, Focused Functions</li>
+<li>2.7 Comments & Documentation</li>
+<li>2.8 Consistent Formatting</li>
+<li>2.9 Error Handling</li>
+<li>2.10 Avoid Magic Numbers & Strings</li>
+</ul>
+
+<ol>
+<li><a href="#3-solid-principles">SOLID Principles</a></li>
+<li><a href="#4-cohesion">Cohesion</a></li>
+</ol>
+
+<ul>
+<li>4.1 What Is Cohesion?</li>
+<li>4.2 Types of Cohesion (Worst -> Best)</li>
+<li>4.3 How to Achieve High Cohesion</li>
+</ul>
+
+<ol>
+<li><a href="#5-coupling">Coupling</a></li>
+</ol>
+
+<ul>
+<li>5.1 What Is Coupling?</li>
+<li>5.2 Types of Coupling (Worst -> Best)</li>
+<li>5.3 How to Achieve Low Coupling</li>
+</ul>
+
+<ol>
+<li><a href="#6-cohesion-vs-coupling-the-relationship">Cohesion vs. Coupling: The Relationship</a></li>
+<li><a href="#7-project-types--suitability">Project Types & Suitability</a></li>
+<li><a href="#8-anti-patterns-to-avoid">Anti-Patterns to Avoid</a></li>
+<li><a href="#9-clean-code-metrics--tools">Clean Code Metrics & Tools</a></li>
+<li><a href="#10-quick-reference-cheat-sheet">Quick Reference Cheat Sheet</a></li>
+</ol>
+
+<hr>
+
+<h2 id="1.-what-is-clean-code?">1. What Is Clean Code?</h2>
+
+<p>Clean code is code that is <strong>easy to read, understand, and modify</strong>. It was popularized by Robert C. Martin ("Uncle Bob") in his 2008 book <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. The goal is not just functional code, but code that is:</p>
+
+<ul>
+<li><strong>Readable</strong> — Another developer can understand it quickly</li>
+<li><strong>Maintainable</strong> — Changes are safe and localized</li>
+<li><strong>Extensible</strong> — New features can be added without breaking existing ones</li>
+<li><strong>Testable</strong> — Logic can be verified in isolation</li>
+<li><strong>Efficient</strong> — No unnecessary complexity or duplication</li>
+</ul>
+
+<h3>Why It Matters</h3>
+
+<table>
+<tr>
+<th>Problem with Dirty Code</th>
+<th>Cost</th>
+</tr>
+<tr>
+<td>Hard to onboard new developers</td>
+<td>Weeks of ramp-up time</td>
+</tr>
+<tr>
+<td>Bugs ripple across unrelated modules</td>
+<td>Expensive hotfixes</td>
+</tr>
+<tr>
+<td>Refactoring is dangerous</td>
+<td>Risk of regression</td>
+</tr>
+<tr>
+<td>Technical debt compounds</td>
+<td>Slower delivery over time</td>
+</tr>
+<tr>
+<td>Documentation is inaccurate</td>
+<td>Decisions made on wrong assumptions</td>
+</tr>
+</table>
+
+<p>> Teams that prioritize clean code often see <strong>reduced debugging time, faster development cycles, and fewer production bugs</strong>. Developers working with clean codebases also report higher job satisfaction and lower burnout.</p>
+
+<hr>
+
+<h2 id="2.-core-clean-code-principles">2. Core Clean Code Principles</h2>
+
+<h3>2.1 Meaningful Names</h3>
+
+<p>Names for variables, functions, classes, and modules should <strong>reveal intent</strong>. A good name eliminates the need for a comment.</p>
+
+<pre><code># Bad
+d = 86400 # seconds in a day
+def calc(x, y):
+ return x <em> y
+
+<h1>Good</h1>
+SECONDS_IN_A_DAY = 86400
+def calculate_total_price(unit_price, quantity):
+ return unit_price </em> quantity
+</code></pre>
+
+<strong>Rules for naming:</strong>
+
+<ul>
+<li>Use pronounceable names (<code>customerRecord</code>, not <code>cstmrRcd</code>)</li>
+<li>Use searchable names (avoid single letters except loop counters)</li>
+<li>Classes -> Nouns (<code>OrderService</code>, <code>UserRepository</code>)</li>
+<li>Methods -> Verbs (<code>getUser</code>, <code>calculateDiscount</code>, <code>sendEmail</code>)</li>
+<li>Booleans -> Predicates (<code>isValid</code>, <code>hasPermission</code>, <code>canDelete</code>)</li>
+<li>Avoid abbreviations unless universally known (<code>URL</code>, <code>HTTP</code> are fine)</li>
+</ul>
+
+<hr>
+
+<h3>2.2 Single Responsibility Principle (SRP)</h3>
+
+<p>Every class, module, or function should have <strong>one reason to change</strong> — meaning it does one thing, and does it well.</p>
+
+<pre><code>// Bad — this class does too much
+class UserManager {
+ void createUser() { ... }
+ void sendWelcomeEmail() { ... }
+ void generateUserReport() { ... }
+ void logUserActivity() { ... }
+}
+
+<p>// Good — responsibilities are separated
+class UserService { void createUser() { ... } }
+class EmailService { void sendWelcomeEmail() { ... } }
+class ReportService { void generateUserReport() { ... } }
+class AuditLogger { void logUserActivity() { ... } }
+</code></pre></p>
+
+<hr>
+
+<h3>2.3 DRY — Don't Repeat Yourself</h3>
+
+<p>Every piece of knowledge should have <strong>a single, unambiguous, authoritative representation</strong> in the system.</p>
+
+<pre><code># Bad — discount logic duplicated in two places
+def checkout_price(price):
+ return price - (price <em> 0.1)
+
+<p>def cart_summary_price(price):
+ return price - (price </em> 0.1)</p>
+
+<h1>Good — single source of truth</h1>
+DISCOUNT_RATE = 0.1
+
+<p>def apply_discount(price):
+ return price - (price <em> DISCOUNT_RATE)</p>
+
+<p>def checkout_price(price):
+ return apply_discount(price)</p>
+
+<p>def cart_summary_price(price):
+ return apply_discount(price)
+</code></pre></p>
+
+<p>Violations of DRY create <strong>maintenance hazards</strong>: changing the discount in one place and forgetting another causes bugs.</p>
+
+<hr>
+
+<h3>2.4 KISS — Keep It Simple, Stupid</h3>
+
+<p>Choose the <strong>simplest solution</strong> that satisfies the requirements. Complexity should only be introduced when the problem genuinely demands it.</p>
+
+<pre><code>// Overly complex
+function isEven(n) {
+ return n % Math.pow(2, 1) === 0 ? true : false;
+}
+
+<p>// Simple
+function isEven(n) {
+ return n % 2 === 0;
+}
+</code></pre></p>
+
+<p>KISS applies at all levels: naming, architecture, API design, and data modeling.</p>
+
+<hr>
+
+<h3>2.5 YAGNI — You Aren't Gonna Need It</h3>
+
+<strong>Do not add functionality until it is necessary.</strong> Building speculative features increases complexity, adds maintenance burden, and wastes development time on things that may never be used.
+
+<p>> YAGNI is about avoiding </em>premature abstraction<em>, not avoiding all abstraction. Build for today's needs cleanly, leaving room for future extension — but don't build the extension speculatively.</p>
+
+<strong>Caution:</strong> YAGNI is most safely applied when a team has solid test coverage and strong refactoring skills. Without those, future extension becomes risky.
+
+<hr>
+
+<h3>2.6 Small, Focused Functions</h3>
+
+<p>Functions should be <strong>short</strong> (ideally under 20 lines), <strong>do one thing</strong>, and <strong>operate at one level of abstraction</strong>.</p>
+
+<pre><code># Bad — one function doing three jobs
+def process_order(order):
+ # validate
+ if not order.items:
+ raise ValueError("Empty order")
+ # calculate total
+ total = sum(item.price </em> item.quantity for item in order.items)
+ if order.discount_code == "SAVE10":
+ total <em>= 0.9
+ # save and notify
+ db.save(order)
+ email.send(order.customer_email, f"Order confirmed. Total: {total}")
+
+<h1>Good — each concern is isolated</h1>
+def validate_order(order):
+ if not order.items:
+ raise ValueError("Empty order")
+
+<p>def calculate_total(order):
+ total = sum(item.price </em> item.quantity for item in order.items)
+ return apply_discount(total, order.discount_code)</p>
+
+<p>def finalize_order(order):
+ validate_order(order)
+ total = calculate_total(order)
+ db.save(order)
+ email.send_confirmation(order.customer_email, total)
+</code></pre></p>
+
+<hr>
+
+<h3>2.7 Comments & Documentation</h3>
+
+<p>Write comments to explain <strong>why</strong>, not <strong>what</strong>. The code should be expressive enough to explain what it does. Comments that say what the code does often mean the code itself is unclear.</p>
+
+<pre><code># Bad comment — restates the code
+<h1>Increment i by 1</h1>
+i += 1
+
+<h1>Good comment — explains the why</h1>
+<h1>Skip the header row in CSV which contains column labels, not data</h1>
+for row in csv_rows[1:]:
+ process(row)
+</code></pre>
+
+<strong>When comments are appropriate:</strong>
+
+<ul>
+<li>Explaining non-obvious business rules or edge cases</li>
+<li>Warning about side effects or performance implications</li>
+<li>Public API documentation (docstrings)</li>
+<li>Legal or license notices</li>
+</ul>
+
+<strong>Avoid:</strong>
+
+<ul>
+<li>Commented-out dead code (use version control instead)</li>
+<li>TODO comments that never get resolved</li>
+<li>Misleading or outdated comments</li>
+</ul>
+
+<hr>
+
+<h3>2.8 Consistent Formatting</h3>
+
+<p>Formatting is about <strong>communication</strong>. Code is read far more often than it is written. Consistent indentation, spacing, and layout reduce cognitive load.</p>
+
+<ul>
+<li>Follow language conventions: PEP 8 for Python, Google Style Guide for JS, etc.</li>
+<li>Use automated formatters: <code>Black</code>, <code>Prettier</code>, <code>gofmt</code></li>
+<li>Enforce via linters in CI pipelines</li>
+<li>Keep related code close together; separate unrelated code with blank lines</li>
+</ul>
+
+<hr>
+
+<h3>2.9 Error Handling</h3>
+
+<p>Error handling is part of the program logic, not an afterthought.</p>
+
+<pre><code>// Bad — silently swallows errors
+try {
+ processPayment(order);
+} catch (Exception e) {
+ // do nothing
+}
+
+<p>// Good — meaningful error handling
+try {
+ processPayment(order);
+} catch (PaymentGatewayException e) {
+ logger.error("Payment failed for order {}: {}", order.getId(), e.getMessage());
+ notifySupport(order, e);
+ throw new OrderProcessingException("Payment could not be completed", e);
+}
+</code></pre></p>
+
+<ul>
+<li>Never swallow exceptions silently</li>
+<li>Fail fast and loud during development</li>
+<li>Provide meaningful error messages with context</li>
+<li>Separate error-handling code from the happy path</li>
+</ul>
+
+<hr>
+
+<h3>2.10 Avoid Magic Numbers & Strings</h3>
+
+<p>Hard-coded literals scattered in code are difficult to understand and dangerous to change.</p>
+
+<pre><code>// Bad
+if (user.role === 3) {
+ redirectTo('/admin');
+}
+
+<p>// Good
+const USER_ROLES = {
+ GUEST: 1,
+ MEMBER: 2,
+ ADMIN: 3
+};</p>
+
+<p>if (user.role === USER_ROLES.ADMIN) {
+ redirectTo('/admin');
+}
+</code></pre></p>
+
+<hr>
+
+<h2 id="3.-solid-principles">3. SOLID Principles</h2>
+
+<p>SOLID is an acronym coined by Robert C. Martin for five object-oriented design principles that together promote modularity, extensibility, and maintainability.</p>
+
+<table>
+<tr>
+<th>Letter</th>
+<th>Principle</th>
+<th>One-Line Summary</th>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>Single Responsibility</td>
+<td>A class should have only one reason to change</td>
+</tr>
+<tr>
+<td><strong>O</strong></td>
+<td>Open/Closed</td>
+<td>Open for extension, closed for modification</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>Liskov Substitution</td>
+<td>Subtypes must be substitutable for their base types</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>Interface Segregation</td>
+<td>Don't force clients to depend on interfaces they don't use</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Dependency Inversion</td>
+<td>Depend on abstractions, not concretions</td>
+</tr>
+</table>
+
+<h3>S — Single Responsibility Principle</h3>
+
+<em>(Covered in section 2.2 above)</em>
+
+<h3>O — Open/Closed Principle</h3>
+
+<p>Classes should be <strong>open for extension</strong> (you can add behavior) but <strong>closed for modification</strong> (you don't change existing code to add behavior).</p>
+
+<pre><code># Bad — adding a new shape requires modifying the existing class
+class AreaCalculator:
+ def calculate(self, shape):
+ if shape.type == 'circle':
+ return 3.14 <em> shape.radius </em><em> 2
+ elif shape.type == 'rectangle':
+ return shape.width </em> shape.height
+ # Must modify this class every time a new shape is added
+
+<h1>Good — each shape extends behavior without modifying existing code</h1>
+from abc import ABC, abstractmethod
+
+<p>class Shape(ABC):
+ @abstractmethod
+ def area(self): pass</p>
+
+<p>class Circle(Shape):
+ def area(self): return 3.14 <em> self.radius </em><em> 2</p>
+
+<p>class Rectangle(Shape):
+ def area(self): return self.width </em> self.height</p>
+
+<p>class Triangle(Shape): # New shape added with zero changes elsewhere
+ def area(self): return 0.5 <em> self.base </em> self.height
+</code></pre></p>
+
+<h3>L — Liskov Substitution Principle</h3>
+
+<p>Objects of a subclass should be <strong>drop-in replaceable</strong> for objects of the parent class without altering program correctness.</p>
+
+<pre><code># Violation — Square breaks the Rectangle contract
+class Rectangle:
+ def set_width(self, w): self.width = w
+ def set_height(self, h): self.height = h
+ def area(self): return self.width <em> self.height
+
+<p>class Square(Rectangle):
+ def set_width(self, w):
+ self.width = w
+ self.height = w # Forces height = width, violating Rectangle behavior
+</code></pre></p>
+
+<h3>I — Interface Segregation Principle</h3>
+
+<p>Clients should not be forced to depend on methods they do not use. Prefer <strong>small, specific interfaces</strong> over large, general ones.</p>
+
+<pre><code>// Bad — a Printer is forced to implement irrelevant methods
+interface MultifunctionDevice {
+ void print();
+ void scan();
+ void fax();
+ void copy();
+}
+
+<p>// Good — segregated interfaces
+interface Printable { void print(); }
+interface Scannable { void scan(); }
+interface Faxable { void fax(); }</p>
+
+<p>class BasicPrinter implements Printable {
+ public void print() { ... }
+}
+</code></pre></p>
+
+<h3>D — Dependency Inversion Principle</h3>
+
+<p>High-level modules should not depend on low-level modules. Both should depend on <strong>abstractions</strong> (interfaces). This enables swapping implementations without changing business logic.</p>
+
+<pre><code># Bad — OrderService is tightly tied to a concrete EmailSender
+class OrderService:
+ def __init__(self):
+ self.notifier = EmailSender() # Hard dependency
+
+<h1>Good — depends on an abstraction</h1>
+class OrderService:
+ def __init__(self, notifier: NotificationService):
+ self.notifier = notifier # Any notifier can be injected
+
+<h1>Now you can inject EmailNotifier, SMSNotifier, SlackNotifier, or a mock in tests</h1>
+</code></pre>
+
+<hr>
+
+<h2 id="4.-cohesion">4. Cohesion</h2>
+
+<h3>4.1 What Is Cohesion?</h3>
+
+<strong>Cohesion</strong> refers to the degree to which the elements </em>within<em> a module are related to each other and work toward a single, well-defined purpose.
+
+<ul>
+<li><strong>High cohesion</strong> -> module does one thing well; elements are tightly related</li>
+<li><strong>Low cohesion</strong> -> module does many unrelated things; it's a "catch-all"</li>
+</ul>
+
+<p>> <strong>Goal: Maximize cohesion.</strong></p>
+
+<p>A highly cohesive module is like a well-organized toolbox where every tool serves the same trade. A low-cohesion module is like a junk drawer.</p>
+
+<hr>
+
+<h3>4.2 Types of Cohesion (Worst -> Best)</h3>
+
+<p>#### Level 1: Coincidental Cohesion (Worst)</p>
+
+<p>Elements are grouped <strong>arbitrarily</strong> — there is no meaningful relationship between them.</p>
+
+<pre><code># A "utilities" class with unrelated functions thrown together
+class Utils:
+ def parse_date(self, s): ...
+ def send_email(self, to, body): ...
+ def calculate_tax(self, amount): ...
+ def resize_image(self, img, width): ...
+</code></pre>
+
+<strong>Problem:</strong> Impossible to understand the purpose of the module. Changes are unpredictable.
+
+<hr>
+
+<p>#### Level 2: Logical Cohesion</p>
+
+<p>Elements perform <strong>similar kinds of operations</strong> but are unrelated in execution. A flag or parameter determines which operation runs.</p>
+
+<pre><code>class FileHandler:
+ def handle(self, file, mode):
+ if mode == 'read': ...
+ elif mode == 'write': ...
+ elif mode == 'delete': ...
+</code></pre>
+
+<strong>Problem:</strong> Adding a new mode requires modifying the class. Violates Open/Closed.
+
+<hr>
+
+<p>#### Level 3: Temporal Cohesion</p>
+
+<p>Elements are grouped because they happen <strong>at the same time</strong>, not because they are logically related.</p>
+
+<pre><code>class AppStartup:
+ def initialize(self):
+ self.load_config()
+ self.connect_database()
+ self.start_scheduler()
+ self.warm_cache()
+</code></pre>
+
+<strong>Problem:</strong> Changes to startup sequence affect many unrelated behaviors at once.
+
+<hr>
+
+<p>#### Level 4: Procedural Cohesion</p>
+
+<p>Elements are related because they <strong>follow a specific execution order</strong>.</p>
+
+<pre><code>class DataPipeline:
+ def run(self):
+ self.read_file()
+ self.parse_records()
+ self.validate()
+ self.transform()
+ self.write_output()
+</code></pre>
+
+<strong>Problem:</strong> Steps are interdependent by position; hard to reuse individual steps.
+
+<hr>
+
+<p>#### Level 5: Communicational/Informational Cohesion</p>
+
+<p>Elements operate on the <strong>same data</strong> or data structure.</p>
+
+<pre><code>class UserProfile:
+ def get_username(self): ...
+ def update_email(self): ...
+ def change_password(self): ...
+</code></pre>
+
+<strong>Note:</strong> Better — all operations share the same data object (user profile).
+
+<hr>
+
+<p>#### Level 6: Sequential Cohesion</p>
+
+<p>Output of one element <strong>feeds directly into</strong> the next.</p>
+
+<pre><code>class OrderProcessor:
+ def process(self, raw_order):
+ validated = self.validate(raw_order)
+ priced = self.apply_pricing(validated)
+ confirmed = self.confirm(priced)
+ return confirmed
+</code></pre>
+
+<strong>Note:</strong> Good, but still somewhat rigid to reordering or reusing steps independently.
+
+<hr>
+
+<p>#### Level 7: Functional Cohesion (Best)</p>
+
+<p>Every element contributes to <strong>one single, well-defined task</strong>. Nothing is extraneous.</p>
+
+<pre><code>class PasswordHasher:
+ def hash(self, plain_text_password) -> str: ...
+ def verify(self, plain_text, hashed) -> bool: ...
+</code></pre>
+
+<strong>Why it's best:</strong> The class has a crystal-clear purpose. Easy to test, reuse, and reason about.
+
+<hr>
+
+<h3>4.3 How to Achieve High Cohesion</h3>
+
+<ol>
+<li><strong>Apply SRP</strong> — each class/module should have one reason to change</li>
+<li><strong>Split "and" classes</strong> — if you say "this class handles X </em>and<em> Y", split it</li>
+<li><strong>Group by domain concept</strong>, not by technical role</li>
+<li><strong>Avoid utility/helper/misc classes</strong> — they are cohesion graveyards</li>
+<li><strong>Prefer small, purpose-driven modules</strong> over large, general ones</li>
+</ol>
+
+<hr>
+
+<h2 id="5.-coupling">5. Coupling</h2>
+
+<h3>5.1 What Is Coupling?</h3>
+
+<strong>Coupling</strong> is the degree of <strong>interdependence between modules</strong>. It measures how much changing one module requires changes in another.
+
+<ul>
+<li><strong>High (tight) coupling</strong> -> modules are intertwined; a change in one breaks others</li>
+<li><strong>Low (loose) coupling</strong> -> modules are independent; changes are localized</li>
+</ul>
+
+<p>> <strong>Goal: Minimize coupling.</strong></p>
+
+<p>Low coupling is essential for parallel development, independent testing, and safe refactoring.</p>
+
+<hr>
+
+<h3>5.2 Types of Coupling (Worst -> Best)</h3>
+
+<p>#### Level 1: Content Coupling (Worst)</p>
+
+<p>Module A <strong>directly accesses or modifies</strong> the internal data or code of Module B.</p>
+
+<pre><code># Module A reaches into Module B's internals
+class OrderService:
+ def process(self, user):
+ user._credit_limit -= 100 # Directly modifies private state!
+</code></pre>
+
+<strong>Problem:</strong> A is completely dependent on B's internals. Any refactoring of B breaks A.
+
+<hr>
+
+<p>#### Level 2: Common Coupling</p>
+
+<p>Multiple modules <strong>share global state</strong>.</p>
+
+<pre><code># Global variable shared by many modules
+GLOBAL_CONFIG = {}
+
+<p>class PaymentService:
+ def charge(self):
+ rate = GLOBAL_CONFIG['tax_rate'] # Depends on mutable global</p>
+
+<p>class InvoiceService:
+ def generate(self):
+ currency = GLOBAL_CONFIG['currency'] # Same shared state
+</code></pre></p>
+
+<strong>Problem:</strong> Changes to global state have unpredictable ripple effects everywhere.
+
+<hr>
+
+<p>#### Level 3: External Coupling</p>
+
+<p>Modules depend on an <strong>external interface or format</strong> (e.g., a specific file format, third-party API shape, or OS feature).</p>
+
+<strong>Problem:</strong> If the external dependency changes, all dependent modules must change.
+
+<hr>
+
+<p>#### Level 4: Control Coupling</p>
+
+<p>Module A passes a <strong>flag or control parameter</strong> to Module B telling it what to do.</p>
+
+<pre><code>def notify_user(user, method):
+ if method == 'email':
+ send_email(user)
+ elif method == 'sms':
+ send_sms(user)
+</code></pre>
+
+<strong>Problem:</strong> A knows too much about B's internal logic. Violates Open/Closed.
+
+<hr>
+
+<p>#### Level 5: Stamp/Data-Structure Coupling</p>
+
+<p>Modules share a <strong>complex data structure</strong>, but only use part of it.</p>
+
+<pre><code>def get_user_display_name(user_object):
+ return user_object.first_name # Needs only first_name, but gets the whole object
+</code></pre>
+
+<strong>Problem:</strong> The module depends on more than it needs, creating hidden dependencies.
+
+<hr>
+
+<p>#### Level 6: Data Coupling</p>
+
+<p>Modules communicate by passing <strong>only the data they need</strong> as simple parameters.</p>
+
+<pre><code>def calculate_area(width: float, height: float) -> float:
+ return width </em> height
+</code></pre>
+
+<strong>Why it's good:</strong> The function is independent, testable, and can be reused anywhere.
+
+<hr>
+
+<p>#### Level 7: No Coupling (Best)</p>
+
+<p>Modules operate <strong>completely independently</strong> with no direct communication.</p>
+
+<strong>Note:</strong> Rarely achievable in practice for an entire system, but the goal for leaf-level modules.
+
+<hr>
+
+<h3>5.3 How to Achieve Low Coupling</h3>
+
+<ol>
+<li><strong>Program to interfaces</strong>, not implementations (Dependency Inversion)</li>
+<li><strong>Use Dependency Injection</strong> — inject dependencies, don't instantiate them</li>
+<li><strong>Apply the Law of Demeter</strong> — "talk to your friends, not strangers"</li>
+</ol>
+
+<ul>
+<li><code>order.getCustomer().getAddress().getCity()</code> -> too much knowledge chain</li>
+<li>Better: <code>order.getCustomerCity()</code> — delegate internally</li>
+</ul>
+
+<ol>
+<li><strong>Use events/message queues</strong> for cross-module communication (publish-subscribe)</li>
+<li><strong>Avoid shared mutable state</strong> (global variables, singletons)</li>
+<li><strong>Pass only what's needed</strong> — don't pass entire objects when a single field suffices</li>
+<li><strong>Use facades or adapters</strong> to isolate external dependencies</li>
+</ol>
+
+<hr>
+
+<h2 id="6.-cohesion-vs.-coupling-the-relationship">6. Cohesion vs. Coupling: The Relationship</h2>
+
+<p>These two concepts are <strong>inversely related</strong> in healthy code:</p>
+
+<table>
+<tr>
+<th>Ideal Design</th>
+<th>Problem Design</th>
+</tr>
+<tr>
+<td><strong>High Cohesion</strong> + <strong>Low Coupling</strong></td>
+<td>Low Cohesion + High Coupling</td>
+</tr>
+<tr>
+<td>Modules do one thing well and are independent</td>
+<td>Modules do many things and are tangled together</td>
+</tr>
+<tr>
+<td>Easy to test, change, and reuse</td>
+<td>Brittle, fragile, hard to understand</td>
+</tr>
+</table>
+
+<img src="/abhay-kb/assets/design-quality-map.svg" alt="Design Quality Map">
+
+<strong>The golden rule:</strong> A module should be internally cohesive (focused on one thing) and externally loosely coupled (independent of its neighbors).
+
+<hr>
+
+<h2 id="7.-project-types-&-suitability">7. Project Types & Suitability</h2>
+
+<p>Clean code principles, cohesion, and coupling apply everywhere — but the <em>emphasis</em> and <em>trade-offs</em> differ by project type.</p>
+
+<hr>
+
+<h3>7.1 Enterprise Applications (ERP, CRM, Banking)</h3>
+
+<strong>Best fit for:</strong> SOLID principles, layered architecture, high cohesion, strict low coupling
+
+<strong>Why:</strong>
+
+<ul>
+<li>Large teams of 10-100+ developers work simultaneously on the same codebase</li>
+<li>Code lives for 10-20+ years; requirements change constantly</li>
+<li>Regulatory compliance requires clear audit trails and isolated business logic</li>
+<li>Testing coverage is mandatory; cohesive modules are individually testable</li>
+</ul>
+
+<strong>Key practices:</strong>
+
+<ul>
+<li>Domain-Driven Design (DDD) with clearly bounded contexts</li>
+<li>Clean/Hexagonal Architecture separating business rules from infrastructure</li>
+<li>Dependency Injection frameworks (Spring, .NET DI)</li>
+<li>Strict naming conventions and code review processes</li>
+</ul>
+
+<strong>Example:</strong> A banking system separates <code>LoanProcessingService</code>, <code>RiskAssessmentService</code>, and <code>AuditLogService</code> — all cohesive, loosely coupled through interfaces.
+
+<hr>
+
+<h3>7.2 Microservices Architecture</h3>
+
+<strong>Best fit for:</strong> Loose coupling (between services), high cohesion (within services), DIP, SRP
+
+<strong>Why:</strong>
+
+<ul>
+<li>Each service must be independently deployable — tight coupling between services defeats the purpose</li>
+<li>Teams own individual services; internal code quality matters for maintainability</li>
+<li>Services communicate through APIs/events — natural enforcement of low coupling</li>
+<li>Clean Architecture within each microservice keeps business logic portable</li>
+</ul>
+
+<strong>Key practices:</strong>
+
+<ul>
+<li>Each service has a single business capability (high cohesion at service level)</li>
+<li>Services communicate via REST, gRPC, or message brokers (no shared databases)</li>
+<li>Anti-Corruption Layers (ACL) isolate services from each other's data models</li>
+<li>Domain events for cross-service communication</li>
+</ul>
+
+<strong>Example:</strong> An e-commerce platform has <code>OrderService</code>, <code>InventoryService</code>, and <code>NotificationService</code> — each highly cohesive internally, communicating only through well-defined events.
+
+<hr>
+
+<h3>7.3 Open Source Libraries & SDKs</h3>
+
+<strong>Best fit for:</strong> KISS, DRY, Interface Segregation, Liskov Substitution, immaculate naming
+
+<strong>Why:</strong>
+
+<ul>
+<li>Thousands of users depend on a stable public API</li>
+<li>Breaking changes have enormous downstream impact</li>
+<li>Developers who didn't write the code must be able to use it intuitively</li>
+<li>Documentation and naming <strong>are</strong> the user experience</li>
+</ul>
+
+<strong>Key practices:</strong>
+
+<ul>
+<li>Small, composable interfaces (ISP — don't force users to implement what they don't need)</li>
+<li>Backward compatibility as a first-class concern</li>
+<li>Every public function/class is a contract — apply Liskov carefully</li>
+<li>Zero magic — behavior must be predictable and explicit</li>
+</ul>
+
+<strong>Example:</strong> A date/time library exposes <code>parse()</code>, <code>format()</code>, <code>add()</code>, <code>subtract()</code> — each with a single, clear purpose.
+
+<hr>
+
+<h3>7.4 Startups & MVPs</h3>
+
+<strong>Best fit for:</strong> YAGNI, KISS, DRY, minimal over-engineering
+
+<strong>Why:</strong>
+
+<ul>
+<li>Speed to market is the primary constraint</li>
+<li>Requirements are highly uncertain and will change</li>
+<li>Small teams (2-5 engineers) mean less need for strict module boundaries</li>
+<li>Over-engineering burns runway before product-market fit is found</li>
+</ul>
+
+<strong>Key practices:</strong>
+
+<ul>
+<li>YAGNI heavily — build only what the current user story needs</li>
+<li>Keep it simple — resist architectural patterns until complexity demands them</li>
+<li>Write clean names and small functions even without full SOLID</li>
+<li>Refactor aggressively as you learn what the product needs</li>
+<li>Add structure (layering, DI, abstraction) as the codebase grows</li>
+</ul>
+
+<strong>Warning:</strong> YAGNI requires strong refactoring skills and test coverage. Without tests, shortcuts today become catastrophic technical debt tomorrow.
+
+<hr>
+
+<h3>7.5 Data Science & ML Pipelines</h3>
+
+<strong>Best fit for:</strong> Functional cohesion, SRP, DRY, meaningful naming
+
+<strong>Why:</strong>
+
+<ul>
+<li>Notebooks encourage procedural sprawl — cohesion prevents spaghetti pipelines</li>
+<li>Reproducibility requires isolation of each pipeline step</li>
+<li>Experiments change frequently — low coupling between data loading, feature engineering, and modeling enables safe iteration</li>
+</ul>
+
+<strong>Key practices:</strong>
+
+<ul>
+<li>Separate concerns: ingestion, preprocessing, feature engineering, model training, evaluation</li>
+<li>Wrap each step in a pure function (no global state)</li>
+<li>Use configuration files instead of hard-coded paths and hyperparameters</li>
+<li>Version datasets and models alongside code</li>
+</ul>
+
+<strong>Example:</strong> A recommendation system has <code>DataLoader</code>, <code>FeatureEngineer</code>, <code>ModelTrainer</code>, <code>Evaluator</code> — each cohesive, composable, and independently testable.
+
+<hr>
+
+<h3>7.6 Embedded & Real-Time Systems</h3>
+
+<strong>Best fit for:</strong> KISS, minimal coupling, careful use of abstraction
+
+<strong>Why:</strong>
+
+<ul>
+<li>Memory and CPU constraints require lean code</li>
+<li>Overhead from abstraction layers can violate real-time constraints</li>
+<li>Hardware interfaces change (different MCUs, sensor revisions) — abstraction isolates this</li>
+<li>Safety-critical systems require deterministic, auditable behavior</li>
+</ul>
+
+<strong>Key practices:</strong>
+
+<ul>
+<li>Hardware Abstraction Layer (HAL) to isolate hardware-specific code</li>
+<li>Minimize dynamic memory allocation</li>
+<li>Simple, direct logic over clever abstractions</li>
+<li>MISRA-C / coding standards for safety-critical contexts</li>
+</ul>
+
+<strong>Trade-off:</strong> Full SOLID can introduce too much abstraction overhead. Apply SRP and DIP where beneficial; KISS everywhere.
+
+<hr>
+
+<h3>7.7 Web Frontend (React, Vue, Angular)</h3>
+
+<strong>Best fit for:</strong> Component cohesion, SRP, DRY, composability
+
+<strong>Why:</strong>
+
+<ul>
+<li>UI components are naturally modular — cohesion maps to component boundaries</li>
+<li>State management is a coupling challenge (avoid prop-drilling, global state misuse)</li>
+<li>Reusable components reduce duplication</li>
+</ul>
+
+<strong>Key practices:</strong>
+
+<ul>
+<li>Single-purpose components (<code>UserAvatar</code>, <code>PriceTag</code>, not <code>UserDashboardEverything</code>)</li>
+<li>Keep business logic out of UI components (cohesion)</li>
+<li>Use custom hooks (React) or composables (Vue) to separate concerns</li>
+<li>Avoid deeply nested prop chains — use context or state management</li>
+</ul>
+
+<hr>
+
+<h3>Summary Table</h3>
+
+<table>
+<tr>
+<th>Project Type</th>
+<th>Highest Priority Principles</th>
+<th>Coupling Target</th>
+<th>Cohesion Target</th>
+</tr>
+<tr>
+<td>Enterprise Apps</td>
+<td>SOLID, DDD, Layered Architecture</td>
+<td>Very Low</td>
+<td>Functional</td>
+</tr>
+<tr>
+<td>Microservices</td>
+<td>SRP, DIP, ISP, Event-Driven</td>
+<td>Extremely Low (between services)</td>
+<td>High (within services)</td>
+</tr>
+<tr>
+<td>Open Source / SDKs</td>
+<td>Naming, ISP, Liskov, KISS</td>
+<td>Low</td>
+<td>Functional</td>
+</tr>
+<tr>
+<td>Startups / MVPs</td>
+<td>YAGNI, KISS, DRY</td>
+<td>Moderate</td>
+<td>Communicational+</td>
+</tr>
+<tr>
+<td>Data Science / ML</td>
+<td>SRP, Functional Cohesion, DRY</td>
+<td>Low</td>
+<td>Functional</td>
+</tr>
+<tr>
+<td>Embedded / Real-Time</td>
+<td>KISS, HAL, SRP</td>
+<td>Low</td>
+<td>Procedural/Functional</td>
+</tr>
+<tr>
+<td>Web Frontend</td>
+<td>Component SRP, DRY</td>
+<td>Low</td>
+<td>Functional</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="8.-anti-patterns-to-avoid">8. Anti-Patterns to Avoid</h2>
+
+<table>
+<tr>
+<th>Anti-Pattern</th>
+<th>Description</th>
+<th>Clean Code Violation</th>
+</tr>
+<tr>
+<td><strong>God Class</strong></td>
+<td>One class does everything</td>
+<td>Violates SRP, destroys cohesion</td>
+</tr>
+<tr>
+<td><strong>Spaghetti Code</strong></td>
+<td>Tangled logic with no clear structure</td>
+<td>Violates SRP, coupling everywhere</td>
+</tr>
+<tr>
+<td><strong>Shotgun Surgery</strong></td>
+<td>One change requires edits in many places</td>
+<td>High coupling, low cohesion</td>
+</tr>
+<tr>
+<td><strong>Feature Envy</strong></td>
+<td>Method uses another class's data more than its own</td>
+<td>Wrong cohesion boundaries</td>
+</tr>
+<tr>
+<td><strong>Data Clumps</strong></td>
+<td>Same group of variables passed everywhere</td>
+<td>Missing abstraction, violates DRY</td>
+</tr>
+<tr>
+<td><strong>Primitive Obsession</strong></td>
+<td>Using primitives instead of domain objects</td>
+<td>Weak semantics, low cohesion</td>
+</tr>
+<tr>
+<td><strong>Long Parameter Lists</strong></td>
+<td>Functions with 5+ parameters</td>
+<td>Violates SRP, creates coupling</td>
+</tr>
+<tr>
+<td><strong>Magic Numbers</strong></td>
+<td>Hard-coded unexplained values</td>
+<td>Violates readability</td>
+</tr>
+<tr>
+<td><strong>Dead Code</strong></td>
+<td>Unused variables, functions, imports</td>
+<td>Clutter, misleads readers</td>
+</tr>
+<tr>
+<td><strong>Divergent Change</strong></td>
+<td>Class changes for multiple unrelated reasons</td>
+<td>Violates SRP</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="9.-clean-code-metrics-&-tools">9. Clean Code Metrics & Tools</h2>
+
+<h3>Key Metrics to Monitor</h3>
+
+<table>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+<th>Healthy Range</th>
+</tr>
+<tr>
+<td><strong>Cyclomatic Complexity</strong></td>
+<td>Number of independent code paths in a function</td>
+<td><= 10 per function</td>
+</tr>
+<tr>
+<td><strong>Lines of Code (per function)</strong></td>
+<td>Function length</td>
+<td><= 20-30 lines</td>
+</tr>
+<tr>
+<td><strong>Afferent Coupling (Ca)</strong></td>
+<td>How many modules depend on this module</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Efferent Coupling (Ce)</strong></td>
+<td>How many modules this module depends on</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Instability (I = Ce/Ca+Ce)</strong></td>
+<td>Ratio of outgoing to total coupling</td>
+<td>0 (stable) to 1 (unstable)</td>
+</tr>
+<tr>
+<td><strong>LCOM</strong></td>
+<td>Lack of Cohesion in Methods</td>
+<td>0 is ideal</td>
+</tr>
+<tr>
+<td><strong>Test Coverage</strong></td>
+<td>Percentage of code covered by tests</td>
+<td>>= 80%</td>
+</tr>
+</table>
+
+<h3>Tools by Language</h3>
+
+<table>
+<tr>
+<th>Language</th>
+<th>Linters / Formatters</th>
+<th>Complexity / Quality</th>
+</tr>
+<tr>
+<td><strong>Python</strong></td>
+<td><code>flake8</code>, <code>black</code>, <code>pylint</code></td>
+<td><code>radon</code>, <code>SonarQube</code></td>
+</tr>
+<tr>
+<td><strong>JavaScript/TS</strong></td>
+<td><code>ESLint</code>, <code>Prettier</code></td>
+<td><code>SonarQube</code>, <code>CodeClimate</code></td>
+</tr>
+<tr>
+<td><strong>Java</strong></td>
+<td><code>Checkstyle</code>, <code>PMD</code>, <code>SpotBugs</code></td>
+<td><code>SonarQube</code>, <code>JaCoCo</code></td>
+</tr>
+<tr>
+<td><strong>C#</strong></td>
+<td><code>StyleCop</code>, <code>Roslyn Analyzers</code></td>
+<td><code>SonarQube</code>, <code>NDepend</code></td>
+</tr>
+<tr>
+<td><strong>Go</strong></td>
+<td><code>gofmt</code>, <code>golangci-lint</code></td>
+<td><code>SonarQube</code></td>
+</tr>
+<tr>
+<td><strong>All</strong></td>
+<td><strong>Codacy</strong>, <strong>SonarCloud</strong></td>
+<td>CI-integrated quality gates</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="10.-quick-reference-cheat-sheet">10. Quick Reference Cheat Sheet</h2>
+
+<pre><code>CLEAN CODE QUICK REFERENCE
++=========================================+
+
+<p>NAMING
+<ul>
+<li>Reveal intent - Use domain language</li>
+<li>Pronounceable - Avoid abbreviations (unless universal)</li>
+<li>Searchable - Avoid single-letter variables (except loops)</li>
+</ul></p>
+
+<p>FUNCTIONS
+<ul>
+<li>Do one thing - Keep under 20 lines</li>
+<li>One level of abstraction - Avoid side effects</li>
+<li>Descriptive verb names - Avoid flag/control parameters</li>
+</ul></p>
+
+<p>SOLID
+ S - One reason to change
+ O - Extend without modifying
+ L - Subtypes are substitutable
+ I - Small, client-specific interfaces
+ D - Depend on abstractions</p>
+
+<p>KEY PRINCIPLES
+ DRY - No duplication
+ KISS - Simplest solution
+ YAGNI - Build only what's needed now</p>
+
+<p>COHESION (maximize)
+ Functional - One task, all elements contribute
+ Sequential - Output feeds next step
+ Communicational - Operate on same data
+ Procedural - Ordered steps
+ Temporal - Same time = grouped
+ Logical - Similar type, flag-selected
+ Coincidental - Random grouping</p>
+
+<p>COUPLING (minimize)
+ No coupling - Fully independent
+ Data - Minimal parameters
+ Stamp - Shared data structure
+ Control - Flag tells other module what to do
+ External - Shared external format
+ Common - Shared global state
+ Content - Direct internal access</p>
+
+<p>PROJECT FIT
+ Enterprise -> SOLID + DDD + Layered Arch
+ Microservices -> Low coupling between + High cohesion within
+ Startups / MVPs -> YAGNI + KISS + grow structure as needed
+ Open Source / SDK -> Naming + ISP + Liskov + KISS
+ Data Science / ML -> SRP + Functional Cohesion + DRY
+ Embedded -> KISS + HAL + minimal abstraction overhead
+ Web Frontend -> Component SRP + DRY + composability</p>
+
+<p>+=========================================+
+</code></pre></p>
+
+<hr>
+
+<h2 id="references-&-further-reading">References & Further Reading</h2>
+
+<ul>
+<li><strong>Clean Code</strong> — Robert C. Martin (2008)</li>
+<li><strong>Clean Architecture</strong> — Robert C. Martin (2017)</li>
+<li><strong>A Philosophy of Software Design</strong> — John Ousterhout (2018)</li>
+<li><strong>Refactoring: Improving the Design of Existing Code</strong> — Martin Fowler (2018)</li>
+<li><strong>Domain-Driven Design</strong> — Eric Evans (2003)</li>
+<li><a href="https://blog.codacy.com/clean-code-principles">SOLID Principles Explained — Codacy Blog</a></li>
+<li><a href="https://www.scaler.com/topics/cohesion-and-coupling-in-software-engineering/">Cohesion & Coupling Deep Dive — Scaler</a></li>
+<li><a href="https://bitloops.com/docs/bitloops-language/learning/software-architecture/clean-architecture">Clean Architecture for Microservices — Bitloops Docs</a></li>
+</ul>
+
+<hr>
+
+<em>Last updated: May 2026</em>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/bitloops-com-docs-bitloops-language-learning-software-architecture-clean-archite.md">bitloops-com-docs-bitloops-language-learning-software-architecture-clean-archite</a></li>
+<li><a href="source/blog-codacy-com-clean-code-principles.md">blog-codacy-com-clean-code-principles</a></li>
+<li><a href="source/scaler-com-topics-cohesion-and-coupling-in-software-engineering.md">scaler-com-topics-cohesion-and-coupling-in-software-engineering</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Dashboard | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Projects</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>Projects Dashboard</h1>
+
+<p>_Last updated: 2026-06-05 UTC_ | _84 projects_ | _★296 total_</p>
+
+<h2 id="📊-stats-overview">📊 Stats Overview</h2>
+
+<table>
+<tr>
+<th>Metric</th>
+<th>Count</th>
+</tr>
+<tr>
+<td>Total Repositories</td>
+<td>84</td>
+</tr>
+<tr>
+<td>Total Stars</td>
+<td>296</td>
+</tr>
+<tr>
+<td>Total Forks</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Languages Used</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Top Language</td>
+<td>Kotlin (9 repos)</td>
+</tr>
+</table>
+
+<h2 id="🏆-top-projects-by-stars">🏆 Top Projects by Stars</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Project</th>
+<th>Stars</th>
+<th>Forks</th>
+<th>Language</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/abhay-byte/fluxlinux">fluxlinux</a></td>
+<td>105</td>
+<td>3</td>
+<td>Kotlin</td>
+<td>FluxLinux is an advanced orchestrator application that transforms your Android..</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/abhay-byte/finalbenchmark-platform">finalbenchmark-platform</a></td>
+<td>71</td>
+<td>8</td>
+<td>Kotlin</td>
+<td>A comprehensive Android CPU benchmarking application with detailed scoring and..</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/abhay-byte/mkm">mkm</a></td>
+<td>43</td>
+<td>5</td>
+<td>Kotlin</td>
+<td>Minimal Android kernel management and system monitoring application</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/abhay-byte/nexus">nexus</a></td>
+<td>11</td>
+<td>1</td>
+<td>TypeScript</td>
+<td>Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini CLI, and 10..</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://github.com/abhay-byte/mali-win-emu-list">mali-win-emu-list</a></td>
+<td>8</td>
+<td>1</td>
+<td>—</td>
+<td>A community-driven compatibility list for running Windows games on Android dev..</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://github.com/abhay-byte/Linux_Setup">Linux_Setup</a></td>
+<td>8</td>
+<td>0</td>
+<td>Shell</td>
+<td>This repository provides shell scripts to automate the setup for:      Arch Li..</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://github.com/abhay-byte/poco-x6-pro-custom-roms">poco-x6-pro-custom-roms</a></td>
+<td>8</td>
+<td>0</td>
+<td>—</td>
+<td>Summary of the available custom ROMs for Poco X6 Pro.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://github.com/abhay-byte/abhay-byte">abhay-byte</a></td>
+<td>4</td>
+<td>1</td>
+<td>—</td>
+<td>Feel free to connect, collaborate, and share the passion for building amazing ..</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://github.com/abhay-byte/AI_WRAPPER_PROJECTS">AI_WRAPPER_PROJECTS</a></td>
+<td>3</td>
+<td>2</td>
+<td>Python</td>
+<td>AI Wrapper Project is a powerful, modular AI-driven platform that brings toget..</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v">Saiko-no-senshi-0.1v</a></td>
+<td>3</td>
+<td>0</td>
+<td>C#</td>
+<td>Android Game</td>
+</tr>
+</table>
+
+<h2 id="📋-full-repository-list">📋 Full Repository List</h2>
+
+<table>
+<tr>
+<th>Project</th>
+<th>Stars</th>
+<th>Forks</th>
+<th>Language</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/fluxlinux">fluxlinux</a></td>
+<td>105</td>
+<td>3</td>
+<td>Kotlin</td>
+<td>FluxLinux is an advanced orchestrator application that transforms yo..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/finalbenchmark-platform">finalbenchmark-platform</a></td>
+<td>71</td>
+<td>8</td>
+<td>Kotlin</td>
+<td>A comprehensive Android CPU benchmarking application with detailed s..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/mkm">mkm</a></td>
+<td>43</td>
+<td>5</td>
+<td>Kotlin</td>
+<td>Minimal Android kernel management and system monitoring application</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/nexus">nexus</a></td>
+<td>11</td>
+<td>1</td>
+<td>TypeScript</td>
+<td>Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini C..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/mali-win-emu-list">mali-win-emu-list</a></td>
+<td>8</td>
+<td>1</td>
+<td>—</td>
+<td>A community-driven compatibility list for running Windows games on A..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Linux_Setup">Linux_Setup</a></td>
+<td>8</td>
+<td>0</td>
+<td>Shell</td>
+<td>This repository provides shell scripts to automate the setup for:   ..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/poco-x6-pro-custom-roms">poco-x6-pro-custom-roms</a></td>
+<td>8</td>
+<td>0</td>
+<td>—</td>
+<td>Summary of the available custom ROMs for Poco X6 Pro.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/abhay-byte">abhay-byte</a></td>
+<td>4</td>
+<td>1</td>
+<td>—</td>
+<td>Feel free to connect, collaborate, and share the passion for buildin..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/AI_WRAPPER_PROJECTS">AI_WRAPPER_PROJECTS</a></td>
+<td>3</td>
+<td>2</td>
+<td>Python</td>
+<td>AI Wrapper Project is a powerful, modular AI-driven platform that br..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Saiko-no-senshi-0.1v">Saiko-no-senshi-0.1v</a></td>
+<td>3</td>
+<td>0</td>
+<td>C#</td>
+<td>Android Game</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/apm">apm</a></td>
+<td>3</td>
+<td>0</td>
+<td>Python</td>
+<td>Package manager for android working through adb.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/my-resume">my-resume</a></td>
+<td>3</td>
+<td>0</td>
+<td>TeX</td>
+<td>This repository contains a LaTeX resume template that is automatical..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/nativecode">nativecode</a></td>
+<td>3</td>
+<td>0</td>
+<td>Kotlin</td>
+<td>NativeCode: Local AI Dev</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Adirstat">Adirstat</a></td>
+<td>2</td>
+<td>0</td>
+<td>Kotlin</td>
+<td>Adirstat - Android Storage Analyzer (WizTree equivalent)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/DSA-QUESTIONS">DSA-QUESTIONS</a></td>
+<td>2</td>
+<td>0</td>
+<td>C++</td>
+<td>Welcome! This repository contains solutions to various Data Structur..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/DSA_Practice">DSA_Practice</a></td>
+<td>2</td>
+<td>0</td>
+<td>C++</td>
+<td>Practicing Data Structure and algorithm. Motivation thrives on visua..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/DeviceInsight">DeviceInsight</a></td>
+<td>2</td>
+<td>0</td>
+<td>Kotlin</td>
+<td>DeviceInsight is a premium, high-performance system monitoring appli..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/project-evergreen">project-evergreen</a></td>
+<td>2</td>
+<td>0</td>
+<td>C#</td>
+<td>This project combines three powerful ideas into a single, cohesive r..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/task_management_tool">task_management_tool</a></td>
+<td>2</td>
+<td>0</td>
+<td>JavaScript</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/tms_mongo_backend">tms_mongo_backend</a></td>
+<td>2</td>
+<td>0</td>
+<td>JavaScript</td>
+<td>TMS Backend Server MongoDB</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/AI_Survival_Quest-V1.0">AI_Survival_Quest-V1.0</a></td>
+<td>1</td>
+<td>0</td>
+<td>Python</td>
+<td>Game</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/MedApp-V2.1">MedApp-V2.1</a></td>
+<td>1</td>
+<td>0</td>
+<td>Python</td>
+<td>Medical</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/NextJS_ACME">NextJS_ACME</a></td>
+<td>1</td>
+<td>0</td>
+<td>TypeScript</td>
+<td>Learning Nextjs.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/TaskStack">TaskStack</a></td>
+<td>1</td>
+<td>0</td>
+<td>Dart</td>
+<td>TaskStack — Advanced 24-hour daily task management and life analytic..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/VibingIde">VibingIde</a></td>
+<td>1</td>
+<td>0</td>
+<td>Rust</td>
+<td>Agent-first, ultra-lightweight IDE built in Rust</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/fb_nextjs">fb_nextjs</a></td>
+<td>1</td>
+<td>0</td>
+<td>TypeScript</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/fortune-t-react-ts">fortune-t-react-ts</a></td>
+<td>1</td>
+<td>0</td>
+<td>CSS</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/minor-project-gtbit">minor-project-gtbit</a></td>
+<td>1</td>
+<td>0</td>
+<td>JavaScript</td>
+<td>This repository contains the ideation, research, and planning docume..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/warden-protocol">warden-protocol</a></td>
+<td>1</td>
+<td>0</td>
+<td>Kotlin</td>
+<td>The Warden Protocol - A post-nuclear fallout bunker management game ..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/ADV_JAVA">ADV_JAVA</a></td>
+<td>0</td>
+<td>0</td>
+<td>Java</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/AI_FILE">AI_FILE</a></td>
+<td>0</td>
+<td>0</td>
+<td>Prolog</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Arduino_UNO_Practical">Arduino_UNO_Practical</a></td>
+<td>0</td>
+<td>0</td>
+<td>C++</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Clinicofrontend">Clinicofrontend</a></td>
+<td>0</td>
+<td>0</td>
+<td>TypeScript</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Computational_Methods">Computational_Methods</a></td>
+<td>0</td>
+<td>0</td>
+<td>C</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/DSA">DSA</a></td>
+<td>0</td>
+<td>0</td>
+<td>C++</td>
+<td>DSA Practice</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Data_Structures">Data_Structures</a></td>
+<td>0</td>
+<td>0</td>
+<td>C</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Learning_CPP">Learning_CPP</a></td>
+<td>0</td>
+<td>0</td>
+<td>C++</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/MERN-Google-Form-Project">MERN-Google-Form-Project</a></td>
+<td>0</td>
+<td>0</td>
+<td>JavaScript</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/PSLP">PSLP</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>PSLP</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/RANDOMRPG">RANDOMRPG</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/Semester-VI-GTBIT-IT">Semester-VI-GTBIT-IT</a></td>
+<td>0</td>
+<td>0</td>
+<td>Java</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/TopBarCreator">TopBarCreator</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>Add a black bar in (most) fullscreen apps/games!</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/TowerBrawlers">TowerBrawlers</a></td>
+<td>0</td>
+<td>0</td>
+<td>ShaderLab</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/TowerDefense">TowerDefense</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>Lane-based strategy game design exploration inspired by Battle Towers</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/abhay-kb">abhay-kb</a></td>
+<td>0</td>
+<td>0</td>
+<td>HTML</td>
+<td>Personal knowledge base & portfolio — about me, projects dashboard, ..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/ai-tf-models">ai-tf-models</a></td>
+<td>0</td>
+<td>0</td>
+<td>Python</td>
+<td>This repository contains TensorFlow Lite (LiteRT) models optimized f..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/android-app-demos">android-app-demos</a></td>
+<td>0</td>
+<td>0</td>
+<td>Kotlin</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/blender">blender</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/clinico-flutter">clinico-flutter</a></td>
+<td>0</td>
+<td>0</td>
+<td>Dart</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/co-op-racing">co-op-racing</a></td>
+<td>0</td>
+<td>0</td>
+<td>ShaderLab</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/college-prep">college-prep</a></td>
+<td>0</td>
+<td>0</td>
+<td>Java</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/cura-backend">cura-backend</a></td>
+<td>0</td>
+<td>0</td>
+<td>Python</td>
+<td>Django-based backend service that powers two intelligent health agen..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/cura-diet-agent">cura-diet-agent</a></td>
+<td>0</td>
+<td>0</td>
+<td>Python</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/final-benchmark-2025">final-benchmark-2025</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/finalbenchmark">finalbenchmark</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/interview-prep">interview-prep</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/laravel-study">laravel-study</a></td>
+<td>0</td>
+<td>0</td>
+<td>Blade</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/mad">mad</a></td>
+<td>0</td>
+<td>0</td>
+<td>Dart</td>
+<td>A comprehensive collection of Android and Flutter experiments showca..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/mern-examples">mern-examples</a></td>
+<td>0</td>
+<td>0</td>
+<td>JavaScript</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/my-portfolio">my-portfolio</a></td>
+<td>0</td>
+<td>0</td>
+<td>CSS</td>
+<td>Welcome to my personal portfolio website! This site showcases my pro..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/my-portfolio-webgl">my-portfolio-webgl</a></td>
+<td>0</td>
+<td>0</td>
+<td>Mathematica</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/my-react-router-app">my-react-router-app</a></td>
+<td>0</td>
+<td>0</td>
+<td>CSS</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/my-resume-p">my-resume-p</a></td>
+<td>0</td>
+<td>0</td>
+<td>TeX</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/phone_finder_hub">phone_finder_hub</a></td>
+<td>0</td>
+<td>0</td>
+<td>Blade</td>
+<td>Phone Finder Hub is a data-driven smartphone comparison platform bui..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/planet-racing">planet-racing</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>This project is a high-speed, futuristic racing game developed with ..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/planet-racing-3d">planet-racing-3d</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-code-with-codespaces">skills-code-with-codespaces</a></td>
+<td>0</td>
+<td>0</td>
+<td>HTML</td>
+<td>My clone repository</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-communicate-using-markdown">skills-communicate-using-markdown</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>Exercise: Communicate using Markdown</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-getting-started-with-github-copilot">skills-getting-started-with-github-copilot</a></td>
+<td>0</td>
+<td>0</td>
+<td>Python</td>
+<td>Exercise: Get started using GitHub Copilot</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-github-pages">skills-github-pages</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>Exercise: Create a site or blog from your GitHub repositories with G..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-introduction-to-codeql">skills-introduction-to-codeql</a></td>
+<td>0</td>
+<td>0</td>
+<td>Python</td>
+<td>GitHub Skills: Introduction to CodeQL</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-introduction-to-github">skills-introduction-to-github</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>Exercise: Introduction to GitHub</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-review-pull-requests">skills-review-pull-requests</a></td>
+<td>0</td>
+<td>0</td>
+<td>HTML</td>
+<td>My clone repository</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/skills-secure-repository-supply-chain">skills-secure-repository-supply-chain</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>Exercise: Secure your Repository Supply Chain</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/threejs_portfolio">threejs_portfolio</a></td>
+<td>0</td>
+<td>0</td>
+<td>JavaScript</td>
+<td>A stunning 3D portfolio website built with React + Three.js (React T..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/truvalt">truvalt</a></td>
+<td>0</td>
+<td>0</td>
+<td>Kotlin</td>
+<td>Cross-platform password manager with Android and web apps</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/turnip-drivers">turnip-drivers</a></td>
+<td>0</td>
+<td>0</td>
+<td>Shell</td>
+<td>A repository for turnip driver package.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/two-player-games">two-player-games</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/ui-best-practices-unity">ui-best-practices-unity</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/unity-classes">unity-classes</a></td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/unity-folder-structure">unity-folder-structure</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>This document outlines the folder structure that I adhere to when cr..</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/valentines-day-unity">valentines-day-unity</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/webgl-website">webgl-website</a></td>
+<td>0</td>
+<td>0</td>
+<td>C#</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://github.com/abhay-byte/wmatd-exp6">wmatd-exp6</a></td>
+<td>0</td>
+<td>0</td>
+<td>JavaScript</td>
+<td>—</td>
+</tr>
+</table>
+
+<h2 id="🔤-language-breakdown">🔤 Language Breakdown</h2>
+
+<table>
+<tr>
+<th>Language</th>
+<th>Repos</th>
+<th>Stars</th>
+</tr>
+<tr>
+<td>Markdown/Other</td>
+<td>15</td>
+<td>20</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Kotlin</td>
+<td>9</td>
+<td>227</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>9</td>
+<td>8</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td>4</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Dart</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>HTML</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>2</td>
+<td>8</td>
+</tr>
+<tr>
+<td>TeX</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ShaderLab</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blade</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Prolog</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Mathematica</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</table>
+
+<hr>
+_Auto-generated by Brain 🧠 via GitHub API | 84 repos, 296 total stars_
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/repo-abhay-byte-github-io.md">repo-abhay-byte-github-io</a></li>
+<li><a href="source/repo-abhay-byte.md">repo-abhay-byte</a></li>
+<li><a href="source/repo-abhay-kb.md">repo-abhay-kb</a></li>
+<li><a href="source/repo-adirstat.md">repo-adirstat</a></li>
+<li><a href="source/repo-adv-java.md">repo-adv-java</a></li>
+<li><a href="source/repo-agent-skills.md">repo-agent-skills</a></li>
+<li><a href="source/repo-ai-file.md">repo-ai-file</a></li>
+<li><a href="source/repo-ai-survival-quest-v1-0.md">repo-ai-survival-quest-v1-0</a></li>
+<li><a href="source/repo-ai-tf-models.md">repo-ai-tf-models</a></li>
+<li><a href="source/repo-ai-wrapper-projects.md">repo-ai-wrapper-projects</a></li>
+<li><a href="source/repo-android-app-demos.md">repo-android-app-demos</a></li>
+<li><a href="source/repo-apm.md">repo-apm</a></li>
+<li><a href="source/repo-arduino-uno-practical.md">repo-arduino-uno-practical</a></li>
+<li><a href="source/repo-blender.md">repo-blender</a></li>
+<li><a href="source/repo-clinico-flutter.md">repo-clinico-flutter</a></li>
+<li><a href="source/repo-clinicofrontend.md">repo-clinicofrontend</a></li>
+<li><a href="source/repo-co-op-racing.md">repo-co-op-racing</a></li>
+<li><a href="source/repo-college-prep.md">repo-college-prep</a></li>
+<li><a href="source/repo-computational-methods.md">repo-computational-methods</a></li>
+<li><a href="source/repo-cura-backend.md">repo-cura-backend</a></li>
+<li><a href="source/repo-cura-diet-agent.md">repo-cura-diet-agent</a></li>
+<li><a href="source/repo-data-structures.md">repo-data-structures</a></li>
+<li><a href="source/repo-deviceinsight.md">repo-deviceinsight</a></li>
+<li><a href="source/repo-dsa-practice.md">repo-dsa-practice</a></li>
+<li><a href="source/repo-dsa-questions.md">repo-dsa-questions</a></li>
+<li><a href="source/repo-dsa.md">repo-dsa</a></li>
+<li><a href="source/repo-fb-nextjs.md">repo-fb-nextjs</a></li>
+<li><a href="source/repo-final-benchmark-2025.md">repo-final-benchmark-2025</a></li>
+<li><a href="source/repo-finalbenchmark-platform.md">repo-finalbenchmark-platform</a></li>
+<li><a href="source/repo-finalbenchmark.md">repo-finalbenchmark</a></li>
+<li><a href="source/repo-fluxlinux.md">repo-fluxlinux</a></li>
+<li><a href="source/repo-fortune-t-react-ts.md">repo-fortune-t-react-ts</a></li>
+<li><a href="source/repo-interview-prep.md">repo-interview-prep</a></li>
+<li><a href="source/repo-laravel-study.md">repo-laravel-study</a></li>
+<li><a href="source/repo-learning-cpp.md">repo-learning-cpp</a></li>
+<li><a href="source/repo-linux-setup.md">repo-linux-setup</a></li>
+<li><a href="source/repo-mad.md">repo-mad</a></li>
+<li><a href="source/repo-mali-win-emu-list.md">repo-mali-win-emu-list</a></li>
+<li><a href="source/repo-medapp-v2-1.md">repo-medapp-v2-1</a></li>
+<li><a href="source/repo-mern-examples.md">repo-mern-examples</a></li>
+<li><a href="source/repo-mern-google-form-project.md">repo-mern-google-form-project</a></li>
+<li><a href="source/repo-minor-project-gtbit.md">repo-minor-project-gtbit</a></li>
+<li><a href="source/repo-mkm.md">repo-mkm</a></li>
+<li><a href="source/repo-my-portfolio-webgl.md">repo-my-portfolio-webgl</a></li>
+<li><a href="source/repo-my-portfolio.md">repo-my-portfolio</a></li>
+<li><a href="source/repo-my-react-router-app.md">repo-my-react-router-app</a></li>
+<li><a href="source/repo-my-resume-p.md">repo-my-resume-p</a></li>
+<li><a href="source/repo-my-resume.md">repo-my-resume</a></li>
+<li><a href="source/repo-nativecode.md">repo-nativecode</a></li>
+<li><a href="source/repo-nextjs-acme.md">repo-nextjs-acme</a></li>
+<li><a href="source/repo-nexus.md">repo-nexus</a></li>
+<li><a href="source/repo-phone-finder-hub.md">repo-phone-finder-hub</a></li>
+<li><a href="source/repo-planet-racing-3d.md">repo-planet-racing-3d</a></li>
+<li><a href="source/repo-planet-racing.md">repo-planet-racing</a></li>
+<li><a href="source/repo-poco-x6-pro-custom-roms.md">repo-poco-x6-pro-custom-roms</a></li>
+<li><a href="source/repo-project-evergreen.md">repo-project-evergreen</a></li>
+<li><a href="source/repo-pslp.md">repo-pslp</a></li>
+<li><a href="source/repo-randomrpg.md">repo-randomrpg</a></li>
+<li><a href="source/repo-saiko-no-senshi-0-1v.md">repo-saiko-no-senshi-0-1v</a></li>
+<li><a href="source/repo-semester-vi-gtbit-it.md">repo-semester-vi-gtbit-it</a></li>
+<li><a href="source/repo-skills-code-with-codespaces.md">repo-skills-code-with-codespaces</a></li>
+<li><a href="source/repo-skills-communicate-using-markdown.md">repo-skills-communicate-using-markdown</a></li>
+<li><a href="source/repo-skills-getting-started-with-github-copilot.md">repo-skills-getting-started-with-github-copilot</a></li>
+<li><a href="source/repo-skills-github-pages.md">repo-skills-github-pages</a></li>
+<li><a href="source/repo-skills-introduction-to-codeql.md">repo-skills-introduction-to-codeql</a></li>
+<li><a href="source/repo-skills-introduction-to-github.md">repo-skills-introduction-to-github</a></li>
+<li><a href="source/repo-skills-review-pull-requests.md">repo-skills-review-pull-requests</a></li>
+<li><a href="source/repo-skills-secure-repository-supply-chain.md">repo-skills-secure-repository-supply-chain</a></li>
+<li><a href="source/repo-task-management-tool.md">repo-task-management-tool</a></li>
+<li><a href="source/repo-taskstack.md">repo-taskstack</a></li>
+<li><a href="source/repo-threejs-portfolio.md">repo-threejs-portfolio</a></li>
+<li><a href="source/repo-tms-mongo-backend.md">repo-tms-mongo-backend</a></li>
+<li><a href="source/repo-topbarcreator.md">repo-topbarcreator</a></li>
+<li><a href="source/repo-towerbrawlers.md">repo-towerbrawlers</a></li>
+<li><a href="source/repo-towerdefense.md">repo-towerdefense</a></li>
+<li><a href="source/repo-truvalt.md">repo-truvalt</a></li>
+<li><a href="source/repo-turnip-drivers.md">repo-turnip-drivers</a></li>
+<li><a href="source/repo-two-player-games.md">repo-two-player-games</a></li>
+<li><a href="source/repo-ui-best-practices-unity.md">repo-ui-best-practices-unity</a></li>
+<li><a href="source/repo-unity-classes.md">repo-unity-classes</a></li>
+<li><a href="source/repo-unity-folder-structure.md">repo-unity-folder-structure</a></li>
+<li><a href="source/repo-valentines-day-unity.md">repo-valentines-day-unity</a></li>
+<li><a href="source/repo-vibingide.md">repo-vibingide</a></li>
+<li><a href="source/repo-warden-protocol.md">repo-warden-protocol</a></li>
+<li><a href="source/repo-webgl-website.md">repo-webgl-website</a></li>
+<li><a href="source/repo-wmatd-exp6.md">repo-wmatd-exp6</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

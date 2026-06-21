@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSES Problem Set | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Cses</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>CSES Problem Set</h1>
+
+<strong>Source:</strong> <a href="https://cses.fi/problemset/">cses.fi/problemset</a>
+<strong>Total Problems:</strong> 300+
+
+<p>The CSES Problem Set is a collection of algorithmic programming problems maintained by the University of Helsinki. It covers a wide range of topics in competitive programming.</p>
+
+<h2 id="📊-progress">📊 Progress</h2>
+
+<a href="https://cses.fi/problemset/"><img src="https://img.shields.io/badge/CSES-000?style=for-the-badge&logo=cses&logoColor=white" alt="CSES"></a>
+<img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Solved&color=success&query=total&url=" alt="Problems Solved">
+
+<hr>
+
+<h2 id="introductory-problems-19">Introductory Problems (19)</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Weird Algorithm</td>
+<td><a href="https://cses.fi/problemset/task/1068">cses.fi/1068</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Missing Number</td>
+<td><a href="https://cses.fi/problemset/task/1083">cses.fi/1083</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Repetitions</td>
+<td><a href="https://cses.fi/problemset/task/1069">cses.fi/1069</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Increasing Array</td>
+<td><a href="https://cses.fi/problemset/task/1094">cses.fi/1094</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Permutations</td>
+<td><a href="https://cses.fi/problemset/task/1070">cses.fi/1070</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Number Spiral</td>
+<td><a href="https://cses.fi/problemset/task/1071">cses.fi/1071</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Two Knights</td>
+<td><a href="https://cses.fi/problemset/task/1072">cses.fi/1072</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Two Sets</td>
+<td><a href="https://cses.fi/problemset/task/1092">cses.fi/1092</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Bit Strings</td>
+<td><a href="https://cses.fi/problemset/task/1617">cses.fi/1617</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Trailing Zeros</td>
+<td><a href="https://cses.fi/problemset/task/1618">cses.fi/1618</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Coin Piles</td>
+<td><a href="https://cses.fi/problemset/task/1754">cses.fi/1754</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Palindrome Reorder</td>
+<td><a href="https://cses.fi/problemset/task/1755">cses.fi/1755</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Gray Code</td>
+<td><a href="https://cses.fi/problemset/task/2205">cses.fi/2205</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Tower of Hanoi</td>
+<td><a href="https://cses.fi/problemset/task/2165">cses.fi/2165</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Creating Strings</td>
+<td><a href="https://cses.fi/problemset/task/1622">cses.fi/1622</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Apple Division</td>
+<td><a href="https://cses.fi/problemset/task/1623">cses.fi/1623</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Chessboard and Queens</td>
+<td><a href="https://cses.fi/problemset/task/1624">cses.fi/1624</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Digit Queries</td>
+<td><a href="https://cses.fi/problemset/task/2431">cses.fi/2431</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Grid Paths</td>
+<td><a href="https://cses.fi/problemset/task/1625">cses.fi/1625</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="sorting-and-searching-35">Sorting and Searching (35)</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Distinct Numbers</td>
+<td><a href="https://cses.fi/problemset/task/1621">cses.fi/1621</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Apartments</td>
+<td><a href="https://cses.fi/problemset/task/1084">cses.fi/1084</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ferris Wheel</td>
+<td><a href="https://cses.fi/problemset/task/1090">cses.fi/1090</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Concert Tickets</td>
+<td><a href="https://cses.fi/problemset/task/1091">cses.fi/1091</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Restaurant Customers</td>
+<td><a href="https://cses.fi/problemset/task/1619">cses.fi/1619</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Movie Festival</td>
+<td><a href="https://cses.fi/problemset/task/1629">cses.fi/1629</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sum of Two Values</td>
+<td><a href="https://cses.fi/problemset/task/1640">cses.fi/1640</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Maximum Subarray Sum</td>
+<td><a href="https://cses.fi/problemset/task/1643">cses.fi/1643</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Stick Lengths</td>
+<td><a href="https://cses.fi/problemset/task/1074">cses.fi/1074</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Missing Coin Sum</td>
+<td><a href="https://cses.fi/problemset/task/2183">cses.fi/2183</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Collecting Numbers</td>
+<td><a href="https://cses.fi/problemset/task/2216">cses.fi/2216</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Collecting Numbers II</td>
+<td><a href="https://cses.fi/problemset/task/2217">cses.fi/2217</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Playlist</td>
+<td><a href="https://cses.fi/problemset/task/1141">cses.fi/1141</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Towers</td>
+<td><a href="https://cses.fi/problemset/task/1073">cses.fi/1073</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Traffic Lights</td>
+<td><a href="https://cses.fi/problemset/task/1163">cses.fi/1163</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Josephus Problem I</td>
+<td><a href="https://cses.fi/problemset/task/2162">cses.fi/2162</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Josephus Problem II</td>
+<td><a href="https://cses.fi/problemset/task/2163">cses.fi/2163</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Nearest Smaller Values</td>
+<td><a href="https://cses.fi/problemset/task/1645">cses.fi/1645</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Subarray Sums I</td>
+<td><a href="https://cses.fi/problemset/task/1660">cses.fi/1660</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Subarray Sums II</td>
+<td><a href="https://cses.fi/problemset/task/1661">cses.fi/1661</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Subarray Divisibility</td>
+<td><a href="https://cses.fi/problemset/task/1662">cses.fi/1662</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Array Division</td>
+<td><a href="https://cses.fi/problemset/task/1085">cses.fi/1085</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Sliding Window Median</td>
+<td><a href="https://cses.fi/problemset/task/1076">cses.fi/1076</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>Sliding Window Cost</td>
+<td><a href="https://cses.fi/problemset/task/1077">cses.fi/1077</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td>Movie Festival II</td>
+<td><a href="https://cses.fi/problemset/task/1632">cses.fi/1632</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td>Maximum Subarray Sum II</td>
+<td><a href="https://cses.fi/problemset/task/1644">cses.fi/1644</a></td>
+</tr>
+<tr>
+<td>27</td>
+<td>Subarray Distinct Values</td>
+<td><a href="https://cses.fi/problemset/task/2428">cses.fi/2428</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td>Array Description</td>
+<td><a href="https://cses.fi/problemset/task/1744">cses.fi/1744</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td>Factory Machines</td>
+<td><a href="https://cses.fi/problemset/task/1620">cses.fi/1620</a></td>
+</tr>
+<tr>
+<td>30</td>
+<td>Tasks and Deadlines</td>
+<td><a href="https://cses.fi/problemset/task/1631">cses.fi/1631</a></td>
+</tr>
+<tr>
+<td>31</td>
+<td>Reading Books</td>
+<td><a href="https://cses.fi/problemset/task/1631">cses.fi/1631</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td>Creating Strings</td>
+<td><a href="https://cses.fi/problemset/task/1622">cses.fi/1622</a></td>
+</tr>
+<tr>
+<td>33</td>
+<td>Apple Division</td>
+<td><a href="https://cses.fi/problemset/task/1623">cses.fi/1623</a></td>
+</tr>
+<tr>
+<td>34</td>
+<td>Grid Paths</td>
+<td><a href="https://cses.fi/problemset/task/1625">cses.fi/1625</a></td>
+</tr>
+<tr>
+<td>35</td>
+<td>Palindrome Reorder</td>
+<td><a href="https://cses.fi/problemset/task/1755">cses.fi/1755</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="dynamic-programming-19">Dynamic Programming (19)</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Dice Combinations</td>
+<td><a href="https://cses.fi/problemset/task/1633">cses.fi/1633</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Minimizing Coins</td>
+<td><a href="https://cses.fi/problemset/task/1634">cses.fi/1634</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Coin Combinations I</td>
+<td><a href="https://cses.fi/problemset/task/1635">cses.fi/1635</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Coin Combinations II</td>
+<td><a href="https://cses.fi/problemset/task/1636">cses.fi/1636</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Removing Digits</td>
+<td><a href="https://cses.fi/problemset/task/1637">cses.fi/1637</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Grid Paths</td>
+<td><a href="https://cses.fi/problemset/task/1638">cses.fi/1638</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Book Shop</td>
+<td><a href="https://cses.fi/problemset/task/1158">cses.fi/1158</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Array Description</td>
+<td><a href="https://cses.fi/problemset/task/1746">cses.fi/1746</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Counting Towers</td>
+<td><a href="https://cses.fi/problemset/task/2413">cses.fi/2413</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Edit Distance</td>
+<td><a href="https://cses.fi/problemset/task/1639">cses.fi/1639</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Rectangle Cutting</td>
+<td><a href="https://cses.fi/problemset/task/1744">cses.fi/1744</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Money Sums</td>
+<td><a href="https://cses.fi/problemset/task/1745">cses.fi/1745</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Removal Game</td>
+<td><a href="https://cses.fi/problemset/task/1097">cses.fi/1097</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Two Sets II</td>
+<td><a href="https://cses.fi/problemset/task/1093">cses.fi/1093</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Increasing Subsequence</td>
+<td><a href="https://cses.fi/problemset/task/1145">cses.fi/1145</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Projects</td>
+<td><a href="https://cses.fi/problemset/task/1140">cses.fi/1140</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Elevator Rides</td>
+<td><a href="https://cses.fi/problemset/task/1653">cses.fi/1653</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Counting Tilings</td>
+<td><a href="https://cses.fi/problemset/task/2181">cses.fi/2181</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Graph Paths I</td>
+<td><a href="https://cses.fi/problemset/task/1723">cses.fi/1723</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="graph-algorithms-36">Graph Algorithms (36)</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Counting Rooms</td>
+<td><a href="https://cses.fi/problemset/task/1192">cses.fi/1192</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Labyrinth</td>
+<td><a href="https://cses.fi/problemset/task/1193">cses.fi/1193</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Building Roads</td>
+<td><a href="https://cses.fi/problemset/task/1194">cses.fi/1194</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Message Route</td>
+<td><a href="https://cses.fi/problemset/task/1667">cses.fi/1667</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Building Teams</td>
+<td><a href="https://cses.fi/problemset/task/1668">cses.fi/1668</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Round Trip</td>
+<td><a href="https://cses.fi/problemset/task/1669">cses.fi/1669</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Monsters</td>
+<td><a href="https://cses.fi/problemset/task/1195">cses.fi/1195</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Shortest Routes I</td>
+<td><a href="https://cses.fi/problemset/task/1671">cses.fi/1671</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Shortest Routes II</td>
+<td><a href="https://cses.fi/problemset/task/1672">cses.fi/1672</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>High Score</td>
+<td><a href="https://cses.fi/problemset/task/1673">cses.fi/1673</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Flight Discount</td>
+<td><a href="https://cses.fi/problemset/task/1675">cses.fi/1675</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Cycle Finding</td>
+<td><a href="https://cses.fi/problemset/task/1197">cses.fi/1197</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Flight Routes</td>
+<td><a href="https://cses.fi/problemset/task/1674">cses.fi/1674</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Road Reparation</td>
+<td><a href="https://cses.fi/problemset/task/1675">cses.fi/1675</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Road Construction</td>
+<td><a href="https://cses.fi/problemset/task/1676">cses.fi/1676</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Flight Routes Check</td>
+<td><a href="https://cses.fi/problemset/task/1682">cses.fi/1682</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Planets and Kingdoms</td>
+<td><a href="https://cses.fi/problemset/task/1683">cses.fi/1683</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Giant Pizza</td>
+<td><a href="https://cses.fi/problemset/task/1684">cses.fi/1684</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Coin Collector</td>
+<td><a href="https://cses.fi/problemset/task/1686">cses.fi/1686</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Mail Delivery</td>
+<td><a href="https://cses.fi/problemset/task/1693">cses.fi/1693</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td>De Bruijn Sequence</td>
+<td><a href="https://cses.fi/problemset/task/1692">cses.fi/1692</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Knight Moves</td>
+<td><a href="https://cses.fi/problemset/task/1694">cses.fi/1694</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Book Shop</td>
+<td><a href="https://cses.fi/problemset/task/1158">cses.fi/1158</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>Array Description</td>
+<td><a href="https://cses.fi/problemset/task/1746">cses.fi/1746</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td>Projects</td>
+<td><a href="https://cses.fi/problemset/task/1140">cses.fi/1140</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td>Elevator Rides</td>
+<td><a href="https://cses.fi/problemset/task/1653">cses.fi/1653</a></td>
+</tr>
+<tr>
+<td>27</td>
+<td>Counting Tilings</td>
+<td><a href="https://cses.fi/problemset/task/2181">cses.fi/2181</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td>Course Schedule</td>
+<td><a href="https://cses.fi/problemset/task/1679">cses.fi/1679</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td>Longest Flight Route</td>
+<td><a href="https://cses.fi/problemset/task/1680">cses.fi/1680</a></td>
+</tr>
+<tr>
+<td>30</td>
+<td>Game Routes</td>
+<td><a href="https://cses.fi/problemset/task/1681">cses.fi/1681</a></td>
+</tr>
+<tr>
+<td>31</td>
+<td>Investigation</td>
+<td><a href="https://cses.fi/problemset/task/1202">cses.fi/1202</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td>Planets Queries I</td>
+<td><a href="https://cses.fi/problemset/task/1750">cses.fi/1750</a></td>
+</tr>
+<tr>
+<td>33</td>
+<td>Planets Queries II</td>
+<td><a href="https://cses.fi/problemset/task/1160">cses.fi/1160</a></td>
+</tr>
+<tr>
+<td>34</td>
+<td>Planets Cycles</td>
+<td><a href="https://cses.fi/problemset/task/1751">cses.fi/1751</a></td>
+</tr>
+<tr>
+<td>35</td>
+<td>Road Reparation</td>
+<td><a href="https://cses.fi/problemset/task/1675">cses.fi/1675</a></td>
+</tr>
+<tr>
+<td>36</td>
+<td>Road Construction</td>
+<td><a href="https://cses.fi/problemset/task/1676">cses.fi/1676</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="tree-algorithms-16">Tree Algorithms (16)</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Tree Diameter</td>
+<td><a href="https://cses.fi/problemset/task/1131">cses.fi/1131</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tree Distances I</td>
+<td><a href="https://cses.fi/problemset/task/1132">cses.fi/1132</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tree Distances II</td>
+<td><a href="https://cses.fi/problemset/task/1133">cses.fi/1133</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Company Queries I</td>
+<td><a href="https://cses.fi/problemset/task/1687">cses.fi/1687</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Company Queries II</td>
+<td><a href="https://cses.fi/problemset/task/1688">cses.fi/1688</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Distance Queries</td>
+<td><a href="https://cses.fi/problemset/task/1135">cses.fi/1135</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Counting Paths</td>
+<td><a href="https://cses.fi/problemset/task/1136">cses.fi/1136</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Subtree Queries</td>
+<td><a href="https://cses.fi/problemset/task/1137">cses.fi/1137</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Path Queries</td>
+<td><a href="https://cses.fi/problemset/task/1138">cses.fi/1138</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Path Queries II</td>
+<td><a href="https://cses.fi/problemset/task/2134">cses.fi/2134</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Distinct Colors</td>
+<td><a href="https://cses.fi/problemset/task/1139">cses.fi/1139</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Finding a Centroid</td>
+<td><a href="https://cses.fi/problemset/task/2079">cses.fi/2079</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Fixed-Length Paths I</td>
+<td><a href="https://cses.fi/problemset/task/2080">cses.fi/2080</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Fixed-Length Paths II</td>
+<td><a href="https://cses.fi/problemset/task/2081">cses.fi/2081</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Tree Isomorphism I</td>
+<td><a href="https://cses.fi/problemset/task/2130">cses.fi/2130</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Tree Isomorphism II</td>
+<td><a href="https://cses.fi/problemset/task/2131">cses.fi/2131</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="mathematics-31">Mathematics (31)</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Josephus Queries</td>
+<td><a href="https://cses.fi/problemset/task/2164">cses.fi/2164</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Exponentiation</td>
+<td><a href="https://cses.fi/problemset/task/1095">cses.fi/1095</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Exponentiation II</td>
+<td><a href="https://cses.fi/problemset/task/1712">cses.fi/1712</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Counting Divisors</td>
+<td><a href="https://cses.fi/problemset/task/1713">cses.fi/1713</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Common Divisors</td>
+<td><a href="https://cses.fi/problemset/task/1081">cses.fi/1081</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sum of Divisors</td>
+<td><a href="https://cses.fi/problemset/task/1082">cses.fi/1082</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Divisor Analysis</td>
+<td><a href="https://cses.fi/problemset/task/2182">cses.fi/2182</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Prime Multiples</td>
+<td><a href="https://cses.fi/problemset/task/2185">cses.fi/2185</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Counting Coprime Pairs</td>
+<td><a href="https://cses.fi/problemset/task/2417">cses.fi/2417</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Binomial Coefficients</td>
+<td><a href="https://cses.fi/problemset/task/1079">cses.fi/1079</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Creating Strings II</td>
+<td><a href="https://cses.fi/problemset/task/1715">cses.fi/1715</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Distributing Apples</td>
+<td><a href="https://cses.fi/problemset/task/1716">cses.fi/1716</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Christmas Party</td>
+<td><a href="https://cses.fi/problemset/task/1717">cses.fi/1717</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Fibonacci Numbers</td>
+<td><a href="https://cses.fi/problemset/task/1722">cses.fi/1722</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Throwing Dice</td>
+<td><a href="https://cses.fi/problemset/task/1096">cses.fi/1096</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Graph Paths II</td>
+<td><a href="https://cses.fi/problemset/task/1724">cses.fi/1724</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Dice Probability</td>
+<td><a href="https://cses.fi/problemset/task/1725">cses.fi/1725</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Moving Robots</td>
+<td><a href="https://cses.fi/problemset/task/1726">cses.fi/1726</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Candy Lottery</td>
+<td><a href="https://cses.fi/problemset/task/1727">cses.fi/1727</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Missing Coin Sum</td>
+<td><a href="https://cses.fi/problemset/task/2183">cses.fi/2183</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="string-algorithms-17">String Algorithms (17)</h2>
+
+<table>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Link</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Word Combinations</td>
+<td><a href="https://cses.fi/problemset/task/1731">cses.fi/1731</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>String Matching</td>
+<td><a href="https://cses.fi/problemset/task/1753">cses.fi/1753</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Finding Borders</td>
+<td><a href="https://cses.fi/problemset/task/1732">cses.fi/1732</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Finding Periods</td>
+<td><a href="https://cses.fi/problemset/task/1733">cses.fi/1733</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Minimal Rotation</td>
+<td><a href="https://cses.fi/problemset/task/1110">cses.fi/1110</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Longest Palindrome</td>
+<td><a href="https://cses.fi/problemset/task/1111">cses.fi/1111</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Required Substring</td>
+<td><a href="https://cses.fi/problemset/task/1112">cses.fi/1112</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Palindrome Queries</td>
+<td><a href="https://cses.fi/problemset/task/2420">cses.fi/2420</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>String Transform</td>
+<td><a href="https://cses.fi/problemset/task/2421">cses.fi/2421</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Substring Order I</td>
+<td><a href="https://cses.fi/problemset/task/2108">cses.fi/2108</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Substring Order II</td>
+<td><a href="https://cses.fi/problemset/task/2109">cses.fi/2109</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Substring Distribution</td>
+<td><a href="https://cses.fi/problemset/task/2110">cses.fi/2110</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Counting Patterns</td>
+<td><a href="https://cses.fi/problemset/task/2210">cses.fi/2210</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Pattern Positions</td>
+<td><a href="https://cses.fi/problemset/task/2104">cses.fi/2104</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Distinct Substrings</td>
+<td><a href="https://cses.fi/problemset/task/2105">cses.fi/2105</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Repeating Substring</td>
+<td><a href="https://cses.fi/problemset/task/2106">cses.fi/2106</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>String Removal</td>
+<td><a href="https://cses.fi/problemset/task/2107">cses.fi/2107</a></td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="additional-topics-50+">Additional Topics (50+)</h2>
+
+<p>The CSES Problem Set also covers:</p>
+
+<ul>
+<li><strong>Range Queries</strong> — Segment trees, Fenwick trees, Sparse tables</li>
+<li><strong>Geometry</strong> — Convex hull, line intersections, polygon area</li>
+<li><strong>Advanced Techniques</strong> — Meet in the middle, Heavy-Light decomposition</li>
+<li><strong>Additional Graph Algorithms</strong> — Maximum flow, min cut, matching</li>
+</ul>
+
+<hr>
+
+<h2 id="📁-solutions">📁 Solutions</h2>
+
+<p>Solutions are available in the repo at:</p>
+
+<ul>
+<li><a href="https://github.com/abhay-byte/DSA/tree/main/questions/CSES"><strong>DSA/questions/CSES/</strong></a></li>
+</ul>
+
+<hr>
+
+<em>Last updated: May 2026</em>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/cses-fi-problemset-task-1068.md">cses-fi-problemset-task-1068</a></li>
+<li><a href="source/cses-fi-problemset-task-1069.md">cses-fi-problemset-task-1069</a></li>
+<li><a href="source/cses-fi-problemset-task-1070.md">cses-fi-problemset-task-1070</a></li>
+<li><a href="source/cses-fi-problemset-task-1071.md">cses-fi-problemset-task-1071</a></li>
+<li><a href="source/cses-fi-problemset-task-1072.md">cses-fi-problemset-task-1072</a></li>
+<li><a href="source/cses-fi-problemset-task-1073.md">cses-fi-problemset-task-1073</a></li>
+<li><a href="source/cses-fi-problemset-task-1074.md">cses-fi-problemset-task-1074</a></li>
+<li><a href="source/cses-fi-problemset-task-1076.md">cses-fi-problemset-task-1076</a></li>
+<li><a href="source/cses-fi-problemset-task-1077.md">cses-fi-problemset-task-1077</a></li>
+<li><a href="source/cses-fi-problemset-task-1079.md">cses-fi-problemset-task-1079</a></li>
+<li><a href="source/cses-fi-problemset-task-1081.md">cses-fi-problemset-task-1081</a></li>
+<li><a href="source/cses-fi-problemset-task-1082.md">cses-fi-problemset-task-1082</a></li>
+<li><a href="source/cses-fi-problemset-task-1083.md">cses-fi-problemset-task-1083</a></li>
+<li><a href="source/cses-fi-problemset-task-1084.md">cses-fi-problemset-task-1084</a></li>
+<li><a href="source/cses-fi-problemset-task-1085.md">cses-fi-problemset-task-1085</a></li>
+<li><a href="source/cses-fi-problemset-task-1090.md">cses-fi-problemset-task-1090</a></li>
+<li><a href="source/cses-fi-problemset-task-1091.md">cses-fi-problemset-task-1091</a></li>
+<li><a href="source/cses-fi-problemset-task-1092.md">cses-fi-problemset-task-1092</a></li>
+<li><a href="source/cses-fi-problemset-task-1093.md">cses-fi-problemset-task-1093</a></li>
+<li><a href="source/cses-fi-problemset-task-1094.md">cses-fi-problemset-task-1094</a></li>
+<li><a href="source/cses-fi-problemset-task-1095.md">cses-fi-problemset-task-1095</a></li>
+<li><a href="source/cses-fi-problemset-task-1096.md">cses-fi-problemset-task-1096</a></li>
+<li><a href="source/cses-fi-problemset-task-1097.md">cses-fi-problemset-task-1097</a></li>
+<li><a href="source/cses-fi-problemset-task-1110.md">cses-fi-problemset-task-1110</a></li>
+<li><a href="source/cses-fi-problemset-task-1111.md">cses-fi-problemset-task-1111</a></li>
+<li><a href="source/cses-fi-problemset-task-1112.md">cses-fi-problemset-task-1112</a></li>
+<li><a href="source/cses-fi-problemset-task-1131.md">cses-fi-problemset-task-1131</a></li>
+<li><a href="source/cses-fi-problemset-task-1132.md">cses-fi-problemset-task-1132</a></li>
+<li><a href="source/cses-fi-problemset-task-1133.md">cses-fi-problemset-task-1133</a></li>
+<li><a href="source/cses-fi-problemset-task-1135.md">cses-fi-problemset-task-1135</a></li>
+<li><a href="source/cses-fi-problemset-task-1136.md">cses-fi-problemset-task-1136</a></li>
+<li><a href="source/cses-fi-problemset-task-1137.md">cses-fi-problemset-task-1137</a></li>
+<li><a href="source/cses-fi-problemset-task-1138.md">cses-fi-problemset-task-1138</a></li>
+<li><a href="source/cses-fi-problemset-task-1139.md">cses-fi-problemset-task-1139</a></li>
+<li><a href="source/cses-fi-problemset-task-1140.md">cses-fi-problemset-task-1140</a></li>
+<li><a href="source/cses-fi-problemset-task-1141.md">cses-fi-problemset-task-1141</a></li>
+<li><a href="source/cses-fi-problemset-task-1145.md">cses-fi-problemset-task-1145</a></li>
+<li><a href="source/cses-fi-problemset-task-1158.md">cses-fi-problemset-task-1158</a></li>
+<li><a href="source/cses-fi-problemset-task-1160.md">cses-fi-problemset-task-1160</a></li>
+<li><a href="source/cses-fi-problemset-task-1163.md">cses-fi-problemset-task-1163</a></li>
+<li><a href="source/cses-fi-problemset-task-1192.md">cses-fi-problemset-task-1192</a></li>
+<li><a href="source/cses-fi-problemset-task-1193.md">cses-fi-problemset-task-1193</a></li>
+<li><a href="source/cses-fi-problemset-task-1194.md">cses-fi-problemset-task-1194</a></li>
+<li><a href="source/cses-fi-problemset-task-1195.md">cses-fi-problemset-task-1195</a></li>
+<li><a href="source/cses-fi-problemset-task-1197.md">cses-fi-problemset-task-1197</a></li>
+<li><a href="source/cses-fi-problemset-task-1202.md">cses-fi-problemset-task-1202</a></li>
+<li><a href="source/cses-fi-problemset-task-1617.md">cses-fi-problemset-task-1617</a></li>
+<li><a href="source/cses-fi-problemset-task-1618.md">cses-fi-problemset-task-1618</a></li>
+<li><a href="source/cses-fi-problemset-task-1619.md">cses-fi-problemset-task-1619</a></li>
+<li><a href="source/cses-fi-problemset-task-1620.md">cses-fi-problemset-task-1620</a></li>
+<li><a href="source/cses-fi-problemset-task-1621.md">cses-fi-problemset-task-1621</a></li>
+<li><a href="source/cses-fi-problemset-task-1622.md">cses-fi-problemset-task-1622</a></li>
+<li><a href="source/cses-fi-problemset-task-1623.md">cses-fi-problemset-task-1623</a></li>
+<li><a href="source/cses-fi-problemset-task-1624.md">cses-fi-problemset-task-1624</a></li>
+<li><a href="source/cses-fi-problemset-task-1625.md">cses-fi-problemset-task-1625</a></li>
+<li><a href="source/cses-fi-problemset-task-1629.md">cses-fi-problemset-task-1629</a></li>
+<li><a href="source/cses-fi-problemset-task-1631.md">cses-fi-problemset-task-1631</a></li>
+<li><a href="source/cses-fi-problemset-task-1632.md">cses-fi-problemset-task-1632</a></li>
+<li><a href="source/cses-fi-problemset-task-1633.md">cses-fi-problemset-task-1633</a></li>
+<li><a href="source/cses-fi-problemset-task-1634.md">cses-fi-problemset-task-1634</a></li>
+<li><a href="source/cses-fi-problemset-task-1635.md">cses-fi-problemset-task-1635</a></li>
+<li><a href="source/cses-fi-problemset-task-1636.md">cses-fi-problemset-task-1636</a></li>
+<li><a href="source/cses-fi-problemset-task-1637.md">cses-fi-problemset-task-1637</a></li>
+<li><a href="source/cses-fi-problemset-task-1638.md">cses-fi-problemset-task-1638</a></li>
+<li><a href="source/cses-fi-problemset-task-1639.md">cses-fi-problemset-task-1639</a></li>
+<li><a href="source/cses-fi-problemset-task-1640.md">cses-fi-problemset-task-1640</a></li>
+<li><a href="source/cses-fi-problemset-task-1643.md">cses-fi-problemset-task-1643</a></li>
+<li><a href="source/cses-fi-problemset-task-1644.md">cses-fi-problemset-task-1644</a></li>
+<li><a href="source/cses-fi-problemset-task-1645.md">cses-fi-problemset-task-1645</a></li>
+<li><a href="source/cses-fi-problemset-task-1653.md">cses-fi-problemset-task-1653</a></li>
+<li><a href="source/cses-fi-problemset-task-1660.md">cses-fi-problemset-task-1660</a></li>
+<li><a href="source/cses-fi-problemset-task-1661.md">cses-fi-problemset-task-1661</a></li>
+<li><a href="source/cses-fi-problemset-task-1662.md">cses-fi-problemset-task-1662</a></li>
+<li><a href="source/cses-fi-problemset-task-1667.md">cses-fi-problemset-task-1667</a></li>
+<li><a href="source/cses-fi-problemset-task-1668.md">cses-fi-problemset-task-1668</a></li>
+<li><a href="source/cses-fi-problemset-task-1669.md">cses-fi-problemset-task-1669</a></li>
+<li><a href="source/cses-fi-problemset-task-1671.md">cses-fi-problemset-task-1671</a></li>
+<li><a href="source/cses-fi-problemset-task-1672.md">cses-fi-problemset-task-1672</a></li>
+<li><a href="source/cses-fi-problemset-task-1673.md">cses-fi-problemset-task-1673</a></li>
+<li><a href="source/cses-fi-problemset-task-1674.md">cses-fi-problemset-task-1674</a></li>
+<li><a href="source/cses-fi-problemset-task-1675.md">cses-fi-problemset-task-1675</a></li>
+<li><a href="source/cses-fi-problemset-task-1676.md">cses-fi-problemset-task-1676</a></li>
+<li><a href="source/cses-fi-problemset-task-1679.md">cses-fi-problemset-task-1679</a></li>
+<li><a href="source/cses-fi-problemset-task-1680.md">cses-fi-problemset-task-1680</a></li>
+<li><a href="source/cses-fi-problemset-task-1681.md">cses-fi-problemset-task-1681</a></li>
+<li><a href="source/cses-fi-problemset-task-1682.md">cses-fi-problemset-task-1682</a></li>
+<li><a href="source/cses-fi-problemset-task-1683.md">cses-fi-problemset-task-1683</a></li>
+<li><a href="source/cses-fi-problemset-task-1684.md">cses-fi-problemset-task-1684</a></li>
+<li><a href="source/cses-fi-problemset-task-1686.md">cses-fi-problemset-task-1686</a></li>
+<li><a href="source/cses-fi-problemset-task-1687.md">cses-fi-problemset-task-1687</a></li>
+<li><a href="source/cses-fi-problemset-task-1688.md">cses-fi-problemset-task-1688</a></li>
+<li><a href="source/cses-fi-problemset-task-1692.md">cses-fi-problemset-task-1692</a></li>
+<li><a href="source/cses-fi-problemset-task-1693.md">cses-fi-problemset-task-1693</a></li>
+<li><a href="source/cses-fi-problemset-task-1694.md">cses-fi-problemset-task-1694</a></li>
+<li><a href="source/cses-fi-problemset-task-1712.md">cses-fi-problemset-task-1712</a></li>
+<li><a href="source/cses-fi-problemset-task-1713.md">cses-fi-problemset-task-1713</a></li>
+<li><a href="source/cses-fi-problemset-task-1715.md">cses-fi-problemset-task-1715</a></li>
+<li><a href="source/cses-fi-problemset-task-1716.md">cses-fi-problemset-task-1716</a></li>
+<li><a href="source/cses-fi-problemset-task-1717.md">cses-fi-problemset-task-1717</a></li>
+<li><a href="source/cses-fi-problemset-task-1722.md">cses-fi-problemset-task-1722</a></li>
+<li><a href="source/cses-fi-problemset-task-1723.md">cses-fi-problemset-task-1723</a></li>
+<li><a href="source/cses-fi-problemset-task-1724.md">cses-fi-problemset-task-1724</a></li>
+<li><a href="source/cses-fi-problemset-task-1725.md">cses-fi-problemset-task-1725</a></li>
+<li><a href="source/cses-fi-problemset-task-1726.md">cses-fi-problemset-task-1726</a></li>
+<li><a href="source/cses-fi-problemset-task-1727.md">cses-fi-problemset-task-1727</a></li>
+<li><a href="source/cses-fi-problemset-task-1731.md">cses-fi-problemset-task-1731</a></li>
+<li><a href="source/cses-fi-problemset-task-1732.md">cses-fi-problemset-task-1732</a></li>
+<li><a href="source/cses-fi-problemset-task-1733.md">cses-fi-problemset-task-1733</a></li>
+<li><a href="source/cses-fi-problemset-task-1744.md">cses-fi-problemset-task-1744</a></li>
+<li><a href="source/cses-fi-problemset-task-1745.md">cses-fi-problemset-task-1745</a></li>
+<li><a href="source/cses-fi-problemset-task-1746.md">cses-fi-problemset-task-1746</a></li>
+<li><a href="source/cses-fi-problemset-task-1750.md">cses-fi-problemset-task-1750</a></li>
+<li><a href="source/cses-fi-problemset-task-1751.md">cses-fi-problemset-task-1751</a></li>
+<li><a href="source/cses-fi-problemset-task-1753.md">cses-fi-problemset-task-1753</a></li>
+<li><a href="source/cses-fi-problemset-task-1754.md">cses-fi-problemset-task-1754</a></li>
+<li><a href="source/cses-fi-problemset-task-1755.md">cses-fi-problemset-task-1755</a></li>
+<li><a href="source/cses-fi-problemset-task-2079.md">cses-fi-problemset-task-2079</a></li>
+<li><a href="source/cses-fi-problemset-task-2080.md">cses-fi-problemset-task-2080</a></li>
+<li><a href="source/cses-fi-problemset-task-2081.md">cses-fi-problemset-task-2081</a></li>
+<li><a href="source/cses-fi-problemset-task-2104.md">cses-fi-problemset-task-2104</a></li>
+<li><a href="source/cses-fi-problemset-task-2105.md">cses-fi-problemset-task-2105</a></li>
+<li><a href="source/cses-fi-problemset-task-2106.md">cses-fi-problemset-task-2106</a></li>
+<li><a href="source/cses-fi-problemset-task-2107.md">cses-fi-problemset-task-2107</a></li>
+<li><a href="source/cses-fi-problemset-task-2108.md">cses-fi-problemset-task-2108</a></li>
+<li><a href="source/cses-fi-problemset-task-2109.md">cses-fi-problemset-task-2109</a></li>
+<li><a href="source/cses-fi-problemset-task-2110.md">cses-fi-problemset-task-2110</a></li>
+<li><a href="source/cses-fi-problemset-task-2130.md">cses-fi-problemset-task-2130</a></li>
+<li><a href="source/cses-fi-problemset-task-2131.md">cses-fi-problemset-task-2131</a></li>
+<li><a href="source/cses-fi-problemset-task-2134.md">cses-fi-problemset-task-2134</a></li>
+<li><a href="source/cses-fi-problemset-task-2162.md">cses-fi-problemset-task-2162</a></li>
+<li><a href="source/cses-fi-problemset-task-2163.md">cses-fi-problemset-task-2163</a></li>
+<li><a href="source/cses-fi-problemset-task-2164.md">cses-fi-problemset-task-2164</a></li>
+<li><a href="source/cses-fi-problemset-task-2165.md">cses-fi-problemset-task-2165</a></li>
+<li><a href="source/cses-fi-problemset-task-2181.md">cses-fi-problemset-task-2181</a></li>
+<li><a href="source/cses-fi-problemset-task-2182.md">cses-fi-problemset-task-2182</a></li>
+<li><a href="source/cses-fi-problemset-task-2183.md">cses-fi-problemset-task-2183</a></li>
+<li><a href="source/cses-fi-problemset-task-2185.md">cses-fi-problemset-task-2185</a></li>
+<li><a href="source/cses-fi-problemset-task-2205.md">cses-fi-problemset-task-2205</a></li>
+<li><a href="source/cses-fi-problemset-task-2210.md">cses-fi-problemset-task-2210</a></li>
+<li><a href="source/cses-fi-problemset-task-2216.md">cses-fi-problemset-task-2216</a></li>
+<li><a href="source/cses-fi-problemset-task-2217.md">cses-fi-problemset-task-2217</a></li>
+<li><a href="source/cses-fi-problemset-task-2413.md">cses-fi-problemset-task-2413</a></li>
+<li><a href="source/cses-fi-problemset-task-2417.md">cses-fi-problemset-task-2417</a></li>
+<li><a href="source/cses-fi-problemset-task-2420.md">cses-fi-problemset-task-2420</a></li>
+<li><a href="source/cses-fi-problemset-task-2421.md">cses-fi-problemset-task-2421</a></li>
+<li><a href="source/cses-fi-problemset-task-2428.md">cses-fi-problemset-task-2428</a></li>
+<li><a href="source/cses-fi-problemset-task-2431.md">cses-fi-problemset-task-2431</a></li>
+<li><a href="source/cses-fi-problemset.md">cses-fi-problemset</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

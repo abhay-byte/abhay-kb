@@ -350,3 +350,11 @@ Configuration management ensures that the **behavior of a system is predictable,
 ---
 
 *References: DevOps, CMM Level 5, Kubernetes Documentation, Site Reliability Engineering (Google)*
+
+---
+
+## Sources
+
+- [college-prep-se-notes-all](source/college-prep-se-notes-all.md)
+- [college-prep-se-root](source/college-prep-se-root.md)
+- [college-prep-se-textbook-integral](source/college-prep-se-textbook-integral.md)

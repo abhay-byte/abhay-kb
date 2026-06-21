@@ -308,3 +308,11 @@ Ensures atomic database write + event publish by writing to an outbox table and 
 ---
 
 *References: GoF, SOLID Principles, IEEE 1016-1998, microservices.io*
+
+---
+
+## Sources
+
+- [college-prep-se-allquestions](source/college-prep-se-allquestions.md)
+- [college-prep-se-notes-units](source/college-prep-se-notes-units.md)
+- [college-prep-se-root](source/college-prep-se-root.md)

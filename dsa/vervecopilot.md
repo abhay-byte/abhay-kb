@@ -53,3 +53,9 @@ Solutions are available in the repo at:
 ---
 
 *Last updated: May 2026*
+
+---
+
+## Sources
+
+- [vervecopilot-com-hot-blogs-30-leetcode-questions](source/vervecopilot-com-hot-blogs-30-leetcode-questions.md)

@@ -460,3 +460,14 @@ The SDD is a **formal document** that describes the architecture and design of a
 ---
 
 *References: IEEE 1016-1998, UML 2.5, GoF, C4 Model, SOLID Principles*
+
+---
+
+## Sources
+
+- [college-prep-se-assignment](source/college-prep-se-assignment.md)
+- [college-prep-se-files-misc](source/college-prep-se-files-misc.md)
+- [college-prep-se-notes-units](source/college-prep-se-notes-units.md)
+- [college-prep-se-root](source/college-prep-se-root.md)
+- [college-prep-se-textbook-integral](source/college-prep-se-textbook-integral.md)
+- [college-prep-se-textbook-pressman](source/college-prep-se-textbook-pressman.md)

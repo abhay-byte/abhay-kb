@@ -991,3 +991,11 @@ PROJECT FIT
 ---
 
 *Last updated: May 2026*
+
+---
+
+## Sources
+
+- [bitloops-com-docs-bitloops-language-learning-software-architecture-clean-archite](source/bitloops-com-docs-bitloops-language-learning-software-architecture-clean-archite.md)
+- [blog-codacy-com-clean-code-principles](source/blog-codacy-com-clean-code-principles.md)
+- [scaler-com-topics-cohesion-and-coupling-in-software-engineering](source/scaler-com-topics-cohesion-and-coupling-in-software-engineering.md)

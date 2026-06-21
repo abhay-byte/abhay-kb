@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Design | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Design</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>System Design</h1>
+
+<p>> <em>Comprehensive reference on software architecture, system design principles, notations, and modeling.</em>
+> Standards: IEEE 1016-1998 (SDD), UML 2.5, C4 Model</p>
+
+<hr>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+<li><a href="#1-system-design-fundamentals">System Design Fundamentals</a></li>
+<li><a href="#2-software-architecture-styles">Software Architecture Styles</a></li>
+<li><a href="#3-design-strategies-top-down-bottom-up-hybrid">Design Strategies: Top-Down, Bottom-Up, Hybrid</a></li>
+<li><a href="#4-function-oriented-design">Function-Oriented Design</a></li>
+<li><a href="#5-object-oriented-design">Object-Oriented Design</a></li>
+<li><a href="#6-user-interface-design">User Interface Design</a></li>
+<li><a href="#7-design-notations--modeling-diagrams">Design Notations & Modeling Diagrams</a></li>
+<li><a href="#8-data-flow-diagrams-dfd">Data Flow Diagrams (DFD)</a></li>
+<li><a href="#9-entity-relationship-diagrams-erd">Entity-Relationship Diagrams (ERD)</a></li>
+<li><a href="#10-uml-diagrams">UML Diagrams</a></li>
+<li><a href="#11-data-dictionary">Data Dictionary</a></li>
+<li><a href="#12-software-design-document-sdd-ieee-1016">Software Design Document (SDD) IEEE 1016</a></li>
+<li><a href="#13-design-for-non-functional-requirements">Design for Non-Functional Requirements</a></li>
+<li><a href="#14-agentic-system-design-considerations">Agentic System Design Considerations</a></li>
+</ol>
+
+<hr>
+
+<h2 id="1.-system-design-fundamentals">1. System Design Fundamentals</h2>
+
+<p>System design is the process of defining the <strong>architecture, components, modules, interfaces, and interactions</strong> of a software system to satisfy specified requirements. It transforms requirements into a blueprint for construction.</p>
+
+<strong>Software Design (IEEE):</strong> The process of defining the architecture, components, interfaces, and other characteristics of a system or component. Also defined as the result of that process.
+
+<h3>Design vs Architecture</h3>
+
+<table>
+<tr>
+<th>Aspect</th>
+<th>Architecture</th>
+<th>Design</th>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>High-level structure, system-wide decisions</td>
+<td>Module-level, component internals</td>
+</tr>
+<tr>
+<td><strong>Concerns</strong></td>
+<td>Quality attributes, constraints, trade-offs</td>
+<td>Algorithms, data structures, APIs</td>
+</tr>
+<tr>
+<td><strong>Stakeholders</strong></td>
+<td>Architects, CTO, cross-team</td>
+<td>Developers, team leads</td>
+</tr>
+<tr>
+<td><strong>Decisions</strong></td>
+<td>Hard to change (architecturally significant)</td>
+<td>Easier to refactor</td>
+</tr>
+</table>
+
+<h3>Design Quality Attributes</h3>
+
+<p>A good design must be:</p>
+
+<ul>
+<li><strong>Correct & Complete</strong> — Satisfies all functional and non-functional requirements</li>
+<li><strong>Understandable</strong> — Clear to developers, testers, and maintainers</li>
+<li><strong>Maintainable</strong> — Easy to modify and extend without breaking existing functionality</li>
+<li><strong>At the right level</strong> — Appropriate abstraction for the intended audience</li>
+<li><strong>Traceable</strong> — Links back to requirements and forward to implementation</li>
+</ul>
+
+<hr>
+
+<h2 id="2.-software-architecture-styles">2. Software Architecture Styles</h2>
+
+<p>An architecture style defines the <strong>family of systems</strong> in terms of their structure, components, connectors, and constraints. The choice of style impacts scalability, maintainability, and deployment.</p>
+
+<h3>Layered (n-Tier) Architecture</h3>
+
+<p>Organizes the system into horizontal layers, each with a specific responsibility. Each layer depends only on the layer below it.</p>
+
+<table>
+<tr>
+<th>Layer</th>
+<th>Responsibility</th>
+</tr>
+<tr>
+<td><strong>Presentation</strong></td>
+<td>User interface, client-side logic</td>
+</tr>
+<tr>
+<td><strong>Business Logic</strong></td>
+<td>Domain rules, workflows</td>
+</tr>
+<tr>
+<td><strong>Data Access</strong></td>
+<td>Database operations, ORM</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>Data persistence</td>
+</tr>
+</table>
+
+<ul>
+<li>Separation of concerns — each layer has a single responsibility</li>
+<li>Easy to develop, test, and maintain independently</li>
+<li>Can suffer from layer leakage and performance overhead</li>
+</ul>
+
+<h3>Microservices Architecture</h3>
+
+<p>Decomposes the system into small, independently deployable services. Each service owns its data and communicates via APIs.</p>
+
+<ul>
+<li>Independent deployment and scaling per service</li>
+<li>Technology heterogeneity — each service can use different tech stacks</li>
+<li>Complex inter-service communication and data consistency</li>
+<li>Requires DevOps maturity, monitoring, and observability</li>
+</ul>
+
+<h3>Event-Driven Architecture</h3>
+
+<p>Components communicate through events. Producers emit events; consumers react. Loosely coupled via message broker.</p>
+
+<ul>
+<li>Highly scalable and responsive</li>
+<li>Loose coupling between producers and consumers</li>
+<li>Complex event handling and eventual consistency</li>
+<li>Tools: Kafka, RabbitMQ, AWS SNS/SQS, Azure Event Grid</li>
+</ul>
+
+<h3>Microkernel (Plugin) Architecture</h3>
+
+<p>Core system provides minimal functionality. Extensions/plugins add features.</p>
+
+<ul>
+<li>Extensible and customizable</li>
+<li>Well-suited for product families</li>
+<li>Plugin contract management complexity</li>
+<li>Examples: Eclipse IDE, VS Code, Jira</li>
+</ul>
+
+<h3>Pipe-and-Filter Architecture</h3>
+
+<p>Data flows through a sequence of processing steps (filters) connected by pipes.</p>
+
+<ul>
+<li>Reusable filters, easy to compose new pipelines</li>
+<li>Parallel execution possible</li>
+<li>Overhead from data transformation between filters</li>
+</ul>
+
+<h3>Architecture Style Comparison</h3>
+
+<table>
+<tr>
+<th>Style</th>
+<th>Scalability</th>
+<th>Maintainability</th>
+<th>Complexity</th>
+<th>Use Case</th>
+</tr>
+<tr>
+<td>Layered</td>
+<td>Moderate</td>
+<td>High</td>
+<td>Low</td>
+<td>Enterprise apps</td>
+</tr>
+<tr>
+<td>Microservices</td>
+<td>Very High</td>
+<td>Moderate</td>
+<td>High</td>
+<td>Large-scale distributed systems</td>
+</tr>
+<tr>
+<td>Event-Driven</td>
+<td>Very High</td>
+<td>Moderate</td>
+<td>High</td>
+<td>Real-time processing</td>
+</tr>
+<tr>
+<td>Microkernel</td>
+<td>Moderate</td>
+<td>Very High</td>
+<td>Medium</td>
+<td>Extensible products</td>
+</tr>
+<tr>
+<td>Pipe-and-Filter</td>
+<td>Moderate</td>
+<td>High</td>
+<td>Low</td>
+<td>Data processing</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="3.-design-strategies-top-down-bottom-up-hybrid">3. Design Strategies: Top-Down, Bottom-Up, Hybrid</h2>
+
+<h3>Top-Down Design</h3>
+
+<p>Start with the <strong>high-level system</strong>, then decompose it into subsystems, modules, and components.</p>
+
+<ul>
+<li>Clear structure and hierarchy</li>
+<li>Works well when requirements are well-understood</li>
+<li>May miss low-level optimization opportunities</li>
+<li>Requires accurate high-level decomposition</li>
+</ul>
+
+<h3>Bottom-Up Design</h3>
+
+<p>Build <strong>primitive components first</strong>, then compose them into larger structures.</p>
+
+<ul>
+<li>Focuses on reusability from the start</li>
+<li>Supports parallel development</li>
+<li>Integration challenges at higher levels</li>
+<li>Risk of abstraction mismatch</li>
+</ul>
+
+<h3>Hybrid Design</h3>
+
+<p>Combine both approaches. Use top-down for architectural decomposition and bottom-up for reusable component libraries.</p>
+
+<ul>
+<li>Leverages strengths of both approaches</li>
+<li>Requires careful coordination</li>
+<li>Common in practice for complex systems</li>
+</ul>
+
+<hr>
+
+<h2 id="4.-function-oriented-design">4. Function-Oriented Design</h2>
+
+<p>Focuses on <strong>functions or processes</strong> as the primary decomposition unit. The system is divided into functions that transform inputs to outputs.</p>
+
+<h3>Key Concepts</h3>
+
+<ul>
+<li><strong>Functional decomposition</strong> — break down complex functions into simpler ones</li>
+<li><strong>Data flow</strong> — track how data moves between functions</li>
+<li><strong>Data store</strong> — persistent data repositories</li>
+<li><strong>Process specification</strong> — detailed logic for each function</li>
+</ul>
+
+<h3>When to Use</h3>
+
+<ul>
+<li>Data processing systems (ETL, compilers)</li>
+<li>Systems with clear input/output transformations</li>
+<li>Legacy system modernization</li>
+</ul>
+
+<h3>Limitations</h3>
+
+<ul>
+<li>Data and behavior are separated</li>
+<li>Changes in data structure propagate across many functions</li>
+<li>Less suitable for interactive or stateful systems</li>
+</ul>
+
+<hr>
+
+<h2 id="5.-object-oriented-design">5. Object-Oriented Design</h2>
+
+<p>Organizes the system as a collection of <strong>objects</strong> that encapsulate data and behavior. Each object is an instance of a class.</p>
+
+<h3>Key Concepts</h3>
+
+<ul>
+<li><strong>Encapsulation</strong> — bundle data and methods; hide internal state</li>
+<li><strong>Inheritance</strong> — derive new classes from existing ones</li>
+<li><strong>Polymorphism</strong> — same interface, different implementations</li>
+<li><strong>Abstraction</strong> — expose only what is necessary</li>
+</ul>
+
+<h3>Design Process</h3>
+
+<ol>
+<li>Identify objects and classes from requirements</li>
+<li>Define attributes and methods for each class</li>
+<li>Establish relationships (inheritance, association, composition)</li>
+<li>Design interfaces and abstract classes</li>
+<li>Apply design patterns where appropriate</li>
+</ol>
+
+<h3>When to Use</h3>
+
+<ul>
+<li>Complex domain logic with rich relationships</li>
+<li>Systems requiring extensibility and maintainability</li>
+<li>Interactive applications with complex state</li>
+</ul>
+
+<hr>
+
+<h2 id="6.-user-interface-design">6. User Interface Design</h2>
+
+<p>UI design focuses on the interaction between users and the system.</p>
+
+<h3>Design Principles</h3>
+
+<ul>
+<li><strong>Consistency</strong> — similar actions produce similar results</li>
+<li><strong>Feedback</strong> — inform users of system state and results</li>
+<li><strong>Affordance</strong> — visual cues suggest how elements are used</li>
+<li><strong>Error Prevention</strong> — design to minimize mistakes</li>
+<li><strong>Recovery</strong> — easy undo and error resolution</li>
+<li><strong>User Control</strong> — users control the interaction flow</li>
+</ul>
+
+<h3>UI Design Process</h3>
+
+<ol>
+<li><strong>User Research</strong> — understand users, tasks, and context</li>
+<li><strong>Information Architecture</strong> — structure content and navigation</li>
+<li><strong>Wireframing</strong> — low-fidelity layout and flow</li>
+<li><strong>Prototyping</strong> — interactive mockups</li>
+<li><strong>Visual Design</strong> — colors, typography, branding</li>
+<li><strong>Usability Testing</strong> — validate with real users</li>
+</ol>
+
+<hr>
+
+<h2 id="7.-design-notations-&-modeling-diagrams">7. Design Notations & Modeling Diagrams</h2>
+
+<h3>Purpose of Modeling</h3>
+
+<ul>
+<li>Visualize system structure and behavior</li>
+<li>Communicate design intent across teams</li>
+<li>Analyze and validate design decisions</li>
+<li>Document architecture for maintenance</li>
+</ul>
+
+<h3>The C4 Model</h3>
+
+<p>A hierarchical approach to visualizing software architecture:</p>
+
+<table>
+<tr>
+<th>Level</th>
+<th>Diagram</th>
+<th>Audience</th>
+</tr>
+<tr>
+<td><strong>Level 1: Context</strong></td>
+<td>System context diagram</td>
+<td>Technical and non-technical stakeholders</td>
+</tr>
+<tr>
+<td><strong>Level 2: Containers</strong></td>
+<td>Container diagram</td>
+<td>Technical stakeholders, developers</td>
+</tr>
+<tr>
+<td><strong>Level 3: Components</strong></td>
+<td>Component diagram</td>
+<td>Developers</td>
+</tr>
+<tr>
+<td><strong>Level 4: Code</strong></td>
+<td>Class/sequence diagram</td>
+<td>Developers</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="8.-data-flow-diagrams-dfd">8. Data Flow Diagrams (DFD)</h2>
+
+<p>DFDs represent the <strong>flow of data</strong> through a system. They show how data enters, is processed, stored, and leaves the system.</p>
+
+<h3>DFD Symbols (Yourdon/DeMarco)</h3>
+
+<table>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Circle/oval</td>
+<td>Process</td>
+<td>Transforms input data to output</td>
+</tr>
+<tr>
+<td>Rectangle</td>
+<td>External Entity</td>
+<td>External source or destination of data</td>
+</tr>
+<tr>
+<td>Open rectangle</td>
+<td>Data Store</td>
+<td>Repository of data</td>
+</tr>
+<tr>
+<td>Arrow</td>
+<td>Data Flow</td>
+<td>Movement of data between elements</td>
+</tr>
+</table>
+
+<h3>DFD Levels</h3>
+
+<ul>
+<li><strong>Level 0 (Context Diagram)</strong> — single process, all external entities</li>
+<li><strong>Level 1</strong> — decomposes the main process into major subsystems</li>
+<li><strong>Level 2</strong> — further decomposition of each major subsystem</li>
+</ul>
+
+<h3>Guidelines</h3>
+
+<ul>
+<li>All data flows must start or end at a process</li>
+<li>Data stores must have both incoming and outgoing flows</li>
+<li>External entities should not connect directly to each other</li>
+<li>Maintain balance between levels (same inputs/outputs)</li>
+</ul>
+
+<hr>
+
+<h2 id="9.-entity-relationship-diagrams-erd">9. Entity-Relationship Diagrams (ERD)</h2>
+
+<p>ERDs model the <strong>data entities</strong> in a system and the <strong>relationships</strong> between them.</p>
+
+<h3>Components</h3>
+
+<table>
+<tr>
+<th>Component</th>
+<th>Notation</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Entity</strong></td>
+<td>Rectangle</td>
+<td>A real-world object or concept (e.g., Customer, Order)</td>
+</tr>
+<tr>
+<td><strong>Attribute</strong></td>
+<td>Ellipse</td>
+<td>Properties of an entity (e.g., name, email)</td>
+</tr>
+<tr>
+<td><strong>Relationship</strong></td>
+<td>Diamond</td>
+<td>Association between entities (e.g., places, belongs to)</td>
+</tr>
+</table>
+
+<h3>Relationship Types</h3>
+
+<ul>
+<li><strong>One-to-One (1:1)</strong> — each entity instance relates to exactly one of the other</li>
+<li><strong>One-to-Many (1:N)</strong> — one entity instance relates to many of the other</li>
+<li><strong>Many-to-Many (M:N)</strong> — many instances relate to many instances</li>
+</ul>
+
+<h3>Cardinality Notation (Chen vs Crow's Foot)</h3>
+
+<table>
+<tr>
+<th>Chen</th>
+<th>Crow's Foot</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>1</td>
+<td>\</td>
+<td>\</td>
+<td>--\</td>
+<td>\</td>
+<td></td>
+<td>Exactly one</td>
+</tr>
+<tr>
+<td>M</td>
+<td>\</td>
+<td>\</td>
+<td>--<</td>
+<td>Many</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td>o--\</td>
+<td>\</td>
+<td></td>
+<td>Zero or one</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="10.-uml-diagrams">10. UML Diagrams</h2>
+
+<p>UML (Unified Modeling Language) 2.5 provides a standardized set of diagrams for modeling software systems.</p>
+
+<h3>Structure Diagrams (Static View)</h3>
+
+<table>
+<tr>
+<th>Diagram</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><strong>Class Diagram</strong></td>
+<td>Classes, attributes, methods, and relationships</td>
+</tr>
+<tr>
+<td><strong>Component Diagram</strong></td>
+<td>Physical components and their dependencies</td>
+</tr>
+<tr>
+<td><strong>Deployment Diagram</strong></td>
+<td>Hardware nodes and software deployment</td>
+</tr>
+<tr>
+<td><strong>Package Diagram</strong></td>
+<td>Grouping of model elements</td>
+</tr>
+</table>
+
+<h3>Behavior Diagrams (Dynamic View)</h3>
+
+<table>
+<tr>
+<th>Diagram</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><strong>Use Case Diagram</strong></td>
+<td>Actors, use cases, and system boundaries</td>
+</tr>
+<tr>
+<td><strong>Sequence Diagram</strong></td>
+<td>Interactions between objects over time</td>
+</tr>
+<tr>
+<td><strong>Activity Diagram</strong></td>
+<td>Workflow and process flow</td>
+</tr>
+<tr>
+<td><strong>State Machine Diagram</strong></td>
+<td>States and transitions of an object</td>
+</tr>
+</table>
+
+<h3>Class Diagram Relationships</h3>
+
+<table>
+<tr>
+<th>Relationship</th>
+<th>Notation</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Association</strong></td>
+<td>Solid line</td>
+<td>Structural relationship</td>
+</tr>
+<tr>
+<td><strong>Inheritance</strong></td>
+<td>Hollow triangle</td>
+<td>Generalization/specialization</td>
+</tr>
+<tr>
+<td><strong>Aggregation</strong></td>
+<td>Hollow diamond</td>
+<td>Part-of (weak ownership)</td>
+</tr>
+<tr>
+<td><strong>Composition</strong></td>
+<td>Filled diamond</td>
+<td>Part-of (strong ownership, shared lifetime)</td>
+</tr>
+<tr>
+<td><strong>Dependency</strong></td>
+<td>Dashed arrow</td>
+<td>Uses or depends on</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="11.-data-dictionary">11. Data Dictionary</h2>
+
+<p>A data dictionary is a <strong>centralized repository</strong> of information about data elements in the system.</p>
+
+<h3>Contents</h3>
+
+<table>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Unique identifier for the data element</td>
+</tr>
+<tr>
+<td><strong>Alias</strong></td>
+<td>Alternative names</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Data type (string, integer, date, etc.)</td>
+</tr>
+<tr>
+<td><strong>Length</strong></td>
+<td>Maximum size</td>
+</tr>
+<tr>
+<td><strong>Range</strong></td>
+<td>Valid values or value range</td>
+</tr>
+<tr>
+<td><strong>Nullability</strong></td>
+<td>Whether null values are allowed</td>
+</tr>
+<tr>
+<td><strong>Default Value</strong></td>
+<td>Default if not specified</td>
+</tr>
+<tr>
+<td><strong>Source</strong></td>
+<td>Where the data originates</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Business meaning and usage</td>
+</tr>
+</table>
+
+<h3>Data Dictionary Notation</h3>
+
+<ul>
+<li><code>=</code> — composed of</li>
+<li><code>+</code> — and</li>
+<li><code>[|]</code> — or (choose one)</li>
+<li><code>{}</code> — iteration (one or more)</li>
+<li><code>()</code> — optional</li>
+</ul>
+
+<strong>Example:</strong>
+
+<pre><code>Customer Address = Street + City + State + ZipCode
+Customer Name = [First Name | Last Name]
+Order Items = {Item}
+</code></pre>
+
+<hr>
+
+<h2 id="12.-software-design-document-sdd-ieee-1016">12. Software Design Document (SDD) IEEE 1016</h2>
+
+<p>The SDD is a <strong>formal document</strong> that describes the architecture and design of a software system.</p>
+
+<h3>IEEE 1016-1998 SDD Structure</h3>
+
+<table>
+<tr>
+<th>Section</th>
+<th>Content</th>
+</tr>
+<tr>
+<td><strong>1. Introduction</strong></td>
+<td>Purpose, scope, definitions, references</td>
+</tr>
+<tr>
+<td><strong>2. Architectural Design</strong></td>
+<td>Decomposition, component descriptions, connectors</td>
+</tr>
+<tr>
+<td><strong>3. Detailed Design</strong></td>
+<td>Module interfaces, data structures, algorithms</td>
+</tr>
+<tr>
+<td><strong>4. Design Decisions</strong></td>
+<td>Rationale, trade-offs, alternatives considered</td>
+</tr>
+<tr>
+<td><strong>5. Requirements Traceability</strong></td>
+<td>Mapping design elements to requirements</td>
+</tr>
+<tr>
+<td><strong>6. Appendices</strong></td>
+<td>Supporting information, glossaries</td>
+</tr>
+</table>
+
+<h3>Design Viewpoints (IEEE 1016)</h3>
+
+<table>
+<tr>
+<th>Viewpoint</th>
+<th>Focus</th>
+</tr>
+<tr>
+<td><strong>Decomposition Viewpoint</strong></td>
+<td>Module breakdown and hierarchy</td>
+</tr>
+<tr>
+<td><strong>Dependency Viewpoint</strong></td>
+<td>Inter-module dependencies and coupling</td>
+</tr>
+<tr>
+<td><strong>Interface Viewpoint</strong></td>
+<td>Module interfaces and protocols</td>
+</tr>
+<tr>
+<td><strong>Detailed Design Viewpoint</strong></td>
+<td>Internal design of each module</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="13.-design-for-non-functional-requirements">13. Design for Non-Functional Requirements</h2>
+
+<h3>Performance</h3>
+
+<ul>
+<li>Minimize latency (response time)</li>
+<li>Maximize throughput (requests per second)</li>
+<li>Use caching, connection pooling, async processing</li>
+<li>Profile and benchmark regularly</li>
+</ul>
+
+<h3>Security</h3>
+
+<ul>
+<li>Apply least privilege principle</li>
+<li>Validate and sanitize all inputs</li>
+<li>Encrypt data in transit and at rest</li>
+<li>Implement authentication and authorization</li>
+</ul>
+
+<h3>Scalability</h3>
+
+<ul>
+<li>Design for horizontal scaling (stateless services)</li>
+<li>Use load balancers and auto-scaling groups</li>
+<li>Partition/shared data stores</li>
+<li>Design for eventual consistency where acceptable</li>
+</ul>
+
+<h3>Maintainability</h3>
+
+<ul>
+<li>Apply modular design with clear interfaces</li>
+<li>Use consistent coding standards</li>
+<li>Document design decisions (ADRs)</li>
+<li>Keep modules loosely coupled and highly cohesive</li>
+</ul>
+
+<hr>
+
+<h2 id="14.-agentic-system-design-considerations">14. Agentic System Design Considerations</h2>
+
+<h3>Design for Autonomous Agents</h3>
+
+<ul>
+<li><strong>Clear interfaces</strong> — agents need well-defined APIs and contracts</li>
+<li><strong>Observability</strong> — agents must expose their state, decisions, and actions</li>
+<li><strong>Deterministic outcomes</strong> — where possible, ensure repeatable behavior</li>
+<li><strong>Graceful degradation</strong> — agents should handle failures and edge cases</li>
+</ul>
+
+<h3>Multi-Agent Systems</h3>
+
+<ul>
+<li><strong>Agent communication</strong> — define protocols for inter-agent messaging</li>
+<li><strong>Task decomposition</strong> — break complex tasks into agent-assignable units</li>
+<li><strong>State management</strong> — shared vs. isolated state per agent</li>
+<li><strong>Coordination patterns</strong> — orchestrator, choreography, auction-based</li>
+</ul>
+
+<h3>Safety & Guardrails</h3>
+
+<ul>
+<li><strong>Validation layers</strong> — validate agent outputs before execution</li>
+<li><strong>Circuit breakers</strong> — stop cascading failures between agents</li>
+<li><strong>Human-in-the-loop</strong> — critical decisions require human approval</li>
+<li><strong>Audit trails</strong> — every agent action must be logged and traceable</li>
+</ul>
+
+<hr>
+
+<em>References: IEEE 1016-1998, UML 2.5, GoF, C4 Model, SOLID Principles</em>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/college-prep-se-assignment.md">college-prep-se-assignment</a></li>
+<li><a href="source/college-prep-se-files-misc.md">college-prep-se-files-misc</a></li>
+<li><a href="source/college-prep-se-notes-units.md">college-prep-se-notes-units</a></li>
+<li><a href="source/college-prep-se-root.md">college-prep-se-root</a></li>
+<li><a href="source/college-prep-se-textbook-integral.md">college-prep-se-textbook-integral</a></li>
+<li><a href="source/college-prep-se-textbook-pressman.md">college-prep-se-textbook-pressman</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

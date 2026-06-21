@@ -618,3 +618,15 @@ Prioritizes testing based on the **risk of failure** and **impact of failure**.
 ---
 
 *References: IEEE 829, ISO 9126, ISTQB, McCabe Metrics, OWASP Top 10*
+
+---
+
+## Sources
+
+- [college-prep-se-allquestions](source/college-prep-se-allquestions.md)
+- [college-prep-se-notes-all](source/college-prep-se-notes-all.md)
+- [college-prep-se-notes-units](source/college-prep-se-notes-units.md)
+- [college-prep-se-pyq](source/college-prep-se-pyq.md)
+- [college-prep-se-root](source/college-prep-se-root.md)
+- [college-prep-se-textbook-aggarwal](source/college-prep-se-textbook-aggarwal.md)
+- [college-prep-se-textbook-pressman](source/college-prep-se-textbook-pressman.md)

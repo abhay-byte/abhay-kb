@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">About-me</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-05-15</div>
+
+<h1>About Me</h1>
+
+<p>My origin is from <strong>Palakkad, Kerala</strong>, but I was born and brought up in <strong>New Delhi</strong>. I did my schooling at <strong>Kerala Sr. Secondary School, Vikaspuri, New Delhi</strong> — completing my Class X in 2018 and Class XII in 2021. For my 9th grade, I spent a year in Kerala at <strong>Bhavans Vidya Mandir, Palakkad</strong> — moved there due to family circumstances. While there, I learned karate at a local dojo (<strong>WFSK Shotokan Karate</strong>).</p>
+
+<figure>
+  <img src="/abhay-kb/assets/kerala-school.jpg" alt="Kerala Sr. Secondary School, Vikaspuri" style="max-width:100%;border-radius:8px;">
+  <figcaption>Kerala Sr. Secondary School, Vikaspuri, New Delhi</figcaption>
+</figure>
+
+<p>In my 12th grade, I published my first app to the Play Store — <strong>Final Benchmark</strong>. Released in February 2021, it was built with Unity to benchmark Android phone performance.</p>
+
+<p>Cleared <strong>JEE Mains</strong> and joined <strong>Guru Tegh Bahadur Institute of Technology (GTBIT), Delhi</strong> — ranked among India's top higher education institutions in <strong>EW India Higher Education Rankings (EWIHER) 2025-26</strong> — pursuing my <strong>B.Tech in Information Technology</strong> (Evening Batch).</p>
+
+<figure>
+  <img src="/abhay-kb/assets/gtbit.jpg" alt="Guru Tegh Bahadur Institute of Technology" style="max-width:100%;border-radius:8px;">
+  <figcaption>Guru Tegh Bahadur Institute of Technology (GTBIT), Delhi</figcaption>
+</figure>
+
+<p>In my first year, I joined <strong>GDSC (Google Developer Student Clubs)</strong> in the <strong>Design</strong> department — my first society in college.</p>
+
+<p>During my first year, I made and published my first game — <strong>Fantasy Racer</strong> — on the Play Store. It had plenty of bugs and rough edges, but it was complete.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/fantasy-racing.gif" alt="Fantasy Racer gameplay" style="max-width:100%;border-radius:8px;">
+  <figcaption>Fantasy Racer — my first game</figcaption>
+</figure>
+
+<p>At the end of my first year, I landed my first job as a <strong>Game Developer</strong> at <strong>Gamified Company</strong> (based in Bengaluru) — a remote role where I worked on <strong>WordSea</strong>, a Wordle-style word game. Stayed there for 2 months.</p>
+
+<p>I'm decent at sports too. In school, I won medals in track and field — <strong>100m, 200m, long jump, relay</strong> — and played football. I've also participated in inter-school zonals events.</p>
+
+<figure>
+  <img src="/abhay-kb/assets/sports-medals.jpg" alt="Sports medals" style="max-width:100%;border-radius:8px;">
+  <figcaption>Track and field medals</figcaption>
+</figure>
+
+<p>I'm a pure vegetarian (not vegan though) — and a notoriously picky eater. I don't like vegetables despite being a vegetarian, which is ironic. My favourite food is <strong>noodles</strong>.</p>
+
+<p>When I'm not coding, I love watching anime — <strong>300+ shows</strong> and counting. My all-time favourite is <strong>One Piece</strong> (currently at episode 956).</p>
+
+<figure>
+  <img src="/abhay-kb/assets/onepiece.gif" alt="One Piece" style="max-width:100%;border-radius:8px;">
+  <figcaption>One Piece</figcaption>
+</figure>
+
+<h2>Leo Sun + Gemini Moon</h2>
+
+<figure>
+  <img src="/abhay-kb/assets/leo-gemini.jpg" alt="Leo + Gemini" style="max-width:100%;border-radius:8px;">
+  <figcaption>The unstoppable combo: Leo Sun + Gemini Moon</figcaption>
+</figure>
+
+<p>Let's be real — I got the best possible hand from the cosmos. <strong>Leo Sun + Gemini Moon</strong> isn't just a good combination, it's the <em>only</em> combination if you want to be dominant, brilliant, and entertaining all at once. Here's why everyone else should take notes:</p>
+
+<p><strong>Leo (Sun)</strong> — Charisma on tap. Natural leader. The magnetism that makes people pay attention when I walk into a room. Confidence that's not arrogance (okay, maybe a little, but I've earned it). Everything I touch gets the royal treatment because mediocrity isn't in my vocabulary.</p>
+
+<p><strong>Gemini (Moon)</strong> — Quick-witted, adaptable, and mentally uncontainable. My brain runs at 2x speed while everyone else is still buffering. Can talk my way through anything, learn anything in half the time, and keep conversations interesting for hours.</p>
+
+<p><strong>The Combo</strong> — Leo gives me the fire to lead and dominate. Gemini gives me the intellectual range to actually back it up. I get the spotlight AND I'm smart enough to deserve it. Most signs only get one of those. I get both. Life's not fair.</p>
+
+<h3>Personality Traits</h3>
+<p>Confident to the point where people think I'm showing off — I'm not showing off, this is just my default setting.</p>
+<p>Natural leader who ends up in charge even when I didn't ask for it.</p>
+<p>Adaptable as hell — throw me into any situation and I'll figure it out fast.</p>
+<p>Can talk to anyone about anything (Gemini Moon gift).</p>
+<p>Creative with a dramatic flair — things should look good AND work good.</p>
+<p>Restless mind, always needs stimulation or I get bored instantly.</p>
+<p>Loyal to my circle, but I have zero patience for fake people or slow thinkers.</p>
+<p>Ambitious — I don't do anything halfway.</p>
+
+<h3>Partner Match</h3>
+<p>If you can handle this energy, the best match is someone who can match my intensity without trying to dim my light. <strong>Aries</strong> (fire meets fire — we'd either rule the world or burn it down trying) or <strong>Aquarius</strong> (the only sign intellectually chaotic enough to keep up with a Gemini Moon). Sagittarius also makes the cut — adventure-friendly and won't get insecure about sharing the spotlight.</p>
+<p>Anyone else? You're going to have to bring your A-game. Good luck.</p>
+<p align="right"><em>— this message was written with maximum Leo energy and zero apologies</em></p>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

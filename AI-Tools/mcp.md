@@ -1001,3 +1001,28 @@ npx -y chrome-devtools-mcp@latest
 - [**Tools**](./tools) — AI coding agents and assistants compared
 - [**AI Editors**](./ai-editors) — AI-powered editors comparison
 - [**Skills**](./skills) — Agent skills explained
+
+---
+
+## Sources
+
+- [api-anthropic-com-v1-mcp-github](source/api-anthropic-com-v1-mcp-github.md)
+- [api-slack-com-apps](source/api-slack-com-apps.md)
+- [github-com-chromedevtools-chrome-devtools-mcp](source/github-com-chromedevtools-chrome-devtools-mcp.md)
+- [github-com-code-craka-puppeteer-mcp](source/github-com-code-craka-puppeteer-mcp.md)
+- [github-com-cursortouch-android-mcp](source/github-com-cursortouch-android-mcp.md)
+- [github-com-github-github-mcp-server](source/github-com-github-github-mcp-server.md)
+- [github-com-iii-hq-iii](source/github-com-iii-hq-iii.md)
+- [github-com-microsoft-playwright-mcp](source/github-com-microsoft-playwright-mcp.md)
+- [github-com-mksglu-context-mode](source/github-com-mksglu-context-mode.md)
+- [github-com-modelcontextprotocol-servers-blob-main-src-memory-readme-md](source/github-com-modelcontextprotocol-servers-blob-main-src-memory-readme-md.md)
+- [github-com-modelcontextprotocol-servers-tree-main-src-filesystem](source/github-com-modelcontextprotocol-servers-tree-main-src-filesystem.md)
+- [github-com-modelcontextprotocol-servers-tree-main-src-git](source/github-com-modelcontextprotocol-servers-tree-main-src-git.md)
+- [github-com-modelcontextprotocol-servers-tree-main-src-github](source/github-com-modelcontextprotocol-servers-tree-main-src-github.md)
+- [github-com-modelcontextprotocol-servers-tree-main-src-sequentialthinking](source/github-com-modelcontextprotocol-servers-tree-main-src-sequentialthinking.md)
+- [github-com-modelcontextprotocol-servers-tree-main-src-time](source/github-com-modelcontextprotocol-servers-tree-main-src-time.md)
+- [github-com-nickclyde-duckduckgo-mcp-server](source/github-com-nickclyde-duckduckgo-mcp-server.md)
+- [github-com-rohitg00-agentmemory](source/github-com-rohitg00-agentmemory.md)
+- [github-com-settings-tokens](source/github-com-settings-tokens.md)
+- [github-com-upstash-context7](source/github-com-upstash-context7.md)
+- [mcpservers-org-servers-code-craka-puppeteer-mcp](source/mcpservers-org-servers-code-craka-puppeteer-mcp.md)

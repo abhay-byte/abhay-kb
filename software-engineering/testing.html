@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineering — Testing | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Testing</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>Software Testing</h1>
+
+<p>> <em>An exhaustive reference on software testing principles, techniques, strategies, metrics, tools, and best practices for autonomous AI agents.</em>
+> Standards: IEEE 829, ISO 9126, ISTQB, McCabe Metrics</p>
+
+<hr>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+<li><a href="#1-foundations-of-software-testing">Foundations of Software Testing</a></li>
+<li><a href="#2-testing-levels--the-v-model">Testing Levels & The V-Model</a></li>
+<li><a href="#3-functional-black-box-testing-techniques">Functional (Black-Box) Testing Techniques</a></li>
+<li><a href="#4-structural-white-box-testing-techniques">Structural (White-Box) Testing Techniques</a></li>
+<li><a href="#5-grey-box-testing">Grey-Box Testing</a></li>
+<li><a href="#6-test-design--documentation-ieee-829">Test Design & Documentation (IEEE 829)</a></li>
+<li><a href="#7-test-automation--frameworks">Test Automation & Frameworks</a></li>
+<li><a href="#8-performance--load-testing">Performance & Load Testing</a></li>
+<li><a href="#9-security-testing">Security Testing</a></li>
+<li><a href="#10-usability--accessibility-testing">Usability & Accessibility Testing</a></li>
+<li><a href="#11-regression-testing-strategies">Regression Testing Strategies</a></li>
+<li><a href="#12-mutation-testing">Mutation Testing</a></li>
+<li><a href="#13-debugging-techniques">Debugging Techniques</a></li>
+<li><a href="#14-software-testing-metrics">Software Testing Metrics</a></li>
+<li><a href="#15-static-vs-dynamic-analysis-tools">Static vs Dynamic Analysis Tools</a></li>
+<li><a href="#16-testing-in-cicd-pipelines">Testing in CI/CD Pipelines</a></li>
+<li><a href="#17-defect-management--lifecycle">Defect Management & Lifecycle</a></li>
+<li><a href="#18-risk-based-testing">Risk-Based Testing</a></li>
+</ol>
+
+<hr>
+
+<h2 id="1.-foundations-of-software-testing">1. Foundations of Software Testing</h2>
+
+<p>Software testing is the process of executing a program with the intent of finding errors. It is a critical quality assurance activity that spans the entire software development lifecycle. While testing itself is expensive, launching untested software can lead to costs exponentially higher — especially in safety-critical systems. The earlier errors are discovered, the lower the cost of removal.</p>
+
+<strong>Formal Definition:</strong> Testing is the process of evaluating a system or its components to find whether it satisfies specified requirements and to identify differences between expected and actual results.
+
+<h3>Why Testing Matters for Agentic Engineering</h3>
+
+<ul>
+<li>Autonomous agents generate code; testing validates correctness without human oversight</li>
+<li>AI-generated code requires rigorous verification to prevent hallucinations and logic errors</li>
+<li>Testing provides the feedback loop for self-improving agentic systems</li>
+<li>Automated testing enables continuous verification in agent-driven CI/CD pipelines</li>
+<li>Defines the ground truth for agent task completion and success criteria</li>
+</ul>
+
+<h3>Core Concepts & Terminology</h3>
+
+<table>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+<tr>
+<td><strong>Fault (Defect)</strong></td>
+<td>A flaw in any software artifact (requirements, design, code, docs). The representation of an error in the mode of expression (text, DFD, ER diagram, source code).</td>
+</tr>
+<tr>
+<td><strong>Error (Mistake)</strong></td>
+<td>A human action that produces an incorrect result.</td>
+</tr>
+<tr>
+<td><strong>Failure</strong></td>
+<td>A deviation of the software from its expected behavior. Occurs when a fault is executed. A single fault may cause different failures.</td>
+</tr>
+<tr>
+<td><strong>Test Case</strong></td>
+<td>A set of input values, execution preconditions, expected results, and postconditions developed for a particular objective.</td>
+</tr>
+<tr>
+<td><strong>Test Suite</strong></td>
+<td>A collection of test cases grouped for a specific testing purpose.</td>
+</tr>
+<tr>
+<td><strong>Test Oracle</strong></td>
+<td>The mechanism for determining whether a test has passed or failed.</td>
+</tr>
+<tr>
+<td><strong>Test Harness</strong></td>
+<td>The system of test drivers, stubs, and frameworks needed to execute tests.</td>
+</tr>
+</table>
+
+<h3>Verification vs Validation</h3>
+
+<table>
+<tr>
+<th>Verification</th>
+<th>Validation</th>
+</tr>
+<tr>
+<td>Are we building the product right?</td>
+<td>Are we building the right product?</td>
+</tr>
+<tr>
+<td>Evaluates artifacts against conditions imposed at the start of the phase.</td>
+<td>Evaluates the system during or after development to determine if it satisfies specified requirements.</td>
+</tr>
+<tr>
+<td>Reviews, walkthroughs, static analysis.</td>
+<td>Dynamic testing.</td>
+</tr>
+</table>
+
+<h3>Testing Principles (ISTQB)</h3>
+
+<ul>
+<li><strong>Exhaustive testing is impossible</strong> — use risk-based prioritization</li>
+<li><strong>Defect clustering</strong> — a small number of modules contain most defects (Pareto: 80/20 rule)</li>
+<li><strong>Pesticide paradox</strong> — repeatedly running the same tests yields diminishing returns</li>
+<li><strong>Testing shows presence, not absence of defects</strong></li>
+<li><strong>Absence-of-errors fallacy</strong> — verifying useless functionality does not create quality</li>
+<li><strong>Early testing saves time and money</strong> — shift-left principle</li>
+<li><strong>Context-dependent</strong> — no single testing approach works for all systems</li>
+</ul>
+
+<hr>
+
+<h2 id="2.-testing-levels-&-the-v-model">2. Testing Levels & The V-Model</h2>
+
+<h3>Test Levels</h3>
+
+<table>
+<tr>
+<th>Level</th>
+<th>Description</th>
+<th>Who Performs</th>
+</tr>
+<tr>
+<td><strong>Unit Testing</strong></td>
+<td>Tests individual functions, methods, classes in isolation</td>
+<td>Developers</td>
+</tr>
+<tr>
+<td><strong>Integration Testing</strong></td>
+<td>Tests interactions between modules or services</td>
+<td>Developers + QA</td>
+</tr>
+<tr>
+<td><strong>System Testing</strong></td>
+<td>Tests the complete, integrated system</td>
+<td>QA Team</td>
+</tr>
+<tr>
+<td><strong>Acceptance Testing</strong></td>
+<td>Validates against user requirements and business needs</td>
+<td>End Users + QA</td>
+</tr>
+</table>
+
+<h3>V-Model Mapping</h3>
+
+<pre><code>Requirements Analysis ---> Acceptance Test Design
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+        v
+High-Level Design ---> System Test Design
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+        v
+Detailed Design ---> Integration Test Design
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+        v
+   Implementation ---> Unit Test Design
+</code></pre>
+
+<p>Each development phase has a corresponding test design phase. Tests are designed early, but executed after implementation.</p>
+
+<h3>Acceptance Testing Types</h3>
+
+<ul>
+<li><strong>User Acceptance Testing (UAT)</strong> — real users validate against needs</li>
+<li><strong>Operational Acceptance Testing (OAT)</strong> — verifies deployment, backup, recovery</li>
+<li><strong>Contract Acceptance Testing</strong> — verifies compliance with contractual terms</li>
+<li><strong>Alpha Testing</strong> — internal testing by the development team</li>
+<li><strong>Beta Testing</strong> — external testing by a limited set of end users</li>
+</ul>
+
+<hr>
+
+<h2 id="3.-functional-black-box-testing-techniques">3. Functional (Black-Box) Testing Techniques</h2>
+
+<p>Black-box testing derives tests from <strong>specifications</strong>, not code. The internal structure is ignored.</p>
+
+<h3>Equivalence Partitioning (EP)</h3>
+
+<p>Divides input data into partitions (equivalence classes) where tests from the same class uncover the same defects. One representative test per partition suffices.</p>
+
+<strong>Example:</strong> Age field valid range 18-65
+
+<ul>
+<li>Valid partition: 18-65</li>
+<li>Invalid partitions: less than 18, greater than 65, non-numeric</li>
+</ul>
+
+<h3>Boundary Value Analysis (BVA)</h3>
+
+<p>Tests the boundaries between equivalence partitions. Defects cluster at boundaries.</p>
+
+<strong>Example:</strong> Age field valid range 18-65
+
+<ul>
+<li>Test values: 17, 18, 19, 64, 65, 66</li>
+<li>Also: 0, max int for edge extremes</li>
+</ul>
+
+<h3>Decision Table Testing</h3>
+
+<p>Models complex business logic in a table format. Each column is a business rule.</p>
+
+<table>
+<tr>
+<th>Conditions</th>
+<th>Rule 1</th>
+<th>Rule 2</th>
+<th>Rule 3</th>
+<th>Rule 4</th>
+</tr>
+<tr>
+<td>Age > 18</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Has License</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td><strong>Action: Can Rent</strong></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><strong>F</strong></td>
+<td><strong>F</strong></td>
+</tr>
+</table>
+
+<h3>State Transition Testing</h3>
+
+<p>Models system behavior as states and transitions triggered by events. Covers start state, events, transitions, and end states.</p>
+
+<h3>Use Case Testing</h3>
+
+<p>Derives test scenarios from use case flows — both the happy path (basic flow) and error paths (alternative flows).</p>
+
+<hr>
+
+<h2 id="4.-structural-white-box-testing-techniques">4. Structural (White-Box) Testing Techniques</h2>
+
+<p>White-box testing derives tests from <strong>source code</strong> and internal structure.</p>
+
+<h3>Statement Coverage</h3>
+
+<p>Every statement in the code is executed at least once.</p>
+
+<h3>Branch Coverage (Decision Coverage)</h3>
+
+<p>Every possible branch (true/false) of each decision point is executed.</p>
+
+<h3>Path Coverage</h3>
+
+<p>Every possible path through the code is executed. Often impractical for large systems — use cyclomatic complexity to determine the minimum number of paths.</p>
+
+<h3>Condition Coverage</h3>
+
+<p>Each boolean sub-expression in a condition evaluates to both true and false.</p>
+
+<h3>Modified Condition/Decision Coverage (MC/DC)</h3>
+
+<p>Required for safety-critical systems (DO-178C). Each condition independently affects the decision outcome.</p>
+
+<h3>Cyclomatic Complexity (McCabe)</h3>
+
+<p>Measures the number of linearly independent paths through code.</p>
+
+<code>M = E - N + 2P</code> where:
+
+<ul>
+<li>E = number of edges in the control flow graph</li>
+<li>N = number of nodes</li>
+<li>P = number of connected components</li>
+</ul>
+
+<table>
+<tr>
+<th>Complexity</th>
+<th>Risk</th>
+</tr>
+<tr>
+<td>1-10</td>
+<td>Low risk, well-structured</td>
+</tr>
+<tr>
+<td>11-20</td>
+<td>Moderate risk</td>
+</tr>
+<tr>
+<td>21-50</td>
+<td>High risk</td>
+</tr>
+<tr>
+<td>50+</td>
+<td>Untestable, needs refactoring</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="5.-grey-box-testing">5. Grey-Box Testing</h2>
+
+<p>Combines black-box and white-box approaches. Tests are derived from specifications (like black-box) but enhanced with knowledge of internal data structures, algorithms, and architecture (like white-box).</p>
+
+<strong>Common techniques:</strong>
+
+<ul>
+<li>Matrix testing — maps functional requirements to code paths</li>
+<li>Regression testing with architecture awareness — prioritize tests based on code changes</li>
+<li>Integration pattern testing — test based on known integration patterns and their failure modes</li>
+</ul>
+
+<hr>
+
+<h2 id="6.-test-design-&-documentation-ieee-829">6. Test Design & Documentation (IEEE 829)</h2>
+
+<p>IEEE 829 defines the standard for software test documentation.</p>
+
+<h3>Key Documents</h3>
+
+<table>
+<tr>
+<th>Document</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><strong>Test Plan</strong></td>
+<td>Scope, approach, resources, schedule of testing activities</td>
+</tr>
+<tr>
+<td><strong>Test Design Specification</strong></td>
+<td>Test conditions, test cases, pass/fail criteria for a feature</td>
+</tr>
+<tr>
+<td><strong>Test Case Specification</strong></td>
+<td>Input values, expected outputs, execution conditions</td>
+</tr>
+<tr>
+<td><strong>Test Procedure Specification</strong></td>
+<td>Steps to execute test cases</td>
+</tr>
+<tr>
+<td><strong>Test Log</strong></td>
+<td>Chronological record of test execution</td>
+</tr>
+<tr>
+<td><strong>Test Incident Report</strong></td>
+<td>Description of any unexpected events during testing</td>
+</tr>
+<tr>
+<td><strong>Test Summary Report</strong></td>
+<td>Summary of testing results and effectiveness</td>
+</tr>
+</table>
+
+<h3>Test Case Template</h3>
+
+<table>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Test Case ID</strong></td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><strong>Test Objective</strong></td>
+<td>What is being tested</td>
+</tr>
+<tr>
+<td><strong>Preconditions</strong></td>
+<td>System state before execution</td>
+</tr>
+<tr>
+<td><strong>Test Data</strong></td>
+<td>Input values</td>
+</tr>
+<tr>
+<td><strong>Steps</strong></td>
+<td>Step-by-step execution instructions</td>
+</tr>
+<tr>
+<td><strong>Expected Result</strong></td>
+<td>Expected system behavior</td>
+</tr>
+<tr>
+<td><strong>Actual Result</strong></td>
+<td>Observed behavior (filled during execution)</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Pass / Fail / Blocked</td>
+</tr>
+<tr>
+<td><strong>Notes</strong></td>
+<td>Additional observations</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="7.-test-automation-&-frameworks">7. Test Automation & Frameworks</h2>
+
+<h3>The Test Pyramid</h3>
+
+<pre><code>       /\
+      /E2E\     (few — slow, brittle)
+     /------\
+    /Integration\ (some)
+   /--------------\
+  /   Unit Tests   \ (many — fast, reliable)
+ /--------------------\
+</code></pre>
+
+<ul>
+<li><strong>Unit Tests</strong> — fast, isolated, high coverage (70%+)</li>
+<li><strong>Integration Tests</strong> — test boundaries between units</li>
+<li><strong>E2E Tests</strong> — test complete user journeys (critical paths only)</li>
+</ul>
+
+<h3>Key Automation Principles</h3>
+
+<ul>
+<li><strong>Repeatable</strong> — same result every time under same conditions</li>
+<li><strong>Deterministic</strong> — no flaky tests (intermittent failures)</li>
+<li><strong>Fast</strong> — developers must run them frequently</li>
+<li><strong>Isolated</strong> — tests should not depend on each other</li>
+<li><strong>Maintainable</strong> — low cost to update when code changes</li>
+</ul>
+
+<h3>Automation Frameworks</h3>
+
+<table>
+<tr>
+<th>Framework</th>
+<th>Language</th>
+<th>Best For</th>
+</tr>
+<tr>
+<td><strong>pytest</strong></td>
+<td>Python</td>
+<td>Unit/API testing</td>
+</tr>
+<tr>
+<td><strong>JUnit</strong></td>
+<td>Java</td>
+<td>Unit testing</td>
+</tr>
+<tr>
+<td><strong>Jest</strong></td>
+<td>JavaScript</td>
+<td>Unit/integration testing</td>
+</tr>
+<tr>
+<td><strong>Cypress</strong></td>
+<td>JavaScript</td>
+<td>E2E web testing</td>
+</tr>
+<tr>
+<td><strong>Selenium</strong></td>
+<td>Multi-language</td>
+<td>Browser automation</td>
+</tr>
+<tr>
+<td><strong>Postman/Newman</strong></td>
+<td>JavaScript</td>
+<td>API testing</td>
+</tr>
+<tr>
+<td><strong>Gatling</strong></td>
+<td>Scala</td>
+<td>Performance testing</td>
+</tr>
+<tr>
+<td><strong>Appium</strong></td>
+<td>Multi-language</td>
+<td>Mobile testing</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="8.-performance-&-load-testing">8. Performance & Load Testing</h2>
+
+<h3>Types</h3>
+
+<table>
+<tr>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><strong>Load Testing</strong></td>
+<td>System behavior under expected load</td>
+</tr>
+<tr>
+<td><strong>Stress Testing</strong></td>
+<td>System behavior beyond expected load (breaking point)</td>
+</tr>
+<tr>
+<td><strong>Endurance Testing</strong></td>
+<td>System behavior over extended periods (memory leaks)</td>
+</tr>
+<tr>
+<td><strong>Spike Testing</strong></td>
+<td>System response to sudden traffic surges</td>
+</tr>
+<tr>
+<td><strong>Scalability Testing</strong></td>
+<td>How system scales with increased resources</td>
+</tr>
+</table>
+
+<h3>Key Metrics</h3>
+
+<table>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Response Time</strong></td>
+<td>Time from request to response (p50, p95, p99)</td>
+</tr>
+<tr>
+<td><strong>Throughput</strong></td>
+<td>Requests per second (RPS)</td>
+</tr>
+<tr>
+<td><strong>Error Rate</strong></td>
+<td>Percentage of failed requests</td>
+</tr>
+<tr>
+<td><strong>Resource Utilization</strong></td>
+<td>CPU, memory, disk, network</td>
+</tr>
+<tr>
+<td><strong>Concurrent Users</strong></td>
+<td>Number of simultaneous active users</td>
+</tr>
+</table>
+
+<h3>Performance Testing Tools</h3>
+
+<ul>
+<li><strong>JMeter</strong> — open-source load testing</li>
+<li><strong>Gatling</strong> — Scala-based, high-performance</li>
+<li><strong>k6</strong> — developer-centric, scriptable</li>
+<li><strong>Locust</strong> — Python-based, distributed</li>
+<li><strong>Artillery</strong> — Node.js based</li>
+</ul>
+
+<hr>
+
+<h2 id="9.-security-testing">9. Security Testing</h2>
+
+<h3>Security Testing Types</h3>
+
+<ul>
+<li><strong>SAST (Static Application Security Testing)</strong> — scans source code for vulnerabilities</li>
+<li><strong>DAST (Dynamic Application Security Testing)</strong> — tests running application for vulnerabilities</li>
+<li><strong>Penetration Testing</strong> — simulated attacks to find security gaps</li>
+<li><strong>Vulnerability Scanning</strong> — automated scanning for known vulnerabilities</li>
+<li><strong>Fuzz Testing</strong> — feeding invalid/malformed data to find crashes</li>
+</ul>
+
+<h3>Common Vulnerabilities (OWASP Top 10)</h3>
+
+<ol>
+<li>Broken Access Control</li>
+<li>Cryptographic Failures</li>
+<li>Injection (SQL, XSS, Command)</li>
+<li>Insecure Design</li>
+<li>Security Misconfiguration</li>
+<li>Vulnerable and Outdated Components</li>
+<li>Identification and Authentication Failures</li>
+<li>Software and Data Integrity Failures</li>
+<li>Security Logging and Monitoring Failures</li>
+<li>Server-Side Request Forgery (SSRF)</li>
+</ol>
+
+<hr>
+
+<h2 id="10.-usability-&-accessibility-testing">10. Usability & Accessibility Testing</h2>
+
+<h3>Usability Testing</h3>
+
+<p>Evaluates how intuitive and user-friendly the software is.</p>
+
+<ul>
+<li><strong>Learnability</strong> — how fast can users accomplish basic tasks?</li>
+<li><strong>Efficiency</strong> — how fast can experienced users work?</li>
+<li><strong>Memorability</strong> — can users return after a break and still use it?</li>
+<li><strong>Errors</strong> — how many errors do users make, and can they recover?</li>
+<li><strong>Satisfaction</strong> — how pleasant is the interface to use?</li>
+</ul>
+
+<h3>Accessibility Testing (WCAG)</h3>
+
+<p>Ensures software is usable by people with disabilities.</p>
+
+<ul>
+<li><strong>Perceivable</strong> — content available to senses (alt text, captions)</li>
+<li><strong>Operable</strong> — interface works with various input methods (keyboard, screen readers)</li>
+<li><strong>Understandable</strong> — content and interface are clear and predictable</li>
+<li><strong>Robust</strong> — works across assistive technologies</li>
+</ul>
+
+<hr>
+
+<h2 id="11.-regression-testing-strategies">11. Regression Testing Strategies</h2>
+
+<p>Regression testing ensures that new changes <strong>do not break existing functionality</strong>.</p>
+
+<h3>Strategies</h3>
+
+<table>
+<tr>
+<th>Strategy</th>
+<th>Description</th>
+<th>When to Use</th>
+</tr>
+<tr>
+<td><strong>Retest All</strong></td>
+<td>Execute all existing tests</td>
+<td>Small systems, high-risk releases</td>
+</tr>
+<tr>
+<td><strong>Selective Regression</strong></td>
+<td>Execute tests impacted by changes</td>
+<td>Large systems, frequent releases</td>
+</tr>
+<tr>
+<td><strong>Risk-Based</strong></td>
+<td>Prioritize tests by probability and impact of failure</td>
+<td>Limited time/budget</td>
+</tr>
+<tr>
+<td><strong>Impact Analysis</strong></td>
+<td>Trace code changes to affected tests and functionality</td>
+<td>Complex systems</td>
+</tr>
+</table>
+
+<h3>Regression Test Selection Techniques</h3>
+
+<ul>
+<li><strong>Minimization</strong> — find minimum set of tests covering all changes</li>
+<li><strong>Prioritization</strong> — order tests by failure probability and business criticality</li>
+<li><strong>Coverage-Based</strong> — select tests that cover changed code paths</li>
+<li><strong>History-Based</strong> — select tests that have historically found defects</li>
+</ul>
+
+<hr>
+
+<h2 id="12.-mutation-testing">12. Mutation Testing</h2>
+
+<p>Mutation testing evaluates the <strong>quality of test suites</strong> by introducing small changes (mutations) to the source code and checking whether the tests detect them.</p>
+
+<h3>Process</h3>
+
+<ol>
+<li>Create mutants — introduce single syntactically correct changes</li>
+</ol>
+
+<ul>
+<li>Operators: <code><</code> becomes <code><=</code>, <code>true</code> becomes <code>false</code>, remove method body</li>
+</ul>
+
+<ol>
+<li>Run test suite against each mutant</li>
+<li>If tests pass on a mutant — the mutant <strong>survived</strong> (test gap)</li>
+<li>If tests fail on a mutant — the mutant was <strong>killed</strong></li>
+</ol>
+
+<h3>Metrics</h3>
+
+<ul>
+<li><strong>Mutation Score</strong> = Killed Mutants / Total Mutants <em> 100</li>
+<li>Target: 90%+ mutation score for critical code</li>
+</ul>
+
+<h3>Tools</h3>
+
+<table>
+<tr>
+<th>Language</th>
+<th>Tool</th>
+</tr>
+<tr>
+<td>Python</td>
+<td>mutmut, cosmic-ray</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>PITest</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Stryker</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>mutant</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="13.-debugging-techniques">13. Debugging Techniques</h2>
+
+<h3>Debugging Process</h3>
+
+<ol>
+<li><strong>Reproduce</strong> the failure reliably</li>
+<li><strong>Localize</strong> the fault — find the defect causing the failure</li>
+<li><strong>Analyze</strong> root cause — understand why the fault exists</li>
+<li><strong>Fix</strong> the defect</li>
+<li><strong>Verify</strong> the fix with tests</li>
+<li><strong>Regression test</strong> — ensure the fix didn't break anything</li>
+</ol>
+
+<h3>Techniques</h3>
+
+<ul>
+<li><strong>Print Debugging</strong> — adding log statements (simple but limited)</li>
+<li><strong>Breakpoint Debugging</strong> — step through code with an interactive debugger</li>
+<li><strong>Rubber Duck Debugging</strong> — explain the problem to someone/something else</li>
+<li><strong>Binary Search</strong> — comment out half the code, narrow down the fault</li>
+<li><strong>Delta Debugging</strong> — systematically simplify input/program to find minimal failure case</li>
+<li><strong>Static Analysis</strong> — let tools find the bug pattern</li>
+<li><strong>Commit Bisect</strong> — use git bisect to find which commit introduced the bug</li>
+</ul>
+
+<hr>
+
+<h2 id="14.-software-testing-metrics">14. Software Testing Metrics</h2>
+
+<h3>Effectiveness Metrics</h3>
+
+<table>
+<tr>
+<th>Metric</th>
+<th>Formula</th>
+</tr>
+<tr>
+<td><strong>Defect Detection Percentage (DDP)</strong></td>
+<td>(Defects Found / Total Defects) </em> 100</td>
+</tr>
+<tr>
+<td><strong>Test Effectiveness</strong></td>
+<td>(Defects Found by Testing / Defects Found in Total) <em> 100</td>
+</tr>
+<tr>
+<td><strong>Test Coverage</strong></td>
+<td>(Code Executed / Total Code) </em> 100</td>
+</tr>
+<tr>
+<td><strong>Mutation Score</strong></td>
+<td>(Killed Mutants / Total Mutants) <em> 100</td>
+</tr>
+</table>
+
+<h3>Efficiency Metrics</h3>
+
+<table>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Test Execution Time</strong></td>
+<td>Total time to run test suite</td>
+</tr>
+<tr>
+<td><strong>Test Case Throughput</strong></td>
+<td>Tests executed per unit time</td>
+</tr>
+<tr>
+<td><strong>Defects per Test Hour</strong></td>
+<td>Defects found per hour of testing</td>
+</tr>
+<tr>
+<td><strong>Test Automation Rate</strong></td>
+<td>(Automated Tests / Total Tests) </em> 100</td>
+</tr>
+</table>
+
+<h3>Quality Metrics</h3>
+
+<table>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Target</th>
+</tr>
+<tr>
+<td><strong>Defect Density</strong></td>
+<td>Defects per KLOC or Function Point</td>
+<td>< 1 defect/KLOC for critical</td>
+</tr>
+<tr>
+<td><strong>Defect Leakage</strong></td>
+<td>Defects found in production after release</td>
+<td>< 1%</td>
+</tr>
+<tr>
+<td><strong>Mean Time to Detect</strong></td>
+<td>Average time to discover a defect</td>
+<td>Depends on system</td>
+</tr>
+<tr>
+<td><strong>Mean Time to Repair</strong></td>
+<td>Average time to fix a defect</td>
+<td>< 24 hours for critical</td>
+</tr>
+<tr>
+<td><strong>Test Case Pass Rate</strong></td>
+<td>(Passed Tests / Executed Tests) <em> 100</td>
+<td>> 95%</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="15.-static-vs-dynamic-analysis-tools">15. Static vs Dynamic Analysis Tools</h2>
+
+<h3>Static Analysis</h3>
+
+<p>Analyzes code <strong>without executing</strong> it. Finds defects early in the lifecycle.</p>
+
+<strong>What it finds:</strong>
+
+<ul>
+<li>Syntax errors, type mismatches</li>
+<li>Null pointer dereferences</li>
+<li>Buffer overflows</li>
+<li>Security vulnerabilities (SAST)</li>
+<li>Code style violations</li>
+<li>Dead code</li>
+</ul>
+
+<table>
+<tr>
+<th>Tool</th>
+<th>Language</th>
+</tr>
+<tr>
+<td><strong>SonarQube</strong></td>
+<td>Multi-language</td>
+</tr>
+<tr>
+<td><strong>ESLint</strong></td>
+<td>JavaScript/TypeScript</td>
+</tr>
+<tr>
+<td><strong>Pylint / Flake8</strong></td>
+<td>Python</td>
+</tr>
+<tr>
+<td><strong>Checkstyle / PMD</strong></td>
+<td>Java</td>
+</tr>
+<tr>
+<td><strong>golangci-lint</strong></td>
+<td>Go</td>
+</tr>
+<tr>
+<td><strong>clang-tidy</strong></td>
+<td>C/C++</td>
+</tr>
+</table>
+
+<h3>Dynamic Analysis</h3>
+
+<p>Analyzes code <strong>during execution</strong>. Finds runtime defects that static analysis cannot.</p>
+
+<strong>What it finds:</strong>
+
+<ul>
+<li>Memory leaks</li>
+<li>Race conditions</li>
+<li>Runtime crashes</li>
+<li>Performance bottlenecks</li>
+<li>Resource contention</li>
+</ul>
+
+<table>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><strong>Valgrind</strong></td>
+<td>Memory profiling</td>
+</tr>
+<tr>
+<td><strong>GDB / LLDB</strong></td>
+<td>Interactive debugging</td>
+</tr>
+<tr>
+<td><strong>Profilers (perf, py-spy)</strong></td>
+<td>Performance hotspots</td>
+</tr>
+<tr>
+<td><strong>AddressSanitizer</strong></td>
+<td>Memory error detection</td>
+</tr>
+<tr>
+<td><strong>ThreadSanitizer</strong></td>
+<td>Data race detection</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="16.-testing-in-ci/cd-pipelines">16. Testing in CI/CD Pipelines</h2>
+
+<h3>Pipeline Stages</h3>
+
+<pre><code>Commit -> Build -> Static Analysis -> Unit Tests -> Integration Tests
+    -> E2E Tests -> Security Scan -> Performance Tests -> Deploy
+</code></pre>
+
+<h3>Gate Criteria</h3>
+
+<p>Each stage must pass before the next begins. Gating ensures quality at every step.</p>
+
+<table>
+<tr>
+<th>Stage</th>
+<th>Gate Criteria</th>
+</tr>
+<tr>
+<td><strong>Static Analysis</strong></td>
+<td>Zero critical/high violations</td>
+</tr>
+<tr>
+<td><strong>Unit Tests</strong></td>
+<td>100% pass rate, 80%+ coverage</td>
+</tr>
+<tr>
+<td><strong>Integration Tests</strong></td>
+<td>100% pass rate</td>
+</tr>
+<tr>
+<td><strong>E2E Tests</strong></td>
+<td>Critical paths pass</td>
+</tr>
+<tr>
+<td><strong>Security Scan</strong></td>
+<td>No critical vulnerabilities</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Response time within SLO</td>
+</tr>
+</table>
+
+<h3>Agentic CI/CD Considerations</h3>
+
+<ul>
+<li>Generate and commit test cases alongside production code</li>
+<li>Auto-detect flaky tests and quarantine them</li>
+<li>Adaptive test selection — use ML to select tests based on change impact</li>
+<li>Automated test generation for untested code paths</li>
+</ul>
+
+<hr>
+
+<h2 id="17.-defect-management-&-lifecycle">17. Defect Management & Lifecycle</h2>
+
+<h3>Defect Lifecycle</h3>
+
+<pre><code>New -> Assigned -> Open -> Fixed -> Resolved -> Verified -> Closed
+                 \-> Rejected
+                 \-> Deferred
+</code></pre>
+
+<table>
+<tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>New</strong></td>
+<td>Defect reported, not yet reviewed</td>
+</tr>
+<tr>
+<td><strong>Assigned</strong></td>
+<td>Assigned to a developer for triage</td>
+</tr>
+<tr>
+<td><strong>Open</strong></td>
+<td>Developer accepts and begins work</td>
+</tr>
+<tr>
+<td><strong>Fixed</strong></td>
+<td>Code change submitted</td>
+</tr>
+<tr>
+<td><strong>Resolved</strong></td>
+<td>Fix deployed to test environment</td>
+</tr>
+<tr>
+<td><strong>Verified</strong></td>
+<td>QA confirms the fix</td>
+</tr>
+<tr>
+<td><strong>Closed</strong></td>
+<td>Defect fully resolved and accepted</td>
+</tr>
+<tr>
+<td><strong>Rejected</strong></td>
+<td>Not a valid defect or duplicate</td>
+</tr>
+<tr>
+<td><strong>Deferred</strong></td>
+<td>Fix postponed to future release</td>
+</tr>
+</table>
+
+<h3>Defect Severity vs Priority</h3>
+
+<table>
+<tr>
+<th>Severity</th>
+<th>Priority</th>
+</tr>
+<tr>
+<td>How critical is the defect technically?</td>
+<td>How urgently must it be fixed from a business perspective?</td>
+</tr>
+<tr>
+<td><strong>Critical</strong> — system crash, data loss</td>
+<td><strong>High</strong> — must fix immediately</td>
+</tr>
+<tr>
+<td><strong>Major</strong> — feature broken</td>
+<td><strong>Medium</strong> — should fix in current release</td>
+</tr>
+<tr>
+<td><strong>Minor</strong> — cosmetic issue</td>
+<td><strong>Low</strong> — fix when convenient</td>
+</tr>
+<tr>
+<td><strong>Trivial</strong> — small visual glitch</td>
+<td><strong>Deferred</strong> — consider for future</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="18.-risk-based-testing">18. Risk-Based Testing</h2>
+
+<p>Prioritizes testing based on the <strong>risk of failure</strong> and <strong>impact of failure</strong>.</p>
+
+<h3>Risk Calculation</h3>
+
+<code>Risk Score = Probability of Failure × Impact of Failure</code>
+
+<table>
+<tr>
+<th>Score</th>
+<th>Action</th>
+</tr>
+<tr>
+<td>High (9-25)</td>
+<td>Thorough testing — all levels and techniques</td>
+</tr>
+<tr>
+<td>Medium (4-8)</td>
+<td>Standard testing — normal coverage</td>
+</tr>
+<tr>
+<td>Low (1-3)</td>
+<td>Minimal testing — smoke tests only</td>
+</tr>
+</table>
+
+<h3>Risk Assessment Factors</h3>
+
+<strong>Probability Factors:</strong>
+
+<ul>
+<li>Code complexity (cyclomatic complexity)</li>
+<li>Change frequency and recency</li>
+<li>Defect history of the module</li>
+<li>Developer experience with the technology</li>
+</ul>
+
+<strong>Impact Factors:</strong>
+
+<ul>
+<li>Business criticality of the feature</li>
+<li>Number of affected users</li>
+<li>Regulatory/compliance exposure</li>
+<li>Data sensitivity</li>
+</ul>
+
+<hr>
+
+<p></em>References: IEEE 829, ISO 9126, ISTQB, McCabe Metrics, OWASP Top 10*</p>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/college-prep-se-allquestions.md">college-prep-se-allquestions</a></li>
+<li><a href="source/college-prep-se-notes-all.md">college-prep-se-notes-all</a></li>
+<li><a href="source/college-prep-se-notes-units.md">college-prep-se-notes-units</a></li>
+<li><a href="source/college-prep-se-pyq.md">college-prep-se-pyq</a></li>
+<li><a href="source/college-prep-se-root.md">college-prep-se-root</a></li>
+<li><a href="source/college-prep-se-textbook-aggarwal.md">college-prep-se-textbook-aggarwal</a></li>
+<li><a href="source/college-prep-se-textbook-pressman.md">college-prep-se-textbook-pressman</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineering — SDLC | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Sdlc</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>SDLC — Software Development Life Cycle</h1>
+
+<p>> <em>A comprehensive reference on Software Development Life Cycle for autonomous AI agents and agentic engineering workflows.</em>
+> Based on IEEE Std 830, ISO 9126, CMM, COCOMO, Halstead Metrics</p>
+
+<hr>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+<li><a href="#1-introduction-to-sdlc">Introduction to SDLC</a></li>
+<li><a href="#2-software-process-models">Software Process Models</a></li>
+<li><a href="#3-requirements-engineering">Requirements Engineering</a></li>
+<li><a href="#4-software-requirements-specification-srs">Software Requirements Specification (SRS)</a></li>
+<li><a href="#5-software-design-principles">Software Design Principles</a></li>
+<li><a href="#6-size--cost-estimation">Size & Cost Estimation</a></li>
+<li><a href="#7-software-metrics">Software Metrics</a></li>
+<li><a href="#8-risk-management">Risk Management</a></li>
+<li><a href="#9-software-testing">Software Testing</a></li>
+<li><a href="#10-software-quality-models">Software Quality Models</a></li>
+<li><a href="#11-software-maintenance--evolution">Software Maintenance & Evolution</a></li>
+<li><a href="#12-key-tools--notations">Key Tools & Notations</a></li>
+</ol>
+
+<hr>
+
+<h2 id="1.-introduction-to-sdlc">1. Introduction to SDLC</h2>
+
+<p>The <strong>Software Development Life Cycle (SDLC)</strong> is a structured process that guides the development of software systems from initial concept through deployment and maintenance. For agentic engineering — autonomous AI agents that design, build, test, and maintain software — SDLC provides the foundational framework for systematic, repeatable, and high-quality software production.</p>
+
+<h3>Key Phases of SDLC</h3>
+
+<table>
+<tr>
+<th>Phase</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Requirements Analysis</strong></td>
+<td>Elicit, analyze, and document stakeholder needs</td>
+</tr>
+<tr>
+<td><strong>System Design</strong></td>
+<td>Define architecture, components, interfaces, and data flow</td>
+</tr>
+<tr>
+<td><strong>Implementation</strong></td>
+<td>Write code following design specifications and coding standards</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>Verify functionality, performance, reliability through structured testing</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>Install software on target platforms and make it available to users</td>
+</tr>
+<tr>
+<td><strong>Maintenance</strong></td>
+<td>Continuously improve, fix bugs, adapt to changing requirements</td>
+</tr>
+</table>
+
+<h3>Why SDLC Matters for Agentic Engineering</h3>
+
+<ul>
+<li>Provides a systematic, repeatable framework for autonomous agents</li>
+<li>Ensures quality through defined verification and validation checkpoints</li>
+<li>Manages complexity by decomposing work into discrete phases</li>
+<li>Enables predictable resource estimation and risk management</li>
+<li>Facilitates collaboration between multiple AI agents and human teams</li>
+<li>Creates auditable documentation trail for compliance and governance</li>
+</ul>
+
+<h3>Software Engineering as a Discipline</h3>
+
+<p>Software engineering bridges theory and practice by providing structured methodologies, best practices, and systematic approaches. It emphasizes requirements engineering, design principles, coding standards, rigorous testing, documentation, project management, and risk mitigation.</p>
+
+<hr>
+
+<h2 id="2.-software-process-models">2. Software Process Models</h2>
+
+<p>Software process models define the stages, activities, and tasks involved in developing software. The choice of model depends on project size, complexity, requirement stability, and team structure.</p>
+
+<h3>Waterfall Model</h3>
+
+<p>A linear, sequential approach where each phase must complete before the next begins.</p>
+
+<strong>Phases:</strong> Requirements -> Design -> Implementation -> Testing -> Deployment -> Maintenance
+
+<table>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+<tr>
+<td>Clear structure and milestones</td>
+<td>Limited flexibility — changes are difficult once a phase completes</td>
+</tr>
+<tr>
+<td>Document-driven, easy to manage</td>
+<td>Working software appears late in the lifecycle</td>
+</tr>
+<tr>
+<td>Suitable for stable, well-understood requirements</td>
+<td>Late discovery of design flaws</td>
+</tr>
+</table>
+
+<h3>Iterative & Incremental Models</h3>
+
+<p>Development occurs in repeating cycles, each producing a more complete version. Includes Agile (Scrum, Kanban), Spiral, and RAD approaches.</p>
+
+<table>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+<tr>
+<td>Early feedback and user involvement</td>
+<td>Risk of scope creep if changes are not managed</td>
+</tr>
+<tr>
+<td>Adaptable to changing requirements</td>
+<td>Requires disciplined iteration management</td>
+</tr>
+<tr>
+<td>Reduced risk through incremental delivery</td>
+<td>More complex project tracking</td>
+</tr>
+</table>
+
+<h3>Agile Model</h3>
+
+<p>A flexible, collaborative approach emphasizing individuals, working software, customer collaboration, and responding to change. Delivers working software in short iterations (sprints).</p>
+
+<table>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+<tr>
+<td>Adaptability and rapid delivery</td>
+<td>Active customer participation required</td>
+</tr>
+<tr>
+<td>Frequent customer feedback</td>
+<td>May lack comprehensive documentation</td>
+</tr>
+<tr>
+<td>Early and continuous delivery of value</td>
+<td>Difficult to predict final delivery date</td>
+</tr>
+</table>
+
+<h3>V-Model (Verification & Validation)</h3>
+
+<p>Extends Waterfall by pairing each development phase with a corresponding testing phase. Emphasizes early test planning and quality assurance.</p>
+
+<pre><code>Requirements ---> Acceptance Testing
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+     v
+ High-Level Design ---> System Testing
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+     v
+ Detailed Design ---> Integration Testing
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+     v
+  Implementation ---> Unit Testing
+</code></pre>
+
+<table>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+<tr>
+<td>Strong focus on testing and quality</td>
+<td>Limited flexibility for requirement changes</td>
+</tr>
+<tr>
+<td>Well-structured approach</td>
+<td>Not suitable for iterative/exploratory projects</td>
+</tr>
+<tr>
+<td>Test planning begins early</td>
+<td>High documentation overhead</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="3.-requirements-engineering">3. Requirements Engineering</h2>
+
+<p>Requirements engineering is the systematic process of <strong>eliciting, analyzing, documenting, validating, and managing</strong> requirements throughout the project lifecycle.</p>
+
+<h3>Types of Requirements</h3>
+
+<ul>
+<li><strong>Functional Requirements</strong> — what the system should do (features, behaviors, data processing)</li>
+<li><strong>Non-Functional Requirements</strong> — quality attributes (performance, security, usability, reliability)</li>
+<li><strong>Domain Requirements</strong> — constraints and rules from the specific application domain</li>
+<li><strong>Business Rules</strong> — organizational policies that govern system behavior</li>
+</ul>
+
+<h3>Requirements Elicitation Techniques</h3>
+
+<ul>
+<li>Stakeholder interviews and surveys</li>
+<li>Workshops and brainstorming sessions</li>
+<li>Document analysis (existing systems, business processes)</li>
+<li>Prototyping and mockups</li>
+<li>Observation and ethnography</li>
+<li>Use case modeling</li>
+</ul>
+
+<h3>Requirements Analysis</h3>
+
+<ul>
+<li>Identify and resolve conflicts</li>
+<li>Prioritize requirements (MoSCoW: Must have, Should have, Could have, Won't have)</li>
+<li>Model requirements with diagrams (UML, flowcharts)</li>
+<li>Trace requirements to business goals</li>
+<li>Validate feasibility with technical team</li>
+</ul>
+
+<hr>
+
+<h2 id="4.-software-requirements-specification-srs">4. Software Requirements Specification (SRS)</h2>
+
+<p>An SRS is a <strong>formal document</strong> that defines the complete external behavior of a software system. It serves as a contract between stakeholders and developers.</p>
+
+<h3>IEEE Std 830 SRS Structure</h3>
+
+<table>
+<tr>
+<th>Section</th>
+<th>Content</th>
+</tr>
+<tr>
+<td><strong>Introduction</strong></td>
+<td>Purpose, scope, definitions, references, overview</td>
+</tr>
+<tr>
+<td><strong>Overall Description</strong></td>
+<td>Product perspective, user characteristics, constraints, assumptions</td>
+</tr>
+<tr>
+<td><strong>Specific Requirements</strong></td>
+<td>Functional requirements, external interfaces, performance, logical database, design constraints, software system attributes</td>
+</tr>
+<tr>
+<td><strong>Appendices</strong></td>
+<td>Additional supporting information</td>
+</tr>
+</table>
+
+<h3>Characteristics of a Good SRS</h3>
+
+<ul>
+<li><strong>Correct</strong> — accurately represents stakeholder needs</li>
+<li><strong>Unambiguous</strong> — every statement has one interpretation</li>
+<li><strong>Complete</strong> — includes all significant requirements</li>
+<li><strong>Consistent</strong> — no conflicting requirements</li>
+<li><strong>Verifiable</strong> — testable with objective criteria</li>
+<li><strong>Modifiable</strong> — easy to update without breaking structure</li>
+<li><strong>Traceable</strong> — each requirement links to source and design</li>
+</ul>
+
+<hr>
+
+<h2 id="5.-software-design-principles">5. Software Design Principles</h2>
+
+<p>Design principles guide the creation of robust, maintainable, and scalable software architectures.</p>
+
+<h3>Core Principles</h3>
+
+<ul>
+<li><strong>Modularity</strong> — decompose system into cohesive, loosely-coupled modules</li>
+<li><strong>Abstraction</strong> — hide implementation details behind clean interfaces</li>
+<li><strong>Encapsulation</strong> — bundle data and behavior, protect internal state</li>
+<li><strong>Separation of Concerns</strong> — each module addresses a distinct concern</li>
+<li><strong>Information Hiding</strong> — hide design decisions that may change</li>
+<li><strong>Layered Architecture</strong> — organize code into hierarchical layers</li>
+</ul>
+
+<h3>Design Approaches</h3>
+
+<ul>
+<li><strong>Top-Down Design</strong> — start with high-level system, decompose into subsystems</li>
+<li><strong>Bottom-Up Design</strong> — build primitive components, compose into larger structures</li>
+<li><strong>Domain-Driven Design (DDD)</strong> — model software around business domain concepts</li>
+<li><strong>Contract-First Design</strong> — define interfaces before implementation</li>
+</ul>
+
+<hr>
+
+<h2 id="6.-size-&-cost-estimation">6. Size & Cost Estimation</h2>
+
+<h3>Estimation Techniques</h3>
+
+<table>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Expert Judgment</strong></td>
+<td>Experienced professionals estimate based on past projects</td>
+</tr>
+<tr>
+<td><strong>Analogous Estimation</strong></td>
+<td>Compare with similar completed projects</td>
+</tr>
+<tr>
+<td><strong>Parametric Models</strong></td>
+<td>Use mathematical models (function points, LOC)</td>
+</tr>
+<tr>
+<td><strong>Three-Point Estimation</strong></td>
+<td>Optimistic + Most Likely + Pessimistic / 3</td>
+</tr>
+<tr>
+<td><strong>Planning Poker</strong></td>
+<td>Agile team consensus estimation with story points</td>
+</tr>
+</table>
+
+<h3>COCOMO (Constructive Cost Model)</h3>
+
+<p>COCOMO estimates effort, cost, and schedule based on project size and complexity.</p>
+
+<table>
+<tr>
+<th>Model</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Basic COCOMO</strong></td>
+<td>Effort = a <em> (Size)^b where size is in KLOC</td>
+</tr>
+<tr>
+<td><strong>Intermediate COCOMO</strong></td>
+<td>Adds cost drivers (product, hardware, personnel, project)</td>
+</tr>
+<tr>
+<td><strong>Detailed COCOMO</strong></td>
+<td>Applies intermediate model to each phase separately</td>
+</tr>
+</table>
+
+<h3>Function Point Analysis</h3>
+
+<p>Measures software size based on functionality delivered:</p>
+
+<ul>
+<li>External Inputs (user data entry)</li>
+<li>External Outputs (reports, messages)</li>
+<li>External Inquiries (queries, searches)</li>
+<li>Internal Logical Files (data stores)</li>
+<li>External Interface Files (data from other systems)</li>
+</ul>
+
+<hr>
+
+<h2 id="7.-software-metrics">7. Software Metrics</h2>
+
+<h3>Process Metrics</h3>
+
+<ul>
+<li><strong>Effort</strong> — person-hours or person-months</li>
+<li><strong>Schedule</strong> — calendar time to complete milestones</li>
+<li><strong>Productivity</strong> — output per unit of effort (LOC/hour, FP/person-month)</li>
+<li><strong>Defect Density</strong> — defects per KLOC or per function point</li>
+<li><strong>Cycle Time</strong> — time from work start to completion</li>
+</ul>
+
+<h3>Product Metrics</h3>
+
+<ul>
+<li><strong>Size</strong> — Lines of Code (LOC), Function Points (FP)</li>
+<li><strong>Complexity</strong> — Cyclomatic complexity, Halstead metrics</li>
+<li><strong>Cohesion</strong> — degree to which module elements belong together</li>
+<li><strong>Coupling</strong> — degree of interdependence between modules</li>
+<li><strong>Test Coverage</strong> — percentage of code exercised by tests</li>
+</ul>
+
+<h3>Halstead Metrics</h3>
+
+<p>Based on count of operators and operands in the code:</p>
+
+<ul>
+<li><strong>Program Length:</strong> N = N1 + N2 (total operators + operands)</li>
+<li><strong>Vocabulary:</strong> n = n1 + n2 (unique operators + operands)</li>
+<li><strong>Volume:</strong> V = N </em> log2(n)</li>
+<li><strong>Difficulty:</strong> D = (n1/2) <em> (N2/n2)</li>
+<li><strong>Effort:</strong> E = D </em> V</li>
+</ul>
+
+<h3>Quality Metrics</h3>
+
+<ul>
+<li><strong>Reliability</strong> — Mean Time Between Failures (MTBF)</li>
+<li><strong>Availability</strong> — uptime percentage (99.9%, 99.99%)</li>
+<li><strong>Maintainability</strong> — Mean Time To Repair (MTTR), change impact analysis</li>
+<li><strong>Performance</strong> — response time, throughput, resource utilization</li>
+</ul>
+
+<hr>
+
+<h2 id="8.-risk-management">8. Risk Management</h2>
+
+<h3>Risk Categories</h3>
+
+<table>
+<tr>
+<th>Category</th>
+<th>Examples</th>
+</tr>
+<tr>
+<td><strong>Technical</strong></td>
+<td>Unfamiliar technology, complex integrations, scalability issues</td>
+</tr>
+<tr>
+<td><strong>Schedule</strong></td>
+<td>Unrealistic timelines, resource shortages, dependency delays</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Budget overruns, estimation errors, scope creep</td>
+</tr>
+<tr>
+<td><strong>Operational</strong></td>
+<td>Deployment failures, environment mismatches, data migration</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Vulnerabilities, data breaches, compliance violations</td>
+</tr>
+</table>
+
+<h3>Risk Management Process</h3>
+
+<ol>
+<li><strong>Identification</strong> — discover and document potential risks</li>
+<li><strong>Analysis</strong> — assess probability and impact (qualitative + quantitative)</li>
+<li><strong>Prioritization</strong> — rank risks by severity (Risk Score = Probability <em> Impact)</li>
+<li><strong>Response Planning</strong> — define mitigation, contingency, and avoidance strategies</li>
+<li><strong>Monitoring</strong> — track risks throughout the project lifecycle</li>
+</ol>
+
+<h3>Risk Response Strategies</h3>
+
+<ul>
+<li><strong>Avoid</strong> — eliminate the risk by changing approach</li>
+<li><strong>Mitigate</strong> — reduce probability or impact</li>
+<li><strong>Transfer</strong> — shift risk to third party (insurance, outsourcing)</li>
+<li><strong>Accept</strong> — acknowledge and budget for consequences</li>
+</ul>
+
+<hr>
+
+<h2 id="9.-software-testing">9. Software Testing</h2>
+
+<h3>Testing Levels</h3>
+
+<table>
+<tr>
+<th>Level</th>
+<th>Focus</th>
+<th>Who Performs</th>
+</tr>
+<tr>
+<td><strong>Unit Testing</strong></td>
+<td>Individual functions, methods, classes</td>
+<td>Developers</td>
+</tr>
+<tr>
+<td><strong>Integration Testing</strong></td>
+<td>Interactions between modules</td>
+<td>Developers + QA</td>
+</tr>
+<tr>
+<td><strong>System Testing</strong></td>
+<td>Complete system behavior</td>
+<td>QA Team</td>
+</tr>
+<tr>
+<td><strong>Acceptance Testing</strong></td>
+<td>User requirements validation</td>
+<td>End Users + QA</td>
+</tr>
+</table>
+
+<h3>Testing Types</h3>
+
+<ul>
+<li><strong>Functional Testing</strong> — does it do what it should? (black-box)</li>
+<li><strong>Performance Testing</strong> — does it meet speed/scalability requirements?</li>
+<li><strong>Security Testing</strong> — is it protected against threats?</li>
+<li><strong>Usability Testing</strong> — is it easy to use?</li>
+<li><strong>Regression Testing</strong> — did new changes break existing functionality?</li>
+<li><strong>Smoke Testing</strong> — quick check of critical functionality</li>
+</ul>
+
+<h3>Test Automation</h3>
+
+<p>Automated testing is essential for agentic engineering workflows. Key principles:</p>
+
+<ul>
+<li><strong>Test Pyramid:</strong> Unit tests (many) > Integration tests (some) > E2E tests (few)</li>
+<li><strong>Continuous Testing:</strong> Tests run automatically on every commit</li>
+<li><strong>Deterministic Tests:</strong> Same input always produces same result</li>
+<li><strong>Isolation:</strong> Tests should not depend on each other or external state</li>
+</ul>
+
+<hr>
+
+<h2 id="10.-software-quality-models">10. Software Quality Models</h2>
+
+<h3>ISO 9126 Quality Model</h3>
+
+<table>
+<tr>
+<th>Characteristic</th>
+<th>Sub-Characteristics</th>
+</tr>
+<tr>
+<td><strong>Functionality</strong></td>
+<td>Suitability, accuracy, interoperability, security</td>
+</tr>
+<tr>
+<td><strong>Reliability</strong></td>
+<td>Maturity, fault tolerance, recoverability</td>
+</tr>
+<tr>
+<td><strong>Usability</strong></td>
+<td>Understandability, learnability, operability</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Time behavior, resource utilization</td>
+</tr>
+<tr>
+<td><strong>Maintainability</strong></td>
+<td>Analyzability, changeability, stability, testability</td>
+</tr>
+<tr>
+<td><strong>Portability</strong></td>
+<td>Adaptability, installability, conformance, replaceability</td>
+</tr>
+</table>
+
+<h3>CMM — Capability Maturity Model</h3>
+
+<table>
+<tr>
+<th>Level</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Level 1 — Initial</strong></td>
+<td>Ad-hoc processes, unpredictable outcomes</td>
+</tr>
+<tr>
+<td><strong>Level 2 — Managed</strong></td>
+<td>Project-level processes, repeatable practices</td>
+</tr>
+<tr>
+<td><strong>Level 3 — Defined</strong></td>
+<td>Organization-wide standard processes</td>
+</tr>
+<tr>
+<td><strong>Level 4 — Quantitatively Managed</strong></td>
+<td>Process measured and controlled with metrics</td>
+</tr>
+<tr>
+<td><strong>Level 5 — Optimizing</strong></td>
+<td>Continuous process improvement</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="11.-software-maintenance-&-evolution">11. Software Maintenance & Evolution</h2>
+
+<h3>Types of Maintenance</h3>
+
+<ul>
+<li><strong>Corrective</strong> — fixing bugs and defects</li>
+<li><strong>Adaptive</strong> — adapting to environmental changes (new OS, hardware, regulations)</li>
+<li><strong>Perfective</strong> — adding new features, improving performance</li>
+<li><strong>Preventive</strong> — preventing future issues (refactoring, documentation updates)</li>
+</ul>
+
+<h3>Maintenance Challenges</h3>
+
+<ul>
+<li><strong>Code Entropy</strong> — code quality degrades over time without active management</li>
+<li><strong>Knowledge Loss</strong> — original developers may no longer be available</li>
+<li><strong>Legacy Dependencies</strong> — outdated libraries, frameworks, and platforms</li>
+<li><strong>Documentation Gap</strong> — documentation diverges from actual implementation</li>
+</ul>
+
+<h3>Evolution Strategies</h3>
+
+<ul>
+<li><strong>Refactoring</strong> — restructure code without changing external behavior</li>
+<li><strong>Reengineering</strong> — rebuild system components with modern approaches</li>
+<li><strong>Reverse Engineering</strong> — analyze existing system to understand its design</li>
+<li><strong>Strangler Fig Pattern</strong> — gradually replace legacy components with new ones</li>
+</ul>
+
+<hr>
+
+<h2 id="12.-key-tools-&-notations">12. Key Tools & Notations</h2>
+
+<h3>Modeling & Design Tools</h3>
+
+<table>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><strong>UML (Unified Modeling Language)</strong></td>
+<td>Visual modeling of software systems</td>
+</tr>
+<tr>
+<td><strong>ER Diagrams</strong></td>
+<td>Entity-relationship data modeling</td>
+</tr>
+<tr>
+<td><strong>DFD (Data Flow Diagrams)</strong></td>
+<td>System data flow and processing</td>
+</tr>
+<tr>
+<td><strong>Flowcharts</strong></td>
+<td>Algorithm and process visualization</td>
+</tr>
+<tr>
+<td><strong>Architecture Decision Records (ADR)</strong></td>
+<td>Documenting architectural decisions</td>
+</tr>
+</table>
+
+<h3>Project Management Tools</h3>
+
+<ul>
+<li>JIRA, Linear, Trello — issue and sprint tracking</li>
+<li>Confluence, Notion — documentation and knowledge management</li>
+<li>Git, GitHub, GitLab — version control and collaboration</li>
+<li>Jenkins, GitHub Actions, GitLab CI — continuous integration</li>
+</ul>
+
+<h3>Agentic Engineering Considerations</h3>
+
+<p>For autonomous AI agents, the following tools and practices are particularly relevant:</p>
+
+<ul>
+<li><strong>Automated Testing Frameworks</strong> — pytest, Jest, Selenium</li>
+<li><strong>CI/CD Pipelines</strong> — automated build, test, and deployment</li>
+<li><strong>Infrastructure as Code</strong> — Terraform, Ansible, Docker</li>
+<li><strong>Monitoring & Observability</strong> — Prometheus, Grafana, OpenTelemetry</li>
+<li><strong>Automated Documentation</strong> — doc generators, API documentation tools</li>
+</ul>
+
+<hr>
+
+<p></em>References: IEEE Std 830, ISO 9126, CMM, COCOMO, Halstead Metrics*</p>
+
+<hr>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+<li><a href="source/college-prep-se-allquestions.md">college-prep-se-allquestions</a></li>
+<li><a href="source/college-prep-se-assignment.md">college-prep-se-assignment</a></li>
+<li><a href="source/college-prep-se-files-misc.md">college-prep-se-files-misc</a></li>
+<li><a href="source/college-prep-se-notes-all.md">college-prep-se-notes-all</a></li>
+<li><a href="source/college-prep-se-notes-units.md">college-prep-se-notes-units</a></li>
+<li><a href="source/college-prep-se-pyq.md">college-prep-se-pyq</a></li>
+<li><a href="source/college-prep-se-root.md">college-prep-se-root</a></li>
+<li><a href="source/college-prep-se-textbook-aggarwal.md">college-prep-se-textbook-aggarwal</a></li>
+<li><a href="source/college-prep-se-textbook-pressman.md">college-prep-se-textbook-pressman</a></li>
+</ul>    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

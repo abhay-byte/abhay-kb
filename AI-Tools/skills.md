@@ -546,3 +546,39 @@ The following tools support the Agent Skills format (Source: [agentskills.io](ht
 - [**AI Tools Index**](../AI-Tools/) — Full tools reference
 - [**MCP**](./mcp) — Model Context Protocol
 - [**AI Editors**](./ai-editors) — AI-powered editors comparison
+
+---
+
+## Sources
+
+- [agentskills-io-skill-creation-best-practices](source/agentskills-io-skill-creation-best-practices.md)
+- [agentskills-io-skill-creation-quickstart](source/agentskills-io-skill-creation-quickstart.md)
+- [agentskills-io-specification](source/agentskills-io-specification.md)
+- [agentskills-io](source/agentskills-io.md)
+- [clawhub-ai](source/clawhub-ai.md)
+- [github-com-anthropics-skills-git](source/github-com-anthropics-skills-git.md)
+- [github-com-anthropics-skills-tree-main-skills-algorithmic-art](source/github-com-anthropics-skills-tree-main-skills-algorithmic-art.md)
+- [github-com-anthropics-skills-tree-main-skills-brand-guidelines](source/github-com-anthropics-skills-tree-main-skills-brand-guidelines.md)
+- [github-com-anthropics-skills-tree-main-skills-canvas-design](source/github-com-anthropics-skills-tree-main-skills-canvas-design.md)
+- [github-com-anthropics-skills-tree-main-skills-claude-api](source/github-com-anthropics-skills-tree-main-skills-claude-api.md)
+- [github-com-anthropics-skills-tree-main-skills-doc-coauthoring](source/github-com-anthropics-skills-tree-main-skills-doc-coauthoring.md)
+- [github-com-anthropics-skills-tree-main-skills-docx](source/github-com-anthropics-skills-tree-main-skills-docx.md)
+- [github-com-anthropics-skills-tree-main-skills-frontend-design](source/github-com-anthropics-skills-tree-main-skills-frontend-design.md)
+- [github-com-anthropics-skills-tree-main-skills-internal-comms](source/github-com-anthropics-skills-tree-main-skills-internal-comms.md)
+- [github-com-anthropics-skills-tree-main-skills-mcp-builder](source/github-com-anthropics-skills-tree-main-skills-mcp-builder.md)
+- [github-com-anthropics-skills-tree-main-skills-pdf](source/github-com-anthropics-skills-tree-main-skills-pdf.md)
+- [github-com-anthropics-skills-tree-main-skills-pptx](source/github-com-anthropics-skills-tree-main-skills-pptx.md)
+- [github-com-anthropics-skills-tree-main-skills-skill-creator](source/github-com-anthropics-skills-tree-main-skills-skill-creator.md)
+- [github-com-anthropics-skills-tree-main-skills-slack-gif-creator](source/github-com-anthropics-skills-tree-main-skills-slack-gif-creator.md)
+- [github-com-anthropics-skills-tree-main-skills-theme-factory](source/github-com-anthropics-skills-tree-main-skills-theme-factory.md)
+- [github-com-anthropics-skills-tree-main-skills-web-artifacts-builder](source/github-com-anthropics-skills-tree-main-skills-web-artifacts-builder.md)
+- [github-com-anthropics-skills-tree-main-skills-webapp-testing](source/github-com-anthropics-skills-tree-main-skills-webapp-testing.md)
+- [github-com-anthropics-skills-tree-main-skills-xlsx](source/github-com-anthropics-skills-tree-main-skills-xlsx.md)
+- [github-com-anthropics-skills](source/github-com-anthropics-skills.md)
+- [github-com-github-spec-kit-git](source/github-com-github-spec-kit-git.md)
+- [github-com-github-spec-kit](source/github-com-github-spec-kit.md)
+- [github-com-juliusbrussee-caveman-git](source/github-com-juliusbrussee-caveman-git.md)
+- [github-com-juliusbrussee-caveman-tree-main](source/github-com-juliusbrussee-caveman-tree-main.md)
+- [github-com-msitarzewski-agency-agents-git](source/github-com-msitarzewski-agency-agents-git.md)
+- [github-com-msitarzewski-agency-agents](source/github-com-msitarzewski-agency-agents.md)
+- [skills-sh](source/skills-sh.md)

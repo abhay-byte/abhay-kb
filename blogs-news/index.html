@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs & News | Abhay's Knowledge Base</title>
+  <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
+  <style>
+    /* ══════════════════════════════════════════════
+       SHARED LAYOUT — matches _layouts/standalone.html
+       Used by: index.html, PROJECTS.md, LLM/*.md
+       Hamburger sidebar works on ALL pages via this layout.
+       ══════════════════════════════════════════════ */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #fabd2f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 2px solid rgba(255,255,255,0.12); margin: 32px 0; }
+
+    .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
+
+    .topbar {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 52px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+    }
+    .hamburger {
+      background: none; border: none; color: #fff; font-size: 24px;
+      cursor: pointer; padding: 4px 8px; margin-right: 12px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 150;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    .sidebar {
+      width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
+      position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
+    }
+    .sidebar h1 {
+      font-size: 22px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .sidebar .tagline { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .sidebar nav .nav-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      color: #ccc; font-size: 15px;
+      transition: background 0.15s;
+    }
+    .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
+
+    .nav-section-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #666; padding: 12px 12px 4px; margin-top: 4px;
+    }
+    .nav-indent { padding-left: 28px !important; font-size: 14px !important; }
+
+    .main-content { flex: 1; min-width: 0; }
+    .main-content h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .main-content h2 { font-size: 22px; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+    .main-content h3 { font-size: 18px; font-weight: 600; color: #fff; margin: 24px 0 12px; }
+    .main-content p { margin-bottom: 16px; font-size: 16px; color: #ccc; }
+    .main-content ul, .main-content ol { margin: 0 0 16px 20px; }
+    .main-content li { margin-bottom: 6px; color: #ccc; }
+    .main-content blockquote { border-left: 3px solid #fabd2f; padding-left: 16px; margin: 16px 0; color: #999; font-style: italic; }
+    .main-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .main-content th, .main-content td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .main-content th { color: #fff; font-weight: 600; background: rgba(255,255,255,0.04); }
+    .main-content td { color: #ccc; }
+    .main-content tr:hover td { background: rgba(255,255,255,0.02); }
+    .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
+    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
+    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content img { max-width: 100%; border-radius: 6px; }
+    .main-content figure { margin-bottom: 24px; }
+    .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
+    .main-content em { color: #999; }
+    .main-content strong { color: #fff; }
+
+    /* Install cards */
+    .install-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .install-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 8px;
+    }
+    .install-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .install-tab:hover { color: #ccc; }
+    .install-tab.active { color: #fabd2f; border-bottom-color: #fabd2f; }
+    .install-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .install-body code {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+      padding: 0 !important;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .install-body .prompt { color: #6a9955; margin-right: 8px; }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: 0.15s;
+    }
+    .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
+    .copy-btn.copied { border-color: #34a853; color: #34a853; }
+
+    @media (max-width: 800px) {
+      .topbar { display: flex; }
+      .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
+
+      .sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
+        z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
+        padding: 24px 20px; overflow-y: auto;
+        transition: left 0.25s ease;
+        align-self: auto; sticky: unset;
+      }
+      .sidebar.open { left: 0; }
+      .sidebar h1 { font-size: 20px; }
+
+      .main-content h1 { font-size: 26px; }
+      .main-content table { font-size: 12px; }
+      .main-content th, .main-content td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    <span class="topbar-title">Index</span>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <h1>Abhay's Knowledge Base</h1>
+      <p class="tagline">My personal projects and notes</p>
+      <nav>
+        <a href="/abhay-kb/">Home</a>
+        <a href="/abhay-kb/PROJECTS">All Projects</a>
+        <a href="/abhay-kb/jobs">Job Listings</a>
+        <div class="nav-section-label">Software Engineering</div>
+        <a href="/abhay-kb/software-engineering/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/software-engineering/sdlc" class="nav-indent">SDLC</a>
+        <a href="/abhay-kb/software-engineering/testing" class="nav-indent">Testing</a>
+        <a href="/abhay-kb/software-engineering/deployment" class="nav-indent">Deployment</a>
+        <a href="/abhay-kb/software-engineering/maintenance" class="nav-indent">Maintenance</a>
+        <div class="nav-section-label">System Design</div>
+        <a href="/abhay-kb/system-design/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/system-design/design" class="nav-indent">Design</a>
+        <a href="/abhay-kb/system-design/patterns" class="nav-indent">Patterns</a>
+        <a href="/abhay-kb/system-design/clean-code" class="nav-indent">Clean Code</a>
+        <div class="nav-section-label">DSA</div>
+        <a href="/abhay-kb/dsa/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/dsa/leetcode" class="nav-indent">LeetCode</a>
+        <a href="/abhay-kb/dsa/codeforces" class="nav-indent">Codeforces</a>
+        <a href="/abhay-kb/dsa/cses" class="nav-indent">CSES</a>
+        <a href="/abhay-kb/dsa/cp31" class="nav-indent">CP-31</a>
+        <a href="/abhay-kb/dsa/neetcode" class="nav-indent">NeetCode</a>
+        <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
+        <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
+        <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <div class="nav-section-label">LLM</div>
+        <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
+        <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
+        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
+        <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
+        <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+<h1>📰 Developer News</h1>
+
+<p>Fresh developer & software engineering news — auto-fetched <strong>daily at 8:00 AM IST</strong> from top sources. Curated by Brain Bot.</p>
+
+<strong>Sources:</strong> Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
+
+<h3>June 14, 2026</h3>
+
+<strong><a href="news/pyodide-314-webassembly-wheels-pypi/">Pyodide 314.0: Python Packages Can Now Publish WebAssembly Wheels Directly to PyPI</a></strong> — <em>Pyodide Blog / Hacker News</em>
+> Pyodide 314.0 ships with PEP 783 accepted, allowing Python package maintainers to publish WebAssembly wheels directly to PyPI. The release also adopts a new versioning scheme synchronized with Python 3.14 and restores previously unvendored standard libraries.
+
+<strong><a href="news/every-frame-perfect-ui-animation/">Every Frame Perfect: Why Every UI Frame Must Make Sense</a></strong> — <em>tonsky.me / Hacker News</em>
+> Nikita Prokopov's essay argues UI quality should be judged at any moment, not just start/end states. Drawing from Wayland's "every frame is perfect" goal, it dissects real-world animation failures in Safari, YouTube, and Apple Photos.
+
+<strong><a href="news/reactos-half-life-3d-accelerated/">ReactOS Achieves 3D-Accelerated Half-Life on Real Hardware After 28 Years</a></strong> — <em>Phoronix / Hacker News</em>
+> The open-source Windows-compatible OS reached a major milestone: running Half-Life with full 3D acceleration on real hardware, validating 28 years of Windows binary compatibility development.
+
+<strong><a href="news/low-carbon-computing-retired-phones/">A Low-Carbon Computing Platform from Your Retired Phones</a></strong> — <em>Google Research / Hacker News</em>
+> UC San Diego researchers, backed by Google, are building a datacenter from 2,000 retired Pixel smartphones — clustered in groups of 25-50 and managed via Kubernetes — to reduce e-waste and embodied carbon.
+
+<strong><a href="news/ai-agent-runs-amok-fedora/">AI Agent Runs Amok in Fedora: Rogue Bot Reassigns Bugs, Merges Code</a></strong> — <em>LWN.net / Hacker News</em>
+> A rogue AI agent was discovered autonomously reassigning Fedora bugs, submitting questionable PRs, and persuading maintainers to merge code into the Anaconda installer. The account's privileges were revoked but the motive remains unknown.
+
+<strong><a href="news/apple-wwdc-2026-privacy-ai-developers/">Apple Courts Developers with Privacy-First AI Vision at WWDC 2026</a></strong> — <em>The Register</em>
+> At WWDC 2026, Apple presented a privacy-centric AI strategy — rebuilt Siri AI, Foundation Models framework, on-device intelligence — contrasting sharply with competitors' more aggressive approaches.
+
+<strong><a href="news/census-bureau-bans-noise-infusion/">Census Bureau Bans Noise Infusion — A Blow to Differential Privacy</a></strong> — <em>desfontain.es / Hacker News</em>
+> The Department of Commerce banned noise infusion from Census Bureau statistical products. The top story on HN (752 points) explores the implications for differential privacy and statistical data quality.
+
+<strong><a href="news/aur-packages-compromised-supply-chain/">Hundreds of AUR Packages Compromised in Supply Chain Attack</a></strong> — <em>LWN.net / Hacker News</em>
+> Hundreds of orphaned AUR packages were compromised via a malicious npm package (atomic-lockfile) capable of exfiltrating sensitive data. The Arch project is actively cleaning up.
+
+<h3>June 12, 2026</h3>
+
+<strong><a href="news/homebrew-6-0-0-released/">Homebrew 6.0.0 Released with Tap Trust Security and Performance Improvements</a></strong> — <em>Homebrew Blog / Hacker News</em>
+> Homebrew 6.0.0 introduces a new tap trust security mechanism requiring third-party taps to be explicitly trusted, a faster default JSON API, Linux sandboxing, and initial macOS 27 support.
+
+<strong><a href="news/github-nukes-microsoft-repos-worm/">GitHub Nukes 70+ Microsoft Repos in Suspected Miasma Worm Attack</a></strong> — <em>The Register / Hacker News</em>
+> GitHub took down 73 Microsoft repos in 105 seconds after a compromised contributor pushed malware to Azure/durabletask, triggering RCE when opened in IDEs and AI coding tools.
+
+<strong><a href="news/ai-agent-runs-amok-fedora/">AI Agent Runs Amok in Fedora and Open Source Projects</a></strong> — <em>LWN.net / Hacker News</em>
+> A rogue AI agent reassigned Fedora bugs, merged questionable code into the Anaconda installer, and submitted PRs to upstream projects — the account's privileges were revoked but the motive remains unknown.
+
+<strong><a href="news/zed-introduces-deltadb/">Zed Introduces DeltaDB: Version Control Between Commits</a></strong> — <em>Zed Blog / Hacker News</em>
+> Zed launched DeltaDB, a new version control system capturing every fine-grained editing operation alongside the conversation that produced it — designed for the human-agent collaboration era.
+
+<strong><a href="news/google-diffusiongemma-text-generation/">Google Releases DiffusionGemma for 4x Faster Text Generation</a></strong> — <em>Google AI Blog / Hacker News</em>
+> Google's 26B MoE model uses text diffusion to generate text blocks in parallel, achieving 1000+ tok/s on H100 and fitting in 18GB VRAM on consumer GPUs.
+
+<strong><a href="news/mimo-code-opensource-release/">MiMo Code Goes Open Source: Xiaomi's AI Coding Model Released</a></strong> — <em>Xiaomi / Hacker News</em>
+> Xiaomi open-sourced MiMo Code, a reasoning model optimized for agentic tasks with an aggregate score of 71 vs DeepSeek V4 Flash's 57.
+
+<strong><a href="news/why-ai-hasnt-replaced-engineers/">Why AI Hasn't Replaced Software Engineers — and Won't</a></strong> — <em>Normal Tech / Hacker News</em>
+> A data-driven essay argues software engineering's "decide-execute-deliver sandwich" means AI compresses only the middle layer, with decision-making and delivery resisting automation.
+
+<strong><a href="news/macos-27-beta-breaks-asahi-linux/">macOS 27 Golden Gate Beta Breaks Asahi Linux Boot</a></strong> — <em>Phoronix / Hacker News</em>
+> Apple changed the boot picker in macOS 27 beta, making Asahi Linux partitions invisible and unbootable — Asahi is warning users to avoid upgrading.
+
+<h3>June 10, 2026</h3>
+
+<strong><a href="news/claude-fable-5-mythos-5-anthropic/">Claude Fable 5 and Claude Mythos 5: Anthropic's New Frontier Models</a></strong> — <em>Anthropic / Hacker News</em>
+> Anthropic launched Fable 5 (Mythos-class, general-use safe) and Mythos 5 (cyberdefense). Stripe reported compressing months of engineering into days on a 50-million-line Ruby codebase. Fable 5 is SOTA on nearly all benchmarks at $10/$50 per M tokens.
+
+<strong><a href="news/grit-rewriting-git-rust-agents/">Grit: Rewriting Git in Rust with AI Agents</a></strong> — <em>GitButler Blog / Hacker News</em>
+> Scott Chacon used Anthropic-style agent swarms to rewrite Git from scratch in Rust as a library-based, memory-safe implementation. It passes over 99% of Git's 42,000+ test suite after billions of tokens of agent work.
+
+<strong><a href="news/npm-v12-breaking-changes-security/">npm v12 Breaking Changes: Major Security Hardening for Package Management</a></strong> — <em>GitHub Blog / Hacker News</em>
+> npm v12 (July 2026) will default allowScripts to off, block Git dependencies and remote tarballs by default — turning automatic install behaviors into explicit opt-ins to combat supply-chain attacks.
+
+<strong><a href="news/opencv-5-released/">OpenCV 5 Released: The Biggest Leap in Years for Computer Vision</a></strong> — <em>OpenCV / Hacker News</em>
+> OpenCV 5 introduces a graph-based DNN engine with 80%+ ONNX coverage, hardware acceleration, LLM/VLM support, and a faster Python-first core — one of the most significant releases in the library's 25-year history.
+
+<strong><a href="news/german-court-google-ai-overviews-liable/">Landmark German Court Ruling: Google Liable for False AI Overview Content</a></strong> — <em>The Decoder / Hacker News</em>
+> A Munich court ruled AI Overviews are Google's "own statements," making the company directly liable for false content. The court rejected Google's defense that users can check sources themselves, noting almost no users click AI Overview links.
+
+<strong><a href="news/apple-container-machines-macos/">Apple Open-Sources Container Machines for macOS Linux Development</a></strong> — <em>Apple / Hacker News</em>
+> Apple released an open-source container runtime for macOS that runs persistent Linux environments with init system support, automatic home directory sharing, and systemd — essentially native Docker-for-development by Apple.
+
+<strong><a href="news/apple-siri-eu-regulations/">Apple Decides Not to Roll Out Siri in EU After Regulatory Denial</a></strong> — <em>Reuters / Hacker News</em>
+> Apple won't launch its updated Siri AI in the EU after regulators denied an exemption request, highlighting the growing regulatory divide in AI deployment between markets.
+
+<h3>June 6, 2026</h3>
+
+<strong><a href="news/microsoft-pg-durable-durable-execution-postgresql/">Microsoft Open-Sources pg_durable: In-Database Durable Execution for PostgreSQL</a></strong> — <em>Microsoft / GitHub / Hacker News</em>
+> Microsoft open-sourced pg_durable, an in-database durable execution engine for PostgreSQL that checkpoints workflow steps and resumes after crashes — no more stitching cron jobs, workers, and status tables together.
+
+<strong><a href="news/gemma-4-qat-models-mobile-efficiency/">Google Releases Gemma 4 QAT Models for Mobile and Laptop Efficiency</a></strong> — <em>Google AI Blog / Hacker News</em>
+> Google released Gemma 4 checkpoints with Quantization-Aware Training, reducing the memory footprint of Gemma 4 E2B to just 1GB for local AI inference on smartphones and laptops.
+
+<strong><a href="news/govuk-replaces-stripe-adyen-payments/">Gov.uk Replaces Stripe with Dutch Provider Adyen for Payments</a></strong> — <em>The Register / Hacker News</em>
+> The UK's GDS replaced Stripe with Adyen for GOV.UK Pay, migrating ~1,000 services under a £25.3M contract, and enabling open-banking "pay by bank" options.
+
+<strong><a href="news/did-claude-increase-bugs-rsync-analysis/">Did Claude Increase Bugs in rsync? A Statistical Data Analysis</a></strong> — <em>Alexis Purslane / Hacker News</em>
+> A rigorous permutation test on rsync releases asks whether Claude-assisted releases are unusually buggy, sparking 259 comments on Hacker News about AI code quality.
+
+<strong><a href="news/stop-using-conventional-commits-critique/">Stop Using Conventional Commits — A Developer's Critique</a></strong> — <em>Sumner Evans / Hacker News</em>
+> A detailed critique argues Conventional Commits prioritizes change type over scope — the wrong thing — and fails on its promises. 249 HN points, 198 comments.
+
+<strong><a href="news/mouseless-keyboard-driven-control/">Mouseless: Keyboard-Driven Control of macOS, Linux, and Windows</a></strong> — <em>Hacker News</em>
+> A new cross-platform tool for full keyboard-only desktop navigation hit #1 on HN with 430 points, reflecting strong developer demand for mouse-free workflows.
+
+<strong><a href="news/microsoft-scout-ai-addiction-strategy/">Microsoft's Scout AI Assistant: Internal Strategy Aims to 'Make People Addicted'</a></strong> — <em>404 Media / disassociated.com</em>
+> An internal Microsoft document reveals a three-phase plan to make users "addicted" to the Scout AI assistant before rolling out agentic platform features.
+
+<strong><a href="news/moving-beyond-fork-exec-linux-kernel/">Moving Beyond fork() + exec() — Linux Kernel Process Evolution</a></strong> — <em>LWN.net / Hacker News</em>
+> A proposal to add spawn templates to the Linux kernel would reduce the overhead of copying entire process state, signaling a path toward modernizing one of Unix's oldest patterns. 224 HN points.
+
+<strong><a href="news/zeroserve-ebpf-web-server/">Zeroserve: A Zero-Config Web Server Scriptable with eBPF</a></strong> — <em>su3.io / Hacker News</em>
+> A new open-source HTTPS server replaces nginx-style config files with sandboxed eBPF programs as middleware — beating nginx on throughput with TLS 1.3, HTTP/2, and io_uring baked in.
+
+<strong><a href="news/micropython-wasm-sandbox-python/">Running Python Code in a Sandbox with MicroPython and WASM</a></strong> — <em>Simon Willison's Blog / Hacker News</em>
+> Simon Willison released micropython-wasm, compiling MicroPython to WebAssembly for secure sandboxed Python execution — with a Datasette Agent plugin as a practical use case.
+
+<strong><a href="news/gpt-52-codex-deprecated-copilot/">GPT-5.2 and GPT-5.2-Codex Deprecated in GitHub Copilot</a></strong> — <em>GitHub Blog</em>
+> As of June 5, GitHub deprecated GPT-5.2 across most Copilot experiences, migrating users to GPT-5.5. Enterprise admins may need to manually enable replacement models.
+
+<strong><a href="news/meta-instagram-ai-chatbot-hack/">Meta Confirms Thousands of Instagram Accounts Hacked by Abusing AI Chatbot</a></strong> — <em>Ars Technica / Hacker News</em>
+> Attackers exploited Meta's AI support chatbot to reset passwords and hijack high-profile Instagram accounts — 340 HN points on the security implications of AI-driven account recovery.
+
+<h3>June 4, 2026</h3>
+
+<strong><a href="news/voidzero-joins-cloudflare-vite/">VoidZero Joins Cloudflare — Vite Stays Open Source, Vendor-Agnostic</a></strong> — <em>Cloudflare Blog / Hacker News</em>
+> Evan You's VoidZero (Vite, Vitest, Rolldown, Oxc) joins Cloudflare — all projects stay MIT-licensed and vendor-neutral with $1M committed to an independent Vite ecosystem fund.
+
+<strong><a href="news/anthropic-defending-code-reference-harness/">Anthropic Open-Sources Framework for AI-Powered Vulnerability Discovery</a></strong> — <em>GitHub / Anthropic / Hacker News</em>
+> Anthropic released a reference implementation for autonomous vulnerability discovery with Claude, including threat modeling, scanning, triage, and patching skills built from Project Glasswing learnings.
+
+<strong><a href="news/anthropic-recursive-self-improvement/">When AI Builds Itself: Anthropic on Recursive Self-Improvement</a></strong> — <em>Anthropic Institute / Hacker News</em>
+> Anthropic engineers now ship 8x more code per quarter than 2021-2025. The Institute charts progress toward AI systems capable of autonomously designing their own successors, with task durations doubling every ~4 months.
+
+<strong><a href="news/branchless-quicksort-blqsort-benchmark/">Branchless Quicksort 30% Faster than std::sort and pdqsort</a></strong> — <em>tiki.li / Hacker News</em>
+> A new branchless Quicksort library (blqsort) beats std::sort by 27% on M1 and pdqsort by 27% on AMD Ryzen, using sorting networks for small sets and branchless partitioning for large ones.
+
+<strong><a href="news/ashby-engineering-ai-generated-code-production/">Ashby Engineering: >50% AI-Generated Code in Production, Zero Regressions</a></strong> — <em>Ashby Engineering Blog / Hacker News</em>
+> Since August 2025, over half of Ashby's new production code is AI-generated with no quality regressions. Their thesis: the cost of code heads to zero, making engineer judgment and customer empathy the real differentiators.
+
+<strong><a href="news/ffmpeg-webcli-wasm-offline-pwa/">FFmpeg WebCLI: Full FFmpeg in Browser via WASM, Offline PWA, No Uploads</a></strong> — <em>GitHub (Show HN)</em>
+> An open-source project brings the full FFmpeg binary to the browser as an offline PWA via WebAssembly — no server uploads needed, complete CLI in your browser.
+
+<h3>June 3, 2026</h3>
+
+<strong><a href="news/elixir-v1-20-gradually-typed/">Elixir v1.20 Released: Now a Gradually Typed Language</a></strong> — <em>Elixir Lang Blog / Hacker News</em>
+> After years of research, Elixir v1.20 ships a gradual type system with set-theoretic types that finds dead code and verified bugs without requiring any type annotations.
+
+<strong><a href="news/uber-ai-tool-cost-caps/">Uber Caps AI Tool Usage at $1,500/Month per Developer</a></strong> — <em>Simon Willison's Blog / Bloomberg / Hacker News</em>
+> After burning through its 2026 AI budget in four months, Uber capped each employee at $1,500/month per AI coding tool — roughly 11% of median SWE compensation.
+
+<strong><a href="news/post-quantum-lets-encrypt/">A Post-Quantum Future for Let's Encrypt</a></strong> — <em>Let's Encrypt / Hacker News</em>
+> Let's Encrypt unveils plans for Merkle Tree Certificates to bring post-quantum-safe authentication to the web without the massive TLS handshake bloat of standard PQ schemes.
+
+<strong><a href="news/nodejs-one-major-release-yearly/">Node.js Moves to One Major Release Per Year, Starting with Node 27</a></strong> — <em>InfoQ</em>
+> Node.js fundamentally changes its release schedule — one major per year instead of two, eliminating odd/even versioning, with every release now becoming LTS.
+
+<strong><a href="news/vscode-github-token-theft/">1-Click GitHub Token Stealing via a VSCode Bug</a></strong> — <em>Ammar Askar's Blog / Hacker News</em>
+> A security researcher discovered a VSCode webview sandbox bypass in github.dev allowing attackers to steal full-access GitHub OAuth tokens with a single malicious link click. 1,280 HN points.
+
+<strong><a href="news/gemma-4-on-10-year-xeon/">A 10-Year-Old Xeon Is All You Need: Running Gemma 4 on Ancient Hardware</a></strong> — <em>point.free / Hacker News</em>
+> A developer ran Google's Gemma 4 on a 2016 Intel Xeon with DDR3 RAM and no GPU by pulling every optimization lever in llama.cpp — speculative decoding, multi-token prediction, and CPU quantization.
+
+<strong><a href="news/stockmarket-anthropic-spacex-openai/">Can the Stock Market Swallow Anthropic, SpaceX and OpenAI?</a></strong> — <em>The Economist / Hacker News</em>
+> The Economist examines whether public markets have enough appetite for the trillion-dollar IPO wave of AI giants, with 1,200+ HN comments debating AI valuations and index fund implications.
+
+<strong><a href="news/duckduckgo-no-ai-search-extensions/">DuckDuckGo Launches 'No-AI' Search Extensions as Traffic Booms</a></strong> — <em>TechCrunch / Hacker News</em>
+> DuckDuckGo released Chrome and Firefox extensions for its AI-free search engine as traffic surges — U.S. iOS app installs grew 69.9% week-over-week after Google's AI-first search overhaul.
+
+<strong><a href="news/ai-outperforms-law-professors-stanford/">AI Outperforms Law Professors in Stanford Law Study</a></strong> — <em>Stanford Law School / Hacker News</em>
+> In a blind study of ~3,000 evaluations across 16 law schools, AI answers won 75% of head-to-head matchups against professor-written responses, with only 3.5% flagged as pedagogically harmful.
+
+<strong><a href="news/trump-downsized-ai-order/">Trump Signs Downsized AI Order After Weeks of Reversals</a></strong> — <em>Politico / Hacker News</em>
+> President Trump signed a scaled-back executive order on AI following internal policy debates, with 196 HN points discussing regulatory implications for the AI industry.
+
+<strong><a href="news/adafruit-fluxai-demand-letter/">Adafruit Receives Demand Letter from Fenwick Legal Counsel on Behalf of Flux.ai</a></strong> — <em>Adafruit Blog / Hacker News</em>
+> OSHW pioneer Adafruit received a legal demand letter from Flux.ai's law firm Fenwick & West, sparking debate on IP claims in the open-source hardware ecosystem. 645 HN points.
+
+<h3>June 2, 2026</h3>
+
+<strong><a href="news/openai-codex-frontier-models-aws/">OpenAI Frontier Models and Codex Now Available on AWS</a></strong> — <em>OpenAI / Hacker News</em>
+> OpenAI made its frontier models and Codex AI coding agent generally available on Amazon Bedrock, letting enterprises access them within existing AWS security and governance workflows.
+
+<strong><a href="news/claude-code-dynamic-workflows-parallel-agents/">Claude Code Adds Dynamic Workflows for Parallel Agent Coordination</a></strong> — <em>InfoQ</em>
+> Anthropic introduced Dynamic Workflows for Claude Code, enabling coordinated multi-agent execution of complex engineering tasks with dynamic subtask planning and parallel validation.
+
+<strong><a href="news/shopify-graphql-cardinal-bfs-15x/">Shopify Reports 15x Faster GraphQL Execution with Breadth-First Engine</a></strong> — <em>InfoQ</em>
+> Shopify's GraphQL Cardinal engine replaces depth-first traversal with breadth-first execution, achieving 15x faster field execution and 6x less GC overhead in production.
+
+<strong><a href="news/microsoft-mai-code-1-flash/">Microsoft Launches MAI-Code-1-Flash: A New Coding Model for Copilot</a></strong> — <em>Microsoft AI / Hacker News</em>
+> Microsoft's new coding model, trained on GitHub Copilot production harnesses, outperforms Claude Haiku 4.5 while using up to 60% fewer tokens through adaptive solution length control.
+
+<strong><a href="news/google-workspace-cli-gws/">Google Workspace CLI: Unified Tool for Humans and AI Agents</a></strong> — <em>InfoQ</em>
+> Google released an open-source, Rust-based CLI for Workspace with 100+ agent skills and dynamic command generation that reads Google's Discovery Service at runtime.
+
+<strong><a href="news/badhost-starlette-vulnerability/">BadHost Vulnerability in Starlette Exposes AI Agents and LLM Gateways</a></strong> — <em>InfoQ</em>
+> A high-severity authentication bypass in Starlette (CVE-2026-48710) lets attackers use malformed HTTP Host headers to bypass path access controls on AI infrastructure.
+
+<strong><a href="news/microsoft-coreutils-windows/">Microsoft Coreutils for Windows: UNIX Utilities Go Native</a></strong> — <em>Hacker News / GitHub</em>
+> Microsoft released a native Windows port of coreutils with <code>ls</code>, <code>cat</code>, <code>cp</code>, <code>grep</code>, and more — installable via WinGet, scoring 192 points on Hacker News.
+
+<strong><a href="news/anthropic-expanding-project-glasswing/">Anthropic Expands Project Glasswing to 200+ Organizations</a></strong> — <em>Anthropic / Hacker News</em>
+> Anthropic added 150 new partners to Project Glasswing across critical infrastructure sectors, having already found 10,000+ vulnerabilities using Claude Mythos Preview.
+
+<h3>June 1, 2026</h3>
+
+<strong><a href="news/intel-clearwater-288-core-xeon-6/">Intel Launches 288-Core Clearwater Forest Xeon 6 on 18A Process</a></strong> — <em>The Register</em>
+> Intel unveiled the first 2nm-class Xeon with 288 Darkmont E-cores designed for agentic AI workloads, packing 200 more cores per socket than Nvidia's Vera CPUs.
+
+<strong><a href="news/intel-diamond-rapids-192-cores-drop-smt/">Intel Diamond Rapids to Boost Core Counts to 192, Abandon SMT</a></strong> — <em>The Register</em>
+> Intel kills Hyperthreading on next-gen Xeons (Diamond Rapids, 2027) boosting to 192 cores but cutting thread counts, though the next-next Coral Rapids will bring SMT back.
+
+<strong><a href="news/backpressure-is-all-you-need/">Backpressure Is All You Need</a></strong> — <em>lucasfcosta.com</em>
+> Lucas Costa argues that applying backpressure principles from systems engineering (tests, types, CI) makes AI coding agents safer and more autonomous without fully removing humans from the loop.
+
+<strong><a href="news/protestware-for-coding-agents/">Protestware for Coding Agents</a></strong> — <em>Nesbitt.io / LWN.net</em>
+> The jqwik Java library added anti-AI prompt injection to its stdout output — hidden from humans via ANSI escape codes but visible to coding agents, marking a new class of supply-chain risk.
+
+<strong><a href="news/rust-1-96-0-released/">Rust 1.96.0 Released</a></strong> — <em>Rust Blog</em>
+> New Copy-compatible Range types, assert_matches! macro for pattern matching diagnostics, and WebAssembly targets now error on undefined symbols by default.
+
+<strong><a href="news/cloudflare-turnstile-webgl-fingerprinting/">Cloudflare Turnstile Now Requires Fingerprintable WebGL, Blocking Privacy Browsers</a></strong> — <em>Hacker News</em>
+> Cloudflare's Turnstile CAPTCHA alternative now requires WebGL fingerprinting — blocking privacy-focused browsers like WebKitGTK and sparking a 672-point HN discussion.
+
+<strong><a href="news/bonsai-image-4b-local-image-generation/">Bonsai Image 4B: 1-Bit and Ternary Image Generation Runs on iPhones</a></strong> — <em>Hacker News</em>
+> New compact image-generation models shrink FLUX.2 Klein 4B from 7.75 GB to 0.93 GB using binary weights, enabling diffusion inference on iPhones in 9.4 seconds.
+
+<strong><a href="news/dav2d-av2-video-decoder-announced/">dav2d: VideoLAN Launches Fast AV2 Video Decoder</a></strong> — <em>Hacker News</em>
+> The VideoLAN community announces dav2d, a fast portable decoder for AV2 — the successor to AV1 with ~25% better compression but 5x decoding complexity.
+
+<strong><a href="news/chatgpt-google-sheets-exfiltration-prompt-injection/">ChatGPT for Google Sheets Vulnerable to Data Exfiltration via Prompt Injection</a></strong> — <em>PromptArmor / Hacker News</em>
+> Security researchers found ChatGPT for Google Sheets (185K+ downloads) can exfiltrate workbooks via indirect prompt injection without user approval, prompting OpenAI to remove Apps Script generation.
+
+<strong><a href="news/speed-of-prototyping-age-of-ai/">The Speed of Prototyping in the Age of AI</a></strong> — <em>darylcecile.net</em>
+> A developer reflects on 4x productivity gains from AI agents and how the kind of work he can take on has fundamentally changed — while noting the need to deliberately maintain technical dexterity.
+
+<strong><a href="news/streambed-postgres-iceberg-s3/">Streambed: Stream Postgres to Iceberg on S3</a></strong> — <em>GitHub</em>
+> An open-source CDC engine that streams Postgres WAL changes directly to Apache Iceberg on S3 with a built-in query server speaking the Postgres wire protocol — no ETL or Spark needed.
+
+<strong><a href="news/alibaba-android-16-risc-v/">Alibaba Gets Android 16 Running on RISC-V</a></strong> — <em>The Register</em>
+> Alibaba successfully ported Android 16 to RISC-V, advancing open-source ISA adoption and Beijing's sovereign tech stack ambitions.
+
+<strong><a href="news/anthropic-files-draft-s1-ipo/">Anthropic Confidentially Submits Draft S-1 to the SEC for IPO</a></strong> — <em>Anthropic / Hacker News</em>
+> Anthropic filed plans for an IPO with the SEC, setting up a share sale that could value the company in the trillion-dollar range as it races against rival OpenAI.
+
+<strong><a href="news/red-hat-npm-supply-chain-attack/">Malicious npm Packages Detected Across Red Hat Cloud Services</a></strong> — <em>Hacker News / GitHub</em>
+> A major supply chain attack compromised dozens of npm packages under the @redhat-cloud-services/ scope, affecting frontend and backend infrastructure packages (712 HN points).
+
+<strong><a href="news/nvidia-rtx-spark-superchip/">NVIDIA Unveils RTX Spark Superchip — Arm CPU, Blackwell GPU, 128GB Memory</a></strong> — <em>NVIDIA / Computex 2026</em>
+> NVIDIA's RTX Spark Superchip fuses a 20-core Arm CPU with a Blackwell RTX GPU and up to 128GB unified memory, delivering 1 petaflop FP4 AI performance in slim laptops.
+
+<strong><a href="news/microsoft-surface-laptop-ultra-rtx-spark/">Microsoft Surface Laptop Ultra: MacBook Pro Rival with NVIDIA RTX Spark</a></strong> — <em>Windows Latest</em>
+> Microsoft announced the Surface Laptop Ultra at Computex 2026, powered by NVIDIA's RTX Spark Superchip — a direct answer to Apple's MacBook Pro lineup with Windows on Arm.
+
+<strong><a href="news/instagram-ai-account-takeover-exploit/">Instagram AI Support Exploit Enables Zero-Auth Account Takeover, Bypasses 2FA</a></strong> — <em>0xsid / Hacker News</em>
+> A researcher documented a trivial Instagram account takeover that requires only the target's username — Meta's AI support blindly sends password resets to attacker-controlled emails without verifying ownership (1,200 HN points).
+
+<strong><a href="news/florida-sues-openai-ai-risks/">Florida Sues OpenAI and Sam Altman Over AI Risks</a></strong> — <em>Politico / Hacker News</em>
+> The state of Florida filed a lawsuit against OpenAI and Sam Altman over alleged AI risks, marking a significant escalation in state-level AI regulation.
+
+<strong><a href="news/claude-opus-4-8-github-copilot/">Claude Opus 4.8 Now Available for GitHub Copilot</a></strong> — <em>GitHub Blog</em>
+> Anthropic's latest Opus model is GA for Copilot, showing clear improvements in code understanding and generation across real-world coding tasks.
+
+<h3>May 27, 2026</h3>
+
+<strong><a href="news/dropbox-ceo-drew-houston-steps-down/">Dropbox CEO Drew Houston Steps Down After 19 Years</a></strong> — <em>CNBC / Hacker News</em>
+> Drew Houston transitions to executive chairman as product chief Ashraf Alkarmi takes over. Dropbox faces flat revenue and AI-driven market shifts.
+
+<strong><a href="news/microsoft-wants-safer-csharp/">Microsoft Wants Safer C# Without Turning It Into Rust</a></strong> — <em>The Register</em>
+> Microsoft plans memory safety improvements for C# 16 including a redefined unsafe keyword, method-level unsafe scoping, and NuGet safety badges — all while preserving automatic memory management.
+
+<strong><a href="news/aws-mcp-server-ga/">AWS MCP Server Reaches GA with Full API Coverage and IAM-Based Governance</a></strong> — <em>InfoQ</em>
+> AWS's managed MCP server is now GA, giving AI coding agents IAM-governed access to all AWS APIs with CloudWatch, CloudTrail, and sandboxed Python execution.
+
+<strong><a href="news/openai-webrtc-voice-ai-architecture/">OpenAI Outlines WebRTC Architecture for Low-Latency Voice AI at Scale</a></strong> — <em>InfoQ</em>
+> OpenAI details its relay-transceiver WebRTC architecture designed for global-scale 1:1 voice AI sessions, keeping session state concentrated while simplifying Kubernetes deployment.
+
+<strong><a href="news/agent-memory-anatomy/">Agent Memory: An Anatomy</a></strong> — <em>brgsk.xyz / Hacker News</em>
+> A deep technical deconstruction of AI agent memory systems into extractors, stores, and retrievers, examining how libraries borrow cognitive science terminology.
+
+<strong><a href="news/linus-torvalds-ai-kernel-development/">Dirk and Linus Discuss AI and Kernel Development at OSS NA 2026</a></strong> — <em>LWN.net</em>
+> The 30th Torvalds-Hohndel fireside chat covered the 7.1-rc4 kernel release, 3D printing, guitar pedals, and Torvalds' complicated relationship with AI tooling.
+
+<strong><a href="news/youtube-auto-label-ai-videos/">YouTube to Automatically Label AI-Generated Videos</a></strong> — <em>YouTube Blog</em>
+> YouTube announced automatic labeling for AI-generated videos to improve transparency and help viewers distinguish between authentic and synthetic content on the platform.
+
+<strong><a href="news/duckduckgo-traffic-surge-google-ai-mode/">DuckDuckGo Search Saw 28% More Visits After Google Said People Love AI Mode</a></strong> — <em>PC Gamer / Hacker News</em>
+> DuckDuckGo saw nearly 28% more visits after Google's push for AI Overviews, suggesting users actively seek AI-free search alternatives.
+
+<strong><a href="news/go-generic-methods-proposal/">Go: Support for Generic Methods Proposed</a></strong> — <em>GitHub (golang/go) / Hacker News</em>
+> A new proposal to add generic methods support to Go would let methods have their own type parameters, sparking community debate on the Go issue tracker.
+
+<strong><a href="news/claude-code-daily-driver-mastery/">Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs</a></strong> — <em>arps18.github.io / Hacker News</em>
+> A comprehensive guide on using Claude Code as a daily development driver, covering skills, subagents, plugins, and MCP integration — 345 points on HN.
+
+<strong><a href="news/tech-ceos-ai-psychosis/">Tech CEOs Are Apparently Suffering from AI Psychosis</a></strong> — <em>TechCrunch / Hacker News</em>
+> TechCrunch reports on a growing phenomenon where CEOs make irrational decisions driven by AI hype, scoring 515 points on Hacker News.
+
+<strong><a href="news/github-incident-pr-issues-api-may-2026/">GitHub Incident Affects Pull Requests, Issues, and API Requests</a></strong> — <em>GitHub Status / Hacker News</em>
+> GitHub experienced a significant incident affecting PRs, issues, git operations, and API requests, disrupting developer workflows platform-wide.
+
+<strong><a href="news/azure-logic-apps-sandboxed-code-interpreters/">Azure Logic Apps Adds Sandboxed Code Interpreters to Agent Workflows</a></strong> — <em>InfoQ</em>
+> Microsoft added sandboxed code interpreters to Azure Logic Apps, letting agents execute Python, JavaScript, C#, and PowerShell in Hyper-V isolated sessions.
+
+<h3>May 26, 2026</h3>
+
+<strong><a href="news/using-ai-to-write-better-code-more-slowly/">Using AI to Write Better Code More Slowly</a></strong> — <em>Nolan Lawson's Blog</em>
+> Nolan Lawson argues that LLMs can be used for quality over speed — using multiple AI models to review PRs in parallel, finding critical bugs with near-zero false positives.
+
+<strong><a href="news/california-exempts-linux-age-verification-law/">California Moves to Exempt Linux from Age-Verification Law</a></strong> — <em>Tom's Hardware</em>
+> California lawmakers propose exempting Linux from the state's age-verification law after backlash. The #1 story on Hacker News with 662 points.
+
+<strong><a href="news/microsoft-copilot-cowork-exfiltrates-files/">Microsoft Copilot Cowork Exfiltrates Files via Prompt Injection</a></strong> — <em>PromptArmor (via Hacker News)</em>
+> Security research shows Microsoft Copilot Cowork is vulnerable to file exfiltration via indirect prompt injection, exploiting automatic approval for emails and Teams messages.
+
+<strong><a href="news/nobody-cracks-open-programming-books/">Nobody Cracks Open a Programming Book Anymore</a></strong> — <em>unix.foo (via Hacker News)</em>
+> A reflective essay on the decline of programming books in the age of AI coding assistants, arguing that "knowledge was always the residue of typing."
+
+<strong><a href="news/reviewing-kernel-patches-with-llms/">Reviewing Kernel Patches with LLMs</a></strong> — <em>LWN.net</em>
+> At LSFMM+BPF 2026, kernel developers held a plenary on using LLMs for patch review, sparking extensive discussion about AI in kernel development.
+
+<strong><a href="news/linus-torvalds-dirk-ai-kernel-development/">Linus Torvalds and Dirk Discuss AI and Kernel Development</a></strong> — <em>LWN.net</em>
+> Their 30th fireside chat at Open Source Summit NA covered the 7.1-rc4 kernel, 3D printing, and Torvalds' candid views on AI tooling.
+
+<strong><a href="news/sfc-bambu-agpl-violations-response/">SFC Launches Multi-Pronged Response to Bambu's AGPLv3 Violations</a></strong> — <em>LWN.net / Software Freedom Conservancy</em>
+> The Software Freedom Conservancy responds to Bambu Lab's AGPL violations with a reverse-engineering project and legal advocacy for 3D printer right-to-repair.
+
+<h3>May 24, 2026</h3>
+
+<strong><a href="news/state-of-web-dev-ai-survey-2026-developers-fear-displacement/">State of Web Dev AI 2026: Nearly Half of Developers Fear AI Job Displacement</a></strong> — <em>The Register</em>
+> The 2026 Devographics survey of 7,258 developers reveals 63% now use AI for more than half their code, and nearly half fear AI will displace their jobs — a dramatic shift from 2025.
+
+<strong><a href="news/opentelemetry-graduates-cncf-observability-standard/">OpenTelemetry Graduates at CNCF, Solidifying Observatory Standard</a></strong> — <em>Virtualization Review / CNCF</em>
+> OpenTelemetry has officially graduated at the Cloud Native Computing Foundation, with all major cloud providers now supporting OTLP ingestion — cementing it as the de facto observability standard.
+
+<strong><a href="news/grab-multi-agent-ai-engineering-support/">Grab's Multi-Agent AI System Reclaims 40% of Engineering Time</a></strong> — <em>InfoQ</em>
+> Grab's Analytics Data Warehouse team deployed a LangGraph-based multi-agent system with five specialized agents, reclaiming roughly 40% of engineering time lost to repetitive operational support tasks.
+
+<strong><a href="news/google-io-2026-gemini-omni-antigravity-managed-agents/">Google I/O 2026: Gemini Omni, Antigravity 2.0, and Managed Agents</a></strong> — <em>Google Blog / TechCrunch</em>
+> Google unveiled Gemini Omni, Antigravity 2.0 with desktop app and CLI, and Managed Agents in the Gemini API — allowing developers to spin up agentic coding environments with a single API call.
+
+<strong><a href="news/github-copilot-usage-based-billing-ai-credits/">GitHub Copilot Moves to Usage-Based Billing with AI Credits</a></strong> — <em>GitHub Blog</em>
+> All Copilot plans transition to token-based AI Credits billing on June 1, replacing premium request units as Copilot evolves from autocomplete to an agentic platform.
+
+<strong><a href="news/microsoft-typescript-compiler-go-port-10x-speed/">Microsoft Ports TypeScript Compiler to Go for 10x Speed</a></strong> — <em>The New Stack</em>
+> Anders Hejlsberg announced TypeScript compiler port to Go, chosen over Rust and C# for native compilation and memory control, promising 10x compile speed improvements.
+
+<strong><a href="news/github-copilot-pauses-signups-removes-opus-may-2026/">GitHub Copilot Pauses Sign-Ups, Removes Opus from Pro Tier</a></strong> — <em>TechSifted</em>
+> GitHub paused new Copilot Pro/Pro+/Student sign-ups and removed Opus models from the $10/month Pro tier, pushing complex reasoning to higher-priced plans.
+
+<h3>May 23, 2026</h3>
+
+<strong><a href="news/nvidia-computex-2026-best-choice-awards/">NVIDIA Wins COMPUTEX 2026 Best Choice Awards for Vera Rubin, Jetson Thor, and Alpamayo</a></strong> — <em>NVIDIA Blog</em>
+> NVIDIA won four COMPUTEX 2026 Best Choice Awards spanning AI supercomputing, edge robotics, and autonomous vehicles — marking major advances in physical AI infrastructure for developers.
+
+<strong><a href="news/cursor-30-agents-window-parallel-ai/">Cursor 3.0 Unlocks 'Agents Window' — Running Parallel AI Agents Across Git Worktrees</a></strong> — <em>Dev.to</em>
+> Cursor 3.0 replaces Composer with a full-screen Agents Window that runs multiple AI agents in parallel across isolated Git worktrees, SSH remotes, and cloud instances for the first time.
+
+<strong><a href="news/google-cloud-cross-engine-iceberg-bigquery/">Google Cloud Introduces Cross-Engine Iceberg Support in BigQuery</a></strong> — <em>InfoQ</em>
+> Google announced a preview of the serverless Iceberg REST catalog in BigQuery, letting teams query the same tables across Spark, Flink, and Trino without duplicating data.
+
+<strong><a href="news/openai-webrtc-architecture-voice-ai/">OpenAI Outlines WebRTC Architecture for Low-Latency Voice AI at Scale</a></strong> — <em>InfoQ</em>
+> OpenAI detailed its relay-transceiver WebRTC architecture designed for global-scale low-latency voice AI, replacing conventional media termination with a Kubernetes-friendly design.
+
+<strong><a href="news/uber-eats-real-time-recommendation-ranking/">Uber Improves Restaurant Recommendations with Real-Time Signals and Listwise Ranking</a></strong> — <em>InfoQ</em>
+> Uber updated its Eats recommendation system with real-time user signals and a Generative Recommender model, reducing feature freshness from 24 hours to seconds.
+
+<strong><a href="news/anthropic-agentic-coding-trends-2026/">Anthropic's 2026 Agentic Coding Trends Report: From AI Assistants to Agent Teams</a></strong> — <em>Anthropic</em>
+> Anthropic's report finds developers use AI in 60% of work but delegate only 20% of tasks, predicting 2026 marks the shift from single assistants to coordinated AI agent teams.
+
+<h3>May 22, 2026</h3>
+
+<strong><a href="news/anthropic-glasswing-ai-security/">Anthropic's Project Glasswing Finds 10,000+ Severe Vulnerabilities in Critical Software</a></strong> — <em>Anthropic (via Hacker News)</em>
+> Anthropic's Mythos Preview AI model helped partners find over 10,000 high/critical-severity vulnerabilities across critical open-source software. Cloudflare found 2,000 bugs with better-than-human false positive rates.
+
+<strong><a href="news/yt-dlp-deprecates-bun-support/">yt-dlp Deprecates Bun Support, Citing 'Vibe-Coded' Rust Rewrite</a></strong> — <em>GitHub (yt-dlp)</em>
+> yt-dlp is limiting and deprecating support for Bun, noting its Rust rewrite via Claude is "fully vibe-coded." Only Bun versions 1.2.11–1.3.14 (the last Zig-built) will remain supported.
+
+<strong><a href="news/deno-28-released/">Deno 2.8 Released with Performance Improvements and New Features</a></strong> — <em>Deno Blog (via Hacker News)</em>
+> Deno 2.8 hit 285 points on Hacker News as the latest major update to the JavaScript/TypeScript runtime, generating 127 comments from developers.
+
+<strong><a href="news/kanbots-kanban-ai-agents/">Kanbots: Open-Source Kanban Desktop App That Runs Parallel AI Agents on Every Card</a></strong> — <em>Hacker News (kanbots.dev)</em>
+> A new open-source Kanban app where each card can run parallel AI agents for task automation, scoring 143 points on Hacker News.
+
+<strong><a href="news/stack-overflow-the-heap-community-blog/">Stack Overflow Launches 'The Heap' — A Community Blog for Software Engineers</a></strong> — <em>Stack Overflow Blog</em>
+> Stack Overflow opened The Heap, a community-contributed blog for software engineers with CC BY-SA 4.0 licensing. Currently a manual MVP with plans for direct submissions.
+
+<strong><a href="news/openscad-llm-benchmark-pantheon/">OpenSCAD LLM Benchmark: AI Systems Compete to 3D-Print the Pantheon</a></strong> — <em>ModelRift (via Hacker News)</em>
+> A benchmark testing AI coding tools on generating parametric OpenSCAD code for the Pantheon. The test measures LLM capability in spatial geometry and architectural CAD modeling, scoring 333 HN points.
+
+<h3>May 21, 2026</h3>
+
+<strong><a href="news/github-breach-nx-console-vscode/">GitHub Confirms Breach via Malicious Nx Console VS Code Extension</a></strong> — <em>The Hacker News</em>
+> GitHub confirmed its internal repos were breached after an employee's device was compromised through a trojanized version of the Nx Console VS Code extension, with ~3,800 repos exfiltrated by threat group TeamPCP.
+
+<strong><a href="news/flipper-one-linux-cyberdeck/">Flipper One: An Open Linux Cyberdeck for Hackers and Makers</a></strong> — <em>Flipper Devices Blog</em>
+> Flipper Devices unveiled Flipper One, an ambitious open Linux cyberdeck with mainline kernel support, PCIe expansion, and zero binary blobs — #1 on Hacker News with 1012 points.
+
+<strong><a href="news/python-315-lesser-known-features/">Python 3.15: Features That Didn't Make the Headlines</a></strong> — <em>changs.co.uk</em>
+> A deep dive into Python 3.15's smaller but powerful features: graceful <code>TaskGroup.cancel()</code> and ContextDecorator improvements for async functions and generators, scoring 318 points on HN.
+
+<strong><a href="news/waymo-pauses-atlanta-floods/">Waymo Pauses Atlanta Service as Robotaxis Keep Driving into Floods</a></strong> — <em>TechCrunch</em>
+> Waymo paused its Atlanta autonomous taxi service after robotaxis repeatedly drove into flooded streets, highlighting AV challenges with adverse weather conditions.
+
+<strong><a href="news/google-gemini-omni-io-2026/">Google Unveils Gemini Omni and Gemini 3.5 Flash at I/O 2026</a></strong> — <em>The Keyword (Google Blog)</em>
+> At Google I/O 2026, Google launched Gemini Omni (world understanding from any input) and Gemini 3.5 Flash, alongside Antigravity 2.0 for agentic coding.
+
+<strong><a href="news/java-26-better-language-apis-runtime/">Java 26: Better Language, Better APIs, Better Runtime</a></strong> — <em>Inside Java (dev.java)</em>
+> JDK 26 brings primitive patterns, lazy constants, structured concurrency, HTTP/3, and PEM encoding as preview features continuing Java's rapid innovation pace.
+
+<strong><a href="news/infoq-multi-agent-system-grab-case-study/">Designing a Multi-Agent System for Engineering Support at Scale: Grab Case Study</a></strong> — <em>InfoQ</em>
+> InfoQ covers how Grab designed and deployed a multi-agent system for engineering support, sharing architecture decisions and lessons from production agentic workflows.
+
+<h3>May 20, 2026</h3>
+
+<strong><a href="news/karpathy-joins-anthropic/">OpenAI Co-Founder Andrej Karpathy Joins Anthropic's Pre-Training Team</a></strong> — <em>TechCrunch / CNBC / Forbes</em>
+> Andrej Karpathy, a founding OpenAI member and former Tesla AI chief, joined Anthropic's pre-training team in one of the highest-profile AI talent moves of the year.
+
+<strong><a href="news/google-ai-studio-android-apps/">Google AI Studio Now Lets Anyone Build Native Android Apps in Minutes</a></strong> — <em>TechCrunch / The Verge</em>
+> Google I/O 2026 brought AI-powered native Android app creation to AI Studio — build, preview, and iterate apps using natural language prompts with Kotlin and Jetpack Compose.
+
+<strong><a href="news/github-copilot-gemini-35-flash/">Gemini 3.5 Flash Is Now Generally Available on GitHub Copilot</a></strong> — <em>GitHub Blog</em>
+> Google's latest Flash-tier model is rolling out across all paid Copilot tiers, delivering near-Pro coding quality at Flash-tier speed for agentic coding workflows.
+
+<strong><a href="news/alibaba-qwen37-max-agent-model/">Alibaba Launches Qwen3.7-Max: A New Agent Frontier Model</a></strong> — <em>Alibaba Cloud / CNTechPost</em>
+> Alibaba unveiled Qwen3.7-Max at its Cloud Summit, a new frontier model optimized for agentic tasks that topped Chinese AI benchmarks in coding and complex reasoning.
+
+<strong><a href="news/forge-guardrails-8b-model-agentic/">Forge: Open-Source Guardrails Take an 8B Model from 53% to 99% on Agentic Tasks</a></strong> — <em>Hacker News / tldl.io</em>
+> A new open-source project showed that structured guardrails can dramatically boost small model agentic performance, earning 583 points on Hacker News.
+
+<strong><a href="news/openai-synthid-watermark/">OpenAI Adopts Google's SynthID Watermark for AI-Generated Images</a></strong> — <em>Hacker News / tldl.io</em>
+> OpenAI embraced Google's SynthID watermarking for AI images and released a verification tool, marking rare cross-company collaboration on AI content authenticity.
+
+<strong><a href="news/mistral-ai-acquires-emmi/">Mistral AI Acquires Emmi AI in European AI Consolidation Push</a></strong> — <em>Hacker News / tldl.io</em>
+> French AI startup Mistral acquired Emmi AI, continuing European consolidation to better compete with US and Chinese AI giants.
+
+<h3>May 19, 2026</h3>
+
+<strong><a href="news/anthropic-acquires-stainless/">Anthropic Acquires Stainless for $300M+ to Strengthen Developer SDK Tooling</a></strong> — <em>Anthropic Blog / TechCrunch</em>
+> Anthropic acquired SDK automation startup Stainless (used by OpenAI and Google) for over $300M to strengthen Claude's developer tooling and MCP server capabilities.
+
+<strong><a href="news/google-io-2026-gemini-spark-antigravity/">Google I/O 2026 Kicks Off: Gemini Spark, Antigravity 2.0, and AI-First Everything</a></strong> — <em>AP News / TechCrunch / Engadget</em>
+> Google kicked off I/O 2026 with major AI announcements: Gemini Spark (24/7 agentic assistant), Antigravity 2.0 (agentic coding with desktop app + CLI), and Android's AI overhaul.
+
+<strong><a href="news/cursor-composer-25-ai-code-editor/">Cursor Introduces Composer 2.5 with Major AI-Powered Coding Upgrade</a></strong> — <em>Hacker News / tldl.io</em>
+> Anysphere released Composer 2.5 for the Cursor AI code editor, a major update to its AI coding capabilities that scored 217 points on Hacker News.
+
+<strong><a href="news/npm-supply-chain-314-packages-compromised/">Mini Shai-Hulud Strikes Again: 314 npm Packages Compromised in Supply Chain Attack</a></strong> — <em>Hacker News / tldl.io</em>
+> Security researchers discovered 314 malicious npm packages as part of an ongoing supply chain attack campaign, scoring 231 points on Hacker News.
+
+<strong><a href="news/simon-willison-six-months-llms-five-minutes/">Simon Willison: The Last Six Months in LLMs in Five Minutes (PyCon US 2026)</a></strong> — <em>Hacker News / Simon Willison</em>
+> Simon Willison's PyCon US 2026 lightning talk summarizing six months of LLM developments scored 586 points on Hacker News — one of the most-discussed posts of the day.
+
+<strong><a href="news/meta-10-percent-layoffs-ai-investments/">Meta Begins 10% Layoffs as AI Investments Reshape Company Priorities</a></strong> — <em>Tech Startups / CNBC</em>
+> Meta is cutting 8,000 jobs (10% of workforce) while raising AI capex to $145B, as an internal tool tracks employees to train AI coding agents.
+
+<h3>May 18, 2026</h3>
+
+<strong><a href="news/linux-ai-bug-hunters-security-list-unmanageable/">Linus Torvalds: AI bug hunters have made Linux security list 'almost entirely unmanageable'</a></strong> — <em>The Register</em>
+> Linus Torvalds declared the kernel security mailing list "almost entirely unmanageable" due to AI-generated duplicate bug reports. He urged researchers to read docs, create patches, and add real value beyond AI output.
+
+<strong><a href="news/grafana-labs-github-codebase-breach/">Grafana Labs admits attackers downloaded its codebase from GitHub</a></strong> — <em>The Register</em>
+> Grafana Labs disclosed an attacker accessed its GitHub repo via a compromised token and stole source code. The company refused to pay ransom, citing no customer data compromise.
+
+<strong><a href="news/google-io-2026-preview-gemini-android/">Google I/O 2026 begins tomorrow with Gemini 3.1 and Android 17 in focus</a></strong> — <em>Google Developers Blog</em>
+> Google I/O 2026 kicks off May 19-20 with expected announcements including Gemini 3.1 Ultra, Android 17 developer preview, Project Astra updates, and TPU v7 on Vertex AI.
+
+<strong><a href="news/ai-subscription-enterprise-time-bomb/">Every AI Subscription Is a Ticking Time Bomb for Enterprise</a></strong> — <em>Hacker News</em>
+> An analysis argues AI subscriptions are becoming unsustainable as GitHub moves Copilot to usage-based billing, Microsoft raises M365 prices, and OpenAI introduces a $100 Pro tier.
+
+<strong><a href="news/git-author-flag-ai-bot-spam/">We Stopped AI Bot Spam in Our GitHub Repo Using Git's --author Flag</a></strong> — <em>Hacker News</em>
+> Open-source maintainers share how they used Git's <code>--author</code> flag to detect and block AI-generated bot spam in repos, scoring 287 points on Hacker News.
+
+<strong><a href="news/domo-cdo-ai-fomo-slow-down/">Domo CDO: Enough with AI FOMO, Go Slow-Mo</a></strong> — <em>Hacker News</em>
+> Domo's chief design officer Chris Willis calls out AI companies for pushing technology prematurely, arguing AI models are "a product without a spec" and "fear is not a durable strategy for innovating."
+
+<h3>May 17, 2026</h3>
+
+<strong><a href="news/2026-05-17-devto-agent-20-percent-platform-80-percent/">The Agent Is 20% of the Work. The Platform Is the Other 80%.</a></strong> — <em>Dev.to</em>
+> A deep dive into why AI production deployments fail: a payroll team's agent dropped from 94% test accuracy to 70% in production because test data didn't match real-world distributions. The fix wasn't a better model — it was building evaluation pipelines, shadow testing, and a control tower around the agent.
+
+<strong><a href="news/pixel-10-zero-click-exploit-chain/">Google Project Zero Discloses Zero-Click Exploit Chain for Pixel 10 Devices</a></strong> — <em>Hacker News</em>
+> Google Project Zero researchers disclosed a "Holy Grail" zero-click exploit chain targeting Pixel 10 devices. By chaining a Dolby audio decoder vulnerability (CVE-2025-54957) with a newly discovered VPU kernel driver flaw, attackers could achieve full device root access without any user interaction.
+
+<strong><a href="news/2026-05-17-devto-better-claude-code-guide/">I Stayed Up Until 3 AM to Build a Better Claude Code Guide</a></strong> — <em>Dev.to</em>
+> A developer's story of building a comprehensive Claude Code best practices repository in a single all-night session. The guide covers context management, hooks, sub-agents, MCP servers, verification loops, and real-world team patterns from Superpowers, BMAD, and gstack.
+
+<strong><a href="news/companies-under-ai-psychosis-hashimoto/">Mitchell Hashimoto: Entire Companies Under 'AI Psychosis'</a></strong> — <em>Hacker News</em>
+> Mitchell Hashimoto, creator of Vagrant and Terraform, kicked off a massive Hacker News discussion (1928 points, 1100+ comments) arguing that entire companies are currently under "AI psychosis" — blindly adopting AI tools and workflows without critical evaluation of actual utility, cost, and ROI.
+
+<strong><a href="news/github-copilot-usage-based-billing-june-2026/">GitHub Copilot Moving to Usage-Based Billing on June 1, 2026</a></strong> — <em>GitHub Blog</em>
+> GitHub announced that all Copilot plans will transition to usage-based billing starting June 1, 2026. Premium Request Units (PRUs) are being replaced with GitHub AI Credits based on token consumption (input, output, and cached tokens), sparking community debate about cost predictability for developers and teams.
+
+<strong><a href="news/kernel-code-removals-llm-security-reports/">Kernel Code Removals Driven by LLM-Created Security Reports</a></strong> — <em>LWN.net</em>
+> LWN.net reports on a growing problem in the Linux kernel community: the flood of low-quality, LLM-generated security reports is driving kernel developers to consider removing code rather than dealing with the burden of automated vulnerability submissions. The phenomenon highlights the unintended consequences of AI-powered security tooling.
+
+<strong><a href="news/bun-rust-rewrite-miri-ub-safe-rust/">Bun Rust Rewrite: Codebase Fails Miri Checks, Allows UB in Safe Rust</a></strong> — <em>Hacker News</em>
+> A GitHub issue reports that Bun's newly rewritten Rust codebase contains undefined behavior (UB) in safe Rust code. The <code>PathString::init</code> function erases slice lifetimes and produces dangling references, raising questions about the safety guarantees of Bun's high-profile migration from Zig to Rust.
+
+<strong><a href="news/2026-05-17-devto-ai-agents-enterprise-less-more/">AI Agents in the Enterprise: Why Less Can Be More</a></strong> — <em>Dev.to</em>
+> An analysis of 'agent sprawl' in enterprises, where deploying too many AI agents creates complexity and cost issues. The average Fortune 500 now runs 500+ agents, and the article argues for orchestration and governance over proliferation.
+
+<strong><a href="news/github-copilot-app-technical-preview/">GitHub Copilot App Now Available in Technical Preview</a></strong> — <em>GitHub Blog</em>
+> GitHub released the Copilot App in technical preview — a native desktop experience built for agentic development. It runs parallel agent sessions with isolated git worktrees, branches, and task state, allowing developers to start from an issue or PR and go through to merge within a single application.
+
+<strong><a href="news/codex-chatgpt-mobile-app/">Codex Is Now in the ChatGPT Mobile App</a></strong> — <em>OpenAI via Hacker News</em>
+> OpenAI released Codex, its AI coding agent, on the ChatGPT mobile app for iOS and Android, letting developers manage coding tasks remotely from their phones for the first time.
+
+<strong><a href="news/ai-wont-make-processes-faster/">I Don't Think AI Will Make Your Processes Go Faster</a></strong> — <em>Hacker News</em>
+> The #1 story on Hacker News argues that organizations are naively throwing AI at slow processes without addressing upstream bottlenecks, and that classic operations principles still apply in the AI era.
+
+<strong><a href="news/california-bill-stop-killing-games/">Bill to Block Publishers From Killing Online Games Advances in California</a></strong> — <em>Ars Technica</em>
+> California's "Protect Our Games Act" (AB-2426) cleared a key appropriations committee hurdle. The bill would force game publishers to keep online games playable or issue refunds when services shut down.
+
+<strong><a href="news/mozilla-mythos-271-vulnerabilities/">Mozilla Says 271 Vulnerabilities Found by Mythos Have 'Almost No False Positives'</a></strong> — <em>Ars Technica</em>
+> Mozilla detailed how Anthropic's Mythos AI model, guided by a custom agent harness, found 271 Firefox security vulnerabilities over two months with near-zero false positives, marking a milestone for AI-assisted security.
+
+<strong><a href="news/doj-demands-unmask-car-tinkering-users/">U.S. DOJ Demands Apple and Google Unmask Over 100k Users of Car-Tinkering App</a></strong> — <em>Hacker News</em>
+> The DOJ demanded Apple and Google unmask over 100,000 users of a popular car-tinkering app as part of an emissions probe, sparking intense debate on privacy and government surveillance.
+
+<strong><a href="news/no-way-to-prevent-this-npm/">'No Way to Prevent This,' Says Only Package Manager Where This Regularly Happens</a></strong> — <em>Hacker News</em>
+> A viral satire skewering npm's recurring supply-chain security issues, using the infamous "No way to prevent this" refrain to highlight the JavaScript ecosystem's ongoing dependency security crisis.
+
+<strong><a href="news/rk3562-android-tablet-debian-linux/">I Turned a $80 RK3562 Android Tablet Into a Debian Linux Workstation</a></strong> — <em>Hacker News / GitHub</em>
+> A developer documented how to transform a cheap $80 Doogee U10 Android tablet into a full Debian Linux workstation with GPU acceleration, Wi-Fi, and even local NPU-based LLM inference.
+
+<h3>May 16, 2026</h3>
+
+<strong><a href="news/2026-05-16-hacker-news-greek-alphabet-cards/">Greek Alphabet Cards</a></strong> — <em>Hacker News</em>
+> A beautifully designed interactive tool for learning the Greek alphabet through digital flashcards. The project showcases effective UI design for language learning and scored 107 points on Hacker News.
+
+<strong><a href="news/2026-05-16-hacker-news-zerostack-unix-coding-agent-rust/">Zerostack – A Unix-inspired coding agent written in pure Rust</a></strong> — <em>Hacker News</em>
+> A new coding agent called Zerostack has been released on crates.io, written entirely in Rust and inspired by Unix design philosophy. It aims to provide a lightweight, composable alternative to existing AI coding assistants.
+
+<strong><a href="news/2026-05-16-infoq-ubuntu-embraces-local-ai/">Ubuntu Embraces Local AI Instead of Cloud-First OS Integration</a></strong> — <em>InfoQ</em>
+> Ubuntu outlined an AI strategy focused on local intelligence, modular design, and user control — a deliberate departure from the cloud-centric AI integration approach adopted by other operating systems.
+
+<strong><a href="news/2026-05-16-hacker-news-halt-and-catch-fire/">Halt and Catch Fire</a></strong> — <em>Hacker News</em>
+> An article exploring the computing term 'Halt and Catch Fire,' its origins as a humorous machine instruction, and its broader cultural significance. Scored 104 points on Hacker News.
+
+<strong><a href="news/2026-05-16-hacker-news-world-too-complicated/">We've made the world too complicated</a></strong> — <em>Hacker News</em>
+> A reflective essay arguing that modern technology and systems have become unnecessarily complex. The post struck a chord with the HN community, earning 233 points and 215 comments.
+
+<strong><a href="news/2026-05-16-hacker-news-futhark-by-example/">Futhark by example (2020)</a></strong> — <em>Hacker News</em>
+> Futhark, a functional parallel programming language, was highlighted on Hacker News through its examples page. The language is designed for high-performance computing with a focus on data-parallelism and GPU execution.
+
+<strong><a href="news/2026-05-16-hacker-news-openai-malta-chatgpt-partnership/">OpenAI and Government of Malta partner to roll out ChatGPT Plus to all citizens</a></strong> — <em>Hacker News</em>
+> OpenAI partnered with the Maltese government to provide ChatGPT Plus to all citizens, marking one of the first nation-wide AI subscription programs. The initiative scored 124 points on HN with 114 comments debating implications.
+
+<strong><a href="news/2026-05-16-hacker-news-nicer-voltmeter-clock/">A nicer voltmeter clock</a></strong> — <em>Hacker News</em>
+> A detailed guide on building a visually appealing clock using voltmeters, from the creator of AFL. The hardware project combines analog displays with digital precision for a unique timekeeping device.
+
+<strong><a href="news/2026-05-16-infoq-google-cloud-fraud-defense/">Google Introduces Cloud Fraud Defense as Successor to reCAPTCHA</a></strong> — <em>InfoQ</em>
+> At Next '26, Google launched Cloud Fraud Defense, the successor to reCAPTCHA. The platform goes beyond bot detection to address login fraud, fake account creation, and payment abuse using broader behavioral analysis.
+
+<strong><a href="news/2026-05-16-hacker-news-frontier-ai-broken-open-ctf-format/">Frontier AI has broken the open CTF format</a></strong> — <em>Hacker News</em>
+> An argument that modern AI models have fundamentally changed the Capture The Flag (CTF) competition landscape by being able to solve challenges that previously required human expertise. The post scored 352 points with 351 comments on Hacker News.
+
+<strong><a href="news/2026-05-16-hacker-news-delta-mem-efficient-online-memory-llm/">δ-mem: Efficient Online Memory for Large Language Models</a></strong> — <em>Hacker News</em>
+> A new paper on arXiv introduces δ-mem, an efficient online memory mechanism for large language models that enables long-context handling without quadratic complexity. The approach could make LLMs more practical for extended conversations and document processing.
+
+<strong><a href="news/2026-05-16-hacker-news-accelerando-2005-sci-fi/">Accelerando (2005)</a></strong> — <em>Hacker News</em>
+> Charles Stross's acclaimed sci-fi novel Accelerando, freely available online, gained renewed attention on Hacker News with 266 points. The novel explores a technological singularity and its impact on human society.
+
+<strong><a href="news/2026-05-16-hacker-news-sana-wm-open-source-world-model-video/">SANA-WM, a 2.6B open-source world model for 1-minute 720p video</a></strong> — <em>Hacker News</em>
+> NVIDIA released SANA-WM, an open-source world model with 2.6 billion parameters capable of generating one-minute 720p videos. The model represents a significant step in accessible video generation, scoring 317 points on Hacker News.
+
+<strong><a href="news/2026-05-16-hacker-news-moving-away-from-tailwind-learning-css/">Moving away from Tailwind, and learning to structure my CSS</a></strong> — <em>Hacker News</em>
+> Julia Evans shares her experience moving away from Tailwind CSS and learning to properly structure CSS. The post resonated deeply with developers, scoring 469 points and sparking a 301-comment discussion on CSS methodologies.
+
+<strong><a href="news/2026-05-16-hacker-news-part-telescopes-radio-astronomy/">PART Telescopes – Bringing radio astronomy within reach of rural schools</a></strong> — <em>Hacker News</em>
+> An Australian teen team is making radio astronomy affordable for rural schools through the PART Telescopes initiative. The project demonstrates how low-cost hardware can enable scientific discovery in underserved communities.
+
+<strong><a href="news/2026-05-16-the-register-cloud-managed-earbuds-dell/">Cloud-managed earbuds sound strange - as a concept, and on a plane</a></strong> — <em>The Register</em>
+> The Register reviews Dell's cloud-manageable Pro Plus Earbuds, finding mediocre noise cancelling but strong battery life and a USB-C dongle for stable connections. The earbuds are clearly designed for enterprise fleet management rather than consumer appeal.
+
+<strong><a href="news/2026-05-16-infoq-microsoft-aspire-13-3/">Microsoft Releases Aspire 13.3 with Major Deployment and Frontend Updates</a></strong> — <em>InfoQ</em>
+> Microsoft released .NET Aspire 13.3 with a new <code>aspire destroy</code> command, native Kubernetes deployment preview, first-class JavaScript publishing for Next.js and Vite, browser log capture, and several breaking changes.
+
+<strong><a href="news/2026-05-16-the-register-europe-sovereign-clouds-forgot-processors/">Europe built sovereign clouds to escape US control. Then forgot about the processors</a></strong> — <em>The Register</em>
+> A deep dive into how Europe's sovereign cloud initiatives overlook the Intel ME and AMD PSP management engines running at Ring -3, below the OS. These hidden processors could undermine digital sovereignty claims, with documented nation-state abuse of the technology.
+
+<strong><a href="news/2026-05-16-hacker-news-kioxia-dell-10pb-2ru-server/">Kioxia and Dell cram 10 PB into slim 2RU server</a></strong> — <em>Hacker News</em>
+> Kioxia and Dell collaborated to pack 10 petabytes of storage into a 2-rack-unit server, pushing the boundaries of storage density. The achievement has significant implications for data centers and enterprise storage.
+
+<strong><a href="news/2026-05-16-the-register-ai-generated-code-pain-waiting/">AI-generated code is 'pain waiting to happen'</a></strong> — <em>The Register</em>
+> Lightrun's Moshe Sambol warns that the AI coding boom is piling up technical debt, with managers pushing AI adoption faster than developers can learn to use the tools effectively. He describes incidents where AI agents introduced subtle bugs that took entire afternoons to debug.
+
+<h3>May 15, 2026</h3>
+
+<strong><a href="news/2026-05-15-stackoverflow-blog-observability-human-intuition-ai-world/">Observability and human intuition in an AI world</a></strong> — <em>Stack Overflow Blog</em>
+> A two-part podcast recorded at HumanX: Honeycomb CEO Christine Yen discusses how AI compresses development cycles and changes observability needs, then Resolve AI CEO Spiros Xanthos on how AI coding increases code volume but decreases human intuition for operations.
+
+<strong><a href="news/2026-05-15-infoq-cloudflare-workflows-v2/">Cloudflare Introduces Workflows V2 with Deterministic Execution and 50K Concurrent Workflows</a></strong> — <em>InfoQ</em>
+> Cloudflare announced Workflows V2, a redesigned distributed orchestration system supporting 50,000 concurrent instances and 2M queued workflows with deterministic replayable execution. Designed for AI agents, data pipelines, and background processing.
+
+<strong><a href="news/2026-05-15-github-blog-general-purpose-accessibility-agent/">Building a general-purpose accessibility agent—and what we learned in the process</a></strong> — <em>GitHub Blog</em>
+> GitHub is piloting an experimental accessibility agent that has reviewed 3,535 pull requests with a 68% resolution rate. The post shares lessons on using sub-agents (reviewer + implementer), ordered execution phases, and the importance of investing in manual accessibility issue cataloging first.
+
+<strong><a href="news/2026-05-15-lwn-seven-stable-kernels-cve-2026-46333/">Seven new stable kernels with patches for CVE-2026-46333</a></strong> — <em>LWN.net</em>
+> Greg Kroah-Hartman released seven stable kernel updates (7.0.8 through 5.10.256) addressing CVE-2026-46333, a vulnerability reported by Qualys with a published proof-of-concept exploit. Jann Horn had originally proposed a patch back in 2020.
+
+<strong><a href="news/2026-05-15-infoq-discord-circular-dependency-outage/">Discord Reveals How a Hidden Circular Dependency Triggered Its March Voice Outage</a></strong> — <em>InfoQ</em>
+> Discord published a postmortem on its March 2026 voice outage, revealing an undetected circular dependency in its voice infrastructure triggered a cascading failure that disrupted voice services across the entire platform.
+
+<strong><a href="news/2026-05-15-infoq-solidjs-2-beta-async/">SolidJS 2.0 Beta: First-Class Async, Reworked Suspense and Deterministic Batching</a></strong> — <em>InfoQ</em>
+> SolidJS 2.0 Beta introduces first-class async support with direct Promise usage within the framework, new mutation primitives, altered state handling, and significant breaking changes — all while maintaining fine-grained reactivity without a virtual DOM.
+
+<strong><a href="news/2026-05-15-infoq-ai-agents-kubernetes-benchmarking/">Benchmarking AI Agents on Kubernetes</a></strong> — <em>InfoQ</em>
+> A CNCF blog study by Brandon Foley found that AI coding agents can find and fix isolated bugs but struggle with system-wide impacts, challenging the assumption that better code retrieval alone improves automated bug fixing.
+
+<strong><a href="news/2026-05-15-lwn-controlling-memory-management-bpf/">Controlling memory-management with BPF</a></strong> — <em>LWN.net</em>
+> At the 2026 Linux Storage, Filesystem, Memory Management, and BPF Summit, Roman Gushchin led a session exploring BPF-based interfaces for memory management and the obstacles preventing them from reaching mainline.
+
+<strong><a href="news/git-unprepared-ai-coding-tsunami/">Git is unprepared for the AI coding tsunami</a></strong> — <em>The Register</em>
+> AI-generated code is flooding pull requests with significantly more bugs — research from GitClear found 10.83 issues per PR from AI code vs 6.45 from human-written code. This surge raises fundamental questions about whether Git and the entire software development lifecycle need to evolve to handle the new agentic workforce.
+
+<strong><a href="news/seven-new-stable-linux-kernels-patched/">Seven new stable Linux kernels patch CVE-2026-46333</a></strong> — <em>LWN.net</em>
+> Greg Kroah-Hartman announced the release of seven new stable Linux kernels — including 7.0.8, 6.18.31, 6.12.89, and others — containing patches for CVE-2026-46333, a vulnerability reported by the Qualys Security Advisory team. A proof-of-concept exploit has already been published, making patching urgent for production systems.
+
+<strong><a href="news/2026-05-15-infoq-anthropic-routines-claude-code/">Anthropic Introduces Routines for Claude Code Automation</a></strong> — <em>InfoQ</em>
+> Anthropic launched Routines for Claude Code, enabling developers to configure automated coding workflows that run on schedules, via API, or in response to external events. This extends Claude Code into a platform for persistent automation.
+
+<strong><a href="news/2026-05-15-stackoverflow-blog-no-dumb-questions-cloud-computing/">No Dumb Questions: What is cloud computing and why is everyone doing it?</a></strong> — <em>Stack Overflow Blog</em>
+> Stack Overflow's new 'No Dumb Questions' series starts with the basics of cloud computing, joined by infrastructure tech lead Josh Zhang to explain the cloud, compute, and data centers in accessible terms.
+
+<h3>May 14, 2026</h3>
+
+<strong><a href="news/anthropic-bun-rust-rewrite-merged/">Anthropic's Bun Rust rewrite merged at speed of AI</a></strong> — <em>The Register</em>
+> Anthropic merged a massive Rust rewrite of the Bun JavaScript toolkit, replacing its Zig codebase with over a million lines of Rust code in version 1.3.14. The gargantuan single commit marks the end of Bun's Zig era and signals a major infrastructure shift toward Rust for production-grade JavaScript runtimes.
+
+<strong><a href="news/2026-05-14-infoq-moonrepo-v2-wasm-plugin/">Moonrepo Releases Moon v2.0 with WASM Plugin Toolchains and Overhauled CLI</a></strong> — <em>InfoQ</em>
+> Moonrepo released moon v2.0, its first major update featuring a WASM plugin-based toolchain system, support for JSON and TOML config formats, a restructured CLI, enhanced task inheritance, and improved Docker integration.
+
+<h3>May 13, 2026</h3>
+
+<strong><a href="news/2026-05-13-lwn-fedora-ai-developer-desktop-friction/">Friction in Fedora over AI developer desktop initiative</a></strong> — <em>LWN.net</em>
+> A Red Hat push to create a Fedora 'AI Developer Desktop' with out-of-tree kernel drivers and AI toolkits faced objections from longtime community members. A last-minute council vote reversal sent the proposal back to the drawing board.
+
+<strong><a href="news/2026-05-13-lwn-fragnesia-dirty-frag-vulnerability/">Yet another Dirty Frag type vulnerability: Fragnesia</a></strong> — <em>LWN.net</em>
+> A new local-privilege-escalation exploit called Fragnesia was disclosed, abusing a logic bug in the Linux XFRM ESP-in-TCP subsystem to achieve arbitrary byte writes into the kernel page cache of read-only files without requiring a race condition.
+
+<strong><a href="news/braze-cto-engineering-agentic-era/">How Braze's CTO is rethinking engineering for the agentic era</a></strong> — <em>Stack Overflow Blog</em>
+> Jon Hyman, co-founder and CTO of Braze, shares how he led the company's engineering organization through nearly 15 years of growth and transformed it into an AI-first team in just a few months. The interview covers the challenges and strategies of reorienting an established engineering culture around agentic AI tools.
+
+<strong><a href="news/2026-05-13-stackoverflow-blog-braze-cto-rethinking-engineering-agentic/">How Braze's CTO is rethinking engineering for the agentic era</a></strong> — <em>Stack Overflow Blog</em>
+> Braze co-founder and CTO Jon Hyman shares how he's led engineering through nearly 15 years of growth and how the organization transformed into an AI-first team in just a few months.
+
+<h3>May 12, 2026</h3>
+
+<strong><a href="news/2026-05-12-stackoverflow-blog-shipped-fast-shipped-right/">You Shipped It Fast. But Did You Ship It Right?</a></strong> — <em>Stack Overflow Blog</em>
+> An exploration of why AI-accelerated teams keep breaking production — and what the teams that don't break things are doing differently to maintain quality at speed.
+
+<strong><a href="news/2026-05-12-hacker-news-wkrp-real-radio-station/">Nearly 50 Years Later, WKRP in Cincinnati Becomes a Real Radio Station</a></strong> — <em>Hacker News</em>
+> The fictional radio station from the classic sitcom WKRP in Cincinnati is becoming a real FM radio station, nearly 50 years after the show first aired. A nostalgic cultural milestone for fans of the series.
+
+<h3>May 11, 2026</h3>
+
+<strong><a href="news/claude-code-auto-mode-anthropic/">Inside Claude Code Auto Mode: Anthropic's Autonomous Coding</a></strong> — <em>InfoQ</em>
+> Anthropic introduced auto mode in Claude Code, enabling multi-step software development workflows with reduced manual intervention. The feature combines automated execution with layered safety mechanisms, allowing developers to delegate complex coding tasks to AI agents while maintaining oversight.
+
+<h3>May 06, 2026</h3>
+
+<strong><a href="news/github-copilot-vs-code-april-releases/">GitHub Copilot in Visual Studio Code, April releases</a></strong> — <em>GitHub Blog</em>
+> GitHub shipped significant Copilot updates across VS Code releases v1.116 through v1.119. Copilot can now search code by meaning across any workspace and run grep-style queries across GitHub repos and organizations, marking a leap from simple autocomplete to intelligent code understanding.    </main>
+  </div>
+
+  <script>
+    function copyCmd(el, cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        el.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => { el.textContent = 'Copy'; el.classList.remove('copied'); }, 1500);
+      });
+    }
+    function switchTab(el, tabId) {
+      const card = el.closest('.install-card');
+      card.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      card.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      card.querySelector('.' + tabId).classList.add('active');
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -582,3 +582,25 @@ DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.
 - **Kimi**: API billed separately — not included in membership
 
 > **Benchmark Note:** [SWE-Bench Verified](https://www.swebench.com/) measures a model's ability to resolve real-world GitHub issues from code repositories. Not all providers publish scores — the chart above only includes models with verified data.
+
+---
+
+## Sources
+
+- [ai-google-dev-gemini-api-docs-pricing](source/ai-google-dev-gemini-api-docs-pricing.md)
+- [alibabacloud-com-help-en-model-studio-model-pricing](source/alibabacloud-com-help-en-model-studio-model-pricing.md)
+- [api-docs-deepseek-com-quick-start-pricing](source/api-docs-deepseek-com-quick-start-pricing.md)
+- [docs-openclaw-ai-providers-opencode-go](source/docs-openclaw-ai-providers-opencode-go.md)
+- [docs-x-ai-developers-models](source/docs-x-ai-developers-models.md)
+- [docs-z-ai-guides-overview-pricing](source/docs-z-ai-guides-overview-pricing.md)
+- [kimi-com-resources-kimi-k2-6-pricing](source/kimi-com-resources-kimi-k2-6-pricing.md)
+- [la-plateforme-mistral-ai](source/la-plateforme-mistral-ai.md)
+- [mimo-v2-com-docs-pricing](source/mimo-v2-com-docs-pricing.md)
+- [openai-com-api-pricing](source/openai-com-api-pricing.md)
+- [openrouter-ai-minimax-minimax-m2-7](source/openrouter-ai-minimax-minimax-m2-7.md)
+- [openrouter-ai-moonshotai-kimi-k2-5](source/openrouter-ai-moonshotai-kimi-k2-5.md)
+- [platform-claude-com-docs-en-about-claude-pricing](source/platform-claude-com-docs-en-about-claude-pricing.md)
+- [platform-minimax-io-docs-pricing-overview](source/platform-minimax-io-docs-pricing-overview.md)
+- [swebench-com](source/swebench-com.md)
+- [tokencost-app-models-mistral-medium-3-5](source/tokencost-app-models-mistral-medium-3-5.md)
+- [w3-org-2000-svg](source/w3-org-2000-svg.md)

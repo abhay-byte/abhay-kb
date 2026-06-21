@@ -408,3 +408,17 @@ For autonomous AI agents, the following tools and practices are particularly rel
 ---
 
 *References: IEEE Std 830, ISO 9126, CMM, COCOMO, Halstead Metrics*
+
+---
+
+## Sources
+
+- [college-prep-se-allquestions](source/college-prep-se-allquestions.md)
+- [college-prep-se-assignment](source/college-prep-se-assignment.md)
+- [college-prep-se-files-misc](source/college-prep-se-files-misc.md)
+- [college-prep-se-notes-all](source/college-prep-se-notes-all.md)
+- [college-prep-se-notes-units](source/college-prep-se-notes-units.md)
+- [college-prep-se-pyq](source/college-prep-se-pyq.md)
+- [college-prep-se-root](source/college-prep-se-root.md)
+- [college-prep-se-textbook-aggarwal](source/college-prep-se-textbook-aggarwal.md)
+- [college-prep-se-textbook-pressman](source/college-prep-se-textbook-pressman.md)
