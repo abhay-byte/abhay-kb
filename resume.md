@@ -95,14 +95,14 @@ B.Tech in Information Technology — Nov 2022 – May 2026
 
 ## Achievements
 
-- **GitHub:** 2.6K+ Commits · 324 Stars · 85 Public Repositories · 94 Followers
+- **GitHub:** 2.6K+ Commits · 360 Stars · 86 Public Repositories · 99 Followers
 - **Google Play:** 5+ published Android apps · 25,000+ installs · 4.2/5 rating
 - **F-Droid:** 3+ open-source Android apps with 210+ stars and active community adoption
 - **DSA Practice:** LeetCode 150+ · Codeforces 30+ · Coding Blocks 200+ problems solved
 
 ---
 
-*Last synced: 2026-06-15 04:14 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
+*Last synced: 2026-06-21 04:14 UTC — from [resume.tex](https://github.com/abhay-byte/my-resume/blob/main/resume.tex)*
 
 ---
 
