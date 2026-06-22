@@ -456,6 +456,22 @@ def main():
         f.write(final_content)
     print(f"   [OK] Written to {OUTPUT_FILE}")
 
+    # Generate PROJECTS.html from PROJECTS.md
+    print("\nGenerating PROJECTS.html...")
+    try:
+        subprocess.run(
+            ["python3", "md_to_html.py", "PROJECTS.md", "/tmp/projects_content.html"],
+            cwd=KB_DIR, check=True, capture_output=True, text=True
+        )
+        subprocess.run(
+            ["bash", "wrap_html.sh", "/tmp/projects_content.html",
+             "PROJECTS.html", "Projects Dashboard", "Projects Dashboard"],
+            cwd=KB_DIR, check=True, capture_output=True, text=True
+        )
+        print("   [OK] Generated PROJECTS.html")
+    except subprocess.CalledProcessError as e:
+        print(f"   [WARN] HTML generation: {e.stderr.strip() or e.stdout.strip()}")
+
     # Run build
     print("\nRunning build.sh...")
     try:
