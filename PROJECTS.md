@@ -1,153 +1,420 @@
 ---
 layout: standalone
-title: Projects Dashboard
+title: "Projects Dashboard"
 ---
 
 # Projects Dashboard
 
-> **Last synced:** 2026-06-22 — **86 repos** · **356 total ⭐**
+> **Last synced:** 2026-06-22 17:30 UTC — **92 repos** · **699 total ⭐**
 
-## Overview
+## 🏆 Featured Projects
+
+
+<div class="project-showcase">
+
+### FluxLinux
+
+<img src="https://raw.githubusercontent.com/abhay-byte/fluxlinux/main/assets/logo/logo.webp" width="32" align="absmiddle"/> Run full Linux desktop environments on Android with GPU acceleration and dev stacks.  
+
+⭐ **131** stars · 🔀 **8** forks · 📌 Kotlin  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/fluxlinux) [![Play Store](https://img.shields.io/badge/Play_Store-01875F?style=flat-square&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.zenithblue.fluxlinux) [![F-Droid](https://img.shields.io/badge/F--Droid-1976D2?style=flat-square&logo=f-droid&logoColor=white)](https://f-droid.org/packages/com.ivarna.fluxlinux) [![Stars](https://img.shields.io/github/stars/abhay-byte/fluxlinux?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/fluxlinux/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/fluxlinux.gif" width="80%" alt="FluxLinux"/>
+</p>
+
+---
+
+### FinalBenchmark 2
+
+<img src="https://raw.githubusercontent.com/abhay-byte/finalbenchmark-platform/main/assets/logo_2.png" width="32" align="absmiddle"/> Comprehensive CPU benchmarking app with 10+ tests and thermal management.  
+
+⭐ **76** stars · 🔀 **9** forks · 📌 Kotlin  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/finalbenchmark-platform) [![F-Droid](https://img.shields.io/badge/F--Droid-1976D2?style=flat-square&logo=f-droid&logoColor=white)](https://f-droid.org/packages/com.ivarna.finalbenchmark2) [![Stars](https://img.shields.io/github/stars/abhay-byte/finalbenchmark-platform?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/finalbenchmark-platform/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/FinalBenchmark2.gif" width="80%" alt="FinalBenchmark 2"/>
+</p>
+
+---
+
+### MKM
+
+<img src="https://github.com/abhay-byte/mkm/raw/main/assets/logo.png" width="32" align="absmiddle"/> Minimal Kernel Manager for persistent swap management with Shizuku support.  
+
+⭐ **65** stars · 🔀 **8** forks · 📌 Kotlin  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/mkm) [![Play Store](https://img.shields.io/badge/Play_Store-01875F?style=flat-square&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.ivarna.mkm) [![F-Droid](https://img.shields.io/badge/F--Droid-1976D2?style=flat-square&logo=f-droid&logoColor=white)](https://f-droid.org/packages/com.ivarna.mkm) [![Stars](https://img.shields.io/github/stars/abhay-byte/mkm?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/mkm/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/MKM.gif" width="80%" alt="MKM"/>
+</p>
+
+---
+
+### Nexus Terminal
+
+<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/nexus-logo.png" width="32" align="absmiddle"/> Multi-agent AI terminal workspace. Run Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and more — side-by-side in a brutalist desktop app.  
+
+⭐ **11** stars · 🔀 **1** forks · 📌 TypeScript  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/nexus) [![Stars](https://img.shields.io/github/stars/abhay-byte/nexus?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/nexus/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/nexus.gif" width="80%" alt="Nexus Terminal"/>
+</p>
+
+---
+
+### Fantasy Racing
+
+<img src="https://raw.githubusercontent.com/abhay-byte/threejs_portfolio/main/public/images/fantasy-racing-icon.png" width="32" align="absmiddle"/> High-speed futuristic racing game with diverse planets, strategic challenges, and immersive gameplay.  
+
+📌 C#  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/planet-racing) [![Unity](https://img.shields.io/badge/Unity-100000?style=flat-square&logo=unity&logoColor=white)](https://unity.com)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/fantasy-racing.gif" width="80%" alt="Fantasy Racing"/>
+</p>
+
+---
+
+### Story of Xirsia
+
+<img src="https://raw.githubusercontent.com/abhay-byte/threejs_portfolio/main/public/images/xirsia-icon.png" width="32" align="absmiddle"/> 2D Role Playing Game set in Medieval age with a massive 25km² open world of Xirsia Isle to explore.  
+
+⭐ **3** stars · 📌 C#  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/Saiko-no-senshi-0.1v) [![Play Game](https://img.shields.io/badge/Play_Game-FF6B6B?style=flat-square&logo=unity&logoColor=white)](https://hind-dev.web.app/#/) [![Stars](https://img.shields.io/github/stars/abhay-byte/Saiko-no-senshi-0.1v?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/Saiko-no-senshi-0.1v/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/xirsia.gif" width="80%" alt="Story of Xirsia"/>
+</p>
+
+---
+
+### Phone Finder Hub
+
+<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/phonefinder-logo.png" width="32" align="absmiddle"/> Data-driven smartphone comparison platform. Identify best value-for-money devices via objective performance benchmarks.  
+
+📌 Blade  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/phone_finder_hub) [![Website](https://img.shields.io/badge/Website-FF2D20?style=flat-square&logo=laravel&logoColor=white)](https://phone-finder-shjs.onrender.com/)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/phonefinder-demo.gif" width="80%" alt="Phone Finder Hub"/>
+</p>
+
+---
+
+### Adirstat
+
+<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/adirstat-icon.png" width="32" align="absmiddle"/> Android Disk Space Analyzer (WizTree/WinDirStat equivalent).  
+
+⭐ **3** stars · 📌 Kotlin  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/Adirstat) [![Play Store](https://img.shields.io/badge/Play_Store-01875F?style=flat-square&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.ivarna.adirstat) [![Stars](https://img.shields.io/github/stars/abhay-byte/Adirstat?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/Adirstat/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/adirstat.gif" width="80%" alt="Adirstat"/>
+</p>
+
+---
+
+### DeviceInsight
+
+<img src="https://github.com/abhay-byte/DeviceInsight/raw/master/assets/logo.webp" width="32" align="absmiddle"/> Premium system monitoring with glassmorphism UI and real-time analytics.  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/deviceinsight)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/DeviceInsight.gif" width="80%" alt="DeviceInsight"/>
+</p>
+
+---
+
+### Whispers in the Mist
+
+Horror game set in St. Xavier's Boarding School in Ooty during Valentine's Day with mysterious occurrences.  
+
+📌 C#  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/valentines-day-unity)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/whispers.gif" width="80%" alt="Whispers in the Mist"/>
+</p>
+
+---
+
+### Clinico
+
+<img src="https://github.com/abhay-byte/minor-project-gtbit/raw/main/assets/logo/Clinico%20Logo.png" width="32" align="absmiddle"/> AI-powered healthcare platform with 24/7 AI companion, telehealth, and hyperlocal clinic discovery.  
+
+⭐ **1** stars · 📌 JavaScript  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/minor-project-gtbit) [![Website](https://img.shields.io/badge/Website-00C7B7?style=flat-square&logo=react&logoColor=white)](https://clinicofrontend.onrender.com/) [![Backend](https://img.shields.io/badge/Backend-68A063?style=flat-square&logo=node.js&logoColor=white)](https://minor-project-gtbit.onrender.com/) [![AI](https://img.shields.io/badge/AI-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)](https://clinico-ai-service.onrender.com/) [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/design/dFDrEe30gtdNb1QFVKWNv2/Clinico---UI-UX) [![Stars](https://img.shields.io/github/stars/abhay-byte/minor-project-gtbit?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/minor-project-gtbit/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/clinico.gif" width="80%" alt="Clinico"/>
+</p>
+
+---
+
+### Warden Protocol
+
+<img src="https://raw.githubusercontent.com/abhay-byte/warden-protocol/refs/heads/master/assets/icon.png" width="32" align="absmiddle"/> Single-player Android strategy game where you act as bunker intelligence for survivors.  
+
+⭐ **2** stars · 📌 Kotlin  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/warden-protocol) [![Play Store](https://img.shields.io/badge/Play_Store-01875F?style=flat-square&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.ivarna.wardenprotocol) [![Stars](https://img.shields.io/github/stars/abhay-byte/warden-protocol?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/warden-protocol/stargazers)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/warden-protocol.gif" width="80%" alt="Warden Protocol"/>
+</p>
+
+---
+
+### NativeCode
+
+<img src="https://raw.githubusercontent.com/abhay-byte/nativecode/master/assets/logo/logo.webp" width="32" align="absmiddle"/> Local AI development environment on Android — run LLMs, code editors, and dev tools on-device.  
+
+⭐ **4** stars · 📌 Kotlin  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/nativecode) [![Stars](https://img.shields.io/github/stars/abhay-byte/nativecode?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/nativecode/stargazers)
+
+---
+
+### TaskStack
+
+<img src="https://raw.githubusercontent.com/abhay-byte/TaskStack/main/assets/images/app_icon.png" width="32" align="absmiddle"/> Next-generation daily task management app with a 24-hour visual timeline and life analytics.  
+
+⭐ **1** stars · 📌 Dart  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/TaskStack) [![Stars](https://img.shields.io/github/stars/abhay-byte/TaskStack?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/TaskStack/stargazers)
+
+---
+
+### AllWidgets
+
+<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/allwidgets-icon.png" width="32" align="absmiddle"/> Widget suite with polished home-screen experiences for multiple device skins.  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/allwidgets)
+
+---
+
+### Truvalt
+
+<img src="https://raw.githubusercontent.com/abhay-byte/truvalt/main/assets/truvalt_icon.png" width="32" align="absmiddle"/> Secure, self-hostable, zero-knowledge password manager for Android and web.  
+
+📌 Kotlin  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/truvalt)
+
+---
+
+### APM
+
+Android package manager — install, batch-install, and manage APKs on Android devices via ADB.  
+
+⭐ **3** stars · 📌 Python  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/apm) [![Stars](https://img.shields.io/github/stars/abhay-byte/apm?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)](https://github.com/abhay-byte/apm/stargazers)
+
+---
+
+### ThreeJS Portfolio
+
+<img src="https://raw.githubusercontent.com/abhay-byte/my-portfolio/main/public/favicon.ico" width="32" align="absmiddle"/> Interactive 3D portfolio website built with Three.js.  
+
+📌 JavaScript  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/threejs_portfolio) [![Website](https://img.shields.io/badge/Website-fabd2f?style=flat-square&logo=three.js&logoColor=282828)](https://abhay-byte.web.app/)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/threejs-portfolio.gif" width="80%" alt="ThreeJS Portfolio"/>
+</p>
+
+---
+
+### My Portfolio
+
+<img src="https://raw.githubusercontent.com/abhay-byte/my-portfolio/main/public/favicon.ico" width="32" align="absmiddle"/> Personal portfolio website showcasing projects, skills, and experience with responsive design.  
+
+📌 CSS  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/my-portfolio) [![Website](https://img.shields.io/badge/Website-fabd2f?style=flat-square&logo=react&logoColor=282828)](https://abhayraj-porfolio.web.app/)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/my-portfolio.gif" width="80%" alt="My Portfolio"/>
+</p>
+
+---
+
+### WebGL Website
+
+<img src="https://raw.githubusercontent.com/abhay-byte/my-portfolio/main/public/favicon.ico" width="32" align="absmiddle"/> Interactive website built with WebGL for stunning 3D graphics and animations.  
+
+📌 C#  
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/abhay-byte/webgl-website) [![Website](https://img.shields.io/badge/Website-fabd2f?style=flat-square&logo=webgl&logoColor=282828)](https://abhay-raj.web.app/)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/webgl.gif" width="80%" alt="WebGL Website"/>
+</p>
+
+---
+
+</div>
+
+## 📊 Stats Overview
 
 | Metric | Value |
 |---|---|
-| **Total Repositories** | 86 |
-| **Total Stars** | 356 ⭐ |
-| **Total Forks** | 30 |
-| **Languages Used** | 19 |
-| **Top Language (repos)** | — (14) |
-| **Top Language (stars)** | Kotlin (283 ⭐) |
-| **Most Starred** | [fluxlinux](https://github.com/abhay-byte/fluxlinux) (131 ⭐) |
+| **Total Repositories** | 92 |
+| **Total Stars** | 699 ⭐ |
+| **Total Forks** | 47 |
+| **Languages Used** | 18 |
+| **Top Language** | Dart (344 ⭐, 4 repos) |
 
-## Top Projects by Stars
+## 🥇 Top Projects by Stars
 
-| # | Project | Stars | Description |
-|---|---|---|---|
-| 1 | [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 131 ⭐ | FluxLinux is Linux on Android, advanced orchestrator applic… |
-| 2 | [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 76 ⭐ | A comprehensive Android CPU benchmarking application with d… |
-| 3 | [mkm](https://github.com/abhay-byte/mkm) | 65 ⭐ | Minimal Android kernel management and system monitoring app… |
-| 4 | [nexus](https://github.com/abhay-byte/nexus) | 11 ⭐ | Multi-agent AI terminal workspace — run Claude Code, Codex,… |
-| 5 | [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | 9 ⭐ | This repository provides shell scripts to automate the setu… |
-| 6 | [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | 9 ⭐ | A community-driven compatibility list for running Windows g… |
-| 7 | [poco-x6-pro-custom-roms](https://github.com/abhay-byte/poco-x6-pro-custom-roms) | 8 ⭐ | Summary of the available custom ROMs for Poco X6 Pro. |
-| 8 | [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 ⭐ | Feel free to connect, collaborate, and share the passion fo… |
-| 9 | [nativecode](https://github.com/abhay-byte/nativecode) | 4 ⭐ | NativeCode: Local AI Dev |
-| 10 | [Adirstat](https://github.com/abhay-byte/Adirstat) | 3 ⭐ | Adirstat - Android Storage Analyzer (WizTree equivalent) |
+| # | Project | Stars | Forks | Language | Description |
+|---|---|---|---|---|---|
+| 1 | [DailyAL](https://github.com/abhay-byte/DailyAL) | 343 ⭐ | 16 | Dart | DailyAL - MyAnimeList Client |
+| 2 | [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 131 ⭐ | 8 | Kotlin | FluxLinux is Linux on Android, advanced orchestrator application that transforms your Android device into a versatile Linux workstation.  |
+| 3 | [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 76 ⭐ | 9 | Kotlin | A comprehensive Android CPU benchmarking application with detailed scoring and visualization. |
+| 4 | [mkm](https://github.com/abhay-byte/mkm) | 65 ⭐ | 8 | Kotlin | Minimal Android kernel management and system monitoring application |
+| 5 | [nexus](https://github.com/abhay-byte/nexus) | 11 ⭐ | 1 | TypeScript | Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini CLI, and 10+ other AI agents side-by-side. Tauri + React + brutalist UI. |
+| 6 | [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | 9 ⭐ | 1 | — | A community-driven compatibility list for running Windows games on Android devices using mali-gpus |
+| 7 | [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | 9 ⭐ | 0 | Shell | This repository provides shell scripts to automate the setup for:      Arch Linux with the Hyprland compositor.     XFCE desktop environment on Arch… |
+| 8 | [poco-x6-pro-custom-roms](https://github.com/abhay-byte/poco-x6-pro-custom-roms) | 8 ⭐ | 0 | — | Summary of the available custom ROMs for Poco X6 Pro. |
+| 9 | [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 ⭐ | 1 | HTML | Feel free to connect, collaborate, and share the passion for building amazing things with code, whether it's for the web or a game engine! Let's… |
+| 10 | [nativecode](https://github.com/abhay-byte/nativecode) | 4 ⭐ | 0 | Kotlin | NativeCode: Local AI Dev |
 
-## All Repositories
+## 📋 All Repositories
 
-| Name | Language | Stars | Forks | Description |
+| Project | Stars | Forks | Language | Description |
 |---|---|---|---|---|
-| [fluxlinux](https://github.com/abhay-byte/fluxlinux) | Kotlin | 131 | 8 | FluxLinux is Linux on Android, advanced orchestrator application that… |
-| [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | Kotlin | 76 | 9 | A comprehensive Android CPU benchmarking application with detailed sc… |
-| [mkm](https://github.com/abhay-byte/mkm) | Kotlin | 65 | 8 | Minimal Android kernel management and system monitoring application |
-| [nexus](https://github.com/abhay-byte/nexus) | TypeScript | 11 | 1 | Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini CL… |
-| [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | Shell | 9 | 0 | This repository provides shell scripts to automate the setup for: Arc… |
-| [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | — | 9 | 1 | A community-driven compatibility list for running Windows games on An… |
-| [poco-x6-pro-custom-roms](https://github.com/abhay-byte/poco-x6-pro-custom-roms) | — | 8 | 0 | Summary of the available custom ROMs for Poco X6 Pro. |
-| [abhay-byte](https://github.com/abhay-byte/abhay-byte) | HTML | 4 | 1 | Feel free to connect, collaborate, and share the passion for building… |
-| [nativecode](https://github.com/abhay-byte/nativecode) | Kotlin | 4 | 0 | NativeCode: Local AI Dev |
-| [Adirstat](https://github.com/abhay-byte/Adirstat) | Kotlin | 3 | 0 | Adirstat - Android Storage Analyzer (WizTree equivalent) |
-| [AI_WRAPPER_PROJECTS](https://github.com/abhay-byte/AI_WRAPPER_PROJECTS) | Python | 3 | 2 | AI Wrapper Project is a powerful, modular AI-driven platform that bri… |
-| [apm](https://github.com/abhay-byte/apm) | Python | 3 | 0 | Package manager for android working through adb. |
-| [my-resume](https://github.com/abhay-byte/my-resume) | TeX | 3 | 0 | This repository contains a LaTeX resume template that is automaticall… |
-| [Saiko-no-senshi-0.1v](https://github.com/abhay-byte/Saiko-no-senshi-0.1v) | C# | 3 | 0 | Android Game |
-| [abhay-byte.github.io](https://github.com/abhay-byte/abhay-byte.github.io) | HTML | 2 | 0 | GitHub Pages site for @abhay-byte |
-| [DeviceInsight](https://github.com/abhay-byte/DeviceInsight) | Kotlin | 2 | 0 | DeviceInsight is a premium, high-performance system monitoring applic… |
-| [DSA_Practice](https://github.com/abhay-byte/DSA_Practice) | C++ | 2 | 0 | Practicing Data Structure and algorithm. Motivation thrives on visual… |
-| [DSA-QUESTIONS](https://github.com/abhay-byte/DSA-QUESTIONS) | C++ | 2 | 0 | Welcome! This repository contains solutions to various Data Structure… |
-| [project-evergreen](https://github.com/abhay-byte/project-evergreen) | C# | 2 | 0 | This project combines three powerful ideas into a single, cohesive re… |
-| [task_management_tool](https://github.com/abhay-byte/task_management_tool) | JavaScript | 2 | 0 |  |
-| [tms_mongo_backend](https://github.com/abhay-byte/tms_mongo_backend) | JavaScript | 2 | 0 | TMS Backend Server MongoDB |
-| [warden-protocol](https://github.com/abhay-byte/warden-protocol) | Kotlin | 2 | 0 | The Warden Protocol - A post-nuclear fallout bunker management game f… |
-| [AI_Survival_Quest-V1.0](https://github.com/abhay-byte/AI_Survival_Quest-V1.0) | Python | 1 | 0 | Game |
-| [fb_nextjs](https://github.com/abhay-byte/fb_nextjs) | TypeScript | 1 | 0 |  |
-| [fortune-t-react-ts](https://github.com/abhay-byte/fortune-t-react-ts) | CSS | 1 | 0 |  |
-| [MedApp-V2.1](https://github.com/abhay-byte/MedApp-V2.1) | Python | 1 | 0 | Medical |
-| [minor-project-gtbit](https://github.com/abhay-byte/minor-project-gtbit) | JavaScript | 1 | 0 | This repository contains the ideation, research, and planning documen… |
-| [NextJS_ACME](https://github.com/abhay-byte/NextJS_ACME) | TypeScript | 1 | 0 | Learning Nextjs. |
-| [TaskStack](https://github.com/abhay-byte/TaskStack) | Dart | 1 | 0 | TaskStack — Advanced 24-hour daily task management and life analytics… |
-| [VibingIde](https://github.com/abhay-byte/VibingIde) | Rust | 1 | 0 | Agent-first, ultra-lightweight IDE built in Rust |
-| [abhay-kb](https://github.com/abhay-byte/abhay-kb) | HTML | 0 | 0 | Personal knowledge base & portfolio — about me, projects dashboard, A… |
-| [ADV_JAVA](https://github.com/abhay-byte/ADV_JAVA) | Java | 0 | 0 |  |
-| [agent-skills](https://github.com/abhay-byte/agent-skills) | — | 0 | 0 | Agent skills + config for a todo-driven release pipeline: triage → de… |
-| [AI_FILE](https://github.com/abhay-byte/AI_FILE) | Prolog | 0 | 0 |  |
-| [ai-tf-models](https://github.com/abhay-byte/ai-tf-models) | Python | 0 | 0 | This repository contains TensorFlow Lite (LiteRT) models optimized fo… |
-| [android-app-demos](https://github.com/abhay-byte/android-app-demos) | Kotlin | 0 | 0 |  |
-| [Arduino_UNO_Practical](https://github.com/abhay-byte/Arduino_UNO_Practical) | C++ | 0 | 0 |  |
-| [blender](https://github.com/abhay-byte/blender) | — | 0 | 0 |  |
-| [clinico-flutter](https://github.com/abhay-byte/clinico-flutter) | Dart | 0 | 0 |  |
-| [Clinicofrontend](https://github.com/abhay-byte/Clinicofrontend) | TypeScript | 0 | 0 |  |
-| [co-op-racing](https://github.com/abhay-byte/co-op-racing) | ShaderLab | 0 | 0 |  |
-| [college-prep](https://github.com/abhay-byte/college-prep) | Java | 0 | 0 |  |
-| [Computational_Methods](https://github.com/abhay-byte/Computational_Methods) | C | 0 | 0 |  |
-| [cura-backend](https://github.com/abhay-byte/cura-backend) | Python | 0 | 0 | Django-based backend service that powers two intelligent health agent… |
-| [cura-diet-agent](https://github.com/abhay-byte/cura-diet-agent) | Python | 0 | 0 |  |
-| [Data_Structures](https://github.com/abhay-byte/Data_Structures) | C | 0 | 0 |  |
-| [DSA](https://github.com/abhay-byte/DSA) | C++ | 0 | 0 | DSA Practice |
-| [final-benchmark-2025](https://github.com/abhay-byte/final-benchmark-2025) | C# | 0 | 0 |  |
-| [finalbenchmark](https://github.com/abhay-byte/finalbenchmark) | — | 0 | 0 |  |
-| [interview-prep](https://github.com/abhay-byte/interview-prep) | — | 0 | 0 |  |
-| [laravel-study](https://github.com/abhay-byte/laravel-study) | Blade | 0 | 0 |  |
-| [Learning_CPP](https://github.com/abhay-byte/Learning_CPP) | C++ | 0 | 0 |  |
-| [mad](https://github.com/abhay-byte/mad) | Dart | 0 | 0 | A comprehensive collection of Android and Flutter experiments showcas… |
-| [mern-examples](https://github.com/abhay-byte/mern-examples) | JavaScript | 0 | 0 |  |
-| [MERN-Google-Form-Project](https://github.com/abhay-byte/MERN-Google-Form-Project) | JavaScript | 0 | 0 |  |
-| [my-portfolio](https://github.com/abhay-byte/my-portfolio) | CSS | 0 | 0 | Welcome to my personal portfolio website! This site showcases my proj… |
-| [my-portfolio-webgl](https://github.com/abhay-byte/my-portfolio-webgl) | Mathematica | 0 | 0 |  |
-| [my-react-router-app](https://github.com/abhay-byte/my-react-router-app) | CSS | 0 | 0 |  |
-| [my-resume-p](https://github.com/abhay-byte/my-resume-p) | TeX | 0 | 0 |  |
-| [phone_finder_hub](https://github.com/abhay-byte/phone_finder_hub) | Blade | 0 | 0 | Phone Finder Hub is a data-driven smartphone comparison platform buil… |
-| [planet-racing](https://github.com/abhay-byte/planet-racing) | C# | 0 | 0 | This project is a high-speed, futuristic racing game developed with a… |
-| [planet-racing-3d](https://github.com/abhay-byte/planet-racing-3d) | C# | 0 | 0 |  |
-| [PSLP](https://github.com/abhay-byte/PSLP) | — | 0 | 0 | PSLP |
-| [RANDOMRPG](https://github.com/abhay-byte/RANDOMRPG) | — | 0 | 0 |  |
-| [Semester-VI-GTBIT-IT](https://github.com/abhay-byte/Semester-VI-GTBIT-IT) | Java | 0 | 0 |  |
-| [skills-code-with-codespaces](https://github.com/abhay-byte/skills-code-with-codespaces) | HTML | 0 | 0 | My clone repository |
-| [skills-communicate-using-markdown](https://github.com/abhay-byte/skills-communicate-using-markdown) | — | 0 | 0 | Exercise: Communicate using Markdown |
-| [skills-getting-started-with-github-copilot](https://github.com/abhay-byte/skills-getting-started-with-github-copilot) | Python | 0 | 0 | Exercise: Get started using GitHub Copilot |
-| [skills-github-pages](https://github.com/abhay-byte/skills-github-pages) | — | 0 | 0 | Exercise: Create a site or blog from your GitHub repositories with Gi… |
-| [skills-introduction-to-codeql](https://github.com/abhay-byte/skills-introduction-to-codeql) | Python | 0 | 0 | GitHub Skills: Introduction to CodeQL |
-| [skills-introduction-to-github](https://github.com/abhay-byte/skills-introduction-to-github) | — | 0 | 0 | Exercise: Introduction to GitHub |
-| [skills-review-pull-requests](https://github.com/abhay-byte/skills-review-pull-requests) | HTML | 0 | 0 | My clone repository |
-| [skills-secure-repository-supply-chain](https://github.com/abhay-byte/skills-secure-repository-supply-chain) | C# | 0 | 0 | Exercise: Secure your Repository Supply Chain |
-| [threejs_portfolio](https://github.com/abhay-byte/threejs_portfolio) | JavaScript | 0 | 0 | A stunning 3D portfolio website built with React + Three.js (React Th… |
-| [TopBarCreator](https://github.com/abhay-byte/TopBarCreator) | Shell | 0 | 0 | Add a black bar in (most) fullscreen apps/games! |
-| [TowerBrawlers](https://github.com/abhay-byte/TowerBrawlers) | ShaderLab | 0 | 0 |  |
-| [TowerDefense](https://github.com/abhay-byte/TowerDefense) | — | 0 | 0 | Lane-based strategy game design exploration inspired by Battle Towers |
-| [truvalt](https://github.com/abhay-byte/truvalt) | Kotlin | 0 | 0 | Cross-platform password manager with Android and web apps |
-| [turnip-drivers](https://github.com/abhay-byte/turnip-drivers) | Shell | 0 | 0 | A repository for turnip driver package. |
-| [two-player-games](https://github.com/abhay-byte/two-player-games) | C# | 0 | 0 |  |
-| [ui-best-practices-unity](https://github.com/abhay-byte/ui-best-practices-unity) | — | 0 | 0 |  |
-| [unity-classes](https://github.com/abhay-byte/unity-classes) | — | 0 | 0 |  |
-| [unity-folder-structure](https://github.com/abhay-byte/unity-folder-structure) | C# | 0 | 0 | This document outlines the folder structure that I adhere to when cre… |
-| [valentines-day-unity](https://github.com/abhay-byte/valentines-day-unity) | C# | 0 | 0 |  |
-| [webgl-website](https://github.com/abhay-byte/webgl-website) | C# | 0 | 0 |  |
-| [wmatd-exp6](https://github.com/abhay-byte/wmatd-exp6) | JavaScript | 0 | 0 |  |
+| [DailyAL](https://github.com/abhay-byte/DailyAL) | 343 ⭐ | 16 | Dart | DailyAL - MyAnimeList Client |
+| [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 131 ⭐ | 8 | Kotlin | FluxLinux is Linux on Android, advanced orchestrator application that transforms your Android device into a versatile Linux workstation.  |
+| [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 76 ⭐ | 9 | Kotlin | A comprehensive Android CPU benchmarking application with detailed scoring and visualization. |
+| [mkm](https://github.com/abhay-byte/mkm) | 65 ⭐ | 8 | Kotlin | Minimal Android kernel management and system monitoring application |
+| [nexus](https://github.com/abhay-byte/nexus) | 11 ⭐ | 1 | TypeScript | Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini CLI, and 10+ other AI agents side-by-side. Tauri + React + brutalist UI. |
+| [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | 9 ⭐ | 1 | — | A community-driven compatibility list for running Windows games on Android devices using mali-gpus |
+| [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | 9 ⭐ | 0 | Shell | This repository provides shell scripts to automate the setup for:      Arch Linux with the Hyprland compositor.     XFCE desktop environment on Arch Linux within a Termux proot-distro.     Your base… |
+| [poco-x6-pro-custom-roms](https://github.com/abhay-byte/poco-x6-pro-custom-roms) | 8 ⭐ | 0 | — | Summary of the available custom ROMs for Poco X6 Pro. |
+| [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 ⭐ | 1 | HTML | Feel free to connect, collaborate, and share the passion for building amazing things with code, whether it's for the web or a game engine! Let's learn and grow together. 🚀 |
+| [nativecode](https://github.com/abhay-byte/nativecode) | 4 ⭐ | 0 | Kotlin | NativeCode: Local AI Dev |
+| [Adirstat](https://github.com/abhay-byte/Adirstat) | 3 ⭐ | 0 | Kotlin | Adirstat - Android Storage Analyzer (WizTree equivalent) |
+| [my-resume](https://github.com/abhay-byte/my-resume) | 3 ⭐ | 0 | TeX | This repository contains a LaTeX resume template that is automatically compiled into a PDF on every push using GitHub Actions. |
+| [apm](https://github.com/abhay-byte/apm) | 3 ⭐ | 0 | Python | Package manager for android working through adb. |
+| [AI_WRAPPER_PROJECTS](https://github.com/abhay-byte/AI_WRAPPER_PROJECTS) | 3 ⭐ | 2 | Python | AI Wrapper Project is a powerful, modular AI-driven platform that brings together financial tools, news aggregation, and generative AI in a clean and user-friendly interface. Built using Streamlit,… |
+| [Saiko-no-senshi-0.1v](https://github.com/abhay-byte/Saiko-no-senshi-0.1v) | 3 ⭐ | 0 | C# | Android Game |
+| [warden-protocol](https://github.com/abhay-byte/warden-protocol) | 2 ⭐ | 0 | Kotlin | The Warden Protocol - A post-nuclear fallout bunker management game for Android |
+| [DeviceInsight](https://github.com/abhay-byte/DeviceInsight) | 2 ⭐ | 0 | Kotlin | DeviceInsight is a premium, high-performance system monitoring application for Android. It provides real-time analytics for CPU, RAM, Storage, Network, and Battery usage, presented in a stunning,… |
+| [abhay-byte.github.io](https://github.com/abhay-byte/abhay-byte.github.io) | 2 ⭐ | 0 | HTML | GitHub Pages site for @abhay-byte |
+| [DSA_Practice](https://github.com/abhay-byte/DSA_Practice) | 2 ⭐ | 0 | C++ | Practicing Data Structure and algorithm. Motivation thrives on visualization! Here's a snapshot of my journey through the NeetCode roadmap. |
+| [DSA-QUESTIONS](https://github.com/abhay-byte/DSA-QUESTIONS) | 2 ⭐ | 0 | C++ | Welcome! This repository contains solutions to various Data Structures and Algorithms (DSA) problems. It's a personal journey to improve problem-solving skills and prepare for coding interviews. |
+| [project-evergreen](https://github.com/abhay-byte/project-evergreen) | 2 ⭐ | 0 | C# | This project combines three powerful ideas into a single, cohesive retail platform designed to enhance customer experience, promote sustainability, and improve operational efficiency. |
+| [task_management_tool](https://github.com/abhay-byte/task_management_tool) | 2 ⭐ | 0 | JavaScript |  |
+| [tms_mongo_backend](https://github.com/abhay-byte/tms_mongo_backend) | 2 ⭐ | 0 | JavaScript | TMS Backend Server MongoDB |
+| [TaskStack](https://github.com/abhay-byte/TaskStack) | 1 ⭐ | 0 | Dart | TaskStack — Advanced 24-hour daily task management and life analytics Flutter app |
+| [VibingIde](https://github.com/abhay-byte/VibingIde) | 1 ⭐ | 0 | Rust | Agent-first, ultra-lightweight IDE built in Rust |
+| [minor-project-gtbit](https://github.com/abhay-byte/minor-project-gtbit) | 1 ⭐ | 0 | JavaScript | This repository contains the ideation, research, and planning documents for Clinico, a proposed B.Tech Minor Project.  |
+| [fortune-t-react-ts](https://github.com/abhay-byte/fortune-t-react-ts) | 1 ⭐ | 0 | CSS |  |
+| [fb_nextjs](https://github.com/abhay-byte/fb_nextjs) | 1 ⭐ | 0 | TypeScript |  |
+| [NextJS_ACME](https://github.com/abhay-byte/NextJS_ACME) | 1 ⭐ | 0 | TypeScript | Learning Nextjs. |
+| [MedApp-V2.1](https://github.com/abhay-byte/MedApp-V2.1) | 1 ⭐ | 0 | Python | Medical |
+| [AI_Survival_Quest-V1.0](https://github.com/abhay-byte/AI_Survival_Quest-V1.0) | 1 ⭐ | 0 | Python | Game |
+| [abhay-kb](https://github.com/abhay-byte/abhay-kb) | 0 ⭐ | 0 | HTML | Personal knowledge base & portfolio — about me, projects dashboard, AI tools, LLM notes, job search tracking |
+| [agent-skills](https://github.com/abhay-byte/agent-skills) | 0 ⭐ | 0 | — | Agent skills + config for a todo-driven release pipeline: triage → dev-cycle → review → release |
+| [my-resume](https://github.com/abhay-byte/my-resume) | 0 ⭐ | 1 | TeX |  |
+| [DSA](https://github.com/abhay-byte/DSA) | 0 ⭐ | 0 | C++ | DSA Practice |
+| [clinico_backend](https://github.com/abhay-byte/clinico_backend) | 0 ⭐ | 0 | JavaScript |  |
+| [truvalt](https://github.com/abhay-byte/truvalt) | 0 ⭐ | 0 | Kotlin | Cross-platform password manager with Android and web apps |
+| [phone_finder_hub](https://github.com/abhay-byte/phone_finder_hub) | 0 ⭐ | 0 | Blade | Phone Finder Hub is a data-driven smartphone comparison platform built with Laravel. It helps users identify the best value-for-money devices by analyzing objective performance benchmarks against… |
+| [TowerBrawlers](https://github.com/abhay-byte/TowerBrawlers) | 0 ⭐ | 0 | ShaderLab |  |
+| [TowerDefense](https://github.com/abhay-byte/TowerDefense) | 0 ⭐ | 0 | — | Lane-based strategy game design exploration inspired by Battle Towers |
+| [RANDOMRPG](https://github.com/abhay-byte/RANDOMRPG) | 0 ⭐ | 0 | — |  |
+| [codex-app](https://github.com/abhay-byte/codex-app) | 0 ⭐ | 0 | Shell |  |
+| [threejs_portfolio](https://github.com/abhay-byte/threejs_portfolio) | 0 ⭐ | 0 | JavaScript | A stunning 3D portfolio website built with React + Three.js (React Three Fiber), featuring a scroll-driven cinematic intro through space with custom GLSL shaders, orbital planets, and a glowing sun. |
+| [laravel-study](https://github.com/abhay-byte/laravel-study) | 0 ⭐ | 0 | Blade |  |
+| [ai-tf-models](https://github.com/abhay-byte/ai-tf-models) | 0 ⭐ | 0 | Python | This repository contains TensorFlow Lite (LiteRT) models optimized for Android NPU benchmarking. |
+| [skills-secure-repository-supply-chain](https://github.com/abhay-byte/skills-secure-repository-supply-chain) | 0 ⭐ | 0 | C# | Exercise: Secure your Repository Supply Chain |
+| [Clinicofrontend](https://github.com/abhay-byte/Clinicofrontend) | 0 ⭐ | 0 | TypeScript |  |
+| [clinico-flutter](https://github.com/abhay-byte/clinico-flutter) | 0 ⭐ | 0 | Dart |  |
+| [skills-communicate-using-markdown](https://github.com/abhay-byte/skills-communicate-using-markdown) | 0 ⭐ | 0 | — | Exercise: Communicate using Markdown |
+| [skills-review-pull-requests](https://github.com/abhay-byte/skills-review-pull-requests) | 0 ⭐ | 0 | HTML | My clone repository |
+| [skills-code-with-codespaces](https://github.com/abhay-byte/skills-code-with-codespaces) | 0 ⭐ | 0 | HTML | My clone repository |
+| [skills-github-pages](https://github.com/abhay-byte/skills-github-pages) | 0 ⭐ | 0 | — | Exercise: Create a site or blog from your GitHub repositories with GitHub Pages |
+| [skills-introduction-to-codeql](https://github.com/abhay-byte/skills-introduction-to-codeql) | 0 ⭐ | 0 | Python | GitHub Skills: Introduction to CodeQL |
+| [prep-ai](https://github.com/abhay-byte/prep-ai) | 0 ⭐ | 0 | TypeScript |  |
+| [my-resume-p](https://github.com/abhay-byte/my-resume-p) | 0 ⭐ | 0 | TeX |  |
+| [mad](https://github.com/abhay-byte/mad) | 0 ⭐ | 0 | Dart | A comprehensive collection of Android and Flutter experiments showcasing various mobile development concepts, architectures, and integrations. |
+| [wmatd-exp6](https://github.com/abhay-byte/wmatd-exp6) | 0 ⭐ | 0 | JavaScript |  |
+| [MERN-Google-Form-Project](https://github.com/abhay-byte/MERN-Google-Form-Project) | 0 ⭐ | 0 | JavaScript |  |
+| [cura-backend](https://github.com/abhay-byte/cura-backend) | 0 ⭐ | 0 | Python | Django-based backend service that powers two intelligent health agents. |
+| [cura-diet-agent](https://github.com/abhay-byte/cura-diet-agent) | 0 ⭐ | 0 | Python |  |
+| [college-prep](https://github.com/abhay-byte/college-prep) | 0 ⭐ | 0 | Java |  |
+| [interview-prep](https://github.com/abhay-byte/interview-prep) | 0 ⭐ | 0 | — |  |
+| [DSA-QUESTIONS](https://github.com/abhay-byte/DSA-QUESTIONS) | 0 ⭐ | 0 | C++ |  |
+| [turnip-drivers](https://github.com/abhay-byte/turnip-drivers) | 0 ⭐ | 0 | Shell | A repository for turnip driver package. |
+| [planet-racing](https://github.com/abhay-byte/planet-racing) | 0 ⭐ | 0 | C# | This project is a high-speed, futuristic racing game developed with a focus on immersive gameplay, strategic challenges, and a compelling narrative. |
+| [my-portfolio-webgl](https://github.com/abhay-byte/my-portfolio-webgl) | 0 ⭐ | 0 | Mathematica |  |
+| [my-portfolio](https://github.com/abhay-byte/my-portfolio) | 0 ⭐ | 0 | CSS | Welcome to my personal portfolio website! This site showcases my projects, skills, and experience as a developer. |
+| [mern-examples](https://github.com/abhay-byte/mern-examples) | 0 ⭐ | 0 | JavaScript |  |
+| [blender](https://github.com/abhay-byte/blender) | 0 ⭐ | 0 | — |  |
+| [android-app-demos](https://github.com/abhay-byte/android-app-demos) | 0 ⭐ | 0 | Kotlin |  |
+| [webgl-website](https://github.com/abhay-byte/webgl-website) | 0 ⭐ | 0 | C# |  |
+| [valentines-day-unity](https://github.com/abhay-byte/valentines-day-unity) | 0 ⭐ | 0 | C# |  |
+| [unity-folder-structure](https://github.com/abhay-byte/unity-folder-structure) | 0 ⭐ | 0 | C# | This document outlines the folder structure that I adhere to when creating Unity projects. It reflects best practices for organizing Unity projects to enhance clarity and efficiency. |
+| [unity-classes](https://github.com/abhay-byte/unity-classes) | 0 ⭐ | 0 | — |  |
+| [ui-best-practices-unity](https://github.com/abhay-byte/ui-best-practices-unity) | 0 ⭐ | 0 | — |  |
+| [two-player-games](https://github.com/abhay-byte/two-player-games) | 0 ⭐ | 0 | C# |  |
+| [final-benchmark-2025](https://github.com/abhay-byte/final-benchmark-2025) | 0 ⭐ | 0 | C# |  |
+| [planet-racing-3d](https://github.com/abhay-byte/planet-racing-3d) | 0 ⭐ | 0 | C# |  |
+| [finalbenchmark](https://github.com/abhay-byte/finalbenchmark) | 0 ⭐ | 0 | — |  |
+| [co-op-racing](https://github.com/abhay-byte/co-op-racing) | 0 ⭐ | 0 | ShaderLab |  |
+| [skills-getting-started-with-github-copilot](https://github.com/abhay-byte/skills-getting-started-with-github-copilot) | 0 ⭐ | 0 | Python | Exercise: Get started using GitHub Copilot |
+| [my-react-router-app](https://github.com/abhay-byte/my-react-router-app) | 0 ⭐ | 0 | CSS |  |
+| [skills-introduction-to-github](https://github.com/abhay-byte/skills-introduction-to-github) | 0 ⭐ | 0 | — | Exercise: Introduction to GitHub |
+| [Semester-VI-GTBIT-IT](https://github.com/abhay-byte/Semester-VI-GTBIT-IT) | 0 ⭐ | 0 | Java |  |
+| [AI_FILE](https://github.com/abhay-byte/AI_FILE) | 0 ⭐ | 0 | Prolog |  |
+| [ADV_JAVA](https://github.com/abhay-byte/ADV_JAVA) | 0 ⭐ | 0 | Java |  |
+| [Arduino_UNO_Practical](https://github.com/abhay-byte/Arduino_UNO_Practical) | 0 ⭐ | 0 | C++ |  |
+| [Data_Structures](https://github.com/abhay-byte/Data_Structures) | 0 ⭐ | 0 | C |  |
+| [PSLP](https://github.com/abhay-byte/PSLP) | 0 ⭐ | 0 | — | PSLP |
+| [Learning_CPP](https://github.com/abhay-byte/Learning_CPP) | 0 ⭐ | 0 | C++ |  |
+| [Computational_Methods](https://github.com/abhay-byte/Computational_Methods) | 0 ⭐ | 0 | C |  |
+| [TopBarCreator](https://github.com/abhay-byte/TopBarCreator) | 0 ⭐ | 0 | — | Add a black bar in (most) fullscreen apps/games! |
 
-## Language Breakdown
+## 🔤 Language Breakdown
 
 | Language | Repos | Stars |
 |---|---|---|
+| Dart | 4 | 344 ⭐ |
 | Kotlin | 9 | 283 ⭐ |
-| — | 14 | 17 ⭐ |
-| TypeScript | 4 | 13 ⭐ |
+| — | 15 | 17 ⭐ |
+| TypeScript | 5 | 13 ⭐ |
 | Shell | 3 | 9 ⭐ |
 | Python | 9 | 8 ⭐ |
 | HTML | 5 | 6 ⭐ |
+| JavaScript | 8 | 5 ⭐ |
 | C# | 10 | 5 ⭐ |
-| JavaScript | 7 | 5 ⭐ |
-| C++ | 5 | 4 ⭐ |
-| TeX | 2 | 3 ⭐ |
-| Dart | 3 | 1 ⭐ |
-| CSS | 3 | 1 ⭐ |
+| C++ | 6 | 4 ⭐ |
+| TeX | 3 | 3 ⭐ |
 | Rust | 1 | 1 ⭐ |
-| Java | 3 | 0 ⭐ |
-| Blade | 2 | 0 ⭐ |
-| ShaderLab | 2 | 0 ⭐ |
-| C | 2 | 0 ⭐ |
-| Mathematica | 1 | 0 ⭐ |
-| Prolog | 1 | 0 ⭐ |
+| CSS | 3 | 1 ⭐ |
+| Blade | 2 | 0 |
+| ShaderLab | 2 | 0 |
+| Java | 3 | 0 |
+| Mathematica | 1 | 0 |
+| Prolog | 1 | 0 |
+| C | 2 | 0 |
 
 ---
-*Auto-generated by 🧠 Brain on 2026-06-22 via `gh repo list`*
+*Auto-generated by 🧠 Reva on 2026-06-22 17:30 UTC*
