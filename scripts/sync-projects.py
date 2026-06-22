@@ -180,7 +180,7 @@ def fetch_repos():
     """Fetch all repos for the owner using gh api."""
     repos = run_gh_api(f"users/{REPO_OWNER}/repos?per_page=100&type=all&sort=pushed")
     if not repos:
-        print("❌ No repos found. Check auth and owner name.", file=sys.stderr)
+        print("[ERROR] No repos found. Check auth and owner name.", file=sys.stderr)
         sys.exit(1)
     return repos
 
@@ -219,8 +219,27 @@ def compute_stats(repos):
     }
 
 
+import re as _re
+
+EMOJI_PATTERN = _re.compile(
+    '[\U0001F600-\U0001F64F'  # emoticons
+    '\U0001F300-\U0001F5FF'  # symbols & pictographs
+    '\U0001F680-\U0001F6FF'  # transport & map symbols
+    '\U0001F1E0-\U0001F1FF'  # flags
+    '\U00002702-\U000027B0'  # dingbats
+    '\U000024C2-\U0001F251'
+    ']+'
+)
+
+def clean_str(val):
+    """Return string with emojis stripped."""
+    if not val:
+        return ""
+    return EMOJI_PATTERN.sub('', str(val)).strip()
+
+
 def safe_str(val):
-    return str(val) if val else ""
+    return clean_str(val) if val else ""
 
 
 
@@ -229,7 +248,7 @@ def safe_str(val):
 def build_featured_section(repos_by_name):
     """Build the featured projects showcase as pure markdown tables."""
     lines = []
-    lines.append("## 🏆 Featured Projects\n")
+    lines.append("## Featured Projects\n")
 
     for key, label, logo, desc, gif_url, screenshot_url, badges in FEATURED:
         repo = repos_by_name.get(key)
@@ -254,11 +273,11 @@ def build_featured_section(repos_by_name):
         # Stats inline
         stat_parts = []
         if stars > 0:
-            stat_parts.append(f"⭐ **{stars}** stars")
+            stat_parts.append(f"**{stars}** stars")
         if forks > 0:
-            stat_parts.append(f"🔀 **{forks}** forks")
+            stat_parts.append(f"**{forks}** forks")
         if lang and lang != "—":
-            stat_parts.append(f"📌 {lang}")
+            stat_parts.append(f"{lang}")
         if stat_parts:
             lines.append(" ".join(stat_parts))
             lines.append("")
@@ -289,14 +308,14 @@ def build_featured_section(repos_by_name):
 def build_stats_table(stats):
     """Build the stats overview table."""
     lines = []
-    lines.append("## 📊 Stats Overview\n")
+    lines.append("## Stats Overview\n")
     lines.append("| Metric | Value |")
     lines.append("|---|---|")
     lines.append(f"| **Total Repositories** | {stats['total']} |")
-    lines.append(f"| **Total Stars** | {stats['total_stars']} ⭐ |")
+    lines.append(f"| **Total Stars** | {stats['total_stars']} |")
     lines.append(f"| **Total Forks** | {stats['total_forks']} |")
     lines.append(f"| **Languages Used** | {stats['languages_used']} |")
-    lines.append(f"| **Top Language** | {stats['top_lang']} ({stats['top_lang_stars']} ⭐, {stats['top_lang_repos']} repos) |")
+    lines.append(f"| **Top Language** | {stats['top_lang']} ({stats['top_lang_stars']} stars, {stats['top_lang_repos']} repos) |")
     lines.append("")
     return "\n".join(lines)
 
@@ -304,7 +323,7 @@ def build_stats_table(stats):
 def build_top10(repos_sorted):
     """Build the top 10 by stars table."""
     lines = []
-    lines.append("## 🥇 Top Projects by Stars\n")
+    lines.append("## Top Projects by Stars\n")
     lines.append("| # | Project | Stars | Forks | Language | Description |")
     lines.append("|---|---|---|---|---|---|")
     for i, r in enumerate(repos_sorted[:10], 1):
@@ -314,7 +333,7 @@ def build_top10(repos_sorted):
         stars = r["stargazers_count"]
         forks = r["forks_count"]
         url = f"https://github.com/{REPO_OWNER}/{name}"
-        lines.append(f"| {i} | [{name}]({url}) | {stars} ⭐ | {forks} | {lang} | {desc} |")
+        lines.append(f"| {i} | [{name}]({url}) | {stars} | {forks} | {lang} | {desc} |")
     lines.append("")
     return "\n".join(lines)
 
@@ -322,7 +341,7 @@ def build_top10(repos_sorted):
 def build_full_table(repos_sorted):
     """Build full repository listing."""
     lines = []
-    lines.append("## 📋 All Repositories\n")
+    lines.append("## All Repositories\n")
     lines.append("| Project | Stars | Forks | Language | Description |")
     lines.append("|---|---|---|---|---|")
 
@@ -333,7 +352,7 @@ def build_full_table(repos_sorted):
         stars = r["stargazers_count"]
         forks = r["forks_count"]
         url = f"https://github.com/{REPO_OWNER}/{name}"
-        lines.append(f"| [{name}]({url}) | {stars} ⭐ | {forks} | {lang} | {desc} |")
+        lines.append(f"| [{name}]({url}) | {stars} | {forks} | {lang} | {desc} |")
 
     lines.append("")
     return "\n".join(lines)
@@ -342,14 +361,14 @@ def build_full_table(repos_sorted):
 def build_language_breakdown(stats):
     """Build language breakdown table."""
     lines = []
-    lines.append("## 🔤 Language Breakdown\n")
+    lines.append("## Language Breakdown\n")
     lines.append("| Language | Repos | Stars |")
     lines.append("|---|---|---|")
 
     sorted_langs = sorted(stats["lang_star_count"].items(), key=lambda x: -x[1])
     for lang, star_count in sorted_langs:
         repo_count = stats["lang_repo_count"].get(lang, 0)
-        star_str = f"{star_count} ⭐" if star_count > 0 else "0"
+        star_str = str(star_count) if star_count > 0 else "0"
         lines.append(f"| {lang} | {repo_count} | {star_str} |")
 
     lines.append("")
@@ -357,15 +376,15 @@ def build_language_breakdown(stats):
 
 
 def main():
-    print("🔄 Fetching repos from GitHub API...")
+    print("Fetching repos from GitHub API...")
     repos = fetch_repos()
-    print(f"   ✓ Found {len(repos)} repos")
+    print(f"   [OK] Found {len(repos)} repos")
 
     repos_sorted = sorted(repos, key=lambda r: -r.get("stargazers_count", 0))
     repos_by_name = {r["name"]: r for r in repos}
 
     stats = compute_stats(repos)
-    print(f"   ✓ Stats computed: {stats['total_stars']} total stars, {stats['languages_used']} languages")
+    print(f"   [OK] Stats computed: {stats['total_stars']} total stars, {stats['languages_used']} languages")
 
     # Build content
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -378,7 +397,7 @@ def main():
     content_parts.append("---")
     content_parts.append("")
     content_parts.append(f"# Projects Dashboard\n")
-    content_parts.append(f"> **Last synced:** {now_utc} — **{stats['total']} repos** · **{stats['total_stars']} total ⭐**\n")
+    content_parts.append(f"> **Last synced:** {now_utc} — **{stats['total']} repos** — **{stats['total_stars']} total stars**\n")
 
     # Featured showcase
     content_parts.append(build_featured_section(repos_by_name))
@@ -397,24 +416,24 @@ def main():
 
     # Footer
     content_parts.append("---")
-    content_parts.append(f"Auto-generated by 🧠 Reva on {now_utc}")
+    content_parts.append(f"Auto-generated by Reva on {now_utc}")
     content_parts.append("")
 
     final_content = "\n".join(content_parts)
 
     with open(OUTPUT_FILE, "w") as f:
         f.write(final_content)
-    print(f"   ✓ Written to {OUTPUT_FILE}")
+    print(f"   [OK] Written to {OUTPUT_FILE}")
 
     # Run build
-    print("\n🔄 Running build.sh...")
+    print("\nRunning build.sh...")
     try:
         subprocess.run(["bash", BUILD_SCRIPT], cwd=KB_DIR, check=True, capture_output=True, text=True)
-        print("   ✓ Build complete")
+        print("   [OK] Build complete")
     except subprocess.CalledProcessError as e:
-        print(f"   ⚠ Build failed: {e.stderr.strip() or e.stdout.strip()}")
+        print(f"   [WARN] Build failed: {e.stderr.strip() or e.stdout.strip()}")
 
-    print("\n✅ Done! PROJECTS.md generated successfully.")
+    print("\n[DONE] PROJECTS.md generated successfully.")
 
 
 if __name__ == "__main__":
