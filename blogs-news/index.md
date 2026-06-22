@@ -9,6 +9,8 @@ Fresh developer & software engineering news — auto-fetched **daily at 8:00 AM 
 
 **Sources:** Hacker News · The Register · InfoQ · Dev.to · GitHub Blog · Stack Overflow Blog · LWN.net
 
+_Last reviewed: 2026-06-22 — daily digest cursor. No new entries ingested since 2026-06-14._
+
 ### June 14, 2026
 
 **[Pyodide 314.0: Python Packages Can Now Publish WebAssembly Wheels Directly to PyPI](news/pyodide-314-webassembly-wheels-pypi/)** — *Pyodide Blog / Hacker News*

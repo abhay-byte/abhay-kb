@@ -533,3 +533,7 @@
 - [vonage-com-careers-job-details-8549501002](source/vonage-com-careers-job-details-8549501002.md)
 - [workforcenow-adp-com-mascsr-default-mdf-recruitment-recruitment-html](source/workforcenow-adp-com-mascsr-default-mdf-recruitment-recruitment-html.md)
 - [zinier-breezy-hr-p-f48bac57162c-sdet-1](source/zinier-breezy-hr-p-f48bac57162c-sdet-1.md)
+
+### 22-06-2026
+
+_Daily sync: 22 jobs expired and removed from jobs.md (posted before 2026-05-22, 30-day rolling window). 97 active listings remain across SE / Internships / Game Dev. No new applications recorded._
