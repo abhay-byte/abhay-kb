@@ -231,6 +231,16 @@ EMOJI_PATTERN = _re.compile(
     ']+'
 )
 
+def md_badge_to_html(md_badge):
+    """Convert a markdown badge [![alt](img)](url) to HTML <a><img/> format."""
+    import re
+    m = re.match(r'\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)', md_badge.strip())
+    if m:
+        alt, img, url = m.group(1), m.group(2), m.group(3)
+        return f'<a href="{url}"><img src="{img}" alt="{alt}"/></a>'
+    return md_badge
+
+
 def clean_str(val):
     """Return string with emojis stripped."""
     if not val:
@@ -246,61 +256,83 @@ def safe_str(val):
 
 
 def build_featured_section(repos_by_name):
-    """Build the featured projects showcase as pure markdown tables."""
+    """Build the featured projects showcase as HTML tables."""
     lines = []
-    lines.append("## Featured Projects\n")
+    lines.append("## Featured Projects")
+    lines.append("")
 
+    # Build individual project rows — narrow tables for each project
+    rows = []
     for key, label, logo, desc, gif_url, screenshot_url, badges in FEATURED:
         repo = repos_by_name.get(key)
         gh_url = f"https://github.com/{REPO_OWNER}/{key}"
 
-        # Skip if repo doesn't exist
         exists = repo is not None
         stars = repo.get("stargazers_count", 0) if exists else 0
         forks = repo.get("forks_count", 0) if exists else 0
-        lang = repo.get("language", "—") if exists else "—"
+        lang = repo.get("language", "") if exists else ""
 
-        # Header with logo
-        logo_html = f'<img src="{logo}" width="28" align="absmiddle" alt="{label}"/> ' if logo else ''
-        lines.append(f"### {logo_html}[{label}]({gh_url})")
-        lines.append("")
+        # Project info column
+        info_parts = []
+
+        # Title with logo
+        logo_img = f'<img src="{logo}" width="24" align="absmiddle" alt=""/> ' if logo else ''
+        info_parts.append(f'<h3>{logo_img}<a href="{gh_url}">{label}</a></h3>')
+
+        # Stats line
+        stat_items = []
+        if stars > 0:
+            stat_items.append(f"<strong>{stars}</strong> stars")
+        if forks > 0:
+            stat_items.append(f"<strong>{forks}</strong> forks")
+        if lang:
+            stat_items.append(lang)
+        if stat_items:
+            info_parts.append(f"<p>{' | '.join(stat_items)}</p>")
 
         # Description
-        lines.append(f"{desc}")
-        lines.append("")
+        info_parts.append(f"<p>{desc}</p>")
 
-        # Stats inline
-        stat_parts = []
+        # Badges (convert any markdown-style badges to HTML)
+        badge_parts = [f'<a href="{gh_url}"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a>']
+        badge_parts.extend(md_badge_to_html(b) for b in badges)
         if stars > 0:
-            stat_parts.append(f"**{stars}** stars")
-        if forks > 0:
-            stat_parts.append(f"**{forks}** forks")
-        if lang and lang != "—":
-            stat_parts.append(f"{lang}")
-        if stat_parts:
-            lines.append(" ".join(stat_parts))
-            lines.append("")
+            badge_parts.append(f'<a href="{gh_url}/stargazers"><img src="https://img.shields.io/github/stars/{REPO_OWNER}/{key}?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a>')
+        info_parts.append(f"<p>{' '.join(badge_parts)}</p>")
 
-        # Badges
-        badge_parts = [f"[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)]({gh_url})"]
-        badge_parts.extend(badges)
-        if stars > 0:
-            badge_parts.append(f"[![Stars](https://img.shields.io/github/stars/{REPO_OWNER}/{key}?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white)]({gh_url}/stargazers)")
-        lines.append(" ".join(badge_parts))
-        lines.append("")
+        info_html = "\n".join(info_parts)
 
-        # Screenshot (if available)
+        # Media column (gif + screenshot)
+        media_parts = []
         if screenshot_url:
-            lines.append(f"![Screenshot - {label}]({screenshot_url})")
-            lines.append("")
-
-        # GIF (if available)
+            media_parts.append(f'<img src="{screenshot_url}" width="100%" alt="Screenshot - {label}"/>')
         if gif_url:
-            lines.append(f"![Demo - {label}]({gif_url})")
-            lines.append("")
+            media_parts.append(f'<img src="{gif_url}" width="100%" alt="{label}"/>')
+        media_html = "\n".join(media_parts) if media_parts else ""
 
-        lines.append("---\n")
+        # Build table row
+        row_content = []
+        row_content.append('<table>')
+        row_content.append('<tr>')
 
+        # Left column: project info
+        row_content.append('<td width="50%" valign="top" style="padding:12px">')
+        row_content.append(info_html)
+        row_content.append('</td>')
+
+        # Right column: media
+        row_content.append('<td width="50%" valign="middle" align="center" style="padding:12px">')
+        if media_html:
+            row_content.append(media_html)
+        row_content.append('</td>')
+
+        row_content.append('</tr>')
+        row_content.append('</table>')
+        row_content.append('')
+
+        rows.append("\n".join(row_content))
+
+    lines.append("\n".join(rows))
     return "\n".join(lines)
 
 
