@@ -302,12 +302,12 @@ def build_featured_section(repos_by_name):
 
         info_html = "\n".join(info_parts)
 
-        # Media column (gif + screenshot)
+        # Media column (gif preferred over screenshot, never both)
         media_parts = []
-        if screenshot_url:
-            media_parts.append(f'<img src="{screenshot_url}" width="100%" alt="Screenshot - {label}"/>')
         if gif_url:
             media_parts.append(f'<img src="{gif_url}" width="100%" alt="{label}"/>')
+        elif screenshot_url:
+            media_parts.append(f'<img src="{screenshot_url}" width="100%" alt="{label}"/>')
         media_html = "\n".join(media_parts) if media_parts else ""
 
         # Build table row

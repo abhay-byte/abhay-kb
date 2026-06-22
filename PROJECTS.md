@@ -5,7 +5,7 @@ title: "Projects Dashboard"
 
 # Projects Dashboard
 
-> **Last synced:** 2026-06-22 17:51 UTC — **92 repos** — **699 total stars**
+> **Last synced:** 2026-06-22 17:52 UTC — **92 repos** — **699 total stars**
 
 ## Featured Projects
 
@@ -46,7 +46,6 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/mkm"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://play.google.com/store/apps/details?id=com.ivarna.mkm"><img src="https://img.shields.io/badge/Play_Store-01875F?style=flat-square&logo=googleplay&logoColor=white" alt="Play Store"/></a> <a href="https://f-droid.org/packages/com.ivarna.mkm"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=flat-square&logo=f-droid&logoColor=white" alt="F-Droid"/></a> <a href="https://github.com/abhay-byte/mkm/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/mkm?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/mkm-screenshot.png" width="100%" alt="Screenshot - MKM"/>
 <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/MKM.gif" width="100%" alt="MKM"/>
 </td>
 </tr>
@@ -117,7 +116,6 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/Adirstat"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://play.google.com/store/apps/details?id=com.ivarna.adirstat"><img src="https://img.shields.io/badge/Play_Store-01875F?style=flat-square&logo=googleplay&logoColor=white" alt="Play Store"/></a> <a href="https://github.com/abhay-byte/Adirstat/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/Adirstat?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/adirstat-feature.png" width="100%" alt="Screenshot - Adirstat"/>
 <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/adirstat.gif" width="100%" alt="Adirstat"/>
 </td>
 </tr>
@@ -132,7 +130,6 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/DeviceInsight"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://github.com/abhay-byte/DeviceInsight/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/DeviceInsight?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/deviceinsight-screenshot.png" width="100%" alt="Screenshot - DeviceInsight"/>
 <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/DeviceInsight.gif" width="100%" alt="DeviceInsight"/>
 </td>
 </tr>
@@ -161,7 +158,6 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/minor-project-gtbit"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://clinicofrontend.onrender.com/"><img src="https://img.shields.io/badge/Website-00C7B7?style=flat-square&logo=react&logoColor=white" alt="Website"/></a> <a href="https://minor-project-gtbit.onrender.com/"><img src="https://img.shields.io/badge/Backend-68A063?style=flat-square&logo=node.js&logoColor=white" alt="Backend"/></a> <a href="https://clinico-ai-service.onrender.com/"><img src="https://img.shields.io/badge/AI-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="AI"/></a> <a href="https://www.figma.com/design/dFDrEe30gtdNb1QFVKWNv2/Clinico---UI-UX"><img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma"/></a> <a href="https://github.com/abhay-byte/minor-project-gtbit/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/minor-project-gtbit?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/clinico-app-screenshot.png" width="100%" alt="Screenshot - Clinico"/>
 <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/clinico.gif" width="100%" alt="Clinico"/>
 </td>
 </tr>
@@ -190,7 +186,7 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/nativecode"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://github.com/abhay-byte/nativecode/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/nativecode?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/NativeCode.png" width="100%" alt="Screenshot - NativeCode"/>
+<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/NativeCode.png" width="100%" alt="NativeCode"/>
 </td>
 </tr>
 </table>
@@ -216,7 +212,7 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/AllWidgets"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/allwidgets-feature.png" width="100%" alt="Screenshot - AllWidgets"/>
+<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/allwidgets-feature.png" width="100%" alt="AllWidgets"/>
 </td>
 </tr>
 </table>
@@ -243,7 +239,7 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/apm"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://github.com/abhay-byte/apm/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/apm?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/apm.jpg" width="100%" alt="Screenshot - APM"/>
+<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/apm.jpg" width="100%" alt="APM"/>
 </td>
 </tr>
 </table>
@@ -257,7 +253,6 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/threejs_portfolio"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://abhay-byte.web.app/"><img src="https://img.shields.io/badge/Website-fabd2f?style=flat-square&logo=three.js&logoColor=282828" alt="Website"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/webgl-screenshot.png" width="100%" alt="Screenshot - ThreeJS Portfolio"/>
 <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/threejs-portfolio.gif" width="100%" alt="ThreeJS Portfolio"/>
 </td>
 </tr>
@@ -286,7 +281,6 @@ title: "Projects Dashboard"
 <p><a href="https://github.com/abhay-byte/webgl-website"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://abhay-raj.web.app/"><img src="https://img.shields.io/badge/Website-fabd2f?style=flat-square&logo=webgl&logoColor=282828" alt="Website"/></a></p>
 </td>
 <td width="50%" valign="middle" align="center" style="padding:12px">
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/webgl-screenshot.png" width="100%" alt="Screenshot - WebGL Website"/>
 <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/webgl.gif" width="100%" alt="WebGL Website"/>
 </td>
 </tr>
@@ -439,4 +433,4 @@ title: "Projects Dashboard"
 | C | 2 | 0 |
 
 ---
-Auto-generated by Reva on 2026-06-22 17:51 UTC
+Auto-generated by Reva on 2026-06-22 17:52 UTC
