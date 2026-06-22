@@ -261,9 +261,8 @@ def build_featured_section(repos_by_name):
         lang = repo.get("language", "—") if exists else "—"
 
         # Header with logo
-        if logo:
-            lines.append(f'<img src="{logo}" width="28" align="absmiddle" alt="{label}"/>')
-        lines.append(f"### [{label}]({gh_url})")
+        logo_html = f'<img src="{logo}" width="28" align="absmiddle" alt="{label}"/> ' if logo else ''
+        lines.append(f"### {logo_html}[{label}]({gh_url})")
         lines.append("")
 
         # Description

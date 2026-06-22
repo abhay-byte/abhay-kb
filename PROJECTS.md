@@ -5,12 +5,11 @@ title: "Projects Dashboard"
 
 # Projects Dashboard
 
-> **Last synced:** 2026-06-22 17:47 UTC — **92 repos** — **699 total stars**
+> **Last synced:** 2026-06-22 17:50 UTC — **92 repos** — **699 total stars**
 
 ## Featured Projects
 
-<img src="https://raw.githubusercontent.com/abhay-byte/fluxlinux/main/assets/logo/logo.webp" width="28" align="absmiddle" alt="FluxLinux"/>
-### [FluxLinux](https://github.com/abhay-byte/fluxlinux)
+### <img src="https://raw.githubusercontent.com/abhay-byte/fluxlinux/main/assets/logo/logo.webp" width="28" align="absmiddle" alt="FluxLinux"/> [FluxLinux](https://github.com/abhay-byte/fluxlinux)
 
 Run full Linux desktop environments on Android with GPU acceleration and dev stacks.
 
@@ -22,8 +21,7 @@ Run full Linux desktop environments on Android with GPU acceleration and dev sta
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/finalbenchmark-platform/main/assets/logo_2.png" width="28" align="absmiddle" alt="FinalBenchmark 2"/>
-### [FinalBenchmark 2](https://github.com/abhay-byte/finalbenchmark-platform)
+### <img src="https://raw.githubusercontent.com/abhay-byte/finalbenchmark-platform/main/assets/logo_2.png" width="28" align="absmiddle" alt="FinalBenchmark 2"/> [FinalBenchmark 2](https://github.com/abhay-byte/finalbenchmark-platform)
 
 Comprehensive CPU benchmarking app with 10+ tests and thermal management.
 
@@ -35,8 +33,7 @@ Comprehensive CPU benchmarking app with 10+ tests and thermal management.
 
 ---
 
-<img src="https://github.com/abhay-byte/mkm/raw/main/assets/logo.png" width="28" align="absmiddle" alt="MKM"/>
-### [MKM](https://github.com/abhay-byte/mkm)
+### <img src="https://github.com/abhay-byte/mkm/raw/main/assets/logo.png" width="28" align="absmiddle" alt="MKM"/> [MKM](https://github.com/abhay-byte/mkm)
 
 Minimal Kernel Manager for persistent swap management with Shizuku support.
 
@@ -50,8 +47,7 @@ Minimal Kernel Manager for persistent swap management with Shizuku support.
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/nexus-logo.png" width="28" align="absmiddle" alt="Nexus Terminal"/>
-### [Nexus Terminal](https://github.com/abhay-byte/nexus)
+### <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/nexus-logo.png" width="28" align="absmiddle" alt="Nexus Terminal"/> [Nexus Terminal](https://github.com/abhay-byte/nexus)
 
 Multi-agent AI terminal workspace — run Claude Code, Codex CLI, Gemini CLI, Qwen, Aider, and more side-by-side.
 
@@ -63,8 +59,7 @@ Multi-agent AI terminal workspace — run Claude Code, Codex CLI, Gemini CLI, Qw
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/threejs_portfolio/main/public/images/fantasy-racing-icon.png" width="28" align="absmiddle" alt="Fantasy Racing"/>
-### [Fantasy Racing](https://github.com/abhay-byte/planet-racing)
+### <img src="https://raw.githubusercontent.com/abhay-byte/threejs_portfolio/main/public/images/fantasy-racing-icon.png" width="28" align="absmiddle" alt="Fantasy Racing"/> [Fantasy Racing](https://github.com/abhay-byte/planet-racing)
 
 High-speed futuristic racing game with diverse planets, strategic challenges, and immersive gameplay.
 
@@ -76,8 +71,7 @@ C#
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/threejs_portfolio/main/public/images/xirsia-icon.png" width="28" align="absmiddle" alt="Story of Xirsia"/>
-### [Story of Xirsia](https://github.com/abhay-byte/Saiko-no-senshi-0.1v)
+### <img src="https://raw.githubusercontent.com/abhay-byte/threejs_portfolio/main/public/images/xirsia-icon.png" width="28" align="absmiddle" alt="Story of Xirsia"/> [Story of Xirsia](https://github.com/abhay-byte/Saiko-no-senshi-0.1v)
 
 2D Role Playing Game set in Medieval age with a massive 25km² open world of Xirsia Isle to explore.
 
@@ -89,8 +83,7 @@ C#
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/phonefinder-logo.png" width="28" align="absmiddle" alt="Phone Finder Hub"/>
-### [Phone Finder Hub](https://github.com/abhay-byte/phone_finder_hub)
+### <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/phonefinder-logo.png" width="28" align="absmiddle" alt="Phone Finder Hub"/> [Phone Finder Hub](https://github.com/abhay-byte/phone_finder_hub)
 
 Data-driven smartphone comparison platform built with Laravel. Identify best value-for-money devices via objective performance benchmarks vs current market prices.
 
@@ -102,8 +95,7 @@ Blade
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/adirstat-icon.png" width="28" align="absmiddle" alt="Adirstat"/>
-### [Adirstat](https://github.com/abhay-byte/Adirstat)
+### <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/adirstat-icon.png" width="28" align="absmiddle" alt="Adirstat"/> [Adirstat](https://github.com/abhay-byte/Adirstat)
 
 Android Disk Space Analyzer (WizTree/WinDirStat equivalent).
 
@@ -117,8 +109,7 @@ Android Disk Space Analyzer (WizTree/WinDirStat equivalent).
 
 ---
 
-<img src="https://github.com/abhay-byte/DeviceInsight/raw/master/assets/logo.webp" width="28" align="absmiddle" alt="DeviceInsight"/>
-### [DeviceInsight](https://github.com/abhay-byte/DeviceInsight)
+### <img src="https://github.com/abhay-byte/DeviceInsight/raw/master/assets/logo.webp" width="28" align="absmiddle" alt="DeviceInsight"/> [DeviceInsight](https://github.com/abhay-byte/DeviceInsight)
 
 Premium system monitoring with glassmorphism UI and real-time analytics for CPU, RAM, Storage, Network, and Battery.
 
@@ -144,8 +135,7 @@ C#
 
 ---
 
-<img src="https://github.com/abhay-byte/minor-project-gtbit/raw/main/assets/logo/Clinico%20Logo.png" width="28" align="absmiddle" alt="Clinico"/>
-### [Clinico](https://github.com/abhay-byte/minor-project-gtbit)
+### <img src="https://github.com/abhay-byte/minor-project-gtbit/raw/main/assets/logo/Clinico%20Logo.png" width="28" align="absmiddle" alt="Clinico"/> [Clinico](https://github.com/abhay-byte/minor-project-gtbit)
 
 AI-powered healthcare platform with 24/7 AI companion, telehealth, and hyperlocal clinic discovery.
 
@@ -159,8 +149,7 @@ AI-powered healthcare platform with 24/7 AI companion, telehealth, and hyperloca
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/warden-protocol/refs/heads/master/assets/icon.png" width="28" align="absmiddle" alt="Warden Protocol"/>
-### [Warden Protocol](https://github.com/abhay-byte/warden-protocol)
+### <img src="https://raw.githubusercontent.com/abhay-byte/warden-protocol/refs/heads/master/assets/icon.png" width="28" align="absmiddle" alt="Warden Protocol"/> [Warden Protocol](https://github.com/abhay-byte/warden-protocol)
 
 Single-player Android strategy game where you act as bunker intelligence for survivors.
 
@@ -172,8 +161,7 @@ Single-player Android strategy game where you act as bunker intelligence for sur
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/nativecode/master/assets/logo/logo.webp" width="28" align="absmiddle" alt="NativeCode"/>
-### [NativeCode](https://github.com/abhay-byte/nativecode)
+### <img src="https://raw.githubusercontent.com/abhay-byte/nativecode/master/assets/logo/logo.webp" width="28" align="absmiddle" alt="NativeCode"/> [NativeCode](https://github.com/abhay-byte/nativecode)
 
 Local AI development environment on Android — run LLMs, code editors, and dev tools on-device.
 
@@ -185,8 +173,7 @@ Local AI development environment on Android — run LLMs, code editors, and dev 
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/TaskStack/main/assets/images/app_icon.png" width="28" align="absmiddle" alt="TaskStack"/>
-### [TaskStack](https://github.com/abhay-byte/TaskStack)
+### <img src="https://raw.githubusercontent.com/abhay-byte/TaskStack/main/assets/images/app_icon.png" width="28" align="absmiddle" alt="TaskStack"/> [TaskStack](https://github.com/abhay-byte/TaskStack)
 
 Next-generation daily task management app with a 24-hour visual timeline and life analytics.
 
@@ -196,8 +183,7 @@ Next-generation daily task management app with a 24-hour visual timeline and lif
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/allwidgets-icon.png" width="28" align="absmiddle" alt="AllWidgets"/>
-### [AllWidgets](https://github.com/abhay-byte/AllWidgets)
+### <img src="https://raw.githubusercontent.com/abhay-byte/abhay-byte/main/assets/allwidgets-icon.png" width="28" align="absmiddle" alt="AllWidgets"/> [AllWidgets](https://github.com/abhay-byte/AllWidgets)
 
 Widget suite with polished home-screen experiences for multiple device skins.
 
@@ -207,8 +193,7 @@ Widget suite with polished home-screen experiences for multiple device skins.
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/truvalt/main/assets/truvalt_icon.png" width="28" align="absmiddle" alt="Truvalt"/>
-### [Truvalt](https://github.com/abhay-byte/truvalt)
+### <img src="https://raw.githubusercontent.com/abhay-byte/truvalt/main/assets/truvalt_icon.png" width="28" align="absmiddle" alt="Truvalt"/> [Truvalt](https://github.com/abhay-byte/truvalt)
 
 Secure, self-hostable, zero-knowledge password manager for Android and web.
 
@@ -230,8 +215,7 @@ Android package manager — install, batch-install, and manage APKs on Android d
 
 ---
 
-<img src="https://raw.githubusercontent.com/abhay-byte/my-portfolio/main/public/favicon.ico" width="28" align="absmiddle" alt="ThreeJS Portfolio"/>
-### [ThreeJS Portfolio](https://github.com/abhay-byte/threejs_portfolio)
+### <img src="https://raw.githubusercontent.com/abhay-byte/my-portfolio/main/public/favicon.ico" width="28" align="absmiddle" alt="ThreeJS Portfolio"/> [ThreeJS Portfolio](https://github.com/abhay-byte/threejs_portfolio)
 
 Interactive 3D portfolio website built with Three.js (React Three Fiber).
 
@@ -418,4 +402,4 @@ C#
 | C | 2 | 0 |
 
 ---
-Auto-generated by Reva on 2026-06-22 17:47 UTC
+Auto-generated by Reva on 2026-06-22 17:50 UTC
