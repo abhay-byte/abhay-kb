@@ -5,7 +5,7 @@ title: Models Reference
 
 # Models Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-21 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-23 | Auto-synced daily</div>
 
 API pricing, context windows, and SWE-Bench scores for coding AI models.  
 Compiled June 2026.
@@ -16,7 +16,7 @@ Compiled June 2026.
 </defs>
 
 <text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 21 2026</text>
+<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 23 2026</text>
 
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.9189" x2="750" y2="413.9189"/>
@@ -530,8 +530,10 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 |-----------|------|
 | opencode-go/glm-5 | GLM-5 |
 | opencode-go/glm-5.1 | GLM-5.1 |
+| opencode-go/glm-5.2 | GLM-5.2 |
 | opencode-go/kimi-k2.5 | Kimi K2.5 |
 | opencode-go/kimi-k2.6 | Kimi K2.6 (3x limits) |
+| opencode-go/kimi-k2.7-code | Kimi K2.7 Code |
 | opencode-go/deepseek-v4-pro | DeepSeek V4 Pro |
 | opencode-go/deepseek-v4-flash | DeepSeek V4 Flash |
 | opencode-go/mimo-v2-omni | MiMo V2 Omni |

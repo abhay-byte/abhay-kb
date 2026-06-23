@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Models Reference | Abhay's Knowledge Base</title>
+  <title>Models Reference | My personal projects and notes</title>
   <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
   <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
   <style>
     /* ══════════════════════════════════════════════
-       SHARED LAYOUT — matches _layouts/standalone.html
+       SHARED LAYOUT — standalone.html
        Used by: index.html, PROJECTS.md, LLM/*.md
        Hamburger sidebar works on ALL pages via this layout.
        ══════════════════════════════════════════════ */
@@ -28,8 +28,9 @@
 
     .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
 
+    /* ─── Top Bar — visible only on mobile (≤800px) ─── */
     .topbar {
-      display: none;
+      display: none;                      /* hidden on desktop */
       position: fixed; top: 0; left: 0; right: 0;
       height: 52px;
       background: #0d0d0d;
@@ -44,6 +45,7 @@
     }
     .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
 
+    /* ─── Sidebar Overlay — dark backdrop when sidebar is open on mobile ─── */
     .sidebar-overlay {
       display: none;
       position: fixed; inset: 0;
@@ -52,6 +54,7 @@
     }
     .sidebar-overlay.active { display: block; }
 
+    /* ─── Sidebar (desktop: sticky, mobile: slides in) ─── */
     .sidebar {
       width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
       position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
@@ -59,7 +62,6 @@
     .sidebar::-webkit-scrollbar { width: 4px; }
     .sidebar::-webkit-scrollbar-track { background: transparent; }
     .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
-    }
     .sidebar h1 {
       font-size: 22px; font-weight: 700; color: #fff;
       margin-bottom: 4px;
@@ -74,6 +76,7 @@
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
 
+    /* Section labels (e.g. "🤖 LLM") + indented sub-items */
     .nav-section-label {
       font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
       color: #666; padding: 12px 12px 4px; margin-top: 4px;
@@ -94,16 +97,57 @@
     .main-content td { color: #ccc; }
     .main-content tr:hover td { background: rgba(255,255,255,0.02); }
     .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
-    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
-    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content pre {
+      background: #111122;
+      border: 1px solid #2a2a55;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+    .main-content pre code {
+      background: transparent;
+      color: #c8c8e8;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .main-content pre code .prompt { color: #6a9955; }
+    .main-content .diagram {
+      background: #0a0a1a;
+      border: 1px solid #1a1a3e;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #8888cc;
+      overflow-x: auto;
+      white-space: pre;
+    }
     .main-content img { max-width: 100%; border-radius: 6px; }
     .main-content figure { margin-bottom: 24px; }
     .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
-    .main-content em { color: #999; }
-    .main-content strong { color: #fff; }
 
-    /* Install cards */
-    .install-card {
+    /* Project cards (used on index, shared style) */
+    .project-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 16px 0;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .project-card:hover { border-color: rgba(250,189,47,0.25); background: rgba(255,255,255,0.015); }
+    .project-card h3 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .project-card p { font-size: 14px; color: #999; line-height: 1.5; margin-bottom: 12px; }
+    .project-card .links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .project-card .links img { height: 28px; border-radius: 4px; }
+
+
+.install-card {
       background: #111;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 8px;
@@ -152,6 +196,15 @@
     .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
     .copy-btn.copied { border-color: #34a853; color: #34a853; }
 
+        .stats-section { text-align: center; margin: 32px 0; }
+    .stats-section img { max-width: 100%; margin: 12px 0; border-radius: 6px; }
+
+    /* ─── Responsive: Mobile / Portrait (≤800px) ───
+         - Top bar with hamburger appears
+         - Sidebar slides in from left (hidden by default)
+         - Dark overlay behind sidebar
+         - Tap overlay or hamburger to close
+         ─────────────────────────────────────────── */
     @media (max-width: 800px) {
       .topbar { display: flex; }
       .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
@@ -159,7 +212,7 @@
       .sidebar {
         position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
         z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
-        padding: 24px 20px; overflow-y: auto;
+        padding: 24px 20px; overflow-y: auto; overflow-y: auto;
         transition: left 0.25s ease;
         align-self: auto; sticky: unset;
       }
@@ -173,11 +226,13 @@
   </style>
 </head>
 <body>
+  <!-- Mobile top bar — visible on all pages in portrait mode -->
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
-    <span class="topbar-title">Models</span>
+    <span class="topbar-title">Abhay's Knowledge Base</span>
   </div>
 
+  <!-- Dark overlay behind sidebar (mobile only) -->
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
   <div class="page-wrapper">
@@ -209,38 +264,30 @@
         <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
         <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
         <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <!-- LLM dropdown section -->
         <div class="nav-section-label">LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
         <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
         <div class="nav-section-label">AI Tools</div>
         <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
-        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
-        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
-        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
-        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
-        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/AI-Tools/tools" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs & News</div>
         <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
         <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
         <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
       </nav>
     </aside>
     <main class="main-content">
-<h1>Models Reference</h1>
-
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-21 | Auto-synced daily</div>
-
-<p>API pricing, context windows, and SWE-Bench scores for coding AI models.  
-Compiled June 2026.</p>
-
+      <h1>Models Reference</h1>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-23 | Auto-synced daily</div><p>API pricing, context windows, and SWE-Bench scores for coding AI models.<br>Compiled June 2026.</p>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
   <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
-</defs>
-
-<text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text>
-<text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 21 2026</text>
-
+</defs><p><text x="400.0" y="28" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">SWE-Bench Verified vs Input Price (June 2026)</text><br><text x="400.0" y="46" text-anchor="middle" fill="#666" font-size="11">Source: marc0.dev leaderboard · Updated June 23 2026</text></p>
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="413.9189" x2="750" y2="413.9189"/>
   <text x="65" y="417.9189" text-anchor="end" fill="#555" font-size="11">70%</text>
@@ -328,16 +375,10 @@ Compiled June 2026.</p>
 <text x="432.1928094887362" y="283.27041999999994" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Qwen 3.7 Max</text>
 <circle cx="226.30344058337937" cy="296.1488" r="5.5" fill="#7b2d8e" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="226.30344058337937" y="282.1488" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiniMax M3</text>
-</svg>
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
+</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
   <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
-</defs>
-
-<text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (June 2026)</text>
-<text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 21 2026</text>
-
+</defs><p><text x="360.0" y="28" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">SWE-Bench Pro vs Input Price (June 2026)</text><br><text x="360.0" y="44" text-anchor="middle" fill="#666" font-size="11">Harder benchmark — tests multi-language, multi-step repo tasks · Source: marc0.dev + Scale SEAL · Updated June 21 2026</text></p>
 <g stroke="rgba(255,255,255,0.07)" stroke-width="1">
   <line x1="75" y1="400" x2="670" y2="400"/>
   <text x="65" y="404" text-anchor="end" fill="#555" font-size="11">50%</text>
@@ -411,15 +452,11 @@ Compiled June 2026.</p>
 <text x="226.30344058337937" y="314.5" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiniMax M3</text>
 <circle cx="379.90873060740034" cy="337.90000000000003" r="6" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="379.90873060740034" y="355.90000000000003" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">DeepSeek V4 Pro</text>
-</svg>
-
-<hr>
-
-<h2 id="anthropic-claude">Anthropic (Claude)</h2>
-
+</svg><hr>
+<h2>Anthropic (Claude)</h2>
 <p>Current as of June 2026. Source: <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com</a></p>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -429,7 +466,8 @@ Compiled June 2026.</p>
 <th>1h Cache Writes</th>
 <th>Cache Hits</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Fable 5</td>
 <td>$10.00</td>
 <td>$50.00</td>
@@ -510,22 +548,14 @@ Compiled June 2026.</p>
 <td>—</td>
 <td>—</td>
 </tr>
-</table>
-
-<p>Fable 5 (Jun 2026): Next-gen Anthropic flagship, $10/$50 per MTok. Limited availability.
-Mythos 5 (Jun 2026): Premium reasoning tier at $10/$50 per MTok. Also limited availability.
-Opus 4.8 (May 28 2026): 88.6% SWE-Bench Verified (#2). Opus 4.7: 87.6%, 64.3% SWE-Bench Pro (#1). Opus 4.5: 80.9%. Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.
-Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Verified (#1) — very expensive, limited API access.</p>
-
+</tbody></table>
+<p>Fable 5 (Jun 2026): Next-gen Anthropic flagship, $10/$50 per MTok. Limited availability.<br>Mythos 5 (Jun 2026): Premium reasoning tier at $10/$50 per MTok. Also limited availability.<br>Opus 4.8 (May 28 2026): 88.6% SWE-Bench Verified (#2). Opus 4.7: 87.6%, 64.3% SWE-Bench Pro (#1). Opus 4.5: 80.9%. Opus 4.6: 80.8%. Sonnet 4.6: 79.6%.<br>Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Verified (#1) — very expensive, limited API access.</p>
 <hr>
-
-<h2 id="google-gemini">Google Gemini</h2>
-
+<h2>Google Gemini</h2>
 <p>Current as of June 2026. Source: <a href="https://ai.google.dev/gemini-api/docs/pricing">ai.google.dev</a>, <a href="https://www.swebench.com/">SWE-Bench</a></p>
-
 <h3>Current Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -536,11 +566,12 @@ Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Veri
 <th>SWE-Bench Verified</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Gemini 3.1 Pro Preview</td>
-<td>$2.00 ($4.00 >200K)</td>
-<td>$12.00 ($18.00 >200K)</td>
-<td>$0.20 ($0.40 >200K)</td>
+<td>$2.00 ($4.00 &gt;200K)</td>
+<td>$12.00 ($18.00 &gt;200K)</td>
+<td>$0.20 ($0.40 &gt;200K)</td>
 <td>2M</td>
 <td>16K</td>
 <td><strong>80.6%</strong></td>
@@ -578,8 +609,8 @@ Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Veri
 </tr>
 <tr>
 <td>Gemini 2.5 Pro</td>
-<td>$1.25 ($2.50 >200K)</td>
-<td>$10.00 ($15.00 >200K)</td>
+<td>$1.25 ($2.50 &gt;200K)</td>
+<td>$10.00 ($15.00 &gt;200K)</td>
 <td>—</td>
 <td>2M</td>
 <td>64K</td>
@@ -606,17 +637,17 @@ Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Veri
 <td>—</td>
 <td>Lowest-cost current Gemini route</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Batch / Flex Pricing (50% off)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Batch Input /1M</th>
 <th>Batch Output /1M</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Gemini 3.1 Pro (≤200K)</td>
 <td>$1.00</td>
 <td>$6.00</td>
@@ -651,44 +682,33 @@ Mythos Preview: Research-only preview at $25/$125 per MTok. 93.9% SWE-Bench Veri
 <td>$0.05</td>
 <td>$0.20</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Deprecated</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
 <th>Output /1M</th>
 <th>Note</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Gemini 2.0 Flash</td>
 <td>$0.10</td>
 <td>$0.40</td>
 <td>Retired June 1 2026 — shutdown complete</td>
 </tr>
-</table>
-
-<p>Gemini 3.1 Pro is a preview model (restrictive rate limits). Free tier available for development and small projects.
-Gemini 3.5 Flash GA May 19 2026 — fast, high-volume tier at 25% less than 3.1 Pro. 76.2% Terminal-Bench 2.1, 83.6% MCP Atlas, 84.2% CharXiv Reasoning.
-Gemini 3 Flash Preview is a budget-friendly general-purpose model ($0.50/$3.00 per MTok).
-Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Opus 4.6 (80.8%) and DeepSeek V4 Flash (79%).</p>
-
+</tbody></table>
+<p>Gemini 3.1 Pro is a preview model (restrictive rate limits). Free tier available for development and small projects.<br>Gemini 3.5 Flash GA May 19 2026 — fast, high-volume tier at 25% less than 3.1 Pro. 76.2% Terminal-Bench 2.1, 83.6% MCP Atlas, 84.2% CharXiv Reasoning.<br>Gemini 3 Flash Preview is a budget-friendly general-purpose model ($0.50/$3.00 per MTok).<br>Gemini 3.1 Pro scores 80.6% on SWE-Bench Verified — competitive with Claude Opus 4.6 (80.8%) and DeepSeek V4 Flash (79%).</p>
 <hr>
-
-<h2 id="deepseek">DeepSeek</h2>
-
+<h2>DeepSeek</h2>
 <p>Current as of June 2026. Source: <a href="https://api-docs.deepseek.com/quick_start/pricing/">api-docs.deepseek.com</a></p>
-
-<p>DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.
-SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro standard pricing at $0.435/$0.87 per MTok.</p>
-
+<p>DeepSeek V4 is the current flagship, launched March 2026. 671B total params, 37B active MoE, 1M context.<br>SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default workhorse; V4 Pro standard pricing at $0.435/$0.87 per MTok.</p>
 <h3>New: DeepSeek V4 Pro Max</h3>
-
 <p>Released Apr 24 2026. 1.6T params, 49B active MoE, 1M context, open-weight on HuggingFace. 80.6% SWE-Bench Verified. Available at V4 Pro pricing (same API endpoint).</p>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Cache Hit Input /1M</th>
@@ -697,7 +717,8 @@ SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default wor
 <th>Context</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>deepseek-v4-flash</td>
 <td>$0.0028</td>
 <td>$0.14</td>
@@ -713,15 +734,11 @@ SWE-Bench Verified: V4 Pro Max 80.6%, V4 Flash ~79%. V4 Flash is the default wor
 <td>1M</td>
 <td>Standard pricing. 1.6T params. 80.6% SWE-Bench Verified</td>
 </tr>
-</table>
-
-<p>Cache hit prices reduced to 1/10 of launch price from Apr 26 2026.
-Older aliases <code>deepseek-chat</code> and <code>deepseek-reasoner</code> map to V4 Flash (non-thinking / thinking) and retire after Jul 24 2026.
-New accounts get 5M free tokens.</p>
-
+</tbody></table>
+<p>Cache hit prices reduced to 1/10 of launch price from Apr 26 2026.<br>Older aliases <code>deepseek-chat</code> and <code>deepseek-reasoner</code> map to V4 Flash (non-thinking / thinking) and retire after Jul 24 2026.<br>New accounts get 5M free tokens.</p>
 <h3>Legacy Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -730,7 +747,8 @@ New accounts get 5M free tokens.</p>
 <th>Context</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>DeepSeek V3.2 (Chat)</td>
 <td>$0.28</td>
 <td>$0.42</td>
@@ -746,20 +764,14 @@ New accounts get 5M free tokens.</p>
 <td>128K</td>
 <td>Dedicated reasoning model</td>
 </tr>
-</table>
-
-<p>DeepSeek V3.2: 73.0% SWE-Bench Verified. R1: chain-of-thought reasoning, ~96% cheaper than OpenAI o1.
-DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
-
+</tbody></table>
+<p>DeepSeek V3.2: 73.0% SWE-Bench Verified. R1: chain-of-thought reasoning, ~96% cheaper than OpenAI o1.<br>DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <hr>
-
-<h2 id="openai-chatgpt">OpenAI (ChatGPT)</h2>
-
+<h2>OpenAI (ChatGPT)</h2>
 <p>Current as of June 2026. Source: <a href="https://openai.com/api/pricing/">openai.com/api/pricing</a></p>
-
 <h3>GPT-5 Family (Current Flagship)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -768,7 +780,8 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <th>Context</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GPT-5.5 (≤272K)</td>
 <td>$5.00</td>
 <td>$30.00</td>
@@ -777,12 +790,12 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <td><strong>88.7% SWE-Bench Verified</strong> (#1), <strong>58.6% SWE-Bench Pro</strong>. Flagship reasoning + coding</td>
 </tr>
 <tr>
-<td>GPT-5.5 (>272K)</td>
+<td>GPT-5.5 (&gt;272K)</td>
 <td>$10.00</td>
 <td>$45.00</td>
 <td>$1.00</td>
 <td>1M</td>
-<td>Long context tier >272K tokens</td>
+<td>Long context tier &gt;272K tokens</td>
 </tr>
 <tr>
 <td>GPT-5.5 Pro</td>
@@ -801,12 +814,12 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <td>~80% SWE-Bench Verified. 59.1% SWE-Bench Pro</td>
 </tr>
 <tr>
-<td>GPT-5.4 (>272K)</td>
+<td>GPT-5.4 (&gt;272K)</td>
 <td>$5.00</td>
 <td>$22.50</td>
 <td>$0.50</td>
 <td>1M</td>
-<td>Long context tier >272K tokens</td>
+<td>Long context tier &gt;272K tokens</td>
 </tr>
 <tr>
 <td>GPT-5.4 Mini</td>
@@ -832,11 +845,10 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <td>400K</td>
 <td><strong>85.0% SWE-Bench Verified</strong> (#3). 56.8% SWE-Bench Pro. Coding specialist</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>GPT-4.1 Family (Production Workhorse)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -845,7 +857,8 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <th>Context</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GPT-4.1</td>
 <td>$2.00</td>
 <td>$8.00</td>
@@ -869,11 +882,10 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <td>1M</td>
 <td>Cheapest OpenAI model. Classification, extraction, routing</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>o-Series (Reasoning Models)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -882,7 +894,8 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <th>Context</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>o4-mini</td>
 <td>$1.10</td>
 <td>$4.40</td>
@@ -898,20 +911,14 @@ DeepSeek web chat at chat.deepseek.com is free for individual users.</p>
 <td>—</td>
 <td>Flagship reasoning. Chain-of-thought built in</td>
 </tr>
-</table>
-
-<p>Batch API saves 50% on all models. Prompt caching discounts: up to 90% off (GPT-5.5), 75% off (GPT-4.1).
-GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro (xHigh). GPT-5.5 Pro tier ($30/$180) is available for research-grade problems. GPT-5.3 Codex scores 85.0% SWE-Bench Verified and 56.8% SWE-Bench Pro. GPT-4.1 is OpenAI's recommended production default for most workloads.</p>
-
+</tbody></table>
+<p>Batch API saves 50% on all models. Prompt caching discounts: up to 90% off (GPT-5.5), 75% off (GPT-4.1).<br>GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores ~80% SWE-Bench Verified and 59.1% SWE-Bench Pro (xHigh). GPT-5.5 Pro tier ($30/$180) is available for research-grade problems. GPT-5.3 Codex scores 85.0% SWE-Bench Verified and 56.8% SWE-Bench Pro. GPT-4.1 is OpenAI&#39;s recommended production default for most workloads.</p>
 <hr>
-
-<h2 id="minimax">MiniMax</h2>
-
+<h2>MiniMax</h2>
 <p>Current as of June 2026. Source: <a href="https://platform.minimax.io/docs/pricing/overview">platform.minimax.io</a>, <a href="https://openrouter.ai/minimax/minimax-m2.7">OpenRouter</a></p>
-
 <h3>Coding Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -922,7 +929,8 @@ GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores 
 <th>Speed</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>M3 (≤512K)</td>
 <td>$0.30 (permanent 50% off, was $0.60)</td>
 <td>$1.20 (permanent 50% off, was $2.40)</td>
@@ -933,7 +941,7 @@ GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores 
 <td>Permanent 50% off. $0.06/M cached read</td>
 </tr>
 <tr>
-<td>M3 (>512K)</td>
+<td>M3 (&gt;512K)</td>
 <td>$0.60 (permanent 50% off, was $1.20)</td>
 <td>$2.40 (permanent 50% off, was $4.80)</td>
 <td>512K+</td>
@@ -972,21 +980,18 @@ GPT-5.5 scores 88.7% SWE-Bench Verified and 58.6% SWE-Bench Pro. GPT-5.4 scores 
 <td>~100 TPS</td>
 <td>Legacy. Priority scheduling</td>
 </tr>
-</table>
-
-<p>M2.5 Standard: Still one of the best value coding models at $0.30/$1.20. Near Claude Opus 4.6 (80.8%).
-M3: Latest generation. $0.30/$1.20 (≤512K, permanent 50% off list $0.60/$2.40). $0.60/$2.40 (>512K, also permanent 50% off list $1.20/$4.80). Supports >512K context via Priority tier.
-OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3 ~3,000 req/5h.</p>
-
+</tbody></table>
+<p>M2.5 Standard: Still one of the best value coding models at $0.30/$1.20. Near Claude Opus 4.6 (80.8%).<br>M3: Latest generation. $0.30/$1.20 (≤512K, permanent 50% off list $0.60/$2.40). $0.60/$2.40 (&gt;512K, also permanent 50% off list $1.20/$4.80). Supports &gt;512K context via Priority tier.<br>OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3 ~3,000 req/5h.</p>
 <h3>Subscription Plans</h3>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
 <th>Description</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Token Plan</td>
 <td>Subscription</td>
 <td>Quotas for individual builders and Teams</td>
@@ -1001,19 +1006,14 @@ OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3
 <td>Per-token</td>
 <td>Standard API endpoint billing</td>
 </tr>
-</table>
-
+</tbody></table>
 <hr>
-
-<h2 id="qwen-alibaba">Qwen (Alibaba)</h2>
-
+<h2>Qwen (Alibaba)</h2>
 <p>Current as of June 2026. Source: <a href="https://www.alibabacloud.com/help/en/model-studio/model-pricing">DashScope direct pricing</a></p>
-
-<h3>Current Gen (Qwen3.7 & Qwen3.6)</h3>
-
-<p>#### Qwen3.7 (Latest — May 2026)</p>
-
+<h3>Current Gen (Qwen3.7 &amp; Qwen3.6)</h3>
+<h4>Qwen3.7 (Latest — May 2026)</h4>
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -1021,7 +1021,8 @@ OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3
 <th>Context</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Qwen3.7 Max</td>
 <td>$2.50</td>
 <td>$7.50</td>
@@ -1035,13 +1036,11 @@ OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3
 <td>1M</td>
 <td>Multimodal (vision + text) variant. Announced May 21 2026.</td>
 </tr>
-</table>
-
-<p>Qwen3.7 Max (May 20-21 2026): Alibaba's newest flagship, announced at Alibaba Cloud Summit. $2.50/$7.50 per MTok — ~6x cheaper than Claude Opus 4.7. 1M context. Terminal-Bench Hard: 50.8%. MCP-Atlas: 76.4. Anthropic API protocol support means it works as a drop-in Claude Code backend. Open-weight variants expected June/July 2026 following Qwen3.6 release pattern.</p>
-
-<p>#### Qwen3.6</p>
-
+</tbody></table>
+<p>Qwen3.7 Max (May 20-21 2026): Alibaba&#39;s newest flagship, announced at Alibaba Cloud Summit. $2.50/$7.50 per MTok — ~6x cheaper than Claude Opus 4.7. 1M context. Terminal-Bench Hard: 50.8%. MCP-Atlas: 76.4. Anthropic API protocol support means it works as a drop-in Claude Code backend. Open-weight variants expected June/July 2026 following Qwen3.6 release pattern.</p>
+<h4>Qwen3.6</h4>
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -1050,7 +1049,8 @@ OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3
 <th>SWE-Bench</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Qwen3.6 Plus</td>
 <td>$0.325</td>
 <td>$1.95</td>
@@ -1074,15 +1074,11 @@ OpenCode Go estimates: M2.5 ~6,300 req/5h (legacy price), M2.7 ~3,400 req/5h, M3
 <td><strong>SWE-Bench Pro #1</strong></td>
 <td>Apr 20 2026. Closed-weights flagship. Leads SWE-Bench Pro, Terminal-Bench 2.0, SkillsBench, SciCode</td>
 </tr>
-</table>
-
-<p>Qwen3.6 Plus: 78.8% SWE-Bench Verified — within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).
-Qwen3.6-27B (dense, Apache 2.0): 77.2% SWE-Bench Verified — strong self-hosting option.
-Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.80 per MTok. 256K context. 57.3% SWE-Bench Pro — surpasses GPT-5.3-Codex (56.8%) and MiMo-V2.5-Pro (57.2%). Tops SWE-Bench Pro + 5 other coding benchmarks (Terminal-Bench 2.0, SkillsBench, QwenClawBench, QwenWebBench, SciCode) at launch.</p>
-
+</tbody></table>
+<p>Qwen3.6 Plus: 78.8% SWE-Bench Verified — within 2 points of Claude Opus 4.6 (80.8%) at 1/30th the input price. 1M native context, 65K max output. Reasoning enabled by default (no mode toggle).<br>Qwen3.6-27B (dense, Apache 2.0): 77.2% SWE-Bench Verified — strong self-hosting option.<br>Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.80 per MTok. 256K context. 57.3% SWE-Bench Pro — surpasses GPT-5.3-Codex (56.8%) and MiMo-V2.5-Pro (57.2%). Tops SWE-Bench Pro + 5 other coding benchmarks (Terminal-Bench 2.0, SkillsBench, QwenClawBench, QwenWebBench, SciCode) at launch.</p>
 <h3>Previous Gen (Qwen3.5)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -1090,7 +1086,8 @@ Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.
 <th>Context</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Qwen3.5 Plus</td>
 <td>$0.40 ($0.115 Global)</td>
 <td>$2.40 ($0.688 Global)</td>
@@ -1104,18 +1101,18 @@ Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.
 <td>262K</td>
 <td>Open-weight MoE flagship</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Qwen-Max (Legacy Flagship)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
 <th>Output /1M</th>
 <th>Context</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>qwen3-max (0-32K)</td>
 <td>$1.20</td>
 <td>$6.00</td>
@@ -1139,19 +1136,14 @@ Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.
 <td>$6.40</td>
 <td>—</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>All Qwen models support native tool-calling, JSON-mode, and OpenAI-compatible API shapes. Batch calling: 50% off. Context caching discounts available on supported models.</p>
-
 <hr>
-
-<h2 id="glm-/-z.ai">GLM / Z.ai</h2>
-
+<h2>GLM / Z.ai</h2>
 <p>Current as of June 2026. Source: <a href="https://docs.z.ai/guides/overview/pricing">docs.z.ai</a></p>
-
 <h3>Flagship Models (GLM-5 Series)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Context</th>
@@ -1161,7 +1153,8 @@ Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.
 <th>Cached Input</th>
 <th>License</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GLM-5.1</td>
 <td>203K</td>
 <td>Pro 58.4% (best-in-class)</td>
@@ -1188,14 +1181,11 @@ Qwen3.6-Max-Preview (Apr 20 2026): First closed-weights Qwen flagship. $1.30/$7.
 <td>$0.24</td>
 <td>Proprietary</td>
 </tr>
-</table>
-
-<p>GLM-5.1 (Apr 7 2026): 8-hour autonomous runs, 1,700 agentic steps. Surpasses GPT-5.4 and Claude Opus 4.6 on SWE-Bench Pro.
-GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
-
+</tbody></table>
+<p>GLM-5.1 (Apr 7 2026): 8-hour autonomous runs, 1,700 agentic steps. Surpasses GPT-5.4 and Claude Opus 4.6 on SWE-Bench Pro.<br>GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <h3>Previous Gen (GLM-4 Series)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Context</th>
@@ -1204,7 +1194,8 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <th>Cached Input</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GLM-4.7</td>
 <td>128K</td>
 <td>$0.60</td>
@@ -1268,18 +1259,18 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <td>—</td>
 <td>Budget open-weight</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Free Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Context</th>
 <th>Input</th>
 <th>Output</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GLM-4.7-Flash</td>
 <td>203K</td>
 <td>Free</td>
@@ -1291,18 +1282,18 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <td>Free</td>
 <td>Free</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Vision Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
 <th>Output /1M</th>
 <th>Cached Input</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GLM-5V-Turbo</td>
 <td>$1.20</td>
 <td>$4.00</td>
@@ -1332,15 +1323,12 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <td>Free</td>
 <td>Free</td>
 </tr>
-</table>
-
+</tbody></table>
 <hr>
-
-<h2 id="xiaomi-mimo">Xiaomi MiMo</h2>
-
+<h2>Xiaomi MiMo</h2>
 <p>Current as of June 2026. V2 launched Mar 18 2026, V2.5 launched Apr 22 2026. Source: <a href="https://www.mimo-v2.com/docs/pricing">mimo-v2.com</a></p>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -1349,7 +1337,8 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <th>Modalities</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>MiMo-V2-Pro (≤256K)</td>
 <td>$1.00</td>
 <td>$3.00</td>
@@ -1421,19 +1410,14 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <td>Audio</td>
 <td>Limited time promo</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>API at platform.xiaomimimo.com. OpenAI-compatible. Credit plans available: Lite $6/mo, Standard $16/mo, Pro $50/mo, Max $100/mo.</p>
-
 <hr>
-
-<h2 id="kimi-/-moonshot-ai-k2.6">Kimi / Moonshot AI (K2.6)</h2>
-
+<h2>Kimi / Moonshot AI (K2.6)</h2>
 <p>Current as of June 2026. Source: <a href="https://www.kimi.com/resources/kimi-k2-6-pricing">kimi.com</a>, <a href="https://openrouter.ai/moonshotai/kimi-k2.5">OpenRouter</a></p>
-
 <p>Both models: 1T params, 32B active MoE, 384 experts, MIT license.</p>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Cache Hit /1M</th>
@@ -1442,7 +1426,8 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <th>Context</th>
 <th>SWE-Bench</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>kimi-k2.6</td>
 <td>$0.16</td>
 <td>$0.95</td>
@@ -1458,20 +1443,18 @@ GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.</p>
 <td>256K</td>
 <td>Verified 76.8%, BrowseComp 78.4%</td>
 </tr>
-</table>
-
-<p>K2.6: 300 parallel sub-agents, 4,000+ tool calls, 12+ hr continuous execution.
-K2.5: 100 parallel sub-agents.</p>
-
+</tbody></table>
+<p>K2.6: 300 parallel sub-agents, 4,000+ tool calls, 12+ hr continuous execution.<br>K2.5: 100 parallel sub-agents.</p>
 <h3>Membership Plans</h3>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price/mo</th>
 <th>Agent Usage</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Adagio</td>
 <td>Free</td>
 <td>6</td>
@@ -1496,15 +1479,12 @@ K2.5: 100 parallel sub-agents.</p>
 <td>$159</td>
 <td>720</td>
 </tr>
-</table>
-
+</tbody></table>
 <hr>
-
-<h2 id="mistral-medium-3.5">Mistral (Medium 3.5)</h2>
-
+<h2>Mistral (Medium 3.5)</h2>
 <p>Current as of June 2026. Source: <a href="https://la-plateforme.mistral.ai/">la-plateforme.mistral.ai</a>, <a href="https://tokencost.app/models/mistral-medium-3-5">tokencost.app</a></p>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -1514,7 +1494,8 @@ K2.5: 100 parallel sub-agents.</p>
 <th>SWE-Bench Verified</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Mistral Medium 3.5</td>
 <td>$1.50</td>
 <td>$7.50</td>
@@ -1523,17 +1504,13 @@ K2.5: 100 parallel sub-agents.</p>
 <td><strong>77.6%</strong></td>
 <td>128B dense, multimodal. Released Apr 29 2026.</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>Mistral Medium 3.5 consolidates Medium 3.1 + Magistral + Devstral 2 into one unified model. Modified MIT license with open weights. 77.6% SWE-Bench Verified — competitive with Qwen3.6-27B (77.2%) and ahead of DeepSeek V3.2 (73.0%).</p>
-
 <hr>
-
-<h2 id="xai-grok">xAI (Grok)</h2>
-
+<h2>xAI (Grok)</h2>
 <p>Current as of June 2026. Source: <a href="https://docs.x.ai/developers/models">docs.x.ai</a>, <a href="https://docs.x.ai/developers/models">xAI pricing</a></p>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -1543,7 +1520,8 @@ K2.5: 100 parallel sub-agents.</p>
 <th>SWE-Bench</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Grok 4.3</td>
 <td>$1.25</td>
 <td>$2.50</td>
@@ -1579,24 +1557,20 @@ K2.5: 100 parallel sub-agents.</p>
 <td>—</td>
 <td>Coding specialist. 20% cheaper than Grok 4.3.</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>Grok 4.3 self-reports ~72-75% on SWE-Bench Verified (independent testing with SWE-agent scaffold: 58.6%). Aider Polyglot: 79.6%. xAI retired Grok 4, Grok 4.1 Fast, and Grok Code Fast 1 slugs on May 15, 2026 — these now redirect to Grok 4.3 at $1.25/$2.50 pricing. xAI offers up to $150/month free API credits via data-sharing program. Unique real-time X search grounding.</p>
-
 <hr>
-
-<h2 id="opencode-go">OpenCode Go</h2>
-
+<h2>OpenCode Go</h2>
 <p>Source: <a href="https://docs.openclaw.ai/providers/opencode-go">docs.openclaw.ai</a>. Dollar-value limits ($12/5h, $30/week, $60/month).</p>
-
 <h3>Available Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model Ref</th>
 <th>Name</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>opencode-go/glm-5</td>
 <td>GLM-5</td>
 </tr>
@@ -1605,12 +1579,20 @@ K2.5: 100 parallel sub-agents.</p>
 <td>GLM-5.1</td>
 </tr>
 <tr>
+<td>opencode-go/glm-5.2</td>
+<td>GLM-5.2</td>
+</tr>
+<tr>
 <td>opencode-go/kimi-k2.5</td>
 <td>Kimi K2.5</td>
 </tr>
 <tr>
 <td>opencode-go/kimi-k2.6</td>
 <td>Kimi K2.6 (3x limits)</td>
+</tr>
+<tr>
+<td>opencode-go/kimi-k2.7-code</td>
+<td>Kimi K2.7 Code</td>
 </tr>
 <tr>
 <td>opencode-go/deepseek-v4-pro</td>
@@ -1672,18 +1654,18 @@ K2.5: 100 parallel sub-agents.</p>
 <td>opencode-go/grok-4.20</td>
 <td>Grok 4.20</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Request Estimates (June 2 2026)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Per 5h</th>
 <th>Per Week</th>
 <th>Per Month</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GLM-5.1</td>
 <td>880</td>
 <td>2,150</td>
@@ -1767,15 +1749,10 @@ K2.5: 100 parallel sub-agents.</p>
 <td>25,200</td>
 <td>50,500</td>
 </tr>
-</table>
-
-<p>MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).
-DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.</p>
-
+</tbody></table>
+<p>MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).<br>DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.</p>
 <hr>
-
-<h2 id="notes">Notes</h2>
-
+<h2>Notes</h2>
 <ul>
 <li><strong>BytePlus ModelArk</strong>: Quota shared across Claude Code, Cursor, Cline, Codex CLI, Kilo Code, Roo Code, OpenCode</li>
 <li><strong>GitHub Copilot</strong>: Premium requests shared across all features; extra $0.04 each on Pro/Pro+</li>
@@ -1784,13 +1761,11 @@ DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.</p>
 <li><strong>MiMo</strong>: Pure credit pool, no 5h/windows, credits expire month-end</li>
 <li><strong>Kimi</strong>: API billed separately — not included in membership</li>
 </ul>
-
-<p>> <strong>Benchmark Note:</strong> <a href="https://www.swebench.com/">SWE-Bench Verified</a> measures a model's ability to resolve real-world GitHub issues from code repositories. Not all providers publish scores — the chart above only includes models with verified data.</p>
-
+<blockquote>
+<p><strong>Benchmark Note:</strong> <a href="https://www.swebench.com/">SWE-Bench Verified</a> measures a model&#39;s ability to resolve real-world GitHub issues from code repositories. Not all providers publish scores — the chart above only includes models with verified data.</p>
+</blockquote>
 <hr>
-
-<h2 id="sources">Sources</h2>
-
+<h2>Sources</h2>
 <ul>
 <li><a href="source/ai-google-dev-gemini-api-docs-pricing.md">ai-google-dev-gemini-api-docs-pricing</a></li>
 <li><a href="source/alibabacloud-com-help-en-model-studio-model-pricing.md">alibabacloud-com-help-en-model-studio-model-pricing</a></li>
@@ -1809,9 +1784,13 @@ DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.</p>
 <li><a href="source/swebench-com.md">swebench-com</a></li>
 <li><a href="source/tokencost-app-models-mistral-medium-3-5.md">tokencost-app-models-mistral-medium-3-5</a></li>
 <li><a href="source/w3-org-2000-svg.md">w3-org-2000-svg</a></li>
-</ul>    </main>
+</ul>
+
+
+    </main>
   </div>
 
+  <!-- Hamburger toggle — works on every page because this layout is shared -->
   <script>
     function copyCmd(el, cmd) {
       navigator.clipboard.writeText(cmd).then(() => {
