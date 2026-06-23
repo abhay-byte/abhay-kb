@@ -75,8 +75,8 @@ Compiled June 2026.
 <text x="226.3038927540432" y="389.29713513513514" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-4.7</text>
 <circle cx="292.60057975208673" cy="299.5133513513513" r="5.5" fill="#e9c46a" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="292.60057975208673" y="285.5133513513513" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Kimi K2.6</text>
-<circle cx="300.00065862729787" cy="326.4322702702704" r="5.5" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="300.00065862729787" y="344.4322702702704" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-5</text>
+<circle cx="260.00065862729787" cy="326.4322702702704" r="5.5" fill="#264653" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="260.00065862729787" y="344.4322702702704" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GLM-5</text>
 <circle cx="300.00065862729787" cy="324.189027027027" r="5.5" fill="#00b4d8" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="300.00065862729787" y="342.189027027027" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiMo-V2-Pro</text>
 <circle cx="379.9096130943694" cy="295.02686486486493" r="5.5" fill="#4ea8de" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
@@ -87,8 +87,8 @@ Compiled June 2026.
 <text x="458.49735271745953" y="324.2430810810811" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Sonnet 4.6</text>
 <circle cx="432.19383844651793" cy="301.75659459459473" r="5.5" fill="#10a040" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="432.19383844651793" y="287.75659459459473" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">GPT-5.4</text>
-<circle cx="532.1941185907142" cy="291.67551351351347" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
-<text x="532.1941185907142" y="277.67551351351347" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.5</text>
+<circle cx="472.1941185907142" cy="291.67551351351347" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
+<text x="472.1941185907142" y="277.67551351351347" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.5</text>
 <circle cx="532.1941185907142" cy="292.7836216216217" r="5.5" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
 <text x="532.1941185907142" y="278.7836216216217" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">Claude Opus 4.6</text>
 <circle cx="532.1941185907142" cy="216.51335135135147" r="7" fill="#d62828" stroke="#0d0d0d" stroke-width="2" filter="url(#g)"/>
@@ -107,7 +107,7 @@ Compiled June 2026.
 <text x="226.30344058337937" y="282.1488" text-anchor="middle" fill="#ccc" font-size="9" font-weight="500">MiniMax M3</text>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -60 720 540" style="max-width:100%;height:auto;background:#0d0d0d;border-radius:8px;font-family:-apple-system,system-ui,sans-serif;">
 <defs>
   <filter id="g"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="rgba(250,189,47,0.3)"/></filter>
 </defs>
@@ -571,38 +571,3 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 
 MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).
 DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.
-
----
-
-## Notes
-
-- **BytePlus ModelArk**: Quota shared across Claude Code, Cursor, Cline, Codex CLI, Kilo Code, Roo Code, OpenCode
-- **GitHub Copilot**: Premium requests shared across all features; extra $0.04 each on Pro/Pro+
-- **Claude Code**: Exact request counts not published — only relative multipliers
-- **GLM quota multipliers**: Peak hours drain 3x quota; off-peak 2x; GLM-4.7/4.5-Air always 1x
-- **MiMo**: Pure credit pool, no 5h/windows, credits expire month-end
-- **Kimi**: API billed separately — not included in membership
-
-> **Benchmark Note:** [SWE-Bench Verified](https://www.swebench.com/) measures a model's ability to resolve real-world GitHub issues from code repositories. Not all providers publish scores — the chart above only includes models with verified data.
-
----
-
-## Sources
-
-- [ai-google-dev-gemini-api-docs-pricing](source/ai-google-dev-gemini-api-docs-pricing.md)
-- [alibabacloud-com-help-en-model-studio-model-pricing](source/alibabacloud-com-help-en-model-studio-model-pricing.md)
-- [api-docs-deepseek-com-quick-start-pricing](source/api-docs-deepseek-com-quick-start-pricing.md)
-- [docs-openclaw-ai-providers-opencode-go](source/docs-openclaw-ai-providers-opencode-go.md)
-- [docs-x-ai-developers-models](source/docs-x-ai-developers-models.md)
-- [docs-z-ai-guides-overview-pricing](source/docs-z-ai-guides-overview-pricing.md)
-- [kimi-com-resources-kimi-k2-6-pricing](source/kimi-com-resources-kimi-k2-6-pricing.md)
-- [la-plateforme-mistral-ai](source/la-plateforme-mistral-ai.md)
-- [mimo-v2-com-docs-pricing](source/mimo-v2-com-docs-pricing.md)
-- [openai-com-api-pricing](source/openai-com-api-pricing.md)
-- [openrouter-ai-minimax-minimax-m2-7](source/openrouter-ai-minimax-minimax-m2-7.md)
-- [openrouter-ai-moonshotai-kimi-k2-5](source/openrouter-ai-moonshotai-kimi-k2-5.md)
-- [platform-claude-com-docs-en-about-claude-pricing](source/platform-claude-com-docs-en-about-claude-pricing.md)
-- [platform-minimax-io-docs-pricing-overview](source/platform-minimax-io-docs-pricing-overview.md)
-- [swebench-com](source/swebench-com.md)
-- [tokencost-app-models-mistral-medium-3-5](source/tokencost-app-models-mistral-medium-3-5.md)
-- [w3-org-2000-svg](source/w3-org-2000-svg.md)
