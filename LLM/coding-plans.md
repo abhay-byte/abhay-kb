@@ -5,7 +5,7 @@ title: Coding Plans
 
 # AI Coding Plans — Pricing & Usage Reference
 
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-21 | Auto-synced daily</div>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-23 | Auto-synced daily</div>
 
 Compiled April 2026. All plans compared across major providers.
 
@@ -594,4 +594,3 @@ Context window: 262,144 tokens.
 Kimi Code available via: `curl -L code.kimi.com/install.sh | bash`. Powered by Kimi K2.6.
 
 Day-0 support on: vLLM, OpenRouter, Cloudflare, Baseten, MLX, Hermes, OpenCode.
-
