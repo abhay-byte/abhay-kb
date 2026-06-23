@@ -135,6 +135,7 @@ Last updated: 2026-06-23
 | 112 | Engineering Intern (Class of 2026) | Eightfold AI | Bangalore (Hybrid) | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/eightfold-internship-2026/) |
 | 113 | Student Intern (Digital Technology) | SLB | Pune | Competitive Stipend | 05-Jun-2026 | [Apply](https://freshershunt.in/slb-internship-2026/) |
 | 114 | Engineering Graduate Intern (SCION Platform) | IQVIA | Bengaluru (WFO) | Competitive Stipend | 09-Jun-2026 | [Apply](https://freshershunt.in/iqvia-internship-2026/) |
+| 115 | HARMAN Internship 2026 \| AI / Data Engineering Intern \| Bangalore | HARMAN | Bangalore |  |  | [Apply](https://jobsearch.harman.com/en_US/careers/JobDetail/Intern/31985) |
 
 ---
 

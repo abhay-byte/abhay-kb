@@ -13,7 +13,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from jobslib import (
     load_data, save_data, dedup_jobs,
     scrape_jobsnet_listing, scrape_freshershunt_listing,
-    scrape_job_detail, render_jobs_md, write_jobs_md,
+    scrape_job_detail, render_jobs_md, generate_jobs_html,
+    write_jobs_md, write_jobs_html,
     clean_source_dir, MAX_AGE_DAYS
 )
 from datetime import datetime, timezone
@@ -100,8 +101,9 @@ def main():
     print(f"  📊 Total jobs after sync: {len(all_jobs)}")
     print(f"     New additions: {len(new_jobs)}")
     
-    # 6. Generate markdown
+    # 6. Generate markdown + HTML
     md = render_jobs_md(data)
+    html = generate_jobs_html(md)
     
     if dry_run:
         print("  🏁 DRY RUN complete — files not saved")
@@ -110,6 +112,8 @@ def main():
     # 7. Save everything
     save_data(data)
     write_jobs_md(md)
+    if html:
+        write_jobs_html(html)
     clean_source_dir()
     
     print("  ✅ Jobs sync complete!")

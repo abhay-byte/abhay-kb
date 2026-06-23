@@ -464,6 +464,66 @@ def write_jobs_md(md_content):
     print(f"  📄 Generated jobs.md ({len(md_content)} bytes)")
 
 
+def generate_jobs_html(md_content):
+    """Generate jobs.html from markdown content using standalone layout."""
+    # Strip Jekyll frontmatter
+    md_body = re.sub(r'^---\n.*?\n---\n', '', md_content, flags=re.DOTALL)
+    
+    # Convert markdown to HTML using marked via npx
+    try:
+        result = subprocess.run(
+            ["npx", "--yes", "marked"],
+            input=md_body.encode("utf-8"),
+            capture_output=True,
+            timeout=30
+        )
+        if result.returncode == 0:
+            content_html = result.stdout.decode("utf-8")
+        else:
+            print(f"  ⚠️  marked conversion failed: {result.stderr.decode()}")
+            content_html = f"<pre>{md_body}</pre>"
+    except Exception as e:
+        print(f"  ⚠️  marked error: {e}")
+        content_html = f"<pre>{md_body}</pre>"
+    
+    # Read the standalone layout template
+    layout_path = os.path.join(REPO_DIR, "_layouts", "standalone.html")
+    if not os.path.exists(layout_path):
+        print(f"  ⚠️  Layout not found: {layout_path}")
+        return None
+    
+    with open(layout_path, "r") as f:
+        layout = f.read()
+    
+    # Replace Jekyll/Liquid template tags
+    html = layout
+    # {{ content }} → markdown body
+    html = html.replace("{{ content }}", content_html)
+    # {% if page.title %}...{% else %}...{% endif %}
+    html = re.sub(
+        r"{%\s*if\s+page\.title\s*%}(.*?){%\s*else\s*%}(.*?){%\s*endif\s*%}",
+        r"\1",
+        html,
+        flags=re.DOTALL
+    )
+    # Resolve {{ page.title }} when title is known
+    html = html.replace("{{ page.title }}", "Job Listings")
+    # Any remaining {{ }} expressions
+    html = re.sub(r"\{\{\s*[^}]+\s*\}\}", "", html)
+    # Any remaining {% %} tags → just remove them
+    html = re.sub(r"{%[^%]+%}", "", html)
+    
+    return html
+
+
+def write_jobs_html(html_content):
+    """Write jobs.html file."""
+    html_path = os.path.join(REPO_DIR, "jobs.html")
+    with open(html_path, "w") as f:
+        f.write(html_content)
+    print(f"  📄 Generated jobs.html ({len(html_content)} bytes)")
+
+
 def clean_source_dir():
     if not os.path.exists(SOURCE_DIR):
         return

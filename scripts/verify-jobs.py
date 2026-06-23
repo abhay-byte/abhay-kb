@@ -11,7 +11,8 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from jobslib import (
     load_data, save_data, dedup_jobs, filter_expired,
-    check_url_alive, render_jobs_md, write_jobs_md,
+    check_url_alive, render_jobs_md, generate_jobs_html,
+    write_jobs_md, write_jobs_html,
     clean_source_dir, MAX_AGE_DAYS
 )
 from datetime import datetime, timezone, timedelta
@@ -74,8 +75,9 @@ def main():
     print(f"  📊 Total jobs after verify: {len(still_alive)}")
     print(f"     Removed: {total_removed}")
     
-    # 5. Generate markdown
+    # 5. Generate markdown + HTML
     md = render_jobs_md(data)
+    html = generate_jobs_html(md)
     
     if dry_run:
         print("  🏁 DRY RUN complete — files not saved")
@@ -84,6 +86,8 @@ def main():
     # 6. Save everything
     save_data(data)
     write_jobs_md(md)
+    if html:
+        write_jobs_html(html)
     clean_source_dir()
     
     print("  ✅ Jobs verify complete!")
