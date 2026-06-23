@@ -408,12 +408,14 @@ Current as of June 2026. Source: [docs.z.ai](https://docs.z.ai/guides/overview/p
 
 | Model | Context | SWE-Bench | Input /1M | Output /1M | Cached Input | License |
 |-------|---------|-----------|-----------|------------|-------------|---------|
+| GLM-5.2 | 1M | — | $1.40 | $4.40 | $0.26 | Proprietary |
 | GLM-5.1 | 203K | Pro 58.4% (best-in-class) | $1.40 | $4.40 | $0.26 | MIT, 754B params |
 | GLM-5 | 202K | Verified 77.8% | $1.00 | $3.20 | $0.20 | MIT, 744B/40B MoE |
 | GLM-5-Turbo | 202K | — | $1.20 | $4.00 | $0.24 | Proprietary |
 
 GLM-5.1 (Apr 7 2026): 8-hour autonomous runs, 1,700 agentic steps. Surpasses GPT-5.4 and Claude Opus 4.6 on SWE-Bench Pro.
 GLM-5: 744B params, 40B active MoE, 28.5T token pretraining.
+GLM-5.2 (Jun 2026): Latest flagship. 1M context, 128K max output. Long-horizon engineering specialist. Same pricing as GLM-5.1 ($1.40/$4.40).
 
 ### Previous Gen (GLM-4 Series)
 
@@ -467,16 +469,19 @@ API at platform.xiaomimimo.com. OpenAI-compatible. Credit plans available: Lite 
 
 ---
 
-## Kimi / Moonshot AI (K2.6)
+## Kimi / Moonshot AI (K2.7 Code · K2.6)
 
-Current as of June 2026. Source: [kimi.com](https://www.kimi.com/resources/kimi-k2-6-pricing), [OpenRouter](https://openrouter.ai/moonshotai/kimi-k2.5)
+Current as of June 2026. Source: [kimi.com](https://www.kimi.com/resources/kimi-k2-6-pricing), [K2.7 Code](https://www.kimi.com/resources/kimi-k2-7-code), [platform.kimi.ai](https://platform.kimi.ai/docs/pricing/chat-k27-code), [OpenRouter](https://openrouter.ai/moonshotai/kimi-k2.5)
 
-Both models: 1T params, 32B active MoE, 384 experts, MIT license.
+All three models: 1T params, 32B active MoE, 384 experts, MIT license. K2.7 Code is a coding-specific variant (thinking mode required).
 
 | Model | Cache Hit /1M | Cache Miss /1M | Output /1M | Context | SWE-Bench |
 |-------|--------------|----------------|-----------|---------|-----------|
+| kimi-k2.7-code | $0.19 | $0.95 | $4.00 | 262K | — |
 | kimi-k2.6 | $0.16 | $0.95 | $4.00 | 262K | Verified 80.2%, Pro 58.6%, BrowseComp 83.2% |
 | kimi-k2.5 | — | $0.40 | $1.90 | 256K | Verified 76.8%, BrowseComp 78.4% |
+
+K2.7 Code: Coding-specific agentic model. ~30% less thinking tokens vs K2.6. MCP Atlas 76.0, MCP Mark Verified 81.1. Available via Kimi Code (default model) and Kimi API. See [kimi.com](https://www.kimi.com/resources/kimi-k2-7-code).
 
 K2.6: 300 parallel sub-agents, 4,000+ tool calls, 12+ hr continuous execution.
 K2.5: 100 parallel sub-agents.
