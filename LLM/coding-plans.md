@@ -595,30 +595,3 @@ Kimi Code available via: `curl -L code.kimi.com/install.sh | bash`. Powered by K
 
 Day-0 support on: vLLM, OpenRouter, Cloudflare, Baseten, MLX, Hermes, OpenCode.
 
----
-
-## Sources
-
-- [anthropic-com-news-claude-code](source/anthropic-com-news-claude-code.md)
-- [antigravity-google-download](source/antigravity-google-download.md)
-- [antigravity-google-pricing](source/antigravity-google-pricing.md)
-- [buildthisnow-com-blog-guide-mechanics-claude-billing-change-june-2026](source/buildthisnow-com-blog-guide-mechanics-claude-billing-change-june-2026.md)
-- [byteplus-com-en-activity-codingplan](source/byteplus-com-en-activity-codingplan.md)
-- [claude-com-pricing](source/claude-com-pricing.md)
-- [codersera-com-blog-anthropic-june-2026-billing-change-claude-code](source/codersera-com-blog-anthropic-june-2026-billing-change-claude-code.md)
-- [developers-openai-com-codex-pricing](source/developers-openai-com-codex-pricing.md)
-- [docs-github-com-en-copilot-concepts-billing-usage-based-billing-for-individuals](source/docs-github-com-en-copilot-concepts-billing-usage-based-billing-for-individuals.md)
-- [docs-github-com-en-copilot-get-started-plans](source/docs-github-com-en-copilot-get-started-plans.md)
-- [docs-github-com-en-copilot-reference-copilot-billing-models-and-pricing](source/docs-github-com-en-copilot-reference-copilot-billing-models-and-pricing.md)
-- [github-blog-changelog-2026-06-01-updates-to-github-copilot-billing-and-plans](source/github-blog-changelog-2026-06-01-updates-to-github-copilot-billing-and-plans.md)
-- [github-blog-news-insights-company-news-github-copilot-individual-plans-introduci](source/github-blog-news-insights-company-news-github-copilot-individual-plans-introduci.md)
-- [github-blog-news-insights-company-news-github-copilot-is-moving-to-usage-based-b](source/github-blog-news-insights-company-news-github-copilot-is-moving-to-usage-based-b.md)
-- [github-com-features-copilot-plans](source/github-com-features-copilot-plans.md)
-- [kimi-com-code](source/kimi-com-code.md)
-- [mashable-com-article-google-io-2026-gemini-ultra-ai-subscription-tiers](source/mashable-com-article-google-io-2026-gemini-ultra-ai-subscription-tiers.md)
-- [opencode-ai-docs-go](source/opencode-ai-docs-go.md)
-- [opencode-ai-go](source/opencode-ai-go.md)
-- [platform-xiaomimimo-com-token-plan](source/platform-xiaomimimo-com-token-plan.md)
-- [techcrunch-com-2026-05-19-google-launches-antigravity-2-0-with-an-updated-deskto](source/techcrunch-com-2026-05-19-google-launches-antigravity-2-0-with-an-updated-deskto.md)
-- [techmymoney-com-2026-05-21-google-ai-ultra-100-plan](source/techmymoney-com-2026-05-21-google-ai-ultra-100-plan.md)
-- [z-ai-subscribe](source/z-ai-subscribe.md)

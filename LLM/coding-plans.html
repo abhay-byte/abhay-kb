@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Plans | Abhay's Knowledge Base</title>
+  <title>Coding Plans | My personal projects and notes</title>
   <link rel="icon" type="image/x-icon" href="/abhay-kb/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/abhay-kb/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/abhay-kb/assets/favicon-192.png">
   <link rel="apple-touch-icon" href="/abhay-kb/assets/favicon-192.png">
   <style>
     /* ══════════════════════════════════════════════
-       SHARED LAYOUT — matches _layouts/standalone.html
+       SHARED LAYOUT — standalone.html
        Used by: index.html, PROJECTS.md, LLM/*.md
        Hamburger sidebar works on ALL pages via this layout.
        ══════════════════════════════════════════════ */
@@ -28,8 +28,9 @@
 
     .page-wrapper { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; min-height: 100vh; }
 
+    /* ─── Top Bar — visible only on mobile (≤800px) ─── */
     .topbar {
-      display: none;
+      display: none;                      /* hidden on desktop */
       position: fixed; top: 0; left: 0; right: 0;
       height: 52px;
       background: #0d0d0d;
@@ -44,6 +45,7 @@
     }
     .topbar-title { font-size: 16px; font-weight: 600; color: #fff; }
 
+    /* ─── Sidebar Overlay — dark backdrop when sidebar is open on mobile ─── */
     .sidebar-overlay {
       display: none;
       position: fixed; inset: 0;
@@ -52,6 +54,7 @@
     }
     .sidebar-overlay.active { display: block; }
 
+    /* ─── Sidebar (desktop: sticky, mobile: slides in) ─── */
     .sidebar {
       width: 260px; flex-shrink: 0; display: flex; flex-direction: column;
       position: sticky; top: 40px; align-self: flex-start; max-height: calc(100vh - 80px); overflow-y: auto;
@@ -59,7 +62,6 @@
     .sidebar::-webkit-scrollbar { width: 4px; }
     .sidebar::-webkit-scrollbar-track { background: transparent; }
     .sidebar::-webkit-scrollbar-thumb { background: #2a2a55; border-radius: 2px; }
-    }
     .sidebar h1 {
       font-size: 22px; font-weight: 700; color: #fff;
       margin-bottom: 4px;
@@ -74,6 +76,7 @@
     }
     .sidebar nav a:hover { background: rgba(255,255,255,0.06); color: #fff; text-decoration: none; }
 
+    /* Section labels (e.g. "🤖 LLM") + indented sub-items */
     .nav-section-label {
       font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
       color: #666; padding: 12px 12px 4px; margin-top: 4px;
@@ -94,16 +97,57 @@
     .main-content td { color: #ccc; }
     .main-content tr:hover td { background: rgba(255,255,255,0.02); }
     .main-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #fabd2f; }
-    .main-content pre { background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; }
-    .main-content pre code { background: none; padding: 0; color: #fabd2f; }
+    .main-content pre {
+      background: #111122;
+      border: 1px solid #2a2a55;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+    .main-content pre code {
+      background: transparent;
+      color: #c8c8e8;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .main-content pre code .prompt { color: #6a9955; }
+    .main-content .diagram {
+      background: #0a0a1a;
+      border: 1px solid #1a1a3e;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #8888cc;
+      overflow-x: auto;
+      white-space: pre;
+    }
     .main-content img { max-width: 100%; border-radius: 6px; }
     .main-content figure { margin-bottom: 24px; }
     .main-content figcaption { color: #888; font-size: 13px; margin-top: 6px; }
-    .main-content em { color: #999; }
-    .main-content strong { color: #fff; }
 
-    /* Install cards */
-    .install-card {
+    /* Project cards (used on index, shared style) */
+    .project-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 16px 0;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .project-card:hover { border-color: rgba(250,189,47,0.25); background: rgba(255,255,255,0.015); }
+    .project-card h3 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .project-card p { font-size: 14px; color: #999; line-height: 1.5; margin-bottom: 12px; }
+    .project-card .links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .project-card .links img { height: 28px; border-radius: 4px; }
+
+
+.install-card {
       background: #111;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 8px;
@@ -152,6 +196,15 @@
     .copy-btn:hover { border-color: #fabd2f; color: #fabd2f; }
     .copy-btn.copied { border-color: #34a853; color: #34a853; }
 
+        .stats-section { text-align: center; margin: 32px 0; }
+    .stats-section img { max-width: 100%; margin: 12px 0; border-radius: 6px; }
+
+    /* ─── Responsive: Mobile / Portrait (≤800px) ───
+         - Top bar with hamburger appears
+         - Sidebar slides in from left (hidden by default)
+         - Dark overlay behind sidebar
+         - Tap overlay or hamburger to close
+         ─────────────────────────────────────────── */
     @media (max-width: 800px) {
       .topbar { display: flex; }
       .page-wrapper { padding-top: 72px; flex-direction: column; padding: 72px 16px 24px; gap: 24px; }
@@ -159,7 +212,7 @@
       .sidebar {
         position: fixed; top: 0; left: -280px; width: 260px; height: 100vh;
         z-index: 200; background: #0d0d0d; border-right: 1px solid rgba(255,255,255,0.08);
-        padding: 24px 20px; overflow-y: auto;
+        padding: 24px 20px; overflow-y: auto; overflow-y: auto;
         transition: left 0.25s ease;
         align-self: auto; sticky: unset;
       }
@@ -173,11 +226,13 @@
   </style>
 </head>
 <body>
+  <!-- Mobile top bar — visible on all pages in portrait mode -->
   <div class="topbar">
     <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
-    <span class="topbar-title">Coding plans</span>
+    <span class="topbar-title">Abhay's Knowledge Base</span>
   </div>
 
+  <!-- Dark overlay behind sidebar (mobile only) -->
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
   <div class="page-wrapper">
@@ -209,48 +264,43 @@
         <a href="/abhay-kb/dsa/a2oj" class="nav-indent">A2OJ Ladders</a>
         <a href="/abhay-kb/dsa/lectures" class="nav-indent">Lectures</a>
         <a href="/abhay-kb/dsa/vervecopilot" class="nav-indent">VerveCopilot</a>
+        <!-- LLM dropdown section -->
         <div class="nav-section-label">LLM</div>
         <a href="/abhay-kb/LLM/" class="nav-indent">Overview</a>
         <a href="/abhay-kb/LLM/models" class="nav-indent">Models</a>
         <a href="/abhay-kb/LLM/coding-plans" class="nav-indent">Coding Plans</a>
         <div class="nav-section-label">AI Tools</div>
         <a href="/abhay-kb/AI-Tools/" class="nav-indent">Overview</a>
-        <a href="/abhay-kb/AI-Tools/tools.html" class="nav-indent">Tools</a>
-        <a href="/abhay-kb/AI-Tools/mcp.html" class="nav-indent">MCP</a>
-        <a href="/abhay-kb/AI-Tools/ai-editors.html" class="nav-indent">AI Editors</a>
-        <a href="/abhay-kb/AI-Tools/skills.html" class="nav-indent">Skills</a>
-        <div class="nav-section-label">Blogs &amp; News</div>
+        <a href="/abhay-kb/AI-Tools/tools" class="nav-indent">Tools</a>
+        <a href="/abhay-kb/AI-Tools/mcp" class="nav-indent">MCP</a>
+        <a href="/abhay-kb/AI-Tools/ai-editors" class="nav-indent">AI Editors</a>
+        <a href="/abhay-kb/AI-Tools/skills" class="nav-indent">Skills</a>
+        <div class="nav-section-label">Blogs & News</div>
         <a href="/abhay-kb/blogs-news/" class="nav-indent">News</a>
         <a href="/abhay-kb/resume" class="nav-bottom">Resume</a>
         <a href="/abhay-kb/about-me" class="nav-bottom">About Me</a>
       </nav>
     </aside>
     <main class="main-content">
-<h1>AI Coding Plans — Pricing & Usage Reference</h1>
-
-<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-21 | Auto-synced daily</div>
-
-<p>Compiled April 2026. All plans compared across major providers.</p>
-
+      <h1>AI Coding Plans — Pricing &amp; Usage Reference</h1>
+<div style="font-size:12px;color:#666;margin-bottom:12px;">Last updated: 2026-06-21 | Auto-synced daily</div><p>Compiled April 2026. All plans compared across major providers.</p>
 <hr>
-
-<h2 id="byteplus-modelark-[subscribe]https//www.byteplus.com/en/activity/codingplan">BytePlus ModelArk <a href="https://www.byteplus.com/en/activity/codingplan">Subscribe</a></h2>
-
-<p>ByteDance's AI inference platform. Coding Plan = subscription with shared quota across supported tools.
+<h2>BytePlus ModelArk <a href="https://www.byteplus.com/en/activity/codingplan">Subscribe</a></h2>
+<p>ByteDance&#39;s AI inference platform. Coding Plan = subscription with shared quota across supported tools.
 Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
-
 <h3>Available Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Type</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Dola-Seed-2.0-Pro</td>
 <td>Coding (flagship)</td>
-<td>ByteDance's top-tier coding model. 256K context. Multimodal. Officially launched on BytePlus ModelArk May 2026</td>
+<td>ByteDance&#39;s top-tier coding model. 256K context. Multimodal. Officially launched on BytePlus ModelArk May 2026</td>
 </tr>
 <tr>
 <td>Dola-Seed-2.0-Lite</td>
@@ -297,11 +347,10 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
 <td>Open-weight</td>
 <td>117B params, Apache 2.0</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Quotas</h3>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
@@ -309,7 +358,8 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
 <th>Per Week</th>
 <th>Per Month</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Lite</td>
 <td>~$10/mo</td>
 <td>~800</td>
@@ -323,8 +373,7 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
 <td>~16,000</td>
 <td>~120,000</td>
 </tr>
-</table>
-
+</tbody></table>
 <ul>
 <li>Quota shared across: Claude Code, Cursor, Cline, Codex CLI, Kilo Code, Roo Code, OpenCode, OpenClaw, Hermes Agent</li>
 <li>5-hour sliding window + weekly reset. Monday 00:00 UTC+8</li>
@@ -332,20 +381,16 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
 <li>Free tier: 500K tokens for new users (regular API only, NOT Coding Plan)</li>
 <li>New Team plan now available for enterprise: scalability, management controls, digital employee capabilities</li>
 </ul>
-
-<p>> <strong>Personal Review (June 2026):</strong> The BytePlus-provided models like Dola-Seed-2.0-Pro, O-Pro, and Ark-Coding-Pro are <strong>significantly weaker</strong> than alternatives available for free on other platforms — e.g. MiniMax M2.5 (80.2% SWE-Bench, free via OpenRouter) easily outperforms them. The real issue is with <strong>frontier models like GLM-5.1</strong>: despite being listed as available, the quota multiplier (3x drain during peak hours) means you get <strong>only about 10–15 actual requests per 5h window</strong>. The advertised quotas (“800 per 5h”) are based on the cheapest base models at 1x drain — not usable on any capable model. In practice, the plan is misleading for anyone wanting to use frontier models. Not recommended unless you only need the weak ByteDance models for simple completions.</p>
-
+<blockquote>
+<p><strong>Personal Review (June 2026):</strong> The BytePlus-provided models like Dola-Seed-2.0-Pro, O-Pro, and Ark-Coding-Pro are <strong>significantly weaker</strong> than alternatives available for free on other platforms — e.g. MiniMax M2.5 (80.2% SWE-Bench, free via OpenRouter) easily outperforms them. The real issue is with <strong>frontier models like GLM-5.1</strong>: despite being listed as available, the quota multiplier (3x drain during peak hours) means you get <strong>only about 10–15 actual requests per 5h window</strong>. The advertised quotas (“800 per 5h”) are based on the cheapest base models at 1x drain — not usable on any capable model. In practice, the plan is misleading for anyone wanting to use frontier models. Not recommended unless you only need the weak ByteDance models for simple completions.</p>
+</blockquote>
 <hr>
-
-<h2 id="github-copilot-[plans]https//github.com/features/copilot/plans">GitHub Copilot <a href="https://github.com/features/copilot/plans">Plans</a></h2>
-
+<h2>GitHub Copilot <a href="https://github.com/features/copilot/plans">Plans</a></h2>
 <p>Source: <a href="https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing">docs.github.com</a>, <a href="https://docs.github.com/en/copilot/get-started/plans">docs.github.com/plans</a>, <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/">github.blog</a></p>
-
 <h3>Plans (Current — June 10 2026 — Usage-Based Billing LIVE)</h3>
-
 <p>Source: <a href="https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing">docs.github.com</a>, <a href="https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals">docs.github.com/billing-individuals</a>, <a href="https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/">github.blog (May 12)</a>, <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/">github.blog (Apr 27)</a>, <a href="https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/">github.blog changelog (Jun 1)</a></p>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
@@ -354,7 +399,8 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
 <th>Agent/CLI</th>
 <th>Status</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Free</td>
 <td>$0</td>
 <td>Limited AI credits (auto model)</td>
@@ -410,10 +456,8 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
 <td>Yes</td>
 <td>Available</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Key Changes (Apr–Jun 2026)</h3>
-
 <ul>
 <li><strong>Usage-based billing LIVE (Jun 1):</strong> All Copilot plans transitioned to GitHub AI Credits on June 1, 2026. PRUs replaced by token-based metering. 1 AI Credit = $0.01 USD. Code completions remain unlimited and not billed in AI Credits</li>
 <li><strong>Flex allotments (May 12):</strong> Pro gets $10 base + $5 flex = $15/mo. Pro+ gets $39 base + $31 flex = $70/mo. Flex allotments may vary over time</li>
@@ -422,459 +466,408 @@ Now integrates with OpenClaw and Hermes Agent as supported coding tools.</p>
 <li><strong>User-level budgets</strong> now GA for organizations and enterprises — granular spend controls with email notifications</li>
 <li><strong>Signups paused (ongoing):</strong> Pro, Pro+, Student, and Max new sign-ups remain paused as of Jun 1. Reopening in coming weeks</li>
 <li><strong>Student plan:</strong> Not migrating to usage-based billing. Signups remain paused. Claude Opus/Sonnet removed (Mar 14). GPT-5.3-Codex removed from manual picker (Apr 27)</li>
-<li><strong>Opus exclusive to Pro+ & Max:</strong> Claude Opus 4.7 removed from Pro tier. Only Pro+ ($39/mo) and Max ($100/mo)</li>
+<li><strong>Opus exclusive to Pro+ &amp; Max:</strong> Claude Opus 4.7 removed from Pro tier. Only Pro+ ($39/mo) and Max ($100/mo)</li>
 <li><strong>Code completions remain unlimited</strong> on all paid plans — not billed in AI Credits</li>
 <li><strong>Copilot code review</strong> consumes both AI Credits and GitHub Actions minutes</li>
 <li><strong>Claude Fable 5 marked unavailable (Jun 13):</strong> First Mythos-class model from Anthropic, designed for long-horizon autonomous coding. GitHub Copilot docs now list Claude Fable 5 as <strong>currently unavailable</strong>. Previously available on Pro+, Max, Business, Enterprise. Priced at $10/$50 per 1M tokens. Likely temporary — Anthropic is restricting access while deploying safety classifiers with 30-day data retention</li>
 <li><strong>GPT-5.2 closing down (Jun 1):</strong> GPT-5.2 marked as closing down effective June 1, 2026 on the supported models page. GPT-5.2-Codex remains GA. Users should migrate to GPT-5.3-Codex or GPT-5.4</li>
 </ul>
-
 <h3>Per-Token Pricing (Jun 2026 — Usage-Based)</h3>
-
 <p>Per-token rates from <a href="https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing">docs.github.com</a>. 1 AI credit = $0.01 USD. Over-usage billed at these rates.</p>
-
-<strong>OpenAI:</strong>
-
-<p>Long context pricing: GPT-5.5 and GPT-5.4 have <strong>Long context</strong> tiers for input > 272K tokens on Copilot.</p>
-
+<p><strong>OpenAI:</strong></p>
+<p>Long context pricing: GPT-5.5 and GPT-5.4 have <strong>Long context</strong> tiers for input &gt; 272K tokens on Copilot.</p>
 <table>
+<thead>
 <tr>
 <th>Model</th>
-<th>Input /1M (≤272K)</th>
-<th>Input /1M (>272K)</th>
-<th>Cached Input</th>
-<th>Output /1M (≤272K)</th>
-<th>Output /1M (>272K)</th>
+<th align="right">Input /1M (≤272K)</th>
+<th align="right">Input /1M (&gt;272K)</th>
+<th align="center">Cached Input</th>
+<th align="right">Output /1M (≤272K)</th>
+<th align="right">Output /1M (&gt;272K)</th>
 <th>Release Status</th>
 </tr>
-<tr>
-<td>-------</td>
-<td>------------------:</td>
-<td>------------------:</td>
-<td>:------------:</td>
-<td>------------------:</td>
-<td>-------------------:</td>
-<td>----------------</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GPT-5.5</td>
-<td>$5.00</td>
-<td>$10.00</td>
-<td>$0.50</td>
-<td>$30.00</td>
-<td>$45.00</td>
+<td align="right">$5.00</td>
+<td align="right">$10.00</td>
+<td align="center">$0.50</td>
+<td align="right">$30.00</td>
+<td align="right">$45.00</td>
 <td>GA</td>
 </tr>
 <tr>
 <td>GPT-5.4</td>
-<td>$2.50</td>
-<td>$5.00</td>
-<td>$0.25</td>
-<td>$15.00</td>
-<td>$22.50</td>
+<td align="right">$2.50</td>
+<td align="right">$5.00</td>
+<td align="center">$0.25</td>
+<td align="right">$15.00</td>
+<td align="right">$22.50</td>
 <td>GA</td>
 </tr>
 <tr>
 <td>GPT-5.4 mini</td>
-<td>$0.75</td>
-<td>—</td>
-<td>$0.075</td>
-<td>$4.50</td>
-<td>—</td>
+<td align="right">$0.75</td>
+<td align="right">—</td>
+<td align="center">$0.075</td>
+<td align="right">$4.50</td>
+<td align="right">—</td>
 <td>GA</td>
 </tr>
 <tr>
 <td>GPT-5.4 nano</td>
-<td>$0.20</td>
-<td>—</td>
-<td>$0.02</td>
-<td>$1.25</td>
-<td>—</td>
+<td align="right">$0.20</td>
+<td align="right">—</td>
+<td align="center">$0.02</td>
+<td align="right">$1.25</td>
+<td align="right">—</td>
 <td>GA</td>
 </tr>
 <tr>
 <td>GPT-5.3-Codex</td>
-<td>$1.75</td>
-<td>$0.175</td>
-<td>$14.00</td>
-<td>GA</td>
+<td align="right">$1.75</td>
+<td align="right">$0.175</td>
+<td align="center">$14.00</td>
+<td align="right">GA</td>
+<td align="right"></td>
+<td></td>
 </tr>
 <tr>
 <td>GPT-5.2</td>
-<td>$1.75</td>
-<td>$0.175</td>
-<td>$14.00</td>
-<td>Closing down (Jun 1)</td>
+<td align="right">$1.75</td>
+<td align="right">$0.175</td>
+<td align="center">$14.00</td>
+<td align="right">Closing down (Jun 1)</td>
+<td align="right"></td>
+<td></td>
 </tr>
 <tr>
 <td>GPT-5.2-Codex</td>
-<td>$1.75</td>
-<td>$0.175</td>
-<td>$14.00</td>
-<td>GA</td>
+<td align="right">$1.75</td>
+<td align="right">$0.175</td>
+<td align="center">$14.00</td>
+<td align="right">GA</td>
+<td align="right"></td>
+<td></td>
 </tr>
 <tr>
 <td>GPT-5 mini</td>
-<td>$0.25</td>
-<td>$0.025</td>
-<td>$2.00</td>
-<td>GA</td>
+<td align="right">$0.25</td>
+<td align="right">$0.025</td>
+<td align="center">$2.00</td>
+<td align="right">GA</td>
+<td align="right"></td>
+<td></td>
 </tr>
-</table>
-
-<strong>Anthropic (includes cache write cost):</strong>
-
+</tbody></table>
+<p><strong>Anthropic (includes cache write cost):</strong></p>
 <table>
+<thead>
 <tr>
 <th>Model</th>
-<th>Input /1M</th>
-<th>Cached Input</th>
-<th>Cache Write</th>
-<th>Output /1M</th>
+<th align="right">Input /1M</th>
+<th align="center">Cached Input</th>
+<th align="center">Cache Write</th>
+<th align="right">Output /1M</th>
 </tr>
-<tr>
-<td>-------</td>
-<td>----------:</td>
-<td>:------------:</td>
-<td>:-----------:</td>
-<td>-----------:</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Claude Fable 5 ★</td>
-<td>$10.00</td>
-<td>$1.00</td>
-<td>$12.50</td>
-<td>$50.00</td>
+<td align="right">$10.00</td>
+<td align="center">$1.00</td>
+<td align="center">$12.50</td>
+<td align="right">$50.00</td>
 </tr>
 <tr>
 <td>Claude Opus 4.8</td>
-<td>$5.00</td>
-<td>$0.50</td>
-<td>$6.25</td>
-<td>$25.00</td>
+<td align="right">$5.00</td>
+<td align="center">$0.50</td>
+<td align="center">$6.25</td>
+<td align="right">$25.00</td>
 </tr>
 <tr>
 <td>Claude Opus 4.7</td>
-<td>$5.00</td>
-<td>$0.50</td>
-<td>$6.25</td>
-<td>$25.00</td>
+<td align="right">$5.00</td>
+<td align="center">$0.50</td>
+<td align="center">$6.25</td>
+<td align="right">$25.00</td>
 </tr>
 <tr>
 <td>Claude Opus 4.6</td>
-<td>$5.00</td>
-<td>$0.50</td>
-<td>$6.25</td>
-<td>$25.00</td>
+<td align="right">$5.00</td>
+<td align="center">$0.50</td>
+<td align="center">$6.25</td>
+<td align="right">$25.00</td>
 </tr>
 <tr>
 <td>Claude Opus 4.5</td>
-<td>$5.00</td>
-<td>$0.50</td>
-<td>$6.25</td>
-<td>$25.00</td>
+<td align="right">$5.00</td>
+<td align="center">$0.50</td>
+<td align="center">$6.25</td>
+<td align="right">$25.00</td>
 </tr>
 <tr>
 <td>Claude Sonnet 4.6</td>
-<td>$3.00</td>
-<td>$0.30</td>
-<td>$3.75</td>
-<td>$15.00</td>
+<td align="right">$3.00</td>
+<td align="center">$0.30</td>
+<td align="center">$3.75</td>
+<td align="right">$15.00</td>
 </tr>
 <tr>
 <td>Claude Sonnet 4.5</td>
-<td>$3.00</td>
-<td>$0.30</td>
-<td>$3.75</td>
-<td>$15.00</td>
+<td align="right">$3.00</td>
+<td align="center">$0.30</td>
+<td align="center">$3.75</td>
+<td align="right">$15.00</td>
 </tr>
 <tr>
 <td>Claude Sonnet 4</td>
-<td>$3.00</td>
-<td>$0.30</td>
-<td>$3.75</td>
-<td>$15.00</td>
+<td align="right">$3.00</td>
+<td align="center">$0.30</td>
+<td align="center">$3.75</td>
+<td align="right">$15.00</td>
 </tr>
 <tr>
 <td>Claude Haiku 4.5</td>
-<td>$1.00</td>
-<td>$0.10</td>
-<td>$1.25</td>
-<td>$5.00</td>
+<td align="right">$1.00</td>
+<td align="center">$0.10</td>
+<td align="center">$1.25</td>
+<td align="right">$5.00</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>★ Claude Fable 5 — Released June 9, 2026. First Anthropic Mythos-class model. Available on Copilot Pro+, Max, Business, Enterprise. <strong>Currently unavailable on Copilot</strong> as of June 13 (Anthropic restricting access during rollout). Priced at $10/$50 per 1M tokens.</p>
-
-<strong>Google:</strong>
-
-<p>Long context pricing: Gemini 3.1 Pro has a <strong>Long context</strong> tier for input > 200K tokens on Copilot.</p>
-
+<p><strong>Google:</strong></p>
+<p>Long context pricing: Gemini 3.1 Pro has a <strong>Long context</strong> tier for input &gt; 200K tokens on Copilot.</p>
 <table>
+<thead>
 <tr>
 <th>Model</th>
-<th>Input /1M (≤200K)</th>
-<th>Input /1M (>200K)</th>
-<th>Cached Input</th>
-<th>Output /1M (≤200K)</th>
-<th>Output /1M (>200K)</th>
+<th align="right">Input /1M (≤200K)</th>
+<th align="right">Input /1M (&gt;200K)</th>
+<th align="center">Cached Input</th>
+<th align="right">Output /1M (≤200K)</th>
+<th align="right">Output /1M (&gt;200K)</th>
 <th>Release Status</th>
 </tr>
-<tr>
-<td>-------</td>
-<td>------------------:</td>
-<td>------------------:</td>
-<td>:------------:</td>
-<td>------------------:</td>
-<td>-------------------:</td>
-<td>----------------</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Gemini 3.5 Flash</td>
-<td>$1.50</td>
-<td>—</td>
-<td>$0.15</td>
-<td>$9.00</td>
-<td>—</td>
+<td align="right">$1.50</td>
+<td align="right">—</td>
+<td align="center">$0.15</td>
+<td align="right">$9.00</td>
+<td align="right">—</td>
 <td>GA</td>
 </tr>
 <tr>
 <td>Gemini 3.1 Pro</td>
-<td>$2.00</td>
-<td>$4.00</td>
-<td>$0.20</td>
-<td>$12.00</td>
-<td>$18.00</td>
+<td align="right">$2.00</td>
+<td align="right">$4.00</td>
+<td align="center">$0.20</td>
+<td align="right">$12.00</td>
+<td align="right">$18.00</td>
 <td>Public preview</td>
 </tr>
 <tr>
 <td>Gemini 2.5 Pro</td>
-<td>$1.25</td>
-<td>—</td>
-<td>$0.125</td>
-<td>$10.00</td>
-<td>—</td>
+<td align="right">$1.25</td>
+<td align="right">—</td>
+<td align="center">$0.125</td>
+<td align="right">$10.00</td>
+<td align="right">—</td>
 <td>GA</td>
 </tr>
 <tr>
 <td>Gemini 3 Flash</td>
-<td>$0.50</td>
-<td>—</td>
-<td>$0.05</td>
-<td>$3.00</td>
-<td>—</td>
+<td align="right">$0.50</td>
+<td align="right">—</td>
+<td align="center">$0.05</td>
+<td align="right">$3.00</td>
+<td align="right">—</td>
 <td>Public preview</td>
 </tr>
-</table>
-
-<strong>Fine-tuned (GitHub):</strong>
-
+</tbody></table>
+<p><strong>Fine-tuned (GitHub):</strong></p>
 <table>
+<thead>
 <tr>
 <th>Model</th>
-<th>Input /1M</th>
-<th>Cached Input</th>
-<th>Output /1M</th>
+<th align="right">Input /1M</th>
+<th align="center">Cached Input</th>
+<th align="right">Output /1M</th>
 <th>Release Status</th>
 </tr>
-<tr>
-<td>-------</td>
-<td>----------:</td>
-<td>:------------:</td>
-<td>-----------:</td>
-<td>----------------</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Raptor mini</td>
-<td>$0.25</td>
-<td>$0.025</td>
-<td>$2.00</td>
+<td align="right">$0.25</td>
+<td align="center">$0.025</td>
+<td align="right">$2.00</td>
 <td>Public preview</td>
 </tr>
-</table>
-
-<strong>Microsoft:</strong>
-
+</tbody></table>
+<p><strong>Microsoft:</strong></p>
 <table>
+<thead>
 <tr>
 <th>Model</th>
-<th>Input /1M</th>
-<th>Cached Input</th>
-<th>Output /1M</th>
+<th align="right">Input /1M</th>
+<th align="center">Cached Input</th>
+<th align="right">Output /1M</th>
 <th>Release Status</th>
 </tr>
-<tr>
-<td>-------</td>
-<td>----------:</td>
-<td>:------------:</td>
-<td>-----------:</td>
-<td>----------------</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>MAI-Code-1-Flash</td>
-<td>$0.75</td>
-<td>$0.075</td>
-<td>$4.50</td>
+<td align="right">$0.75</td>
+<td align="center">$0.075</td>
+<td align="right">$4.50</td>
 <td>GA</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Plans Summary (Jun 7, 2026 — Usage-Based Billing LIVE)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
-<th>Base</th>
-<th>Flex</th>
-<th>Total Credits</th>
+<th align="center">Base</th>
+<th align="center">Flex</th>
+<th align="center">Total Credits</th>
 <th>Notes</th>
 </tr>
-<tr>
-<td>------</td>
-<td>-------</td>
-<td>:----:</td>
-<td>:----:</td>
-<td>:-------------:</td>
-<td>-------</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Free</td>
 <td>$0</td>
-<td>—</td>
-<td>—</td>
-<td>2000 completions/mo + limited AI credits (auto model)</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">2000 completions/mo + limited AI credits (auto model)</td>
+<td></td>
 </tr>
 <tr>
 <td>Pro</td>
 <td>$10/mo</td>
-<td>1,000 ($10)</td>
-<td>500 ($5)</td>
-<td>1,500 ($15)</td>
+<td align="center">1,000 ($10)</td>
+<td align="center">500 ($5)</td>
+<td align="center">1,500 ($15)</td>
 <td>Auto-migrated Jun 1. <strong>Upgrades paused</strong></td>
 </tr>
 <tr>
 <td>Pro+</td>
 <td>$39/mo</td>
-<td>3,900 ($39)</td>
-<td>3,100 ($31)</td>
-<td>7,000 ($70)</td>
+<td align="center">3,900 ($39)</td>
+<td align="center">3,100 ($31)</td>
+<td align="center">7,000 ($70)</td>
 <td>Auto-migrated Jun 1. <strong>Upgrades paused</strong></td>
 </tr>
 <tr>
 <td>Max</td>
 <td>$100/mo</td>
-<td>10,000 ($100)</td>
-<td>10,000 ($100)</td>
-<td>20,000 ($200)</td>
+<td align="center">10,000 ($100)</td>
+<td align="center">10,000 ($100)</td>
+<td align="center">20,000 ($200)</td>
 <td>Effective Jun 1. Upgrade available for existing users. <strong>New sign-ups paused</strong></td>
 </tr>
 <tr>
 <td>Business</td>
 <td>$19/seat/mo</td>
-<td>1,900 ($19)</td>
-<td>Promo Jun-Aug ($30)</td>
-<td>—</td>
+<td align="center">1,900 ($19)</td>
+<td align="center">Promo Jun-Aug ($30)</td>
+<td align="center">—</td>
 <td>$30/seat promo active Jun-Aug</td>
 </tr>
 <tr>
 <td>Enterprise</td>
 <td>$39/seat/mo</td>
-<td>3,900 ($39)</td>
-<td>Promo Jun-Aug ($70)</td>
-<td>—</td>
+<td align="center">3,900 ($39)</td>
+<td align="center">Promo Jun-Aug ($70)</td>
+<td align="center">—</td>
 <td>$70/seat promo active Jun-Aug</td>
 </tr>
-</table>
-
-<strong>Note:</strong> Paid Copilot plans qualify for a <strong>10% discount</strong> on model costs when using auto model selection in Copilot Chat, Copilot CLI, or Copilot cloud agent.
-
+</tbody></table>
+<p><strong>Note:</strong> Paid Copilot plans qualify for a <strong>10% discount</strong> on model costs when using auto model selection in Copilot Chat, Copilot CLI, or Copilot cloud agent.</p>
 <h3>Individual Plan Feature Highlights (Current UI — pre-June 1)</h3>
-
 <p>Per <a href="https://github.com/features/copilot/plans">github.com/features/copilot/plans</a> as of May 26:</p>
-
 <table>
+<thead>
 <tr>
 <th>Feature</th>
-<th>Free</th>
-<th>Pro ($10/mo)</th>
-<th>Pro+ ($39/mo)</th>
+<th align="center">Free</th>
+<th align="center">Pro ($10/mo)</th>
+<th align="center">Pro+ ($39/mo)</th>
 </tr>
-<tr>
-<td>---------</td>
-<td>:----:</td>
-<td>:------------:</td>
-<td>:-------------:</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Premium requests/mo</td>
-<td>50</td>
-<td>300</td>
-<td>1,500</td>
+<td align="center">50</td>
+<td align="center">300</td>
+<td align="center">1,500</td>
 </tr>
 <tr>
 <td>Agent mode (GPT-5 mini)</td>
-<td>50/mo</td>
-<td>Unlimited</td>
-<td>Unlimited</td>
+<td align="center">50/mo</td>
+<td align="center">Unlimited</td>
+<td align="center">Unlimited</td>
 </tr>
 <tr>
 <td>Inline suggestions/mo</td>
-<td>2,000</td>
-<td>Unlimited</td>
-<td>Unlimited</td>
+<td align="center">2,000</td>
+<td align="center">Unlimited</td>
+<td align="center">Unlimited</td>
 </tr>
 <tr>
 <td>Claude Opus models</td>
-<td>—</td>
-<td>—</td>
-<td>✔️</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">✔️</td>
 </tr>
 <tr>
 <td>Delegate to Codex/Claude agents</td>
-<td>—</td>
-<td>—</td>
-<td>✔️ (Preview)</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">✔️ (Preview)</td>
 </tr>
 <tr>
 <td>MCP server integration</td>
-<td>—</td>
-<td>✔️</td>
-<td>✔️</td>
+<td align="center">—</td>
+<td align="center">✔️</td>
+<td align="center">✔️</td>
 </tr>
 <tr>
 <td>Purchase additional requests</td>
-<td>—</td>
-<td>$0.04/request</td>
-<td>$0.04/request</td>
+<td align="center">—</td>
+<td align="center">$0.04/request</td>
+<td align="center">$0.04/request</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Community Reviews</h3>
-
-<p>> <strong>From techsifted (Apr 2026):</strong> "Microsoft paused new signups for Copilot Pro, Pro+, and Student plans. Then they removed Opus models from the Pro tier entirely. If you'd built workflows around Opus inside GitHub Copilot at $10/month, those workflows are broken now."</p>
-
-<p>> <strong>From piunikaweb (Mar 2026):</strong> "To manage costs, GitHub has decided to remove access to flagship Claude models such as Opus and Sonnet, on the student plan."</p>
-
-<p>> <strong>From Reddit (r/github):</strong> Users widely criticized the student plan downgrades and Pro signup pause. Many students reported being locked out of models they relied on for coursework.</p>
-
-<p>> <strong>Personal Review (June 2026):</strong> GitHub Copilot was the most reliable and good coding plan I used. A lot of models were available and the IDE integration was seamless. I used it on the Student plan which was fantastic initially. The bad part: they progressively removed all frontier models from the Student plan — Claude Opus/Sonnet went first, then GPT-5.3-Codex was pulled from the model picker. What started as a generous free plan for students got hollowed out over time. With usage-based billing now live (June 1), the value proposition is even more uncertain — your $10 Pro gets you 1,500 AI Credits worth $15, and heavy agent sessions will burn through that fast. The Max plan ($100/mo for 20,000 credits) is the realistic choice for heavy users. Claude Opus 4.8 is now available on Pro+/Max plans, which is a nice addition. Still a solid product for light use, but heavy users will need the $100 Max plan. New sign-ups remain paused across all paid individual plans (Pro, Pro+, Student, Max) as of June 1 — you can only upgrade if already subscribed. Copilot code review now burns both AI Credits and GitHub Actions minutes. Goldeneye model removed from the model lineup; new Microsoft MAI-Code-1-Flash model added at lightweight pricing ($0.75/$4.50 per 1M tokens).</p>
-
+<blockquote>
+<p><strong>From techsifted (Apr 2026):</strong> &quot;Microsoft paused new signups for Copilot Pro, Pro+, and Student plans. Then they removed Opus models from the Pro tier entirely. If you&#39;d built workflows around Opus inside GitHub Copilot at $10/month, those workflows are broken now.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From piunikaweb (Mar 2026):</strong> &quot;To manage costs, GitHub has decided to remove access to flagship Claude models such as Opus and Sonnet, on the student plan.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From Reddit (r/github):</strong> Users widely criticized the student plan downgrades and Pro signup pause. Many students reported being locked out of models they relied on for coursework.</p>
+</blockquote>
+<blockquote>
+<p><strong>Personal Review (June 2026):</strong> GitHub Copilot was the most reliable and good coding plan I used. A lot of models were available and the IDE integration was seamless. I used it on the Student plan which was fantastic initially. The bad part: they progressively removed all frontier models from the Student plan — Claude Opus/Sonnet went first, then GPT-5.3-Codex was pulled from the model picker. What started as a generous free plan for students got hollowed out over time. With usage-based billing now live (June 1), the value proposition is even more uncertain — your $10 Pro gets you 1,500 AI Credits worth $15, and heavy agent sessions will burn through that fast. The Max plan ($100/mo for 20,000 credits) is the realistic choice for heavy users. Claude Opus 4.8 is now available on Pro+/Max plans, which is a nice addition. Still a solid product for light use, but heavy users will need the $100 Max plan. New sign-ups remain paused across all paid individual plans (Pro, Pro+, Student, Max) as of June 1 — you can only upgrade if already subscribed. Copilot code review now burns both AI Credits and GitHub Actions minutes. Goldeneye model removed from the model lineup; new Microsoft MAI-Code-1-Flash model added at lightweight pricing ($0.75/$4.50 per 1M tokens).</p>
+</blockquote>
 <hr>
-
-<h2 id="glm-/-z.ai-[subscribe]https//z.ai/subscribe">GLM / Z.ai <a href="https://z.ai/subscribe">Subscribe</a></h2>
-
-<p>5h sliding window + weekly cap. Pricing restructured May 2026 with higher prices and monthly billing.  
-Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026). GLM-5.1 now open to all tiers.</p>
-
+<h2>GLM / Z.ai <a href="https://z.ai/subscribe">Subscribe</a></h2>
+<p>5h sliding window + weekly cap. Pricing restructured May 2026 with higher prices and monthly billing.<br>Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026). GLM-5.1 now open to all tiers.</p>
 <table>
+<thead>
 <tr>
 <th>Tier</th>
 <th>Price</th>
 <th>5h Limit</th>
 <th>Models Included</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Lite</td>
 <td><strong>$18/mo</strong></td>
 <td>~80 prompts</td>
@@ -892,17 +885,17 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026). GLM-5.1 now open to all t
 <td>~1,600 prompts</td>
 <td>Same models, ~4x Pro</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Model Quota Multipliers (Critical)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model / Time</th>
 <th>Multiplier</th>
 <th>Effective Lite prompts/5h</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GLM-5.1 / GLM-5-Turbo at peak (14-18 UTC+8)</td>
 <td>3x drain</td>
 <td>~26</td>
@@ -932,8 +925,7 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026). GLM-5.1 now open to all t
 <td>1x drain</td>
 <td>~80</td>
 </tr>
-</table>
-
+</tbody></table>
 <ul>
 <li>Each prompt invokes the model ~15–20 times internally</li>
 <li>GLM-5.1 at 44.3 tok/sec is ~6x slower than Grok 4.20</li>
@@ -941,20 +933,18 @@ Powered by GLM-5 (Feb 2026) and GLM-5.1 (Mar 27 2026). GLM-5.1 now open to all t
 <li><strong>Pricing restructured May 2026</strong>: Switched from quarterly ($27/$81/$216) to monthly ($18/$72/$160). Previously ~$10/$30/$80 equivalent, now significantly more expensive. GLM-5.1 opened to all tiers.</li>
 <li>Free models (no sub): GLM-4.7-Flash, GLM-4.5-Flash</li>
 </ul>
-
 <hr>
-
-<h2 id="opencode-go-plan-[subscribe]https//opencode.ai/go">OpenCode Go Plan <a href="https://opencode.ai/go">Subscribe</a></h2>
-
-<p>OpenCode's official low-cost subscription. <strong>$5 first month, then $10/month.</strong>
+<h2>OpenCode Go Plan <a href="https://opencode.ai/go">Subscribe</a></h2>
+<p>OpenCode&#39;s official low-cost subscription. <strong>$5 first month, then $10/month.</strong>
 Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Zero-retention policy.</p>
-
 <table>
+<thead>
 <tr>
 <th>Window</th>
 <th>Dollar Limit</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Per 5 hours</td>
 <td>$12</td>
 </tr>
@@ -966,13 +956,11 @@ Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Ze
 <td>Per month</td>
 <td>$60</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Available Models (14)</h3>
-
 <p>Source: <a href="https://opencode.ai/docs/go/">opencode.ai/docs/go</a> (verified June 13, 2026)</p>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Provider</th>
@@ -981,7 +969,8 @@ Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Ze
 <th>Per Month</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>DeepSeek V4 Flash</td>
 <td>DeepSeek</td>
 <td>31,650</td>
@@ -1085,167 +1074,155 @@ Dollar-based limits (not request counts). Models hosted in US, EU, Singapore. Ze
 <td>4,300</td>
 <td>Best reasoning. 58.4% SWE-Bench Pro</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Go API Pricing (per 1M tokens)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
-<th>Input</th>
-<th>Output</th>
-<th>Cached Read</th>
-<th>Cached Write</th>
+<th align="right">Input</th>
+<th align="right">Output</th>
+<th align="center">Cached Read</th>
+<th align="center">Cached Write</th>
 </tr>
-<tr>
-<td>-------</td>
-<td>------:</td>
-<td>-------:</td>
-<td>:-----------:</td>
-<td>:------------:</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GLM-5.1</td>
-<td>$1.40</td>
-<td>$4.40</td>
-<td>$0.26</td>
-<td>—</td>
+<td align="right">$1.40</td>
+<td align="right">$4.40</td>
+<td align="center">$0.26</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>GLM-5</td>
-<td>$1.00</td>
-<td>$3.20</td>
-<td>$0.20</td>
-<td>—</td>
+<td align="right">$1.00</td>
+<td align="right">$3.20</td>
+<td align="center">$0.20</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>Kimi K2.7 Code</td>
-<td>$0.95</td>
-<td>$4.00</td>
-<td>$0.19</td>
-<td>—</td>
+<td align="right">$0.95</td>
+<td align="right">$4.00</td>
+<td align="center">$0.19</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>Kimi K2.6</td>
-<td>$0.95</td>
-<td>$4.00</td>
-<td>$0.16</td>
-<td>—</td>
+<td align="right">$0.95</td>
+<td align="right">$4.00</td>
+<td align="center">$0.16</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>MiMo V2.5</td>
-<td>$0.14</td>
-<td>$0.28</td>
-<td>$0.0028</td>
-<td>—</td>
+<td align="right">$0.14</td>
+<td align="right">$0.28</td>
+<td align="center">$0.0028</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>MiMo V2.5 Pro</td>
-<td>$1.74</td>
-<td>$3.48</td>
-<td>$0.0145</td>
-<td>—</td>
+<td align="right">$1.74</td>
+<td align="right">$3.48</td>
+<td align="center">$0.0145</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>MiniMax M3</td>
-<td>$0.30</td>
-<td>$1.20</td>
-<td>$0.06</td>
-<td>—</td>
+<td align="right">$0.30</td>
+<td align="right">$1.20</td>
+<td align="center">$0.06</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>MiniMax M2.7</td>
-<td>$0.30</td>
-<td>$1.20</td>
-<td>$0.06</td>
-<td>$0.375</td>
+<td align="right">$0.30</td>
+<td align="right">$1.20</td>
+<td align="center">$0.06</td>
+<td align="center">$0.375</td>
 </tr>
 <tr>
 <td>Qwen3.7 Max</td>
-<td>$2.50</td>
-<td>$7.50</td>
-<td>$0.50</td>
-<td>$3.125</td>
+<td align="right">$2.50</td>
+<td align="right">$7.50</td>
+<td align="center">$0.50</td>
+<td align="center">$3.125</td>
 </tr>
 <tr>
 <td>Qwen3.7 Plus (≤256K)</td>
-<td>$0.40</td>
-<td>$1.60</td>
-<td>$0.04</td>
-<td>$0.50</td>
+<td align="right">$0.40</td>
+<td align="right">$1.60</td>
+<td align="center">$0.04</td>
+<td align="center">$0.50</td>
 </tr>
 <tr>
-<td>Qwen3.7 Plus (>256K)</td>
-<td>$1.20</td>
-<td>$4.80</td>
-<td>$0.12</td>
-<td>$1.50</td>
+<td>Qwen3.7 Plus (&gt;256K)</td>
+<td align="right">$1.20</td>
+<td align="right">$4.80</td>
+<td align="center">$0.12</td>
+<td align="center">$1.50</td>
 </tr>
 <tr>
 <td>Qwen3.6 Plus (≤256K)</td>
-<td>$0.50</td>
-<td>$3.00</td>
-<td>$0.05</td>
-<td>$0.625</td>
+<td align="right">$0.50</td>
+<td align="right">$3.00</td>
+<td align="center">$0.05</td>
+<td align="center">$0.625</td>
 </tr>
 <tr>
-<td>Qwen3.6 Plus (>256K)</td>
-<td>$2.00</td>
-<td>$6.00</td>
-<td>$0.20</td>
-<td>$2.50</td>
+<td>Qwen3.6 Plus (&gt;256K)</td>
+<td align="right">$2.00</td>
+<td align="right">$6.00</td>
+<td align="center">$0.20</td>
+<td align="center">$2.50</td>
 </tr>
 <tr>
 <td>DeepSeek V4 Pro</td>
-<td>$1.74</td>
-<td>$3.48</td>
-<td>$0.0145</td>
-<td>—</td>
+<td align="right">$1.74</td>
+<td align="right">$3.48</td>
+<td align="center">$0.0145</td>
+<td align="center">—</td>
 </tr>
 <tr>
 <td>DeepSeek V4 Flash</td>
-<td>$0.14</td>
-<td>$0.28</td>
-<td>$0.0028</td>
-<td>—</td>
+<td align="right">$0.14</td>
+<td align="right">$0.28</td>
+<td align="center">$0.0028</td>
+<td align="center">—</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Free Model</h3>
-
 <p>Big Pickle (~GLM-4.6, 200K ctx): 200 requests/5h - no subscription needed.</p>
-
 <h3>Community Reviews</h3>
-
-<p>> <strong>From Reddit (Mar 2026):</strong> Described as "genuinely the worst coding plan I have ever used" - 94% upvotes. Criticism centered on quantized models and aggressive rate limits on reasoning models. (r/LocalLLaMA)</p>
-
-<p>> <strong>From APIYI review:</strong> "Getting three flagship open-source models for $10/month ... you're getting 6x the model invocation value. MiniMax M2.5 is the most cost-effective choice - it has the highest limits and the strongest coding ability."</p>
-
-<p>> <strong>From Thomas Wiegold (Apr 2026):</strong> "MiniMax gives you a good number of requests ... up to 31,800 per month with M2.5. These aren't toy models - M2.5 scored 80.2% on SWE-Bench Verified, within spitting distance of Claude Opus 4.6's 80.8%. The catch is that reasoning-heavy models like GLM-5.1 burn through limits fast."</p>
-
-<p>> <strong>Personal Review (June 2026):</strong> Best and cheapest coding plan available. Generous quotas on MiniMax and Xiaomi models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Qwen3.5 Plus has been removed from the model lineup, replaced by Qwen3.6 Plus and Qwen3.7 Max. MiniMax M2.5 has been rotated out of the model lineup — replaced by Kimi K2.7 Code as the new addition. Qwen3.7 Plus fills the mid-tier Qwen slot between Qwen3.6 Plus and Qwen3.7 Max. Strongly recommended.</p>
-
+<blockquote>
+<p><strong>From Reddit (Mar 2026):</strong> Described as &quot;genuinely the worst coding plan I have ever used&quot; - 94% upvotes. Criticism centered on quantized models and aggressive rate limits on reasoning models. (r/LocalLLaMA)</p>
+</blockquote>
+<blockquote>
+<p><strong>From APIYI review:</strong> &quot;Getting three flagship open-source models for $10/month ... you&#39;re getting 6x the model invocation value. MiniMax M2.5 is the most cost-effective choice - it has the highest limits and the strongest coding ability.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From Thomas Wiegold (Apr 2026):</strong> &quot;MiniMax gives you a good number of requests ... up to 31,800 per month with M2.5. These aren&#39;t toy models - M2.5 scored 80.2% on SWE-Bench Verified, within spitting distance of Claude Opus 4.6&#39;s 80.8%. The catch is that reasoning-heavy models like GLM-5.1 burn through limits fast.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>Personal Review (June 2026):</strong> Best and cheapest coding plan available. Generous quotas on MiniMax and Xiaomi models, super fast inference. Mostly reliable with top open-weight models like GLM-5.1 and Kimi K2.6 at good limits. DeepSeek V4 Flash gets 158K requests/month - absurdly cheap. Qwen3.5 Plus has been removed from the model lineup, replaced by Qwen3.6 Plus and Qwen3.7 Max. MiniMax M2.5 has been rotated out of the model lineup — replaced by Kimi K2.7 Code as the new addition. Qwen3.7 Plus fills the mid-tier Qwen slot between Qwen3.6 Plus and Qwen3.7 Max. Strongly recommended.</p>
+</blockquote>
 <h3>Notes</h3>
-
 <ul>
 <li>Cancel anytime. Top-up credit if needed.</li>
-<li>Optional "Use balance" fallback to Zen credits after limits reached</li>
+<li>Optional &quot;Use balance&quot; fallback to Zen credits after limits reached</li>
 <li>Models are periodically rotated as new ones are tested</li>
 <li><strong>OpenAI-compatible endpoint</strong> (GPT/DeepSeek/Qwen-style): opencode.ai/zen/go/v1/chat/completions — used by GLM-5.1, GLM-5, Kimi K2.5, Kimi K2.6, DeepSeek V4 Pro, DeepSeek V4 Flash, MiMo-V2.5, MiMo-V2.5-Pro</li>
 <li><strong>Anthropic-compatible endpoint</strong> (Claude-style): opencode.ai/zen/go/v1/messages — used by MiniMax M3, M2.7, M2.5, Qwen3.7 Max, Qwen3.7 Plus, Qwen3.6 Plus</li>
 <li>Models hosted in US, EU, and Singapore</li>
 </ul>
-
 <hr>
-
-<h2 id="claude-code-anthropic-[pricing]https//claude.com/pricing">Claude Code (Anthropic) <a href="https://claude.com/pricing">Pricing</a></h2>
-
+<h2>Claude Code (Anthropic) <a href="https://claude.com/pricing">Pricing</a></h2>
 <p>Terminal coding agent. All usage shared across claude.ai, Claude Code CLI, and Desktop.
 Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="https://www.anthropic.com/news/claude-code">Anthropic blog</a>, community instrumentation.</p>
-
 <h3>Individual Plans</h3>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
@@ -1254,7 +1231,8 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <th>Context</th>
 <th>CLI</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Pro</td>
 <td>$20/mo ($17/yr)</td>
 <td>1x (doubled)</td>
@@ -1278,15 +1256,12 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <td>1M</td>
 <td>Yes</td>
 </tr>
-</table>
-
-<strong>New: Claude Opus 4.8</strong> — Now available on all Claude plans. Latest Opus model with improved reasoning. On GitHub Copilot Pro+/Max as of June 1.
-
-<strong>New: Claude Fable 5 (Mythos class)</strong> — Released June 9, 2026. Available on all Claude surfaces (claude.ai, Claude Code CLI, Claude Cowork) through June 22 on subscription plans; billed extra after that. On GitHub Copilot Pro+/Max/Business/Enterprise. First model in Anthropic's Mythos class — designed for long-horizon autonomous coding. Requires 30-day data retention for safety classifiers.
-
+</tbody></table>
+<p><strong>New: Claude Opus 4.8</strong> — Now available on all Claude plans. Latest Opus model with improved reasoning. On GitHub Copilot Pro+/Max as of June 1.</p>
+<p><strong>New: Claude Fable 5 (Mythos class)</strong> — Released June 9, 2026. Available on all Claude surfaces (claude.ai, Claude Code CLI, Claude Cowork) through June 22 on subscription plans; billed extra after that. On GitHub Copilot Pro+/Max/Business/Enterprise. First model in Anthropic&#39;s Mythos class — designed for long-horizon autonomous coding. Requires 30-day data retention for safety classifiers.</p>
 <h3>Team Plans</h3>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
@@ -1294,7 +1269,8 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <th>Weekly Cap</th>
 <th>Min Seats</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Team Standard</td>
 <td>$25/seat/mo ($20 annual)</td>
 <td>~1.25x Pro (doubled)</td>
@@ -1308,19 +1284,17 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <td>7-day, 2 caps</td>
 <td>5-150</td>
 </tr>
-</table>
-
+</tbody></table>
 <ul>
 <li>Max 5x: ~$0.44/message (Opus). Max 20x: ~$0.22/message -- actual volume discount kicks in here</li>
-<li>Max 5x: auto-switch Opus->Sonnet at 20% limit. Max 20x: at 50%</li>
+<li>Max 5x: auto-switch Opus-&gt;Sonnet at 20% limit. Max 20x: at 50%</li>
 <li><strong>Peak hours throttling removed</strong> as of May 2026 (SpaceX Colossus 1 deal)</li>
 <li>Team Standard added Claude Code access late April 2026 (was Premium-only before)</li>
 <li>Pro had Claude Code briefly removed (Apr 2026 test on 2% of signups) then restored within hours</li>
 </ul>
-
 <h3>API Pay-per-Token</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
@@ -1328,7 +1302,8 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <th>Cache Read</th>
 <th>Batch (50% off)</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Fable 5</td>
 <td>$10.00</td>
 <td>$50.00</td>
@@ -1363,10 +1338,8 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <td>$0.10</td>
 <td>Yes</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Recent Changes (May–Jun 2026)</h3>
-
 <ul>
 <li><strong>Rate limits doubled</strong> for Pro, Max, Team, and Enterprise plans (SpaceX Colossus 1 deal — 220K+ NVIDIA GPUs, 300+ MW capacity). Announced May 6 at Code with Claude event</li>
 <li><strong>Peak hours throttling removed</strong> — same rate limits at 3 AM and 3 PM</li>
@@ -1374,20 +1347,18 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <li><strong>Managed Agents launched</strong> — Dreaming, Outcomes, multi-agent orchestration now available at claude.ai/code</li>
 <li><strong>Claude Cowork</strong> now bundled into Pro (visual canvas-based workspace, GA since Apr 2026)</li>
 </ul>
-
 <h3>Programmatic Usage Billing Split (Effective June 15, 2026)</h3>
-
 <p>Source: <a href="https://www.buildthisnow.com/blog/guide/mechanics/claude-billing-change-june-2026">buildthisnow.com</a>, <a href="https://codersera.com/blog/anthropic-june-2026-billing-change-claude-code/">codersera.com</a></p>
-
 <p>Anthropic announced on May 13 that <strong>effective June 15, 2026</strong> (tomorrow), programmatic Claude Code usage will be moved onto a separate monthly credit pool billed at full API rates.</p>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Separate Credit Pool</th>
 <th>What Triggers It</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Pro</td>
 <td>$20/mo</td>
 <td>Agent SDK, <code>claude -p</code>, CI pipelines</td>
@@ -1402,48 +1373,44 @@ Source: <a href="https://claude.com/pricing">claude.com/pricing</a>, <a href="ht
 <td>$200/mo</td>
 <td>Agent SDK, <code>claude -p</code>, CI pipelines</td>
 </tr>
-</table>
-
-<strong>What this means:</strong> Interactive Claude Code sessions in the terminal and IDE keep using your existing subscription limits (5-hour rolling window). But programmatic usage through the Claude Agent SDK, the <code>claude -p</code> command, and CI/CD pipelines will draw from this separate credit pool. A single Opus 4.7 review pass on a 500-line PR can consume 50,000–100,000 tokens, costing $0.25–$2.75 depending on output length at API rates.
-
-<strong>Impact:</strong> Teams running Claude Code in multi-agent setups alongside Codex CLI will need to budget separately for programmatic usage after June 15. Previously, a Max 20x subscription's generous token allowance could absorb heavy programmatic usage — now that same workload costs real dollars.
-
+</tbody></table>
+<p><strong>What this means:</strong> Interactive Claude Code sessions in the terminal and IDE keep using your existing subscription limits (5-hour rolling window). But programmatic usage through the Claude Agent SDK, the <code>claude -p</code> command, and CI/CD pipelines will draw from this separate credit pool. A single Opus 4.7 review pass on a 500-line PR can consume 50,000–100,000 tokens, costing $0.25–$2.75 depending on output length at API rates.</p>
+<p><strong>Impact:</strong> Teams running Claude Code in multi-agent setups alongside Codex CLI will need to budget separately for programmatic usage after June 15. Previously, a Max 20x subscription&#39;s generous token allowance could absorb heavy programmatic usage — now that same workload costs real dollars.</p>
 <h3>Known Issues</h3>
-
 <ul>
-<li><strong>v2.1.100 bug (Apr 2026 — still ongoing):</strong> ~20K invisible tokens added per request, burning quota ~40% faster. Root cause: broken prompt caching forcing full re-processing on every turn. Three independent bugs break Anthropic's prefix-based prompt caching (cache_creation charges instead of cache_read). Six releases shipped through v2.1.133 (May 8) with features but no public fix. Workaround: downgrade to v2.1.34 or reinstall via npm</li>
+<li><strong>v2.1.100 bug (Apr 2026 — still ongoing):</strong> ~20K invisible tokens added per request, burning quota ~40% faster. Root cause: broken prompt caching forcing full re-processing on every turn. Three independent bugs break Anthropic&#39;s prefix-based prompt caching (cache_creation charges instead of cache_read). Six releases shipped through v2.1.133 (May 8) with features but no public fix. Workaround: downgrade to v2.1.34 or reinstall via npm</li>
 <li><strong>Opus 4.7/4.8 tokenizer:</strong> 4.7 tokenizer uses up to 35% more tokens for equivalent text vs Opus 4.6. Opus 4.8 may have similar behavior</li>
 <li><strong>5-hour rolling window:</strong> Hit limit at 2pm? Wait until 7pm. Not a daily reset</li>
 </ul>
-
 <h3>Community Reviews</h3>
-
-<p>> <strong>From Reddit (r/ClaudeAI):</strong> "The difference of Claude Pro and Max5 plan usage limit are enormous. It is not only 5x" -- users report Max 5x is a dramatically better experience for daily coding, not just numerically 5x better.</p>
-
-<p>> <strong>From dev.to review:</strong> "Pro costs ~$0.44 per Opus message; Max 5x costs the same per message but prevents hitting rate limits sooner. Max 20x cuts per-message cost in half (~$0.22) and is the only plan offering true volume discount."</p>
-
-<p>> <strong>From findskill.ai:</strong> "Pro $20/mo for solo devs, Max 5x $100/mo for full-time on Claude Code, Max 20x $200/mo for pair-programming all day. The v2.1.100 token inflation bug is real -- burns quotas ~40% faster."</p>
-
-<p>> <strong>From felloai review:</strong> "Max 5x at $100/month gives five times the Pro usage and priority access during peak demand. It is the sweet spot for full-time developers who use Claude Code as their default coding partner."</p>
-
-<p>> <strong>Personal Review (June 2026):</strong> Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 and now Opus 4.8 are genuinely the smartest models for complex refactoring and architecture decisions. Claude Fable 5 (June 9) was exciting — Mythos-class model for long-horizon autonomous coding — but as of June 13, GitHub Copilot docs mark it as <strong>currently unavailable</strong>, suggesting Anthropic is restricting access during the rollout. The main frustration is Anthropic's opaque quota system and the ongoing v2.1.100 prompt caching bug (still unfixed as of June) silently eating into your limits by ~40%. Compared to OpenCode Go ($10/mo), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.</p>
-
+<blockquote>
+<p><strong>From Reddit (r/ClaudeAI):</strong> &quot;The difference of Claude Pro and Max5 plan usage limit are enormous. It is not only 5x&quot; -- users report Max 5x is a dramatically better experience for daily coding, not just numerically 5x better.</p>
+</blockquote>
+<blockquote>
+<p><strong>From dev.to review:</strong> &quot;Pro costs <del>$0.44 per Opus message; Max 5x costs the same per message but prevents hitting rate limits sooner. Max 20x cuts per-message cost in half (</del>$0.22) and is the only plan offering true volume discount.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From findskill.ai:</strong> &quot;Pro $20/mo for solo devs, Max 5x $100/mo for full-time on Claude Code, Max 20x $200/mo for pair-programming all day. The v2.1.100 token inflation bug is real -- burns quotas ~40% faster.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From felloai review:</strong> &quot;Max 5x at $100/month gives five times the Pro usage and priority access during peak demand. It is the sweet spot for full-time developers who use Claude Code as their default coding partner.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>Personal Review (June 2026):</strong> Claude Code Pro ($20/mo) is decent for light use but the 5-hour rolling window makes it impractical for serious daily development -- you WILL hit the wall. The good news: Anthropic doubled rate limits and removed peak hours throttling (thanks to SpaceX Colossus 1), so Pro is now much more usable — ~90 Opus messages per 5h instead of 45. Max 5x ($100/mo) is still the minimum for real work, but the gap is narrower. On the plus side, code quality is unmatched -- Opus 4.7 and now Opus 4.8 are genuinely the smartest models for complex refactoring and architecture decisions. Claude Fable 5 (June 9) was exciting — Mythos-class model for long-horizon autonomous coding — but as of June 13, GitHub Copilot docs mark it as <strong>currently unavailable</strong>, suggesting Anthropic is restricting access during the rollout. The main frustration is Anthropic&#39;s opaque quota system and the ongoing v2.1.100 prompt caching bug (still unfixed as of June) silently eating into your limits by ~40%. Compared to OpenCode Go ($10/mo), Claude Code is still 5-10x the price for incrementally better quality. Only worth it if you need Opus-level reasoning for complex codebases.</p>
+</blockquote>
 <hr>
-
-<h2 id="gpt-codex-openai-[pricing]https//developers.openai.com/codex/pricing">GPT Codex (OpenAI) <a href="https://developers.openai.com/codex/pricing">Pricing</a></h2>
-
-<p>OpenAI's agentic coding tool — CLI, IDE extension, ChatGPT app, and cloud. Codex is <strong>bundled into ChatGPT plans</strong> (no separate subscription).  
-Source: <a href="https://developers.openai.com/codex/pricing">developers.openai.com/codex/pricing</a></p>
-
+<h2>GPT Codex (OpenAI) <a href="https://developers.openai.com/codex/pricing">Pricing</a></h2>
+<p>OpenAI&#39;s agentic coding tool — CLI, IDE extension, ChatGPT app, and cloud. Codex is <strong>bundled into ChatGPT plans</strong> (no separate subscription).<br>Source: <a href="https://developers.openai.com/codex/pricing">developers.openai.com/codex/pricing</a></p>
 <h3>ChatGPT Plans (Codex Included)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
 <th>Best For</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Free</td>
 <td>$0</td>
 <td>Limited Codex Mini access</td>
@@ -1478,18 +1445,18 @@ Source: <a href="https://developers.openai.com/codex/pricing">developers.openai.
 <td>Pay-per-token</td>
 <td>CI/CD, automation, programmatic</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Codex Usage Limits (Plus — 5-hour rolling window)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Local Msgs/5h</th>
 <th>Cloud Tasks/5h</th>
 <th>Code Reviews/5h</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GPT-5.5</td>
 <td>15-80</td>
 <td>—</td>
@@ -1513,19 +1480,18 @@ Source: <a href="https://developers.openai.com/codex/pricing">developers.openai.
 <td>10-60</td>
 <td>20-50</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>Pro tiers: 5x to 20x these limits depending on tier. <strong>Promos expired May 31</strong> — previous $100 2x promo and $200 25x promo both ended.</p>
-
 <h3>API Pay-per-Token (Codex API)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Input /1M</th>
 <th>Output /1M</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>GPT-5.5</td>
 <td>$2.50</td>
 <td>$10.00</td>
@@ -1545,10 +1511,8 @@ Source: <a href="https://developers.openai.com/codex/pricing">developers.openai.
 <td>$5.00</td>
 <td>$15.00</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Notes</h3>
-
 <ul>
 <li>Usage shared across all Codex surfaces (CLI, IDE, ChatGPT, cloud, iOS)</li>
 <li>Soft caps slow you down; hard caps cut off until window resets</li>
@@ -1558,41 +1522,34 @@ Source: <a href="https://developers.openai.com/codex/pricing">developers.openai.
 <li><strong>Go plan ($20/mo)</strong>: Budget Codex Mini tier available in select regions. Reduced limits, same models</li>
 <li><strong>Business/Edu/Enterprise</strong> flexible pricing: credits per token table available in settings</li>
 </ul>
-
 <h3>Referral Program (June 11–24, 2026)</h3>
-
 <p>From June 11 through June 24, 2026, eligible Plus and Pro users can invite up to three friends. When an eligible recipient sends their first Codex message, both people receive a banked rate-limit reset (usable for 30 days).</p>
-
 <h3>Community Reviews</h3>
-
-<p>> <strong>From aitoolsrecap (2026):</strong> "The April 16, 2026 update added computer use, memory, image generation, and 90+ plugins -- turning it from a coding assistant into a full developer workstation. Included from $20/mo on ChatGPT Plus."</p>
-
-<p>> <strong>From elite-ai-assisted-coding review:</strong> "Codex CLI performed well throughout testing. GPT-5's capabilities were the key differentiator -- the model followed instructions precisely, learned from documentation effectively, and applied knowledge appropriately."</p>
-
-<p>> <strong>Personal Review (June 2026):</strong> Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what's asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It's an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. The 2x Pro $100 and 25x Pro $200 promos both expired May 31 — standard limits are now in effect. New referral program active June 11-24: invite up to 3 friends, both get a banked rate-limit reset.</p>
-
+<blockquote>
+<p><strong>From aitoolsrecap (2026):</strong> &quot;The April 16, 2026 update added computer use, memory, image generation, and 90+ plugins -- turning it from a coding assistant into a full developer workstation. Included from $20/mo on ChatGPT Plus.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From elite-ai-assisted-coding review:</strong> &quot;Codex CLI performed well throughout testing. GPT-5&#39;s capabilities were the key differentiator -- the model followed instructions precisely, learned from documentation effectively, and applied knowledge appropriately.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>Personal Review (June 2026):</strong> Overall positive experience. The limits are fine and good enough for daily use -- the mini models (GPT-5.4-mini) were the best thing about the plan, offering generous quotas for routine tasks. The main problem is with the frontier models (GPT-5.4 and GPT-5.5): when they understand you correctly from the start, they work really well and do exactly what&#39;s asked. But if they misinterpret the intent, things go spectacularly wrong -- they commit to wrong approaches confidently and produce deeply broken code. It&#39;s an all-or-nothing experience. The Plus plan at $20/mo is reasonable value, but Pro at $200/mo is hard to justify vs OpenCode Go or BytePlus. The 2x Pro $100 and 25x Pro $200 promos both expired May 31 — standard limits are now in effect. New referral program active June 11-24: invite up to 3 friends, both get a banked rate-limit reset.</p>
+</blockquote>
 <hr>
-
-<h2 id="antigravity-2.0-google-ide-[download]https//antigravity.google/download---[pricing]https//antigravity.google/pricing">Antigravity 2.0 (Google IDE) <a href="https://antigravity.google/download">Download</a> - <a href="https://antigravity.google/pricing">Pricing</a></h2>
-
-<p>Released <strong>Antigravity 2.0</strong> at <strong>Google I/O 2026 (May 19)</strong> — expanded from a single IDE into a five-surface platform: desktop app, CLI, SDK, Managed Agents API, and Enterprise Agent Platform.  
-Includes Claude models (Sonnet & Opus) alongside Gemini — all in one IDE.  
-Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing</a>, <a href="https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/">TechCrunch</a></p>
-
+<h2>Antigravity 2.0 (Google IDE) <a href="https://antigravity.google/download">Download</a> - <a href="https://antigravity.google/pricing">Pricing</a></h2>
+<p>Released <strong>Antigravity 2.0</strong> at <strong>Google I/O 2026 (May 19)</strong> — expanded from a single IDE into a five-surface platform: desktop app, CLI, SDK, Managed Agents API, and Enterprise Agent Platform.<br>Includes Claude models (Sonnet &amp; Opus) alongside Gemini — all in one IDE.<br>Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing</a>, <a href="https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/">TechCrunch</a></p>
 <h3>Plans (Updated May 19, 2026 — Google I/O)</h3>
-
 <p>Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing</a>, <a href="https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/">TechCrunch (May 19)</a>, <a href="https://mashable.com/article/google-io-2026-gemini-ultra-ai-subscription-tiers">Mashable (May 19)</a>, <a href="https://techmymoney.com/2026/05/21/google-ai-ultra-100-plan/">techmymoney.com (May 21)</a></p>
-
 <p>Google restructured its AI subscription lineup at I/O 2026. The top plan was restructured into two tiers: a new <strong>AI Ultra at $100/mo</strong> (5x Pro limits) and <strong>AI Ultra Premium at $200/mo</strong> (was $250, 20x Pro limits). Both now include Antigravity access as part of the subscription. Usage is tracked by compute consumption (not message counts), refreshed every 5 hours until a weekly cap.</p>
-
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
 <th>Models</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Preview (Free)</td>
 <td>$0</td>
 <td>All models (rate-limited)</td>
@@ -1622,16 +1579,16 @@ Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing<
 <td>Full access</td>
 <td>Overflow / burst usage. $0.01/credit. Opaque credit-to-token conversion</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Antigravity 2.0 New Surfaces</h3>
-
 <table>
+<thead>
 <tr>
 <th>Surface</th>
 <th>What it is</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Desktop App 2.0</td>
 <td>Updated IDE with dynamic subagents, scheduled tasks, native voice commands. Gemini 3.5 Flash co-developed using Antigravity</td>
 </tr>
@@ -1641,7 +1598,7 @@ Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing<
 </tr>
 <tr>
 <td>Antigravity SDK</td>
-<td>Programmatic access to Google's agent harness for custom agents</td>
+<td>Programmatic access to Google&#39;s agent harness for custom agents</td>
 </tr>
 <tr>
 <td>Managed Agents (Gemini API)</td>
@@ -1651,18 +1608,18 @@ Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing<
 <td>Gemini Enterprise Agent Platform</td>
 <td>Enterprise deployment for Google Cloud customers</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Available Models</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Provider</th>
 <th>Type</th>
 <th>Notes</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Gemini 3.5 Flash</td>
 <td>Google</td>
 <td>Fast</td>
@@ -1672,7 +1629,7 @@ Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing<
 <td>Gemini 3.1 Pro</td>
 <td>Google</td>
 <td>Reasoning (High/Low)</td>
-<td>Google's flagship. <strong>Good for frontend work only</strong></td>
+<td>Google&#39;s flagship. <strong>Good for frontend work only</strong></td>
 </tr>
 <tr>
 <td>Gemini 3 Flash</td>
@@ -1704,10 +1661,8 @@ Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing<
 <td>Open-weight</td>
 <td>Free model</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Usage Tips</h3>
-
 <ul>
 <li>Use <strong>Claude models for backend</strong> work — they handle complex logic, refactoring, and architecture</li>
 <li>Use <strong>Gemini models for frontend</strong> — Gemini 3 Flash / 3.5 Flash in particular are excellent for UI work</li>
@@ -1716,40 +1671,35 @@ Source: <a href="https://antigravity.google/pricing">antigravity.google/pricing<
 <li>Multi-agent missions can assign different models to different agents within the same task</li>
 <li><strong>New in 2.0:</strong> Dynamic subagents can parallelize work across microservices. Native voice commands. Scheduled tasks. Antigravity export tool to AI Studio. Five surfaces: Desktop App, CLI, SDK, Managed Agents API, Enterprise Agent Platform</li>
 </ul>
-
 <h3>Known Issues</h3>
-
 <ul>
-<li><strong>Quota cuts:</strong> Free tier quotas cut 92% since Dec 2025 (250 -> 20 requests/day)</li>
+<li><strong>Quota cuts:</strong> Free tier quotas cut 92% since Dec 2025 (250 -&gt; 20 requests/day)</li>
 <li><strong>Pro lockouts:</strong> Multiple reports of 7-day lockouts even with low usage. Advertised 5-hour refresh unreliable</li>
 <li><strong>Credit system opaque:</strong> Credit-to-token conversion rate undisclosed. Per-model credit costs unknown</li>
 <li><strong>Ultra lockouts:</strong> Even $200-$250/mo Ultra users report unexpected quota restrictions since Mar 2026</li>
 </ul>
-
 <h3>Community Reviews</h3>
-
-<p>> <strong>From aitoolanalysis (Mar 2026):</strong> "The most promising and most frustrating editor I've ever used." Free tier gives access to Claude Opus 4.6 ($200/mo value) for $0. But the rate limit crisis is real -- Pro subscribers hit 7-day lockouts instead of 5-hour refresh.</p>
-
-<p>> <strong>From vibecoding.app:</strong> "One developer documented a single Claude Opus 4.6 session consuming 635 out of 1,000 credits. One or two complex coding sessions can trigger a lockout for the rest of the week."</p>
-
-<p>> <strong>From claude-world.com:</strong> "Google Antigravity users reported multi-day account lockouts, a 92% free-tier quota cut, and pricing that pushes developers toward a $250/month plan."</p>
-
-<p>> <strong>From TechCrunch (May 19):</strong> "Google is also reducing the price of its top AI Ultra plan from $250 to $200, which allows for 20x higher limits." Antigravity 2.0 adds CLI, SDK, subagents, scheduled tasks, and voice commands.</p>
-
-<p>> <strong>Personal Review (June 2026):</strong> I've used it extensively. The best thing is having Claude models (Sonnet, Opus 4.7 & 4.8) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3.5 Flash (co-developed using Antigravity) is genuinely capable for frontend work. The downside: limits remain terrible — 92% free tier quota cut, multi-day lockouts reported even on paid plans. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues persist. Worth trying the free tier for the multi-model access, but don't rely on it for daily production work. The 5-hour compute window (replacing daily caps) is a structural change that aligns with Anthropic's and OpenAI's approach.</p>
-
+<blockquote>
+<p><strong>From aitoolanalysis (Mar 2026):</strong> &quot;The most promising and most frustrating editor I&#39;ve ever used.&quot; Free tier gives access to Claude Opus 4.6 ($200/mo value) for $0. But the rate limit crisis is real -- Pro subscribers hit 7-day lockouts instead of 5-hour refresh.</p>
+</blockquote>
+<blockquote>
+<p><strong>From vibecoding.app:</strong> &quot;One developer documented a single Claude Opus 4.6 session consuming 635 out of 1,000 credits. One or two complex coding sessions can trigger a lockout for the rest of the week.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From claude-world.com:</strong> &quot;Google Antigravity users reported multi-day account lockouts, a 92% free-tier quota cut, and pricing that pushes developers toward a $250/month plan.&quot;</p>
+</blockquote>
+<blockquote>
+<p><strong>From TechCrunch (May 19):</strong> &quot;Google is also reducing the price of its top AI Ultra plan from $250 to $200, which allows for 20x higher limits.&quot; Antigravity 2.0 adds CLI, SDK, subagents, scheduled tasks, and voice commands.</p>
+</blockquote>
+<blockquote>
+<p><strong>Personal Review (June 2026):</strong> I&#39;ve used it extensively. The best thing is having Claude models (Sonnet, Opus 4.7 &amp; 4.8) alongside Gemini in one IDE -- I use Claude for backend and Gemini for frontend, each with separate limits. Gemini 3.5 Flash (co-developed using Antigravity) is genuinely capable for frontend work. The downside: limits remain terrible — 92% free tier quota cut, multi-day lockouts reported even on paid plans. The new $100 AI Ultra tier at I/O 2026 is a welcome addition and the $200 Ultra Premium price cut ($50 off) helps, but the rate limit issues persist. Worth trying the free tier for the multi-model access, but don&#39;t rely on it for daily production work. The 5-hour compute window (replacing daily caps) is a structural change that aligns with Anthropic&#39;s and OpenAI&#39;s approach.</p>
+</blockquote>
 <hr>
-
-<h2 id="xiaomi-mimo-token-plan-[subscribe]https//platform.xiaomimimo.com/token-plan">Xiaomi MiMo Token Plan <a href="https://platform.xiaomimimo.com/token-plan">Subscribe</a></h2>
-
-<p>Launched Apr 2 2026. Pure monthly credit pool — NO 5h windows, NO weekly limits.  
-Credits expire month-end, no rollover. Mid-month upgrades OK, downgrades not.  
-Now supports V2.5 model series — one subscription unlocks all 8 MiMo models.  
-Auto-renewal discounts: up to $144 off annual plans.</p>
-
-<strong>Updated May 26/27, 2026</strong>: Credits quotas upgraded 5-8x across all tiers with no price increase. Old credits refunded within validity window. API pricing permanently reduced. Now standard.
-
+<h2>Xiaomi MiMo Token Plan <a href="https://platform.xiaomimimo.com/token-plan">Subscribe</a></h2>
+<p>Launched Apr 2 2026. Pure monthly credit pool — NO 5h windows, NO weekly limits.<br>Credits expire month-end, no rollover. Mid-month upgrades OK, downgrades not.<br>Now supports V2.5 model series — one subscription unlocks all 8 MiMo models.<br>Auto-renewal discounts: up to $144 off annual plans.</p>
+<p><strong>Updated May 26/27, 2026</strong>: Credits quotas upgraded 5-8x across all tiers with no price increase. Old credits refunded within validity window. API pricing permanently reduced. Now standard.</p>
 <table>
+<thead>
 <tr>
 <th>Plan</th>
 <th>Price</th>
@@ -1757,7 +1707,8 @@ Auto-renewal discounts: up to $144 off annual plans.</p>
 <th>Credits/Mo (New, May 26)</th>
 <th>~Tasks/mo (V2.5 1:1)</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Lite</td>
 <td>$6/mo (¥39)</td>
 <td>60,000,000</td>
@@ -1785,17 +1736,17 @@ Auto-renewal discounts: up to $144 off annual plans.</p>
 <td><strong>8,000,000,000</strong></td>
 <td>~16,000</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Credit Multiplier by Model</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
 <th>Context</th>
 <th>Rate</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>MiMo-V2-Omni</td>
 <td>up to 256K</td>
 <td>1 token = 1 Credit</td>
@@ -1825,41 +1776,33 @@ Auto-renewal discounts: up to $144 off annual plans.</p>
 <td>n/a</td>
 <td>Free (limited time)</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>API Pay-per-Token (Permanent rates since May 27, 2026)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Model</th>
-<th>Input /1M</th>
-<th>Output /1M</th>
-<th>Cached /1M</th>
+<th align="right">Input /1M</th>
+<th align="right">Output /1M</th>
+<th align="right">Cached /1M</th>
 <th>Context</th>
 </tr>
-<tr>
-<td>-------</td>
-<td>----------:</td>
-<td>-----------:</td>
-<td>-----------:</td>
-<td>---------</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>MiMo V2.5 Pro</td>
-<td><strong>$1.00</strong></td>
-<td><strong>$3.00</strong></td>
-<td>$0.20</td>
+<td align="right"><strong>$1.00</strong></td>
+<td align="right"><strong>$3.00</strong></td>
+<td align="right">$0.20</td>
 <td>1M tokens</td>
 </tr>
 <tr>
 <td>MiMo V2 Flash</td>
-<td>~$0.10</td>
-<td>~$0.40</td>
-<td>$0.02</td>
+<td align="right">~$0.10</td>
+<td align="right">~$0.40</td>
+<td align="right">$0.02</td>
 <td>256K tokens</td>
 </tr>
-</table>
-
+</tbody></table>
 <ul>
 <li><strong>Permanent price reduction</strong> — not promotional. Old long-context multiplier (256K+) eliminated</li>
 <li>Down from ~$50/MTok effective for long-context to flat $1/$3</li>
@@ -1867,27 +1810,20 @@ Auto-renewal discounts: up to $144 off annual plans.</p>
 <li>Token Plan quotas increased 5-8x (now standard), existing credits refunded within validity period</li>
 <li><strong>V2 series models (MiMo-V2-Omni, MiMo-V2-Pro) slated for deprecation</strong> — V2.5 models are the current focus</li>
 </ul>
-
 <hr>
-
-<h2 id="kimi-/-moonshot-ai-[kimi-code]https//www.kimi.com/code">Kimi / Moonshot AI <a href="https://www.kimi.com/code">Kimi Code</a></h2>
-
-<p>Two products: Kimi membership (app quotas) and Kimi Code (developer).  
-API billed separately — NOT included in membership.</p>
-
-<p>Current model: <strong>K2.6</strong> (released Apr 18–21 2026).  
-K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license.  
-<strong>K2 (original) discontinued</strong> — stopped serving <strong>May 25, 2026</strong>. Migrated to K2.5 or K2.6.</p>
-
+<h2>Kimi / Moonshot AI <a href="https://www.kimi.com/code">Kimi Code</a></h2>
+<p>Two products: Kimi membership (app quotas) and Kimi Code (developer).<br>API billed separately — NOT included in membership.</p>
+<p>Current model: <strong>K2.6</strong> (released Apr 18–21 2026).<br>K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license.<br><strong>K2 (original) discontinued</strong> — stopped serving <strong>May 25, 2026</strong>. Migrated to K2.5 or K2.6.</p>
 <h3>K2.6 Improvements</h3>
-
 <table>
+<thead>
 <tr>
 <th>Capability</th>
 <th>K2.5</th>
 <th>K2.6</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>SWE-Bench Pro</td>
 <td>—</td>
 <td>58.6%</td>
@@ -1912,30 +1848,28 @@ K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license
 <td>Hours</td>
 <td>4,000+ tool calls, 12+ hr</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>API Pricing (K2.6)</h3>
-
 <table>
+<thead>
 <tr>
 <th></th>
 <th>Input (Cache Miss)</th>
 <th>Input (Cache Hit)</th>
 <th>Output</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Per 1M tokens</td>
 <td>$0.95</td>
 <td>$0.16</td>
 <td>$4.00</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>Context window: 262,144 tokens.</p>
-
 <h3>Membership Plans (Kimi App + Kimi Code)</h3>
-
 <table>
+<thead>
 <tr>
 <th>Tier</th>
 <th>Price (annual/mo)</th>
@@ -1944,7 +1878,8 @@ K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license
 <th>Kimi Code Credits</th>
 <th>Agent Swarm</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Adagio</td>
 <td>Free</td>
 <td>6</td>
@@ -1984,11 +1919,10 @@ K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license
 <td>30× credits</td>
 <td>240 uses included</td>
 </tr>
-</table>
-
+</tbody></table>
 <h3>Additional Membership Features</h3>
-
 <table>
+<thead>
 <tr>
 <th>Feature</th>
 <th>Adagio</th>
@@ -1997,7 +1931,8 @@ K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license
 <th>Allegro</th>
 <th>Vivace</th>
 </tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>Kimi Claw</td>
 <td>—</td>
 <td>—</td>
@@ -2045,43 +1980,15 @@ K2.5 predecessor: 1T params, 32B active, MoE, 384 experts, 256K ctx, MIT license
 <td>10 chats</td>
 <td>10 chats</td>
 </tr>
-</table>
-
+</tbody></table>
 <p>Kimi Code available via: <code>curl -L code.kimi.com/install.sh | bash</code>. Powered by Kimi K2.6.</p>
-
 <p>Day-0 support on: vLLM, OpenRouter, Cloudflare, Baseten, MLX, Hermes, OpenCode.</p>
 
-<hr>
 
-<h2 id="sources">Sources</h2>
-
-<ul>
-<li><a href="source/anthropic-com-news-claude-code.md">anthropic-com-news-claude-code</a></li>
-<li><a href="source/antigravity-google-download.md">antigravity-google-download</a></li>
-<li><a href="source/antigravity-google-pricing.md">antigravity-google-pricing</a></li>
-<li><a href="source/buildthisnow-com-blog-guide-mechanics-claude-billing-change-june-2026.md">buildthisnow-com-blog-guide-mechanics-claude-billing-change-june-2026</a></li>
-<li><a href="source/byteplus-com-en-activity-codingplan.md">byteplus-com-en-activity-codingplan</a></li>
-<li><a href="source/claude-com-pricing.md">claude-com-pricing</a></li>
-<li><a href="source/codersera-com-blog-anthropic-june-2026-billing-change-claude-code.md">codersera-com-blog-anthropic-june-2026-billing-change-claude-code</a></li>
-<li><a href="source/developers-openai-com-codex-pricing.md">developers-openai-com-codex-pricing</a></li>
-<li><a href="source/docs-github-com-en-copilot-concepts-billing-usage-based-billing-for-individuals.md">docs-github-com-en-copilot-concepts-billing-usage-based-billing-for-individuals</a></li>
-<li><a href="source/docs-github-com-en-copilot-get-started-plans.md">docs-github-com-en-copilot-get-started-plans</a></li>
-<li><a href="source/docs-github-com-en-copilot-reference-copilot-billing-models-and-pricing.md">docs-github-com-en-copilot-reference-copilot-billing-models-and-pricing</a></li>
-<li><a href="source/github-blog-changelog-2026-06-01-updates-to-github-copilot-billing-and-plans.md">github-blog-changelog-2026-06-01-updates-to-github-copilot-billing-and-plans</a></li>
-<li><a href="source/github-blog-news-insights-company-news-github-copilot-individual-plans-introduci.md">github-blog-news-insights-company-news-github-copilot-individual-plans-introduci</a></li>
-<li><a href="source/github-blog-news-insights-company-news-github-copilot-is-moving-to-usage-based-b.md">github-blog-news-insights-company-news-github-copilot-is-moving-to-usage-based-b</a></li>
-<li><a href="source/github-com-features-copilot-plans.md">github-com-features-copilot-plans</a></li>
-<li><a href="source/kimi-com-code.md">kimi-com-code</a></li>
-<li><a href="source/mashable-com-article-google-io-2026-gemini-ultra-ai-subscription-tiers.md">mashable-com-article-google-io-2026-gemini-ultra-ai-subscription-tiers</a></li>
-<li><a href="source/opencode-ai-docs-go.md">opencode-ai-docs-go</a></li>
-<li><a href="source/opencode-ai-go.md">opencode-ai-go</a></li>
-<li><a href="source/platform-xiaomimimo-com-token-plan.md">platform-xiaomimimo-com-token-plan</a></li>
-<li><a href="source/techcrunch-com-2026-05-19-google-launches-antigravity-2-0-with-an-updated-deskto.md">techcrunch-com-2026-05-19-google-launches-antigravity-2-0-with-an-updated-deskto</a></li>
-<li><a href="source/techmymoney-com-2026-05-21-google-ai-ultra-100-plan.md">techmymoney-com-2026-05-21-google-ai-ultra-100-plan</a></li>
-<li><a href="source/z-ai-subscribe.md">z-ai-subscribe</a></li>
-</ul>    </main>
+    </main>
   </div>
 
+  <!-- Hamburger toggle — works on every page because this layout is shared -->
   <script>
     function copyCmd(el, cmd) {
       navigator.clipboard.writeText(cmd).then(() => {
