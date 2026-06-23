@@ -10,7 +10,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from jobslib import (
-    load_data, save_data, dedup_jobs, filter_expired,
+    load_data, save_data, dedup_jobs, filter_expired, sort_jobs_by_date,
     check_url_alive, render_jobs_md, generate_jobs_html,
     write_jobs_md, write_jobs_html,
     clean_source_dir, MAX_AGE_DAYS
@@ -67,8 +67,8 @@ def main():
     print(f"     Alive: {len(still_alive)}")
     print(f"     Dead/removed: {len(dead_urls)}")
     
-    # 4. Update data
-    data["jobs"] = still_alive
+    # 4. Clean + sort
+    data["jobs"] = sort_jobs_by_date(still_alive)
     data["last_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     
     total_removed = len(expired_by_date) + len(dead_urls)

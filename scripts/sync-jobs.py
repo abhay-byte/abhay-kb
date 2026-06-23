@@ -11,7 +11,7 @@ import os
 # Add script dir to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from jobslib import (
-    load_data, save_data, dedup_jobs,
+    load_data, save_data, dedup_jobs, sort_jobs_by_date,
     scrape_jobsnet_listing, scrape_freshershunt_listing,
     scrape_job_detail, render_jobs_md, generate_jobs_html,
     write_jobs_md, write_jobs_html,
@@ -92,9 +92,10 @@ def main():
     
     print(f"  📥 Scraped details for {len(new_jobs)} new jobs")
     
-    # 5. Merge with existing jobs
+    # 5. Merge with existing jobs and sort
     all_jobs = existing_jobs + new_jobs
     all_jobs = dedup_jobs(all_jobs)
+    all_jobs = sort_jobs_by_date(all_jobs)
     data["jobs"] = all_jobs
     data["last_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     

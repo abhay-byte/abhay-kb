@@ -28,6 +28,8 @@ CATEGORY_LABELS = {
 }
 CATEGORY_ORDER = ["software-engineering", "internships", "game-development"]
 
+DATE_FORMATS = ["%d-%b-%Y", "%B %d, %Y", "%d %B %Y"]
+
 SCRAPE_PAGES = 2  # How many pages to scrape from each aggregator
 
 
@@ -384,7 +386,7 @@ def scrape_job_detail(url, default_title="", default_date="", default_company=""
     # The aggregator URL is kept because it has the posted date, company info, etc.
     # The real apply link is extracted and stored for reference.
     domain = urlparse(url).netloc
-    exclude_domains = r'(?:facebook|twitter|x\.com|linkedin|addtoany|share|feedburner|wordpress|gmpg\.org|googletagmanager|googleapis|gravatar|w\.org|js\.delivr|cloudflare|fontawesome|pagead2|googlesyndication|doubleclick|google\.co\.in|googleanalytics|gstatic|pixel|cdn|telegram\.im|fundingchoicesmessages|stats\.wp|google\.com|youtube\.com)'
+    exclude_domains = r'(?:facebook|twitter|x\.com|linkedin|addtoany|share|feedburner|wordpress|gmpg\.org|googletagmanager|googleapis|gravatar|w\.org|js\.delivr|cloudflare|fontawesome|pagead2|googlesyndication|doubleclick|google\.co\.in|googleanalytics|gstatic|pixel|cdn|telegram\.im|fundingchoicesmessages|stats\.wp|google\.com|youtube\.com|chat\.whatsapp|whatsapp\.com|adtrafficquality\.google)'
     all_links = re.findall(r'href="(https?://[^"]+)"', html)
     
     apply_url = ""
@@ -546,6 +548,21 @@ def write_jobs_html(html_content):
     with open(html_path, "w") as f:
         f.write(html_content)
     print(f"  📄 Generated jobs.html ({len(html_content)} bytes)")
+
+
+def sort_jobs_by_date(jobs):
+    """Sort jobs descending by posted date (newest first).
+    Handles mixed date formats (DD-Mon-YYYY and Month DD, YYYY).
+    Jobs without dates go to the end.
+    """
+    def parse_sort_key(job):
+        posted = job.get("posted", "")
+        dt = parse_date(posted)
+        if dt:
+            return dt.timestamp()
+        return 0  # No date → put at end
+    
+    return sorted(jobs, key=parse_sort_key, reverse=True)
 
 
 def clean_source_dir():
