@@ -571,3 +571,16 @@ Source: [docs.openclaw.ai](https://docs.openclaw.ai/providers/opencode-go). Doll
 
 MiniMax M2.5: 80.2% SWE-Bench — near Claude Opus 4.6 (80.8%).
 DeepSeek V4 Pro: Standard pricing at $0.435/$0.87 per MTok.
+
+---
+
+## Notes
+
+- **BytePlus ModelArk**: Quota shared across Claude Code, Cursor, Cline, Codex CLI, Kilo Code, Roo Code, OpenCode
+- **GitHub Copilot**: Premium requests shared across all features; extra $0.04 each on Pro/Pro+
+- **Claude Code**: Exact request counts not published — only relative multipliers
+- **GLM quota multipliers**: Peak hours drain 3x quota; off-peak 2x; GLM-4.7/4.5-Air always 1x
+- **MiMo**: Pure credit pool, no 5h/windows, credits expire month-end
+- **Kimi**: API billed separately — not included in membership
+
+> **Benchmark Note:** [SWE-Bench Verified](https://www.swebench.com/) measures a model's ability to resolve real-world GitHub issues from code repositories. Not all providers publish scores — the chart above only includes models with verified data.
