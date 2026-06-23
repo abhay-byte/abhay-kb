@@ -307,6 +307,27 @@ def scrape_job_detail(url, default_title="", default_date="", default_company=""
         if h1:
             result["title"] = clean_text(h1.group(1))
 
+    # ── Date (from page if not already set) ──
+    if not result.get("posted"):
+        # Try <time> tag
+        time_match = re.search(r'<time[^>]*>(.*?)</time>', html)
+        if time_match:
+            t = clean_text(time_match.group(1))
+            if re.search(r'(?:January|February|March|April|May|June|July|August|September|October|November|December)', t):
+                result["posted"] = t
+        # Fallback: meta published time
+        if not result.get("posted"):
+            pub_match = re.search(r'<meta[^>]+property="article:published_time"[^>]+content="([^"]+)"', html)
+            if pub_match:
+                dt = pub_match.group(1)[:10]  # YYYY-MM-DD
+                # Convert to readable format
+                try:
+                    from datetime import datetime as dt_parse
+                    d = dt_parse.strptime(dt, "%Y-%m-%d")
+                    result["posted"] = d.strftime("%d-%b-%Y")
+                except:
+                    result["posted"] = dt
+    
     # ── Description ──
     og_desc = re.search(r'<meta[^>]+property="og:description"[^>]+content="([^"]+)"', html)
     desc = og_desc.group(1) if og_desc else ""
@@ -359,32 +380,34 @@ def scrape_job_detail(url, default_title="", default_date="", default_company=""
                 result["salary"] = sal
                 break
 
-    # ── Apply URL ──
+    # ── Apply URL (stored as secondary info, NOT replacing the aggregator URL)
+    # The aggregator URL is kept because it has the posted date, company info, etc.
+    # The real apply link is extracted and stored for reference.
     domain = urlparse(url).netloc
     exclude_domains = r'(?:facebook|twitter|x\.com|linkedin|addtoany|share|feedburner|wordpress|gmpg\.org|googletagmanager|googleapis|gravatar|w\.org|js\.delivr|cloudflare|fontawesome|pagead2|googlesyndication|doubleclick|google\.co\.in|googleanalytics|gstatic|pixel|cdn|telegram\.im|fundingchoicesmessages|stats\.wp|google\.com|youtube\.com)'
     all_links = re.findall(r'href="(https?://[^"]+)"', html)
     
-    found_link = None
-    # First try: job portal / career links (must be on a different domain than the aggregator)
+    apply_url = ""
+    # Look for job portal / career links (must be on a different domain than the aggregator)
     job_patterns = r'(?:careers?\.|myworkdayjobs|greenhouse\.io|lever\.|breezy\.|icims\.|njoyn\.|smartrecruiters|tracelink\.|workforcenow\.adp|accenture\.com.*career|career[^s]|[^a-z]job[s]?\?|jobdetail|position)'
     for link in all_links:
         ld = urlparse(link).netloc
         if ld != domain and re.search(job_patterns, link, re.IGNORECASE):
-            found_link = link
+            apply_url = link
             break
     
-    if not found_link:
+    if not apply_url:
         # Second try: any external link not in exclusion list
         for link in all_links:
             ld = urlparse(link).netloc
             if ld and ld != domain and not re.search(exclude_domains, ld, re.IGNORECASE):
                 if not any(w in link for w in ['facebook', 'twitter', 'linkedin', 'share', 'addtoany', 'pinterest']):
-                    found_link = link
+                    apply_url = link
                     break
     
-    if found_link:
-        result["url"] = found_link
-    # else: keep the original aggregator URL (it's useful as a landing page)
+    if apply_url:
+        result["apply_url"] = apply_url
+    # Keep the original url (aggregator page) as the primary URL
 
     # ── Category ──
     tl = result.get("title", "").lower()
@@ -435,7 +458,8 @@ def render_jobs_md(data):
             location = str(job.get("location", "")).replace("|", "\\|")
             salary = str(job.get("salary", "")).replace("|", "\\|")
             posted = str(job.get("posted", ""))
-            url = job.get("url", "#")
+            # Use apply_url if available, fall back to url (aggregator)
+            url = job.get("apply_url", "") or job.get("url", "#")
 
             lines.append(f"| {counter} | {title} | {company} | {location} | {salary} | {posted} | [Apply]({url}) |")
             counter += 1

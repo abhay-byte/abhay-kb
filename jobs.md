@@ -75,67 +75,101 @@ Last updated: 2026-06-23
 | 57 | Apps Dev Programmer Analyst | Citigroup (Fresheropenings) | Pune | Best in Industry | 07-Jun-2026 | [Apply](https://fresheropenings.com/citigroup-off-campus-drive-2026/) |
 | 58 | Java Backend Developer (Entry-Level) | CGI | Bangalore | As Per Industry Standard | 12-Jun-2026 | [Apply](https://cgi.njoyn.com/corp/xweb/xweb.asp?clid=21001&page=jobdetails&jobid=J0526-2378&BRID=1307433&SBDID=943&lang=1) |
 | 59 | Software Developer (9 LPA) | Hummingbird Web Solutions | Baner, Pune | 9 LPA | 11-Jun-2026 | [Apply](https://docs.google.com/forms/d/e/1FAIpQLSdCeuQegnpKf0PE_6fDkewAfZQ1vjBlq7N4BlnigKiMuwKf2w/viewform) |
-| 60 | Software Engineer | TraceLink | Pune | Best in Industry | 11-Jun-2026 | [Apply](https://www.tracelink.com/about/culture-and-careers/jobs?gh_jid=5158548007) |
-| 61 | Apprentice Software Engineer | Alcon | Bangalore | Best in Industry | 12-Jun-2026 | [Apply](https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Bangalore-India/Apprentice---Software-Engineer_R-2026-47611?source=LinkedIn) |
-| 62 | Wipro Elite Hiring (Project Engineer) | Wipro (Jobsnet) | PAN India | ₹3.5-5 LPA | 11-Jun-2026 | [Apply](https://careers.wipro.com/job/WE_ELITE/151957-en_US) |
-| 63 | Junior Java Full Stack Developer | Zensar (Jobsnet) | Pune | Best in Industry | 11-Jun-2026 | [Apply](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/145691_5?utm_medium=jobboard&utm_source=linkedIn) |
-| 64 | Apprentice IT Analyst (Remote) | Fortrea | Bangalore/Remote | Best in Industry | 10-Jun-2026 | [Apply](https://fortrea.wd1.myworkdayjobs.com/en-US/Fortrea/job/Bangalore/Apprentice---IT-analyst_261969) |
-| 65 | Graduate Trainee Engineer (IT) | Rockwell Automation | Pune | Best in Industry | 10-Jun-2026 | [Apply](https://rockwellautomation.wd1.myworkdayjobs.com/External_Rockwell_Automation/job/Pune-India/Graduate-Engineer-Trainee_R25-8341-2?source=LinkedIn) |
-| 66 | Cloud Developer | HPE | Bengaluru (Hybrid) | Competitive | 12-Jun-2026 | [Apply](https://freshershunt.in/hpe-off-campus-drive-2026-4/) |
-| 67 | Graduate Engineer Trainee (BA) | Johnson Controls | Bangalore | Competitive | 12-Jun-2026 | [Apply](https://freshershunt.in/johnson-controls-off-campus-drive-2026-2/) |
-| 68 | Software Development Engineer | CSG | Remote | Best in Industry | 13-Jun-2026 | [Apply](https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/) |
-| 69 | Graduate Engineer Trainee (Technology) | Invesco | Hyderabad | ~10 LPA | 12-Jun-2026 | [Apply](https://jobsnet.in/invesco-off-campus-drive-hiring-graduate-engineer-trainee-technology/) |
-| 70 | Software Engineer I (SDET) | Tower Research Capital | Gurgaon | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/tower-research-capital-off-campus-drive-2026/) |
-| 71 | Software Engineer (Developer Platform) | DocuSign | Bengaluru | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/docusign-off-campus-drive-2026-3/) |
-| 72 | Entry Level Software Developer | Born West | Remote (India) | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/born-west-off-campus-drive-2026/) |
-| 73 | Software System Engineer | HP | Bengaluru | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/hp-off-campus-drive-2026/) |
-| 74 | Quest Global Hiring Freshers - Trainee Engineer - Data Analyst | Quest Global | Hyderabad |  |  | [Apply](https://careers.quest-global.com/global/en/job/QGRQGAGLOBALP119887EXTERNALENGLOBAL/Trainee-Engineer-VT?utm_source=linkedin&amp;utm_medium=phenom-feeds) |
-| 75 | MetLife Hiring Entry-Level Associate Software Engineer - AI/ML | MetLife | Pune |  |  | [Apply](https://www.metlifecareers.com/en_US/ml/JobDetail/Associate-Software-Platform-Engineer-I/18469) |
-| 76 | Wipro is Hiring Entry-Level System Engineer | Wipro is | Mumbai |  |  | [Apply](https://careers.wipro.com/job/Mumbai-SYSTEM-ENGINEER-L1-IND-400708/182854-en_US/?utm_campaign=LinkedinJobPostings&amp;utm_source=LinkedinJobPostings&amp;applySourceOverride=LinkedIn) |
-| 77 | ZS Associates Hiring Decision Analytics Associate (0-3 Years) | ZS Associates |  |  |  | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
-| 78 | Zebra Technologies Off Campus Drive 2026 \| Software Engineer \| Freshers | Zebra Technologies is conducting |  |  |  | [Apply](https://zebra.wd501.myworkdayjobs.com/en-GB/Zebra_careers/job/Pune-India/Software-Engineer-1_JR102140?source=LinkedIn) |
-| 79 | Orange Off Campus Drive 2026 - Hiring Software Engineer (0-2 Years) | Orange Business |  |  |  | [Apply](https://careers-orange.icims.com/jobs/27961/software-engineer/job) |
-| 80 | Ingram Micro Off Campus Drive 2026 \| Graduate Engineer Trainee \| Pan India | Ingram Micro | Mumbai |  |  | [Apply](https://ingrammicro.wd5.myworkdayjobs.com/en-US/IngramMicro/job/Mumbai-India/Graduate-Engineer-Trainee_R-115589) |
-| 81 | Dentsu Off Campus Drive 2026 - Hiring Junior AI Developers - Freshers | Dentsu Merkel | Bangalore |  |  | [Apply](https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL/job/DGS-India---Bengaluru---Manyata-N1-Block/Junior-AI-Developer_R1125418?source=LinkedIn) |
-| 82 | Qualcomm Off Campus Drive 2026 - Hiring Software Engineer - New Grads | Qualcomm |  | 20-30 LPA |  | [Apply](https://careers.qualcomm.com/careers/job/446706882270?hl=en-US&amp;utm_source=linkedin&amp;domain=qualcomm.com&amp;source=APPLICANT_SOURCE-6-2) |
-| 83 | Deutsche Bank Off Campus Drive 2026 Hiring Technology Apprentice - AI Prompt Engineer | Deutsche Bank |  |  |  | [Apply](https://careers.db.com/professionals/search-roles/?test.html%3Fkid%3D=linkedinjobwrap#/professional/job/68781) |
-| 84 | Calix Off Campus Drive 2026 - Hiring Graduate Trainee - DevOps | The Calix | Bangalore |  |  | [Apply](https://calix.wd1.myworkdayjobs.com/ExternalInternational/job/Bangalore/Graduate-Trainee_R-11256-1?source=LinkedIn) |
-| 85 | Sanmina Off Campus Drive 2026 - Hiring Graduate Trainee - Programmer | Sanmina |  |  |  | [Apply](https://sanminacareers.mua.hrdepartment.com/hr/ats/Posting/view/110500) |
-| 86 | GE Appliances Off Campus Drive 2026 - Hiring Associate Data Engineer | GE Appliances |  |  |  | [Apply](https://haier.wd3.myworkdayjobs.com/GE_Appliances/job/IND-Bangalore-KA/Associate-Data-Engineer_REQ-25945?source=LinkedIn) |
-| 87 | SLB (Schlumberger) Off Campus Drive 2026 - IT Cloud Engineer | SLB |  |  |  | [Apply](https://careers.slb.com/jobdescription.aspx?id=EF15849-en_US+1&amp;utm_source=linkedin&amp;utm_medium=linkedin_posting&amp;utm_campaign=linkedin_career_posting&amp;src=LinkedIn) |
-| 88 | Harman Off Campus Drive 2026 \| Associate Engineer - AI/ML with Python | Harman |  |  |  | [Apply](https://jobsearch.harman.com/en_US/careers/JobDetail/Associate-Engineer-AI-ML-with-Python/31487) |
-| 89 | Zoom Hiring Entry-Level Software Engineers (0-3 Years) | Zoom | Remote |  |  | [Apply](https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote-IND/Software-Engineer_R18768-1?source=linkedin) |
-| 90 | Deloitte Hiring Entry-Level Software Engineer I - UE Designer | Deloitte | Pan India |  |  | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Consulting-C-M-AM-C-VD-User-Experience-Designer/353757) |
-| 91 | CGI Hiring Entry-Level Java Developers | CGI | Bangalore |  |  | [Apply](https://cgi.njoyn.com/CGI/xweb/XWeb.asp?NTKN=c&amp;clid=21001&amp;Page=JobDetails&amp;Jobid=J0422-1442&amp;BRID=963959&amp;lang=1) |
-| 92 | Deloitte Hiring Entry-Level Quality Assurance Engineer - 1 | Deloitte | Pan India |  |  | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Tax-GESTC-L25-Quality-Assurance-Engineer-I-Hyderabad/355845) |
-| 93 | Jacobs Off Campus Drive 2026 - Hiring Apprentice Engineer - AI/ML | Jacobs | Bengaluru |  |  | [Apply](https://careers.jacobs.com/en_US/careers/JobDetail?jobId=40706) |
-| 94 | Bajaj Finance Off Campus Drive 2026 Hiring Junior Analyst - Cyber Security | Bajaj Finserv |  |  |  | [Apply](https://bflcareers.peoplestrong.com/job/detail/JR00219980?src=LinkedIn) |
-| 95 | Baker Hughes Hiring Entry-Level Digital Technology Professional - Software Engineer | Baker Hughes |  |  |  | [Apply](https://careers.bakerhughes.com/global/en/job/R160526/Digital-Technology-Professional-Software-Engineer) |
-| 96 | HP Off Campus Drive 2026 Hiring Software System Engineer (0-2 Years) | HP India is excited to announce its |  |  |  | [Apply](https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/Bengaluru-Karnataka-India/Software-System-Engineer_3151545?source=Socialmedia-LinkedIn&amp;src=Linkedin+Full+Feed) |
-| 97 | Shell Graduate Programme 2026 \| Off Campus Hiring \| Any Graduate \| PAN India |  |  |  |  | [Apply](https://shell.wd3.myworkdayjobs.com/en-GB/ShellCareers/job/Bangalore-RMZ-ECO-WORLD/Shell-Graduate-Programme-2026---India_R182105-1/) |
-| 98 | American Express Hiring Freshers : Apprentice - Credit & Fraud Risk (Data Analytics) | American Express |  |  |  | [Apply](https://careers.americanexpress.com/en/sites/CX_1/job/26009117?intlink=us-amex-career-en-us-search) |
-| 99 | Siemens Mobility Off Campus 2026 - Hiring Test Automation Developer | Siemens Mobility |  |  |  | [Apply](https://jobs.siemens.com/en_US/externaljobs/JobDetail/507820?source=LinkedIn&amp;sourceType=PREMIUM_POST_SITE) |
-| 100 | Electronic Arts (EA) Off Campus Drive 2026: Hiring Software Engineer AI (Freshers) | Electronic Arts (EA) | Hyderabad |  |  | [Apply](https://jobs.ea.com/en_US/careers/JobDetail/Software-Engineer-I/214227?source=LinkedIn) |
-| 101 | Accenture Custom Software Engineer 2026 \| PAD Associate \| Bengaluru | Accenture | Bengaluru |  |  | [Apply](https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5483614-S2020888_en) |
-| 102 | Micron Software Engineer 2026 \| PMO \| Hyderabad |  | Hyderabad |  |  | [Apply](https://careers.micron.com/careers/job/40777557) |
-| 103 | Eaton Data Enablement Apprentice 2026 \| Pune (Hybrid) | Eaton Data Enablement Apprentice 2026 | Pune |  |  | [Apply](https://telegram.me/freshershunt) |
-| 104 | Alcon Apprentice Software Engineer 2026 \| Bangalore — Apply Now | Alcon | Bangalore |  |  | [Apply](https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Bangalore-India/Software-Engineer---Apprentice_R-2026-47155?source=LinkedIn) |
-| 105 | Micron Off Campus Drive 2026 \| Graduate Engineering Technician \| Gujarat — Apply Now | Micron |  |  |  | [Apply](https://careers.micron.com/careers/job/42284870) |
-| 106 | Honeywell Aerospace Software Engineer 2026 \| Software Engineer I \| Hyderabad | Honeywell | Hyderabad |  |  | [Apply](https://careers.honeywell.com) |
-| 107 | Nike Software Engineer 2026 \| Software Engineer I, ITC \| Bangalore |  | Bangalore |  |  | [Apply](https://careers.nike.com/software-engineer-i-itc/job/R-86257?source=BY_LinkedIn_JobSlots) |
-| 108 | Deloitte USI Off Campus Drive 2026 \| Admin & Real Estate Analyst \| Hyderabad | Deloitte USI Off Campus Drive 2026 | Hyderabad |  |  | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-EOX-Admin-COE-Integrated-Admin-Analyst-Hyderabad/351388) |
-| 109 | SLB Software Engineer 2026 \| Mysuru \| Freshers | SLB |  |  |  | [Apply](https://careers.slb.com/jobdescription.aspx?id=WDR00136049) |
+| 60 | Apprentice Software Engineer | Alcon | Bangalore | Best in Industry | 12-Jun-2026 | [Apply](https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Bangalore-India/Apprentice---Software-Engineer_R-2026-47611?source=LinkedIn) |
+| 61 | Wipro Elite Hiring (Project Engineer) | Wipro (Jobsnet) | PAN India | ₹3.5-5 LPA | 11-Jun-2026 | [Apply](https://careers.wipro.com/job/WE_ELITE/151957-en_US) |
+| 62 | Junior Java Full Stack Developer | Zensar (Jobsnet) | Pune | Best in Industry | 11-Jun-2026 | [Apply](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/145691_5?utm_medium=jobboard&utm_source=linkedIn) |
+| 63 | Apprentice IT Analyst (Remote) | Fortrea | Bangalore/Remote | Best in Industry | 10-Jun-2026 | [Apply](https://fortrea.wd1.myworkdayjobs.com/en-US/Fortrea/job/Bangalore/Apprentice---IT-analyst_261969) |
+| 64 | Graduate Trainee Engineer (IT) | Rockwell Automation | Pune | Best in Industry | 10-Jun-2026 | [Apply](https://rockwellautomation.wd1.myworkdayjobs.com/External_Rockwell_Automation/job/Pune-India/Graduate-Engineer-Trainee_R25-8341-2?source=LinkedIn) |
+| 65 | Cloud Developer | HPE | Bengaluru (Hybrid) | Competitive | 12-Jun-2026 | [Apply](https://freshershunt.in/hpe-off-campus-drive-2026-4/) |
+| 66 | Graduate Engineer Trainee (BA) | Johnson Controls | Bangalore | Competitive | 12-Jun-2026 | [Apply](https://freshershunt.in/johnson-controls-off-campus-drive-2026-2/) |
+| 67 | Software Development Engineer | CSG | Remote | Best in Industry | 13-Jun-2026 | [Apply](https://jobsnet.in/csg-hiring-entry-level-software-development-engineer-remote/) |
+| 68 | Graduate Engineer Trainee (Technology) | Invesco | Hyderabad | ~10 LPA | 12-Jun-2026 | [Apply](https://jobsnet.in/invesco-off-campus-drive-hiring-graduate-engineer-trainee-technology/) |
+| 69 | Software Engineer I (SDET) | Tower Research Capital | Gurgaon | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/tower-research-capital-off-campus-drive-2026/) |
+| 70 | Software Engineer (Developer Platform) | DocuSign | Bengaluru | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/docusign-off-campus-drive-2026-3/) |
+| 71 | Entry Level Software Developer | Born West | Remote (India) | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/born-west-off-campus-drive-2026/) |
+| 72 | Software System Engineer | HP | Bengaluru | Competitive | 14-Jun-2026 | [Apply](https://freshershunt.in/hp-off-campus-drive-2026/) |
+| 73 | Quest Global Hiring Freshers - Trainee Engineer - Data Analyst | Quest Global | Hyderabad |  | June 22, 2026 | [Apply](https://careers.quest-global.com/global/en/job/QGRQGAGLOBALP119887EXTERNALENGLOBAL/Trainee-Engineer-VT?utm_source=linkedin&amp;utm_medium=phenom-feeds) |
+| 74 | MetLife Hiring Entry-Level Associate Software Engineer - AI/ML | MetLife | Pune |  | June 22, 2026 | [Apply](https://www.metlifecareers.com/en_US/ml/JobDetail/Associate-Software-Platform-Engineer-I/18469) |
+| 75 | Quest Global Off Campus Drive 2026 - Hiring Full Stack Developer | Quest Global | Bangalore |  | June 21, 2026 | [Apply](https://careers.quest-global.com/global/en/job/QGRQGAGLOBALP119855EXTERNALENGLOBAL/Full-Stack-Engineer?utm_source=linkedin&amp;utm_medium=phenom-feeds) |
+| 76 | Wipro is Hiring Entry-Level System Engineer | Wipro is | Mumbai |  | June 21, 2026 | [Apply](https://careers.wipro.com/job/Mumbai-SYSTEM-ENGINEER-L1-IND-400708/182854-en_US/?utm_campaign=LinkedinJobPostings&amp;utm_source=LinkedinJobPostings&amp;applySourceOverride=LinkedIn) |
+| 77 | ZS Associates Hiring Decision Analytics Associate (0-3 Years) | ZS Associates |  |  | June 20, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 78 | Zebra Technologies Off Campus Drive 2026 \| Software Engineer \| Freshers | Zebra Technologies is conducting |  |  | June 20, 2026 | [Apply](https://zebra.wd501.myworkdayjobs.com/en-GB/Zebra_careers/job/Pune-India/Software-Engineer-1_JR102140?source=LinkedIn) |
+| 79 | IQVIA Off Campus Drive 2026 Hiring Software Development Engineer 1 | IQVIA | Bangalore |  | June 19, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 80 | Orange Off Campus Drive 2026 - Hiring Software Engineer (0-2 Years) | Orange Business |  |  | June 19, 2026 | [Apply](https://careers-orange.icims.com/jobs/27961/software-engineer/job) |
+| 81 | ADP Off Campus Drive 2026 - Hiring Freshers As Associate Software Engineer | ADP |  |  | June 18, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 82 | Ingram Micro Off Campus Drive 2026 \| Graduate Engineer Trainee \| Pan India | Ingram Micro | Mumbai |  | June 18, 2026 | [Apply](https://ingrammicro.wd5.myworkdayjobs.com/en-US/IngramMicro/job/Mumbai-India/Graduate-Engineer-Trainee_R-115589) |
+| 83 | Dentsu Off Campus Drive 2026 - Hiring Junior AI Developers - Freshers | Dentsu Merkel | Bangalore |  | June 17, 2026 | [Apply](https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL/job/DGS-India---Bengaluru---Manyata-N1-Block/Junior-AI-Developer_R1125418?source=LinkedIn) |
+| 84 | Volvo Group Off Campus Drive 2026 - Hiring Graduate Apprentice Trainee - SDE | Volvo Group |  |  | June 17, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 85 | Adani Digital Labs Off Campus Drive 2026 : Graduate Engineer Trainee - Technology | Join the Adani Digital Labs |  |  | June 17, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 86 | HPE is Hiring Entry-Level Software Engineer 1 - Java / J2EE | HPE is |  |  | June 17, 2026 | [Apply](https://careers.hpe.com/us/en/job/1207569/Software-Engineer-I-Java--J2EE?utm_source=linkedin) |
+| 87 | Infosys Off Campus Drive 2026 For Specialist Programmer / Digital Specialist /System Engineer | Infosys |  | ₹21 LPA | June 17, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 88 | Qualcomm Off Campus Drive 2026 - Hiring Software Engineer - New Grads | Qualcomm |  | 20-30 LPA | June 16, 2026 | [Apply](https://careers.qualcomm.com/careers/job/446706882270?hl=en-US&amp;utm_source=linkedin&amp;domain=qualcomm.com&amp;source=APPLICANT_SOURCE-6-2) |
+| 89 | Deutsche Bank Off Campus Drive 2026 Hiring Technology Apprentice - AI Prompt Engineer | Deutsche Bank |  |  | June 16, 2026 | [Apply](https://careers.db.com/professionals/search-roles/?test.html%3Fkid%3D=linkedinjobwrap#/professional/job/68781) |
+| 90 | Calix Off Campus Drive 2026 - Hiring Graduate Trainee - DevOps | The Calix | Bangalore |  | June 16, 2026 | [Apply](https://calix.wd1.myworkdayjobs.com/ExternalInternational/job/Bangalore/Graduate-Trainee_R-11256-1?source=LinkedIn) |
+| 91 | Sanmina Off Campus Drive 2026 - Hiring Graduate Trainee - Programmer | Sanmina |  |  | June 15, 2026 | [Apply](https://sanminacareers.mua.hrdepartment.com/hr/ats/Posting/view/110500) |
+| 92 | GE Appliances Off Campus Drive 2026 - Hiring Associate Data Engineer | GE Appliances |  |  | June 15, 2026 | [Apply](https://haier.wd3.myworkdayjobs.com/GE_Appliances/job/IND-Bangalore-KA/Associate-Data-Engineer_REQ-25945?source=LinkedIn) |
+| 93 | SLB (Schlumberger) Off Campus Drive 2026 - IT Cloud Engineer | SLB |  |  | June 15, 2026 | [Apply](https://careers.slb.com/jobdescription.aspx?id=EF15849-en_US+1&amp;utm_source=linkedin&amp;utm_medium=linkedin_posting&amp;utm_campaign=linkedin_career_posting&amp;src=LinkedIn) |
+| 94 | Harman Off Campus Drive 2026 \| Associate Engineer - AI/ML with Python | Harman |  |  | June 14, 2026 | [Apply](https://jobsearch.harman.com/en_US/careers/JobDetail/Associate-Engineer-AI-ML-with-Python/31487) |
+| 95 | Zoom Hiring Entry-Level Software Engineers (0-3 Years) | Zoom | Remote |  | June 14, 2026 | [Apply](https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote-IND/Software-Engineer_R18768-1?source=linkedin) |
+| 96 | S&P Global Off Campus Drive 2026 - Apprentice - Software Development/Testing | S&P Global |  |  | June 14, 2026 | [Apply](https://careers.spglobal.com/jobs/329859?lang=en-us&amp;utm_source=linkedin) |
+| 97 | Deloitte Hiring Entry-Level Software Engineer I - UE Designer | Deloitte | Pan India |  | June 13, 2026 | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Consulting-C-M-AM-C-VD-User-Experience-Designer/353757) |
+| 98 | HPE is Hiring Entry-Level Cloud Developers (0-2 Years) | HPE is |  |  | June 12, 2026 | [Apply](https://careers.hpe.com/us/en/job/1207454/Cloud-Developer) |
+| 99 | CGI Hiring Entry-Level Java Developers | CGI | Bangalore |  | June 12, 2026 | [Apply](https://cgi.njoyn.com/CGI/xweb/XWeb.asp?NTKN=c&amp;clid=21001&amp;Page=JobDetails&amp;Jobid=J0422-1442&amp;BRID=963959&amp;lang=1) |
+| 100 | Deloitte Hiring Entry-Level Quality Assurance Engineer - 1 | Deloitte | Pan India |  | June 12, 2026 | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Tax-GESTC-L25-Quality-Assurance-Engineer-I-Hyderabad/355845) |
+| 101 | Alcon Off Campus Drive 2026 - Hiring Software Engineer Apprentice | Alcon |  |  | June 12, 2026 | [Apply](https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Bangalore-India/Apprentice---Software-Engineer_R-2026-47611?source=LinkedIn) |
+| 102 | Zensar Off Campus Drive 2026 Hiring Junior Java Developers | Zensar |  |  | June 11, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 103 | Wipro Off Campus Drive 2026 - Elite Hiring Software Engineers | The Wipro |  | 5 LPA | June 11, 2026 | [Apply](https://careers.wipro.com/job/WE_ELITE/151957-en_US) |
+| 104 | Hummingbird Web Solutions Off Campus Drive 2026: Hiring Software Developers at 9 LPA | Hummingbird Web Solutions |  | 9 LPA | June 11, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 105 | TraceLink Off Campus Drive 2026: Hiring Software Engineer | TraceLink | Pune | 9 LPA | June 11, 2026 | [Apply](https://www.tracelink.com/about/culture-and-careers/jobs?gh_jid=5158548007) |
+| 106 | NIKE ITC Hiring Entry-Level Software Engineer 1 | NIKE ITC |  |  | June 11, 2026 | [Apply](https://careers.nike.com/software-engineer-i-itc/job/R-85669?source=BY_LinkedIn_JobSlots&amp;utm_source=BY_LinkedIn_JobSlots) |
+| 107 | Fortrea Off Campus Drive 2026: Hiring Apprentice - IT Analyst | Fortrea | Bangalore |  | June 10, 2026 | [Apply](https://fortrea.wd1.myworkdayjobs.com/en-US/Fortrea/job/Bangalore/Apprentice---IT-analyst_261969) |
+| 108 | Jacobs Off Campus Drive 2026 - Hiring Apprentice Engineer - AI/ML | Jacobs | Bengaluru |  | June 10, 2026 | [Apply](https://careers.jacobs.com/en_US/careers/JobDetail?jobId=40706) |
+| 109 | Rockwell Automation Hiring Graduate Trainee Engineer in IT | Rockwell Automation | Pune |  | June 10, 2026 | [Apply](https://rockwellautomation.wd1.myworkdayjobs.com/External_Rockwell_Automation/job/Pune-India/Graduate-Engineer-Trainee_R25-8341-2?source=LinkedIn) |
+| 110 | Bajaj Finance Off Campus Drive 2026 Hiring Junior Analyst - Cyber Security | Bajaj Finserv |  |  | June 10, 2026 | [Apply](https://bflcareers.peoplestrong.com/job/detail/JR00219980?src=LinkedIn) |
+| 111 | Qualifacts Off Campus Drive 2026 : Software Engineer - Freshers | The Qualifacts |  |  | June 8, 2026 | [Apply](https://qualifacts.wd5.myworkdayjobs.com/en-US/Qualifacts_External_Careers/job/Vadodara/Software-Engineer-I_R-102550-1?source=LinkedIn) |
+| 112 | Baker Hughes Hiring Entry-Level Digital Technology Professional - Software Engineer | Baker Hughes |  |  | June 8, 2026 | [Apply](https://careers.bakerhughes.com/global/en/job/R160526/Digital-Technology-Professional-Software-Engineer) |
+| 113 | HP Off Campus Drive 2026 Hiring Software System Engineer (0-2 Years) | HP India is excited to announce its |  |  | June 8, 2026 | [Apply](https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/Bengaluru-Karnataka-India/Software-System-Engineer_3151545?source=Socialmedia-LinkedIn&amp;src=Linkedin+Full+Feed) |
+| 114 | Deloitte Hiring Entry-Level Full Stack Developers - Python Pan India | Deloitte | Pan India |  | June 8, 2026 | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-Consulting-C-M-AM-C-Full-stack-engineering-Python-Software-Engineer-I/353711) |
+| 115 | NTT Data Entry-Level Associate Engineer - AI Services | NTT DATA |  |  | June 8, 2026 | [Apply](https://careers.services.global.ntt/de/de/job/R-146003/Associate-Engineer-AI-services) |
+| 116 | Cisco Off Campus Drive 2026 \| Software Engineer - DevOps \| Freshers | Cisco |  |  | June 7, 2026 | [Apply](https://careers.cisco.com/global/en/job/CISCISGLOBAL2015541EXTERNALENGLOBAL/Software-Engineer) |
+| 117 | Atlas Copco Off Campus Drive 2026: Graduate Security Analyst | Atlas Copco |  |  | June 7, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 118 | GlobalLogic Off Campus Drive 2026 - Hiring Associate Software Engineer - Freshers | GlobalLogic a Hitachi Company |  | 8 LPA | June 6, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 119 | Shell Graduate Programme 2026 \| Off Campus Hiring \| Any Graduate \| PAN India |  |  |  | June 6, 2026 | [Apply](https://shell.wd3.myworkdayjobs.com/en-GB/ShellCareers/job/Bangalore-RMZ-ECO-WORLD/Shell-Graduate-Programme-2026---India_R182105-1/) |
+| 120 | American Express Hiring Freshers : Apprentice - Credit & Fraud Risk (Data Analytics) | American Express |  |  | June 5, 2026 | [Apply](https://careers.americanexpress.com/en/sites/CX_1/job/26009117?intlink=us-amex-career-en-us-search) |
+| 121 | Siemens Mobility Off Campus 2026 - Hiring Test Automation Developer | Siemens Mobility |  |  | June 5, 2026 | [Apply](https://jobs.siemens.com/en_US/externaljobs/JobDetail/507820?source=LinkedIn&amp;sourceType=PREMIUM_POST_SITE) |
+| 122 | Vodafone (VOIS) Off Campus Drive 2026 - Apprentice - Networking Project Management | Vodafone |  | 6-10 LPA | June 4, 2026 | [Apply](https://chat.whatsapp.com/CNI1eRijsAKLmOOrGgOUlg) |
+| 123 | Electronic Arts (EA) Off Campus Drive 2026: Hiring Software Engineer AI (Freshers) | Electronic Arts (EA) | Hyderabad |  | June 3, 2026 | [Apply](https://jobs.ea.com/en_US/careers/JobDetail/Software-Engineer-I/214227?source=LinkedIn) |
+| 124 | Dell Technologies Off Campus Drive 2026 - Hiring Fresh Grads For Technical Apprentice | Dell Technologies is organizing an |  |  | June 3, 2026 | [Apply](https://cgi.njoyn.com/CGI/xweb/XWeb.asp?NTKN=c&amp;clid=21001&amp;Page=JobDetails&amp;Jobid=J0422-1442&amp;BRID=963959&amp;lang=1) |
+| 125 | Accenture Custom Software Engineer 2026 \| PAD Associate \| Bengaluru | Accenture | Bengaluru |  | June 22, 2026 | [Apply](https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5483614-S2020888_en) |
+| 126 | Curefit Full Stack Engineer 2026 \| Bengaluru |  | Bengaluru |  | June 22, 2026 | [Apply](https://ep2.adtrafficquality.google) |
+| 127 | Micron Software Engineer 2026 \| PMO \| Hyderabad |  | Hyderabad |  | June 21, 2026 | [Apply](https://careers.micron.com/careers/job/40777557) |
+| 128 | Eaton Data Enablement Apprentice 2026 \| Pune (Hybrid) | Eaton Data Enablement Apprentice 2026 | Pune |  | June 21, 2026 | [Apply](https://telegram.me/freshershunt) |
+| 129 | eClerx Analyst 2026 \| Mumbai \| B.E Mechanical / ECE |  | Mumbai |  | June 21, 2026 | [Apply](https://telegram.me/freshershunt) |
+| 130 | Amazon Transportation Representative 2026 \| Work From Home \| India | Amazon |  |  | June 21, 2026 | [Apply](https://syndicatedsearch.goog) |
+| 131 | EY Off Campus Drive 2026 \| Testing (WAM) \| Chennai | EY Off Campus Drive 2026 | Chennai |  | June 20, 2026 | [Apply](https://telegram.me/freshershunt) |
+| 132 | Alcon Apprentice Software Engineer 2026 \| Bangalore — Apply Now | Alcon | Bangalore |  | June 19, 2026 | [Apply](https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Bangalore-India/Software-Engineer---Apprentice_R-2026-47155?source=LinkedIn) |
+| 133 | Micron Off Campus Drive 2026 \| Graduate Engineering Technician \| Gujarat — Apply Now | Micron |  |  | June 19, 2026 | [Apply](https://careers.micron.com/careers/job/42284870) |
+| 134 | Honeywell Aerospace Software Engineer 2026 \| Software Engineer I \| Hyderabad | Honeywell | Hyderabad |  | June 19, 2026 | [Apply](https://careers.honeywell.com) |
+| 135 | Eaton AI ML Apprentice 2026 \| Machine Learning \| Pune | Eaton AI ML Apprentice 2026 | Pune |  | June 19, 2026 | [Apply](https://ep2.adtrafficquality.google) |
+| 136 | Nike Software Engineer 2026 \| Software Engineer I, ITC \| Bangalore |  | Bangalore |  | June 19, 2026 | [Apply](https://careers.nike.com/software-engineer-i-itc/job/R-86257?source=BY_LinkedIn_JobSlots) |
+| 137 | Apple Early Careers Software Engineer 2026 \| SDE \| Hyderabad | Apple | Hyderabad |  | June 19, 2026 | [Apply](https://syndicatedsearch.goog) |
+| 138 | Deloitte USI Off Campus Drive 2026 \| Admin & Real Estate Analyst \| Hyderabad | Deloitte USI Off Campus Drive 2026 | Hyderabad |  | June 18, 2026 | [Apply](https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-EOX-Admin-COE-Integrated-Admin-Analyst-Hyderabad/351388) |
+| 139 | SLB Software Engineer 2026 \| Mysuru \| Freshers | SLB |  |  | June 18, 2026 | [Apply](https://careers.slb.com/jobdescription.aspx?id=WDR00136049) |
+| 140 | ADP Associate Software Engineer 2026 \| Chennai \| Freshers | ADP | Chennai |  | June 18, 2026 | [Apply](https://telegram.me/freshershunt) |
 
 ## 💼 Internships
 
 | # | Title | Company | Location | Salary | Posted | Apply |
 |---|-------|---------|----------|--------|--------|-------|
-| 110 | Technology Summer Intern | Fiserv | Noida | Competitive Stipend | 02-Jun-2026 | [Apply](https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/) |
-| 111 | SDE Intern | Philips | Bangalore | Not disclosed | 03-Jun-2026 | [Apply](https://fresheropenings.com/philips-internship-2026/) |
-| 112 | Engineering Intern (Class of 2026) | Eightfold AI | Bangalore (Hybrid) | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/eightfold-internship-2026/) |
-| 113 | Student Intern (Digital Technology) | SLB | Pune | Competitive Stipend | 05-Jun-2026 | [Apply](https://freshershunt.in/slb-internship-2026/) |
-| 114 | Engineering Graduate Intern (SCION Platform) | IQVIA | Bengaluru (WFO) | Competitive Stipend | 09-Jun-2026 | [Apply](https://freshershunt.in/iqvia-internship-2026/) |
-| 115 | HARMAN Internship 2026 \| AI / Data Engineering Intern \| Bangalore | HARMAN | Bangalore |  |  | [Apply](https://jobsearch.harman.com/en_US/careers/JobDetail/Intern/31985) |
+| 141 | Technology Summer Intern | Fiserv | Noida | Competitive Stipend | 02-Jun-2026 | [Apply](https://freshershunt.in/fiserv-internship-2026-technology-summer-intern/) |
+| 142 | SDE Intern | Philips | Bangalore | Not disclosed | 03-Jun-2026 | [Apply](https://fresheropenings.com/philips-internship-2026/) |
+| 143 | Engineering Intern (Class of 2026) | Eightfold AI | Bangalore (Hybrid) | Not disclosed | 05-Jun-2026 | [Apply](https://freshershunt.in/eightfold-internship-2026/) |
+| 144 | Student Intern (Digital Technology) | SLB | Pune | Competitive Stipend | 05-Jun-2026 | [Apply](https://freshershunt.in/slb-internship-2026/) |
+| 145 | Engineering Graduate Intern (SCION Platform) | IQVIA | Bengaluru (WFO) | Competitive Stipend | 09-Jun-2026 | [Apply](https://freshershunt.in/iqvia-internship-2026/) |
+| 146 | HARMAN Internship 2026 \| AI / Data Engineering Intern \| Bangalore | HARMAN | Bangalore |  | June 23, 2026 | [Apply](https://jobsearch.harman.com/en_US/careers/JobDetail/Intern/31985) |
+| 147 | AMD Internship 2026 \| Co-Op / Intern (Engineering) \| Hyderabad | AMD | Hyderabad |  | June 22, 2026 | [Apply](https://careers.amd.com/careers-home/jobs/87051?lang=en-us) |
+| 148 | DHL HR Internship 2026 \| HR Data Analytics \| Mumbai | DHL HR | Mumbai |  | June 21, 2026 | [Apply](https://careers.dhl.com/global/en/job/DPDHGLOBALAV359727ENGLOBALEXTERNAL/HR-Intern) |
+| 149 | Fujitsu Software Engineer 2026 \| Machine Learning Intern \| Bangalore |  | Bangalore |  | June 18, 2026 | [Apply](https://telegram.me/freshershunt) |
 
 ---
 

@@ -77,7 +77,7 @@ def main():
         scrape_count += 1
         print(f"     [{scrape_count}/{len(new_urls)}] {url[:60]}...")
         
-        detail = scrape_job_detail(url, default_date)
+        detail = scrape_job_detail(url, default_date=default_date)
         
         # Only add if we got at least a title
         if detail.get("title") or detail.get("company"):
