@@ -5,7 +5,7 @@ title: "Projects Dashboard"
 
 # Projects Dashboard
 
-> **Last synced:** 2026-06-24 00:30 UTC — **92 repos** — **705 total stars**
+> **Last synced:** 2026-06-25 00:30 UTC — **92 repos** — **709 total stars**
 
 ## Featured Projects
 
@@ -13,7 +13,7 @@ title: "Projects Dashboard"
 <tr>
 <td width="50%" valign="top" style="padding:12px">
 <h3><img src="https://raw.githubusercontent.com/abhay-byte/fluxlinux/main/assets/logo/logo.webp" width="24" align="absmiddle" alt=""/> <a href="https://github.com/abhay-byte/fluxlinux">FluxLinux</a></h3>
-<p><strong>132</strong> stars | <strong>8</strong> forks | Kotlin</p>
+<p><strong>133</strong> stars | <strong>8</strong> forks | Kotlin</p>
 <p>Run full Linux desktop environments on Android with GPU acceleration and dev stacks.</p>
 <p><a href="https://github.com/abhay-byte/fluxlinux"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://play.google.com/store/apps/details?id=com.zenithblue.fluxlinux"><img src="https://img.shields.io/badge/Play_Store-01875F?style=flat-square&logo=googleplay&logoColor=white" alt="Play Store"/></a> <a href="https://f-droid.org/packages/com.ivarna.fluxlinux"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=flat-square&logo=f-droid&logoColor=white" alt="F-Droid"/></a> <a href="https://github.com/abhay-byte/fluxlinux/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/fluxlinux?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
@@ -27,7 +27,7 @@ title: "Projects Dashboard"
 <tr>
 <td width="50%" valign="top" style="padding:12px">
 <h3><img src="https://raw.githubusercontent.com/abhay-byte/finalbenchmark-platform/main/assets/logo_2.png" width="24" align="absmiddle" alt=""/> <a href="https://github.com/abhay-byte/finalbenchmark-platform">FinalBenchmark 2</a></h3>
-<p><strong>76</strong> stars | <strong>9</strong> forks | Kotlin</p>
+<p><strong>77</strong> stars | <strong>9</strong> forks | Kotlin</p>
 <p>Comprehensive CPU benchmarking app with 10+ tests and thermal management.</p>
 <p><a href="https://github.com/abhay-byte/finalbenchmark-platform"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://f-droid.org/packages/com.ivarna.finalbenchmark2"><img src="https://img.shields.io/badge/F--Droid-1976D2?style=flat-square&logo=f-droid&logoColor=white" alt="F-Droid"/></a> <a href="https://github.com/abhay-byte/finalbenchmark-platform/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/finalbenchmark-platform?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
@@ -181,7 +181,7 @@ title: "Projects Dashboard"
 <tr>
 <td width="50%" valign="top" style="padding:12px">
 <h3><img src="https://raw.githubusercontent.com/abhay-byte/nativecode/master/assets/logo/logo.webp" width="24" align="absmiddle" alt=""/> <a href="https://github.com/abhay-byte/nativecode">NativeCode</a></h3>
-<p><strong>4</strong> stars | Kotlin</p>
+<p><strong>5</strong> stars | Kotlin</p>
 <p>Local AI development environment on Android — run LLMs, code editors, and dev tools on-device.</p>
 <p><a href="https://github.com/abhay-byte/nativecode"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github" alt="GitHub"/></a> <a href="https://github.com/abhay-byte/nativecode/stargazers"><img src="https://img.shields.io/github/stars/abhay-byte/nativecode?style=flat-square&labelColor=282828&color=fabd2f&logo=github&logoColor=white" alt="Stars"/></a></p>
 </td>
@@ -291,41 +291,41 @@ title: "Projects Dashboard"
 | Metric | Value |
 |---|---|
 | **Total Repositories** | 92 |
-| **Total Stars** | 705 |
+| **Total Stars** | 709 |
 | **Total Forks** | 47 |
 | **Languages Used** | 18 |
-| **Top Language** | Dart (345 stars, 4 repos) |
+| **Top Language** | Dart (346 stars, 4 repos) |
 
 ## Top Projects by Stars
 
 | # | Project | Stars | Forks | Language | Description |
 |---|---|---|---|---|---|
-| 1 | [DailyAL](https://github.com/abhay-byte/DailyAL) | 344 | 16 | Dart | DailyAL - MyAnimeList Client |
-| 2 | [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 132 | 8 | Kotlin | FluxLinux is Linux on Android, advanced orchestrator application that transforms your Android device into a versatile Linux workstation. |
-| 3 | [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 76 | 9 | Kotlin | A comprehensive Android CPU benchmarking application with detailed scoring and visualization. |
+| 1 | [DailyAL](https://github.com/abhay-byte/DailyAL) | 345 | 16 | Dart | DailyAL - MyAnimeList Client |
+| 2 | [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 133 | 8 | Kotlin | FluxLinux is Linux on Android, advanced orchestrator application that transforms your Android device into a versatile Linux workstation. |
+| 3 | [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 77 | 9 | Kotlin | A comprehensive Android CPU benchmarking application with detailed scoring and visualization. |
 | 4 | [mkm](https://github.com/abhay-byte/mkm) | 68 | 8 | Kotlin | Minimal Android kernel management and system monitoring application |
 | 5 | [nexus](https://github.com/abhay-byte/nexus) | 11 | 1 | TypeScript | Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini CLI, and 10+ other AI agents side-by-side. Tauri + React + brutalist UI. |
 | 6 | [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | 9 | 1 | — | A community-driven compatibility list for running Windows games on Android devices using mali-gpus |
 | 7 | [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | 9 | 0 | Shell | This repository provides shell scripts to automate the setup for:      Arch Linux with the Hyprland compositor.     XFCE desktop environment on Arch Linux within a Termux proot-distro.     Your base Termux environment on Android. |
 | 8 | [poco-x6-pro-custom-roms](https://github.com/abhay-byte/poco-x6-pro-custom-roms) | 8 | 0 | — | Summary of the available custom ROMs for Poco X6 Pro. |
-| 9 | [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 | 1 | HTML | Feel free to connect, collaborate, and share the passion for building amazing things with code, whether it's for the web or a game engine! Let's learn and grow together. |
-| 10 | [Adirstat](https://github.com/abhay-byte/Adirstat) | 4 | 0 | Kotlin | Adirstat - Android Storage Analyzer (WizTree equivalent) |
+| 9 | [nativecode](https://github.com/abhay-byte/nativecode) | 5 | 0 | Kotlin | NativeCode: Local AI Dev |
+| 10 | [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 | 1 | HTML | Feel free to connect, collaborate, and share the passion for building amazing things with code, whether it's for the web or a game engine! Let's learn and grow together. |
 
 ## All Repositories
 
 | Project | Stars | Forks | Language | Description |
 |---|---|---|---|---|
-| [DailyAL](https://github.com/abhay-byte/DailyAL) | 344 | 16 | Dart | DailyAL - MyAnimeList Client |
-| [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 132 | 8 | Kotlin | FluxLinux is Linux on Android, advanced orchestrator application that transforms your Android device into a versatile Linux workstation. |
-| [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 76 | 9 | Kotlin | A comprehensive Android CPU benchmarking application with detailed scoring and visualization. |
+| [DailyAL](https://github.com/abhay-byte/DailyAL) | 345 | 16 | Dart | DailyAL - MyAnimeList Client |
+| [fluxlinux](https://github.com/abhay-byte/fluxlinux) | 133 | 8 | Kotlin | FluxLinux is Linux on Android, advanced orchestrator application that transforms your Android device into a versatile Linux workstation. |
+| [finalbenchmark-platform](https://github.com/abhay-byte/finalbenchmark-platform) | 77 | 9 | Kotlin | A comprehensive Android CPU benchmarking application with detailed scoring and visualization. |
 | [mkm](https://github.com/abhay-byte/mkm) | 68 | 8 | Kotlin | Minimal Android kernel management and system monitoring application |
 | [nexus](https://github.com/abhay-byte/nexus) | 11 | 1 | TypeScript | Multi-agent AI terminal workspace — run Claude Code, Codex, Gemini CLI, and 10+ other AI agents side-by-side. Tauri + React + brutalist UI. |
 | [mali-win-emu-list](https://github.com/abhay-byte/mali-win-emu-list) | 9 | 1 | — | A community-driven compatibility list for running Windows games on Android devices using mali-gpus |
 | [Linux_Setup](https://github.com/abhay-byte/Linux_Setup) | 9 | 0 | Shell | This repository provides shell scripts to automate the setup for:      Arch Linux with the Hyprland compositor.     XFCE desktop environment on Arch Linux within a Termux proot-distro.     Your base Termux environment on Android. |
 | [poco-x6-pro-custom-roms](https://github.com/abhay-byte/poco-x6-pro-custom-roms) | 8 | 0 | — | Summary of the available custom ROMs for Poco X6 Pro. |
+| [nativecode](https://github.com/abhay-byte/nativecode) | 5 | 0 | Kotlin | NativeCode: Local AI Dev |
 | [abhay-byte](https://github.com/abhay-byte/abhay-byte) | 4 | 1 | HTML | Feel free to connect, collaborate, and share the passion for building amazing things with code, whether it's for the web or a game engine! Let's learn and grow together. |
 | [Adirstat](https://github.com/abhay-byte/Adirstat) | 4 | 0 | Kotlin | Adirstat - Android Storage Analyzer (WizTree equivalent) |
-| [nativecode](https://github.com/abhay-byte/nativecode) | 4 | 0 | Kotlin | NativeCode: Local AI Dev |
 | [my-resume](https://github.com/abhay-byte/my-resume) | 3 | 0 | TeX | This repository contains a LaTeX resume template that is automatically compiled into a PDF on every push using GitHub Actions. |
 | [apm](https://github.com/abhay-byte/apm) | 3 | 0 | Python | Package manager for android working through adb. |
 | [AI_WRAPPER_PROJECTS](https://github.com/abhay-byte/AI_WRAPPER_PROJECTS) | 3 | 2 | Python | AI Wrapper Project is a powerful, modular AI-driven platform that brings together financial tools, news aggregation, and generative AI in a clean and user-friendly interface. Built using Streamlit, it aims to simplify complex decision-making by leveraging real-time data and AI insights. |
@@ -412,8 +412,8 @@ title: "Projects Dashboard"
 
 | Language | Repos | Stars |
 |---|---|---|
-| Dart | 4 | 345 |
-| Kotlin | 9 | 288 |
+| Dart | 4 | 346 |
+| Kotlin | 9 | 291 |
 | — | 15 | 17 |
 | TypeScript | 5 | 13 |
 | Shell | 3 | 9 |
@@ -433,4 +433,4 @@ title: "Projects Dashboard"
 | C | 2 | 0 |
 
 ---
-Auto-generated by Reva on 2026-06-24 00:30 UTC
+Auto-generated by Reva on 2026-06-25 00:30 UTC
